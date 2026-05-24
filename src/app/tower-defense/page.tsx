@@ -11,6 +11,7 @@ import { MonsterAvatar } from '@/components/Battle/MonsterAvatar';
 import { PlayerAvatar } from '@/components/Battle/PlayerAvatar';
 import { HintModal } from '@/components/Battle/HintModal';
 import { playBGM, stopBGM } from '@/utils/audio';
+import { speakText, stopSpeech } from '@/utils/tts';
 import { ArrowLeft, Star, Zap, Flame, Shield, Volume2, VolumeX } from 'lucide-react';
 
 interface Invader {
@@ -253,6 +254,16 @@ function TowerDefenseContent() {
   }
 
   const currentQuestion = questions[qIndex] || questions[0];
+
+  // Auto-speak question when it loads or changes
+  useEffect(() => {
+    if (currentQuestion) {
+      speakText(currentQuestion.question);
+    }
+    return () => {
+      stopSpeech();
+    };
+  }, [currentQuestion]);
 
   // Submit Answer Trigger
   const handleAnswerSubmit = (answer: string) => {
@@ -795,7 +806,19 @@ function TowerDefenseContent() {
           
           {/* Question Index Progress */}
           <div className="flex justify-between items-center text-xs font-extrabold text-amber-900 border-b border-amber-200/50 pb-1.5">
-            <span>🧙‍♂️ Shield Spell Scroll</span>
+            <span className="flex items-center gap-1.5">
+              🧙‍♂️ Shield Spell Scroll
+              <button 
+                onClick={(e) => {
+                  e.stopPropagation();
+                  speakText(currentQuestion.question);
+                }}
+                className="cursor-pointer hover:scale-115 active:scale-95 transition-transform flex items-center justify-center bg-amber-600/20 hover:bg-amber-600/35 p-0.5 rounded border border-amber-400/30"
+                title="Read Spell Out Loud 🔊"
+              >
+                <Volume2 className="w-3 h-3 text-amber-950" />
+              </button>
+            </span>
             <span className="bg-amber-100 px-2 py-0.5 rounded-full border border-amber-300">
               Progress: {qIndex + 1} / 5
             </span>

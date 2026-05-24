@@ -11,6 +11,7 @@ import { MonsterAvatar } from '@/components/Battle/MonsterAvatar';
 import { PlayerAvatar } from '@/components/Battle/PlayerAvatar';
 import { HintModal } from '@/components/Battle/HintModal';
 import { playBGM, stopBGM } from '@/utils/audio';
+import { speakText, stopSpeech } from '@/utils/tts';
 import { ArrowLeft, Shield, Flame, Award, Trophy, Volume2, VolumeX } from 'lucide-react';
 
 interface Opponent {
@@ -286,6 +287,16 @@ function RacingGameContent() {
   }
 
   const currentQuestion = questions[qIndex] || questions[0];
+
+  // Auto-speak question when it loads or changes
+  useEffect(() => {
+    if (currentQuestion) {
+      speakText(currentQuestion.question);
+    }
+    return () => {
+      stopSpeech();
+    };
+  }, [currentQuestion]);
 
   // Dynamic road scrolling speed based on current state
   const scrollDuration = isNitroActive ? '0.1s' : isSkidding ? '1.5s' : '0.4s';
@@ -603,7 +614,19 @@ function RacingGameContent() {
         <Card variant="scroll" padding="md" className="flex flex-col gap-3 sm:gap-4 shadow-md bg-[#fdf6e2]">
           
           <div className="flex justify-between items-center text-xs font-extrabold text-amber-900 border-b border-amber-200/50 pb-1.5">
-            <span>🧙‍♂️ Nitro Spell Scroll</span>
+            <span className="flex items-center gap-1.5">
+              🧙‍♂️ Nitro Spell Scroll
+              <button 
+                onClick={(e) => {
+                  e.stopPropagation();
+                  speakText(currentQuestion.question);
+                }}
+                className="cursor-pointer hover:scale-115 active:scale-95 transition-transform flex items-center justify-center bg-amber-600/20 hover:bg-amber-600/35 p-0.5 rounded border border-amber-400/30"
+                title="Read Equation Out Loud 🔊"
+              >
+                <Volume2 className="w-3 h-3 text-amber-950" />
+              </button>
+            </span>
             <span className="bg-amber-100 px-2 py-0.5 rounded-full border border-amber-300">
               Equation: {qIndex + 1} / 5
             </span>

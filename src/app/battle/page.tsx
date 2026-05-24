@@ -15,6 +15,7 @@ import { HintModal } from '@/components/Battle/HintModal';
 import { ArrowLeft, Zap, Sparkles, Award, Volume2, VolumeX } from 'lucide-react';
 
 import { playBGM, stopBGM } from '@/utils/audio';
+import { speakText, stopSpeech } from '@/utils/tts';
 import { WORLDS_DATABASE } from '@/data/worlds';
 
 function BattleContent() {
@@ -93,6 +94,16 @@ function BattleContent() {
   }
 
   const currentQuestion = questions[currentIdx];
+
+  // Auto-speak question when it loads or changes
+  useEffect(() => {
+    if (currentQuestion) {
+      speakText(currentQuestion.question);
+    }
+    return () => {
+      stopSpeech();
+    };
+  }, [currentQuestion]);
 
   const handleAnswerSelect = (answer: string) => {
     if (isAnsweringBlocked) return;

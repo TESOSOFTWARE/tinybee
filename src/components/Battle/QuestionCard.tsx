@@ -2,6 +2,8 @@ import React from 'react';
 import { MathQuestion } from '@/data/questions';
 import { Card } from '@/components/UI/Card';
 import { Button } from '@/components/UI/Button';
+import { Volume2 } from 'lucide-react';
+import { speakText } from '@/utils/tts';
 
 interface QuestionCardProps {
   questionData: MathQuestion;
@@ -29,8 +31,18 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
       {/* Mathematical scroll */}
       <Card variant="scroll" padding="md" className="text-center relative">
         {/* Ribbon decoration */}
-        <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-amber-500 border-2 border-amber-600 text-white font-bold px-4 py-0.5 rounded-full text-xs shadow">
+        <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-amber-500 border-2 border-amber-600 text-white font-bold px-4 py-0.5 rounded-full text-xs shadow flex items-center gap-1.5 select-none">
           📜 MATH SPELL
+          <button 
+            onClick={(e) => {
+              e.stopPropagation();
+              speakText(question);
+            }}
+            className="cursor-pointer hover:scale-115 active:scale-95 transition-transform flex items-center justify-center bg-amber-600/60 hover:bg-amber-700/80 p-0.5 rounded-md border border-amber-400/50"
+            title="Read Question Out Loud 🔊"
+          >
+            <Volume2 className="w-3.5 h-3.5 text-white" />
+          </button>
         </div>
         
         {/* Big crisp question text */}

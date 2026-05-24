@@ -14,6 +14,7 @@ import { HintModal } from '@/components/Battle/HintModal';
 import { ArrowLeft, Zap, Trophy, Flame, Volume2, VolumeX } from 'lucide-react';
 
 import { playBGM, stopBGM } from '@/utils/audio';
+import { speakText, stopSpeech } from '@/utils/tts';
 import { WORLDS_DATABASE } from '@/data/worlds';
 
 function TugOfWarContent() {
@@ -94,6 +95,16 @@ function TugOfWarContent() {
   }
 
   const currentQuestion = questions[currentIdx];
+
+  // Auto-speak question when it loads or changes
+  useEffect(() => {
+    if (currentQuestion) {
+      speakText(currentQuestion.question);
+    }
+    return () => {
+      stopSpeech();
+    };
+  }, [currentQuestion]);
 
   const handleAnswerSelect = (selectedAnswer: string) => {
     if (isAnsweringBlocked || showHint) return;
