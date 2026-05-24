@@ -25,22 +25,22 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
   ];
 
   return (
-    <div className="w-full max-w-lg mx-auto flex flex-col gap-6 select-none animate-pop-in">
+    <div className="w-full max-w-lg mx-auto flex flex-col gap-4 sm:gap-6 select-none animate-pop-in">
       {/* Mathematical scroll */}
-      <Card variant="scroll" padding="lg" className="text-center relative">
+      <Card variant="scroll" padding="md" className="text-center relative">
         {/* Ribbon decoration */}
         <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-amber-500 border-2 border-amber-600 text-white font-bold px-4 py-0.5 rounded-full text-xs shadow">
           📜 MATH SPELL
         </div>
         
         {/* Big crisp question text */}
-        <h2 className="text-4xl md:text-5xl font-bold tracking-wide mt-4 mb-2 text-slate-800 animate-pulse-slow">
+        <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold tracking-wide mt-3 sm:mt-4 mb-1 sm:mb-2 text-slate-800 animate-pulse-slow">
           {question}
         </h2>
       </Card>
 
       {/* Chunky options list */}
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-2 gap-3 sm:gap-4">
         {choices.map((choice, index) => (
           <Button
             key={`${questionData.id}-choice-${index}`}
@@ -48,7 +48,7 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
             size="lg"
             onClick={() => onAnswerSelect(choice)}
             disabled={disabled}
-            className="text-2xl md:text-3xl font-extrabold h-16 md:h-20"
+            className="text-lg sm:text-2xl md:text-3xl font-extrabold h-12 sm:h-16 md:h-20"
           >
             {choice}
           </Button>

@@ -175,24 +175,24 @@ function TugOfWarContent() {
   };
 
   return (
-    <div className="min-h-screen bg-playful-dots py-4 px-4 flex flex-col justify-between select-none">
+    <div className="min-h-screen bg-playful-dots py-2 sm:py-4 px-2 sm:px-4 flex flex-col justify-between select-none">
       
       {/* Symmetrical header */}
-      <header className="max-w-xl w-full mx-auto flex items-center justify-between bg-white/90 backdrop-blur border-b-4 border-slate-100 p-3 rounded-2xl shadow-sm z-30 select-none">
+      <header className="max-w-xl w-full mx-auto flex items-center justify-between bg-white/90 backdrop-blur border-b-4 border-slate-100 p-2 sm:p-3 rounded-2xl shadow-sm z-30 select-none">
         <Link href={`/world-map?worldId=${worldId}`}>
-          <Button variant="gray" size="sm" className="flex items-center gap-1">
+          <Button variant="gray" size="sm" className="flex items-center gap-1 py-1 sm:py-1.5 text-xs sm:text-sm">
             <ArrowLeft className="w-4 h-4" /> Flee
           </Button>
         </Link>
-        <span className="text-xs font-black bg-violet-100 text-violet-800 border-2 border-violet-200 px-3 py-1 rounded-full uppercase tracking-wider">
+        <span className="text-[10px] sm:text-xs font-black bg-violet-100 text-violet-800 border-2 border-violet-200 px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full uppercase tracking-wider">
           🏋️ Level {levelId} / 5
         </span>
         
         {/* BGM Toggle button */}
-        <div className="flex items-center gap-1.5 bg-slate-50 border border-slate-200 px-2 py-1 rounded-xl shadow-inner shrink-0">
+        <div className="flex items-center gap-1.5 bg-slate-50 border border-slate-200 px-1.5 py-0.5 sm:px-2 sm:py-1 rounded-xl shadow-inner shrink-0">
           <button
             onClick={() => setIsBgmOn(!isBgmOn)}
-            className={`w-7 h-7 rounded-lg text-xs font-black transition-all flex items-center justify-center select-none shadow-sm ${
+            className={`w-6 h-6 sm:w-7 sm:h-7 rounded-lg text-[10px] sm:text-xs font-black transition-all flex items-center justify-center select-none shadow-sm ${
               isBgmOn 
                 ? 'bg-gradient-to-br from-emerald-400 to-teal-500 text-white border border-emerald-500 hover:scale-105 active:scale-95' 
                 : 'bg-white hover:bg-slate-100 text-slate-400 border border-slate-200'
@@ -205,16 +205,16 @@ function TugOfWarContent() {
       </header>
 
       {/* Main Tug Arena */}
-      <main className="max-w-xl w-full mx-auto flex-grow flex flex-col justify-center gap-6 py-4">
+      <main className="max-w-xl w-full mx-auto flex-grow flex flex-col justify-center gap-3 sm:gap-6 py-2 sm:py-4">
         
         {/* Dynamic Force Gauge Bar */}
-        <div className="w-full bg-white/70 backdrop-blur-md p-4 rounded-2xl border-2 border-slate-100 shadow-sm flex flex-col gap-2 select-none">
-          <div className="flex justify-between items-center text-[10px] font-black text-slate-500 uppercase tracking-wider">
-            <span className="text-emerald-600">Companion pull force</span>
-            <span className="text-rose-600">{monsterName} pull force</span>
+        <div className="w-full bg-white/70 backdrop-blur-md p-2.5 sm:p-4 rounded-2xl border-2 border-slate-100 shadow-sm flex flex-col gap-1.5 sm:gap-2 select-none">
+          <div className="flex justify-between items-center text-[9px] sm:text-[10px] font-black text-slate-500 uppercase tracking-wider">
+            <span className="text-emerald-600">Companion pull</span>
+            <span className="text-rose-600">{monsterName} pull</span>
           </div>
           {/* Symmetrical Dual Progress Slider */}
-          <div className="w-full h-5 bg-slate-100 rounded-full border-2 border-slate-200 relative overflow-hidden flex shadow-inner">
+          <div className="w-full h-4 sm:h-5 bg-slate-100 rounded-full border border-slate-200 relative overflow-hidden flex shadow-inner">
             {/* Player Side (Left) */}
             <div 
               style={{ width: `${100 - ropePosition}%` }} 
@@ -226,12 +226,12 @@ function TugOfWarContent() {
               className="h-full bg-gradient-to-r from-pink-400 to-rose-400 transition-all duration-700" 
             />
             {/* Center Anchor line */}
-            <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-slate-400 z-10" />
+            <div className="absolute left-1/2 top-0 bottom-0 w-0.5 sm:w-1 bg-slate-400 z-10" />
             
             {/* Float Anchor Icon */}
             <div 
               style={{ left: `${100 - ropePosition}%` }} 
-              className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 z-20 w-8 h-8 rounded-full border-2 border-slate-700 bg-amber-400 shadow-md flex items-center justify-center text-sm font-black transition-all duration-700 animate-pulse-slow"
+              className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 z-20 w-6 h-6 sm:w-8 sm:h-8 rounded-full border border-slate-700 bg-amber-400 shadow-md flex items-center justify-center text-xs sm:text-sm font-black transition-all duration-700 animate-pulse-slow"
             >
               🎗️
             </div>
@@ -239,7 +239,7 @@ function TugOfWarContent() {
         </div>
 
         {/* Rope tug field arena */}
-        <div className="w-full bg-gradient-to-b from-sky-100 to-emerald-50 rounded-3xl border-4 border-slate-700/10 shadow-inner relative h-48 overflow-hidden flex flex-col justify-between py-4">
+        <div className="w-full bg-gradient-to-b from-sky-100 to-emerald-50 rounded-3xl border-4 border-slate-700/10 shadow-inner relative h-36 sm:h-48 overflow-hidden flex flex-col justify-between py-2 sm:py-4">
           
           {/* Cartoon floating clouds */}
           <div className="absolute left-6 top-4 text-3xl opacity-20 select-none animate-bounce-slow">☁️</div>
@@ -337,7 +337,7 @@ function TugOfWarContent() {
           </div>
 
           {/* Grassy Meadow ground styling */}
-          <div className="w-full h-8 bg-emerald-600/35 border-t border-emerald-700/10 flex justify-around items-center text-[10px] text-emerald-850 shrink-0 font-medium">
+          <div className="w-full h-6 sm:h-8 bg-emerald-600/35 border-t border-emerald-700/10 flex justify-around items-center text-[10px] text-emerald-850 shrink-0 font-medium">
             <span>🌿 Tug Meadow</span>
             <span>🍀 Green Zone</span>
           </div>

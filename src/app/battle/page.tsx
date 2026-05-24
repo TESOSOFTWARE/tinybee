@@ -199,27 +199,27 @@ function BattleContent() {
   };
 
   return (
-    <div className="min-h-screen bg-forest-grid py-4 px-4 flex flex-col justify-between select-none">
+    <div className="min-h-screen bg-forest-grid py-2 sm:py-4 px-2 sm:px-4 flex flex-col justify-between select-none">
       
       {/* Top Header navbar */}
-      <header className="max-w-xl w-full mx-auto flex items-center justify-between bg-white/90 backdrop-blur-sm px-4 py-2.5 rounded-2xl border-2 border-slate-200 shadow-sm z-20">
+      <header className="max-w-xl w-full mx-auto flex items-center justify-between bg-white/90 backdrop-blur-sm px-3 py-1.5 sm:px-4 sm:py-2.5 rounded-2xl border-2 border-slate-200 shadow-sm z-20">
         <Link href={`/world-map?worldId=${worldId}`}>
-          <Button variant="gray" size="sm" className="flex items-center gap-0.5">
+          <Button variant="gray" size="sm" className="flex items-center gap-0.5 py-1 sm:py-1.5 text-xs sm:text-sm">
             <ArrowLeft className="w-3.5 h-3.5" /> Flee
           </Button>
         </Link>
         
         {/* Level nodes indicator */}
-        <span className="text-sm font-black text-slate-700 uppercase tracking-wider flex items-center gap-1">
-          🔮 Level {levelId} / 5
+        <span className="text-xs sm:text-sm font-black text-slate-700 uppercase tracking-wider flex items-center gap-1">
+          🔮 Level {levelId}
         </span>
 
         {/* Audio Settings Panel */}
-        <div className="flex items-center gap-1.5 bg-slate-50 border border-slate-200 px-2 py-1 rounded-xl shadow-inner select-none shrink-0">
+        <div className="flex items-center gap-1.5 bg-slate-50 border border-slate-200 px-1.5 py-0.5 sm:px-2 sm:py-1 rounded-xl shadow-inner select-none shrink-0">
           {/* Synthesized BGM Toggle */}
           <button
             onClick={() => setIsBgmOn(!isBgmOn)}
-            className={`w-7 h-7 rounded-lg text-xs font-black transition-all flex items-center justify-center select-none shadow-sm ${
+            className={`w-6 h-6 sm:w-7 sm:h-7 rounded-lg text-[10px] sm:text-xs font-black transition-all flex items-center justify-center select-none shadow-sm ${
               isBgmOn 
                 ? 'bg-gradient-to-br from-emerald-400 to-teal-500 text-white border border-emerald-500 hover:scale-105 active:scale-95' 
                 : 'bg-white hover:bg-slate-100 text-slate-400 border border-slate-200'
@@ -231,7 +231,7 @@ function BattleContent() {
         </div>
 
         {/* Combo Counter Badge */}
-        <div className={`flex items-center gap-1 px-3 py-1 rounded-full border-2 text-xs font-black transition-all ${
+        <div className={`flex items-center gap-1 px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full border-2 text-[10px] sm:text-xs font-black transition-all ${
           combo >= 3 
             ? 'bg-amber-100 border-amber-300 text-amber-800 animate-bounce' 
             : combo > 0
@@ -244,10 +244,10 @@ function BattleContent() {
       </header>
 
       {/* Main RPG Battle Arena */}
-      <main className="max-w-xl w-full mx-auto flex-grow flex flex-col justify-center gap-6 py-4">
+      <main className="max-w-xl w-full mx-auto flex-grow flex flex-col justify-center gap-3 sm:gap-6 py-2 sm:py-4">
         
         {/* Symmetrical Dual Cute Health Tanks (Blood Tanks) */}
-        <div className="w-full bg-white/70 backdrop-blur-md p-4 rounded-2xl border-2 border-slate-100 shadow-sm flex flex-col md:flex-row gap-4 justify-between items-center select-none">
+        <div className="w-full bg-white/70 backdrop-blur-md p-2.5 sm:p-4 rounded-2xl border-2 border-slate-100 shadow-sm flex flex-col md:flex-row gap-2 sm:gap-4 justify-between items-center select-none">
           {/* Player/Companion Blood Tank */}
           <div className="w-full md:w-[46%]">
             <HealthBar 
@@ -279,7 +279,7 @@ function BattleContent() {
         </div>
 
         {/* Dynamic Sprite battle ground */}
-        <div className="w-full flex justify-between items-center px-6 relative h-40">
+        <div className="w-full flex justify-between items-center px-6 relative h-32 sm:h-40">
           
           {/* Active Player Pet Companion (Leaf Kitten, etc.) */}
           <div className="w-1/2 flex justify-start">

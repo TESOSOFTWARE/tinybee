@@ -397,12 +397,12 @@ function TowerDefenseContent() {
   };
 
   return (
-    <div className="min-h-screen bg-playful-dots py-4 px-4 flex flex-col justify-between select-none">
+    <div className="min-h-screen bg-playful-dots py-2 sm:py-4 px-2 sm:px-4 flex flex-col justify-between select-none">
       
       {/* Header HUD */}
-      <header className="max-w-4xl w-full mx-auto flex items-center justify-between mb-2">
+      <header className="max-w-4xl w-full mx-auto flex items-center justify-between mb-1.5 sm:mb-2">
         <Link href={`/world-map?worldId=${worldId}`}>
-          <Button variant="gray" size="sm" className="flex items-center gap-1">
+          <Button variant="gray" size="sm" className="flex items-center gap-1 py-1 sm:py-1.5 text-xs sm:text-sm">
             <ArrowLeft className="w-4 h-4" /> Exit
           </Button>
         </Link>
@@ -410,14 +410,14 @@ function TowerDefenseContent() {
         {/* Level stats */}
         <div className="text-center">
           <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Tower Defense</span>
-          <h2 className="text-base font-black text-slate-800 flex items-center gap-1">
+          <h2 className="text-xs sm:text-base font-black text-slate-800 flex items-center gap-1 justify-center">
             🏰 Defend the Crystals (Lvl {levelId})
           </h2>
         </div>
 
         {/* Combo Multiplier */}
-        <div className="flex items-center gap-1.5 bg-indigo-100 border-2 border-indigo-300 text-indigo-800 px-3.5 py-1 rounded-full font-black text-xs shadow-sm">
-          <Flame className={`w-4 h-4 ${combo > 0 ? 'text-amber-500 fill-amber-500 animate-pulse' : 'text-indigo-400'}`} />
+        <div className="flex items-center gap-1 sm:gap-1.5 bg-indigo-100 border-2 border-indigo-300 text-indigo-800 px-2 py-0.5 sm:px-3.5 sm:py-1 rounded-full font-black text-[10px] sm:text-xs shadow-sm">
+          <Flame className={`w-3.5 h-3.5 ${combo > 0 ? 'text-amber-500 fill-amber-500 animate-pulse' : 'text-indigo-400'}`} />
           Combo: {combo}
         </div>
       </header>
@@ -760,7 +760,7 @@ function TowerDefenseContent() {
         </div>
 
         {/* Math Question Scroll panel */}
-        <Card variant="scroll" padding="md" className="flex flex-col gap-4 shadow-md relative bg-[#fdf6e2]">
+        <Card variant="scroll" padding="md" className="flex flex-col gap-3 sm:gap-4 shadow-md relative bg-[#fdf6e2]">
           
           {/* Question Index Progress */}
           <div className="flex justify-between items-center text-xs font-extrabold text-amber-900 border-b border-amber-200/50 pb-1.5">
@@ -771,15 +771,15 @@ function TowerDefenseContent() {
           </div>
 
           {/* Math spell math Parchment question */}
-          <div className="text-center py-1">
-            <p className="text-sm font-bold text-amber-800 uppercase tracking-widest">CAST DEFENSE CHARM</p>
-            <h3 className="text-3xl md:text-4xl font-black text-slate-800 mt-1.5 leading-snug tracking-tight">
+          <div className="text-center py-0.5 sm:py-1">
+            <p className="text-[10px] sm:text-sm font-bold text-amber-800 uppercase tracking-widest">CAST DEFENSE CHARM</p>
+            <h3 className="text-xl sm:text-3xl md:text-4xl font-black text-slate-800 mt-1 sm:mt-1.5 leading-snug tracking-tight">
               {currentQuestion.question}
             </h3>
           </div>
 
           {/* Grid of Choices Chunky Buttons */}
-          <div className="grid grid-cols-2 gap-3">
+          <div className="grid grid-cols-2 gap-2 sm:gap-3">
             {currentQuestion.choices.map((choice, idx) => {
               const isSelected = selectedAnswer === choice;
               let choiceBtnVariant: 'blue' | 'green' | 'pink' | 'yellow' | 'gray' = 'yellow';
@@ -801,7 +801,7 @@ function TowerDefenseContent() {
                   fullWidth
                   onClick={() => handleAnswerSubmit(choice)}
                   disabled={isAnswered}
-                  className={`text-xl md:text-2xl py-3 ${
+                  className={`text-base sm:text-xl md:text-2xl py-2 sm:py-3 ${
                     isSelected ? 'ring-4 ring-indigo-400/30' : ''
                   }`}
                 >
