@@ -37,15 +37,20 @@ function WorldMapContent() {
 
   // Calculate totals
   const totalStars = Object.values(stars).reduce((acc, curr) => acc + curr, 0);
-  const totalLevels = 5;
+  const totalLevels = 10;
   const completedLevels = Object.keys(stars).filter(levelId => (stars[levelId] || 0) > 0).length;
 
   const nodePositions = [
-    { left: '76px', top: '100px' },    // Level 1
-    { left: '228px', top: '185px' },   // Level 2
-    { left: '114px', top: '270px' },   // Level 3
-    { left: '266px', top: '355px' },   // Level 4
-    { left: '190px', top: '440px' }    // Level 5 (Boss)
+    { left: '76px', top: '90px' },     // Level 1
+    { left: '228px', top: '175px' },   // Level 2
+    { left: '114px', top: '260px' },   // Level 3
+    { left: '266px', top: '345px' },   // Level 4
+    { left: '150px', top: '430px' },   // Level 5
+    { left: '76px', top: '515px' },    // Level 6
+    { left: '228px', top: '600px' },   // Level 7
+    { left: '114px', top: '685px' },   // Level 8
+    { left: '266px', top: '770px' },   // Level 9
+    { left: '190px', top: '855px' }    // Level 10 (Boss)
   ];
 
   return (
@@ -80,25 +85,25 @@ function WorldMapContent() {
           </div>
           <ProgressBar value={completedLevels} max={totalLevels} color="bg-forest-green" height="sm" />
           <p className="text-xs text-slate-400 text-center font-medium leading-relaxed">
-            Win math battles to unlock new nodes. Defeat Level 5 to conquer {world.name}!
+            Win math battles to unlock new nodes. Defeat Level 10 to conquer {world.name}!
           </p>
         </Card>
 
         {/* Bubbly RPG World Map Canvas */}
-        <div className="w-full max-w-[380px] mx-auto rounded-3xl border-4 border-slate-700/10 bg-white/40 backdrop-blur-sm p-4 relative min-h-[500px] overflow-hidden shadow-inner flex-grow">
+        <div className="w-full max-w-[380px] mx-auto rounded-3xl border-4 border-slate-700/10 bg-white/40 backdrop-blur-sm p-4 relative min-h-[960px] overflow-hidden shadow-inner flex-grow">
           
           {/* Pathway SVG lines joining nodes exactly */}
           <svg className="absolute inset-0 w-full h-full pointer-events-none" strokeLinecap="round">
             {/* Outer thick road backing */}
             <path
-              d="M 133 35 Q 95 70 76 100 T 228 185 T 114 270 T 266 355 T 190 440"
+              d="M 133 35 Q 95 60 76 90 T 228 175 T 114 260 T 266 345 T 150 430 T 76 515 T 228 600 T 114 685 T 266 770 T 190 855"
               fill="none"
               stroke="#e2e8f0"
               strokeWidth="12"
             />
             {/* Inner dashed road divider */}
             <path
-              d="M 133 35 Q 95 70 76 100 T 228 185 T 114 270 T 266 355 T 190 440"
+              d="M 133 35 Q 95 60 76 90 T 228 175 T 114 260 T 266 345 T 150 430 T 76 515 T 228 600 T 114 685 T 266 770 T 190 855"
               fill="none"
               stroke="#94a3b8"
               strokeWidth="4"
@@ -130,10 +135,10 @@ function WorldMapContent() {
           </div>
 
           {/* Level Nodes */}
-          {[1, 2, 3, 4, 5].map((lvlNum) => {
+          {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((lvlNum) => {
             const isUnlocked = true; // lvlNum <= unlockedLevels; (Unlocked all levels for monetization phase!)
             const levelStars = stars[lvlNum] || 0;
-            const isBoss = lvlNum === 5;
+            const isBoss = lvlNum === 10;
             const pos = nodePositions[lvlNum - 1];
 
             // Setup buttons styled uniquely

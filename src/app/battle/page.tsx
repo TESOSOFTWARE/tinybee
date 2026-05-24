@@ -28,9 +28,9 @@ function BattleContent() {
 
   const world = WORLDS_DATABASE[worldId] || WORLDS_DATABASE['g1-addition'];
 
-  // Setup monster info based on level index
-  const monsterName = world.monsterNames[levelIndex] || world.monsterNames[0];
-  const monsterId = world.monsterIds[levelIndex] || world.monsterIds[0];
+  // Setup monster info based on level index (index-safe fallback for up to 10 levels)
+  const monsterName = world.monsterNames[levelIndex % world.monsterNames.length] || world.monsterNames[0];
+  const monsterId = world.monsterIds[levelIndex % world.monsterIds.length] || world.monsterIds[0];
 
   // Game States
   const [questions, setQuestions] = useState<MathQuestion[]>([]);

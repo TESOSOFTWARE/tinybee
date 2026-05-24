@@ -27,9 +27,9 @@ function TugOfWarContent() {
 
   const world = WORLDS_DATABASE[worldId] || WORLDS_DATABASE['g1-addition'];
 
-  // Setup monster info based on level index
-  const monsterName = world.monsterNames[levelIndex] || world.monsterNames[0];
-  const monsterId = world.monsterIds[levelIndex] || world.monsterIds[0];
+  // Setup monster info based on level index (index-safe fallback for up to 10 levels)
+  const monsterName = world.monsterNames[levelIndex % world.monsterNames.length] || world.monsterNames[0];
+  const monsterId = world.monsterIds[levelIndex % world.monsterIds.length] || world.monsterIds[0];
 
   // Game States
   const [questions, setQuestions] = useState<MathQuestion[]>([]);
@@ -193,7 +193,7 @@ function TugOfWarContent() {
           </Button>
         </Link>
         <span className="text-[10px] sm:text-xs font-black bg-violet-100 text-violet-800 border-2 border-violet-200 px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full uppercase tracking-wider">
-          🏋️ Level {levelId} / 5
+          🏋️ Level {levelId} / 10
         </span>
         
         {/* BGM Toggle button */}
