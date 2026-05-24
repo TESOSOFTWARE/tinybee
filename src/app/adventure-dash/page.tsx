@@ -523,14 +523,14 @@ const AdventureDashContent: React.FC = () => {
               {/* The Player companion character avatar */}
               <PlayerAvatar 
                 petId={state.activePetId} 
-                isAttacking={isDashing}
+                isAttacking={false}
                 isHit={isDizzy} 
                 className="w-16 h-16 sm:w-20 sm:h-20"
               />
 
               {/* Boost fire particles for speed-boosting */}
               {isDashing && (
-                <div className="absolute -left-6 bottom-0 flex gap-0.5 animate-stick-swing">
+                <div className="absolute -left-6 bottom-0 flex gap-0.5 animate-pulse-slow">
                   <div className="w-2.5 h-6 bg-cyan-400 rounded-full animate-pulse filter blur-xs" />
                   <div className="w-3.5 h-8 bg-rose-500 rounded-full animate-bounce filter blur-xs" />
                 </div>
