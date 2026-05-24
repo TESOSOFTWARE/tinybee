@@ -7,6 +7,7 @@ import { useGameState } from '@/hooks/useGameState';
 import { PlayerAvatar } from '@/components/Battle/PlayerAvatar';
 import { WORLDS_DATABASE } from '@/data/worlds';
 import { mathQuestions } from '@/data/questions';
+import { playBGM, stopBGM } from '@/utils/audio';
 import { 
   Heart, 
   Coins, 
@@ -91,6 +92,20 @@ const AdventureDashContent: React.FC = () => {
   const [isVictory, setIsVictory] = useState(false);
   const [correctAnswersCount, setCorrectAnswersCount] = useState(0);
   const [timeSpent, setTimeSpent] = useState(0);
+
+  // Audio BGM State and Effect
+  const [isBgmOn, setIsBgmOn] = useState(false);
+
+  useEffect(() => {
+    if (isBgmOn) {
+      playBGM();
+    } else {
+      stopBGM();
+    }
+    return () => {
+      stopBGM();
+    };
+  }, [isBgmOn]);
 
   // 1. Shuffling Questions & Classic Mode generation
   useEffect(() => {
@@ -337,16 +352,31 @@ const AdventureDashContent: React.FC = () => {
           </h2>
         </div>
 
-        <button 
-          onClick={() => setIsClassicMode(prev => !prev)}
-          className={`px-3 py-1.5 rounded-xl border text-[9px] sm:text-xs font-black uppercase tracking-wider transition-all shadow-sm active:translate-y-0.5 flex items-center gap-1 cursor-pointer ${
-            isClassicMode 
-              ? 'bg-rose-500 border-rose-400 text-white shadow-rose-900/35 animate-pulse'
-              : 'bg-white hover:bg-slate-50 border-slate-200 text-slate-500'
-          }`}
-        >
-          {isClassicMode ? 'Classic On 🏃‍♂️' : 'Classic Mode'}
-        </button>
+        <div className="flex items-center gap-1.5 select-none">
+          {/* Audio BGM Toggle */}
+          <button
+            onClick={() => setIsBgmOn(!isBgmOn)}
+            className={`w-7 h-7 sm:w-8 sm:h-8 rounded-xl text-xs font-black transition-all flex items-center justify-center select-none shadow-sm cursor-pointer border ${
+              isBgmOn 
+                ? 'bg-gradient-to-br from-emerald-400 to-teal-500 text-white border-emerald-500 hover:scale-105 active:scale-95' 
+                : 'bg-white hover:bg-slate-100 text-slate-400 border-slate-200'
+            }`}
+            title={isBgmOn ? "Mute Background Music" : "Play Synthesized BGM 🎵"}
+          >
+            {isBgmOn ? '🎵' : '🔇'}
+          </button>
+
+          <button 
+            onClick={() => setIsClassicMode(prev => !prev)}
+            className={`px-3 py-1.5 rounded-xl border text-[9px] sm:text-xs font-black uppercase tracking-wider transition-all shadow-sm active:translate-y-0.5 flex items-center gap-1 cursor-pointer ${
+              isClassicMode 
+                ? 'bg-rose-500 border-rose-400 text-white shadow-rose-900/35 animate-pulse'
+                : 'bg-white hover:bg-slate-50 border-slate-200 text-slate-500'
+            }`}
+          >
+            {isClassicMode ? 'Classic On 🏃‍♂️' : 'Classic Mode'}
+          </button>
+        </div>
       </header>
 
       {/* 2. MAIN CORE LAYOUT AREA */}

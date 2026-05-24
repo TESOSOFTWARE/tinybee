@@ -10,6 +10,7 @@ import { mathQuestions, MathQuestion } from '@/data/questions';
 import { MonsterAvatar } from '@/components/Battle/MonsterAvatar';
 import { PlayerAvatar } from '@/components/Battle/PlayerAvatar';
 import { HintModal } from '@/components/Battle/HintModal';
+import { playBGM, stopBGM } from '@/utils/audio';
 import { ArrowLeft, Star, Zap, Flame, Shield } from 'lucide-react';
 
 interface Invader {
@@ -88,6 +89,20 @@ function TowerDefenseContent() {
   const [combo, setCombo] = useState(0);
   const [correctCount, setCorrectCount] = useState(0);
   const [timeSpent, setTimeSpent] = useState(0);
+
+  // Audio BGM State and Effect
+  const [isBgmOn, setIsBgmOn] = useState(false);
+
+  useEffect(() => {
+    if (isBgmOn) {
+      playBGM();
+    } else {
+      stopBGM();
+    }
+    return () => {
+      stopBGM();
+    };
+  }, [isBgmOn]);
 
   // Monitor Game Over Defeat
   useEffect(() => {
@@ -415,10 +430,26 @@ function TowerDefenseContent() {
           </h2>
         </div>
 
-        {/* Combo Multiplier */}
-        <div className="flex items-center gap-1 sm:gap-1.5 bg-indigo-100 border-2 border-indigo-300 text-indigo-800 px-2 py-0.5 sm:px-3.5 sm:py-1 rounded-full font-black text-[10px] sm:text-xs shadow-sm">
-          <Flame className={`w-3.5 h-3.5 ${combo > 0 ? 'text-amber-500 fill-amber-500 animate-pulse' : 'text-indigo-400'}`} />
-          Combo: {combo}
+        {/* Right side controls (BGM & Combo) */}
+        <div className="flex items-center gap-2 select-none">
+          {/* Audio BGM Toggle */}
+          <button
+            onClick={() => setIsBgmOn(!isBgmOn)}
+            className={`w-7 h-7 sm:w-8 sm:h-8 rounded-xl text-xs font-black transition-all flex items-center justify-center select-none shadow-sm cursor-pointer border ${
+              isBgmOn 
+                ? 'bg-gradient-to-br from-emerald-400 to-teal-500 text-white border-emerald-500 hover:scale-105 active:scale-95' 
+                : 'bg-white hover:bg-slate-100 text-slate-400 border-slate-200'
+            }`}
+            title={isBgmOn ? "Mute Background Music" : "Play Synthesized BGM 🎵"}
+          >
+            {isBgmOn ? '🎵' : '🔇'}
+          </button>
+
+          {/* Combo Multiplier */}
+          <div className="flex items-center gap-1 sm:gap-1.5 bg-indigo-100 border-2 border-indigo-300 text-indigo-800 px-2 py-0.5 sm:px-3.5 sm:py-1 rounded-full font-black text-[10px] sm:text-xs shadow-sm h-7 sm:h-8">
+            <Flame className={`w-3.5 h-3.5 ${combo > 0 ? 'text-amber-500 fill-amber-500 animate-pulse' : 'text-indigo-400'}`} />
+            Combo: {combo}
+          </div>
         </div>
       </header>
 
