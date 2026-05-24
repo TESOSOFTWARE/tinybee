@@ -6,6 +6,8 @@ interface MonsterAvatarProps {
   isHit?: boolean;
   isDead?: boolean;
   isAttacking?: boolean;
+  className?: string;
+  hideLabel?: boolean;
 }
 
 export const MonsterAvatar: React.FC<MonsterAvatarProps> = ({
@@ -13,7 +15,9 @@ export const MonsterAvatar: React.FC<MonsterAvatarProps> = ({
   name,
   isHit = false,
   isDead = false,
-  isAttacking = false
+  isAttacking = false,
+  className = "w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32",
+  hideLabel = false
 }) => {
   // Simple float styles depending on monsterId
   const floatStyle = isDead
@@ -29,7 +33,7 @@ export const MonsterAvatar: React.FC<MonsterAvatarProps> = ({
     switch (monsterId) {
       case 'muddy_slime': // Jiggly green slime
         return (
-          <svg className="w-40 h-40 drop-shadow-lg mx-auto" viewBox="0 0 100 100" fill="none">
+          <svg className="w-full h-full drop-shadow-lg mx-auto" viewBox="0 0 100 100" fill="none">
             {/* Shadow */}
             <ellipse cx="50" cy="85" rx="30" ry="8" fill="#e2e8f0" />
             {/* Slime Body */}
@@ -57,7 +61,7 @@ export const MonsterAvatar: React.FC<MonsterAvatarProps> = ({
 
       case 'fluffy_ogre': // Bubbly purple cute ogre
         return (
-          <svg className="w-40 h-40 drop-shadow-lg mx-auto" viewBox="0 0 100 100" fill="none">
+          <svg className="w-full h-full drop-shadow-lg mx-auto" viewBox="0 0 100 100" fill="none">
             {/* Shadow */}
             <ellipse cx="50" cy="88" rx="25" ry="6" fill="#e2e8f0" />
             {/* Horns */}
@@ -89,7 +93,7 @@ export const MonsterAvatar: React.FC<MonsterAvatarProps> = ({
 
       case 'ember_fox': // Warm orange fiery fox
         return (
-          <svg className="w-40 h-40 drop-shadow-lg mx-auto" viewBox="0 0 100 100" fill="none">
+          <svg className="w-full h-full drop-shadow-lg mx-auto" viewBox="0 0 100 100" fill="none">
             <ellipse cx="50" cy="85" rx="28" ry="7" fill="#e2e8f0" />
             {/* Tail */}
             <path
@@ -130,7 +134,7 @@ export const MonsterAvatar: React.FC<MonsterAvatarProps> = ({
 
       case 'bramble_golem': // Forest Stone Golem
         return (
-          <svg className="w-40 h-40 drop-shadow-lg mx-auto" viewBox="0 0 100 100" fill="none">
+          <svg className="w-full h-full drop-shadow-lg mx-auto" viewBox="0 0 100 100" fill="none">
             <ellipse cx="50" cy="85" rx="32" ry="7" fill="#e2e8f0" />
             {/* Vines */}
             <path d="M25 30C15 45 12 70 30 78" stroke="#16a34a" strokeWidth="4" strokeLinecap="round" />
@@ -172,7 +176,7 @@ export const MonsterAvatar: React.FC<MonsterAvatarProps> = ({
       case 'sparky_dragon': // Cute golden electric dragon
       default:
         return (
-          <svg className="w-40 h-40 drop-shadow-lg mx-auto" viewBox="0 0 100 100" fill="none">
+          <svg className="w-full h-full drop-shadow-lg mx-auto" viewBox="0 0 100 100" fill="none">
             <ellipse cx="50" cy="88" rx="26" ry="6" fill="#e2e8f0" />
             {/* Wings */}
             <path d="M25 45C10 35 15 20 22 28C26 32 25 40 28 45Z" fill="#ea580c" stroke="#1e293b" strokeWidth="2.5" />
@@ -207,7 +211,7 @@ export const MonsterAvatar: React.FC<MonsterAvatarProps> = ({
   };
 
   return (
-    <div className={`relative flex flex-col items-center justify-center p-2 text-center select-none ${floatStyle}`}>
+    <div className={`relative flex flex-col items-center justify-center select-none ${className} ${floatStyle}`}>
       {isAttacking && (
         <div className="absolute -top-10 left-[-10px] text-5xl z-50 animate-stick-swing -scale-x-100 drop-shadow origin-bottom-left rotate-12">
           🦯
@@ -226,9 +230,11 @@ export const MonsterAvatar: React.FC<MonsterAvatarProps> = ({
         </div>
       )}
       {renderSVG()}
-      <span className="mt-2 inline-block px-3 py-1 bg-slate-800 text-white text-xs font-bold rounded-full shadow border border-slate-700">
-        Lv.1 {name}
-      </span>
+      {!hideLabel && (
+        <span className="mt-2 inline-block px-3 py-1 bg-slate-800 text-white text-xs font-bold rounded-full shadow border border-slate-700">
+          Lv.1 {name}
+        </span>
+      )}
     </div>
   );
 };

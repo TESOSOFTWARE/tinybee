@@ -380,8 +380,8 @@ function RacingGameContent() {
             }}
           >
             {/* Active companion pet seated inside kart */}
-            <div className="w-12 h-12 relative animate-float">
-              <PlayerAvatar petId={state.activePetId} />
+            <div className="w-12 h-12 relative animate-float flex items-center justify-center">
+              <PlayerAvatar petId={state.activePetId} className="w-full h-full" />
             </div>
 
             {/* Custom 3D SVG Racing Kart */}
@@ -440,8 +440,8 @@ function RacingGameContent() {
               bottom: `${Math.max(10, Math.min(80, 20 + (opponents[0]?.progress || 0) - playerProgress))}%` 
             }}
           >
-            <div className="w-8 h-8 scale-75 animate-bounce-slow">
-              <MonsterAvatar monsterId={worldInfo.monsterIds?.[0] || 'muddy_slime'} name={worldInfo.monsterNames?.[0] || 'Tiny Slime'} />
+            <div className="w-8 h-8 scale-75 animate-bounce-slow flex items-center justify-center">
+              <MonsterAvatar monsterId={worldInfo.monsterIds?.[0] || 'muddy_slime'} name={worldInfo.monsterNames?.[0] || 'Tiny Slime'} className="w-full h-full" hideLabel={true} />
             </div>
             <svg className="w-12 h-9 drop-shadow" viewBox="0 0 60 40" fill="none">
               <rect x="5" y="4" width="50" height="6" rx="2" fill="#22c55e" stroke="#1e293b" strokeWidth="2" />
@@ -459,8 +459,8 @@ function RacingGameContent() {
               bottom: `${Math.max(10, Math.min(80, 20 + (opponents[1]?.progress || 0) - playerProgress))}%` 
             }}
           >
-            <div className="w-8 h-8 scale-75 animate-bounce-slow">
-              <MonsterAvatar monsterId="fluffy_ogre" name="Turbo Ogre" />
+            <div className="w-8 h-8 scale-75 animate-bounce-slow flex items-center justify-center">
+              <MonsterAvatar monsterId="fluffy_ogre" name="Turbo Ogre" className="w-full h-full" hideLabel={true} />
             </div>
             <svg className="w-12 h-9 drop-shadow" viewBox="0 0 60 40" fill="none">
               <rect x="5" y="4" width="50" height="6" rx="2" fill="#a855f7" stroke="#1e293b" strokeWidth="2" />

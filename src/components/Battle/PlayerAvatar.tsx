@@ -4,12 +4,14 @@ interface PlayerAvatarProps {
   petId: string;
   isAttacking?: boolean;
   isHit?: boolean;
+  className?: string;
 }
 
 export const PlayerAvatar: React.FC<PlayerAvatarProps> = ({
   petId,
   isAttacking = false,
-  isHit = false
+  isHit = false,
+  className = "w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32"
 }) => {
   // Determine movement classes
   const animClass = isAttacking
@@ -22,7 +24,7 @@ export const PlayerAvatar: React.FC<PlayerAvatarProps> = ({
     switch (petId) {
       case 'aqua_puppy': // Cute sky blue dog
         return (
-          <svg className="w-32 h-32 drop-shadow-md mx-auto" viewBox="0 0 100 100" fill="none">
+          <svg className="w-full h-full drop-shadow-md mx-auto" viewBox="0 0 100 100" fill="none">
             <ellipse cx="50" cy="85" rx="22" ry="6" fill="#cbd5e1" />
             {/* Floppy Ears */}
             <path d="M28 35C20 32 24 55 28 50Z" fill="#0284c7" stroke="#1e293b" strokeWidth="2.5" />
@@ -46,7 +48,7 @@ export const PlayerAvatar: React.FC<PlayerAvatarProps> = ({
 
       case 'pyrosaur': // Fiery red/orange little dino
         return (
-          <svg className="w-32 h-32 drop-shadow-md mx-auto" viewBox="0 0 100 100" fill="none">
+          <svg className="w-full h-full drop-shadow-md mx-auto" viewBox="0 0 100 100" fill="none">
             <ellipse cx="50" cy="85" rx="24" ry="6" fill="#cbd5e1" />
             {/* Back Spikes */}
             <path d="M30 35L22 28L32 32Z" fill="#ef4444" stroke="#1e293b" strokeWidth="2" />
@@ -78,7 +80,7 @@ export const PlayerAvatar: React.FC<PlayerAvatarProps> = ({
 
       case 'star_bunny': // Magic purple bunny
         return (
-          <svg className="w-32 h-32 drop-shadow-md mx-auto" viewBox="0 0 100 100" fill="none">
+          <svg className="w-full h-full drop-shadow-md mx-auto" viewBox="0 0 100 100" fill="none">
             <ellipse cx="50" cy="85" rx="20" ry="5" fill="#cbd5e1" />
             {/* Long Bunny Ears */}
             <path d="M38 32C32 10 44 10 42 28Z" fill="#c084fc" stroke="#1e293b" strokeWidth="2.5" />
@@ -102,7 +104,7 @@ export const PlayerAvatar: React.FC<PlayerAvatarProps> = ({
 
       case 'sparky_owl': // Wise lightning owl
         return (
-          <svg className="w-32 h-32 drop-shadow-md mx-auto" viewBox="0 0 100 100" fill="none">
+          <svg className="w-full h-full drop-shadow-md mx-auto" viewBox="0 0 100 100" fill="none">
             <ellipse cx="50" cy="85" rx="22" ry="6" fill="#cbd5e1" />
             {/* Wings */}
             <path d="M26 50C15 45 22 65 29 55Z" fill="#eab308" stroke="#1e293b" strokeWidth="2" />
@@ -128,7 +130,7 @@ export const PlayerAvatar: React.FC<PlayerAvatarProps> = ({
       case 'leaf_kitten': // Starting green kitten
       default:
         return (
-          <svg className="w-32 h-32 drop-shadow-md mx-auto" viewBox="0 0 100 100" fill="none">
+          <svg className="w-full h-full drop-shadow-md mx-auto" viewBox="0 0 100 100" fill="none">
             {/* Shadow */}
             <ellipse cx="50" cy="85" rx="20" ry="5" fill="#cbd5e1" />
             {/* Ears */}
@@ -155,7 +157,7 @@ export const PlayerAvatar: React.FC<PlayerAvatarProps> = ({
   };
 
   return (
-    <div className={`relative flex items-center justify-center p-1 select-none ${animClass}`}>
+    <div className={`relative flex items-center justify-center p-1 select-none ${className} ${animClass}`}>
       {isAttacking && (
         <div className="absolute -top-10 right-[-10px] text-5xl z-50 animate-stick-swing drop-shadow origin-bottom-left rotate-12">
           🦯
