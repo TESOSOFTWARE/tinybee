@@ -11,7 +11,7 @@ import { MonsterAvatar } from '@/components/Battle/MonsterAvatar';
 import { PlayerAvatar } from '@/components/Battle/PlayerAvatar';
 import { HintModal } from '@/components/Battle/HintModal';
 import { playBGM, stopBGM } from '@/utils/audio';
-import { ArrowLeft, Star, Zap, Flame, Shield } from 'lucide-react';
+import { ArrowLeft, Star, Zap, Flame, Shield, Volume2, VolumeX } from 'lucide-react';
 
 interface Invader {
   id: string;
@@ -91,7 +91,7 @@ function TowerDefenseContent() {
   const [timeSpent, setTimeSpent] = useState(0);
 
   // Audio BGM State and Effect
-  const [isBgmOn, setIsBgmOn] = useState(false);
+  const [isBgmOn, setIsBgmOn] = useState(true);
 
   useEffect(() => {
     if (isBgmOn) {
@@ -442,7 +442,7 @@ function TowerDefenseContent() {
             }`}
             title={isBgmOn ? "Mute Background Music" : "Play Synthesized BGM 🎵"}
           >
-            {isBgmOn ? '🎵' : '🔇'}
+            {isBgmOn ? <Volume2 className="w-4 h-4" /> : <VolumeX className="w-4 h-4" />}
           </button>
 
           {/* Combo Multiplier */}

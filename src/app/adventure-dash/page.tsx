@@ -18,7 +18,9 @@ import {
   Home, 
   BookOpen, 
   Play, 
-  HelpCircle 
+  HelpCircle,
+  Volume2,
+  VolumeX
 } from 'lucide-react';
 
 // Beautiful custom Explorer Hat SVG component to sit on top of the pet companion
@@ -94,7 +96,7 @@ const AdventureDashContent: React.FC = () => {
   const [timeSpent, setTimeSpent] = useState(0);
 
   // Audio BGM State and Effect
-  const [isBgmOn, setIsBgmOn] = useState(false);
+  const [isBgmOn, setIsBgmOn] = useState(true);
 
   useEffect(() => {
     if (isBgmOn) {
@@ -363,7 +365,7 @@ const AdventureDashContent: React.FC = () => {
             }`}
             title={isBgmOn ? "Mute Background Music" : "Play Synthesized BGM 🎵"}
           >
-            {isBgmOn ? '🎵' : '🔇'}
+            {isBgmOn ? <Volume2 className="w-4 h-4" /> : <VolumeX className="w-4 h-4" />}
           </button>
 
           <button 

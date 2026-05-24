@@ -11,7 +11,7 @@ import { MonsterAvatar } from '@/components/Battle/MonsterAvatar';
 import { PlayerAvatar } from '@/components/Battle/PlayerAvatar';
 import { HintModal } from '@/components/Battle/HintModal';
 import { playBGM, stopBGM } from '@/utils/audio';
-import { ArrowLeft, Shield, Flame, Award, Trophy } from 'lucide-react';
+import { ArrowLeft, Shield, Flame, Award, Trophy, Volume2, VolumeX } from 'lucide-react';
 
 interface Opponent {
   id: string;
@@ -65,7 +65,7 @@ function RacingGameContent() {
   const [timeSpent, setTimeSpent] = useState(0);
 
   // Audio BGM State and Effect
-  const [isBgmOn, setIsBgmOn] = useState(false);
+  const [isBgmOn, setIsBgmOn] = useState(true);
 
   useEffect(() => {
     if (isBgmOn) {
@@ -321,7 +321,7 @@ function RacingGameContent() {
             }`}
             title={isBgmOn ? "Mute Background Music" : "Play Synthesized BGM 🎵"}
           >
-            {isBgmOn ? '🎵' : '🔇'}
+            {isBgmOn ? <Volume2 className="w-4 h-4" /> : <VolumeX className="w-4 h-4" />}
           </button>
 
           {/* Combo flame */}

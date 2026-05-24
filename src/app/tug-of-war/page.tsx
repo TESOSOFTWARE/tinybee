@@ -11,7 +11,7 @@ import { MonsterAvatar } from '@/components/Battle/MonsterAvatar';
 import { PlayerAvatar } from '@/components/Battle/PlayerAvatar';
 import { QuestionCard } from '@/components/Battle/QuestionCard';
 import { HintModal } from '@/components/Battle/HintModal';
-import { ArrowLeft, Zap, Trophy, Flame } from 'lucide-react';
+import { ArrowLeft, Zap, Trophy, Flame, Volume2, VolumeX } from 'lucide-react';
 
 import { playBGM, stopBGM } from '@/utils/audio';
 import { WORLDS_DATABASE } from '@/data/worlds';
@@ -40,7 +40,7 @@ function TugOfWarContent() {
   const [isAnsweringBlocked, setIsAnsweringBlocked] = useState(false);
 
   // Audio BGM State
-  const [isBgmOn, setIsBgmOn] = useState(false);
+  const [isBgmOn, setIsBgmOn] = useState(true); // Auto turn on background music by default
 
   // Animation States
   const [isPlayerPulling, setIsPlayerPulling] = useState(false);
@@ -197,17 +197,17 @@ function TugOfWarContent() {
         </span>
         
         {/* BGM Toggle button */}
-        <div className="flex items-center gap-1.5 bg-slate-50 border border-slate-200 px-1.5 py-0.5 sm:px-2 sm:py-1 rounded-xl shadow-inner shrink-0">
+        <div className="flex items-center shrink-0">
           <button
             onClick={() => setIsBgmOn(!isBgmOn)}
-            className={`w-6 h-6 sm:w-7 sm:h-7 rounded-lg text-[10px] sm:text-xs font-black transition-all flex items-center justify-center select-none shadow-sm ${
+            className={`w-7 h-7 sm:w-8 sm:h-8 rounded-xl text-xs font-black transition-all flex items-center justify-center select-none shadow-sm cursor-pointer border ${
               isBgmOn 
-                ? 'bg-gradient-to-br from-emerald-400 to-teal-500 text-white border border-emerald-500 hover:scale-105 active:scale-95' 
-                : 'bg-white hover:bg-slate-100 text-slate-400 border border-slate-200'
+                ? 'bg-gradient-to-br from-emerald-400 to-teal-500 text-white border-emerald-500 hover:scale-105 active:scale-95' 
+                : 'bg-white hover:bg-slate-100 text-slate-400 border-slate-200'
             }`}
             title={isBgmOn ? "Mute Background Music" : "Play Synthesized BGM 🎵"}
           >
-            {isBgmOn ? '🎵' : '🔇'}
+            {isBgmOn ? <Volume2 className="w-4 h-4" /> : <VolumeX className="w-4 h-4" />}
           </button>
         </div>
       </header>
