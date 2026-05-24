@@ -272,6 +272,20 @@ function WorldMapContent() {
                 </div>
               </Link>
 
+              {/* Mode 5: Adventure Dash Runner */}
+              <Link href={`/adventure-dash?worldId=${world.id}&levelId=${selectedLvlNum}`} className="w-full">
+                <div className="group w-full p-3.5 rounded-2xl border-2 border-rose-300 hover:border-rose-500 bg-rose-50/50 hover:bg-rose-50 active:translate-y-0.5 transition-all text-left flex items-center gap-3 cursor-pointer shadow-sm">
+                  <div className="w-12 h-12 bg-rose-100 border border-rose-300 text-2xl rounded-xl flex items-center justify-center shadow-inner group-hover:scale-105 transition-transform shrink-0">
+                    🏃‍♂️
+                  </div>
+                  <div className="flex-grow min-w-0">
+                    <h4 className="font-extrabold text-rose-900 text-sm">🏃‍♂️ Adventure Dash</h4>
+                    <p className="text-[10px] text-rose-700 font-medium leading-relaxed mt-0.5">Dash through the dungeon choosing even, odd, or other number types to escape with magical gems!</p>
+                  </div>
+                  <span className="text-base font-black text-rose-500 shrink-0">➔</span>
+                </div>
+              </Link>
+
             </div>
 
             {/* Cancel Button */}
