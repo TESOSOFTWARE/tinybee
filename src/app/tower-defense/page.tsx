@@ -242,17 +242,6 @@ function TowerDefenseContent() {
     setTimeout(() => setIsPetAttacking(false), 400);
   };
 
-  if (isLoading || questions.length === 0) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-playful-dots">
-        <div className="text-center space-y-4">
-          <span className="text-4xl animate-bounce inline-block">🏰</span>
-          <p className="text-lg font-bold text-slate-500 font-extrabold">Constructing Math Lasers...</p>
-        </div>
-      </div>
-    );
-  }
-
   const currentQuestion = questions[qIndex] || questions[0];
 
   // Auto-speak question when it loads or changes
@@ -264,6 +253,17 @@ function TowerDefenseContent() {
       stopSpeech();
     };
   }, [currentQuestion]);
+
+  if (isLoading || questions.length === 0) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-playful-dots">
+        <div className="text-center space-y-4">
+          <span className="text-4xl animate-bounce inline-block">🏰</span>
+          <p className="text-lg font-bold text-slate-500 font-extrabold">Constructing Math Lasers...</p>
+        </div>
+      </div>
+    );
+  }
 
   // Submit Answer Trigger
   const handleAnswerSubmit = (answer: string) => {

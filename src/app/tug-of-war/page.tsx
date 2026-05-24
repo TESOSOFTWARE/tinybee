@@ -83,17 +83,6 @@ function TugOfWarContent() {
     setQuestions(selected);
   }, [worldId, levelId, world.grade, world.topicId]);
 
-  if (questions.length === 0) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-playful-dots">
-        <div className="text-center space-y-4">
-          <span className="text-4xl animate-bounce inline-block">🎒</span>
-          <p className="text-lg font-bold text-slate-500 font-sans">Spinning Tug Field...</p>
-        </div>
-      </div>
-    );
-  }
-
   const currentQuestion = questions[currentIdx];
 
   // Auto-speak question when it loads or changes
@@ -105,6 +94,17 @@ function TugOfWarContent() {
       stopSpeech();
     };
   }, [currentQuestion]);
+
+  if (questions.length === 0) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-playful-dots">
+        <div className="text-center space-y-4">
+          <span className="text-4xl animate-bounce inline-block">🎒</span>
+          <p className="text-lg font-bold text-slate-500 font-sans">Spinning Tug Field...</p>
+        </div>
+      </div>
+    );
+  }
 
   const handleAnswerSelect = (selectedAnswer: string) => {
     if (isAnsweringBlocked || showHint) return;

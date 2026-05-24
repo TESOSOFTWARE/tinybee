@@ -275,17 +275,6 @@ function RacingGameContent() {
     advanceQuestion();
   };
 
-  if (isLoading || questions.length === 0) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-playful-dots">
-        <div className="text-center space-y-4">
-          <span className="text-4xl animate-bounce inline-block">🏎️</span>
-          <p className="text-lg font-bold text-slate-500 font-extrabold">Constructing Racing Tracks...</p>
-        </div>
-      </div>
-    );
-  }
-
   const currentQuestion = questions[qIndex] || questions[0];
 
   // Auto-speak question when it loads or changes
@@ -297,6 +286,17 @@ function RacingGameContent() {
       stopSpeech();
     };
   }, [currentQuestion]);
+
+  if (isLoading || questions.length === 0) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-playful-dots">
+        <div className="text-center space-y-4">
+          <span className="text-4xl animate-bounce inline-block">🏎️</span>
+          <p className="text-lg font-bold text-slate-500 font-extrabold">Constructing Racing Tracks...</p>
+        </div>
+      </div>
+    );
+  }
 
   // Dynamic road scrolling speed based on current state
   const scrollDuration = isNitroActive ? '0.1s' : isSkidding ? '1.5s' : '0.4s';

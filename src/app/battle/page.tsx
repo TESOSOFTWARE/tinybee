@@ -82,17 +82,6 @@ function BattleContent() {
     setQuestions(shuffled.slice(0, 5));
   }, [worldId, levelId, world.grade, world.topicId]);
 
-  if (questions.length === 0) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-playful-dots">
-        <div className="text-center space-y-4">
-          <span className="text-4xl animate-bounce inline-block">🎒</span>
-          <p className="text-lg font-bold text-slate-500 font-sans">Charging Mana Spells...</p>
-        </div>
-      </div>
-    );
-  }
-
   const currentQuestion = questions[currentIdx];
 
   // Auto-speak question when it loads or changes
@@ -104,6 +93,17 @@ function BattleContent() {
       stopSpeech();
     };
   }, [currentQuestion]);
+
+  if (questions.length === 0) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-playful-dots">
+        <div className="text-center space-y-4">
+          <span className="text-4xl animate-bounce inline-block">🎒</span>
+          <p className="text-lg font-bold text-slate-500 font-sans">Charging Mana Spells...</p>
+        </div>
+      </div>
+    );
+  }
 
   const handleAnswerSelect = (answer: string) => {
     if (isAnsweringBlocked) return;
