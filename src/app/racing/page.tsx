@@ -12,6 +12,7 @@ import { PlayerAvatar } from '@/components/Battle/PlayerAvatar';
 import { HintModal } from '@/components/Battle/HintModal';
 import { playBGM, stopBGM } from '@/utils/audio';
 import { speakText, stopSpeech } from '@/utils/tts';
+import { getScaledQuestions } from '@/utils/difficulty';
 import { ArrowLeft, Shield, Flame, Award, Trophy, Volume2, VolumeX } from 'lucide-react';
 
 interface Opponent {
@@ -107,8 +108,8 @@ function RacingGameContent() {
     const gradeVal = getGradeFromWorldId(worldId);
 
     const filtered = mathQuestions.filter(q => q.grade === gradeVal && q.topic === topicName);
-    const shuffled = [...filtered].sort(() => 0.5 - Math.random()).slice(0, 5);
-    setQuestions(shuffled);
+    const scaled = getScaledQuestions(filtered, levelId, 5);
+    setQuestions(scaled);
 
     // 2. Initialize Opponent Monster Karts
     const primaryMonsterName = worldInfo.monsterNames?.[0] || 'Tiny Slime';

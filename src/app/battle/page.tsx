@@ -16,6 +16,7 @@ import { ArrowLeft, Zap, Sparkles, Award, Volume2, VolumeX } from 'lucide-react'
 
 import { playBGM, stopBGM } from '@/utils/audio';
 import { speakText, stopSpeech } from '@/utils/tts';
+import { getScaledQuestions } from '@/utils/difficulty';
 import { WORLDS_DATABASE } from '@/data/worlds';
 
 function BattleContent() {
@@ -77,9 +78,9 @@ function BattleContent() {
       q => q.grade === world.grade && q.topic === world.topicId
     );
 
-    // Shuffle and pick exactly 5 questions
-    const shuffled = [...matched].sort(() => Math.random() - 0.5);
-    setQuestions(shuffled.slice(0, 5));
+    // Apply difficulty scaling from easy to hard based on levelId
+    const scaled = getScaledQuestions(matched, parseInt(levelId), 5);
+    setQuestions(scaled);
   }, [worldId, levelId, world.grade, world.topicId]);
 
   const currentQuestion = questions[currentIdx];

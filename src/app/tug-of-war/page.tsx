@@ -15,6 +15,7 @@ import { ArrowLeft, Zap, Trophy, Flame, Volume2, VolumeX } from 'lucide-react';
 
 import { playBGM, stopBGM } from '@/utils/audio';
 import { speakText, stopSpeech } from '@/utils/tts';
+import { getScaledQuestions } from '@/utils/difficulty';
 import { WORLDS_DATABASE } from '@/data/worlds';
 
 function TugOfWarContent() {
@@ -71,16 +72,10 @@ function TugOfWarContent() {
     const matched = mathQuestions.filter(
       q => q.grade === world.grade && q.topic === world.topicId
     );
-    const shuffled = [...matched].sort(() => Math.random() - 0.5);
     
-    // Guarantee a full deck of 10 questions (repeating elements if needed)
-    let selected = shuffled.slice(0, 10);
-    if (selected.length > 0 && selected.length < 10) {
-      while (selected.length < 10) {
-        selected = [...selected, ...shuffled].slice(0, 10);
-      }
-    }
-    setQuestions(selected);
+    // Apply difficulty scaling from easy to hard based on levelId (requests deck of 10)
+    const scaled = getScaledQuestions(matched, parseInt(levelId), 10);
+    setQuestions(scaled);
   }, [worldId, levelId, world.grade, world.topicId]);
 
   const currentQuestion = questions[currentIdx];

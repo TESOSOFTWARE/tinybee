@@ -12,6 +12,7 @@ import { PlayerAvatar } from '@/components/Battle/PlayerAvatar';
 import { HintModal } from '@/components/Battle/HintModal';
 import { playBGM, stopBGM } from '@/utils/audio';
 import { speakText, stopSpeech } from '@/utils/tts';
+import { getScaledQuestions } from '@/utils/difficulty';
 import { ArrowLeft, Star, Zap, Flame, Shield, Volume2, VolumeX } from 'lucide-react';
 
 interface Invader {
@@ -127,8 +128,8 @@ function TowerDefenseContent() {
     const gradeVal = getGradeFromWorldId(worldId);
 
     const filtered = mathQuestions.filter(q => q.grade === gradeVal && q.topic === topicName);
-    const shuffled = [...filtered].sort(() => 0.5 - Math.random()).slice(0, 5);
-    setQuestions(shuffled);
+    const scaled = getScaledQuestions(filtered, levelId, 5);
+    setQuestions(scaled);
 
     // 2. Initialize 5 invaders with staggered marching start progress values
     const primaryMonsterName = worldInfo.monsterNames?.[0] || 'Tiny Slime';
