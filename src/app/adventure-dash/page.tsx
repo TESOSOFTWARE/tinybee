@@ -320,193 +320,159 @@ const AdventureDashContent: React.FC = () => {
   const currentQuestion = questions[qIndex];
 
   return (
-    <div className="min-h-screen bg-slate-950 font-sans overflow-hidden flex flex-col relative select-none text-slate-100">
+    <div className={`min-h-screen ${worldInfo.bgClass || 'bg-playful-dots bg-slate-50'} py-2 sm:py-4 px-2 sm:px-4 flex flex-col justify-between select-none font-sans overflow-x-hidden text-slate-800`}>
       
-      {/* 1. TOP NAVBAR STATUS PANEL */}
-      <header className="absolute top-0 left-0 right-0 z-30 p-4 bg-gradient-to-b from-slate-950/80 to-transparent flex items-center justify-between pointer-events-none">
-        
-        {/* Left Side: Exit Button & Classic Toggle */}
-        <div className="flex items-center gap-3 pointer-events-auto">
-          <Link href={`/world-map?worldId=${worldId}`}>
-            <button className="bg-slate-900/90 border border-slate-700 hover:bg-slate-800 p-2.5 rounded-xl transition-all shadow active:translate-y-0.5">
-              <Home className="w-5 h-5 text-slate-300" />
-            </button>
-          </Link>
-          
-          <button 
-            onClick={() => setIsClassicMode(prev => !prev)}
-            className={`px-3 py-1.5 rounded-xl border text-[10px] sm:text-xs font-black uppercase tracking-wider transition-all shadow-md active:translate-y-0.5 flex items-center gap-1.5 ${
-              isClassicMode 
-                ? 'bg-rose-500 border-rose-400 text-white shadow-rose-900/35 animate-pulse'
-                : 'bg-slate-900/95 border-slate-700 text-slate-400 hover:text-white'
-            }`}
-          >
-            🏃‍♂️ {isClassicMode ? 'Classic Even/Odd On' : 'Play Classic Even/Odd'}
+      {/* 1. TOP NAVBAR HEADER PANEL */}
+      <header className="max-w-4xl w-full mx-auto flex items-center justify-between bg-white/90 backdrop-blur-sm px-3 py-1.5 sm:px-4 sm:py-2 rounded-2xl border-2 border-slate-200 shadow-sm z-20">
+        <Link href={`/world-map?worldId=${worldId}`}>
+          <button className="bg-slate-50 hover:bg-slate-100 border border-slate-200 px-3 py-1.5 rounded-xl transition-all shadow-sm active:translate-y-0.5 text-xs sm:text-sm font-black text-slate-600 flex items-center gap-1 cursor-pointer">
+            ➔ Exit
           </button>
+        </Link>
+        
+        <div className="text-center">
+          <span className="text-[9px] font-black text-slate-400 uppercase tracking-widest block animate-pulse">Adventure Run</span>
+          <h2 className="text-xs sm:text-base font-black text-slate-800 flex items-center gap-1 justify-center leading-none">
+            🏃‍♂️ Dungeon Escape (Level {levelId})
+          </h2>
         </div>
 
-        {/* Middle: Gate Progress Indicator & Magical Gems */}
-        <div className="flex flex-col items-center gap-1 shrink-0">
-          <span className="text-[10px] font-black text-rose-400 tracking-widest uppercase">Dungeon Progress</span>
-          <div className="flex items-center gap-2 bg-slate-900/95 border border-slate-700 px-3 py-1.5 rounded-2xl shadow-lg">
-            {/* Gate Dots */}
-            <div className="flex items-center gap-1.5">
-              {Array.from({ length: questions.length }).map((_, i) => (
-                <div 
-                  key={i} 
-                  className={`w-2.5 h-2.5 rounded-full border transition-all ${
-                    i < qIndex 
-                      ? 'bg-emerald-400 border-emerald-300 scale-105 shadow shadow-emerald-500'
-                      : i === qIndex 
-                      ? 'bg-rose-500 border-rose-400 scale-110 shadow shadow-rose-400 animate-ping-slow'
-                      : 'bg-slate-800 border-slate-700'
-                  }`}
-                />
-              ))}
-            </div>
-            
-            <div className="w-px h-4 bg-slate-700 mx-1.5" />
+        <button 
+          onClick={() => setIsClassicMode(prev => !prev)}
+          className={`px-3 py-1.5 rounded-xl border text-[9px] sm:text-xs font-black uppercase tracking-wider transition-all shadow-sm active:translate-y-0.5 flex items-center gap-1 cursor-pointer ${
+            isClassicMode 
+              ? 'bg-rose-500 border-rose-400 text-white shadow-rose-900/35 animate-pulse'
+              : 'bg-white hover:bg-slate-50 border-slate-200 text-slate-500'
+          }`}
+        >
+          {isClassicMode ? 'Classic On 🏃‍♂️' : 'Classic Mode'}
+        </button>
+      </header>
 
-            {/* Gems Slots */}
-            <div className="flex items-center gap-1.5">
-              <div 
-                className={`w-7 h-7 rounded-lg flex items-center justify-center text-sm border transition-all ${
-                  collectedGems.includes('ruby') 
-                    ? 'bg-red-950 border-red-500 text-red-400 scale-105 shadow shadow-red-500' 
-                    : 'bg-slate-900/60 border-slate-800 text-slate-600'
-                }`}
-                title="Ruby of Gate 1"
-              >
-                ♦️
-              </div>
-              <div 
-                className={`w-7 h-7 rounded-lg flex items-center justify-center text-sm border transition-all ${
-                  collectedGems.includes('emerald') 
-                    ? 'bg-emerald-950 border-emerald-500 text-emerald-400 scale-105 shadow shadow-emerald-500' 
-                    : 'bg-slate-900/60 border-slate-800 text-slate-600'
-                }`}
-                title="Emerald of Gate 3"
-              >
-                ♣️
-              </div>
-              <div 
-                className={`w-7 h-7 rounded-lg flex items-center justify-center text-sm border transition-all ${
-                  collectedGems.includes('sapphire') 
-                    ? 'bg-blue-950 border-blue-500 text-blue-400 scale-105 shadow shadow-blue-500' 
-                    : 'bg-slate-900/60 border-slate-800 text-slate-600'
-                }`}
-                title="Sapphire of Gate 5"
-              >
-                ♠️
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Right Side: Hearts & Coins HUD */}
-        <div className="flex items-center gap-3 pointer-events-auto">
-          {/* Hearts */}
-          <div className="flex items-center gap-1 bg-slate-900/90 border border-slate-700 px-3 py-2 rounded-xl shadow">
+      {/* 2. MAIN CORE LAYOUT AREA */}
+      <main className="max-w-4xl w-full mx-auto flex-grow flex flex-col justify-center gap-3 my-2.5 sm:my-3">
+        
+        {/* Dynamic HUD: Hearts, Gate Dots, Coins, and Gems */}
+        <div className="w-full bg-white/95 backdrop-blur-sm px-4 py-2.5 rounded-2xl border-2 border-slate-200 shadow-sm flex flex-col sm:flex-row gap-3 justify-between items-center select-none z-10">
+          {/* Hearts container */}
+          <div className="flex items-center gap-1.5 bg-slate-50 border border-slate-200 px-3 py-1.5 rounded-xl shadow-inner shrink-0">
             {Array.from({ length: 3 }).map((_, i) => (
               <Heart 
                 key={i} 
-                className={`w-5 h-5 transition-transform duration-300 ${
+                className={`w-4.5 h-4.5 transition-transform duration-300 ${
                   i < hearts 
                     ? 'fill-rose-500 text-rose-500 scale-110 drop-shadow animate-float' 
-                    : 'text-slate-700 scale-90'
+                    : 'text-slate-200 scale-90'
                 }`} 
               />
             ))}
           </div>
 
-          {/* Gold Coins HUD */}
-          <div className="flex items-center gap-1.5 bg-slate-900/90 border border-slate-700 px-3 py-2 rounded-xl shadow font-black text-amber-400">
-            <Coins className="w-5 h-5 fill-amber-400 animate-spin-slow" />
-            <span className="text-sm">{coinsEarned}</span>
-          </div>
-        </div>
-
-      </header>
-
-      {/* 2. MAIN ACTIVE CHALLENGE SCROLL (Top Middle) */}
-      <section className="absolute top-20 left-1/2 transform -translate-x-1/2 w-[90%] max-w-xl z-20 pointer-events-none flex flex-col items-center">
-        {currentQuestion && (
-          <div className="w-full bg-[#f6ecd2] border-4 border-[#854d0e] rounded-2xl py-3 px-6 shadow-xl relative animate-pop-in flex flex-col items-center">
-            {/* Scroll End Knobs */}
-            <div className="absolute top-1/2 -left-3.5 transform -translate-y-1/2 w-4 h-12 bg-[#854d0e] rounded-l border-y border-l border-amber-900 shadow-lg"></div>
-            <div className="absolute top-1/2 -right-3.5 transform -translate-y-1/2 w-4 h-12 bg-[#854d0e] rounded-r border-y border-r border-amber-900 shadow-lg"></div>
-            
-            <h2 className="text-amber-900 font-extrabold text-[10px] sm:text-xs tracking-widest uppercase flex items-center gap-1 mt-0.5">
-              📜 Magic Parchment Prompt
-            </h2>
-            <p className="text-amber-950 text-sm sm:text-base md:text-lg font-black text-center mt-1 leading-snug drop-shadow-xs">
-              {currentQuestion.prompt}
-            </p>
-          </div>
-        )}
-      </section>
-
-      {/* 3. PARALLAX SIDE-SCROLLING DUNGEON GRAPHICS ENGINE */}
-      <main className="flex-grow w-full relative flex items-center justify-center p-4">
-        
-        {/* Parallax Layer 1: Brick wall background */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-slate-900 via-slate-950 to-purple-950 z-0" />
-        
-        {/* Tiled parallax wall panel strips */}
-        <div className="absolute top-0 bottom-0 left-0 right-0 z-0 pointer-events-none opacity-15 overflow-hidden">
-          <div className="absolute w-[300%] h-full flex animate-infinite-scroll-fast">
-            <div className="w-1/3 h-full border-r border-dashed border-indigo-500/20 bg-grid-bricks" />
-            <div className="w-1/3 h-full border-r border-dashed border-indigo-500/20 bg-grid-bricks" />
-            <div className="w-1/3 h-full bg-grid-bricks" />
-          </div>
-        </div>
-
-        {/* Neon blue torches lighting up the dungeon */}
-        <div className="absolute inset-0 z-0 pointer-events-none flex justify-around items-center opacity-70">
-          <div className="absolute top-[30%] left-[10%] flex flex-col items-center">
-            <div className="w-4 h-12 bg-amber-800 rounded border border-amber-950 rotate-12 shadow" />
-            <div className="w-5 h-5 bg-cyan-400 rounded-full animate-ping absolute -top-3 filter blur-xs" />
-            <div className="w-6 h-6 bg-blue-500 rounded-full absolute -top-3.5 shadow-inner border border-blue-400" />
-          </div>
-          <div className="absolute top-[30%] right-[10%] flex flex-col items-center">
-            <div className="w-4 h-12 bg-amber-800 rounded border border-amber-950 -rotate-12 shadow" />
-            <div className="w-5 h-5 bg-cyan-400 rounded-full animate-ping absolute -top-3 filter blur-xs" />
-            <div className="w-6 h-6 bg-blue-500 rounded-full absolute -top-3.5 shadow-inner border border-blue-400" />
-          </div>
-        </div>
-
-        {/* Parallax scrolling dungeon flooring grid */}
-        <div className="absolute bottom-0 left-0 right-0 h-[45%] bg-gradient-to-t from-slate-950 to-transparent z-0 pointer-events-none border-t border-slate-800/30 overflow-hidden">
-          <div 
-            className={`absolute inset-0 bg-stone-tiles w-[300%] h-full flex ${
-              isDashing ? 'animate-infinite-scroll-fast' : 'animate-infinite-scroll-slow'
-            }`}
-          >
-            <div className="w-1/3 h-full border-r border-slate-800/40" />
-            <div className="w-1/3 h-full border-r border-slate-800/40" />
-            <div className="w-1/3 h-full" />
-          </div>
-        </div>
-
-        {/* 4. ACTIVE KART RUNNER & THE THREE TRACK LANES */}
-        <div className="w-full max-w-4xl h-[320px] relative z-10 flex items-center justify-between px-4 sm:px-12 mt-20">
-          
-          {/* LANES CONTAINER */}
-          <div className="absolute inset-y-0 left-0 right-0 flex flex-col justify-between py-6 pointer-events-none">
-            {/* Top Lane, Middle Lane, Bottom Lane tracks */}
-            {[0, 1, 2].map((lane) => (
+          {/* Gate dots progress */}
+          <div className="flex items-center gap-1.5">
+            {Array.from({ length: questions.length }).map((_, i) => (
               <div 
-                key={lane} 
-                className={`w-full h-8 bg-slate-900/45 border-y border-dashed transition-colors duration-300 relative ${
-                  activeLane === lane 
-                    ? 'border-rose-500/30 bg-rose-950/10' 
-                    : 'border-slate-800/40'
+                key={i} 
+                className={`w-2.5 h-2.5 rounded-full border transition-all ${
+                  i < qIndex 
+                    ? 'bg-emerald-400 border-emerald-300 scale-105 shadow shadow-emerald-500'
+                    : i === qIndex 
+                    ? 'bg-rose-500 border-rose-400 scale-110 shadow shadow-rose-400 animate-ping-slow'
+                    : 'bg-slate-200 border-slate-300'
                 }`}
               />
             ))}
           </div>
 
-          {/* ACTIVE COMPANER PLAYER RUNNER */}
+          {/* Symmetrical Gem and Gold HUD */}
+          <div className="flex items-center gap-3 shrink-0">
+            {/* Gems */}
+            <div className="flex items-center gap-1 bg-slate-50 border border-slate-200 px-2 py-1 rounded-xl shadow-inner">
+              <div className={`w-6 h-6 rounded flex items-center justify-center text-[10px] border ${collectedGems.includes('ruby') ? 'bg-red-500/10 border-red-400 text-red-500 font-bold' : 'bg-transparent border-transparent text-slate-300'}`}>♦️</div>
+              <div className={`w-6 h-6 rounded flex items-center justify-center text-[10px] border ${collectedGems.includes('emerald') ? 'bg-emerald-500/10 border-emerald-400 text-emerald-500 font-bold' : 'bg-transparent border-transparent text-slate-300'}`}>♣️</div>
+              <div className={`w-6 h-6 rounded flex items-center justify-center text-[10px] border ${collectedGems.includes('sapphire') ? 'bg-blue-500/10 border-blue-400 text-blue-500 font-bold' : 'bg-transparent border-transparent text-slate-300'}`}>♠️</div>
+            </div>
+
+            {/* Coins HUD */}
+            <div className="flex items-center gap-1 bg-amber-100 border border-amber-300 px-2.5 py-1.5 rounded-xl shadow-sm text-amber-800 font-black text-xs">
+              <Coins className="w-4 h-4 fill-amber-500 text-amber-500 animate-spin-slow" />
+              <span>{coinsEarned}</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Scroll parchment math question prompt card */}
+        {currentQuestion && (
+          <div className="w-full bg-[#fefcf0] border-2 border-amber-400 rounded-2xl py-2 px-4 shadow-sm flex flex-col items-center justify-center relative">
+            <h3 className="text-amber-700 font-black text-[9px] sm:text-[10px] tracking-widest uppercase mb-0.5">
+              📜 Active Prompt
+            </h3>
+            <p className="text-slate-800 text-sm sm:text-base font-black text-center mt-0.5 leading-snug">
+              {currentQuestion.prompt}
+            </p>
+          </div>
+        )}
+
+        {/* 3. PARALLAX SIDE-SCROLLING DUNGEON GRAPHICS ENGINE VIEWPORT CARD */}
+        <div className="w-full relative aspect-[16/9] md:h-[350px] bg-gradient-to-b from-indigo-950 via-slate-900 to-slate-950 rounded-3xl border-4 border-slate-700/15 shadow-2xl overflow-hidden p-4 flex flex-col justify-end">
+          
+          {/* Parallax Layer 1: Brick wall background */}
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-slate-900 via-slate-950 to-purple-950 z-0" />
+          
+          {/* Tiled parallax wall panel strips */}
+          <div className="absolute top-0 bottom-0 left-0 right-0 z-0 pointer-events-none opacity-15 overflow-hidden">
+            <div className="absolute w-[300%] h-full flex animate-infinite-scroll-fast">
+              <div className="w-1/3 h-full border-r border-dashed border-indigo-500/20 bg-grid-bricks" />
+              <div className="w-1/3 h-full border-r border-dashed border-indigo-500/20 bg-grid-bricks" />
+              <div className="w-1/3 h-full bg-grid-bricks" />
+            </div>
+          </div>
+
+          {/* Neon blue torches lighting up the dungeon */}
+          <div className="absolute inset-0 z-0 pointer-events-none flex justify-around items-center opacity-70">
+            <div className="absolute top-[20%] left-[10%] flex flex-col items-center">
+              <div className="w-3 h-9 bg-amber-800 rounded border border-amber-950 rotate-12 shadow" />
+              <div className="w-4 h-4 bg-cyan-400 rounded-full animate-ping absolute -top-2.5 filter blur-xs" />
+              <div className="w-5 h-5 bg-blue-500 rounded-full absolute -top-3 shadow-inner border border-blue-400" />
+            </div>
+            <div className="absolute top-[20%] right-[10%] flex flex-col items-center">
+              <div className="w-3 h-9 bg-amber-800 rounded border border-amber-950 -rotate-12 shadow" />
+              <div className="w-4 h-4 bg-cyan-400 rounded-full animate-ping absolute -top-2.5 filter blur-xs" />
+              <div className="w-5 h-5 bg-blue-500 rounded-full absolute -top-3 shadow-inner border border-blue-400" />
+            </div>
+          </div>
+
+          {/* Parallax scrolling dungeon flooring grid */}
+          <div className="absolute bottom-0 left-0 right-0 h-[45%] bg-gradient-to-t from-slate-950 to-transparent z-0 pointer-events-none border-t border-slate-800/30 overflow-hidden">
+            <div 
+              className={`absolute inset-0 bg-stone-tiles w-[300%] h-full flex ${
+                isDashing ? 'animate-infinite-scroll-fast' : 'animate-infinite-scroll-slow'
+              }`}
+            >
+              <div className="w-1/3 h-full border-r border-slate-800/40" />
+              <div className="w-1/3 h-full border-r border-slate-800/40" />
+              <div className="w-1/3 h-full" />
+            </div>
+          </div>
+
+          {/* 4. ACTIVE KART RUNNER & THE THREE TRACK LANES */}
+          <div className="w-full h-full relative z-10 flex items-center justify-between px-2 sm:px-8">
+            
+            {/* LANES CONTAINER */}
+            <div className="absolute inset-y-0 left-0 right-0 flex flex-col justify-between py-6 pointer-events-none">
+              {[0, 1, 2].map((lane) => (
+                <div 
+                  key={lane} 
+                  className={`w-full h-8 bg-slate-900/45 border-y border-dashed transition-colors duration-300 relative ${
+                    activeLane === lane 
+                      ? 'border-rose-500/30 bg-rose-950/10' 
+                      : 'border-slate-800/40'
+                  }`}
+                />
+              ))}
+            </div>
+
+            {/* ACTIVE COMPANER PLAYER RUNNER */}
           <div 
             className={`absolute left-[10%] sm:left-[18%] z-20 flex flex-col items-center transition-all duration-500 origin-bottom select-none pointer-events-none`}
             style={{ 
@@ -600,10 +566,10 @@ const AdventureDashContent: React.FC = () => {
               })}
             </div>
           )}
-
         </div>
+      </div>
 
-      </main>
+    </main>
 
       {/* 5. EDUCATIONAL HINT SCROLL MODAL DRAWER */}
       {showHint && (
