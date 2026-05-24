@@ -71,7 +71,15 @@ function TugOfWarContent() {
       q => q.grade === world.grade && q.topic === world.topicId
     );
     const shuffled = [...matched].sort(() => Math.random() - 0.5);
-    setQuestions(shuffled.slice(0, 5));
+    
+    // Guarantee a full deck of 10 questions (repeating elements if needed)
+    let selected = shuffled.slice(0, 10);
+    if (selected.length > 0 && selected.length < 10) {
+      while (selected.length < 10) {
+        selected = [...selected, ...shuffled].slice(0, 10);
+      }
+    }
+    setQuestions(selected);
   }, [worldId, levelId, world.grade, world.topicId]);
 
   if (questions.length === 0) {
@@ -93,10 +101,10 @@ function TugOfWarContent() {
 
     const isCorrect = selectedAnswer === currentQuestion.correctAnswer;
     
-    // Calculate new rope position based on current ropePosition state
+    // Calculate new rope position with balanced step size (8 pull power)
     const nextPos = isCorrect 
-      ? Math.max(10, ropePosition - 15) 
-      : Math.min(90, ropePosition + 15);
+      ? Math.max(10, ropePosition - 8) 
+      : Math.min(90, ropePosition + 8);
       
     setRopePosition(nextPos);
 
@@ -115,7 +123,7 @@ function TugOfWarContent() {
         didPlayerWin = true;
         setPullFeedback({ text: "🎉 VICTORY! MATCH WON!", positive: true });
       } else {
-        setPullFeedback({ text: "+15 PULL POWER! ⚡", positive: true });
+        setPullFeedback({ text: "+8 PULL POWER! ⚡", positive: true });
       }
     } else {
       // Visual feedback: monster pulls back comically, player slides forward
@@ -127,7 +135,7 @@ function TugOfWarContent() {
         didPlayerWin = false;
         setPullFeedback({ text: "🩹 DEFEAT! MATCH LOST!", positive: false });
       } else {
-        setPullFeedback({ text: "-15 PULL POWER! 🩹", positive: false });
+        setPullFeedback({ text: "-8 PULL POWER! 🩹", positive: false });
       }
     }
 
@@ -153,21 +161,21 @@ function TugOfWarContent() {
             `/results?mode=tug-of-war&worldId=${worldId}&levelId=${levelId}&accuracy=0&timeSpent=${finalTime}&correct=${correctCount}&total=${currentIdx + 1}`
           );
         }
-      } else if (currentIdx < 4) {
-        // Continue
+      } else if (currentIdx < 9) {
+        // Continue to next question in the 10-question deck
         setCurrentIdx(prev => prev + 1);
         setIsAnsweringBlocked(false);
       } else {
         // Last Question reached, check final rope balance
         const playerWonFinal = nextPos < 50;
         if (playerWonFinal) {
-          const finalAccuracy = Math.round(((correctCount + (isCorrect ? 1 : 0)) / 5) * 100);
+          const finalAccuracy = Math.round(((correctCount + (isCorrect ? 1 : 0)) / 10) * 100);
           router.push(
-            `/results?mode=tug-of-war&worldId=${worldId}&levelId=${levelId}&accuracy=${finalAccuracy}&timeSpent=${finalTime}&correct=${correctCount + (isCorrect ? 1 : 0)}&total=5`
+            `/results?mode=tug-of-war&worldId=${worldId}&levelId=${levelId}&accuracy=${finalAccuracy}&timeSpent=${finalTime}&correct=${correctCount + (isCorrect ? 1 : 0)}&total=10`
           );
         } else {
           router.push(
-            `/results?mode=tug-of-war&worldId=${worldId}&levelId=${levelId}&accuracy=0&timeSpent=${finalTime}&correct=${correctCount}&total=5`
+            `/results?mode=tug-of-war&worldId=${worldId}&levelId=${levelId}&accuracy=0&timeSpent=${finalTime}&correct=${correctCount}&total=10`
           );
         }
       }
@@ -355,10 +363,10 @@ function TugOfWarContent() {
 
         {/* Symmetrical question count tracker bubbles */}
         <div className="flex justify-center gap-1.5 items-center mt-2">
-          {[0, 1, 2, 3, 4].map((dotIdx) => (
+          {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((dotIdx) => (
             <div
               key={`dot-${dotIdx}`}
-              className={`w-4 h-4 rounded-full border-2 transition-all ${
+              className={`w-3 h-3 rounded-full border-2 transition-all ${
                 dotIdx < currentIdx
                   ? 'bg-violet-500 border-violet-600 scale-95'
                   : dotIdx === currentIdx
