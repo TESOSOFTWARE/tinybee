@@ -98,14 +98,9 @@ function RacingGameContent() {
 
   // Initialize Racing Game Data
   useEffect(() => {
-    // 1. Shuffled Questions
-    const topicName = worldId.split('-')[1] as any;
-    const getGradeFromWorldId = (wId: string): number => {
-      if (wId.startsWith('gk')) return 0;
-      const match = wId.match(/^g(\d+)-/);
-      return match ? parseInt(match[1]) : 1;
-    };
-    const gradeVal = getGradeFromWorldId(worldId);
+    // 1. Shuffled Questions using robust WorldConfig database properties
+    const gradeVal = worldInfo.grade;
+    const topicName = worldInfo.topicId;
 
     const filtered = mathQuestions.filter(q => q.grade === gradeVal && q.topic === topicName);
     const scaled = getScaledQuestions(filtered, levelId, 5);

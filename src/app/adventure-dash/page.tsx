@@ -168,13 +168,8 @@ const AdventureDashContent: React.FC = () => {
       setQuestions(newQuestions);
     } else {
       // Curriculum Mode: Fetch level math questions from standard database
-      const topicName = worldId.split('-')[1];
-      const getGradeFromWorldId = (wId: string): number => {
-        if (wId.startsWith('gk')) return 0;
-        const match = wId.match(/^g(\d+)-/);
-        return match ? parseInt(match[1]) : 1;
-      };
-      const gradeVal = getGradeFromWorldId(worldId);
+      const gradeVal = worldInfo.grade;
+      const topicName = worldInfo.topicId;
 
       const filtered = mathQuestions.filter(q => q.grade === gradeVal && q.topic === topicName);
       const shuffled = [...filtered].sort(() => 0.5 - Math.random()).slice(0, 5);

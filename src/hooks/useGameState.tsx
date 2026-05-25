@@ -1,6 +1,7 @@
 'use client';
 
 import React, { createContext, useContext, useState, useEffect } from 'react';
+import { WORLDS_DATABASE } from '@/data/worlds';
 
 export interface Pet {
   id: string;
@@ -250,7 +251,8 @@ export const GameStateProvider: React.FC<{ children: React.ReactNode }> = ({ chi
       }
 
       // Update topic stats
-      const topic = worldId.split('-')[1]; // addition, subtraction, etc.
+      const worldConfig = WORLDS_DATABASE[worldId];
+      const topic = worldConfig ? worldConfig.topicId : (worldId.split('-')[1] || 'addition');
       const currentTopicStats = prev.battleStats.topicAccuracy[topic] || { correct: 0, total: 0 };
       const newTopicStats = {
         correct: currentTopicStats.correct + correctCount,

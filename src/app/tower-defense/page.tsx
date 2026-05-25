@@ -118,14 +118,9 @@ function TowerDefenseContent() {
 
   // Initialize Game Data
   useEffect(() => {
-    // 1. Filter and choose 5 randomized questions
-    const topicName = worldId.split('-')[1] as any;
-    const getGradeFromWorldId = (wId: string): number => {
-      if (wId.startsWith('gk')) return 0;
-      const match = wId.match(/^g(\d+)-/);
-      return match ? parseInt(match[1]) : 1;
-    };
-    const gradeVal = getGradeFromWorldId(worldId);
+    // 1. Filter and choose 5 randomized questions using robust WorldConfig database properties
+    const gradeVal = worldInfo.grade;
+    const topicName = worldInfo.topicId;
 
     const filtered = mathQuestions.filter(q => q.grade === gradeVal && q.topic === topicName);
     const scaled = getScaledQuestions(filtered, levelId, 5);
