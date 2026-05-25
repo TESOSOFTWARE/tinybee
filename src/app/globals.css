@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
 
+html {
+  font-size: 17.5px;
+}
+
 :root {
   --background: #f8fafc; /* Soft background */
   --foreground: #1e293b; /* slate-800 */
