@@ -81,6 +81,12 @@ function BattleContent() {
     // Apply difficulty scaling from easy to hard based on levelId
     const scaled = getScaledQuestions(matched, parseInt(levelId), 5);
     setQuestions(scaled);
+
+    // Progressive HP difficulty scaling capped at Level 5 so Level 7-10 remain perfectly winnable within 5 questions (Level 1 = 60 HP, Level 5+ = 108 HP max!)
+    const activeLvlIndex = Math.min(4, levelIndex);
+    const startingMonsterHp = 60 + activeLvlIndex * 12;
+    setMonsterHp(startingMonsterHp);
+    setPlayerHp(100);
   }, [worldId, levelId, world.grade, world.topicId]);
 
   const currentQuestion = questions[currentIdx];
@@ -161,7 +167,9 @@ function BattleContent() {
       setTimeout(() => {
         setIsPlayerHit(true);
         setPlayerHp(prev => {
-          const nextHp = Math.max(0, prev - 20);
+          const activeLvlIndex = Math.min(4, levelIndex);
+          const monsterDamage = 15 + activeLvlIndex * 4; // Level 1 = 15 damage, Level 5+ = 31 damage max!
+          const nextHp = Math.max(0, prev - monsterDamage);
           if (nextHp === 0) {
             // Trigger magical cartoon auto-heal!
             setTimeout(() => {

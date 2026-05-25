@@ -1,32 +1,20 @@
 'use client';
 
-import React, { useState, useEffect, Suspense } from 'react';
+import React, { useState, useEffect, Suspense, useRef } from 'react';
 import Link from 'next/link';
 import { useSearchParams, useRouter } from 'next/navigation';
 import { useGameState } from '@/hooks/useGameState';
 import { Button } from '@/components/UI/Button';
 import { Card } from '@/components/UI/Card';
 import { mathQuestions, MathQuestion } from '@/data/questions';
-import { MonsterAvatar } from '@/components/Battle/MonsterAvatar';
-import { PlayerAvatar } from '@/components/Battle/PlayerAvatar';
 import { HintModal } from '@/components/Battle/HintModal';
 import { playBGM, stopBGM } from '@/utils/audio';
 import { speakText, stopSpeech } from '@/utils/tts';
 import { getScaledQuestions } from '@/utils/difficulty';
-import { ArrowLeft, Star, Zap, Flame, Shield, Volume2, VolumeX } from 'lucide-react';
-
-interface Invader {
-  id: string;
-  name: string;
-  monsterId: string;
-  progress: number; // 0 to 100
-  hp: number;
-  isDefeated: boolean;
-}
-
+import { ArrowLeft, Flame, Shield, Volume2, VolumeX } from 'lucide-react';
 import { WORLDS_DATABASE } from '@/data/worlds';
 
-// Math waypoints path coordinates: (x, y) % values relative to parent container
+// Winding cobblestone road percentage waypoints
 const PATH_WAYPOINTS = [
   { x: 10, y: 15 },   // 0: Spawn Portal
   { x: 35, y: 12 },   // 1
@@ -36,7 +24,7 @@ const PATH_WAYPOINTS = [
   { x: 25, y: 58 },   // 5
   { x: 15, y: 76 },   // 6
   { x: 44, y: 88 },   // 7
-  { x: 80, y: 82 }    // 8: Crystal Base Target!
+  { x: 80, y: 82 }    // 8: Golden Crystal Target!
 ];
 
 // Linear interpolation to translate slime positions along curved nodes
@@ -58,43 +46,126 @@ const getWaypointPosition = (progress: number) => {
   };
 };
 
+// Translate pathway percentages into exact 1024x576 Canvas pixels
+const getCanvasWaypointPosition = (progress: number) => {
+  const pctPos = getWaypointPosition(progress);
+  return {
+    x: (pctPos.x / 100) * 1024,
+    y: (pctPos.y / 100) * 576
+  };
+};
+
+// Monster themed emojis mapping
+const MONSTER_EMOJIS: { [key: string]: string } = {
+  muddy_slime: '🟢',
+  fire_slime: '🔴',
+  golden_slime: '🟡',
+  forest_dryad: '🌱',
+  crystal_golem: '💎',
+  shadow_demon: '👿',
+  lava_slime: '🌋',
+  deep_sea_serpent: '🐍',
+  storm_gryphon: '🦅',
+  underworld_reaper: '💀',
+  goblin_scout: '👺',
+  orc_warrior: '👹',
+  default: '👾'
+};
+
+// Canvas Tower Defense structural models
+interface CanvasTower {
+  x: number;
+  y: number;
+  angle: number;
+  lastFire: number;
+}
+
+interface CanvasBullet {
+  x: number;
+  y: number;
+  vx: number;
+  vy: number;
+}
+
+interface CanvasInvader {
+  id: string;
+  progress: number;
+  hp: number;
+  maxHp: number;
+  monsterId: string;
+  name: string;
+  x: number;
+  y: number;
+  isDefeated: boolean;
+}
+
+interface CanvasParticle {
+  x: number;
+  y: number;
+  vx: number;
+  vy: number;
+  color: string;
+  size: number;
+  life: number;
+}
+
 function TowerDefenseContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
-  const { state, isLoading } = useGameState();
+  const { state, pets, isLoading } = useGameState();
 
   const worldId = searchParams.get('worldId') || 'g1-addition';
   const levelId = parseInt(searchParams.get('levelId') || '1', 10);
   const worldInfo = WORLDS_DATABASE[worldId] || WORLDS_DATABASE['g1-addition'];
 
-  // Game States
+  // Game core state trackers
   const [questions, setQuestions] = useState<MathQuestion[]>([]);
   const [qIndex, setQIndex] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
   const [isAnswered, setIsAnswered] = useState(false);
 
-  const [invaders, setInvaders] = useState<Invader[]>([]);
   const [baseShield, setBaseShield] = useState(100);
   const [isRecharging, setIsRecharging] = useState(false);
   const [incorrectFeedback, setIncorrectFeedback] = useState(false);
   const [isGameOver, setIsGameOver] = useState(false);
 
-  // Animations & FX states
-  const [activeLaser, setActiveLaser] = useState<{ from: { x: number; y: number }; to: { x: number; y: number } } | null>(null);
-  const [activeExplosion, setActiveExplosion] = useState<{ x: number; y: number } | null>(null);
-  const [activeProjectile, setActiveProjectile] = useState<{ x: number; y: number } | null>(null);
-  const [isCannonRecoiling, setIsCannonRecoiling] = useState(false);
-  const [isPetAttacking, setIsPetAttacking] = useState(false);
-  const [isHurt, setIsHurt] = useState(false);
-  const [isShaking, setIsShaking] = useState(false);
-  const [damageSplash, setDamageSplash] = useState<string | null>(null);
+  // HUD stats
+  const [score, setScore] = useState(0);
   const [combo, setCombo] = useState(0);
   const [correctCount, setCorrectCount] = useState(0);
   const [timeSpent, setTimeSpent] = useState(0);
+  const [monstersLeft, setMonstersLeft] = useState(12);
+  const [isQuestionsCompleted, setIsQuestionsCompleted] = useState(false);
 
-  // Audio BGM State and Effect
+  // Visual effects toggles
+  const [isHurt, setIsHurt] = useState(false);
+  const [isShaking, setIsShaking] = useState(false);
+  const [damageSplash, setDamageSplash] = useState<string | null>(null);
+
+  // Audio state
   const [isBgmOn, setIsBgmOn] = useState(true);
 
+  // Canvas Refs & Game Engine States
+  const canvasRef = useRef<HTMLCanvasElement | null>(null);
+  const towersRef = useRef<CanvasTower[]>([]);
+  const bulletsRef = useRef<CanvasBullet[]>([]);
+  const invadersRef = useRef<CanvasInvader[]>([]);
+  const particlesRef = useRef<CanvasParticle[]>([]);
+  
+  // Coordinates in 1024x576 pixel space
+  const playerPosRef = useRef<{ x: number; y: number }>({ x: 512, y: 288 });
+  const targetPosRef = useRef<{ x: number; y: number }>({ x: 512, y: 288 });
+  const portalRotationRef = useRef(0);
+  const victoryTriggeredRef = useRef(false);
+
+  // Map the cute pet emoji
+  const petEmoji = pets.find(p => p.id === state.activePetId)?.emoji || '🐝';
+  
+  // Map the monster emoji
+  const primaryMonsterId = worldInfo.monsterIds?.[0] || 'muddy_slime';
+  const invaderEmoji = MONSTER_EMOJIS[primaryMonsterId] || MONSTER_EMOJIS.default;
+
+  // Background Music Controller
   useEffect(() => {
     if (isBgmOn) {
       playBGM();
@@ -106,19 +177,27 @@ function TowerDefenseContent() {
     };
   }, [isBgmOn]);
 
-  // Monitor Game Over Defeat
+  // Monitor Defeat Redirection
   useEffect(() => {
     if (isGameOver && baseShield <= 0) {
       setTimeout(() => {
-        const finalAccuracy = Math.round((correctCount / 5) * 100);
         router.push(`/results?mode=tower-defense&worldId=${worldId}&levelId=${levelId}&accuracy=0&timeSpent=${timeSpent}&correct=${correctCount}&total=5`);
       }, 2500);
     }
   }, [isGameOver, baseShield, correctCount, timeSpent, worldId, levelId, router]);
 
-  // Initialize Game Data
+  // Monitor Victory Redirection (when all monsters are cleared)
   useEffect(() => {
-    // 1. Filter and choose 5 randomized questions using robust WorldConfig database properties
+    if (questions.length > 0 && monstersLeft === 0 && !isGameOver && !victoryTriggeredRef.current) {
+      victoryTriggeredRef.current = true;
+      const totalFaced = isQuestionsCompleted ? 5 : Math.max(1, qIndex);
+      const finalAccuracy = Math.round((correctCount / totalFaced) * 100);
+      router.push(`/results?mode=tower-defense&worldId=${worldId}&levelId=${levelId}&accuracy=${finalAccuracy}&timeSpent=${timeSpent}&correct=${correctCount}&total=${totalFaced}`);
+    }
+  }, [questions, monstersLeft, isGameOver, correctCount, timeSpent, worldId, levelId, router, qIndex, isQuestionsCompleted]);
+
+  // Initialize Curriculum Level Data
+  useEffect(() => {
     const gradeVal = worldInfo.grade;
     const topicName = worldInfo.topicId;
 
@@ -126,22 +205,40 @@ function TowerDefenseContent() {
     const scaled = getScaledQuestions(filtered, levelId, 5);
     setQuestions(scaled);
 
-    // 2. Initialize 5 invaders with staggered marching start progress values
     const primaryMonsterName = worldInfo.monsterNames?.[0] || 'Tiny Slime';
-    const primaryMonsterId = worldInfo.monsterIds?.[0] || 'muddy_slime';
 
-    const spawnedInvaders: Invader[] = Array.from({ length: 5 }).map((_, i) => ({
-      id: `slime-${i}`,
+    const totalMonsters = 12;
+    setMonstersLeft(totalMonsters);
+    setIsQuestionsCompleted(false);
+    victoryTriggeredRef.current = false;
+
+    // Dynamic HP and Spacing difficulty scaling (gently scale and clamp at Level 6 difficulty so Level 7-10 remain perfectly winnable)
+    const monsterHpMax = 70 + Math.min(6, levelId) * 10; // Level 1 = 80 HP, Level 4 = 110 HP, Level 7+ = 130 HP max!
+    const staggerProgressGap = Math.max(20, 44 - Math.min(6, levelId) * 3); // Level 1 = 41 spacing, Level 7+ = 26 spacing
+
+    // Staggered spawning start positions along curved route path
+    const spawnedInvaders: CanvasInvader[] = Array.from({ length: totalMonsters }).map((_, i) => ({
+      id: `invader-${i}`,
       name: `${primaryMonsterName} #${i + 1}`,
       monsterId: primaryMonsterId,
-      progress: -20 - i * 25, // staggered starts
-      hp: 100,
+      progress: -20 - i * staggerProgressGap, // pre-spawn stagger delay
+      hp: monsterHpMax,
+      maxHp: monsterHpMax,
+      x: 0,
+      y: 0,
       isDefeated: false,
     }));
-    setInvaders(spawnedInvaders);
-  }, [worldId, worldInfo]);
+    invadersRef.current = spawnedInvaders;
+    
+    // Clear other refs
+    towersRef.current = [];
+    bulletsRef.current = [];
+    particlesRef.current = [];
+    playerPosRef.current = { x: 819.2, y: 472.3 }; // Starts close to base crystal
+    targetPosRef.current = { x: 819.2, y: 472.3 };
+  }, [worldId, worldInfo, primaryMonsterId]);
 
-  // Game timer tracking
+  // Game play timer tick
   useEffect(() => {
     if (isGameOver) return;
     const timer = setInterval(() => {
@@ -150,97 +247,8 @@ function TowerDefenseContent() {
     return () => clearInterval(timer);
   }, [isGameOver]);
 
-  // Main Ticking march loop (40ms ticks)
-  useEffect(() => {
-    if (isGameOver || isRecharging || incorrectFeedback || questions.length === 0 || qIndex >= 5) return;
-
-    const interval = setInterval(() => {
-      setInvaders(prev => {
-        let baseTookDamage = false;
-
-        const updated = prev.map(inv => {
-          if (inv.isDefeated) return inv;
-
-          // Increment marching progress slightly (allows pre-spawn staggering to march up to 0)
-          const nextProgress = inv.progress + 0.35;
-
-          // Only calculate circle collision and base hits if the monster has emerged from the portal
-          if (nextProgress >= 0) {
-            const pos = getWaypointPosition(nextProgress);
-            const dx = pos.x - 80;
-            const dy = (pos.y - 82) * 0.5625; // Normalize for 16:9 aspect-ratio to match visual circle
-            const distance = Math.sqrt(dx * dx + dy * dy);
-
-            if (distance <= 11.5) { // Visual circle radius is 11% of width
-              // Touched the defensive circle!
-              baseTookDamage = true;
-              return { ...inv, progress: nextProgress, isDefeated: true };
-            }
-
-            if (nextProgress >= 100) {
-              baseTookDamage = true;
-              return { ...inv, progress: 100, isDefeated: true };
-            }
-          }
-
-          return { ...inv, progress: nextProgress };
-        });
-
-        if (baseTookDamage) {
-          setPetActionDamage();
-          setIsHurt(true);
-          setIsShaking(true);
-          setDamageSplash("-20 Resistance! ⚠️");
-
-          setTimeout(() => {
-            setIsHurt(false);
-            setIsShaking(false);
-            setDamageSplash(null);
-          }, 950);
-
-          setBaseShield(prevShield => {
-            const nextShield = prevShield - 20;
-            if (nextShield <= 0) {
-              setIsGameOver(true);
-              return 0;
-            }
-            return nextShield;
-          });
-        }
-
-        return updated;
-      });
-    }, 40);
-
-    return () => clearInterval(interval);
-  }, [isGameOver, isRecharging, incorrectFeedback, questions, qIndex]);
-
-  // Shield Recharge controller (delay reset)
-  useEffect(() => {
-    if (isRecharging) {
-      const timeout = setTimeout(() => {
-        setIsRecharging(false);
-        // Reset close slimes backward in path so they don't immediately hit again
-        setInvaders(prev => prev.map(inv => {
-          if (!inv.isDefeated && inv.progress > 40) {
-            return { ...inv, progress: -15 };
-          }
-          return inv;
-        }));
-      }, 2200);
-      return () => clearTimeout(timeout);
-    }
-  }, [isRecharging]);
-
-  const setPetActionDamage = () => {
-    // Companion registers brief flash or jump upon base hit
-    setIsPetAttacking(true);
-    setTimeout(() => setIsPetAttacking(false), 400);
-  };
-
+  // Auto-speak math spells when questions refresh
   const currentQuestion = questions[qIndex] || questions[0];
-
-  // Auto-speak question when it loads or changes
   useEffect(() => {
     if (currentQuestion) {
       speakText(currentQuestion.question);
@@ -250,16 +258,442 @@ function TowerDefenseContent() {
     };
   }, [currentQuestion]);
 
-  if (isLoading || questions.length === 0) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-playful-dots">
-        <div className="text-center space-y-4">
-          <span className="text-4xl animate-bounce inline-block">🏰</span>
-          <p className="text-lg font-bold text-slate-500 font-extrabold">Constructing Math Lasers...</p>
-        </div>
-      </div>
-    );
-  }
+  // Real-time Canvas HTML5 2D Game Engine Update & Draw Loop (60fps requestAnimationFrame)
+  useEffect(() => {
+    let animationFrameId: number;
+
+    const updateAndDraw = () => {
+      const canvas = canvasRef.current;
+      if (!canvas) {
+        animationFrameId = requestAnimationFrame(updateAndDraw);
+        return;
+      }
+      const ctx = canvas.getContext('2d');
+      if (!ctx) {
+        animationFrameId = requestAnimationFrame(updateAndDraw);
+        return;
+      }
+
+      // 1. UPDATE GAME OBJECTS (Only if game is active, not paused by hint mod)
+      if (!isGameOver && !isRecharging && !incorrectFeedback && questions.length > 0) {
+        
+        // A. Glide Player Pet to touch target coordinates
+        const px = playerPosRef.current.x;
+        const py = playerPosRef.current.y;
+        const tx = targetPosRef.current.x;
+        const ty = targetPosRef.current.y;
+        const dx = tx - px;
+        const dy = ty - py;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        const petGlideSpeed = 7.5; // smooth gliding pixels per frame
+        if (dist > petGlideSpeed) {
+          playerPosRef.current.x += (dx / dist) * petGlideSpeed;
+          playerPosRef.current.y += (dy / dist) * petGlideSpeed;
+        } else {
+          playerPosRef.current.x = tx;
+          playerPosRef.current.y = ty;
+        }
+
+        // B. Update Invading Monsters Marching Progress
+        let baseDamaged = false;
+        invadersRef.current = invadersRef.current.map(inv => {
+          if (inv.isDefeated) return inv;
+
+          // Increment marching progress slightly (staggered delay flows into portal - smoothly scales and clamps at Level 6)
+          const speedFactor = 0.045 + Math.min(6, levelId) * 0.006; // Level 1 = 0.051 units, Level 7+ = 0.081 units max!
+          const nextProgress = inv.progress + speedFactor;
+
+          if (nextProgress >= 0) {
+            const canvasPos = getCanvasWaypointPosition(nextProgress);
+            inv.x = canvasPos.x;
+            inv.y = canvasPos.y;
+
+            // Collision check: Reached crystal base target node at index 8
+            if (nextProgress >= 100) {
+              baseDamaged = true;
+              setMonstersLeft(prev => Math.max(0, prev - 1));
+              return { ...inv, progress: 100, isDefeated: true };
+            }
+          }
+
+          return { ...inv, progress: nextProgress };
+        });
+
+        if (baseDamaged) {
+          triggerBaseDamage();
+        }
+
+        // C. Update Towers aiming and automatic targeting core
+        const now = Date.now();
+        towersRef.current.forEach(tower => {
+          // Identify nearest active enemy within range
+          let nearestEnemy: CanvasInvader | null = null;
+          let minDist = Infinity;
+          
+          for (const inv of invadersRef.current) {
+            if (inv.isDefeated || inv.progress < 0) continue;
+            const tdx = inv.x - tower.x;
+            const tdy = inv.y - tower.y;
+            const distSq = Math.sqrt(tdx * tdx + tdy * tdy);
+            if (distSq < 280 && distSq < minDist) {
+              minDist = distSq;
+              nearestEnemy = inv;
+            }
+          }
+
+          if (nearestEnemy) {
+            // Track angle towards targeted monster
+            const angle = Math.atan2(nearestEnemy.y - tower.y, nearestEnemy.x - tower.x);
+            tower.angle = angle;
+
+            // Auto-fire bullet projectile (cooled down every 800ms)
+            if (now - tower.lastFire > 800) {
+              const bulletSpeed = 9;
+              bulletsRef.current.push({
+                x: tower.x + Math.cos(angle) * 25,
+                y: tower.y + Math.sin(angle) * 25,
+                vx: Math.cos(angle) * bulletSpeed,
+                vy: Math.sin(angle) * bulletSpeed
+              });
+              tower.lastFire = now;
+            }
+          }
+        });
+
+        // D. Update Bullets position and collision intersections
+        bulletsRef.current = bulletsRef.current.filter(bullet => {
+          bullet.x += bullet.vx;
+          bullet.y += bullet.vy;
+
+          // Prune offscreen bullets
+          if (bullet.x < 0 || bullet.x > 1024 || bullet.y < 0 || bullet.y > 576) {
+            return false;
+          }
+
+          let hitDetected = false;
+
+          // Check intersection bounding boxes with invaders
+          invadersRef.current = invadersRef.current.map(inv => {
+            if (inv.isDefeated || inv.progress < 0) return inv;
+
+            const bdx = inv.x - bullet.x;
+            const bdy = inv.y - bullet.y;
+            const distSq = Math.sqrt(bdx * bdx + bdy * bdy);
+
+            if (distSq < 28) { // Collision bounds intersection radius
+              hitDetected = true;
+              const nextHp = inv.hp - 25; // 4 hits to defeat
+              
+              if (nextHp <= 0) {
+                // Defeated! Trigger spectacular sparkle stars
+                setMonstersLeft(prev => Math.max(0, prev - 1));
+                for (let i = 0; i < 18; i++) {
+                  particlesRef.current.push({
+                    x: inv.x,
+                    y: inv.y,
+                    vx: (Math.random() - 0.5) * 8.5,
+                    vy: (Math.random() - 0.5) * 8.5,
+                    color: ['#facc15', '#fb923c', '#ef4444', '#f472b6'][Math.floor(Math.random() * 4)],
+                    size: Math.random() * 4.5 + 2,
+                    life: 1.0
+                  });
+                }
+                setScore(prev => prev + 100);
+                return { ...inv, hp: 0, isDefeated: true };
+              } else {
+                // Hit spark particle pop
+                for (let i = 0; i < 5; i++) {
+                  particlesRef.current.push({
+                    x: bullet.x,
+                    y: bullet.y,
+                    vx: (Math.random() - 0.5) * 4,
+                    vy: (Math.random() - 0.5) * 4,
+                    color: '#38bdf8',
+                    size: Math.random() * 3 + 1,
+                    life: 0.8
+                  });
+                }
+                return { ...inv, hp: nextHp };
+              }
+            }
+            return inv;
+          });
+
+          return !hitDetected;
+        });
+
+        // E. Update Explosion Spark Particles
+        particlesRef.current = particlesRef.current.filter(p => {
+          p.x += p.vx;
+          p.y += p.vy;
+          p.life -= 0.022; // fade coefficient
+          return p.life > 0;
+        });
+      }
+
+      // 2. RENDER STAGE CANVAS DRAWINGS
+      ctx.clearRect(0, 0, 1024, 576);
+
+      // A. Draw Winding Path Roadway (Cobblestone Borders and Dashed Marker Lines)
+      ctx.beginPath();
+      ctx.strokeStyle = 'rgba(51, 65, 85, 0.25)'; // outer wide base
+      ctx.lineWidth = 42;
+      ctx.lineCap = 'round';
+      ctx.lineJoin = 'round';
+      let startPt = getCanvasWaypointPosition(0);
+      ctx.moveTo(startPt.x, startPt.y);
+      for (let p = 1; p <= 100; p++) {
+        const pt = getCanvasWaypointPosition(p);
+        ctx.lineTo(pt.x, pt.y);
+      }
+      ctx.stroke();
+
+      ctx.beginPath();
+      ctx.strokeStyle = '#e2e8f0'; // beautiful core road surface
+      ctx.lineWidth = 32;
+      ctx.lineCap = 'round';
+      ctx.lineJoin = 'round';
+      ctx.moveTo(startPt.x, startPt.y);
+      for (let p = 1; p <= 100; p++) {
+        const pt = getCanvasWaypointPosition(p);
+        ctx.lineTo(pt.x, pt.y);
+      }
+      ctx.stroke();
+
+      ctx.beginPath();
+      ctx.strokeStyle = '#cbd5e1'; // center dash road divider
+      ctx.lineWidth = 2.5;
+      ctx.lineCap = 'round';
+      ctx.lineJoin = 'round';
+      ctx.setLineDash([12, 16]);
+      ctx.moveTo(startPt.x, startPt.y);
+      for (let p = 1; p <= 100; p++) {
+        const pt = getCanvasWaypointPosition(p);
+        ctx.lineTo(pt.x, pt.y);
+      }
+      ctx.stroke();
+      ctx.setLineDash([]); // Reset dash for subsequent drawing shapes
+
+      // B. Draw Spawn Portal (Top-Left 0%)
+      const portalPos = getCanvasWaypointPosition(0);
+      ctx.save();
+      ctx.translate(portalPos.x, portalPos.y);
+      portalRotationRef.current += 0.045;
+      ctx.rotate(portalRotationRef.current);
+      ctx.font = '54px Fredoka';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText('🌀', 0, 0);
+      ctx.restore();
+
+      // Portal Tag
+      ctx.fillStyle = '#1e293b';
+      ctx.font = '900 11px Fredoka';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText('PORTAL', portalPos.x, portalPos.y + 36);
+
+      // C. Draw Magical Defensive Crystal Base (Bottom-Right 100%)
+      const basePos = getCanvasWaypointPosition(100);
+      ctx.save();
+      ctx.translate(basePos.x, basePos.y);
+      
+      // Floating glowing energy shield boundary
+      ctx.beginPath();
+      ctx.arc(0, 0, 68 + Math.sin(Date.now() / 250) * 4, 0, Math.PI * 2);
+      ctx.strokeStyle = 'rgba(99, 102, 241, 0.28)';
+      ctx.lineWidth = 3.5;
+      ctx.stroke();
+
+      // Bouncing dynamic crystal bobbing effect
+      const crystalBobY = Math.sin(Date.now() / 320) * 8;
+      ctx.font = '64px Fredoka';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText('💎', 0, crystalBobY);
+      ctx.restore();
+
+      ctx.fillStyle = '#4f46e5';
+      ctx.font = '900 12px Fredoka';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText('CRYSTAL BASE', basePos.x, basePos.y + 50);
+
+      // D. Draw Magical Built Turrets
+      towersRef.current.forEach(tower => {
+        ctx.save();
+        ctx.translate(tower.x, tower.y);
+
+        // Tower pedestal base plate
+        ctx.beginPath();
+        ctx.arc(0, 0, 26, 0, Math.PI * 2);
+        ctx.fillStyle = '#475569';
+        ctx.strokeStyle = '#1e293b';
+        ctx.lineWidth = 3;
+        ctx.fill();
+        ctx.stroke();
+
+        // Inner glowing core
+        ctx.beginPath();
+        ctx.arc(0, 0, 14, 0, Math.PI * 2);
+        ctx.fillStyle = '#38bdf8';
+        ctx.shadowColor = '#38bdf8';
+        ctx.shadowBlur = 10;
+        ctx.fill();
+        ctx.shadowBlur = 0; // Reset shadow
+
+        // Turret directional rotating muzzle pointing towards targeted angle
+        ctx.rotate(tower.angle);
+        ctx.fillStyle = '#64748b';
+        ctx.strokeStyle = '#1e293b';
+        ctx.lineWidth = 2.5;
+        ctx.fillRect(0, -6.5, 30, 13);
+        ctx.strokeRect(0, -6.5, 30, 13);
+
+        // Muzzle expansion tip (Gold)
+        ctx.fillStyle = '#facc15';
+        ctx.fillRect(26, -8.5, 6, 17);
+
+        ctx.restore();
+      });
+
+      // E. Draw Projectile Bullets
+      bulletsRef.current.forEach(bullet => {
+        ctx.save();
+        ctx.translate(bullet.x, bullet.y);
+        ctx.beginPath();
+        ctx.arc(0, 0, 6.5, 0, Math.PI * 2);
+        ctx.fillStyle = '#facc15';
+        ctx.shadowColor = '#fb923c';
+        ctx.shadowBlur = 12;
+        ctx.fill();
+        ctx.restore();
+      });
+
+      // F. Draw Sparkle explosion particles
+      particlesRef.current.forEach(p => {
+        ctx.save();
+        ctx.translate(p.x, p.y);
+        ctx.fillStyle = p.color;
+        ctx.globalAlpha = p.life;
+        ctx.beginPath();
+        ctx.arc(0, 0, p.size, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.restore();
+      });
+
+      // G. Draw Marching Monsters (Slimes, Ogres with organic bouncing scales)
+      invadersRef.current.forEach(inv => {
+        if (inv.isDefeated || inv.progress < 0) return;
+
+        ctx.save();
+        ctx.translate(inv.x, inv.y);
+
+        // Portal scale-in modifier
+        const scaleVal = inv.progress < 20 
+          ? 0.25 + (inv.progress / 20) * 0.75 
+          : 1.0;
+
+        // Squash-and-stretch organic walking bob
+        const walkBobX = scaleVal * (1.0 + Math.sin(inv.progress * 4.5) * 0.11);
+        const walkBobY = scaleVal * (1.0 - Math.sin(inv.progress * 4.5) * 0.11);
+        ctx.scale(walkBobX, walkBobY);
+
+        ctx.font = '40px Fredoka';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText(invaderEmoji, 0, -4);
+
+        ctx.restore(); // Restore before drawing HP bars to avoid distortion
+
+        // Monster HP Overhead indicator
+        const barWidth = 42;
+        const barHeight = 5.5;
+        const barX = inv.x - barWidth / 2;
+        const barY = inv.y - 32;
+
+        ctx.fillStyle = '#ef4444'; // Red negative health base
+        ctx.fillRect(barX, barY, barWidth, barHeight);
+
+        ctx.fillStyle = '#10b981'; // Green positive health filler
+        ctx.fillRect(barX, barY, barWidth * (inv.hp / inv.maxHp), barHeight);
+
+        ctx.strokeStyle = '#1e293b';
+        ctx.lineWidth = 1.2;
+        ctx.strokeRect(barX, barY, barWidth, barHeight);
+      });
+
+      // H. Draw Player Companion Pet (Smooth Glide and Bobbing wings)
+      const ppx = playerPosRef.current.x;
+      const ppy = playerPosRef.current.y;
+      ctx.save();
+      ctx.translate(ppx, ppy);
+      
+      const petBobY = Math.sin(Date.now() / 160) * 6.5;
+      ctx.font = '48px Fredoka';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText(petEmoji, 0, petBobY);
+      
+      ctx.restore();
+
+      animationFrameId = requestAnimationFrame(updateAndDraw);
+    };
+
+    animationFrameId = requestAnimationFrame(updateAndDraw);
+    return () => cancelAnimationFrame(animationFrameId);
+  }, [isGameOver, isRecharging, incorrectFeedback, questions, levelId, invaderEmoji, petEmoji]);
+
+  // Canvas click coordinate capture to glide player
+  const handleCanvasClick = (e: React.MouseEvent<HTMLCanvasElement>) => {
+    const canvas = canvasRef.current;
+    if (!canvas || isGameOver || isRecharging || incorrectFeedback) return;
+    const rect = canvas.getBoundingClientRect();
+    const clickX = ((e.clientX - rect.left) / rect.width) * canvas.width;
+    const clickY = ((e.clientY - rect.top) / rect.height) * canvas.height;
+    
+    // Set smooth glide destination coordinate target
+    targetPosRef.current = { x: clickX, y: clickY };
+  };
+
+  // Base Damage Controller
+  const triggerBaseDamage = () => {
+    setIsHurt(true);
+    setIsShaking(true);
+    setDamageSplash("-20 Resistance! ⚠️");
+
+    setTimeout(() => {
+      setIsHurt(false);
+      setIsShaking(false);
+      setDamageSplash(null);
+    }, 950);
+
+    setBaseShield(prevShield => {
+      const nextShield = prevShield - 20;
+      if (nextShield <= 0) {
+        setIsGameOver(true);
+        return 0;
+      }
+      return nextShield;
+    });
+  };
+
+  // Recharging Shield Delay
+  useEffect(() => {
+    if (isRecharging) {
+      const timeout = setTimeout(() => {
+        setIsRecharging(false);
+        // Warp monsters backwards along path so they don't immediately hit crystal base again
+        invadersRef.current = invadersRef.current.map(inv => {
+          if (!inv.isDefeated && inv.progress > 45) {
+            return { ...inv, progress: -18 };
+          }
+          return inv;
+        });
+      }, 2200);
+      return () => clearTimeout(timeout);
+    }
+  }, [isRecharging]);
 
   // Submit Answer Trigger
   const handleAnswerSubmit = (answer: string) => {
@@ -271,125 +705,78 @@ function TowerDefenseContent() {
     const isCorrectAns = answer === currentQuestion.correctAnswer;
 
     if (isCorrectAns) {
-      // 1. Correct Answer: Zap lead monster!
+      // 1. CORRECT ANSWER: Spawns a powerful math Turret at Player coordinate!
       setCorrectCount(prev => prev + 1);
       setCombo(prev => prev + 1);
-      setIsPetAttacking(true);
-      setIsCannonRecoiling(true);
 
-      // Find leading visible invader
-      const activeInvaders = invaders.filter(inv => !inv.isDefeated && inv.progress > 0);
-      const leadInvader = activeInvaders.reduce((lead, curr) => {
-        if (!lead) return curr;
-        return curr.progress > lead.progress ? curr : lead;
-      }, null as Invader | null);
+      const pPos = playerPosRef.current;
+      towersRef.current.push({
+        x: pPos.x,
+        y: pPos.y,
+        angle: 0,
+        lastFire: Date.now() - 400 // allows shooting soon
+      });
 
-      if (leadInvader) {
-        const slimePos = getWaypointPosition(leadInvader.progress);
-        
-        // Spawn flying projectile at Spell Cannon muzzle coordinates (approx 74, 76)
-        setActiveProjectile({ x: 74, y: 76 });
-        
-        // Let it fly to target coordinate using CSS transitions over 350ms
-        setTimeout(() => {
-          setActiveProjectile(slimePos);
-        }, 50);
-
-        // Terminate slime after projectile hits
-        setTimeout(() => {
-          setActiveProjectile(null);
-          setIsCannonRecoiling(false);
-          setActiveExplosion(slimePos);
-          setIsPetAttacking(false);
-          setInvaders(prev => prev.map(inv => {
-            if (inv.id === leadInvader.id) return { ...inv, isDefeated: true };
-            return inv;
-          }));
-        }, 400);
-
-        // Clear explosion particles
-        setTimeout(() => {
-          setActiveExplosion(null);
-        }, 950);
-
-      } else {
-        // No active slimes in grid, zap spawn portal directly!
-        setActiveProjectile({ x: 74, y: 76 });
-        setTimeout(() => {
-          setActiveProjectile(PATH_WAYPOINTS[0]);
-        }, 50);
-
-        setTimeout(() => {
-          setActiveProjectile(null);
-          setIsCannonRecoiling(false);
-          setActiveExplosion(PATH_WAYPOINTS[0]);
-          setIsPetAttacking(false);
-        }, 400);
-
-        setTimeout(() => {
-          setActiveExplosion(null);
-        }, 950);
+      // Gold stars pop at pet coordinates
+      for (let i = 0; i < 10; i++) {
+        particlesRef.current.push({
+          x: pPos.x,
+          y: pPos.y,
+          vx: (Math.random() - 0.5) * 5,
+          vy: (Math.random() - 0.5) * 5,
+          color: '#facc15',
+          size: Math.random() * 4 + 2,
+          life: 0.9
+        });
       }
 
-      // Next Question transition
       setTimeout(() => {
         advanceQuestion();
       }, 1000);
 
     } else {
-      // 2. Incorrect Answer: User gets "HURT"!
+      // 2. INCORRECT ANSWER: Monsters speed surge and player takes damage
       setCombo(0);
       setIsHurt(true);
       setIsShaking(true);
       setDamageSplash("-20 Resistance! ⚠️");
 
-      // Surge active monsters forward closer to the base!
-      setInvaders(prev => {
-        let baseTookDamage = false;
-        const updated = prev.map(inv => {
-          if (inv.isDefeated) return inv;
-          
-          // leap forward by 15% progress units
-          const nextProgress = Math.min(100, inv.progress + 15);
-          if (nextProgress >= 0) {
-            const pos = getWaypointPosition(nextProgress);
-            const dx = pos.x - 80;
-            const dy = (pos.y - 82) * 0.5625; // Normalize for 16:9 aspect-ratio to match visual circle
-            const distance = Math.sqrt(dx * dx + dy * dy);
+      // Speed surge active invaders forward by 15% progress units
+      let baseTookHit = false;
+      invadersRef.current = invadersRef.current.map(inv => {
+        if (inv.isDefeated) return inv;
 
-            if (distance <= 11.5 || nextProgress >= 100) {
-              baseTookDamage = true;
-              return { ...inv, progress: nextProgress, isDefeated: true };
-            }
+        const nextProgress = Math.min(100, inv.progress + 15);
+        if (nextProgress >= 100) {
+          baseTookHit = true;
+          setMonstersLeft(prev => Math.max(0, prev - 1));
+          return { ...inv, progress: 100, isDefeated: true };
+        }
+
+        return { ...inv, progress: nextProgress };
+      });
+
+      if (baseTookHit) {
+        setBaseShield(prevShield => {
+          const nextShield = prevShield - 20;
+          if (nextShield <= 0) {
+            setIsGameOver(true);
+            return 0;
           }
-          return { ...inv, progress: nextProgress };
+          return nextShield;
         });
+      } else {
+        // Direct hit on shield HP
+        setBaseShield(prevShield => {
+          const nextShield = prevShield - 20;
+          if (nextShield <= 0) {
+            setIsGameOver(true);
+            return 0;
+          }
+          return nextShield;
+        });
+      }
 
-        if (baseTookDamage) {
-          setBaseShield(prevShield => {
-            const nextShield = prevShield - 20;
-            if (nextShield <= 0) {
-              setIsGameOver(true);
-              return 0;
-            }
-            return nextShield;
-          });
-        }
-
-        return updated;
-      });
-
-      // Reduce shield HP directly by 20 points
-      setBaseShield(prevShield => {
-        const nextShield = prevShield - 20;
-        if (nextShield <= 0) {
-          setIsGameOver(true);
-          return 0;
-        }
-        return nextShield;
-      });
-
-      // Clear alerts and open explanation hint modal after 950ms
       setTimeout(() => {
         setIsHurt(false);
         setIsShaking(false);
@@ -404,10 +791,8 @@ function TowerDefenseContent() {
     setIsAnswered(false);
 
     if (qIndex === 4) {
-      // Finished Game! Route to Results screen where rewards are calculated and committed
-      const finalAccuracy = Math.round((correctCount / 5) * 100);
-      
-      router.push(`/results?mode=tower-defense&worldId=${worldId}&levelId=${levelId}&accuracy=${finalAccuracy}&timeSpent=${timeSpent}&correct=${correctCount}&total=5`);
+      // Questions are complete! Let the player watch their built turrets clean up remaining monsters!
+      setIsQuestionsCompleted(true);
     } else {
       setQIndex(prev => prev + 1);
     }
@@ -417,6 +802,17 @@ function TowerDefenseContent() {
     setIncorrectFeedback(false);
     advanceQuestion();
   };
+
+  if (isLoading || questions.length === 0) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-playful-dots">
+        <div className="text-center space-y-4">
+          <span className="text-4xl animate-bounce inline-block">🏰</span>
+          <p className="text-lg font-bold text-slate-500 font-extrabold">Constructing Math Lasers...</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-playful-dots py-2 sm:py-4 px-2 sm:px-4 flex flex-col justify-between select-none">
@@ -437,9 +833,9 @@ function TowerDefenseContent() {
           </h2>
         </div>
 
-        {/* Right side controls (BGM & Combo) */}
+        {/* Right controls */}
         <div className="flex items-center gap-2 select-none">
-          {/* Audio BGM Toggle */}
+          {/* Speaker button */}
           <button
             onClick={() => setIsBgmOn(!isBgmOn)}
             className={`w-7 h-7 sm:w-8 sm:h-8 rounded-xl text-xs font-black transition-all flex items-center justify-center select-none shadow-sm cursor-pointer border ${
@@ -452,7 +848,7 @@ function TowerDefenseContent() {
             {isBgmOn ? <Volume2 className="w-4 h-4" /> : <VolumeX className="w-4 h-4" />}
           </button>
 
-          {/* Combo Multiplier */}
+          {/* Combo Flame */}
           <div className="flex items-center gap-1 sm:gap-1.5 bg-indigo-100 border-2 border-indigo-300 text-indigo-800 px-2 py-0.5 sm:px-3.5 sm:py-1 rounded-full font-black text-[10px] sm:text-xs shadow-sm h-7 sm:h-8">
             <Flame className={`w-3.5 h-3.5 ${combo > 0 ? 'text-amber-500 fill-amber-500 animate-pulse' : 'text-indigo-400'}`} />
             Combo: {combo}
@@ -464,7 +860,7 @@ function TowerDefenseContent() {
       <main className="max-w-4xl w-full mx-auto flex-grow flex flex-col gap-3">
         
         {/* Play Canvas Container */}
-        <div className={`relative w-full aspect-[4/3] md:aspect-[16/9] bg-gradient-to-b from-sky-100 to-emerald-50 rounded-3xl border-4 transition-all duration-200 overflow-hidden flex flex-col justify-between p-4 ${
+        <div className={`relative w-full aspect-[16/9] bg-gradient-to-b from-sky-100 to-emerald-50 rounded-3xl border-4 transition-all duration-200 overflow-hidden ${
           isHurt 
             ? 'border-red-500 ring-8 ring-red-500/20' 
             : 'border-slate-700/10 shadow-inner'
@@ -473,7 +869,7 @@ function TowerDefenseContent() {
             ? 'animate-canvas-shake' 
             : ''
         }`}>
-          {/* Custom shake and float keyframe stylings */}
+          {/* Custom shake, float, shockwave, and alert styling keyframes */}
           <style dangerouslySetInnerHTML={{__html: `
             @keyframes canvas-shake {
               0% { transform: translate(1px, 1px) rotate(0deg); }
@@ -499,64 +895,38 @@ function TowerDefenseContent() {
             .animate-damage-float {
               animation: float-damage 0.9s ease-out forwards;
             }
-            @keyframes shockwave {
-              0% { transform: scale(0.2); opacity: 1; }
-              100% { transform: scale(1.8); opacity: 0; }
+            @keyframes progress-bar-recharge {
+              0% { width: 0%; }
+              100% { width: 100%; }
             }
-            .animate-shockwave {
-              animation: shockwave 0.5s ease-out forwards;
-            }
-            @keyframes float-spark-1 {
-              0% { transform: translate(0, 0) scale(0.5); opacity: 1; }
-              100% { transform: translate(-25px, -30px) scale(1.2); opacity: 0; }
-            }
-            .animate-float-spark-1 {
-              animation: float-spark-1 0.6s ease-out forwards;
-            }
-            @keyframes float-spark-2 {
-              0% { transform: translate(0, 0) scale(0.5); opacity: 1; }
-              100% { transform: translate(30px, 25px) scale(1.2); opacity: 0; }
-            }
-            .animate-float-spark-2 {
-              animation: float-spark-2 0.6s ease-out forwards;
-            }
-            @keyframes float-spark-3 {
-              0% { transform: translate(0, 0) scale(0.5); opacity: 1; }
-              100% { transform: translate(25px, -30px) scale(1.2); opacity: 0; }
-            }
-            .animate-float-spark-3 {
-              animation: float-spark-3 0.6s ease-out forwards;
-            }
-            @keyframes spin-slow {
-              0% { transform: translate(-50%, -50%) rotate(0deg); }
-              100% { transform: translate(-50%, -50%) rotate(360deg); }
-            }
-            .animate-spin-slow {
-              animation: spin-slow 15s linear infinite;
-            }
-            @keyframes pulse-slow {
-              0%, 100% { opacity: 0.15; }
-              50% { opacity: 0.35; }
-            }
-            .animate-pulse-slow {
-              animation: pulse-slow 3s ease-in-out infinite;
+            .animate-progress-bar {
+              animation: progress-bar-recharge 2.2s linear forwards;
             }
           `}} />
 
-          {/* Red inner vignette overlay when hurt */}
+          {/* Canvas Component Layer */}
+          <canvas
+            ref={canvasRef}
+            width={1024}
+            height={576}
+            onClick={handleCanvasClick}
+            className="w-full h-full block cursor-crosshair"
+          />
+
+          {/* Red vignette when taking hits */}
           {isHurt && (
             <div className="absolute inset-0 bg-red-500/20 border-8 border-red-500 rounded-3xl pointer-events-none z-40 animate-pulse"></div>
           )}
 
           {/* Floating red damage splash banner */}
           {damageSplash && (
-            <div className="absolute right-[12%] bottom-[35%] z-50 animate-damage-float text-red-600 font-black text-xs md:text-sm drop-shadow bg-white/95 px-3 py-1.5 rounded-full border-2 border-red-400">
+            <div className="absolute right-[14%] bottom-[35%] z-50 animate-damage-float text-red-600 font-black text-xs md:text-sm drop-shadow bg-white/95 px-3.5 py-1.5 rounded-full border-2 border-red-400">
               {damageSplash}
             </div>
           )}
 
-          {/* Top-left Defensive Stats HUD overlay */}
-          <div className="absolute left-4 top-4 z-30 flex flex-col gap-1 drop-shadow-md">
+          {/* Top-left Defensive HUD Overlay */}
+          <div className="absolute left-4 top-4 z-30 flex flex-col gap-2 drop-shadow-md">
             <div className="flex items-center gap-2 bg-slate-900/60 backdrop-blur-xs px-3.5 py-1.5 rounded-2xl border border-white/20">
               <Shield className="w-4 h-4 text-rose-400 fill-rose-500" />
               <div className="flex flex-col">
@@ -572,194 +942,33 @@ function TowerDefenseContent() {
                 </div>
               </div>
             </div>
-          </div>
 
-          {/* Subtle grid background grid */}
-          <div className="absolute inset-0 bg-[radial-gradient(#cbd5e1_1.5px,transparent_1.5px)] bg-[size:20px_20px] opacity-30"></div>
-
-          {/* SVG Marching dashed pathway */}
-          <svg className="absolute inset-0 w-full h-full pointer-events-none stroke-dashed" stroke="#cbd5e1" strokeWidth="8" strokeDasharray="16 16" strokeLinecap="round">
-            <path
-              d={`M ${PATH_WAYPOINTS[0].x}% ${PATH_WAYPOINTS[0].y}% 
-                 C ${PATH_WAYPOINTS[1].x}% ${PATH_WAYPOINTS[1].y}%, ${PATH_WAYPOINTS[2].x}% ${PATH_WAYPOINTS[2].y}%, ${PATH_WAYPOINTS[3].x}% ${PATH_WAYPOINTS[3].y}%
-                 S ${PATH_WAYPOINTS[5].x}% ${PATH_WAYPOINTS[5].y}%, ${PATH_WAYPOINTS[6].x}% ${PATH_WAYPOINTS[6].y}%
-                 S ${PATH_WAYPOINTS[7].x}% ${PATH_WAYPOINTS[7].y}%, ${PATH_WAYPOINTS[8].x}% ${PATH_WAYPOINTS[8].y}%`}
-              fill="none"
-            />
-          </svg>
-
-          {/* Spawn Portal Node (Top-Left) */}
-          <div className="absolute left-[5%] top-[10%] z-20 flex flex-col items-center">
-            <div className="w-10 h-10 bg-indigo-500/20 border-4 border-indigo-400 rounded-full flex items-center justify-center animate-pulse-slow">
-              🌀
-            </div>
-            <span className="text-[9px] font-black bg-slate-800 text-white px-2 py-0.5 rounded-full uppercase tracking-wider scale-90">Portal</span>
-          </div>
-
-          {/* Defensive Magical Circle Boundary (Radius 15%) */}
-          <div 
-            className="absolute w-[22%] aspect-square border-4 border-indigo-400/40 border-dashed rounded-full pointer-events-none z-10 flex items-center justify-center animate-spin-slow"
-            style={{
-              left: '80%',
-              top: '82%',
-              transform: 'translate(-50%, -50%)',
-            }}
-          >
-            {/* Soft magic pulsing core */}
-            <div className="absolute inset-1 bg-indigo-500/[0.04] rounded-full animate-pulse-slow"></div>
-          </div>
-
-          {/* Magic Base Castle Towers (Bottom-Right) */}
-          <div className={`absolute right-[12%] bottom-[10%] z-20 flex flex-col items-center gap-1 scale-95 md:scale-105 transition-all duration-200 ${
-            isHurt ? 'animate-bounce scale-110 drop-shadow-[0_0_20px_rgba(239,68,68,0.8)]' : ''
-          }`}>
-            {/* Active Companion Pet */}
-            <div className="animate-float">
-              <PlayerAvatar petId={state.activePetId} />
-            </div>
-            
-            {/* Castle Wizard Defensive Tower */}
-            <div className={`w-16 h-20 bg-slate-200 border-4 rounded-2xl flex flex-col items-center justify-between shadow-xl relative overflow-visible transition-all duration-200 ${
-              isHurt ? 'border-red-500 bg-red-100' : 'border-slate-700/20'
-            }`}>
-              {/* Castle Merlons battlements atop the castle tower */}
-              <div className="absolute -top-2 flex gap-1 justify-center w-full px-1">
-                <div className="w-3 h-3 bg-slate-300 border border-slate-400 rounded-sm"></div>
-                <div className="w-3 h-3 bg-slate-300 border border-slate-400 rounded-sm"></div>
-                <div className="w-3 h-3 bg-slate-300 border border-slate-400 rounded-sm"></div>
-              </div>
-              
-              {/* Wizard Tower Magic window slits */}
-              <div className="flex gap-1.5 justify-center mt-3.5">
-                <div className="w-2.5 h-3 bg-indigo-950/80 rounded-t-full border border-indigo-400/50"></div>
-                <div className="w-2.5 h-3 bg-indigo-950/80 rounded-t-full border border-indigo-400/50"></div>
-              </div>
-              
-              {/* Glowing crystal */}
-              <div className="text-3xl animate-bounce-slow drop-shadow-sm z-10 mb-2">💎</div>
-
-              {/* Base Health indicator */}
-              <div className="absolute -bottom-2 bg-rose-500 border border-rose-600 text-white text-[8px] font-black px-1.5 py-0.5 rounded-full shadow flex items-center gap-0.5 whitespace-nowrap">
-                <Shield className="w-2.5 h-2.5 fill-white" /> HP: {baseShield}
-              </div>
-            </div>
-          </div>
-
-          {/* Dynamic Recoiling Spell Cannon mounting */}
-          <div className={`absolute right-[26%] bottom-[13%] z-25 transition-all ${
-            isCannonRecoiling 
-              ? '-translate-x-3 translate-y-1.5 rotate-12 scale-90 duration-75' 
-              : 'duration-300'
-          }`}>
-            <svg className="w-12 h-10 drop-shadow-lg" viewBox="0 0 50 40" fill="none">
-              {/* Cannon Wheel */}
-              <circle cx="15" cy="28" r="8" fill="#475569" stroke="#1e293b" strokeWidth="2" />
-              <circle cx="15" cy="28" r="3" fill="#cbd5e1" />
-              
-              {/* Cannon Carriage Body */}
-              <path d="M 5 22 L 30 14 L 32 24 L 8 28 Z" fill="#334155" stroke="#1e293b" strokeWidth="2" />
-              {/* Cannon Muzzle Barrel pointing up-left */}
-              <path d="M 28 10 L 42 6 L 44 14 L 30 18 Z" fill="#475569" stroke="#1e293b" strokeWidth="2.5" />
-              {/* Golden Cannon Ring tip */}
-              <ellipse cx="36" cy="12" rx="3" ry="5" fill="#facc15" stroke="#1e293b" strokeWidth="1" transform="rotate(15 36 12)" />
-              
-              {/* Cannon Fuse spark */}
-              <path d="M 8 16 Q 4 10 2 12" stroke="#eab308" strokeWidth="2" strokeLinecap="round" />
-              <circle cx="2" cy="12" r="1.5" fill="#f97316" className="animate-ping" />
-            </svg>
-          </div>
-
-          {/* Golden Spell projectile ball flying along the grid */}
-          {activeProjectile && (
-            <div
-              className="absolute w-7 h-7 bg-gradient-to-r from-amber-400 to-yellow-300 border-2 border-amber-600 rounded-full shadow-lg z-35 flex items-center justify-center text-xs pointer-events-none transform -translate-x-1/2 -translate-y-1/2 transition-all duration-300 ease-out animate-pulse"
-              style={{ left: `${activeProjectile.x}%`, top: `${activeProjectile.y}%` }}
-            >
-              <span className="animate-spin text-[10px]">⚡</span>
-            </div>
-          )}
-
-          {/* Invading Slimes marching down the coordinates (Small-To-Big portal scaling) */}
-          {invaders.map((inv) => {
-            if (inv.isDefeated || inv.progress < 0) return null;
-
-            const pos = getWaypointPosition(inv.progress);
-
-            // Scale up dynamically from portal (emerges small to big for progress < 20)
-            const scaleMultiplier = inv.progress < 20
-              ? 0.25 + (inv.progress / 20) * 0.75
-              : 1.0;
-
-            return (
-              <div
-                key={inv.id}
-                className="absolute transform -translate-x-1/2 -translate-y-1/2 z-20 transition-all duration-75 flex flex-col items-center cursor-pointer"
-                style={{ 
-                  left: `${pos.x}%`, 
-                  top: `${pos.y}%`,
-                  transform: `translate(-50%, -50%) scale(${scaleMultiplier})`
-                }}
-              >
-                {/* Slimy Avatar */}
-                <div className="w-11 h-11">
-                  <MonsterAvatar monsterId={inv.monsterId} name={inv.name} />
-                </div>
-                {/* Invader Mini HP Bar */}
-                <div className="w-8 h-1.5 bg-slate-200 border border-slate-300 rounded-full overflow-hidden mt-0.5 shadow-inner">
-                  <div className="h-full bg-emerald-400" style={{ width: '100%' }}></div>
+            {/* Monsters Cleared Wave Progress HUD */}
+            <div className="flex items-center gap-2 bg-slate-900/60 backdrop-blur-xs px-3.5 py-1.5 rounded-2xl border border-white/20">
+              <span className="text-xs">👾</span>
+              <div className="flex flex-col">
+                <span className="text-[9px] font-black text-indigo-300 uppercase tracking-wider">Defeated Waves</span>
+                <div className="flex items-center gap-2 mt-0.5">
+                  <div className="w-24 h-2 bg-slate-750 rounded-full overflow-hidden border border-slate-600/50 shadow-inner">
+                    <div 
+                      className="h-full bg-gradient-to-r from-indigo-500 to-sky-400 transition-all duration-300"
+                      style={{ width: `${((12 - monstersLeft) / 12) * 100}%` }}
+                    ></div>
+                  </div>
+                  <span className="text-[10px] font-extrabold text-white">{12 - monstersLeft}/12 Cleared</span>
                 </div>
               </div>
-            );
-          })}
-
-          {/* SVG laser firing zapping overlays */}
-          {activeLaser && (
-            <svg className="absolute inset-0 w-full h-full pointer-events-none z-30">
-              <line
-                x1={`${activeLaser.from.x}%`}
-                y1={`${activeLaser.from.y}%`}
-                x2={`${activeLaser.to.x}%`}
-                y2={`${activeLaser.to.y}%`}
-                stroke="#6366f1"
-                strokeWidth="6"
-                strokeLinecap="round"
-                className="animate-pulse"
-              />
-              <line
-                x1={`${activeLaser.from.x}%`}
-                y1={`${activeLaser.from.y}%`}
-                x2={`${activeLaser.to.x}%`}
-                y2={`${activeLaser.to.y}%`}
-                stroke="#ffffff"
-                strokeWidth="2.5"
-                strokeLinecap="round"
-              />
-            </svg>
-          )}
-
-          {/* Dynamic Laser/Cannon explosion pops with expanding shockwaves */}
-          {activeExplosion && (
-            <div
-              className="absolute transform -translate-x-1/2 -translate-y-1/2 z-40 pointer-events-none flex items-center justify-center"
-              style={{ left: `${activeExplosion.x}%`, top: `${activeExplosion.y}%` }}
-            >
-              {/* Central explosive blast bubble */}
-              <div className="text-5xl animate-bounce-fast z-10 drop-shadow-md">💥</div>
-              
-              {/* Animated expanding magical shockwave rings */}
-              <div className="absolute w-20 h-20 border-4 border-indigo-400 rounded-full animate-shockwave opacity-80"></div>
-              <div className="absolute w-12 h-12 border-2 border-amber-300 rounded-full animate-shockwave delay-100 opacity-60"></div>
-              
-              {/* Floating magic spark particles */}
-              <div className="absolute -top-7 -left-7 text-sm animate-float-spark-1">✨</div>
-              <div className="absolute -bottom-7 -right-7 text-sm animate-float-spark-2">🌟</div>
-              <div className="absolute top-7 -right-7 text-sm animate-float-spark-3">⚡</div>
             </div>
-          )}
+          </div>
+
+          {/* Top-Right Score Counter HUD overlay */}
+          <div className="absolute right-4 top-4 z-30 flex items-center gap-1.5 bg-slate-900/60 backdrop-blur-xs px-3.5 py-1.5 rounded-2xl border border-white/20 text-white font-black text-[10px] md:text-xs">
+            ⭐ Score: {score}
+          </div>
 
           {/* Friendly Shield Recharging Overlay */}
           {isRecharging && (
-            <div className="absolute inset-0 bg-slate-900/70 backdrop-blur-sm flex items-center justify-center p-4 z-40 animate-fade-in text-center">
+            <div className="absolute inset-0 bg-slate-900/70 backdrop-blur-sm flex items-center justify-center p-4 z-45 animate-fade-in text-center">
               <Card padding="md" className="max-w-xs border-4 border-indigo-400 bg-white">
                 <span className="text-4xl animate-spin inline-block">🪄</span>
                 <h4 className="text-lg font-black text-indigo-900 mt-2">SHIELD RECHARGING</h4>
@@ -775,7 +984,7 @@ function TowerDefenseContent() {
 
           {/* Defeat/Game Over Screen Overlay */}
           {isGameOver && baseShield <= 0 && (
-            <div className="absolute inset-0 bg-slate-900/80 backdrop-blur-md flex items-center justify-center p-4 z-45 animate-fade-in text-center">
+            <div className="absolute inset-0 bg-slate-900/80 backdrop-blur-md flex items-center justify-center p-4 z-50 animate-fade-in text-center">
               <Card padding="lg" className="max-w-sm border-4 border-red-500 bg-white flex flex-col items-center gap-3">
                 <span className="text-5xl animate-bounce">💥</span>
                 <h4 className="text-xl font-black text-red-600 uppercase tracking-wide">TOWER DESTROYED</h4>
@@ -789,85 +998,91 @@ function TowerDefenseContent() {
             </div>
           )}
 
-          {/* Decors (Rocks & Grasses) */}
-          <div className="absolute left-[30%] top-[40%] text-xl opacity-30 select-none">🪨</div>
-          <div className="absolute left-[80%] top-[25%] text-xl opacity-30 select-none">🍄</div>
-          <div className="absolute left-[50%] top-[80%] text-xl opacity-30 select-none">🌿</div>
-          <div className="absolute left-[20%] top-[85%] text-xl opacity-30 select-none">🌳</div>
-
         </div>
 
         {/* Math Question Scroll panel */}
         <Card variant="scroll" padding="md" className="flex flex-col gap-3 sm:gap-4 shadow-md relative bg-[#fdf6e2]">
           
-          {/* Question Index Progress */}
-          <div className="flex justify-between items-center text-xs font-extrabold text-amber-900 border-b border-amber-200/50 pb-1.5">
-            <span className="flex items-center gap-1.5">
-              🧙‍♂️ Shield Spell Scroll
-              <button 
-                onClick={(e) => {
-                  e.stopPropagation();
-                  speakText(currentQuestion.question);
-                }}
-                className="cursor-pointer hover:scale-115 active:scale-95 transition-transform flex items-center justify-center bg-amber-600/20 hover:bg-amber-600/35 p-0.5 rounded border border-amber-400/30"
-                title="Read Spell Out Loud 🔊"
-              >
-                <Volume2 className="w-3 h-3 text-amber-950" />
-              </button>
-            </span>
-            <span className="bg-amber-100 px-2 py-0.5 rounded-full border border-amber-300">
-              Progress: {qIndex + 1} / 5
-            </span>
-          </div>
+          {isQuestionsCompleted ? (
+            <div className="text-center py-6 flex flex-col items-center justify-center gap-2 animate-bounce-slow">
+              <span className="text-4xl animate-pulse">🎉</span>
+              <h3 className="text-xl sm:text-2xl font-black text-indigo-900 animate-pulse">Math Equations Complete!</h3>
+              <p className="text-xs sm:text-sm font-bold text-indigo-850 leading-normal max-w-md">
+                You have successfully cast all math shield charms! Watch your built turrets defend the base and clear the remaining monsters.
+              </p>
+            </div>
+          ) : (
+            <>
+              {/* Question Index Progress */}
+              <div className="flex justify-between items-center text-xs font-extrabold text-amber-900 border-b border-amber-200/50 pb-1.5">
+                <span className="flex items-center gap-1.5">
+                  🧙‍♂️ Shield Spell Scroll
+                  <button 
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      speakText(currentQuestion.question);
+                    }}
+                    className="cursor-pointer hover:scale-115 active:scale-95 transition-transform flex items-center justify-center bg-amber-600/20 hover:bg-amber-600/35 p-0.5 rounded border border-amber-400/30"
+                    title="Read Spell Out Loud 🔊"
+                  >
+                    <Volume2 className="w-3 h-3 text-amber-950" />
+                  </button>
+                </span>
+                <span className="bg-amber-100 px-2 py-0.5 rounded-full border border-amber-300">
+                  Progress: {qIndex + 1} / 5
+                </span>
+              </div>
 
-          {/* Math spell math Parchment question */}
-          <div className="text-center py-0.5 sm:py-1">
-            <p className="text-[10px] sm:text-sm font-bold text-amber-800 uppercase tracking-widest">CAST DEFENSE CHARM</p>
-            <h3 className="text-xl sm:text-3xl md:text-4xl font-black text-slate-800 mt-1 sm:mt-1.5 leading-snug tracking-tight">
-              {currentQuestion.question}
-            </h3>
-          </div>
+              {/* Math spell math Parchment question */}
+              <div className="text-center py-0.5 sm:py-1">
+                <p className="text-[10px] sm:text-sm font-bold text-amber-800 uppercase tracking-widest">CAST DEFENSE CHARM</p>
+                <h3 className="text-xl sm:text-3xl md:text-4xl font-black text-slate-800 mt-1 sm:mt-1.5 leading-snug tracking-tight">
+                  {currentQuestion.question}
+                </h3>
+              </div>
 
-          {/* Grid of Choices Chunky Buttons */}
-          <div className="grid grid-cols-2 gap-2 sm:gap-3">
-            {currentQuestion.choices.map((choice, idx) => {
-              const isSelected = selectedAnswer === choice;
-              let choiceBtnVariant: 'blue' | 'green' | 'pink' | 'yellow' | 'gray' = 'yellow';
+              {/* Grid of Choices Chunky Buttons */}
+              <div className="grid grid-cols-2 gap-2 sm:gap-3">
+                {currentQuestion.choices.map((choice, idx) => {
+                  const isSelected = selectedAnswer === choice;
+                  let choiceBtnVariant: 'blue' | 'green' | 'pink' | 'yellow' | 'gray' = 'yellow';
 
-              if (isAnswered) {
-                if (choice === currentQuestion.correctAnswer) {
-                  choiceBtnVariant = 'green';
-                } else if (isSelected) {
-                  choiceBtnVariant = 'pink';
-                } else {
-                  choiceBtnVariant = 'gray';
-                }
-              }
+                  if (isAnswered) {
+                    if (choice === currentQuestion.correctAnswer) {
+                      choiceBtnVariant = 'green';
+                    } else if (isSelected) {
+                      choiceBtnVariant = 'pink';
+                    } else {
+                      choiceBtnVariant = 'gray';
+                    }
+                  }
 
-              return (
-                <Button
-                  key={`choice-${idx}`}
-                  variant={choiceBtnVariant}
-                  fullWidth
-                  onClick={() => handleAnswerSubmit(choice)}
-                  disabled={isAnswered}
-                  className={`text-base sm:text-xl md:text-2xl py-2 sm:py-3 ${
-                    isSelected ? 'ring-4 ring-indigo-400/30' : ''
-                  }`}
-                >
-                  {choice}
-                </Button>
-              );
-            })}
-          </div>
+                  return (
+                    <Button
+                      key={`choice-${idx}`}
+                      variant={choiceBtnVariant}
+                      fullWidth
+                      onClick={() => handleAnswerSubmit(choice)}
+                      disabled={isAnswered}
+                      className={`text-base sm:text-xl md:text-2xl py-2 sm:py-3 ${
+                        isSelected ? 'ring-4 ring-indigo-400/30' : ''
+                      }`}
+                    >
+                      {choice}
+                    </Button>
+                  );
+                })}
+              </div>
+            </>
+          )}
 
         </Card>
 
       </main>
 
-      {/* Spacing footer */}
+      {/* Footer instruction guidelines */}
       <footer className="text-center text-slate-400 text-[10px] font-bold py-1">
-        🏰 Tap the correct answer to zaps invaders with math magic lasers!
+        🏰 Tap on the grass map to guide your pet, and solve correct math spells to construct defense turrets!
       </footer>
 
       {/* Hints Explanation Modal for incorrect inputs */}

@@ -107,10 +107,14 @@ function TugOfWarContent() {
 
     const isCorrect = selectedAnswer === currentQuestion.correctAnswer;
     
-    // Calculate new rope position with balanced step size (8 pull power)
+    // Difficulty scaled pulling force based on levelIndex, capped at Level 6 maximum to remain human-beatable
+    const activeLvlIndex = Math.min(5, levelIndex);
+    const playerPullForce = Math.max(5, 9 - activeLvlIndex); // Level 1 = 9 force, Level 6+ = 5 force max!
+    const monsterPullForce = Math.min(13, 7 + activeLvlIndex * 1); // Level 1 = 7 force, Level 6+ = 12 force max!
+
     const nextPos = isCorrect 
-      ? Math.max(10, ropePosition - 8) 
-      : Math.min(90, ropePosition + 8);
+      ? Math.max(10, ropePosition - playerPullForce) 
+      : Math.min(90, ropePosition + monsterPullForce);
       
     setRopePosition(nextPos);
 
@@ -129,7 +133,7 @@ function TugOfWarContent() {
         didPlayerWin = true;
         setPullFeedback({ text: "🎉 VICTORY! MATCH WON!", positive: true });
       } else {
-        setPullFeedback({ text: "+8 PULL POWER! ⚡", positive: true });
+        setPullFeedback({ text: `+${playerPullForce} PULL POWER! ⚡`, positive: true });
       }
     } else {
       // Visual feedback: monster pulls back comically, player slides forward
@@ -141,7 +145,7 @@ function TugOfWarContent() {
         didPlayerWin = false;
         setPullFeedback({ text: "🩹 DEFEAT! MATCH LOST!", positive: false });
       } else {
-        setPullFeedback({ text: "-8 PULL POWER! 🩹", positive: false });
+        setPullFeedback({ text: `-${monsterPullForce} FORCE LOSS! 🩹`, positive: false });
       }
     }
 

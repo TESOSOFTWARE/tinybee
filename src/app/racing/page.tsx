@@ -110,9 +110,14 @@ function RacingGameContent() {
     const primaryMonsterName = worldInfo.monsterNames?.[0] || 'Tiny Slime';
     const primaryMonsterId = worldInfo.monsterIds?.[0] || 'muddy_slime';
 
+    // Speed scales dynamically with levelId, smoothly capped at Level 5 to remain human-beatable (Level 1 = 0.097 & 0.077, Level 5+ = 0.145 & 0.125)
+    const activeLvl = Math.min(5, levelId);
+    const baseSpeedOpp1 = 0.085 + (activeLvl * 0.012);
+    const baseSpeedOpp2 = 0.065 + (activeLvl * 0.012);
+
     setOpponents([
-      { id: 'opp-1', name: `Speedy ${primaryMonsterName}`, monsterId: primaryMonsterId, progress: 0, lane: 'left', speed: 0.12 },
-      { id: 'opp-2', name: `Turbo Ogre`, monsterId: 'fluffy_ogre', progress: 0, lane: 'right', speed: 0.10 }
+      { id: 'opp-1', name: `Speedy ${primaryMonsterName}`, monsterId: primaryMonsterId, progress: 0, lane: 'left', speed: baseSpeedOpp1 },
+      { id: 'opp-2', name: `Turbo Ogre`, monsterId: 'fluffy_ogre', progress: 0, lane: 'right', speed: baseSpeedOpp2 }
     ]);
   }, [worldId, worldInfo]);
 

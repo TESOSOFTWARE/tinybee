@@ -66,6 +66,8 @@ const AdventureDashContent: React.FC = () => {
   // Resolve world context
   const worldId = searchParams.get('worldId') || 'g1-addition';
   const levelId = searchParams.get('levelId') || '1';
+  const levelVal = parseInt(levelId, 10);
+  const startingHearts = levelVal <= 2 ? 4 : levelVal <= 4 ? 3 : 2;
   const worldInfo = WORLDS_DATABASE[worldId] || WORLDS_DATABASE['g1-addition'];
 
   const { state, addCoins, addXP, completeLevel } = useGameState();
@@ -74,7 +76,7 @@ const AdventureDashContent: React.FC = () => {
   const [isClassicMode, setIsClassicMode] = useState(false);
   const [questions, setQuestions] = useState<DashQuestion[]>([]);
   const [qIndex, setQIndex] = useState(0);
-  const [hearts, setHearts] = useState(3);
+  const [hearts, setHearts] = useState(startingHearts);
   const [score, setScore] = useState(0);
   const [coinsEarned, setCoinsEarned] = useState(0);
   const [collectedGems, setCollectedGems] = useState<string[]>([]); // 'ruby', 'emerald', 'sapphire'
@@ -214,7 +216,7 @@ const AdventureDashContent: React.FC = () => {
 
     // Reset loop
     setQIndex(0);
-    setHearts(3);
+    setHearts(startingHearts);
     setScore(0);
     setCoinsEarned(0);
     setCollectedGems([]);
@@ -321,7 +323,7 @@ const AdventureDashContent: React.FC = () => {
     
     // Save progression
     const finalAccuracy = Math.round((correctAnswersCount / questions.length) * 100);
-    const starScore = hearts === 3 ? 3 : hearts === 2 ? 2 : 1;
+    const starScore = hearts >= startingHearts ? 3 : hearts >= startingHearts - 1 ? 2 : 1;
     
     // Add rewards to local storage context
     addCoins(coinsEarned);
