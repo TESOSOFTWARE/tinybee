@@ -20,8 +20,29 @@ export const speakText = (text: string) => {
 
   if (!sanitizedText) return;
 
+  // 3. Pre-process math operators so the TTS reads them correctly in child-friendly spoken English
+  const spokenText = sanitizedText
+    // Context-aware translations: first translate placeholders in equations
+    .replace(/=\s*\?/g, ' equals what ')
+    .replace(/=\s*__/g, ' equals what ')
+    .replace(/\?\s*=/g, ' what equals ')
+    .replace(/__\s*=/g, ' what equals ')
+    .replace(/\+\s*\?/g, ' plus what ')
+    .replace(/\-\s*\?/g, ' minus what ')
+    // Translate standard operators
+    .replace(/\+/g, ' plus ')
+    .replace(/\-/g, ' minus ')
+    .replace(/[\u00D7\u2715\u2A09\u2716]/g, ' times ') // ×, ✕, ✖
+    .replace(/[\u00F7\u2215\/]/g, ' divided by ') // ÷, ∕, /
+    .replace(/\*/g, ' times ')
+    .replace(/=/g, ' equals ')
+    .replace(/__/g, ' what ')
+    .replace(/_/g, ' ')
+    .replace(/\s+/g, ' ') // collapse multiple spaces
+    .trim();
+
   // Standard local Coqui XTTS API endpoint (default port 5002)
-  const xttsUrl = `http://localhost:5002/api/tts?text=${encodeURIComponent(sanitizedText)}&language_id=en&speaker_id=female-en-1`;
+  const xttsUrl = `http://localhost:5002/api/tts?text=${encodeURIComponent(spokenText)}&language_id=en&speaker_id=female-en-1`;
 
   const audio = new Audio(xttsUrl);
   currentAudio = audio;
@@ -36,7 +57,7 @@ export const speakText = (text: string) => {
       
       // Fallback: Web Speech API (speechSynthesis)
       if (typeof window !== 'undefined' && window.speechSynthesis) {
-        const utterance = new SpeechSynthesisUtterance(sanitizedText);
+        const utterance = new SpeechSynthesisUtterance(spokenText);
         utterance.lang = 'en-US';
         
         // Find child-friendly or premium natural English voice

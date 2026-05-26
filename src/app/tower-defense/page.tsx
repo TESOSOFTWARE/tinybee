@@ -14,6 +14,24 @@ import { getScaledQuestions } from '@/utils/difficulty';
 import { ArrowLeft, Flame, Shield, Volume2, VolumeX } from 'lucide-react';
 import { WORLDS_DATABASE } from '@/data/worlds';
 
+// =========================================================================
+// 🛠️ TOWER DEFENSE GLOBAL DIFFICULTY CONFIGURATION
+// =========================================================================
+// Feel free to adjust these multipliers and parameters manually!
+// - HP_MULTIPLIER: Increase to make slimes tankier (e.g. 1.2 for 20% more HP)
+// - SPEED_MULTIPLIER: Increase to make slimes run faster (e.g. 1.2 for 20% faster)
+// - SPACING_MULTIPLIER: Lower to make slimes spawn closer together (e.g. 0.8)
+// - TURRET_FIRE_COOLDOWN_MS: Lower to make turrets shoot faster (e.g. 600)
+// - TURRET_BULLET_DAMAGE: Increase to make bullets deal more damage (e.g. 35)
+// =========================================================================
+export const TD_DIFFICULTY_CONFIG = {
+  HP_MULTIPLIER: 1.0,
+  SPEED_MULTIPLIER: 1.2,
+  SPACING_MULTIPLIER: 1.0,
+  TURRET_FIRE_COOLDOWN_MS: 800,
+  TURRET_BULLET_DAMAGE: 25,
+};
+
 // Winding cobblestone road percentage waypoints
 const PATH_WAYPOINTS = [
   { x: 10, y: 15 },   // 0: Spawn Portal
@@ -151,7 +169,7 @@ function TowerDefenseContent() {
   const bulletsRef = useRef<CanvasBullet[]>([]);
   const invadersRef = useRef<CanvasInvader[]>([]);
   const particlesRef = useRef<CanvasParticle[]>([]);
-  
+
   // Coordinates in 1024x576 pixel space
   const playerPosRef = useRef<{ x: number; y: number }>({ x: 512, y: 288 });
   const targetPosRef = useRef<{ x: number; y: number }>({ x: 512, y: 288 });
@@ -160,7 +178,7 @@ function TowerDefenseContent() {
 
   // Map the cute pet emoji
   const petEmoji = pets.find(p => p.id === state.activePetId)?.emoji || '🐝';
-  
+
   // Map the monster emoji
   const primaryMonsterId = worldInfo.monsterIds?.[0] || 'muddy_slime';
   const invaderEmoji = MONSTER_EMOJIS[primaryMonsterId] || MONSTER_EMOJIS.default;
@@ -212,9 +230,9 @@ function TowerDefenseContent() {
     setIsQuestionsCompleted(false);
     victoryTriggeredRef.current = false;
 
-    // Dynamic HP and Spacing difficulty scaling (gently scale and clamp at Level 6 difficulty so Level 7-10 remain perfectly winnable)
-    const monsterHpMax = 70 + Math.min(6, levelId) * 10; // Level 1 = 80 HP, Level 4 = 110 HP, Level 7+ = 130 HP max!
-    const staggerProgressGap = Math.max(20, 44 - Math.min(6, levelId) * 3); // Level 1 = 41 spacing, Level 7+ = 26 spacing
+    // Dynamic HP and Spacing difficulty scaling (steadily scales all the way up to Level 10 for an ultimate high-difficulty end-game challenge)
+    const monsterHpMax = Math.round((70 + levelId * 13) * TD_DIFFICULTY_CONFIG.HP_MULTIPLIER); // Level 1 = 83 HP, Level 5 = 135 HP, Level 10 = 200 HP!
+    const staggerProgressGap = Math.max(16, Math.round((44 - levelId * 2.8) * TD_DIFFICULTY_CONFIG.SPACING_MULTIPLIER)); // Level 1 = 41.2 spacing, Level 5 = 30 spacing, Level 10 = 16 spacing (tight train!)
 
     // Staggered spawning start positions along curved route path
     const spawnedInvaders: CanvasInvader[] = Array.from({ length: totalMonsters }).map((_, i) => ({
@@ -229,7 +247,7 @@ function TowerDefenseContent() {
       isDefeated: false,
     }));
     invadersRef.current = spawnedInvaders;
-    
+
     // Clear other refs
     towersRef.current = [];
     bulletsRef.current = [];
@@ -276,7 +294,7 @@ function TowerDefenseContent() {
 
       // 1. UPDATE GAME OBJECTS (Only if game is active, not paused by hint mod)
       if (!isGameOver && !isRecharging && !incorrectFeedback && questions.length > 0) {
-        
+
         // A. Glide Player Pet to touch target coordinates
         const px = playerPosRef.current.x;
         const py = playerPosRef.current.y;
@@ -299,8 +317,8 @@ function TowerDefenseContent() {
         invadersRef.current = invadersRef.current.map(inv => {
           if (inv.isDefeated) return inv;
 
-          // Increment marching progress slightly (staggered delay flows into portal - smoothly scales and clamps at Level 6)
-          const speedFactor = 0.045 + Math.min(6, levelId) * 0.006; // Level 1 = 0.051 units, Level 7+ = 0.081 units max!
+          // Increment marching progress slightly (staggered delay flows into portal - steadily scales all the way to Level 10)
+          const speedFactor = (0.05 + levelId * 0.0085) * TD_DIFFICULTY_CONFIG.SPEED_MULTIPLIER; // Level 1 = 0.0585 units, Level 5 = 0.0925 units, Level 10 = 0.135 progress units per frame!
           const nextProgress = inv.progress + speedFactor;
 
           if (nextProgress >= 0) {
@@ -329,7 +347,7 @@ function TowerDefenseContent() {
           // Identify nearest active enemy within range
           let nearestEnemy: CanvasInvader | null = null;
           let minDist = Infinity;
-          
+
           for (const inv of invadersRef.current) {
             if (inv.isDefeated || inv.progress < 0) continue;
             const tdx = inv.x - tower.x;
@@ -346,8 +364,8 @@ function TowerDefenseContent() {
             const angle = Math.atan2(nearestEnemy.y - tower.y, nearestEnemy.x - tower.x);
             tower.angle = angle;
 
-            // Auto-fire bullet projectile (cooled down every 800ms)
-            if (now - tower.lastFire > 800) {
+            // Auto-fire bullet projectile (cooled down based on config)
+            if (now - tower.lastFire > TD_DIFFICULTY_CONFIG.TURRET_FIRE_COOLDOWN_MS) {
               const bulletSpeed = 9;
               bulletsRef.current.push({
                 x: tower.x + Math.cos(angle) * 25,
@@ -382,8 +400,8 @@ function TowerDefenseContent() {
 
             if (distSq < 28) { // Collision bounds intersection radius
               hitDetected = true;
-              const nextHp = inv.hp - 25; // 4 hits to defeat
-              
+              const nextHp = inv.hp - TD_DIFFICULTY_CONFIG.TURRET_BULLET_DAMAGE;
+
               if (nextHp <= 0) {
                 // Defeated! Trigger spectacular sparkle stars
                 setMonstersLeft(prev => Math.max(0, prev - 1));
@@ -497,7 +515,7 @@ function TowerDefenseContent() {
       const basePos = getCanvasWaypointPosition(100);
       ctx.save();
       ctx.translate(basePos.x, basePos.y);
-      
+
       // Floating glowing energy shield boundary
       ctx.beginPath();
       ctx.arc(0, 0, 68 + Math.sin(Date.now() / 250) * 4, 0, Math.PI * 2);
@@ -590,8 +608,8 @@ function TowerDefenseContent() {
         ctx.translate(inv.x, inv.y);
 
         // Portal scale-in modifier
-        const scaleVal = inv.progress < 20 
-          ? 0.25 + (inv.progress / 20) * 0.75 
+        const scaleVal = inv.progress < 20
+          ? 0.25 + (inv.progress / 20) * 0.75
           : 1.0;
 
         // Squash-and-stretch organic walking bob
@@ -628,13 +646,13 @@ function TowerDefenseContent() {
       const ppy = playerPosRef.current.y;
       ctx.save();
       ctx.translate(ppx, ppy);
-      
+
       const petBobY = Math.sin(Date.now() / 160) * 6.5;
       ctx.font = '48px Fredoka';
       ctx.textAlign = 'center';
       ctx.textBaseline = 'middle';
       ctx.fillText(petEmoji, 0, petBobY);
-      
+
       ctx.restore();
 
       animationFrameId = requestAnimationFrame(updateAndDraw);
@@ -651,7 +669,7 @@ function TowerDefenseContent() {
     const rect = canvas.getBoundingClientRect();
     const clickX = ((e.clientX - rect.left) / rect.width) * canvas.width;
     const clickY = ((e.clientY - rect.top) / rect.height) * canvas.height;
-    
+
     // Set smooth glide destination coordinate target
     targetPosRef.current = { x: clickX, y: clickY };
   };
@@ -816,7 +834,7 @@ function TowerDefenseContent() {
 
   return (
     <div className="min-h-screen bg-playful-dots py-2 sm:py-4 px-2 sm:px-4 flex flex-col justify-between select-none">
-      
+
       {/* Header HUD */}
       <header className="max-w-4xl w-full mx-auto flex items-center justify-between mb-1.5 sm:mb-2">
         <Link href={`/world-map?worldId=${worldId}`}>
@@ -838,11 +856,10 @@ function TowerDefenseContent() {
           {/* Speaker button */}
           <button
             onClick={() => setIsBgmOn(!isBgmOn)}
-            className={`w-7 h-7 sm:w-8 sm:h-8 rounded-xl text-xs font-black transition-all flex items-center justify-center select-none shadow-sm cursor-pointer border ${
-              isBgmOn 
-                ? 'bg-gradient-to-br from-emerald-400 to-teal-500 text-white border-emerald-500 hover:scale-105 active:scale-95' 
+            className={`w-7 h-7 sm:w-8 sm:h-8 rounded-xl text-xs font-black transition-all flex items-center justify-center select-none shadow-sm cursor-pointer border ${isBgmOn
+                ? 'bg-gradient-to-br from-emerald-400 to-teal-500 text-white border-emerald-500 hover:scale-105 active:scale-95'
                 : 'bg-white hover:bg-slate-100 text-slate-400 border-slate-200'
-            }`}
+              }`}
             title={isBgmOn ? "Mute Background Music" : "Play Synthesized BGM 🎵"}
           >
             {isBgmOn ? <Volume2 className="w-4 h-4" /> : <VolumeX className="w-4 h-4" />}
@@ -858,19 +875,18 @@ function TowerDefenseContent() {
 
       {/* Main Playing Arena Layout */}
       <main className="max-w-4xl w-full mx-auto flex-grow flex flex-col gap-3">
-        
+
         {/* Play Canvas Container */}
-        <div className={`relative w-full aspect-[16/9] bg-gradient-to-b from-sky-100 to-emerald-50 rounded-3xl border-4 transition-all duration-200 overflow-hidden ${
-          isHurt 
-            ? 'border-red-500 ring-8 ring-red-500/20' 
+        <div className={`relative w-full aspect-[16/9] bg-gradient-to-b from-sky-100 to-emerald-50 rounded-3xl border-4 transition-all duration-200 overflow-hidden ${isHurt
+            ? 'border-red-500 ring-8 ring-red-500/20'
             : 'border-slate-700/10 shadow-inner'
-        } ${
-          isShaking 
-            ? 'animate-canvas-shake' 
+          } ${isShaking
+            ? 'animate-canvas-shake'
             : ''
-        }`}>
+          }`}>
           {/* Custom shake, float, shockwave, and alert styling keyframes */}
-          <style dangerouslySetInnerHTML={{__html: `
+          <style dangerouslySetInnerHTML={{
+            __html: `
             @keyframes canvas-shake {
               0% { transform: translate(1px, 1px) rotate(0deg); }
               10% { transform: translate(-1px, -2px) rotate(-1deg); }
@@ -933,7 +949,7 @@ function TowerDefenseContent() {
                 <span className="text-[9px] font-black text-rose-300 uppercase tracking-wider">Castle Resistance</span>
                 <div className="flex items-center gap-2 mt-0.5">
                   <div className="w-24 h-2 bg-slate-750 rounded-full overflow-hidden border border-slate-600/50 shadow-inner">
-                    <div 
+                    <div
                       className="h-full bg-gradient-to-r from-rose-500 to-amber-500 transition-all duration-300"
                       style={{ width: `${baseShield}%` }}
                     ></div>
@@ -950,7 +966,7 @@ function TowerDefenseContent() {
                 <span className="text-[9px] font-black text-indigo-300 uppercase tracking-wider">Defeated Waves</span>
                 <div className="flex items-center gap-2 mt-0.5">
                   <div className="w-24 h-2 bg-slate-750 rounded-full overflow-hidden border border-slate-600/50 shadow-inner">
-                    <div 
+                    <div
                       className="h-full bg-gradient-to-r from-indigo-500 to-sky-400 transition-all duration-300"
                       style={{ width: `${((12 - monstersLeft) / 12) * 100}%` }}
                     ></div>
@@ -1002,7 +1018,7 @@ function TowerDefenseContent() {
 
         {/* Math Question Scroll panel */}
         <Card variant="scroll" padding="md" className="flex flex-col gap-3 sm:gap-4 shadow-md relative bg-[#fdf6e2]">
-          
+
           {isQuestionsCompleted ? (
             <div className="text-center py-6 flex flex-col items-center justify-center gap-2 animate-bounce-slow">
               <span className="text-4xl animate-pulse">🎉</span>
@@ -1017,7 +1033,7 @@ function TowerDefenseContent() {
               <div className="flex justify-between items-center text-xs font-extrabold text-amber-900 border-b border-amber-200/50 pb-1.5">
                 <span className="flex items-center gap-1.5">
                   🧙‍♂️ Shield Spell Scroll
-                  <button 
+                  <button
                     onClick={(e) => {
                       e.stopPropagation();
                       speakText(currentQuestion.question);
@@ -1064,9 +1080,8 @@ function TowerDefenseContent() {
                       fullWidth
                       onClick={() => handleAnswerSubmit(choice)}
                       disabled={isAnswered}
-                      className={`text-base sm:text-xl md:text-2xl py-2 sm:py-3 ${
-                        isSelected ? 'ring-4 ring-indigo-400/30' : ''
-                      }`}
+                      className={`text-base sm:text-xl md:text-2xl py-2 sm:py-3 ${isSelected ? 'ring-4 ring-indigo-400/30' : ''
+                        }`}
                     >
                       {choice}
                     </Button>
