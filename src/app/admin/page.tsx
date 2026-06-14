@@ -2820,7 +2820,7 @@ export default function AdminDashboardPage() {
                       {englishWorldsForGrade.map(w => {
                         const isActive = w.topicId === selectedWorldId;
                         const savedCount = Array.from({ length: 10 }, (_, i) => i + 1)
-                          .filter(lvl => videoQuests[`${w.topicId}-${lvl}`] || videoQuests[`${selectedGradeId}-${lvl}`])
+                          .filter(lvl => !!videoQuests[`${w.topicId}-${lvl}`])
                           .length;
                         return (
                           <button
