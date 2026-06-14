@@ -6,14 +6,17 @@ import { useSearchParams, useRouter } from 'next/navigation';
 import { useGameState } from '@/hooks/useGameState';
 import { Button } from '@/components/UI/Button';
 import { Card } from '@/components/UI/Card';
-import { mathQuestions, MathQuestion } from '@/data/questions';
+import { mathQuestions, Question } from '@/data/questions';
+import { englishQuestions } from '@/data/english_questions';
 import { MonsterAvatar } from '@/components/Battle/MonsterAvatar';
 import { PlayerAvatar } from '@/components/Battle/PlayerAvatar';
 import { HintModal } from '@/components/Battle/HintModal';
+import { getQuestionsForGame } from '@/data/video_quests';
 import { playBGM, stopBGM } from '@/utils/audio';
 import { speakText, stopSpeech } from '@/utils/tts';
 import { getScaledQuestions } from '@/utils/difficulty';
 import { ArrowLeft, Shield, Flame, Award, Trophy, Volume2, VolumeX } from 'lucide-react';
+import { VocabIcon } from '@/components/UI/VocabIcon';
 
 interface Opponent {
   id: string;
@@ -36,7 +39,7 @@ function RacingGameContent() {
   const worldInfo = WORLDS_DATABASE[worldId] || WORLDS_DATABASE['g1-addition'];
 
   // Game States
-  const [questions, setQuestions] = useState<MathQuestion[]>([]);
+  const [questions, setQuestions] = useState<Question[]>([]);
   const [qIndex, setQIndex] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
   const [isAnswered, setIsAnswered] = useState(false);
@@ -61,7 +64,7 @@ function RacingGameContent() {
   const [speedMultiplier, setSpeedMultiplier] = useState(1.0); // controls road scroll speed
   const [damageSplash, setDamageSplash] = useState<string | null>(null);
   const [boostIndicator, setBoostIndicator] = useState<string | null>(null);
-  
+
   const [combo, setCombo] = useState(0);
   const [correctCount, setCorrectCount] = useState(0);
   const [timeSpent, setTimeSpent] = useState(0);
@@ -86,7 +89,7 @@ function RacingGameContent() {
       setIsGameOver(true);
       setSpeedMultiplier(0); // Freeze lanes
       setBoostIndicator("🏁 VICTORY! You crossed the finish line!");
-      
+
       setTimeout(() => {
         const finalAccuracy = Math.round((correctCount / 5) * 100);
         router.push(
@@ -99,10 +102,17 @@ function RacingGameContent() {
   // Initialize Racing Game Data
   useEffect(() => {
     // 1. Shuffled Questions using robust WorldConfig database properties
-    const gradeVal = worldInfo.grade;
+    const gradeVal = Number(worldInfo.grade);
     const topicName = worldInfo.topicId;
 
-    const filtered = mathQuestions.filter(q => q.grade === gradeVal && q.topic === topicName);
+    const filtered = getQuestionsForGame(
+      worldInfo.subject || 'english',
+      gradeVal,
+      levelId,
+      topicName,
+      mathQuestions,
+      englishQuestions
+    );
     const scaled = getScaledQuestions(filtered, levelId, 5);
     setQuestions(scaled);
 
@@ -139,11 +149,11 @@ function RacingGameContent() {
       setOpponents(prev => {
         const nextOpps = prev.map(opp => {
           if (opp.progress >= 100) return { ...opp, progress: 100 };
-          
+
           // Random slight speed fluctuations to simulate racing
           const variance = (Math.random() - 0.5) * 0.05;
           const currentSpeed = Math.max(0.04, opp.speed + variance);
-          
+
           return { ...opp, progress: opp.progress + currentSpeed };
         });
 
@@ -153,7 +163,7 @@ function RacingGameContent() {
           setIsGameOver(true);
           setSpeedMultiplier(0); // Freeze lanes
           setDamageSplash("🏁 DEFEAT! Opponent crossed the finish line first!");
-          
+
           setTimeout(() => {
             const finalAccuracy = Math.round((correctCount / 5) * 100);
             router.push(
@@ -203,7 +213,7 @@ function RacingGameContent() {
       // 1. Correct Answer: NITRO BOOST!
       setCorrectCount(prev => prev + 1);
       setCombo(prev => prev + 1);
-      
+
       setIsNitroActive(true);
       setSpeedMultiplier(2.5); // Speed up lane scrolling
       setBoostIndicator("🚀 NITRO ACCEL! +20%");
@@ -232,7 +242,7 @@ function RacingGameContent() {
       setIsSkidding(true);
       setSpeedMultiplier(0.2); // Slow down track dramatically
       setDamageSplash("⚠️ Skidded in Mud! -20 Shield");
-      
+
       // Decelerate HP shield
       setBaseShield(prev => {
         const nextShield = prev - 20;
@@ -281,12 +291,12 @@ function RacingGameContent() {
   // Auto-speak question when it loads or changes
   useEffect(() => {
     if (currentQuestion) {
-      speakText(currentQuestion.question);
+      speakText(currentQuestion.question, worldInfo.subject);
     }
     return () => {
       stopSpeech();
     };
-  }, [currentQuestion]);
+  }, [currentQuestion, worldInfo.subject]);
 
   if (isLoading || questions.length === 0) {
     return (
@@ -304,7 +314,7 @@ function RacingGameContent() {
 
   return (
     <div className="min-h-screen bg-playful-dots py-2 sm:py-4 px-2 sm:px-4 flex flex-col justify-between select-none">
-      
+
       {/* Header HUD */}
       <header className="max-w-4xl w-full mx-auto flex items-center justify-between mb-1.5 sm:mb-2">
         <Link href={`/world-map?worldId=${worldId}`}>
@@ -326,11 +336,10 @@ function RacingGameContent() {
           {/* Audio BGM Toggle */}
           <button
             onClick={() => setIsBgmOn(!isBgmOn)}
-            className={`w-7 h-7 sm:w-8 sm:h-8 rounded-xl text-xs font-black transition-all flex items-center justify-center select-none shadow-sm cursor-pointer border ${
-              isBgmOn 
-                ? 'bg-gradient-to-br from-emerald-400 to-teal-500 text-white border-emerald-500 hover:scale-105 active:scale-95' 
+            className={`w-7 h-7 sm:w-8 sm:h-8 rounded-xl text-xs font-black transition-all flex items-center justify-center select-none shadow-sm cursor-pointer border ${isBgmOn
+                ? 'bg-gradient-to-br from-emerald-400 to-teal-500 text-white border-emerald-500 hover:scale-105 active:scale-95'
                 : 'bg-white hover:bg-slate-100 text-slate-400 border-slate-200'
-            }`}
+              }`}
             title={isBgmOn ? "Mute Background Music" : "Play Synthesized BGM 🎵"}
           >
             {isBgmOn ? <Volume2 className="w-4 h-4" /> : <VolumeX className="w-4 h-4" />}
@@ -346,12 +355,13 @@ function RacingGameContent() {
 
       {/* Main Gameplay Screen Layout */}
       <main className="max-w-4xl w-full mx-auto flex-grow flex flex-col lg:flex-row gap-4">
-        
+
         {/* Play highway canvas card */}
         <div className="flex-grow relative aspect-[4/3] md:aspect-[16/9] lg:aspect-auto lg:h-[350px] bg-gradient-to-b from-sky-200 to-sky-50 rounded-3xl border-4 border-slate-700/10 shadow-inner overflow-hidden p-4 flex justify-between">
-          
+
           {/* Style Injector for scrolling lanes and skidding smoke */}
-          <style dangerouslySetInnerHTML={{__html: `
+          <style dangerouslySetInnerHTML={{
+            __html: `
             @keyframes road-slide-down {
               0% { background-position-y: 0px; }
               100% { background-position-y: 100px; }
@@ -411,12 +421,10 @@ function RacingGameContent() {
 
           {/* Active Player kart in the Center Lane */}
           <div
-            className={`absolute left-[50%] transform -translate-x-1/2 bottom-[14%] z-20 flex flex-col items-center transition-all ${
-              isNitroActive ? 'animate-pet-boost' : ''
-            } ${
-              isSkidding ? 'animate-kart-skid' : ''
-            }`}
-            style={{ 
+            className={`absolute left-[50%] transform -translate-x-1/2 bottom-[14%] z-20 flex flex-col items-center transition-all ${isNitroActive ? 'animate-pet-boost' : ''
+              } ${isSkidding ? 'animate-kart-skid' : ''
+              }`}
+            style={{
               transitionDuration: isNitroActive ? '0.3s' : '0.8s',
               // Visual push ahead on correct, drop back on skids
               bottom: isNitroActive ? '35%' : isSkidding ? '8%' : '14%'
@@ -433,18 +441,18 @@ function RacingGameContent() {
                 {/* Rear Spoiler Wings */}
                 <rect x="5" y="4" width="50" height="6" rx="2" fill="#ef4444" stroke="#1e293b" strokeWidth="2" />
                 <path d="M 12 10 L 8 4 M 48 10 L 52 4" stroke="#1e293b" strokeWidth="2" />
-                
+
                 {/* Kart Body chassis */}
                 <path d="M 10 24 L 15 10 L 45 10 L 50 24 L 40 32 L 20 32 Z" fill="#facc15" stroke="#1e293b" strokeWidth="2.5" />
                 {/* Front Bumper hood */}
                 <path d="M 18 32 L 42 32 L 40 36 L 20 36 Z" fill="#ef4444" stroke="#1e293b" strokeWidth="1.5" />
-                
+
                 {/* Tires */}
                 <rect x="4" y="22" width="8" height="12" rx="2" fill="#1e293b" />
                 <rect x="48" y="22" width="8" height="12" rx="2" fill="#1e293b" />
                 <rect x="8" y="8" width="6" height="8" rx="1.5" fill="#334155" />
                 <rect x="46" y="8" width="6" height="8" rx="1.5" fill="#334155" />
-                
+
                 {/* Steering wheel */}
                 <circle cx="30" cy="16" r="4" fill="none" stroke="#475569" strokeWidth="2" />
                 {/* Race number plate */}
@@ -479,8 +487,8 @@ function RacingGameContent() {
           {/* Left Lane: Opponent #1 (Speedy Slime) */}
           <div
             className="absolute left-[20%] transform -translate-x-1/2 z-20 flex flex-col items-center transition-all duration-500"
-            style={{ 
-              bottom: `${Math.max(10, Math.min(80, 20 + (opponents[0]?.progress || 0) - playerProgress))}%` 
+            style={{
+              bottom: `${Math.max(10, Math.min(80, 20 + (opponents[0]?.progress || 0) - playerProgress))}%`
             }}
           >
             <div className="w-8 h-8 scale-75 animate-bounce-slow flex items-center justify-center">
@@ -498,8 +506,8 @@ function RacingGameContent() {
           {/* Right Lane: Opponent #2 (Turbo Ogre) */}
           <div
             className="absolute left-[80%] transform -translate-x-1/2 z-20 flex flex-col items-center transition-all duration-500"
-            style={{ 
-              bottom: `${Math.max(10, Math.min(80, 20 + (opponents[1]?.progress || 0) - playerProgress))}%` 
+            style={{
+              bottom: `${Math.max(10, Math.min(80, 20 + (opponents[1]?.progress || 0) - playerProgress))}%`
             }}
           >
             <div className="w-8 h-8 scale-75 animate-bounce-slow flex items-center justify-center">
@@ -555,12 +563,12 @@ function RacingGameContent() {
           <div className="flex-grow flex lg:flex-col-reverse justify-around lg:justify-between items-center px-2 py-1 gap-2 min-h-[60px] lg:min-h-[200px] relative">
             {/* Start flag */}
             <span className="text-xs opacity-50 shrink-0 select-none">🚦 Start</span>
-            
+
             {/* The Lane Tube */}
             <div className="flex-grow w-full lg:w-3 bg-slate-100 rounded-full border border-slate-200 relative min-w-[120px] lg:min-w-0 h-4 lg:h-36 overflow-visible shadow-inner flex items-center lg:justify-center">
-              
+
               {/* Player Progress Marker */}
-              <div 
+              <div
                 className="absolute w-5 h-5 bg-yellow-400 border border-yellow-600 rounded-full shadow flex items-center justify-center text-[10px] z-30 transition-all duration-300"
                 style={{
                   left: typeof window !== 'undefined' && window.innerWidth < 1024 ? `${playerProgress}%` : '50%',
@@ -572,7 +580,7 @@ function RacingGameContent() {
               </div>
 
               {/* Slime Monster Progress Marker */}
-              <div 
+              <div
                 className="absolute w-5 h-5 bg-emerald-400 border border-emerald-600 rounded-full shadow flex items-center justify-center text-[10px] z-20 transition-all duration-300"
                 style={{
                   left: typeof window !== 'undefined' && window.innerWidth < 1024 ? `${opponents[0]?.progress || 0}%` : '50%',
@@ -584,7 +592,7 @@ function RacingGameContent() {
               </div>
 
               {/* Ogre Monster Progress Marker */}
-              <div 
+              <div
                 className="absolute w-5 h-5 bg-purple-400 border border-purple-600 rounded-full shadow flex items-center justify-center text-[10px] z-10 transition-all duration-300"
                 style={{
                   left: typeof window !== 'undefined' && window.innerWidth < 1024 ? `${opponents[1]?.progress || 0}%` : '50%',
@@ -613,14 +621,14 @@ function RacingGameContent() {
       {/* Math Scroll scroll scroll */}
       <footer className="max-w-4xl w-full mx-auto flex flex-col gap-3 mt-1.5 sm:mt-3">
         <Card variant="scroll" padding="md" className="flex flex-col gap-3 sm:gap-4 shadow-md bg-[#fdf6e2]">
-          
+
           <div className="flex justify-between items-center text-xs font-extrabold text-amber-900 border-b border-amber-200/50 pb-1.5">
             <span className="flex items-center gap-1.5">
               🧙‍♂️ Nitro Spell Scroll
-              <button 
+              <button
                 onClick={(e) => {
                   e.stopPropagation();
-                  speakText(currentQuestion.question);
+                  speakText(currentQuestion.question, worldInfo.subject);
                 }}
                 className="cursor-pointer hover:scale-115 active:scale-95 transition-transform flex items-center justify-center bg-amber-600/20 hover:bg-amber-600/35 p-0.5 rounded border border-amber-400/30"
                 title="Read Equation Out Loud 🔊"
@@ -629,12 +637,17 @@ function RacingGameContent() {
               </button>
             </span>
             <span className="bg-amber-100 px-2 py-0.5 rounded-full border border-amber-300">
-              Equation: {qIndex + 1} / 5
+              {worldInfo.subject === 'english' ? 'Word' : 'Equation'}: {qIndex + 1} / 5
             </span>
           </div>
 
-          <div className="text-center py-0.5 sm:py-1">
+          <div className="text-center py-0.5 sm:py-1 flex flex-col items-center justify-center">
             <p className="text-[10px] sm:text-sm font-bold text-amber-800 uppercase tracking-widest">CAST ACCEL CHARM</p>
+            {currentQuestion.imageUrl && (
+              <div className="mt-1">
+                <VocabIcon imageUrl={currentQuestion.imageUrl} size={80} />
+              </div>
+            )}
             <h3 className="text-xl sm:text-3xl md:text-4xl font-black text-slate-800 mt-1 sm:mt-1.5 leading-snug tracking-tight">
               {currentQuestion.question}
             </h3>
@@ -663,9 +676,8 @@ function RacingGameContent() {
                   fullWidth
                   onClick={() => handleAnswerSubmit(choice)}
                   disabled={isAnswered}
-                  className={`text-base sm:text-xl md:text-2xl py-2 sm:py-3 ${
-                    isSelected ? 'ring-4 ring-indigo-400/30' : ''
-                  }`}
+                  className={`text-base sm:text-xl md:text-2xl py-2 sm:py-3 ${isSelected ? 'ring-4 ring-indigo-400/30' : ''
+                    }`}
                 >
                   {choice}
                 </Button>
@@ -685,6 +697,7 @@ function RacingGameContent() {
         <HintModal
           questionData={currentQuestion}
           onClose={handleCloseHint}
+          subject={worldInfo.subject}
         />
       )}
 

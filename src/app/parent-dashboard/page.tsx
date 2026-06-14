@@ -24,37 +24,113 @@ export default function ParentDashboardPage() {
     );
   }
 
+  const [activeTab, setActiveTab] = useState<'math' | 'english'>('math');
+
   // Calculate statistics
   const totalAnswered = state.battleStats.questionsAnswered;
   const totalCorrect = state.battleStats.correctAnswers;
   const overallAccuracy = totalAnswered > 0 ? Math.round((totalCorrect / totalAnswered) * 100) : 0;
   const totalMinutes = Math.round(state.battleStats.timePracticedSeconds / 60);
 
-  const topics = [
-    { id: 'addition', name: 'Addition Spells', description: 'Number bonds, carries, double digits', color: 'bg-emerald-450' },
-    { id: 'subtraction', name: 'Subtraction Spells', description: 'Counting back, regrouping, cave navigation', color: 'bg-purple-400' },
-    { id: 'multiplication', name: 'Multiplication Spells', description: 'Times tables, scaling, arrays', color: 'bg-orange-400' },
-    { id: 'division', name: 'Division & Sharing Spells', description: 'Equal distribution, inverse arrays', color: 'bg-amber-400' }
+  const mathSyllabus = [
+    {
+      id: 'counting-arithmetic',
+      name: 'Counting & Arithmetic',
+      description: 'Addition, subtraction, multiplication, division, counting, base ten',
+      color: 'bg-emerald-500',
+      topics: ['counting', 'comparing', 'operations', 'addition', 'subtraction', 'multiplication', 'division', 'place-value', 'base-ten']
+    },
+    {
+      id: 'geometry-measurement',
+      name: 'Geometry & Measurement',
+      description: 'Shapes, time, partitioning, dimensions',
+      color: 'bg-purple-500',
+      topics: ['geometry', 'measurement']
+    }
   ];
+
+  const englishSyllabus = [
+    {
+      id: 'foundational-skills',
+      name: 'Foundational Skills',
+      description: 'Alphabet, sight words, phonics, spelling',
+      color: 'bg-indigo-500',
+      topics: ['alphabet', 'sight-words', 'phonics', 'spelling']
+    },
+    {
+      id: 'vocabulary-study',
+      name: 'Vocabulary & Word Study',
+      description: 'Word trees, roots, synonyms, analogies',
+      color: 'bg-teal-500',
+      topics: ['vocabulary', 'vocab', 'synonyms', 'roots', 'analogies']
+    },
+    {
+      id: 'grammar-mechanics',
+      name: 'Grammar & Mechanics',
+      description: 'Clauses, parts of speech, pronouns, syntax, punctuation',
+      color: 'bg-pink-500',
+      topics: ['grammar', 'sentences', 'parts-of-speech', 'punctuation', 'pronouns', 'clauses', 'voice', 'verbals', 'syntax']
+    },
+    {
+      id: 'reading-rhetoric',
+      name: 'Reading & Figurative Language',
+      description: 'Comprehension, metaphors, rhetoric, literary devices',
+      color: 'bg-blue-500',
+      topics: ['reading', 'figurative', 'rhetoric', 'literary']
+    }
+  ];
+
+  const getSyllabusStats = (syllabusItems: typeof mathSyllabus) => {
+    return syllabusItems.map(item => {
+      let correct = 0;
+      let total = 0;
+      item.topics.forEach(t => {
+        const stat = state.battleStats.topicAccuracy[t] || { correct: 0, total: 0 };
+        correct += stat.correct;
+        total += stat.total;
+      });
+      const acc = total > 0 ? Math.round((correct / total) * 100) : 0;
+      return {
+        ...item,
+        correct,
+        total,
+        acc
+      };
+    });
+  };
+
+  const mathStats = getSyllabusStats(mathSyllabus);
+  const englishStats = getSyllabusStats(englishSyllabus);
+  const activeSyllabus = activeTab === 'math' ? mathStats : englishStats;
 
   // Dynamic recommendations
   const recommendations: string[] = [];
-  topics.forEach(t => {
-    const stat = state.battleStats.topicAccuracy[t.id] || { correct: 0, total: 0 };
-    if (stat.total === 0) {
-      recommendations.push(`Introduce ${t.name}: Embark on new arena challenges!`);
+  mathStats.forEach(s => {
+    if (s.total === 0) {
+      recommendations.push(`Introduce Math - ${s.name}: Begin level challenges in this arena.`);
     } else {
-      const acc = (stat.correct / stat.total) * 100;
-      if (acc < 75) {
-        recommendations.push(`Reinforce ${t.name}: Replay early levels to solidfy core understanding (Current accuracy: ${Math.round(acc)}%).`);
-      } else if (acc >= 90 && stat.total < 15) {
-        recommendations.push(`Master ${t.name}: Practice more battles to lock in long-term mastery skills!`);
+      if (s.acc < 75) {
+        recommendations.push(`Reinforce Math - ${s.name}: Replay early levels to build core understanding (Current accuracy: ${s.acc}%).`);
+      } else if (s.acc >= 90 && s.total < 15) {
+        recommendations.push(`Master Math - ${s.name}: Play more math game modes to lock in long-term mastery skills!`);
+      }
+    }
+  });
+
+  englishStats.forEach(s => {
+    if (s.total === 0) {
+      recommendations.push(`Introduce English - ${s.name}: Begin word challenges in this arena.`);
+    } else {
+      if (s.acc < 75) {
+        recommendations.push(`Reinforce English - ${s.name}: Replay early levels to practice word mechanics (Current accuracy: ${s.acc}%).`);
+      } else if (s.acc >= 90 && s.total < 15) {
+        recommendations.push(`Master English - ${s.name}: Play more English game modes to lock in spelling and comprehension!`);
       }
     }
   });
 
   if (recommendations.length === 0) {
-    recommendations.push("Excellent work! Encourage your child to practice higher-grade topics or collect remaining level stars!");
+    recommendations.push("Amazing job! Your child has completed all modules with high accuracy. Keep up the regular practice!");
   }
 
   const handleResetGame = () => {
@@ -79,7 +155,11 @@ export default function ParentDashboardPage() {
         <h1 className="text-xl md:text-2xl font-black text-slate-800 tracking-tight flex items-center gap-1.5">
           🔑 PARENT PROGRESS REPORT
         </h1>
-        <div className="w-16"></div>
+        <Link href="/admin">
+          <Button variant="purple" size="sm" className="flex items-center gap-1 shadow-sm">
+            🛠️ Content Panel
+          </Button>
+        </Link>
       </header>
 
       {/* Main dashboard panels */}
@@ -88,7 +168,7 @@ export default function ParentDashboardPage() {
         {/* Core summary grid */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
           <Card padding="sm" className="text-center bg-white border-slate-200">
-            <span className="text-sm font-bold text-slate-400 uppercase">Math Accuracy</span>
+            <span className="text-sm font-bold text-slate-400 uppercase">Overall Accuracy</span>
             <p className="text-3xl font-black text-emerald-500 mt-1">{overallAccuracy}%</p>
             <p className="text-[10px] text-slate-400 font-bold uppercase mt-1">Average Correct Ratio</p>
           </Card>
@@ -109,20 +189,41 @@ export default function ParentDashboardPage() {
           </Card>
         </div>
 
+        {/* Tab Selection */}
+        <div className="flex gap-2 justify-center border-b-2 border-slate-100 pb-1">
+          <button
+            onClick={() => setActiveTab('math')}
+            className={`px-6 py-2.5 rounded-t-xl font-black text-sm transition-all duration-300 ${
+              activeTab === 'math'
+                ? 'bg-emerald-500 text-white shadow-sm border-b-4 border-emerald-600'
+                : 'bg-white text-slate-500 hover:bg-slate-50 border border-slate-200 border-b-0'
+            }`}
+          >
+            🧮 Math Syllabus
+          </button>
+          <button
+            onClick={() => setActiveTab('english')}
+            className={`px-6 py-2.5 rounded-t-xl font-black text-sm transition-all duration-300 ${
+              activeTab === 'english'
+                ? 'bg-indigo-500 text-white shadow-sm border-b-4 border-indigo-600'
+                : 'bg-white text-slate-500 hover:bg-slate-50 border border-slate-200 border-b-0'
+            }`}
+          >
+            🔤 English Syllabus
+          </button>
+        </div>
+
         {/* Breakdown details */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Topic accuracy list */}
           <Card padding="md" className="space-y-4">
             <h3 className="text-lg font-black text-slate-800 border-b-2 border-slate-100 pb-1.5 flex items-center gap-1.5">
               <BarChart2 className="w-5 h-5 text-academy-blue" />
-              Syllabus Accuracy Overview
+              {activeTab === 'math' ? 'Math' : 'English'} Syllabus Accuracy Overview
             </h3>
 
             <div className="space-y-4">
-              {topics.map(topic => {
-                const stat = state.battleStats.topicAccuracy[topic.id] || { correct: 0, total: 0 };
-                const acc = stat.total > 0 ? Math.round((stat.correct / stat.total) * 100) : 0;
-                
+              {activeSyllabus.map(topic => {
                 return (
                   <div key={`parent-breakdown-${topic.id}`} className="space-y-1">
                     <div className="flex justify-between items-center text-sm font-bold text-slate-700">
@@ -131,15 +232,15 @@ export default function ParentDashboardPage() {
                         <span className="text-xs text-slate-400 font-medium block">{topic.description}</span>
                       </div>
                       <span className="text-slate-800">
-                        {acc}% <span className="text-xs text-slate-400 font-medium">({stat.correct}/{stat.total})</span>
+                        {topic.acc}% <span className="text-xs text-slate-400 font-medium">({topic.correct}/{topic.total})</span>
                       </span>
                     </div>
                     <div className="w-full bg-slate-100 rounded-full h-3.5 border border-slate-200 overflow-hidden">
                       <div
                         className={`h-full rounded-full transition-all duration-500 ${
-                          stat.total === 0 ? 'bg-slate-200' : topic.color
+                          topic.total === 0 ? 'bg-slate-200' : topic.color
                         }`}
-                        style={{ width: `${stat.total === 0 ? 0 : acc}%` }}
+                        style={{ width: `${topic.total === 0 ? 0 : topic.acc}%` }}
                       />
                     </div>
                   </div>
@@ -156,7 +257,7 @@ export default function ParentDashboardPage() {
               </h3>
               
               <ul className="space-y-3 text-sm font-medium text-slate-600">
-                {recommendations.map((rec, rIdx) => (
+                {recommendations.slice(0, 4).map((rec, rIdx) => (
                   <li key={`rec-${rIdx}`} className="flex gap-2 items-start bg-slate-50 border border-slate-100 p-3 rounded-xl leading-relaxed shadow-sm">
                     <span className="text-amber-500">🎯</span>
                     <span>{rec}</span>
@@ -171,7 +272,7 @@ export default function ParentDashboardPage() {
                 <Trash2 className="w-4 h-4" /> Reset Learning Campaign
               </h4>
               <p className="text-xs text-slate-500 font-medium leading-normal">
-                Want to clear stars, unlocked pets, coins, and levels to let a child start their math adventures from the beginning?
+                Want to clear stars, unlocked pets, coins, and levels to let a child start their learning adventures from the beginning?
               </p>
               <div>
                 <Button

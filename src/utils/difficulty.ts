@@ -1,4 +1,4 @@
-import { MathQuestion } from '@/data/questions';
+import { Question } from '@/data/questions';
 
 /**
  * Progressively scales difficulty of questions based on level ID (1 to 10).
@@ -12,10 +12,10 @@ import { MathQuestion } from '@/data/questions';
  * Shuffles items within matching bands for high replay value.
  */
 export const getScaledQuestions = (
-  questions: MathQuestion[],
+  questions: Question[],
   levelId: number,
   count: number = 5
-): MathQuestion[] => {
+): Question[] => {
   if (questions.length === 0) return [];
 
   // Determine preference hierarchy based on milestone tiers (1 to 10)
@@ -55,7 +55,7 @@ export const getScaledQuestions = (
   };
 
   // Compile final selection list based on weight order
-  let result: MathQuestion[] = [];
+  let result: Question[] = [];
   for (const diff of targetOrder) {
     result = [...result, ...shuffledGroups[diff]];
   }

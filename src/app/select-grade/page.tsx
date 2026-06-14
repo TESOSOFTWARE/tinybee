@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Card } from '@/components/UI/Card';
 import { Button } from '@/components/UI/Button';
@@ -23,8 +23,37 @@ interface GradeCardProps {
   isLocked?: boolean;
 }
 
+import { WORLDS_DATABASE, WorldConfig } from '@/data/worlds';
+
 export default function SelectGradePage() {
   const [viewAllGrade, setViewAllGrade] = useState<GradeCardProps | null>(null);
+  const [selectedSubject, setSelectedSubject] = useState<'math' | 'english'>('math');
+  const [deletedWorldIds, setDeletedWorldIds] = useState<string[]>([]);
+  const [hiddenGradeIds, setHiddenGradeIds] = useState<string[]>([]);
+
+  useEffect(() => {
+    const savedSubject = localStorage.getItem('selected_arena_subject');
+    if (savedSubject === 'math' || savedSubject === 'english') {
+      setSelectedSubject(savedSubject);
+    }
+    const savedDeleted = localStorage.getItem('deleted_world_ids');
+    if (savedDeleted) {
+      try {
+        setDeletedWorldIds(JSON.parse(savedDeleted));
+      } catch (e) {}
+    }
+    const savedHidden = localStorage.getItem('hidden_grade_ids');
+    if (savedHidden) {
+      try {
+        setHiddenGradeIds(JSON.parse(savedHidden));
+      } catch (e) {}
+    }
+  }, []);
+
+  const handleSubjectChange = (subject: 'math' | 'english') => {
+    setSelectedSubject(subject);
+    localStorage.setItem('selected_arena_subject', subject);
+  };
 
   const scrollSlider = (gradeNum: string | number, direction: 'left' | 'right') => {
     const slider = document.getElementById(`slider-${gradeNum}`);
@@ -34,165 +63,139 @@ export default function SelectGradePage() {
     }
   };
 
-  const gradesList: GradeCardProps[] = [
-    {
-      gradeNum: "K",
-      title: "Kindergarten - Novice",
-      description: "Learn counting, number names, shapes, group comparisons, base-ten, and operations!",
-      isLocked: false,
-      topics: [
-        { name: "Counting Stars (Meadow)", worldId: "gk-counting", icon: "🐝", bg: "bg-amber-50 border-amber-300 hover:border-amber-400", text: "text-amber-900", badge: "Counting 🐝" },
-        { name: "Shape Match (Crystal)", worldId: "gk-geometry", icon: "💎", bg: "bg-pink-50 border-pink-300 hover:border-pink-400", text: "text-pink-850", badge: "Shapes 💎" },
-        { name: "Comparing Sets (Valley)", worldId: "gk-comparing", icon: "⛰️", bg: "bg-orange-50 border-orange-300 hover:border-orange-400", text: "text-orange-900", badge: "Comparing ⛰️" },
-        { name: "Sum & Difference Oasis", worldId: "gk-operations", icon: "🍎", bg: "bg-emerald-50 border-emerald-300 hover:border-emerald-400", text: "text-emerald-800", badge: "Operations 🍎" },
-        { name: "Base Ten Meadows", worldId: "gk-base-ten", icon: "🎒", bg: "bg-blue-50 border-blue-300 hover:border-blue-400", text: "text-blue-800", badge: "Base Ten 🎒" }
-      ]
-    },
-    {
-      gradeNum: 1,
-      title: "Grade 1 - Apprentice",
-      description: "Unlock single-digit addition, subtraction, place values, time, and basic partitions!",
-      topics: [
-        { name: "Addition (Number Forest)", worldId: "g1-addition", icon: "🌳", bg: "bg-emerald-50 border-emerald-300 hover:border-emerald-400", text: "text-emerald-800", badge: "Addition 🌳" },
-        { name: "Subtraction (Cave)", worldId: "g1-subtraction", icon: "🦇", bg: "bg-purple-50 border-purple-300 hover:border-purple-400", text: "text-purple-800", badge: "Subtraction 🦇" },
-        { name: "Place Values (Castle)", worldId: "g1-place-value", icon: "🏰", bg: "bg-yellow-50 border-yellow-300 hover:border-yellow-400", text: "text-yellow-850", badge: "Tens & Ones 🏰" },
-        { name: "Time & Measure Cave", worldId: "g1-measurement", icon: "⏰", bg: "bg-indigo-50 border-indigo-300 hover:border-indigo-400", text: "text-indigo-900", badge: "Time ⏰" },
-        { name: "Shape Partition Forest", worldId: "g1-geometry", icon: "🍕", bg: "bg-emerald-50 border-emerald-300 hover:border-emerald-400", text: "text-emerald-800", badge: "Partitions 🍕" }
-      ]
-    },
-    {
-      gradeNum: 2,
-      title: "Grade 2 - Mage",
-      description: "Command double-digit carries, borrowing regrouping, clock time, hundreds, and shape shares!",
-      topics: [
-        { name: "Double addition (Island)", worldId: "g2-addition", icon: "🏝️", bg: "bg-sky-50 border-sky-300 hover:border-sky-400", text: "text-sky-800", badge: "Carries 🏝️" },
-        { name: "Double Subtraction (Cave)", worldId: "g2-subtraction", icon: "🧗", bg: "bg-purple-50 border-purple-300 hover:border-purple-400", text: "text-purple-800", badge: "Regrouping 🧗" },
-        { name: "Clock Spells (Time Tower)", worldId: "g2-measurement", icon: "⏰", bg: "bg-indigo-50 border-indigo-300 hover:border-indigo-400", text: "text-indigo-900", badge: "Time ⏰" },
-        { name: "Hundred Block Castle", worldId: "g2-base-ten", icon: "🧱", bg: "bg-yellow-50 border-yellow-300 hover:border-yellow-400", text: "text-yellow-850", badge: "Hundreds 🧱" },
-        { name: "Partition Cave", worldId: "g2-geometry", icon: "🔷", bg: "bg-purple-50 border-purple-300 hover:border-purple-400", text: "text-purple-800", badge: "Geometry 🔷" }
-      ]
-    },
-    {
-      gradeNum: 3,
-      title: "Grade 3 - Sorcerer",
-      description: "Master multiplication equations, equal sharing division, simple fractions, rounding, and areas!",
-      topics: [
-        { name: "Multiplication (Mountain)", worldId: "g3-multiplication", icon: "🏔️", bg: "bg-orange-50 border-orange-300 hover:border-orange-400", text: "text-orange-855", badge: "Equations 🏔️" },
-        { name: "Division sharing (Kingdom)", worldId: "g3-division", icon: "👑", bg: "bg-yellow-50 border-yellow-300 hover:border-yellow-400", text: "text-yellow-805", badge: "Sharing 👑" },
-        { name: "Fraction Potions (Lab)", worldId: "g3-fractions", icon: "🧪", bg: "bg-rose-50 border-rose-300 hover:border-rose-400", text: "text-rose-900", badge: "Equivalent 🧪" },
-        { name: "Rounding Peak", worldId: "g3-base-ten", icon: "🎯", bg: "bg-indigo-50 border-indigo-300 hover:border-indigo-400", text: "text-indigo-900", badge: "Rounding 🎯" },
-        { name: "Area & Perimeter Ruins", worldId: "g3-measurement", icon: "📏", bg: "bg-orange-50 border-orange-300 hover:border-orange-400", text: "text-orange-900", badge: "Perimeter 📏" },
-        { name: "Shape Matrix Lab", worldId: "g3-geometry", icon: "📐", bg: "bg-rose-50 border-rose-300 hover:border-rose-400", text: "text-rose-900", badge: "Shapes 📐" }
-      ]
-    },
-    {
-      gradeNum: 4,
-      title: "Grade 4 - Archmage",
-      description: "Conquer complex double-digit multiplication, long division, like fractions, primes, and angles!",
-      isLocked: false,
-      topics: [
-        { name: "Long Multiplication Peak", worldId: "g4-multiplication", icon: "⚡", bg: "bg-indigo-50 border-indigo-300 hover:border-indigo-400", text: "text-indigo-900", badge: "Multi-Digit ⚡" },
-        { name: "Long Division Dungeon", worldId: "g4-division", icon: "🧗", bg: "bg-purple-50 border-purple-300 hover:border-purple-400", text: "text-purple-800", badge: "Remainders 🧗" },
-        { name: "Fraction Operations River", worldId: "g4-fractions", icon: "💎", bg: "bg-teal-50 border-teal-300 hover:border-teal-400", text: "text-teal-900", badge: "Like Denom 💎" },
-        { name: "Factor Pattern Peak", worldId: "g4-patterns", icon: "🌀", bg: "bg-sky-50 border-sky-300 hover:border-sky-400", text: "text-sky-800", badge: "Patterns 🌀" },
-        { name: "Angle & Unit Labyrinth", worldId: "g4-measurement", icon: "🧭", bg: "bg-teal-50 border-teal-300 hover:border-teal-400", text: "text-teal-900", badge: "Angles 🧭" },
-        { name: "Line & Symmetry Dungeon", worldId: "g4-geometry", icon: "🦋", bg: "bg-purple-50 border-purple-300 hover:border-purple-400", text: "text-purple-800", badge: "Symmetry 🦋" }
-      ]
-    },
-    {
-      gradeNum: 5,
-      title: "Grade 5 - Grandmaster",
-      description: "Command decimal operations, box coordinate graphing, unlike fractions, algebra, and volumes!",
-      isLocked: false,
-      topics: [
-        { name: "Decimal Desert Oasis", worldId: "g5-decimals", icon: "🏜️", bg: "bg-sky-50 border-sky-300 hover:border-sky-400", text: "text-sky-800", badge: "Operations 🏜️" },
-        { name: "Volume Coordinate Matrix", worldId: "g5-geometry", icon: "📐", bg: "bg-teal-50 border-teal-300 hover:border-teal-400", text: "text-teal-900", badge: "Graphing 📐" },
-        { name: "Unlike Denominator Summit", worldId: "g5-fractions", icon: "⚡", bg: "bg-indigo-50 border-indigo-300 hover:border-indigo-400", text: "text-indigo-900", badge: "Advanced Sums ⚡" },
-        { name: "Expression Oasis", worldId: "g5-algebra", icon: "🧪", bg: "bg-sky-50 border-sky-300 hover:border-sky-400", text: "text-sky-800", badge: "Algebra 🧪" },
-        { name: "Volume Summit", worldId: "g5-measurement", icon: "📦", bg: "bg-indigo-50 border-indigo-300 hover:border-indigo-400", text: "text-indigo-900", badge: "Volume 📦" }
-      ]
-    },
-    {
-      gradeNum: 6,
-      title: "Grade 6 - Wizard",
-      description: "Master ratios, basic algebraic expressions, statistics, coordinates, and polygon areas!",
-      topics: [
-        { name: "Ratio & Rate Ruins", worldId: "g6-ratios", icon: "⚖️", bg: "bg-amber-50 border-amber-300 hover:border-amber-400", text: "text-amber-900", badge: "Ratios ⚖️" },
-        { name: "Expression Dungeon", worldId: "g6-algebra", icon: "📜", bg: "bg-rose-50 border-rose-300 hover:border-rose-400", text: "text-rose-900", badge: "Algebra 📜" },
-        { name: "Stats Swamp", worldId: "g6-statistics", icon: "📊", bg: "bg-emerald-50 border-emerald-300 hover:border-emerald-400", text: "text-emerald-800", badge: "Statistics 📊" },
-        { name: "Coordinate Ruins", worldId: "g6-number-system", icon: "🎯", bg: "bg-amber-50 border-amber-300 hover:border-amber-400", text: "text-amber-900", badge: "Coordinates 🎯" },
-        { name: "Area & Net Swamp", worldId: "g6-geometry", icon: "📐", bg: "bg-emerald-50 border-emerald-300 hover:border-emerald-400", text: "text-emerald-800", badge: "Nets 📐" }
-      ]
-    },
-    {
-      gradeNum: 7,
-      title: "Grade 7 - Warlock",
-      description: "Conquer integers, equations with percents, probability scales, rates, and circle geometry!",
-      topics: [
-        { name: "Rational Pit", worldId: "g7-integers", icon: "🕳️", bg: "bg-indigo-50 border-indigo-300 hover:border-indigo-400", text: "text-indigo-900", badge: "Integers 🕳️" },
-        { name: "Percent Pyramids", worldId: "g7-percentages", icon: "📈", bg: "bg-yellow-50 border-yellow-300 hover:border-yellow-400", text: "text-yellow-850", badge: "Percents 📈" },
-        { name: "Probability Casino", worldId: "g7-probability", icon: "🎲", bg: "bg-pink-50 border-pink-300 hover:border-pink-400", text: "text-pink-850", badge: "Probability 🎲" },
-        { name: "Proportional Pyramids", worldId: "g7-proportions", icon: "📈", bg: "bg-yellow-50 border-yellow-300 hover:border-yellow-400", text: "text-yellow-850", badge: "Proportions 📈" },
-        { name: "Scale & Circle Pit", worldId: "g7-geometry", icon: "⭕", bg: "bg-indigo-50 border-indigo-300 hover:border-indigo-400", text: "text-indigo-900", badge: "Circles ⭕" }
-      ]
-    },
-    {
-      gradeNum: 8,
-      title: "Grade 8 - Summoner",
-      description: "Command multi-step linear systems, exponents, and the Pythagoras Theorem!",
-      topics: [
-        { name: "Linear Volcano", worldId: "g8-equations", icon: "🌋", bg: "bg-red-50 border-red-300 hover:border-red-400", text: "text-red-900", badge: "Equations 🌋" },
-        { name: "Exponent Space Void", worldId: "g8-exponents", icon: "🌌", bg: "bg-sky-50 border-sky-300 hover:border-sky-400", text: "text-sky-800", badge: "Exponents 🌌" },
-        { name: "Pythagoras Pyramid", worldId: "g8-geometry", icon: "📐", bg: "bg-teal-50 border-teal-300 hover:border-teal-400", text: "text-teal-900", badge: "Pythagoras 📐" }
-      ]
-    },
-    {
-      gradeNum: 9,
-      title: "Grade 9 - Alchemist",
-      description: "Command quadratic functions, systems of equinoxes, and absolute inequalities!",
-      topics: [
-        { name: "Quadratic Quagmire", worldId: "g9-quadratics", icon: "🧪", bg: "bg-purple-50 border-purple-300 hover:border-purple-400", text: "text-purple-800", badge: "Quadratics 🧪" },
-        { name: "System of Equinoxes", worldId: "g9-systems", icon: "🌀", bg: "bg-blue-50 border-blue-300 hover:border-blue-400", text: "text-blue-800", badge: "Systems 🌀" },
-        { name: "Inequality Labyrinth", worldId: "g9-inequalities", icon: "🚧", bg: "bg-orange-50 border-orange-300 hover:border-orange-400", text: "text-orange-900", badge: "Inequalities 🚧" }
-      ]
-    },
-    {
-      gradeNum: 10,
-      title: "Grade 10 - Necromancer",
-      description: "Master trigonometric ratios, circle coordinates, and graphing geometry!",
-      topics: [
-        { name: "Trigonometry Peak", worldId: "g10-trigonometry", icon: "⛰️", bg: "bg-sky-50 border-sky-300 hover:border-sky-400", text: "text-sky-850", badge: "Trig ⛰️" },
-        { name: "Infinite Circles", worldId: "g10-circles", icon: "⭕", bg: "bg-red-50 border-red-300 hover:border-red-400", text: "text-red-900", badge: "Circles ⭕" },
-        { name: "Coordinate Crypt", worldId: "g10-geometry", icon: "💀", bg: "bg-slate-100 border-slate-300 hover:border-slate-400", text: "text-slate-905", badge: "Coordinates 💀" }
-      ]
-    },
-    {
-      gradeNum: 11,
-      title: "Grade 11 - Elder Mage",
-      description: "Conquer complex number realms, natural logarithms, and infinite series!",
-      topics: [
-        { name: "Complex Number Sea", worldId: "g11-complex", icon: "🌊", bg: "bg-teal-50 border-teal-300 hover:border-teal-400", text: "text-teal-900", badge: "Complex 🌊" },
-        { name: "Log Lair", worldId: "g11-logarithms", icon: "🪵", bg: "bg-amber-50 border-amber-300 hover:border-amber-400", text: "text-amber-900", badge: "Logarithms 🪵" },
-        { name: "Sequence Springs", worldId: "g11-sequences", icon: "⛲", bg: "bg-indigo-50 border-indigo-300 hover:border-indigo-400", text: "text-indigo-900", badge: "Sequences ⛲" }
-      ]
-    },
-    {
-      gradeNum: 12,
-      title: "Grade 12 - Sage Supreme",
-      description: "Embark on advanced limits, differential derivatives, and integral calculus!",
-      topics: [
-        { name: "Infinity Edge", worldId: "g12-limits", icon: "☁️", bg: "bg-sky-50 border-sky-300 hover:border-sky-400", text: "text-sky-800", badge: "Limits ☁️" },
-        { name: "Derivative Canyon", worldId: "g12-derivatives", icon: "📉", bg: "bg-red-50 border-red-300 hover:border-red-400", text: "text-red-900", badge: "Derivatives 📉" },
-        { name: "Integral Obelisk Field", worldId: "g12-integrals", icon: "🏛️", bg: "bg-yellow-50 border-yellow-300 hover:border-yellow-400", text: "text-yellow-850", badge: "Integrals 🏛️" }
-      ]
-    }
-  ];
+  // Helper to group worlds by grade
+  const getGradesList = (subject: 'math' | 'english'): GradeCardProps[] => {
+    const worlds = Object.values(WORLDS_DATABASE).filter(w => {
+      const isCorrectSubject = (w.subject || 'math') === subject;
+      const isDeleted = deletedWorldIds.includes(w.id);
+      
+      const gradeKey = w.grade.toString() === '0' ? 'K' : w.grade.toString();
+      const isHidden = hiddenGradeIds.includes(gradeKey);
+      
+      return isCorrectSubject && !isDeleted && !isHidden;
+    });
+    const gradesMap: { [key: string]: GradeCardProps } = {};
+
+    // Define standard grade titles and descriptions
+    const gradeInfo: { [key: string]: { title: string, description: string } } = {
+      'K': {
+        title: "Kindergarten - Novice",
+        description: subject === 'math'
+          ? "Learn counting, number names, shapes, group comparisons, base-ten, and operations!"
+          : "Explore the alphabet, sight words, and letter sounds in beautiful magical lands!"
+      },
+      '1': {
+        title: "Grade 1 - Apprentice",
+        description: subject === 'math'
+          ? "Unlock single-digit addition, subtraction, place values, time, and basic partitions!"
+          : "Learn essential spelling patterns and expand your vocabulary in nature!"
+      },
+      '2': {
+        title: "Grade 2 - Mage",
+        description: subject === 'math'
+          ? "Command double-digit carries, borrowing regrouping, clock time, hundreds, and shape shares!"
+          : "Master parts of speech, capitalization, punctuation, and sentence structures!"
+      },
+      '3': {
+        title: "Grade 3 - Sorcerer",
+        description: subject === 'math'
+          ? "Master multiplication equations, equal sharing division, simple fractions, rounding, and areas!"
+          : "Conquer advanced parts of speech and read stories to uncover their secrets!"
+      },
+      '4': {
+        title: "Grade 4 - Archmage",
+        description: subject === 'math'
+          ? "Conquer complex double-digit multiplication, long division, like fractions, primes, and angles!"
+          : "Explore synonyms, antonyms, homophones, and advanced punctuation rules!"
+      },
+      '5': {
+        title: "Grade 5 - Grandmaster",
+        description: subject === 'math'
+          ? "Command decimal operations, box coordinate graphing, unlike fractions, algebra, and volumes!"
+          : "Unlock figurative language and analyze prefixes, suffixes, and root words!"
+      },
+      '6': {
+        title: "Grade 6 - Wizard",
+        description: subject === 'math'
+          ? "Master ratios, basic algebraic expressions, statistics, coordinates, and polygon areas!"
+          : "Master pronoun-antecedent agreement and unlock word relationship analogies!"
+      },
+      '7': {
+        title: "Grade 7 - Warlock",
+        description: subject === 'math'
+          ? "Conquer integers, equations with percents, probability scales, rates, and circle geometry!"
+          : "Conquer dependent and independent clauses and expand your vocabulary range!"
+      },
+      '8': {
+        title: "Grade 8 - Summoner",
+        description: subject === 'math'
+          ? "Command multi-step linear systems, exponents, and the Pythagoras Theorem!"
+          : "Understand active and passive voices and master gerunds, participles, and infinitives!"
+      },
+      '9': {
+        title: "Grade 9 - Alchemist",
+        description: subject === 'math'
+          ? "Command quadratic functions, systems of equinoxes, and absolute inequalities!"
+          : "Analyze rhetorical appeals (ethos, pathos, logos) and spot logical fallacies!"
+      },
+      '10': {
+        title: "Grade 10 - Necromancer",
+        description: subject === 'math'
+          ? "Master trigonometric ratios, circle coordinates, and graphing geometry!"
+          : "Examine complex literary devices like situational irony, oxymorons, and allegories!"
+      },
+      '11': {
+        title: "Grade 11 - Elder Mage",
+        description: subject === 'math'
+          ? "Conquer complex number realms, natural logarithms, and infinite series!"
+          : "Craft sophisticated sentences using parallel structures and inverted syntax!"
+      },
+      '12': {
+        title: "Grade 12 - Sage Supreme",
+        description: subject === 'math'
+          ? "Embark on advanced limits, differential derivatives, and integral calculus!"
+          : "Analyze symbolic contrasts, subtle subtext, and tone vs. mood in complex texts!"
+      }
+    };
+
+    worlds.forEach(world => {
+      const gradeKey = world.grade.toString();
+      if (!gradesMap[gradeKey]) {
+        gradesMap[gradeKey] = {
+          gradeNum: world.grade,
+          title: gradeInfo[gradeKey]?.title || `Grade ${gradeKey}`,
+          description: world.description || gradeInfo[gradeKey]?.description || "",
+          topics: [],
+          isLocked: false
+        };
+      }
+
+      gradesMap[gradeKey].topics.push({
+        name: world.name,
+        worldId: world.id,
+        icon: world.emoji,
+        bg: world.bgStyle || "bg-slate-50 border-slate-300 hover:border-slate-400",
+        text: world.textStyle || "text-slate-900",
+        badge: world.badge
+      });
+    });
+
+    // Sort by grade number (K first, then 1, 2, ...)
+    return Object.values(gradesMap).sort((a, b) => {
+      const aNum = a.gradeNum === 'K' ? 0 : Number(a.gradeNum);
+      const bNum = b.gradeNum === 'K' ? 0 : Number(b.gradeNum);
+      return aNum - bNum;
+    });
+  };
+
+  const gradesList = getGradesList(selectedSubject);
 
   return (
     <div className="min-h-screen bg-playful-dots py-6 px-4 flex flex-col select-none">
-      
+
       {/* Scrollbar hiding styles */}
-      <style dangerouslySetInnerHTML={{__html: `
+      <style dangerouslySetInnerHTML={{
+        __html: `
         .scrollbar-none::-webkit-scrollbar {
           display: none;
         }
@@ -210,7 +213,7 @@ export default function SelectGradePage() {
           </Button>
         </Link>
         <h1 className="text-xl md:text-2xl font-black text-slate-800 tracking-tight">
-          🧙‍♂️ SELECT YOUR GRADE
+          🧙‍♂️ SELECT YOUR ARENA
         </h1>
         <div className="w-16"></div> {/* Spacer to keep header title centered */}
       </header>
@@ -219,10 +222,40 @@ export default function SelectGradePage() {
       <main className="max-w-4xl w-full mx-auto flex-grow flex flex-col gap-6 animate-pop-in">
         <div className="text-center space-y-2">
           <p className="text-sm font-bold text-indigo-500 uppercase tracking-wider">Spell Book Registry</p>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-slate-800">Choose Your Math Arena</h2>
+          <h2 className="text-3xl md:text-4xl font-extrabold text-slate-800">
+            Choose Your {selectedSubject === 'math' ? 'Math' : 'English'} Arena
+          </h2>
           <p className="text-slate-500 max-w-md mx-auto text-sm md:text-base font-medium">
-            Each grade corresponds to different magical world maps. Scroll through topics or view all to embark on your math battle campaign!
+            Each grade corresponds to different magical world maps. Scroll through topics or view all to embark on your {selectedSubject === 'math' ? 'math' : 'English'} battle campaign!
           </p>
+        </div>
+
+        {/* Dynamic Subject Switcher Tabs */}
+        <div className="flex gap-4 max-w-md w-full mx-auto mb-2 bg-slate-100 p-2 rounded-3xl border-4 border-slate-200 shadow-sm">
+          <button
+            onClick={() => {
+              handleSubjectChange('math');
+              setViewAllGrade(null);
+            }}
+            className={`flex-1 py-3 px-4 sm:px-6 rounded-2xl font-black text-sm sm:text-base transition-all flex items-center justify-center gap-2 cursor-pointer ${selectedSubject === 'math'
+                ? 'bg-amber-400 text-slate-800 shadow-md border-2 border-amber-500 scale-102 font-black'
+                : 'bg-transparent text-slate-500 hover:text-slate-700 font-bold border-2 border-transparent'
+              }`}
+          >
+            📐 Math Arena
+          </button>
+          <button
+            onClick={() => {
+              handleSubjectChange('english');
+              setViewAllGrade(null);
+            }}
+            className={`flex-1 py-3 px-4 sm:px-6 rounded-2xl font-black text-sm sm:text-base transition-all flex items-center justify-center gap-2 cursor-pointer ${selectedSubject === 'english'
+                ? 'bg-indigo-500 text-white shadow-md border-2 border-indigo-600 scale-102 font-black'
+                : 'bg-transparent text-slate-500 hover:text-slate-700 font-bold border-2 border-transparent'
+              }`}
+          >
+            🔤 English Arena
+          </button>
         </div>
 
         {/* Grades list grid */}
@@ -230,9 +263,8 @@ export default function SelectGradePage() {
           {gradesList.map((grade, idx) => (
             <Card
               key={`grade-${idx}`}
-              className={`flex flex-col gap-3 relative overflow-hidden ${
-                grade.isLocked ? 'opacity-70 bg-slate-50 border-dashed border-2' : 'border-4 border-slate-200 shadow-sm'
-              }`}
+              className={`flex flex-col gap-3 relative overflow-hidden ${grade.isLocked ? 'opacity-70 bg-slate-50 border-dashed border-2' : 'border-4 border-slate-200 shadow-sm'
+                }`}
             >
               {/* Corner ribbon for locks */}
               {grade.isLocked && (
@@ -244,18 +276,17 @@ export default function SelectGradePage() {
               {/* Header Info */}
               <div className="flex items-center justify-between border-b border-slate-100 pb-3">
                 <div className="flex items-center gap-4">
-                  <div className={`w-12 h-12 flex-shrink-0 flex items-center justify-center rounded-2xl font-black text-xl border-4 ${
-                    grade.isLocked 
-                      ? 'bg-slate-200 border-slate-300 text-slate-500' 
+                  <div className={`w-12 h-12 flex-shrink-0 flex items-center justify-center rounded-2xl font-black text-xl border-4 ${grade.isLocked
+                      ? 'bg-slate-200 border-slate-300 text-slate-500'
                       : grade.gradeNum === 1
-                      ? 'bg-emerald-100 border-emerald-300 text-emerald-600 animate-float-fast'
-                      : grade.gradeNum === 2
-                      ? 'bg-sky-100 border-sky-300 text-sky-600 animate-float'
-                      : 'bg-orange-100 border-orange-300 text-orange-600 animate-float-slow'
-                  }`}>
+                        ? 'bg-emerald-100 border-emerald-300 text-emerald-600 animate-float-fast'
+                        : grade.gradeNum === 2
+                          ? 'bg-sky-100 border-sky-300 text-sky-600 animate-float'
+                          : 'bg-orange-100 border-orange-300 text-orange-600 animate-float-slow'
+                    }`}>
                     {grade.gradeNum}
                   </div>
-                  
+
                   <div>
                     <h3 className="text-base font-black text-slate-800">{grade.title}</h3>
                     <p className="text-xs text-slate-500 font-medium leading-relaxed mt-0.5">{grade.description}</p>
@@ -282,7 +313,7 @@ export default function SelectGradePage() {
                     <span>Swipe Quests ➔</span>
                     <span>{grade.topics.length} Available</span>
                   </div>
-                  
+
                   {/* Left scroll arrow button */}
                   <button
                     onClick={() => scrollSlider(grade.gradeNum, 'left')}
@@ -302,7 +333,7 @@ export default function SelectGradePage() {
                   </button>
 
                   {/* Horizontal Scroll Slider Track */}
-                  <div 
+                  <div
                     id={`slider-${grade.gradeNum}`}
                     className="flex gap-4 overflow-x-auto scrollbar-none snap-x snap-mandatory pb-3 px-8 scroll-smooth"
                   >
@@ -313,7 +344,7 @@ export default function SelectGradePage() {
                         className="snap-start shrink-0"
                       >
                         <div className={`w-[200px] h-[120px] flex flex-col justify-between p-3.5 rounded-2xl border-2 cursor-pointer shadow-sm active:translate-y-0.5 transition-all ${topic.bg} hover:shadow-inner gap-2`}>
-                          
+
                           {/* Top: Icon + Title */}
                           <div className="flex items-start gap-2.5">
                             <span className="text-2xl shrink-0">{topic.icon}</span>
@@ -362,7 +393,7 @@ export default function SelectGradePage() {
       {viewAllGrade !== null && (
         <div className="fixed inset-0 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4 z-50 animate-fade-in">
           <Card padding="lg" className="w-full max-w-2xl max-h-[85vh] overflow-y-auto relative animate-pop-in border-4 border-slate-800/20 bg-white flex flex-col gap-4">
-            
+
             {/* Close button */}
             <button
               onClick={() => setViewAllGrade(null)}
@@ -376,7 +407,7 @@ export default function SelectGradePage() {
               <span className="text-4xl animate-bounce-slow inline-block">📖</span>
               <h3 className="text-xl font-black text-slate-800 mt-1">{viewAllGrade.title}</h3>
               <p className="text-xs text-slate-400 font-extrabold uppercase tracking-wider mt-0.5">
-                Complete Quest Catalog • {viewAllGrade.topics.length} Math Arenas
+                Complete Quest Catalog • {viewAllGrade.topics.length} {selectedSubject === 'math' ? 'Math' : 'English'} Arenas
               </p>
             </div>
 
@@ -389,7 +420,7 @@ export default function SelectGradePage() {
                   onClick={() => setViewAllGrade(null)}
                 >
                   <div className={`flex flex-col justify-between p-4 rounded-2xl border-2 cursor-pointer shadow-sm active:translate-y-0.5 hover:shadow-inner transition-all h-[130px] ${topic.bg} gap-2`}>
-                    
+
                     {/* Top Icon + Title */}
                     <div className="flex items-start gap-2.5">
                       <span className="text-3xl shrink-0">{topic.icon}</span>

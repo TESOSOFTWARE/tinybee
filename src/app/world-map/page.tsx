@@ -19,6 +19,7 @@ function WorldMapContent() {
 
   const worldId = searchParams.get('worldId') || 'g1-addition';
   const world = WORLDS_DATABASE[worldId] || WORLDS_DATABASE['g1-addition'];
+  const totalLevels = Math.min(world.totalLevels || 10, 10);
 
   if (isLoading) {
     return (
@@ -37,7 +38,6 @@ function WorldMapContent() {
 
   // Calculate totals
   const totalStars = Object.values(stars).reduce((acc, curr) => acc + curr, 0);
-  const totalLevels = 10;
   const completedLevels = Object.keys(stars).filter(levelId => (stars[levelId] || 0) > 0).length;
 
   const nodePositions = [
@@ -85,13 +85,37 @@ function WorldMapContent() {
           </div>
           <ProgressBar value={completedLevels} max={totalLevels} color="bg-forest-green" height="sm" />
           <p className="text-xs text-slate-400 text-center font-medium leading-relaxed">
-            Win math battles to unlock new nodes. Defeat Level 10 to conquer {world.name}!
+            Win {world.subject === 'english' ? 'English' : 'math'} battles to unlock new nodes. Defeat Level 10 to conquer {world.name}!
           </p>
         </Card>
 
+        {world.subject === 'english' && (
+          <Card padding="md" className="border-4 border-indigo-400 bg-indigo-50/50 shadow-md animate-pop-in flex items-center justify-between gap-3">
+            <div className="space-y-1">
+              <span className="text-[9px] font-black bg-indigo-600 text-white px-2.5 py-0.5 rounded-full uppercase tracking-wider">
+                📖 Learning Section
+              </span>
+              <h4 className="text-sm font-black text-slate-800">
+                Watch & Recall Vocabulary
+              </h4>
+              <p className="text-[10px] text-slate-500 font-bold leading-normal">
+                Watch a video lesson and challenge your memory to unlock bonus rewards!
+              </p>
+            </div>
+            <Link href={`/video-quest?worldId=${world.id}&levelId=${unlockedLevels}`}>
+              <Button
+                variant="purple"
+                className="text-xs font-black uppercase tracking-wider py-2 px-3 shadow shadow-indigo-900/20 active:translate-y-0.5 cursor-pointer shrink-0"
+              >
+                Learn ➔
+              </Button>
+            </Link>
+          </Card>
+        )}
+
         {/* Bubbly RPG World Map Canvas */}
         <div className="w-full max-w-[380px] mx-auto rounded-3xl border-4 border-slate-700/10 bg-white/40 backdrop-blur-sm p-4 relative min-h-[960px] overflow-hidden shadow-inner flex-grow">
-          
+
           {/* Pathway SVG lines joining nodes exactly */}
           <svg className="absolute inset-0 w-full h-full pointer-events-none" strokeLinecap="round">
             {/* Outer thick road backing */}
@@ -135,7 +159,7 @@ function WorldMapContent() {
           </div>
 
           {/* Level Nodes */}
-          {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((lvlNum) => {
+          {Array.from({ length: totalLevels }, (_, i) => i + 1).map((lvlNum) => {
             const isUnlocked = true; // lvlNum <= unlockedLevels; (Unlocked all levels for monetization phase!)
             const levelStars = stars[lvlNum] || 0;
             const isBoss = lvlNum === 10;
@@ -160,11 +184,10 @@ function WorldMapContent() {
                       setSelectedLvlNum(lvlNum);
                     }
                   }}
-                  className={`w-16 h-16 rounded-full border-4 flex items-center justify-center text-2xl font-black shadow-md cursor-pointer transition-all duration-200 ${
-                    isUnlocked
-                      ? 'bg-white border-slate-700 text-slate-800 scale-105 active:scale-95 animate-float-fast hover:-translate-y-1 hover:shadow-lg'
-                      : 'bg-slate-200 border-slate-400 text-slate-400 cursor-not-allowed'
-                  }`}
+                  className={`w-16 h-16 rounded-full border-4 flex items-center justify-center text-2xl font-black shadow-md cursor-pointer transition-all duration-200 ${isUnlocked
+                    ? 'bg-white border-slate-700 text-slate-800 scale-105 active:scale-95 animate-float-fast hover:-translate-y-1 hover:shadow-lg'
+                    : 'bg-slate-200 border-slate-400 text-slate-400 cursor-not-allowed'
+                    }`}
                 >
                   {isUnlocked ? (
                     isBoss ? '👑' : lvlNum
@@ -179,14 +202,13 @@ function WorldMapContent() {
                     {[1, 2, 3].map((star) => (
                       <Star
                         key={`star-${lvlNum}-${star}`}
-                        className={`w-3.5 h-3.5 ${
-                          star <= levelStars ? 'text-yellow-400 fill-yellow-400' : 'text-slate-500'
-                        }`}
+                        className={`w-3.5 h-3.5 ${star <= levelStars ? 'text-yellow-400 fill-yellow-400' : 'text-slate-500'
+                          }`}
                       />
                     ))}
                   </div>
                 )}
-                
+
                 {/* Boss Label */}
                 {isBoss && isUnlocked && (
                   <span className="text-[10px] font-black bg-red-500 text-white px-2 py-0.5 rounded-full uppercase border border-red-400 tracking-wider shadow mt-1 animate-pulse-slow">
@@ -220,7 +242,26 @@ function WorldMapContent() {
 
             {/* Mode Choices Grid */}
             <div className="flex flex-col gap-3 py-5">
-              
+
+              {/* Mode 0: Learning Section (Only for English) */}
+              {world.subject === 'english' && (
+                <Link href={`/video-quest?worldId=${world.id}&levelId=${selectedLvlNum}`} className="w-full">
+                  <div className="group w-full p-3.5 rounded-2xl border-2 border-indigo-300 hover:border-indigo-500 bg-indigo-50/50 hover:bg-indigo-50 active:translate-y-0.5 transition-all text-left flex items-center gap-3 cursor-pointer shadow-sm">
+                    <div className="w-12 h-12 bg-indigo-100 border border-indigo-300 text-2xl rounded-xl flex items-center justify-center shadow-inner group-hover:scale-105 transition-transform shrink-0">
+                      📖
+                    </div>
+                    <div className="flex-grow min-w-0">
+                      <div className="flex items-center gap-1.5">
+                        <h4 className="font-extrabold text-indigo-900 text-sm">📖 Learning Section Video</h4>
+                        <span className="bg-indigo-200 text-indigo-800 text-[8px] font-black uppercase px-1 rounded">START HERE</span>
+                      </div>
+                      <p className="text-[10px] text-indigo-700 font-medium leading-relaxed mt-0.5">Watch the lesson video and practice memorizing the vocabulary words!</p>
+                    </div>
+                    <span className="text-base font-black text-indigo-500 shrink-0">➔</span>
+                  </div>
+                </Link>
+              )}
+
               {/* Mode 1: RPG Battle */}
               <Link href={`/battle?worldId=${world.id}&levelId=${selectedLvlNum}`} className="w-full">
                 <div className="group w-full p-3.5 rounded-2xl border-2 border-emerald-300 hover:border-emerald-500 bg-emerald-50/50 hover:bg-emerald-50 active:translate-y-0.5 transition-all text-left flex items-center gap-3 cursor-pointer shadow-sm">
@@ -271,7 +312,9 @@ function WorldMapContent() {
                   </div>
                   <div className="flex-grow min-w-0">
                     <h4 className="font-extrabold text-violet-900 text-sm">🏋️ Tug of War Mode</h4>
-                    <p className="text-[10px] text-violet-700 font-medium leading-relaxed mt-0.5">Pull the level monster over the line using your math spell power!</p>
+                    <p className="text-[10px] text-violet-700 font-medium leading-relaxed mt-0.5">
+                      Pull the level monster over the line using your {world.subject === 'english' ? 'English' : 'math'} spell power!
+                    </p>
                   </div>
                   <span className="text-base font-black text-violet-500 shrink-0">➔</span>
                 </div>
@@ -285,7 +328,11 @@ function WorldMapContent() {
                   </div>
                   <div className="flex-grow min-w-0">
                     <h4 className="font-extrabold text-rose-900 text-sm">🏃‍♂️ Adventure Dash</h4>
-                    <p className="text-[10px] text-rose-700 font-medium leading-relaxed mt-0.5">Dash through the dungeon choosing even, odd, or other number types to escape with magical gems!</p>
+                    <p className="text-[10px] text-rose-700 font-medium leading-relaxed mt-0.5">
+                      {world.subject === 'english'
+                        ? 'Dash through the dungeon choosing correct letters or words to escape with magical gems!'
+                        : 'Dash through the dungeon choosing even, odd, or other number types to escape with magical gems!'}
+                    </p>
                   </div>
                   <span className="text-base font-black text-rose-500 shrink-0">➔</span>
                 </div>

@@ -1,4 +1,4 @@
-export interface MathQuestion {
+export interface Question {
   id: string;
   grade: number;
   topic: string;
@@ -8,9 +8,12 @@ export interface MathQuestion {
   correctAnswer: string;
   hint: string;
   explanation: string;
+  imageUrl?: string;
 }
 
-export const mathQuestions: MathQuestion[] = [
+export type MathQuestion = Question;
+
+const STATIC_MATH_QUESTIONS: Question[] = [
   // ==================== KINDERGARTEN (GRADE 0) ====================
   // counting (Number sense)
   {
@@ -3689,3 +3692,25 @@ export const mathQuestions: MathQuestion[] = [
     explanation: "5 cm * 100 = 500 cm (which is 5 meters)."
   }
 ];
+
+export const mathQuestions = new Proxy(STATIC_MATH_QUESTIONS, {
+  get(target, prop) {
+    let activeArray = target;
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem('custom_math_questions');
+      if (saved) {
+        try {
+          const parsed = JSON.parse(saved);
+          if (Array.isArray(parsed)) {
+            activeArray = parsed;
+          }
+        } catch (e) {}
+      }
+    }
+    const val = activeArray[prop as any];
+    if (typeof val === 'function') {
+      return (val as any).bind(activeArray);
+    }
+    return val;
+  }
+}) as unknown as Question[];

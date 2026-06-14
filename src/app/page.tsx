@@ -60,17 +60,17 @@ export default function LandingPage() {
           {/* Decorative Magic Badge */}
           <div className="inline-flex items-center gap-1.5 bg-yellow-100 border-2 border-yellow-300 text-yellow-800 px-4 py-1.5 rounded-full text-sm font-black shadow-sm animate-bounce-slow">
             <Sparkles className="w-4 h-4 text-amber-500 fill-amber-500" />
-            THE ULTIMATE MATH ADVENTURE
+            THE ULTIMATE LEARNING ADVENTURE
           </div>
 
           <h1 className="text-4xl md:text-6xl font-black text-slate-800 leading-tight tracking-tight">
-            Solve Math. <br />
+            Solve Math & English. <br />
             <span className="text-academy-blue">Defeat Monsters.</span> <br />
             Earn Cute Pets!
           </h1>
           
           <p className="text-lg md:text-xl font-medium text-slate-500 max-w-lg mx-auto">
-            Become a legendary math wizard! Practice counting, addition, subtraction, multiplication, and division to level up your magical companions.
+            Become a legendary wizard! Master counting, equations, alphabet letters, phonics, spelling, and grammar to level up your magical companions.
           </p>
 
           <div className="pt-4 flex flex-col sm:flex-row gap-4 justify-center items-center w-full max-w-sm mx-auto">

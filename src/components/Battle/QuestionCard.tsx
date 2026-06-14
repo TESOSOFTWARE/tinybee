@@ -1,20 +1,23 @@
 import React from 'react';
-import { MathQuestion } from '@/data/questions';
+import { Question } from '@/data/questions';
 import { Card } from '@/components/UI/Card';
 import { Button } from '@/components/UI/Button';
 import { Volume2 } from 'lucide-react';
 import { speakText } from '@/utils/tts';
+import { VocabIcon } from '@/components/UI/VocabIcon';
 
 interface QuestionCardProps {
-  questionData: MathQuestion;
+  questionData: Question;
   onAnswerSelect: (answer: string) => void;
   disabled?: boolean;
+  subject?: 'math' | 'english';
 }
 
 export const QuestionCard: React.FC<QuestionCardProps> = ({
   questionData,
   onAnswerSelect,
-  disabled = false
+  disabled = false,
+  subject = 'math'
 }) => {
   const { question, choices } = questionData;
 
@@ -31,14 +34,22 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
       {/* Mathematical scroll */}
       <Card variant="scroll" padding="md" className="text-center relative">
         {/* Ribbon decoration */}
-        <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-amber-500 border-2 border-amber-600 text-white font-bold px-4 py-0.5 rounded-full text-xs shadow flex items-center gap-1.5 select-none">
-          📜 MATH SPELL
+        <div className={`absolute -top-3.5 left-1/2 -translate-x-1/2 border-2 text-white font-bold px-4 py-0.5 rounded-full text-xs shadow flex items-center gap-1.5 select-none ${
+          subject === 'english'
+            ? 'bg-indigo-500 border-indigo-600'
+            : 'bg-amber-500 border-amber-600'
+        }`}>
+          {subject === 'english' ? '📜 ENGLISH SPELL' : '📜 MATH SPELL'}
           <button 
             onClick={(e) => {
               e.stopPropagation();
               speakText(question);
             }}
-            className="cursor-pointer hover:scale-115 active:scale-95 transition-transform flex items-center justify-center bg-amber-600/60 hover:bg-amber-700/80 p-0.5 rounded-md border border-amber-400/50"
+            className={`cursor-pointer hover:scale-115 active:scale-95 transition-transform flex items-center justify-center p-0.5 rounded-md border ${
+              subject === 'english'
+                ? 'bg-indigo-600/60 hover:bg-indigo-700/80 border-indigo-400/50'
+                : 'bg-amber-600/60 hover:bg-amber-700/80 border-amber-400/50'
+            }`}
             title="Read Question Out Loud 🔊"
           >
             <Volume2 className="w-3.5 h-3.5 text-white" />
@@ -46,9 +57,16 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
         </div>
         
         {/* Big crisp question text */}
-        <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold tracking-wide mt-3 sm:mt-4 mb-1 sm:mb-2 text-slate-800 animate-pulse-slow">
-          {question}
-        </h2>
+        <div className="flex flex-col items-center justify-center gap-3">
+          {questionData.imageUrl && (
+            <div className="mt-2">
+              <VocabIcon imageUrl={questionData.imageUrl} size={96} />
+            </div>
+          )}
+          <h2 className="text-2xl sm:text-3xl font-bold tracking-wide mt-2 mb-1 text-slate-800 animate-pulse-slow">
+            {question}
+          </h2>
+        </div>
       </Card>
 
       {/* Chunky options list */}

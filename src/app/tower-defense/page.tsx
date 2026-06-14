@@ -6,13 +6,16 @@ import { useSearchParams, useRouter } from 'next/navigation';
 import { useGameState } from '@/hooks/useGameState';
 import { Button } from '@/components/UI/Button';
 import { Card } from '@/components/UI/Card';
-import { mathQuestions, MathQuestion } from '@/data/questions';
+import { mathQuestions, Question } from '@/data/questions';
+import { englishQuestions } from '@/data/english_questions';
 import { HintModal } from '@/components/Battle/HintModal';
+import { getQuestionsForGame } from '@/data/video_quests';
 import { playBGM, stopBGM } from '@/utils/audio';
 import { speakText, stopSpeech } from '@/utils/tts';
 import { getScaledQuestions } from '@/utils/difficulty';
 import { ArrowLeft, Flame, Shield, Volume2, VolumeX } from 'lucide-react';
 import { WORLDS_DATABASE } from '@/data/worlds';
+import { VocabIcon } from '@/components/UI/VocabIcon';
 
 // =========================================================================
 // 🛠️ TOWER DEFENSE GLOBAL DIFFICULTY CONFIGURATION
@@ -137,7 +140,7 @@ function TowerDefenseContent() {
   const worldInfo = WORLDS_DATABASE[worldId] || WORLDS_DATABASE['g1-addition'];
 
   // Game core state trackers
-  const [questions, setQuestions] = useState<MathQuestion[]>([]);
+  const [questions, setQuestions] = useState<Question[]>([]);
   const [qIndex, setQIndex] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
   const [isAnswered, setIsAnswered] = useState(false);
@@ -219,7 +222,14 @@ function TowerDefenseContent() {
     const gradeVal = worldInfo.grade;
     const topicName = worldInfo.topicId;
 
-    const filtered = mathQuestions.filter(q => q.grade === gradeVal && q.topic === topicName);
+    const filtered = getQuestionsForGame(
+      worldInfo.subject || 'english',
+      gradeVal,
+      levelId,
+      topicName,
+      mathQuestions,
+      englishQuestions
+    );
     const scaled = getScaledQuestions(filtered, levelId, 5);
     setQuestions(scaled);
 
@@ -265,16 +275,16 @@ function TowerDefenseContent() {
     return () => clearInterval(timer);
   }, [isGameOver]);
 
-  // Auto-speak math spells when questions refresh
+  // Auto-speak spells when questions refresh
   const currentQuestion = questions[qIndex] || questions[0];
   useEffect(() => {
     if (currentQuestion) {
-      speakText(currentQuestion.question);
+      speakText(currentQuestion.question, worldInfo.subject);
     }
     return () => {
       stopSpeech();
     };
-  }, [currentQuestion]);
+  }, [currentQuestion, worldInfo.subject]);
 
   // Real-time Canvas HTML5 2D Game Engine Update & Draw Loop (60fps requestAnimationFrame)
   useEffect(() => {
@@ -826,7 +836,7 @@ function TowerDefenseContent() {
       <div className="min-h-screen flex items-center justify-center bg-playful-dots">
         <div className="text-center space-y-4">
           <span className="text-4xl animate-bounce inline-block">🏰</span>
-          <p className="text-lg font-bold text-slate-500 font-extrabold">Constructing Math Lasers...</p>
+          <p className="text-lg font-bold text-slate-500 font-extrabold">Constructing Spell Towers...</p>
         </div>
       </div>
     );
@@ -1022,9 +1032,9 @@ function TowerDefenseContent() {
           {isQuestionsCompleted ? (
             <div className="text-center py-6 flex flex-col items-center justify-center gap-2 animate-bounce-slow">
               <span className="text-4xl animate-pulse">🎉</span>
-              <h3 className="text-xl sm:text-2xl font-black text-indigo-900 animate-pulse">Math Equations Complete!</h3>
+              <h3 className="text-xl sm:text-2xl font-black text-indigo-900 animate-pulse">{worldInfo.subject === 'english' ? 'English Words' : 'Math Equations'} Complete!</h3>
               <p className="text-xs sm:text-sm font-bold text-indigo-850 leading-normal max-w-md">
-                You have successfully cast all math shield charms! Watch your built turrets defend the base and clear the remaining monsters.
+                You have successfully cast all {worldInfo.subject === 'english' ? 'English' : 'math'} shield charms! Watch your built turrets defend the base and clear the remaining monsters.
               </p>
             </div>
           ) : (
@@ -1036,7 +1046,7 @@ function TowerDefenseContent() {
                   <button
                     onClick={(e) => {
                       e.stopPropagation();
-                      speakText(currentQuestion.question);
+                      speakText(currentQuestion.question, worldInfo.subject);
                     }}
                     className="cursor-pointer hover:scale-115 active:scale-95 transition-transform flex items-center justify-center bg-amber-600/20 hover:bg-amber-600/35 p-0.5 rounded border border-amber-400/30"
                     title="Read Spell Out Loud 🔊"
@@ -1050,8 +1060,11 @@ function TowerDefenseContent() {
               </div>
 
               {/* Math spell math Parchment question */}
-              <div className="text-center py-0.5 sm:py-1">
+              <div className="text-center py-0.5 sm:py-1 flex flex-col items-center justify-center">
                 <p className="text-[10px] sm:text-sm font-bold text-amber-800 uppercase tracking-widest">CAST DEFENSE CHARM</p>
+                 {currentQuestion.imageUrl && (
+                  <VocabIcon imageUrl={currentQuestion.imageUrl} size={80} />
+                )}
                 <h3 className="text-xl sm:text-3xl md:text-4xl font-black text-slate-800 mt-1 sm:mt-1.5 leading-snug tracking-tight">
                   {currentQuestion.question}
                 </h3>
@@ -1097,7 +1110,7 @@ function TowerDefenseContent() {
 
       {/* Footer instruction guidelines */}
       <footer className="text-center text-slate-400 text-[10px] font-bold py-1">
-        🏰 Tap on the grass map to guide your pet, and solve correct math spells to construct defense turrets!
+        🏰 Tap on the grass map to guide your pet, and solve correct {worldInfo.subject === 'english' ? 'English spelling' : 'math'} spells to construct defense turrets!
       </footer>
 
       {/* Hints Explanation Modal for incorrect inputs */}
@@ -1105,6 +1118,7 @@ function TowerDefenseContent() {
         <HintModal
           questionData={currentQuestion}
           onClose={handleCloseHint}
+          subject={worldInfo.subject}
         />
       )}
 
@@ -1118,7 +1132,7 @@ export default function TowerDefensePage() {
       <div className="min-h-screen flex items-center justify-center bg-playful-dots">
         <div className="text-center space-y-4">
           <span className="text-4xl animate-spin inline-block">🏰</span>
-          <p className="text-lg font-bold text-slate-500 font-extrabold">Constructing Math Lasers...</p>
+          <p className="text-lg font-bold text-slate-500 font-extrabold">Constructing Spell Towers...</p>
         </div>
       </div>
     }>

@@ -7,6 +7,8 @@ import { useGameState } from '@/hooks/useGameState';
 import { PlayerAvatar } from '@/components/Battle/PlayerAvatar';
 import { WORLDS_DATABASE } from '@/data/worlds';
 import { mathQuestions } from '@/data/questions';
+import { englishQuestions } from '@/data/english_questions';
+import { getQuestionsForGame } from '@/data/video_quests';
 import { playBGM, stopBGM } from '@/utils/audio';
 import { 
   Heart, 
@@ -125,55 +127,111 @@ const AdventureDashContent: React.FC = () => {
 
   const generateQuestions = (classicEvenOdd: boolean) => {
     if (classicEvenOdd) {
-      // Classic Mode: Pure dynamic Even vs Odd sorting
-      const newQuestions: DashQuestion[] = Array.from({ length: 5 }, (_, idx) => {
-        const wantEven = Math.random() > 0.5;
-        const prompt = wantEven ? "DASH TO THE EVEN NUMBER!" : "DASH TO THE ODD NUMBER!";
-        
-        // Generate choices: one correct, two incorrect
-        let correctNum: number;
-        let wrongNum1: number;
-        let wrongNum2: number;
+      if (worldInfo.subject === 'english') {
+        // Classic Mode for English: Vowel vs Consonant Letter sorting
+        const VOWELS = ['A', 'E', 'I', 'O', 'U'];
+        const CONSONANTS = [
+          'B', 'C', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'M',
+          'N', 'P', 'Q', 'R', 'S', 'T', 'V', 'W', 'X', 'Y', 'Z'
+        ];
+        const formatLetter = (letter: string) => Math.random() > 0.5 ? letter.toUpperCase() : letter.toLowerCase();
 
-        if (wantEven) {
-          correctNum = Math.floor(Math.random() * 45) * 2 + 2; // Even [2, 90]
-          wrongNum1 = Math.floor(Math.random() * 45) * 2 + 1; // Odd [1, 89]
-          wrongNum2 = Math.floor(Math.random() * 45) * 2 + 1;
-          while (wrongNum2 === wrongNum1) {
+        const newQuestions: DashQuestion[] = Array.from({ length: 5 }, () => {
+          const wantVowel = Math.random() > 0.5;
+          const prompt = wantVowel ? "DASH TO THE VOWEL!" : "DASH TO THE CONSONANT!";
+
+          let correctRaw: string;
+          let wrong1Raw: string;
+          let wrong2Raw: string;
+
+          if (wantVowel) {
+            correctRaw = VOWELS[Math.floor(Math.random() * VOWELS.length)];
+            const shufCons = [...CONSONANTS].sort(() => Math.random() - 0.5);
+            wrong1Raw = shufCons[0];
+            wrong2Raw = shufCons[1];
+          } else {
+            correctRaw = CONSONANTS[Math.floor(Math.random() * CONSONANTS.length)];
+            const shufVow = [...VOWELS].sort(() => Math.random() - 0.5);
+            wrong1Raw = shufVow[0];
+            wrong2Raw = shufVow[1];
+          }
+
+          const correctLetter = formatLetter(correctRaw);
+          const wrong1Letter = formatLetter(wrong1Raw);
+          const wrong2Letter = formatLetter(wrong2Raw);
+          const choices = [correctLetter, wrong1Letter, wrong2Letter].sort(() => Math.random() - 0.5);
+
+          return {
+            prompt,
+            choices,
+            correctAnswer: correctLetter,
+            explanation: wantVowel
+              ? `'${correctLetter}' is a VOWEL! The vowels are A, E, I, O, and U.`
+              : `'${correctLetter}' is a CONSONANT! Consonants are any letters that are not vowels (A, E, I, O, U).`,
+            hint: wantVowel
+              ? "Look for a vowel: A, E, I, O, or U!"
+              : "Look for a consonant (any letter that is NOT A, E, I, O, or U)!"
+          };
+        });
+        setQuestions(newQuestions);
+      } else {
+        // Classic Mode: Pure dynamic Even vs Odd sorting
+        const newQuestions: DashQuestion[] = Array.from({ length: 5 }, (_, idx) => {
+          const wantEven = Math.random() > 0.5;
+          const prompt = wantEven ? "DASH TO THE EVEN NUMBER!" : "DASH TO THE ODD NUMBER!";
+          
+          // Generate choices: one correct, two incorrect
+          let correctNum: number;
+          let wrongNum1: number;
+          let wrongNum2: number;
+
+          if (wantEven) {
+            correctNum = Math.floor(Math.random() * 45) * 2 + 2; // Even [2, 90]
+            wrongNum1 = Math.floor(Math.random() * 45) * 2 + 1; // Odd [1, 89]
             wrongNum2 = Math.floor(Math.random() * 45) * 2 + 1;
-          }
-        } else {
-          correctNum = Math.floor(Math.random() * 45) * 2 + 1; // Odd [1, 89]
-          wrongNum1 = Math.floor(Math.random() * 45) * 2 + 2; // Even [2, 90]
-          wrongNum2 = Math.floor(Math.random() * 45) * 2 + 2;
-          while (wrongNum2 === wrongNum1) {
+            while (wrongNum2 === wrongNum1) {
+              wrongNum2 = Math.floor(Math.random() * 45) * 2 + 1;
+            }
+          } else {
+            correctNum = Math.floor(Math.random() * 45) * 2 + 1; // Odd [1, 89]
+            wrongNum1 = Math.floor(Math.random() * 45) * 2 + 2; // Even [2, 90]
             wrongNum2 = Math.floor(Math.random() * 45) * 2 + 2;
+            while (wrongNum2 === wrongNum1) {
+              wrongNum2 = Math.floor(Math.random() * 45) * 2 + 2;
+            }
           }
-        }
 
-        // Shuffled choices
-        const choicesList = [correctNum, wrongNum1, wrongNum2].map(String);
-        const choices = [...choicesList].sort(() => Math.random() - 0.5);
+          // Shuffled choices
+          const choicesList = [correctNum, wrongNum1, wrongNum2].map(String);
+          const choices = [...choicesList].sort(() => Math.random() - 0.5);
 
-        return {
-          prompt,
-          choices,
-          correctAnswer: String(correctNum),
-          explanation: wantEven 
-            ? `Even numbers always end in 0, 2, 4, 6, or 8! ${correctNum} ends in ${correctNum % 10}, making it even.`
-            : `Odd numbers always end in 1, 3, 5, 7, or 9! ${correctNum} ends in ${correctNum % 10}, making it odd.`,
-          hint: wantEven
-            ? "Look for a number ending in 0, 2, 4, 6, or 8!"
-            : "Look for a number ending in 1, 3, 5, 7, or 9!"
-        };
-      });
-      setQuestions(newQuestions);
+          return {
+            prompt,
+            choices,
+            correctAnswer: String(correctNum),
+            explanation: wantEven 
+              ? `Even numbers always end in 0, 2, 4, 6, or 8! ${correctNum} ends in ${correctNum % 10}, making it even.`
+              : `Odd numbers always end in 1, 3, 5, 7, or 9! ${correctNum} ends in ${correctNum % 10}, making it odd.`,
+            hint: wantEven
+              ? "Look for a number ending in 0, 2, 4, 6, or 8!"
+              : "Look for a number ending in 1, 3, 5, 7, or 9!"
+          };
+        });
+        setQuestions(newQuestions);
+      }
     } else {
-      // Curriculum Mode: Fetch level math questions from standard database
+      // Curriculum Mode: Fetch level questions from standard database
       const gradeVal = worldInfo.grade;
       const topicName = worldInfo.topicId;
 
-      const filtered = mathQuestions.filter(q => q.grade === gradeVal && q.topic === topicName);
+      const filtered = getQuestionsForGame(
+        worldInfo.subject || 'english',
+        gradeVal,
+        levelVal,
+        topicName,
+        mathQuestions,
+        englishQuestions
+      );
       const shuffled = [...filtered].sort(() => 0.5 - Math.random()).slice(0, 5);
 
       const resolvedQuestions = shuffled.map(q => {
@@ -183,32 +241,51 @@ const AdventureDashContent: React.FC = () => {
         const choices = [...selectedWrongs, q.correctAnswer].sort(() => Math.random() - 0.5);
 
         return {
-          prompt: `SOLVE: ${q.question}`,
+          prompt: worldInfo.subject === 'english' ? `FIND: ${q.question}` : `SOLVE: ${q.question}`,
           choices,
           correctAnswer: q.correctAnswer,
-          explanation: q.explanation || `The correct mathematical answer is ${q.correctAnswer}!`,
-          hint: q.hint || "Take your time to work out the arithmetic step by step!"
+          explanation: q.explanation || `The correct answer is ${q.correctAnswer}!`,
+          hint: q.hint || (worldInfo.subject === 'english' ? "Read the question carefully and find the correct choice!" : "Take your time to work out the arithmetic step by step!")
         };
       });
 
       // Handle fallback questions if empty
       if (resolvedQuestions.length === 0) {
-        setQuestions([
-          {
-            prompt: "DASH TO THE EVEN NUMBER!",
-            choices: ["15", "24", "33"],
-            correctAnswer: "24",
-            explanation: "24 ends in 4, making it an even number!",
-            hint: "Even numbers always end in 0, 2, 4, 6, or 8."
-          },
-          {
-            prompt: "DASH TO THE ODD NUMBER!",
-            choices: ["10", "18", "27"],
-            correctAnswer: "27",
-            explanation: "27 ends in 7, making it an odd number!",
-            hint: "Odd numbers always end in 1, 3, 5, 7, or 9."
-          }
-        ]);
+        if (worldInfo.subject === 'english') {
+          setQuestions([
+            {
+              prompt: "FIND THE NOUN!",
+              choices: ["run", "dog", "quickly"],
+              correctAnswer: "dog",
+              explanation: "A noun is a person, place, or thing. 'dog' is a thing!",
+              hint: "Identify the naming word."
+            },
+            {
+              prompt: "FIND THE VERB!",
+              choices: ["blue", "jump", "apple"],
+              correctAnswer: "jump",
+              explanation: "A verb is an action word. 'jump' is an action!",
+              hint: "Identify the action word."
+            }
+          ]);
+        } else {
+          setQuestions([
+            {
+              prompt: "DASH TO THE EVEN NUMBER!",
+              choices: ["15", "24", "33"],
+              correctAnswer: "24",
+              explanation: "24 ends in 4, making it an even number!",
+              hint: "Even numbers always end in 0, 2, 4, 6, or 8."
+            },
+            {
+              prompt: "DASH TO THE ODD NUMBER!",
+              choices: ["10", "18", "27"],
+              correctAnswer: "27",
+              explanation: "27 ends in 7, making it an odd number!",
+              hint: "Odd numbers always end in 1, 3, 5, 7, or 9."
+            }
+          ]);
+        }
       } else {
         setQuestions(resolvedQuestions);
       }
@@ -373,7 +450,9 @@ const AdventureDashContent: React.FC = () => {
                 : 'bg-white hover:bg-slate-50 border-slate-200 text-slate-500'
             }`}
           >
-            {isClassicMode ? 'Classic On 🏃‍♂️' : 'Classic Mode'}
+            {isClassicMode 
+              ? (worldInfo.subject === 'english' ? 'Vowel/Consonant On 🏃‍♂️' : 'Classic On 🏃‍♂️') 
+              : 'Classic Mode'}
           </button>
         </div>
       </header>

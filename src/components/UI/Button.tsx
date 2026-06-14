@@ -15,7 +15,7 @@ export const Button: React.FC<ButtonProps> = ({
   children,
   ...props
 }) => {
-  const baseStyle = 'btn-chunky font-bold rounded-2xl flex items-center justify-center transition-all duration-100 outline-none select-none active:translate-y-1';
+  const baseStyle = 'btn-chunky font-bold rounded-2xl flex items-center justify-center transition-all duration-100 outline-none select-none active:translate-y-1 whitespace-nowrap';
   
   const variantStyles = {
     blue: 'btn-chunky-blue text-white',
