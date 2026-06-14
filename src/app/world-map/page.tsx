@@ -89,29 +89,6 @@ function WorldMapContent() {
           </p>
         </Card>
 
-        {world.subject === 'english' && (
-          <Card padding="md" className="border-4 border-indigo-400 bg-indigo-50/50 shadow-md animate-pop-in flex items-center justify-between gap-3">
-            <div className="space-y-1">
-              <span className="text-[9px] font-black bg-indigo-600 text-white px-2.5 py-0.5 rounded-full uppercase tracking-wider">
-                📖 Learning Section
-              </span>
-              <h4 className="text-sm font-black text-slate-800">
-                Watch & Recall Vocabulary
-              </h4>
-              <p className="text-[10px] text-slate-500 font-bold leading-normal">
-                Watch a video lesson and challenge your memory to unlock bonus rewards!
-              </p>
-            </div>
-            <Link href={`/video-quest?worldId=${world.id}&levelId=${unlockedLevels}`}>
-              <Button
-                variant="purple"
-                className="text-xs font-black uppercase tracking-wider py-2 px-3 shadow shadow-indigo-900/20 active:translate-y-0.5 cursor-pointer shrink-0"
-              >
-                Learn ➔
-              </Button>
-            </Link>
-          </Card>
-        )}
 
         {/* Bubbly RPG World Map Canvas */}
         <div className="w-full max-w-[380px] mx-auto rounded-3xl border-4 border-slate-700/10 bg-white/40 backdrop-blur-sm p-4 relative min-h-[960px] overflow-hidden shadow-inner flex-grow">
