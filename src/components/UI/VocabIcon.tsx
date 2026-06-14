@@ -28,7 +28,7 @@ export function VocabIcon({ imageUrl, size = 96 }: { imageUrl: string; size?: nu
 
   const normalizedUrl = normalizeSupabaseUrl(imageUrl);
 
-  const iconSize = Math.round(size * 0.55);
+  const iconSize = Math.round(size * 0.78);
   const wrapClass =
     'relative rounded-2xl overflow-hidden border-2 border-indigo-200 bg-white shadow-sm flex items-center justify-center p-2 mb-2';
   const wrapStyle = { width: size, height: size };

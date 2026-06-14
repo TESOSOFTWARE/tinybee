@@ -173,7 +173,7 @@ function VideoQuestContent() {
                 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://uzgrmusaxsgirshvkwzx.supabase.co';
                 const bucketName = process.env.NEXT_PUBLIC_SUPABASE_BUCKET || 'vocab-icons';
                 const imgUrl = currentQuestion.imageUrl || `${supabaseUrl}/storage/v1/object/public/${bucketName}/${cleanWord}.png`;
-                return <VocabIcon imageUrl={imgUrl} size={128} />;
+                return <VocabIcon imageUrl={imgUrl} size={192} />;
               })()}
               <p className="text-base md:text-lg font-black text-slate-800 text-center leading-relaxed">
                 {currentQuestion.question}

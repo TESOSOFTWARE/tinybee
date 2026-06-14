@@ -60,7 +60,7 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
         <div className="flex flex-col items-center justify-center gap-3">
           {questionData.imageUrl && (
             <div className="mt-2">
-              <VocabIcon imageUrl={questionData.imageUrl} size={96} />
+              <VocabIcon imageUrl={questionData.imageUrl} size={160} />
             </div>
           )}
           <h2 className="text-2xl sm:text-3xl font-bold tracking-wide mt-2 mb-1 text-slate-800 animate-pulse-slow">

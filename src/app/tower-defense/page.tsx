@@ -1063,7 +1063,7 @@ function TowerDefenseContent() {
               <div className="text-center py-0.5 sm:py-1 flex flex-col items-center justify-center">
                 <p className="text-[10px] sm:text-sm font-bold text-amber-800 uppercase tracking-widest">CAST DEFENSE CHARM</p>
                  {currentQuestion.imageUrl && (
-                  <VocabIcon imageUrl={currentQuestion.imageUrl} size={80} />
+                  <VocabIcon imageUrl={currentQuestion.imageUrl} size={144} />
                 )}
                 <h3 className="text-xl sm:text-3xl md:text-4xl font-black text-slate-800 mt-1 sm:mt-1.5 leading-snug tracking-tight">
                   {currentQuestion.question}
