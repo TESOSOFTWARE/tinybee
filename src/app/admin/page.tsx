@@ -2866,9 +2866,9 @@ export default function AdminDashboardPage() {
                   <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Level</span>
                   <div className="flex flex-wrap gap-2">
                     {levels.map(lvl => {
-                      const hasTopicContent = selectedWorldId && !!videoQuests[`${selectedWorldId}-${lvl}`];
+                      const hasTopicContent = !!(selectedWorldId && videoQuests[`${selectedWorldId}-${lvl}`]);
                       const hasGradeContent = !!videoQuests[`${selectedGradeId}-${lvl}`];
-                      const hasContent = hasTopicContent || hasGradeContent;
+                      const hasContent = selectedWorldId ? hasTopicContent : hasGradeContent;
                       const isActive = selectedLevelNum === lvl;
                       return (
                         <button
