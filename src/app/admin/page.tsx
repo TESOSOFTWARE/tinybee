@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { ArrowLeft, Save, Trash2, Plus, Download, Upload, RotateCcw, Edit3, Check, X, Film, HelpCircle, GraduationCap, Sparkles, Loader2, Search, Copy, Globe, ImageOff, RefreshCw, Eye, EyeOff } from 'lucide-react';
+import { ArrowLeft, Save, Trash2, Plus, Download, Upload, RotateCcw, Edit3, Check, X, Film, HelpCircle, GraduationCap, Sparkles, Loader2, Search, Copy, Globe, ImageOff, RefreshCw, Eye, EyeOff, AlertTriangle } from 'lucide-react';
 import { Button } from '@/components/UI/Button';
 import { Card } from '@/components/UI/Card';
 import { getYouTubeEmbedUrl } from '@/data/video_quests';
@@ -513,6 +513,116 @@ const mockExtractVideoData = (videoUrl: string, grade: number) => {
   }
 };
 
+const migrateCustomQuests = (quests: any) => {
+  if (!quests || typeof quests !== 'object') return quests;
+  const updated = { ...quests };
+  let modified = false;
+
+  // Video mapping for all known videos (playlist and animal quizzes)
+  const videoMapping: { [videoId: string]: { grade: number, topicId: string, level: number } } = {
+    "9b0l4iRZNXg": { grade: 1, topicId: "playground-park", level: 1 },
+    "0xKYNv73vtw": { grade: 2, topicId: "jobs-occupations", level: 1 },
+    "Sf4zNup1rec": { grade: 1, topicId: "food-meals", level: 1 },
+    "HbvG-nV4DaM": { grade: 2, topicId: "food-drinks", level: 1 },
+    "UFHw7A3ovp8": { grade: 2, topicId: "vehicles-travel", level: 1 },
+    "-EvRsX91qLU": { grade: 1, topicId: "hygiene-grooming", level: 1 },
+    "Qq0RPVzzWZk": { grade: 4, topicId: "shopping-money", level: 1 },
+    "Xc-3EYhpBlI": { grade: 1, topicId: "home-furniture", level: 1 },
+    "-UP5ZcFqv_Y": { grade: 1, topicId: "school-supplies", level: 2 },
+    "2W4eR4EngLo": { grade: 2, topicId: "vehicles-travel", level: 2 },
+    "7tbyXd0kxKc": { grade: 1, topicId: "hygiene-grooming", level: 2 },
+    "VETWVYWsyko": { grade: 3, topicId: "health-body", level: 1 },
+    "UIEIkXJAoog": { grade: 2, topicId: "wild-animals", level: 1 },
+    "k5pTmDPDY8Q": { grade: 3, topicId: "hobbies-games", level: 1 },
+    "xFeaApa5sHw": { grade: 1, topicId: "food-meals", level: 2 },
+    "2-ZjXvMACEY": { grade: 1, topicId: "food-meals", level: 5 },
+    "r9p9SunFcMY": { grade: 1, topicId: "food-meals", level: 4 },
+    "YJKIvSR_Wdw": { grade: 1, topicId: "food-meals", level: 3 },
+    "ViGE5pjVdjU": { grade: 4, topicId: "health-medicine", level: 1 }
+  };
+
+  const getVidId = (url: string): string => {
+    if (!url) return '';
+    const m1 = url.match(/\/shorts\/([a-zA-Z0-9_-]{11})/);
+    if (m1) return m1[1];
+    const m2 = url.match(/[?&]v=([a-zA-Z0-9_-]{11})/);
+    if (m2) return m2[1];
+    const m3 = url.match(/youtu\.be\/([a-zA-Z0-9_-]{11})/);
+    if (m3) return m3[1];
+    const m4 = url.match(/\/embed\/([a-zA-Z0-9_-]{11})/);
+    if (m4) return m4[1];
+    return '';
+  };
+
+  const entriesToMigrate: { originalKey: string; quest: any; target: { grade: number; topicId: string; level: number } }[] = [];
+
+  Object.entries(updated).forEach(([key, q]: [string, any]) => {
+    if (!q || typeof q !== 'object') return;
+
+    let target = null;
+    const vidId = getVidId(q.videoUrl || '');
+    
+    if (vidId && videoMapping[vidId]) {
+      target = videoMapping[vidId];
+    } else if (q.channel === '@EnglishMirage' || (q.title && q.title.includes('EnglishMirage'))) {
+      target = { grade: 1, topicId: "farm-animals", level: 1 };
+    } else if (q.channel === '@EnglishWordsCorner' || (q.title && q.title.includes('EnglishWordsCorner'))) {
+      const wordsLower = (q.words || []).map((w: string) => w.toLowerCase());
+      if (wordsLower.includes('dog') || wordsLower.includes('cat')) {
+        target = { grade: 1, topicId: "farm-animals", level: 2 };
+      } else if (wordsLower.includes('tiger') || wordsLower.includes('lion')) {
+        target = { grade: 2, topicId: "wild-animals", level: 2 };
+      } else if (wordsLower.includes('sheep') || wordsLower.includes('fox')) {
+        target = { grade: 1, topicId: "farm-animals", level: 3 };
+      } else if (wordsLower.includes('cow') || wordsLower.includes('pig')) {
+        target = { grade: 1, topicId: "farm-animals", level: 4 };
+      }
+    }
+
+    if (target && (q.topicId !== target.topicId || q.grade !== target.grade)) {
+      entriesToMigrate.push({
+        originalKey: key,
+        quest: q,
+        target
+      });
+    }
+  });
+
+  if (entriesToMigrate.length === 0) return quests;
+
+  entriesToMigrate.forEach(({ originalKey, quest, target }) => {
+    delete updated[originalKey];
+    const match = originalKey.match(/^(\d+)-(\d+)$/);
+    if (match) {
+      const g = match[1];
+      const l = match[2];
+      if (l === '1') {
+        delete updated[g];
+      }
+    }
+
+    const migratedQuest = {
+      ...quest,
+      grade: target.grade,
+      topicId: target.topicId
+    };
+
+    const newTopicKey = `${target.topicId}-${target.level}`;
+    updated[newTopicKey] = migratedQuest;
+
+    if (target.level === 1) {
+      updated[target.topicId] = migratedQuest;
+      updated[String(target.grade)] = migratedQuest;
+    }
+
+    const fallbackKey = `${target.grade}-${target.level}`;
+    updated[fallbackKey] = migratedQuest;
+    modified = true;
+  });
+
+  return updated;
+};
+
 export default function AdminDashboardPage() {
   const [activeTab, setActiveTab] = useState<'math' | 'english' | 'math-worlds' | 'english-worlds'>('english');
   const [englishSubTab, setEnglishSubTab] = useState<'learning' | 'standard'>('learning');
@@ -528,6 +638,8 @@ export default function AdminDashboardPage() {
   const [poolSearchQuery, setPoolSearchQuery] = useState('');
   const [poolSelectedGrade, setPoolSelectedGrade] = useState('');
   const [poolSelectedWorld, setPoolSelectedWorld] = useState('');
+  const [poolCurrentPage, setPoolCurrentPage] = useState(1);
+  const [poolPageSize, setPoolPageSize] = useState<string>('20');
   const [selectedQuestKeys, setSelectedQuestKeys] = useState<string[]>([]);
   const [bulkTargetGrade, setBulkTargetGrade] = useState('1');
   const [bulkTargetWorld, setBulkTargetWorld] = useState('');
@@ -619,6 +731,7 @@ export default function AdminDashboardPage() {
 
   // Scan & Fix Broken Images state
   const [isScanningImages, setIsScanningImages] = useState(false);
+  const [isShowingMissingIconsModal, setIsShowingMissingIconsModal] = useState(false);
   const [scanImageProgress, setScanImageProgress] = useState<{
     phase: 'idle' | 'scanning' | 'review' | 'fixing' | 'done';
     total: number;
@@ -681,9 +794,16 @@ export default function AdminDashboardPage() {
       const savedQuests = localStorage.getItem(STORAGE_KEYS.videoQuests);
       if (savedQuests) {
         try {
-          const parsed = JSON.parse(savedQuests);
+          let parsed = JSON.parse(savedQuests);
+          
+          // Migrate any custom quests to their proper topicId/grade structures
+          const migrated = migrateCustomQuests(parsed);
+          let modified = migrated !== parsed;
+          if (modified) {
+            parsed = migrated;
+          }
+
           const currentSupabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://uzgrmusaxsgirshvkwzx.supabase.co';
-          let modified = false;
           // Normalize all custom quests on load to use correct Supabase URL and bucket
           const bucketName = process.env.NEXT_PUBLIC_SUPABASE_BUCKET || 'vocab-icons';
           Object.keys(parsed).forEach(key => {
@@ -1482,137 +1602,180 @@ export default function AdminDashboardPage() {
       for (let i = 0; i < selectedPlaylistVideos.length; i++) {
         const videoIdx = selectedPlaylistVideos[i];
         const video = extractedPlaylistVideos[videoIdx];
-        // Check duplicates to prevent importing the same video multiple times
-        const existingIds = new Set<string>();
-        Object.values(updatedQuests).forEach((quest: any) => {
-          if (quest && quest.videoUrl) {
-            const match = quest.videoUrl.match(/(?:embed\/|v=|\/shorts\/|youtu\.be\/)([a-zA-Z0-9_-]{11})/);
-            if (match) existingIds.add(match[1]);
-          }
-        });
-
-        if (existingIds.has(video.videoId)) {
-          setBulkImportProgress(prev => ({
-            ...prev,
-            log: [...prev.log, `⚠️ Skipping duplicate video: "${video.title}" (ID: ${video.videoId}) — already in library.`]
-          }));
-          continue;
-        }
-
-        // 1. Initial processing logs
-        setBulkImportProgress(prev => ({
-          ...prev,
-          current: i + 1,
-          log: [...prev.log, `[${i + 1}/${selectedPlaylistVideos.length}] Processing video: "${video.title}"...`]
-        }));
-
-        const videoUrl = `https://www.youtube.com/watch?v=${video.videoId}`;
-        const embedUrl = `https://www.youtube.com/embed/${video.videoId}`;
-
-        // 2. Fetch video details & metadata from YouTube
-        const extractRes = await fetch(`/api/extract-video?videoUrl=${encodeURIComponent(videoUrl)}&imageSource=${bulkImportImageSource}`);
-        if (!extractRes.ok) {
-          throw new Error(`Failed to extract video content for "${video.title}"`);
-        }
-        const extractData = await extractRes.json();
-        if (extractData.error) throw new Error(extractData.error);
-
-        // 3. Determine topic/world categorization
-        let targetWorldId: string | undefined = undefined;
-        let worldLabel = 'none';
-
-        if (bulkImportWorld === 'auto') {
-          const matchedWorldId = categorizeVideoInWorld(extractData.title, extractData.description || '', extractData.words || [], targetWorldsForGrade);
-          if (matchedWorldId) {
-            targetWorldId = matchedWorldId;
-            const wName = targetWorldsForGrade.find(w => w.topicId === matchedWorldId)?.name || matchedWorldId;
-            worldLabel = `${wName} (${matchedWorldId})`;
-          } else {
-            worldLabel = 'none';
-          }
-        } else if (bulkImportWorld !== 'none') {
-          targetWorldId = bulkImportWorld;
-          const wName = targetWorldsForGrade.find(w => w.topicId === bulkImportWorld)?.name || bulkImportWorld;
-          worldLabel = `${wName} (${bulkImportWorld})`;
-        }
-
-        // 4. Find the next available level number
-        const targetLevel = findNextAvailableLevel(
-          String(bulkImportGrade),
-          targetWorldId || '',
-          updatedQuests,
-          bulkStartingLevelNum
-        );
-
-        if (targetLevel === null || targetLevel > 10) {
-          setBulkImportProgress(prev => ({
-            ...prev,
-            log: [...prev.log, `⚠️ Skipping video "${video.title}" because target level exceeds Level 10 for World: ${worldLabel}.`]
-          }));
-          continue;
-        }
-
-        // 5. Generate quiz questions
-        const questionsRes = await fetch('/api/extract-video', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            words: extractData.words,
-            transcriptText: extractData.transcriptText,
-            imageSource: bulkImportImageSource,
-            title: extractData.title
-          })
-        });
-        if (!questionsRes.ok) {
-          throw new Error(`Failed to generate quiz for "${extractData.title}"`);
-        }
-        const questionsData = await questionsRes.json();
-        if (questionsData.error) throw new Error(questionsData.error);
-
-        // Add any missing custom icons to queue
-        if (questionsData.missingWords && questionsData.missingWords.length > 0) {
-          setMissingIconsQueue(prev => {
-            const updated = Array.from(new Set([...prev, ...questionsData.missingWords]));
-            localStorage.setItem('tinybee_missing_icons', JSON.stringify(updated));
-            return updated;
+        
+        try {
+          // Check duplicates to prevent importing the same video multiple times
+          const existingIds = new Set<string>();
+          Object.values(updatedQuests).forEach((quest: any) => {
+            if (quest && quest.videoUrl) {
+              const match = quest.videoUrl.match(/(?:embed\/|v=|\/shorts\/|youtu\.be\/)([a-zA-Z0-9_-]{11})/);
+              if (match) existingIds.add(match[1]);
+            }
           });
-        }
 
-        // 6. Save quest object
-        const numericGrade = bulkImportGrade === 'K' ? 0 : parseInt(String(bulkImportGrade), 10);
-        const specificKey = targetWorldId
-          ? `${targetWorldId}-${targetLevel}`
-          : `${bulkImportGrade}-${targetLevel}`;
-
-        const newQuestObj = {
-          grade: numericGrade,
-          topicId: targetWorldId || undefined,
-          videoUrl: embedUrl,
-          title: extractData.title || 'Lesson Video',
-          channel: extractData.channel || '@YOUTUBE.CREATOR',
-          transcriptText: extractData.transcriptText || '',
-          words: extractData.words || [],
-          questions: questionsData.questions || []
-        };
-
-        updatedQuests[specificKey] = newQuestObj;
-
-        // Mirror under grade-level key if topic is set
-        if (targetWorldId) {
-          updatedQuests[`${bulkImportGrade}-${targetLevel}`] = newQuestObj;
-        }
-
-        if (targetLevel === 1) {
-          if (targetWorldId) {
-            updatedQuests[targetWorldId] = newQuestObj;
+          if (existingIds.has(video.videoId)) {
+            setBulkImportProgress(prev => ({
+              ...prev,
+              log: [...prev.log, `⚠️ Skipping duplicate video: "${video.title}" (ID: ${video.videoId}) — already in library.`]
+            }));
+            continue;
           }
-          updatedQuests[bulkImportGrade as string] = newQuestObj;
-        }
 
-        setBulkImportProgress(prev => ({
-          ...prev,
-          log: [...prev.log, `✅ Success: Level ${targetLevel} in "${worldLabel}" (${extractData.words.length} words, ${questionsData.questions.length} questions)`]
-        }));
+          // 1. Initial processing logs
+          setBulkImportProgress(prev => ({
+            ...prev,
+            current: i + 1,
+            log: [...prev.log, `[${i + 1}/${selectedPlaylistVideos.length}] Processing video: "${video.title}"...`]
+          }));
+
+          const videoUrl = `https://www.youtube.com/watch?v=${video.videoId}`;
+          const embedUrl = `https://www.youtube.com/embed/${video.videoId}`;
+
+          // 2. Fetch video details & metadata from YouTube
+          const extractRes = await fetch(`/api/extract-video?videoUrl=${encodeURIComponent(videoUrl)}&imageSource=${bulkImportImageSource}`);
+          if (!extractRes.ok) {
+            throw new Error(`Failed to extract video content for "${video.title}"`);
+          }
+          const extractData = await extractRes.json();
+          if (extractData.error) throw new Error(extractData.error);
+
+          // 3. Determine topic/world categorization
+          let targetWorldId: string | undefined = undefined;
+          let worldLabel = 'none';
+
+          if (bulkImportWorld === 'auto') {
+            const matchedWorldId = categorizeVideoInWorld(extractData.title, extractData.description || '', extractData.words || [], targetWorldsForGrade);
+            if (matchedWorldId) {
+              targetWorldId = matchedWorldId;
+              const wName = targetWorldsForGrade.find(w => w.topicId === matchedWorldId)?.name || matchedWorldId;
+              worldLabel = `${wName} (${matchedWorldId})`;
+            } else {
+              worldLabel = 'none';
+            }
+          } else if (bulkImportWorld !== 'none') {
+            targetWorldId = bulkImportWorld;
+            const wName = targetWorldsForGrade.find(w => w.topicId === bulkImportWorld)?.name || bulkImportWorld;
+            worldLabel = `${wName} (${bulkImportWorld})`;
+          }
+
+          // 4. Find the next available level number
+          let targetLevel = findNextAvailableLevel(
+            String(bulkImportGrade),
+            targetWorldId || '',
+            updatedQuests,
+            bulkStartingLevelNum
+          );
+
+          // Check target limit (totalLevels) dynamically
+          const targetWorldObj = targetWorldId 
+            ? Object.values({ ...WORLDS_DATABASE, ...customWorlds }).find(w => w.topicId === targetWorldId)
+            : undefined;
+          const maxWorldLevels = targetWorldObj?.totalLevels || 10;
+
+          if (targetWorldId && (targetLevel === null || targetLevel > maxWorldLevels)) {
+            // Topic has exceeded levels, demote to uncategorized (none)
+            setBulkImportProgress(prev => ({
+              ...prev,
+              log: [...prev.log, `⚠️ World: ${worldLabel} has exceeded limit of ${maxWorldLevels} levels. Placing video without category...`]
+            }));
+            targetWorldId = undefined;
+            worldLabel = 'none';
+            targetLevel = findNextAvailableLevel(
+              String(bulkImportGrade),
+              '',
+              updatedQuests,
+              bulkStartingLevelNum
+            );
+          }
+
+          if (targetLevel === null) {
+            // If 1-10 is completely full for uncategorized too, look up to 1000
+            for (let lvl = bulkStartingLevelNum; lvl <= 1000; lvl++) {
+              const key = targetWorldId ? `${targetWorldId}-${lvl}` : `${bulkImportGrade}-${lvl}`;
+              if (!updatedQuests[key]) {
+                targetLevel = lvl;
+                break;
+              }
+            }
+          }
+
+          if (targetLevel === null) {
+            setBulkImportProgress(prev => ({
+              ...prev,
+              log: [...prev.log, `❌ Skipping video "${video.title}" because no available levels found (1-1000).`]
+            }));
+            continue;
+          }
+
+          // 5. Generate quiz questions
+          const questionsRes = await fetch('/api/extract-video', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              words: extractData.words,
+              transcriptText: extractData.transcriptText,
+              imageSource: bulkImportImageSource,
+              title: extractData.title
+            })
+          });
+          if (!questionsRes.ok) {
+            throw new Error(`Failed to generate quiz for "${extractData.title}"`);
+          }
+          const questionsData = await questionsRes.json();
+          if (questionsData.error) throw new Error(questionsData.error);
+
+          // Add any missing custom icons to queue
+          if (questionsData.missingWords && questionsData.missingWords.length > 0) {
+            setMissingIconsQueue(prev => {
+              const updated = Array.from(new Set([...prev, ...questionsData.missingWords]));
+              localStorage.setItem('tinybee_missing_icons', JSON.stringify(updated));
+              return updated;
+            });
+          }
+
+          // 6. Save quest object
+          const numericGrade = bulkImportGrade === 'K' ? 0 : parseInt(String(bulkImportGrade), 10);
+          const specificKey = targetWorldId
+            ? `${targetWorldId}-${targetLevel}`
+            : `${bulkImportGrade}-${targetLevel}`;
+
+          const newQuestObj = {
+            grade: numericGrade,
+            topicId: targetWorldId || undefined,
+            videoUrl: embedUrl,
+            title: extractData.title || 'Lesson Video',
+            channel: extractData.channel || '@YOUTUBE.CREATOR',
+            transcriptText: extractData.transcriptText || '',
+            words: extractData.words || [],
+            questions: questionsData.questions || []
+          };
+
+          updatedQuests[specificKey] = newQuestObj;
+
+          // Mirror under grade-level key if topic is set
+          if (targetWorldId) {
+            updatedQuests[`${bulkImportGrade}-${targetLevel}`] = newQuestObj;
+          }
+
+          if (targetLevel === 1) {
+            if (targetWorldId) {
+              updatedQuests[targetWorldId] = newQuestObj;
+            }
+            updatedQuests[bulkImportGrade as string] = newQuestObj;
+          }
+
+          setBulkImportProgress(prev => ({
+            ...prev,
+            log: [...prev.log, `✅ Success: Level ${targetLevel} in "${worldLabel}" (${extractData.words.length} words, ${questionsData.questions.length} questions)`]
+          }));
+
+        } catch (videoError: any) {
+          console.error(`Error processing video:`, videoError);
+          setBulkImportProgress(prev => ({
+            ...prev,
+            log: [...prev.log, `❌ Error processing "${video.title}": ${videoError.message || videoError}`]
+          }));
+        }
       }
 
       setVideoQuests(updatedQuests);
@@ -2115,7 +2278,15 @@ export default function AdminDashboardPage() {
     startFrom = 1,
     ignoreKeys: string[] = []
   ) => {
-    for (let lvl = startFrom; lvl <= 10; lvl++) {
+    let maxLevels = 10;
+    if (topicId) {
+      const wObj = Object.values({ ...WORLDS_DATABASE, ...customWorlds }).find(w => w.topicId === topicId);
+      if (wObj && wObj.totalLevels) {
+        maxLevels = wObj.totalLevels;
+      }
+    }
+
+    for (let lvl = startFrom; lvl <= maxLevels; lvl++) {
       if (topicId) {
         // For topic-scoped quests, check if the topic-specific key is free.
         // We do not check/block on gradeKey because multiple topics in the same grade 
@@ -2526,6 +2697,16 @@ export default function AdminDashboardPage() {
               title="Scan all saved questions across every grade & level for broken images and auto-regenerate them"
             >
               <ImageOff className="w-3.5 h-3.5" /> Scan & Fix Images
+            </Button>
+
+            <Button
+              variant="gray"
+              size="sm"
+              onClick={() => setIsShowingMissingIconsModal(true)}
+              className="text-xs font-black flex items-center gap-1.5 cursor-pointer shadow-sm bg-amber-50 hover:bg-amber-100 text-amber-700 border border-amber-200"
+              title="View the queue of words that are missing custom icons in Supabase"
+            >
+              <AlertTriangle className="w-3.5 h-3.5" /> Missing Icons ({missingIconsQueue.length})
             </Button>
           </div>
         </div>
@@ -3675,8 +3856,17 @@ export default function AdminDashboardPage() {
 
             const targetWorldsForMove = allWorldsList.filter(w => normalizeGrade(w.grade) === normalizeGrade(bulkTargetGrade));
 
-            const filteredKeys = sortedQuests.map(q => `${q.grade}_${q.topicId}_${q.levelNum}`);
-            const isAllSelected = filteredKeys.length > 0 && filteredKeys.every(k => selectedQuestKeys.includes(k));
+            const totalItems = sortedQuests.length;
+            const pageSizeNum = poolPageSize === 'all' ? totalItems : parseInt(poolPageSize, 10) || 20;
+            const totalPages = Math.max(1, Math.ceil(totalItems / pageSizeNum));
+
+            // Adjust current page if out of bounds
+            const activePage = Math.min(poolCurrentPage, totalPages);
+            const startIndex = (activePage - 1) * pageSizeNum;
+            const paginatedQuests = sortedQuests.slice(startIndex, startIndex + pageSizeNum);
+
+            const pageKeys = paginatedQuests.map(q => `${q.grade}_${q.topicId}_${q.levelNum}`);
+            const isPageSelected = pageKeys.length > 0 && pageKeys.every(k => selectedQuestKeys.includes(k));
 
             return (
               <div className="space-y-5 animate-slide-up">
@@ -3732,7 +3922,10 @@ export default function AdminDashboardPage() {
                         <input
                           type="text"
                           value={poolSearchQuery}
-                          onChange={(e) => setPoolSearchQuery(e.target.value)}
+                          onChange={(e) => {
+                            setPoolSearchQuery(e.target.value);
+                            setPoolCurrentPage(1);
+                          }}
                           placeholder="Search title, vocabulary, or channel..."
                           className="w-full bg-slate-50 border-2 border-slate-205 border-slate-200 rounded-xl pl-9 pr-3 py-2 text-sm font-semibold text-slate-800 outline-none focus:border-indigo-500 shadow-sm"
                         />
@@ -3750,6 +3943,7 @@ export default function AdminDashboardPage() {
                           setPoolSelectedGrade(val);
                           setPoolSelectedWorld('');
                           setSelectedGradeId(val === '' ? null : val);
+                          setPoolCurrentPage(1);
                         }}
                         className="w-full bg-slate-50 border-2 border-slate-200 rounded-xl px-3 py-2 text-sm font-semibold text-slate-800 outline-none focus:border-indigo-500 cursor-pointer shadow-sm"
                       >
@@ -3768,7 +3962,10 @@ export default function AdminDashboardPage() {
                       </label>
                       <select
                         value={poolSelectedWorld}
-                        onChange={(e) => setPoolSelectedWorld(e.target.value)}
+                        onChange={(e) => {
+                          setPoolSelectedWorld(e.target.value);
+                          setPoolCurrentPage(1);
+                        }}
                         className="w-full bg-slate-50 border-2 border-slate-200 rounded-xl px-3 py-2 text-sm font-semibold text-slate-800 outline-none focus:border-indigo-500 cursor-pointer shadow-sm"
                       >
                         <option value="">All Worlds</option>
@@ -3785,48 +3982,6 @@ export default function AdminDashboardPage() {
                     </div>
                   </div>
                 </Card>
-
-                {missingIconsQueue.length > 0 && (
-                  <Card className="bg-orange-50 border-2 border-orange-205 border-orange-200 p-5 rounded-2xl space-y-3 animate-pop-in">
-                    <div className="flex justify-between items-center flex-wrap gap-3">
-                      <h3 className="text-sm font-black text-orange-800 flex items-center gap-1.5">
-                        <span>⚠️ Missing Custom Icons Queue</span>
-                      </h3>
-                      <div className="flex flex-wrap items-center gap-3">
-                        <button
-                          onClick={() => {
-                            navigator.clipboard.writeText(missingIconsQueue.join(', '));
-                            showNotification("Copied to clipboard!");
-                          }}
-                          className="text-xs text-orange-700 hover:text-orange-950 font-bold flex items-center gap-1 cursor-pointer"
-                        >
-                          <Copy className="w-3.5 h-3.5" /> Copy List
-                        </button>
-                        <button
-                          onClick={handleScanMissingIcons}
-                          className="text-xs text-orange-700 hover:text-orange-950 font-bold flex items-center gap-1 cursor-pointer"
-                        >
-                          <Search className="w-3.5 h-3.5" /> Scan All Quests
-                        </button>
-                        <button
-                          onClick={() => {
-                            setMissingIconsQueue([]);
-                            localStorage.removeItem('tinybee_missing_icons');
-                          }}
-                          className="text-xs text-orange-700 hover:text-red-650 font-bold cursor-pointer"
-                        >
-                          Clear Queue
-                        </button>
-                      </div>
-                    </div>
-                    <p className="text-xs text-orange-750 font-semibold leading-relaxed">
-                      These words don't have custom icons in Supabase yet. Copy this list and paste it to Antigravity AI to generate them:
-                    </p>
-                    <code className="block mt-2 p-3 bg-orange-100/60 rounded-xl text-xs font-mono text-orange-950 overflow-x-auto whitespace-pre-wrap select-all border border-orange-200/50">
-                      {missingIconsQueue.join(', ')}
-                    </code>
-                  </Card>
-                )}
 
                 {/* Bulk Move Action Panel */}
                 {selectedQuestKeys.length > 0 && (
@@ -3890,14 +4045,36 @@ export default function AdminDashboardPage() {
 
                 {/* Quests List Table */}
                 <Card className="bg-white border border-slate-200 p-6 space-y-4 shadow-sm rounded-2xl">
-                  <div className="flex items-center justify-between border-b border-slate-100 pb-3">
+                  <div className="flex items-center justify-between border-b border-slate-100 pb-3 flex-wrap gap-2">
                     <div>
                       <h3 className="text-lg font-black text-slate-900">
                         🏆 Quest Pools Dashboard
                       </h3>
                       <p className="text-xs text-slate-500 font-semibold mt-0.5">
-                        Showing {filteredQuests.length} of {allQuestsList.length} video quests.
+                        {totalItems > 0 ? (
+                          `Showing ${startIndex + 1}-${Math.min(startIndex + pageSizeNum, totalItems)} of ${totalItems} video quests (Total: ${allQuestsList.length})`
+                        ) : (
+                          `Showing 0 of 0 video quests (Total: ${allQuestsList.length})`
+                        )}
                       </p>
+                    </div>
+
+                    <div className="flex items-center gap-2">
+                      <span className="text-xs font-bold text-slate-500">Show:</span>
+                      <select
+                        value={poolPageSize}
+                        onChange={(e) => {
+                          setPoolPageSize(e.target.value);
+                          setPoolCurrentPage(1);
+                        }}
+                        className="bg-slate-50 border-2 border-slate-200 rounded-xl px-2.5 py-1.5 text-xs font-bold text-slate-700 outline-none focus:border-indigo-500 cursor-pointer shadow-sm"
+                      >
+                        <option value="10">10 videos</option>
+                        <option value="20">20 videos</option>
+                        <option value="50">50 videos</option>
+                        <option value="100">100 videos</option>
+                        <option value="all">All videos</option>
+                      </select>
                     </div>
                   </div>
 
@@ -3906,173 +4083,241 @@ export default function AdminDashboardPage() {
                       No video quests matched your search criteria.
                     </div>
                   ) : (
-                    <div className="overflow-x-auto">
-                      <table className="w-full text-left text-xs font-medium text-slate-655">
-                        <thead className="bg-slate-50 uppercase font-black tracking-wider text-slate-500 border-b border-slate-200">
-                          <tr>
-                            <th className="px-4 py-3 w-10">
-                              <input
-                                type="checkbox"
-                                checked={isAllSelected}
-                                onChange={(e) => {
-                                  if (e.target.checked) {
-                                    setSelectedQuestKeys(prev => {
-                                      const newSelection = [...prev];
-                                      filteredKeys.forEach(k => {
-                                        if (!newSelection.includes(k)) newSelection.push(k);
+                    <>
+                      <div className="overflow-x-auto">
+                        <table className="w-full text-left text-xs font-medium text-slate-655">
+                          <thead className="bg-slate-50 uppercase font-black tracking-wider text-slate-500 border-b border-slate-200">
+                            <tr>
+                              <th className="px-4 py-3 w-10">
+                                <input
+                                  type="checkbox"
+                                  checked={isPageSelected}
+                                  onChange={(e) => {
+                                    if (e.target.checked) {
+                                      setSelectedQuestKeys(prev => {
+                                        const newSelection = [...prev];
+                                        pageKeys.forEach(k => {
+                                          if (!newSelection.includes(k)) newSelection.push(k);
+                                        });
+                                        return newSelection;
                                       });
-                                      return newSelection;
-                                    });
-                                  } else {
-                                    setSelectedQuestKeys(prev => prev.filter(k => !filteredKeys.includes(k)));
-                                  }
-                                }}
-                                className="w-4 h-4 rounded accent-indigo-600 cursor-pointer"
-                              />
-                            </th>
-                            <th className="px-4 py-3">Grade</th>
-                            <th className="px-4 py-3">World / Topic</th>
-                            <th className="px-4 py-3">Level</th>
-                            <th className="px-4 py-3">Video Title & Channel</th>
-                            <th className="px-4 py-3">Vocabulary Words</th>
-                            <th className="px-4 py-3">Questions</th>
-                            <th className="px-4 py-3 text-right">Actions</th>
-                          </tr>
-                        </thead>
-                        <tbody className="divide-y divide-slate-100 bg-white">
-                          {sortedQuests.map((q) => {
-                            const canonicalKey = `${q.grade}_${q.topicId}_${q.levelNum}`;
-                            const isSelected = selectedQuestKeys.includes(canonicalKey);
-                            const worldDetails = findWorldNameAndEmoji(q.topicId, q.grade);
-
-                            return (
-                              <tr key={`quest-row-${canonicalKey}`} className={`hover:bg-slate-50/75 transition-colors ${isSelected ? 'bg-indigo-50/20' : ''}`}>
-                                <td className="px-4 py-3.5">
-                                  <input
-                                    type="checkbox"
-                                    checked={isSelected}
-                                    onChange={(e) => {
-                                      if (e.target.checked) {
-                                        setSelectedQuestKeys(prev => [...prev, canonicalKey]);
-                                      } else {
-                                        setSelectedQuestKeys(prev => prev.filter(k => k !== canonicalKey));
-                                      }
-                                    }}
-                                    className="w-4 h-4 rounded accent-indigo-600 cursor-pointer"
-                                  />
-                                </td>
-
-                                <td className="px-4 py-2">
-                                  <select
-                                    value={normalizeGrade(q.grade)}
-                                    onChange={(e) => {
-                                      const newGrade = e.target.value;
-                                      const newGradeWorlds = allWorldsList.filter(w => normalizeGrade(w.grade) === normalizeGrade(newGrade));
-                                      const hasSameTopic = newGradeWorlds.some(w => w.topicId === q.topicId);
-                                      const targetTopicId = hasSameTopic ? q.topicId : '';
-                                      handleMoveQuestInline(q, newGrade, targetTopicId);
-                                    }}
-                                    className="bg-slate-50 border-2 border-slate-200 text-slate-700 font-bold px-2 py-1 rounded-xl text-xs outline-none focus:border-indigo-500 cursor-pointer shadow-sm"
-                                  >
-                                    {grades.map(g => (
-                                      <option key={`row-grd-${q.originalKey}-${g}`} value={g === 0 ? 'K' : String(g)}>
-                                        {g === 0 ? 'Kindergarten' : `Grade ${g}`}
-                                      </option>
-                                    ))}
-                                  </select>
-                                </td>
-
-                                <td className="px-4 py-2">
-                                  <select
-                                    value={q.topicId || ''}
-                                    onChange={(e) => {
-                                      const newTopicId = e.target.value;
-                                      handleMoveQuestInline(q, q.grade, newTopicId);
-                                    }}
-                                    className="bg-slate-50 border-2 border-slate-200 text-slate-700 font-black px-2 py-1 rounded-xl text-xs outline-none focus:border-indigo-500 cursor-pointer shadow-sm max-w-[170px]"
-                                  >
-                                    <option value="">(none)</option>
-                                    {allWorldsList
-                                      .filter(w => normalizeGrade(w.grade) === normalizeGrade(q.grade))
-                                      .map(w => (
-                                        <option key={`row-world-${q.originalKey}-${w.id}`} value={w.topicId}>
-                                          {w.emoji} {w.name}
-                                        </option>
-                                      ))
+                                    } else {
+                                      setSelectedQuestKeys(prev => prev.filter(k => !pageKeys.includes(k)));
                                     }
-                                  </select>
-                                </td>
+                                  }}
+                                  className="w-4 h-4 rounded accent-indigo-600 cursor-pointer"
+                                />
+                              </th>
+                              <th className="px-4 py-3">Grade</th>
+                              <th className="px-4 py-3">World / Topic</th>
+                              <th className="px-4 py-3">Level</th>
+                              <th className="px-4 py-3">Video Title & Channel</th>
+                              <th className="px-4 py-3">Vocabulary Words</th>
+                              <th className="px-4 py-3">Questions</th>
+                              <th className="px-4 py-3 text-right">Actions</th>
+                            </tr>
+                          </thead>
+                          <tbody className="divide-y divide-slate-100 bg-white">
+                            {paginatedQuests.map((q) => {
+                              const canonicalKey = `${q.grade}_${q.topicId}_${q.levelNum}`;
+                              const isSelected = selectedQuestKeys.includes(canonicalKey);
+                              const worldDetails = findWorldNameAndEmoji(q.topicId, q.grade);
 
-                                <td className="px-4 py-2.5">
-                                  <span className="bg-indigo-50 text-indigo-700 font-black px-2.5 py-0.5 rounded-full whitespace-nowrap">
-                                    Lvl {q.levelNum}
-                                  </span>
-                                </td>
+                              return (
+                                <tr key={`quest-row-${canonicalKey}`} className={`hover:bg-slate-50/75 transition-colors ${isSelected ? 'bg-indigo-50/20' : ''}`}>
+                                  <td className="px-4 py-3.5">
+                                    <input
+                                      type="checkbox"
+                                      checked={isSelected}
+                                      onChange={(e) => {
+                                        if (e.target.checked) {
+                                          setSelectedQuestKeys(prev => [...prev, canonicalKey]);
+                                        } else {
+                                          setSelectedQuestKeys(prev => prev.filter(k => k !== canonicalKey));
+                                        }
+                                      }}
+                                      className="w-4 h-4 rounded accent-indigo-600 cursor-pointer"
+                                    />
+                                  </td>
 
-                                <td className="px-4 py-2.5 max-w-xs">
-                                  <span className="font-black text-slate-800 block truncate" title={q.title}>
-                                    {q.title}
-                                  </span>
-                                  <span className="text-[10px] text-slate-400 font-semibold block truncate mt-0.5">
-                                    {q.channel}
-                                  </span>
-                                </td>
+                                  <td className="px-4 py-2">
+                                    <select
+                                      value={normalizeGrade(q.grade)}
+                                      onChange={(e) => {
+                                        const newGrade = e.target.value;
+                                        const newGradeWorlds = allWorldsList.filter(w => normalizeGrade(w.grade) === normalizeGrade(newGrade));
+                                        const hasSameTopic = newGradeWorlds.some(w => w.topicId === q.topicId);
+                                        const targetTopicId = hasSameTopic ? q.topicId : '';
+                                        handleMoveQuestInline(q, newGrade, targetTopicId);
+                                      }}
+                                      className="bg-slate-50 border-2 border-slate-200 text-slate-700 font-bold px-2 py-1 rounded-xl text-xs outline-none focus:border-indigo-500 cursor-pointer shadow-sm"
+                                    >
+                                      {grades.map(g => (
+                                        <option key={`row-grd-${q.originalKey}-${g}`} value={g === 0 ? 'K' : String(g)}>
+                                          {g === 0 ? 'Kindergarten' : `Grade ${g}`}
+                                        </option>
+                                      ))}
+                                    </select>
+                                  </td>
 
-                                <td className="px-4 py-2.5 max-w-xs">
-                                  <div className="flex flex-wrap gap-1">
-                                    {q.words.map((w: string, idx: number) => {
-                                      const hasImageLink = q.quest.questions?.some(
-                                        (questQ: any) => 
-                                          questQ.correctAnswer?.toLowerCase().trim() === w.toLowerCase().trim() && 
-                                          !!questQ.imageUrl
-                                      );
-                                      const isMissing = missingIconsQueue.some(
-                                        m => m.toLowerCase().trim() === w.toLowerCase().trim()
-                                      ) && !hasImageLink;
-                                      return (
-                                        <span
-                                          key={idx}
-                                          className={`font-bold px-1.5 py-0.5 rounded text-[10px] flex items-center gap-1 transition-colors ${
-                                            isMissing
-                                              ? 'bg-rose-50 text-rose-700 border border-dashed border-rose-200 hover:bg-rose-100/70 cursor-help'
-                                              : 'bg-emerald-50 text-emerald-700 border border-emerald-100'
-                                          }`}
-                                          title={isMissing ? `Broken or missing image for "${w}"` : `Valid image for "${w}"`}
-                                        >
-                                          {isMissing && <ImageOff className="w-2.5 h-2.5 shrink-0 text-rose-500" />}
-                                          {w}
-                                        </span>
-                                      );
-                                    })}
-                                  </div>
-                                </td>
+                                  <td className="px-4 py-2">
+                                    <select
+                                      value={q.topicId || ''}
+                                      onChange={(e) => {
+                                        const newTopicId = e.target.value;
+                                        handleMoveQuestInline(q, q.grade, newTopicId);
+                                      }}
+                                      className="bg-slate-50 border-2 border-slate-200 text-slate-700 font-black px-2 py-1 rounded-xl text-xs outline-none focus:border-indigo-500 cursor-pointer shadow-sm max-w-[170px]"
+                                    >
+                                      <option value="">(none)</option>
+                                      {allWorldsList
+                                        .filter(w => normalizeGrade(w.grade) === normalizeGrade(q.grade))
+                                        .map(w => (
+                                          <option key={`row-world-${q.originalKey}-${w.id}`} value={w.topicId}>
+                                            {w.emoji} {w.name}
+                                          </option>
+                                        ))
+                                      }
+                                    </select>
+                                  </td>
 
-                                <td className="px-4 py-3.5 font-extrabold text-slate-700">
-                                  {q.questionsCount} questions
-                                </td>
+                                  <td className="px-4 py-2.5">
+                                    <span className="bg-indigo-50 text-indigo-700 font-black px-2.5 py-0.5 rounded-full whitespace-nowrap">
+                                      Lvl {q.levelNum}
+                                    </span>
+                                  </td>
 
-                                <td className="px-4 py-3.5 text-right flex justify-end gap-1.5">
-                                  <button
-                                    onClick={() => handleEditQuestFromPool(q.grade, q.topicId, q.levelNum)}
-                                    className="p-1.5 text-slate-400 hover:text-indigo-650 transition-colors cursor-pointer"
-                                    title="Edit Video Quest"
-                                  >
-                                    <Edit3 className="w-4 h-4" />
-                                  </button>
-                                  <button
-                                    onClick={() => handleDeleteQuestFromPool(q.grade, q.topicId, q.levelNum)}
-                                    className="p-1.5 text-slate-400 hover:text-rose-500 transition-colors cursor-pointer"
-                                    title="Delete Video Quest"
-                                  >
-                                    <Trash2 className="w-4 h-4" />
-                                  </button>
-                                </td>
-                              </tr>
-                            );
-                          })}
-                        </tbody>
-                      </table>
-                    </div>
+                                  <td className="px-4 py-2.5 max-w-xs">
+                                    <span className="font-black text-slate-800 block truncate" title={q.title}>
+                                      {q.title}
+                                    </span>
+                                    <span className="text-[10px] text-slate-400 font-semibold block truncate mt-0.5">
+                                      {q.channel}
+                                    </span>
+                                  </td>
+
+                                  <td className="px-4 py-2.5 max-w-xs">
+                                    <div className="flex flex-wrap gap-1">
+                                      {q.words.map((w: string, idx: number) => {
+                                        const hasImageLink = q.quest.questions?.some(
+                                          (questQ: any) => 
+                                            questQ.correctAnswer?.toLowerCase().trim() === w.toLowerCase().trim() && 
+                                            !!questQ.imageUrl
+                                        );
+                                        const isMissing = missingIconsQueue.some(
+                                          m => m.toLowerCase().trim() === w.toLowerCase().trim()
+                                        ) && !hasImageLink;
+                                        return (
+                                          <span
+                                            key={idx}
+                                            className={`font-bold px-1.5 py-0.5 rounded text-[10px] flex items-center gap-1 transition-colors ${
+                                              isMissing
+                                                ? 'bg-rose-50 text-rose-700 border border-dashed border-rose-200 hover:bg-rose-100/70 cursor-help'
+                                                : 'bg-emerald-50 text-emerald-700 border border-emerald-100'
+                                            }`}
+                                            title={isMissing ? `Broken or missing image for "${w}"` : `Valid image for "${w}"`}
+                                          >
+                                            {isMissing && <ImageOff className="w-2.5 h-2.5 shrink-0 text-rose-500" />}
+                                            {w}
+                                          </span>
+                                        );
+                                      })}
+                                    </div>
+                                  </td>
+
+                                  <td className="px-4 py-3.5 font-extrabold text-slate-700">
+                                    {q.questionsCount} questions
+                                  </td>
+
+                                  <td className="px-4 py-3.5 text-right flex justify-end gap-1.5">
+                                    <button
+                                      onClick={() => handleEditQuestFromPool(q.grade, q.topicId, q.levelNum)}
+                                      className="p-1.5 text-slate-400 hover:text-indigo-650 transition-colors cursor-pointer"
+                                      title="Edit Video Quest"
+                                    >
+                                      <Edit3 className="w-4 h-4" />
+                                    </button>
+                                    <button
+                                      onClick={() => handleDeleteQuestFromPool(q.grade, q.topicId, q.levelNum)}
+                                      className="p-1.5 text-slate-400 hover:text-rose-500 transition-colors cursor-pointer"
+                                      title="Delete Video Quest"
+                                    >
+                                      <Trash2 className="w-4 h-4" />
+                                    </button>
+                                  </td>
+                                </tr>
+                              );
+                            })}
+                          </tbody>
+                        </table>
+                      </div>
+
+                      {/* Pagination Controls */}
+                      {totalPages > 1 && (
+                        <div className="flex items-center justify-between border-t border-slate-100 pt-4 flex-wrap gap-2">
+                          <div className="flex items-center gap-1.5 text-xs text-slate-500 font-bold">
+                            <span>Page</span>
+                            <select
+                              value={String(activePage)}
+                              onChange={(e) => setPoolCurrentPage(parseInt(e.target.value, 10))}
+                              className="bg-slate-50 border-2 border-slate-200 rounded-lg px-2 py-0.5 text-xs font-bold text-slate-700 outline-none focus:border-indigo-500 cursor-pointer shadow-sm"
+                            >
+                              {Array.from({ length: totalPages }, (_, idx) => idx + 1).map(p => (
+                                <option key={`pager-${p}`} value={String(p)}>
+                                  {p}
+                                </option>
+                              ))}
+                            </select>
+                            <span>of {totalPages}</span>
+                          </div>
+                          <div className="flex items-center gap-1">
+                            <Button
+                              variant="gray"
+                              size="sm"
+                              disabled={activePage === 1}
+                              onClick={() => setPoolCurrentPage(prev => Math.max(1, prev - 1))}
+                              className="text-xs font-bold px-3 py-1 cursor-pointer disabled:opacity-50"
+                            >
+                              Previous
+                            </Button>
+
+                            {/* Render page numbers */}
+                            {Array.from({ length: totalPages }, (_, idx) => idx + 1)
+                              .filter(page => {
+                                return page === 1 || page === totalPages || Math.abs(page - activePage) <= 1;
+                              })
+                              .map((page, idx, arr) => {
+                                const showEllipsis = idx > 0 && page - arr[idx - 1] > 1;
+                                return (
+                                  <React.Fragment key={`page-btn-${page}`}>
+                                    {showEllipsis && <span className="text-slate-400 px-1 font-bold text-xs">...</span>}
+                                    <button
+                                      onClick={() => setPoolCurrentPage(page)}
+                                      className={`px-3 py-1 rounded-lg text-xs font-black transition-colors ${
+                                        activePage === page
+                                          ? 'bg-indigo-600 text-white shadow-sm'
+                                          : 'bg-slate-50 hover:bg-slate-100 text-slate-700 border border-slate-200/60'
+                                      }`}
+                                    >
+                                      {page}
+                                    </button>
+                                  </React.Fragment>
+                                );
+                              })}
+
+                            <Button
+                              variant="gray"
+                              size="sm"
+                              disabled={activePage === totalPages}
+                              onClick={() => setPoolCurrentPage(prev => Math.min(totalPages, prev + 1))}
+                              className="text-xs font-bold px-3 py-1 cursor-pointer disabled:opacity-50"
+                            >
+                              Next
+                            </Button>
+                          </div>
+                        </div>
+                      )}
+                    </>
                   )}
                 </Card>
               </div>
@@ -4834,6 +5079,100 @@ export default function AdminDashboardPage() {
                   )}
                 </>
               )}
+            </div>
+          </Card>
+        </div>
+      )}
+      {/* Missing Custom Icons Queue Modal */}
+      {isShowingMissingIconsModal && (
+        <div className="fixed inset-0 bg-slate-900/75 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-fade-in">
+          <Card className="bg-white border border-slate-200 max-w-2xl w-full shadow-2xl rounded-3xl overflow-hidden flex flex-col animate-pop-in">
+            {/* Modal Header */}
+            <div className="bg-gradient-to-r from-amber-500 to-orange-500 px-6 py-4 flex items-center justify-between shrink-0">
+              <div className="flex items-center gap-3">
+                <AlertTriangle className="w-5 h-5 text-white" />
+                <div>
+                  <h2 className="text-white font-black text-base leading-tight">⚠️ Missing Custom Icons Queue</h2>
+                  <p className="text-white/80 text-[10px] font-semibold">
+                    {missingIconsQueue.length} word(s) currently in the queue
+                  </p>
+                </div>
+              </div>
+              <button 
+                onClick={() => setIsShowingMissingIconsModal(false)} 
+                className="text-white/80 hover:text-white transition-colors cursor-pointer"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+
+            {/* Modal Body */}
+            <div className="p-6 space-y-4 flex-grow overflow-y-auto">
+              <p className="text-xs text-slate-650 font-semibold leading-relaxed">
+                These words do not have custom icons in Supabase yet. Copy this list and paste it to Antigravity AI to generate them:
+              </p>
+              
+              {missingIconsQueue.length > 0 ? (
+                <code className="block p-4 bg-amber-50/60 rounded-2xl text-xs font-mono text-amber-950 overflow-x-auto whitespace-pre-wrap select-all border border-amber-200/50 max-h-[40vh] overflow-y-auto">
+                  {missingIconsQueue.join(', ')}
+                </code>
+              ) : (
+                <div className="text-center py-8 text-xs font-bold text-slate-450 uppercase tracking-wider">
+                  🎉 No missing icons! The queue is empty.
+                </div>
+              )}
+            </div>
+
+            {/* Modal Footer / Actions */}
+            <div className="bg-slate-50 px-6 py-4 border-t border-slate-100 flex items-center justify-between shrink-0">
+              <div className="flex items-center gap-3">
+                {missingIconsQueue.length > 0 && (
+                  <>
+                    <Button
+                      variant="gray"
+                      size="sm"
+                      onClick={() => {
+                        navigator.clipboard.writeText(missingIconsQueue.join(', '));
+                        showNotification("Copied to clipboard!");
+                      }}
+                      className="text-xs font-bold border border-slate-200 bg-white hover:bg-slate-100 text-slate-700 flex items-center gap-1.5 cursor-pointer shadow-sm"
+                    >
+                      <Copy className="w-3.5 h-3.5" /> Copy List
+                    </Button>
+                    <Button
+                      variant="gray"
+                      size="sm"
+                      onClick={() => {
+                        handleScanMissingIcons();
+                        showNotification("Scanning all quests for missing icons...");
+                      }}
+                      className="text-xs font-bold border border-slate-200 bg-white hover:bg-slate-100 text-slate-700 flex items-center gap-1.5 cursor-pointer shadow-sm"
+                    >
+                      <Search className="w-3.5 h-3.5" /> Scan All Quests
+                    </Button>
+                    <Button
+                      variant="pink"
+                      size="sm"
+                      onClick={() => {
+                        setMissingIconsQueue([]);
+                        localStorage.removeItem('tinybee_missing_icons');
+                        showNotification("Queue cleared!");
+                      }}
+                      className="text-xs font-black flex items-center gap-1.5 bg-rose-50 hover:bg-rose-100 text-rose-700 border border-rose-200 cursor-pointer shadow-sm"
+                    >
+                      Clear Queue
+                    </Button>
+                  </>
+                )}
+              </div>
+              <Button
+                variant="orange"
+                size="sm"
+                onClick={() => setIsShowingMissingIconsModal(false)}
+                className="text-xs font-black cursor-pointer shadow-sm"
+              >
+                Close
+              </Button>
             </div>
           </Card>
         </div>

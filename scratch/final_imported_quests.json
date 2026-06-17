@@ -1,0 +1,2187 @@
+{
+  "playground-park-1": {
+    "grade": 1,
+    "videoUrl": "https://www.youtube.com/embed/9b0l4iRZNXg",
+    "title": "What Is This Called in English? 🇬🇧 | Park & City Words #19",
+    "channel": "@JourneyEnglishTalk",
+    "words": [
+      "Swing",
+      "Slide",
+      "Seesaw",
+      "Fountain",
+      "Explore"
+    ],
+    "questions": [
+      {
+        "question": "Which word describes the action happening in this image?",
+        "choices": [
+          "Fountain",
+          "Slide",
+          "Swing",
+          "Seesaw"
+        ],
+        "choiceIpas": [
+          "[ˈfaʊn.ʔn̩]",
+          "/slaɪd/",
+          "/ˈswɪŋ/",
+          "/ˈsiːsɔː/"
+        ],
+        "correctAnswer": "Swing",
+        "explanation": "Action verbs ending in \"-ing\" describe ongoing actions like the one shown here.",
+        "imageUrl": "https://images.pexels.com/photos/30697294/pexels-photo-30697294.jpeg?auto=compress&cs=tinysrgb&h=350",
+        "ipa": "/ˈswɪŋ/",
+        "isMissingCustomIcon": false
+      },
+      {
+        "question": "Which word best describes this image?",
+        "choices": [
+          "Fountain",
+          "Slide",
+          "Swing",
+          "Seesaw"
+        ],
+        "choiceIpas": [
+          "[ˈfaʊn.ʔn̩]",
+          "/slaɪd/",
+          "/ˈswɪŋ/",
+          "/ˈsiːsɔː/"
+        ],
+        "correctAnswer": "Slide",
+        "explanation": "\"Slide\" is the correct vocabulary word for this picture.",
+        "imageUrl": "https://images.pexels.com/photos/7943718/pexels-photo-7943718.jpeg?auto=compress&cs=tinysrgb&h=350",
+        "ipa": "/slaɪd/",
+        "isMissingCustomIcon": false
+      },
+      {
+        "question": "Which word best describes this image?",
+        "choices": [
+          "Slide",
+          "Fountain",
+          "Seesaw",
+          "Swing"
+        ],
+        "choiceIpas": [
+          "/slaɪd/",
+          "[ˈfaʊn.ʔn̩]",
+          "/ˈsiːsɔː/",
+          "/ˈswɪŋ/"
+        ],
+        "correctAnswer": "Seesaw",
+        "explanation": "\"Seesaw\" is the correct vocabulary word for this picture.",
+        "imageUrl": "https://images.pexels.com/photos/17153903/pexels-photo-17153903.jpeg?auto=compress&cs=tinysrgb&h=350",
+        "ipa": "/ˈsiːsɔː/",
+        "isMissingCustomIcon": false
+      },
+      {
+        "question": "Which word best describes this image?",
+        "choices": [
+          "Seesaw",
+          "Fountain",
+          "Swing",
+          "Slide"
+        ],
+        "choiceIpas": [
+          "/ˈsiːsɔː/",
+          "[ˈfaʊn.ʔn̩]",
+          "/ˈswɪŋ/",
+          "/slaɪd/"
+        ],
+        "correctAnswer": "Fountain",
+        "explanation": "\"Fountain\" is the correct vocabulary word for this picture.",
+        "imageUrl": "https://images.pexels.com/photos/35279443/pexels-photo-35279443.jpeg?auto=compress&cs=tinysrgb&h=350",
+        "ipa": "[ˈfaʊn.ʔn̩]",
+        "isMissingCustomIcon": false
+      },
+      {
+        "question": "Which word means to travel through a new area to learn about it?",
+        "choices": [
+          "Swing",
+          "Seesaw",
+          "Explore",
+          "Slide"
+        ],
+        "choiceIpas": [
+          "/ˈswɪŋ/",
+          "/ˈsiːsɔː/",
+          "/ɪkˈsplɔː/",
+          "/slaɪd/"
+        ],
+        "correctAnswer": "Explore",
+        "explanation": "To explore is to discover and examine new surroundings.",
+        "imageUrl": "https://images.pexels.com/photos/28811726/pexels-photo-28811726.jpeg?auto=compress&cs=tinysrgb&h=350",
+        "ipa": "/ɪkˈsplɔː/",
+        "isMissingCustomIcon": false
+      }
+    ]
+  },
+  "community-jobs-1": {
+    "grade": 2,
+    "videoUrl": "https://www.youtube.com/embed/0xKYNv73vtw",
+    "title": "What Is This Called in English? 🇬🇧 | Law & Court #18",
+    "channel": "@JourneyEnglishTalk",
+    "words": [
+      "Judge",
+      "Cell",
+      "Scale",
+      "Courthouse",
+      "Explore"
+    ],
+    "questions": [
+      {
+        "question": "Which word best describes this image?",
+        "choices": [
+          "Cell",
+          "Scale",
+          "Judge",
+          "Courthouse"
+        ],
+        "choiceIpas": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "correctAnswer": "Judge",
+        "explanation": "\"Judge\" is the correct vocabulary word for this picture.",
+        "imageUrl": "https://images.pexels.com/photos/6077240/pexels-photo-6077240.jpeg?auto=compress&cs=tinysrgb&h=350",
+        "ipa": "",
+        "isMissingCustomIcon": false
+      },
+      {
+        "question": "Which word best describes this image?",
+        "choices": [
+          "Judge",
+          "Courthouse",
+          "Cell",
+          "Scale"
+        ],
+        "choiceIpas": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "correctAnswer": "Cell",
+        "explanation": "\"Cell\" is the correct vocabulary word for this picture.",
+        "imageUrl": "https://images.pexels.com/photos/16882902/pexels-photo-16882902.jpeg?auto=compress&cs=tinysrgb&h=350",
+        "ipa": "",
+        "isMissingCustomIcon": false
+      },
+      {
+        "question": "Which word best describes this image?",
+        "choices": [
+          "Courthouse",
+          "Judge",
+          "Scale",
+          "Cell"
+        ],
+        "choiceIpas": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "correctAnswer": "Scale",
+        "explanation": "\"Scale\" is the correct vocabulary word for this picture.",
+        "imageUrl": "https://images.pexels.com/photos/8112195/pexels-photo-8112195.jpeg?auto=compress&cs=tinysrgb&h=350",
+        "ipa": "",
+        "isMissingCustomIcon": false
+      },
+      {
+        "question": "Which word best describes this image?",
+        "choices": [
+          "Courthouse",
+          "Cell",
+          "Scale",
+          "Judge"
+        ],
+        "choiceIpas": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "correctAnswer": "Courthouse",
+        "explanation": "\"Courthouse\" is the correct vocabulary word for this picture.",
+        "imageUrl": "https://images.pexels.com/photos/16750823/pexels-photo-16750823.jpeg?auto=compress&cs=tinysrgb&h=350",
+        "ipa": "",
+        "isMissingCustomIcon": false
+      },
+      {
+        "question": "Which word means to travel through a new area to learn about it?",
+        "choices": [
+          "Judge",
+          "Cell",
+          "Explore",
+          "Scale"
+        ],
+        "choiceIpas": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "correctAnswer": "Explore",
+        "explanation": "To explore is to discover and examine new surroundings.",
+        "imageUrl": "https://images.pexels.com/photos/4641233/pexels-photo-4641233.jpeg?auto=compress&cs=tinysrgb&h=350",
+        "ipa": "",
+        "isMissingCustomIcon": false
+      }
+    ]
+  },
+  "food-meals-1": {
+    "grade": 1,
+    "videoUrl": "https://www.youtube.com/embed/Sf4zNup1rec",
+    "title": "What Is This Called in English? 🇬🇧 | Snacks & Candy #17",
+    "channel": "@JourneyEnglishTalk",
+    "words": [
+      "Onion ring",
+      "Chicken",
+      "Chewing",
+      "Potato",
+      "Explore"
+    ],
+    "questions": [
+      {
+        "question": "Which word describes the action happening in this image?",
+        "choices": [
+          "Potato",
+          "Onion ring",
+          "Chicken",
+          "Chewing"
+        ],
+        "choiceIpas": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "correctAnswer": "Onion ring",
+        "explanation": "Action verbs ending in \"-ing\" describe ongoing actions like the one shown here.",
+        "imageUrl": "https://images.pexels.com/photos/8880733/pexels-photo-8880733.jpeg?auto=compress&cs=tinysrgb&h=350",
+        "ipa": "",
+        "isMissingCustomIcon": false
+      },
+      {
+        "question": "Which word best describes this image?",
+        "choices": [
+          "Onion ring",
+          "Chicken",
+          "Chewing",
+          "Potato"
+        ],
+        "choiceIpas": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "correctAnswer": "Chicken",
+        "explanation": "\"Chicken\" is the correct vocabulary word for this picture.",
+        "imageUrl": "https://images.pexels.com/photos/33809594/pexels-photo-33809594.jpeg?auto=compress&cs=tinysrgb&h=350",
+        "ipa": "",
+        "isMissingCustomIcon": false
+      },
+      {
+        "question": "Which word describes the action happening in this image?",
+        "choices": [
+          "Chicken",
+          "Potato",
+          "Onion ring",
+          "Chewing"
+        ],
+        "choiceIpas": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "correctAnswer": "Chewing",
+        "explanation": "Action verbs ending in \"-ing\" describe ongoing actions like the one shown here.",
+        "imageUrl": "https://images.pexels.com/photos/8422852/pexels-photo-8422852.jpeg?auto=compress&cs=tinysrgb&h=350",
+        "ipa": "",
+        "isMissingCustomIcon": false
+      },
+      {
+        "question": "Which word best describes this image?",
+        "choices": [
+          "Onion ring",
+          "Potato",
+          "Chicken",
+          "Chewing"
+        ],
+        "choiceIpas": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "correctAnswer": "Potato",
+        "explanation": "\"Potato\" is the correct vocabulary word for this picture.",
+        "imageUrl": "https://images.pexels.com/photos/7774212/pexels-photo-7774212.jpeg?auto=compress&cs=tinysrgb&h=350",
+        "ipa": "",
+        "isMissingCustomIcon": false
+      },
+      {
+        "question": "Which word means to travel through a new area to learn about it?",
+        "choices": [
+          "Explore",
+          "Onion ring",
+          "Chicken",
+          "Chewing"
+        ],
+        "choiceIpas": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "correctAnswer": "Explore",
+        "explanation": "To explore is to discover and examine new surroundings.",
+        "imageUrl": "https://images.pexels.com/photos/16319803/pexels-photo-16319803.jpeg?auto=compress&cs=tinysrgb&h=350",
+        "ipa": "",
+        "isMissingCustomIcon": false
+      }
+    ]
+  },
+  "food-drinks-1": {
+    "grade": 2,
+    "videoUrl": "https://www.youtube.com/embed/HbvG-nV4DaM",
+    "title": "What Is This Called in English? 🇬🇧 | Tea & Coffee #16",
+    "channel": "@JourneyEnglishTalk",
+    "words": [
+      "Coffee",
+      "Teapot",
+      "Moka pot",
+      "Teacup",
+      "Explore"
+    ],
+    "questions": [
+      {
+        "question": "Which word best describes this image?",
+        "choices": [
+          "Coffee",
+          "Teapot",
+          "Teacup",
+          "Moka pot"
+        ],
+        "choiceIpas": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "correctAnswer": "Coffee",
+        "explanation": "\"Coffee\" is the correct vocabulary word for this picture.",
+        "imageUrl": "https://images.pexels.com/photos/20130929/pexels-photo-20130929.jpeg?auto=compress&cs=tinysrgb&h=350",
+        "ipa": "",
+        "isMissingCustomIcon": false
+      },
+      {
+        "question": "Which word best describes this image?",
+        "choices": [
+          "Coffee",
+          "Moka pot",
+          "Teacup",
+          "Teapot"
+        ],
+        "choiceIpas": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "correctAnswer": "Teapot",
+        "explanation": "\"Teapot\" is the correct vocabulary word for this picture.",
+        "imageUrl": "https://images.pexels.com/photos/11532730/pexels-photo-11532730.jpeg?auto=compress&cs=tinysrgb&h=350",
+        "ipa": "",
+        "isMissingCustomIcon": false
+      },
+      {
+        "question": "Which word best describes this image?",
+        "choices": [
+          "Moka pot",
+          "Coffee",
+          "Teapot",
+          "Teacup"
+        ],
+        "choiceIpas": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "correctAnswer": "Moka pot",
+        "explanation": "\"Moka pot\" is the correct vocabulary word for this picture.",
+        "imageUrl": "https://images.pexels.com/photos/5996061/pexels-photo-5996061.jpeg?auto=compress&cs=tinysrgb&h=350",
+        "ipa": "",
+        "isMissingCustomIcon": false
+      },
+      {
+        "question": "Which word best describes this image?",
+        "choices": [
+          "Coffee",
+          "Teapot",
+          "Teacup",
+          "Moka pot"
+        ],
+        "choiceIpas": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "correctAnswer": "Teacup",
+        "explanation": "\"Teacup\" is the correct vocabulary word for this picture.",
+        "imageUrl": "https://images.pexels.com/photos/35380303/pexels-photo-35380303.jpeg?auto=compress&cs=tinysrgb&h=350",
+        "ipa": "",
+        "isMissingCustomIcon": false
+      },
+      {
+        "question": "Which word means to travel through a new area to learn about it?",
+        "choices": [
+          "Teapot",
+          "Explore",
+          "Moka pot",
+          "Coffee"
+        ],
+        "choiceIpas": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "correctAnswer": "Explore",
+        "explanation": "To explore is to discover and examine new surroundings.",
+        "imageUrl": "https://images.pexels.com/photos/4640946/pexels-photo-4640946.jpeg?auto=compress&cs=tinysrgb&h=350",
+        "ipa": "",
+        "isMissingCustomIcon": false
+      }
+    ]
+  },
+  "transportation-1": {
+    "grade": 2,
+    "videoUrl": "https://www.youtube.com/embed/UFHw7A3ovp8",
+    "title": "What Is This Called in English? 🇬🇧 | Car Parts #15",
+    "channel": "@JourneyEnglishTalk",
+    "words": [
+      "Steering",
+      "Headlight",
+      "Tail light",
+      "Dashboard",
+      "Explore"
+    ],
+    "questions": [
+      {
+        "question": "Which word describes the action happening in this image?",
+        "choices": [
+          "Tail light",
+          "Dashboard",
+          "Headlight",
+          "Steering"
+        ],
+        "choiceIpas": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "correctAnswer": "Steering",
+        "explanation": "Action verbs ending in \"-ing\" describe ongoing actions like the one shown here.",
+        "imageUrl": "https://images.pexels.com/photos/37421212/pexels-photo-37421212.jpeg?auto=compress&cs=tinysrgb&h=350",
+        "ipa": "",
+        "isMissingCustomIcon": false
+      },
+      {
+        "question": "Which word best describes this image?",
+        "choices": [
+          "Dashboard",
+          "Steering",
+          "Headlight",
+          "Tail light"
+        ],
+        "choiceIpas": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "correctAnswer": "Headlight",
+        "explanation": "\"Headlight\" is the correct vocabulary word for this picture.",
+        "imageUrl": "https://images.pexels.com/photos/16040150/pexels-photo-16040150.jpeg?auto=compress&cs=tinysrgb&h=350",
+        "ipa": "",
+        "isMissingCustomIcon": false
+      },
+      {
+        "question": "Which word best describes this image?",
+        "choices": [
+          "Headlight",
+          "Steering",
+          "Dashboard",
+          "Tail light"
+        ],
+        "choiceIpas": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "correctAnswer": "Tail light",
+        "explanation": "\"Tail light\" is the correct vocabulary word for this picture.",
+        "imageUrl": "https://images.pexels.com/photos/28914526/pexels-photo-28914526.jpeg?auto=compress&cs=tinysrgb&h=350",
+        "ipa": "",
+        "isMissingCustomIcon": false
+      },
+      {
+        "question": "Which word best describes this image?",
+        "choices": [
+          "Dashboard",
+          "Steering",
+          "Headlight",
+          "Tail light"
+        ],
+        "choiceIpas": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "correctAnswer": "Dashboard",
+        "explanation": "\"Dashboard\" is the correct vocabulary word for this picture.",
+        "imageUrl": "https://images.pexels.com/photos/9530906/pexels-photo-9530906.jpeg?auto=compress&cs=tinysrgb&h=350",
+        "ipa": "",
+        "isMissingCustomIcon": false
+      },
+      {
+        "question": "Which word means to travel through a new area to learn about it?",
+        "choices": [
+          "Headlight",
+          "Steering",
+          "Tail light",
+          "Explore"
+        ],
+        "choiceIpas": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "correctAnswer": "Explore",
+        "explanation": "To explore is to discover and examine new surroundings.",
+        "imageUrl": "https://images.pexels.com/photos/4640946/pexels-photo-4640946.jpeg?auto=compress&cs=tinysrgb&h=350",
+        "ipa": "",
+        "isMissingCustomIcon": false
+      }
+    ]
+  },
+  "hygiene-grooming-1": {
+    "grade": 1,
+    "videoUrl": "https://www.youtube.com/embed/-EvRsX91qLU",
+    "title": "What Is This Called in English? 🇬🇧 | Bathroom Items #14",
+    "channel": "@JourneyEnglishTalk",
+    "words": [
+      "Toilet",
+      "Toothbrush",
+      "Toothpaste",
+      "Towel",
+      "Explore"
+    ],
+    "questions": [
+      {
+        "question": "Which word best describes this image?",
+        "choices": [
+          "Toothbrush",
+          "Toilet",
+          "Towel",
+          "Toothpaste"
+        ],
+        "choiceIpas": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "correctAnswer": "Toilet",
+        "explanation": "\"Toilet\" is the correct vocabulary word for this picture.",
+        "imageUrl": "https://images.pexels.com/photos/4239072/pexels-photo-4239072.jpeg?auto=compress&cs=tinysrgb&h=350",
+        "ipa": "",
+        "isMissingCustomIcon": false
+      },
+      {
+        "question": "Which word best describes this image?",
+        "choices": [
+          "Towel",
+          "Toothpaste",
+          "Toothbrush",
+          "Toilet"
+        ],
+        "choiceIpas": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "correctAnswer": "Toothbrush",
+        "explanation": "\"Toothbrush\" is the correct vocabulary word for this picture.",
+        "imageUrl": "https://images.pexels.com/photos/6763784/pexels-photo-6763784.jpeg?auto=compress&cs=tinysrgb&h=350",
+        "ipa": "",
+        "isMissingCustomIcon": false
+      },
+      {
+        "question": "Which word best describes this image?",
+        "choices": [
+          "Toothpaste",
+          "Towel",
+          "Toilet",
+          "Toothbrush"
+        ],
+        "choiceIpas": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "correctAnswer": "Toothpaste",
+        "explanation": "\"Toothpaste\" is the correct vocabulary word for this picture.",
+        "imageUrl": "https://images.pexels.com/photos/27176881/pexels-photo-27176881.jpeg?auto=compress&cs=tinysrgb&h=350",
+        "ipa": "",
+        "isMissingCustomIcon": false
+      },
+      {
+        "question": "Which word best describes this image?",
+        "choices": [
+          "Toothpaste",
+          "Toothbrush",
+          "Toilet",
+          "Towel"
+        ],
+        "choiceIpas": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "correctAnswer": "Towel",
+        "explanation": "\"Towel\" is the correct vocabulary word for this picture.",
+        "imageUrl": "https://images.pexels.com/photos/2672634/pexels-photo-2672634.jpeg?auto=compress&cs=tinysrgb&h=350",
+        "ipa": "",
+        "isMissingCustomIcon": false
+      },
+      {
+        "question": "Which word means to travel through a new area to learn about it?",
+        "choices": [
+          "Toilet",
+          "Toothpaste",
+          "Toothbrush",
+          "Explore"
+        ],
+        "choiceIpas": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "correctAnswer": "Explore",
+        "explanation": "To explore is to discover and examine new surroundings.",
+        "imageUrl": "https://images.pexels.com/photos/4640947/pexels-photo-4640947.jpeg?auto=compress&cs=tinysrgb&h=350",
+        "ipa": "",
+        "isMissingCustomIcon": false
+      }
+    ]
+  },
+  "shopping-money-1": {
+    "grade": 4,
+    "videoUrl": "https://www.youtube.com/embed/Qq0RPVzzWZk",
+    "title": "What Is This Called in English? 🇬🇧 | Money Words #13",
+    "channel": "@JourneyEnglishTalk",
+    "words": [
+      "Receipt",
+      "Credit",
+      "Coin",
+      "Bill",
+      "Explore"
+    ],
+    "questions": [
+      {
+        "question": "Which word best describes this image?",
+        "choices": [
+          "Receipt",
+          "Bill",
+          "Credit",
+          "Coin"
+        ],
+        "choiceIpas": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "correctAnswer": "Receipt",
+        "explanation": "\"Receipt\" is the correct vocabulary word for this picture.",
+        "imageUrl": "https://images.pexels.com/photos/5242813/pexels-photo-5242813.jpeg?auto=compress&cs=tinysrgb&h=350",
+        "ipa": "",
+        "isMissingCustomIcon": false
+      },
+      {
+        "question": "Which word best describes this image?",
+        "choices": [
+          "Bill",
+          "Receipt",
+          "Credit",
+          "Coin"
+        ],
+        "choiceIpas": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "correctAnswer": "Credit",
+        "explanation": "\"Credit\" is the correct vocabulary word for this picture.",
+        "imageUrl": "https://images.pexels.com/photos/4841691/pexels-photo-4841691.jpeg?auto=compress&cs=tinysrgb&h=350",
+        "ipa": "",
+        "isMissingCustomIcon": false
+      },
+      {
+        "question": "Which word best describes this image?",
+        "choices": [
+          "Credit",
+          "Coin",
+          "Receipt",
+          "Bill"
+        ],
+        "choiceIpas": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "correctAnswer": "Coin",
+        "explanation": "\"Coin\" is the correct vocabulary word for this picture.",
+        "imageUrl": "https://images.pexels.com/photos/6777559/pexels-photo-6777559.jpeg?auto=compress&cs=tinysrgb&h=350",
+        "ipa": "",
+        "isMissingCustomIcon": false
+      },
+      {
+        "question": "Which word best describes this image?",
+        "choices": [
+          "Bill",
+          "Receipt",
+          "Coin",
+          "Credit"
+        ],
+        "choiceIpas": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "correctAnswer": "Bill",
+        "explanation": "\"Bill\" is the correct vocabulary word for this picture.",
+        "imageUrl": "https://images.pexels.com/photos/7651974/pexels-photo-7651974.jpeg?auto=compress&cs=tinysrgb&h=350",
+        "ipa": "",
+        "isMissingCustomIcon": false
+      },
+      {
+        "question": "Which word means to travel through a new area to learn about it?",
+        "choices": [
+          "Credit",
+          "Receipt",
+          "Coin",
+          "Explore"
+        ],
+        "choiceIpas": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "correctAnswer": "Explore",
+        "explanation": "To explore is to discover and examine new surroundings.",
+        "imageUrl": "https://images.pexels.com/photos/16319803/pexels-photo-16319803.jpeg?auto=compress&cs=tinysrgb&h=350",
+        "ipa": "",
+        "isMissingCustomIcon": false
+      }
+    ]
+  },
+  "home-furniture-1": {
+    "grade": 1,
+    "videoUrl": "https://www.youtube.com/embed/Xc-3EYhpBlI",
+    "title": "What Is This Called in English? 🇬🇧 | Bedroom Items #12",
+    "channel": "@JourneyEnglishTalk",
+    "words": [
+      "Blanket",
+      "Bed",
+      "Pillow",
+      "Cushion",
+      "Explore"
+    ],
+    "questions": [
+      {
+        "question": "Which word best describes this image?",
+        "choices": [
+          "Bed",
+          "Cushion",
+          "Blanket",
+          "Pillow"
+        ],
+        "choiceIpas": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "correctAnswer": "Blanket",
+        "explanation": "\"Blanket\" is the correct vocabulary word for this picture.",
+        "imageUrl": "https://images.pexels.com/photos/16497537/pexels-photo-16497537.jpeg?auto=compress&cs=tinysrgb&h=350",
+        "ipa": "",
+        "isMissingCustomIcon": false
+      },
+      {
+        "question": "Which word best describes this image?",
+        "choices": [
+          "Cushion",
+          "Pillow",
+          "Bed",
+          "Blanket"
+        ],
+        "choiceIpas": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "correctAnswer": "Bed",
+        "explanation": "\"Bed\" is the correct vocabulary word for this picture.",
+        "imageUrl": "https://images.pexels.com/photos/27671434/pexels-photo-27671434.jpeg?auto=compress&cs=tinysrgb&h=350",
+        "ipa": "",
+        "isMissingCustomIcon": false
+      },
+      {
+        "question": "Which word best describes this image?",
+        "choices": [
+          "Bed",
+          "Cushion",
+          "Pillow",
+          "Blanket"
+        ],
+        "choiceIpas": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "correctAnswer": "Pillow",
+        "explanation": "\"Pillow\" is the correct vocabulary word for this picture.",
+        "imageUrl": "https://images.pexels.com/photos/3999070/pexels-photo-3999070.jpeg?auto=compress&cs=tinysrgb&h=350",
+        "ipa": "",
+        "isMissingCustomIcon": false
+      },
+      {
+        "question": "Which word best describes this image?",
+        "choices": [
+          "Cushion",
+          "Pillow",
+          "Blanket",
+          "Bed"
+        ],
+        "choiceIpas": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "correctAnswer": "Cushion",
+        "explanation": "\"Cushion\" is the correct vocabulary word for this picture.",
+        "imageUrl": "https://images.pexels.com/photos/6917038/pexels-photo-6917038.jpeg?auto=compress&cs=tinysrgb&h=350",
+        "ipa": "",
+        "isMissingCustomIcon": false
+      },
+      {
+        "question": "Which word means to travel through a new area to learn about it?",
+        "choices": [
+          "Blanket",
+          "Explore",
+          "Pillow",
+          "Bed"
+        ],
+        "choiceIpas": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "correctAnswer": "Explore",
+        "explanation": "To explore is to discover and examine new surroundings.",
+        "imageUrl": "https://images.pexels.com/photos/4992763/pexels-photo-4992763.jpeg?auto=compress&cs=tinysrgb&h=350",
+        "ipa": "",
+        "isMissingCustomIcon": false
+      }
+    ]
+  },
+  "colors-shapes-1": {
+    "grade": 0,
+    "videoUrl": "https://www.youtube.com/embed/-UP5ZcFqv_Y",
+    "title": "What Is This Called in English? 🇬🇧 | Art & Colors #11",
+    "channel": "@JourneyEnglishTalk",
+    "words": [
+      "Paint",
+      "Portrait",
+      "Canva",
+      "Museum",
+      "Explore"
+    ],
+    "questions": [
+      {
+        "question": "Which word best describes this image?",
+        "choices": [
+          "Museum",
+          "Paint",
+          "Portrait",
+          "Canva"
+        ],
+        "choiceIpas": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "correctAnswer": "Paint",
+        "explanation": "\"Paint\" is the correct vocabulary word for this picture.",
+        "imageUrl": "https://images.pexels.com/photos/5641684/pexels-photo-5641684.jpeg?auto=compress&cs=tinysrgb&h=350",
+        "ipa": "",
+        "isMissingCustomIcon": false
+      },
+      {
+        "question": "Which word best describes this image?",
+        "choices": [
+          "Museum",
+          "Paint",
+          "Canva",
+          "Portrait"
+        ],
+        "choiceIpas": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "correctAnswer": "Portrait",
+        "explanation": "\"Portrait\" is the correct vocabulary word for this picture.",
+        "imageUrl": "https://images.pexels.com/photos/30968488/pexels-photo-30968488.jpeg?auto=compress&cs=tinysrgb&h=350",
+        "ipa": "",
+        "isMissingCustomIcon": false
+      },
+      {
+        "question": "Which word best describes this image?",
+        "choices": [
+          "Canva",
+          "Museum",
+          "Paint",
+          "Portrait"
+        ],
+        "choiceIpas": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "correctAnswer": "Canva",
+        "explanation": "\"Canva\" is the correct vocabulary word for this picture.",
+        "imageUrl": "https://images.pexels.com/photos/34086221/pexels-photo-34086221.jpeg?auto=compress&cs=tinysrgb&h=350",
+        "ipa": "",
+        "isMissingCustomIcon": false
+      },
+      {
+        "question": "Which word best describes this image?",
+        "choices": [
+          "Paint",
+          "Portrait",
+          "Museum",
+          "Canva"
+        ],
+        "choiceIpas": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "correctAnswer": "Museum",
+        "explanation": "\"Museum\" is the correct vocabulary word for this picture.",
+        "imageUrl": "https://images.pexels.com/photos/16287997/pexels-photo-16287997.jpeg?auto=compress&cs=tinysrgb&h=350",
+        "ipa": "",
+        "isMissingCustomIcon": false
+      },
+      {
+        "question": "Which word means to travel through a new area to learn about it?",
+        "choices": [
+          "Portrait",
+          "Explore",
+          "Paint",
+          "Canva"
+        ],
+        "choiceIpas": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "correctAnswer": "Explore",
+        "explanation": "To explore is to discover and examine new surroundings.",
+        "imageUrl": "https://images.pexels.com/photos/2330507/pexels-photo-2330507.jpeg?auto=compress&cs=tinysrgb&h=350",
+        "ipa": "",
+        "isMissingCustomIcon": false
+      }
+    ]
+  },
+  "transportation-2": {
+    "grade": 2,
+    "videoUrl": "https://www.youtube.com/embed/2W4eR4EngLo",
+    "title": "What Is This Called in English? 🇬🇧 | Transportation #10",
+    "channel": "@JourneyEnglishTalk",
+    "words": [
+      "Train",
+      "Airplane",
+      "Ship",
+      "Bicycle",
+      "Helicopter"
+    ],
+    "questions": [
+      {
+        "question": "Which word best describes this image?",
+        "choices": [
+          "Bicycle",
+          "Ship",
+          "Train",
+          "Airplane"
+        ],
+        "choiceIpas": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "correctAnswer": "Train",
+        "explanation": "\"Train\" is the correct vocabulary word for this picture.",
+        "imageUrl": "https://images.pexels.com/photos/16673166/pexels-photo-16673166.jpeg?auto=compress&cs=tinysrgb&h=350",
+        "ipa": "",
+        "isMissingCustomIcon": false
+      },
+      {
+        "question": "Which word best describes this image?",
+        "choices": [
+          "Train",
+          "Airplane",
+          "Bicycle",
+          "Ship"
+        ],
+        "choiceIpas": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "correctAnswer": "Airplane",
+        "explanation": "\"Airplane\" is the correct vocabulary word for this picture.",
+        "imageUrl": "https://images.pexels.com/photos/32325153/pexels-photo-32325153.jpeg?auto=compress&cs=tinysrgb&h=350",
+        "ipa": "",
+        "isMissingCustomIcon": false
+      },
+      {
+        "question": "Which word best describes this image?",
+        "choices": [
+          "Bicycle",
+          "Train",
+          "Ship",
+          "Airplane"
+        ],
+        "choiceIpas": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "correctAnswer": "Ship",
+        "explanation": "\"Ship\" is the correct vocabulary word for this picture.",
+        "imageUrl": "https://images.pexels.com/photos/27402391/pexels-photo-27402391.jpeg?auto=compress&cs=tinysrgb&h=350",
+        "ipa": "",
+        "isMissingCustomIcon": false
+      },
+      {
+        "question": "Which word best describes this image?",
+        "choices": [
+          "Train",
+          "Bicycle",
+          "Ship",
+          "Airplane"
+        ],
+        "choiceIpas": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "correctAnswer": "Bicycle",
+        "explanation": "\"Bicycle\" is the correct vocabulary word for this picture.",
+        "imageUrl": "https://images.pexels.com/photos/19353575/pexels-photo-19353575.jpeg?auto=compress&cs=tinysrgb&h=350",
+        "ipa": "",
+        "isMissingCustomIcon": false
+      },
+      {
+        "question": "Which word best describes this image?",
+        "choices": [
+          "Train",
+          "Ship",
+          "Helicopter",
+          "Airplane"
+        ],
+        "choiceIpas": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "correctAnswer": "Helicopter",
+        "explanation": "\"Helicopter\" is the correct vocabulary word for this picture.",
+        "imageUrl": "https://images.pexels.com/photos/16863610/pexels-photo-16863610.jpeg?auto=compress&cs=tinysrgb&h=350",
+        "ipa": "",
+        "isMissingCustomIcon": false
+      }
+    ]
+  },
+  "hygiene-grooming-2": {
+    "grade": 1,
+    "videoUrl": "https://www.youtube.com/embed/7tbyXd0kxKc",
+    "title": "What Is This Called in English? 🇬🇧 | Daily Objects #9",
+    "channel": "@JourneyEnglishTalk",
+    "words": [
+      "Nail",
+      "Razor",
+      "Sponge",
+      "Towel",
+      "Explore"
+    ],
+    "questions": [
+      {
+        "question": "Which word best describes this image?",
+        "choices": [
+          "Sponge",
+          "Razor",
+          "Nail",
+          "Towel"
+        ],
+        "choiceIpas": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "correctAnswer": "Nail",
+        "explanation": "\"Nail\" is the correct vocabulary word for this picture.",
+        "imageUrl": "https://images.pexels.com/photos/34835304/pexels-photo-34835304.jpeg?auto=compress&cs=tinysrgb&h=350",
+        "ipa": "",
+        "isMissingCustomIcon": false
+      },
+      {
+        "question": "Which word best describes this image?",
+        "choices": [
+          "Razor",
+          "Towel",
+          "Nail",
+          "Sponge"
+        ],
+        "choiceIpas": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "correctAnswer": "Razor",
+        "explanation": "\"Razor\" is the correct vocabulary word for this picture.",
+        "imageUrl": "https://images.pexels.com/photos/1319459/pexels-photo-1319459.jpeg?auto=compress&cs=tinysrgb&h=350",
+        "ipa": "",
+        "isMissingCustomIcon": false
+      },
+      {
+        "question": "Which word best describes this image?",
+        "choices": [
+          "Towel",
+          "Nail",
+          "Sponge",
+          "Razor"
+        ],
+        "choiceIpas": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "correctAnswer": "Sponge",
+        "explanation": "\"Sponge\" is the correct vocabulary word for this picture.",
+        "imageUrl": "https://images.pexels.com/photos/9774860/pexels-photo-9774860.jpeg?auto=compress&cs=tinysrgb&h=350",
+        "ipa": "",
+        "isMissingCustomIcon": false
+      },
+      {
+        "question": "Which word best describes this image?",
+        "choices": [
+          "Towel",
+          "Nail",
+          "Razor",
+          "Sponge"
+        ],
+        "choiceIpas": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "correctAnswer": "Towel",
+        "explanation": "\"Towel\" is the correct vocabulary word for this picture.",
+        "imageUrl": "https://images.pexels.com/photos/4210314/pexels-photo-4210314.jpeg?auto=compress&cs=tinysrgb&h=350",
+        "ipa": "",
+        "isMissingCustomIcon": false
+      },
+      {
+        "question": "Which word means to travel through a new area to learn about it?",
+        "choices": [
+          "Razor",
+          "Sponge",
+          "Nail",
+          "Explore"
+        ],
+        "choiceIpas": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "correctAnswer": "Explore",
+        "explanation": "To explore is to discover and examine new surroundings.",
+        "imageUrl": "https://images.pexels.com/photos/18569408/pexels-photo-18569408.jpeg?auto=compress&cs=tinysrgb&h=350",
+        "ipa": "",
+        "isMissingCustomIcon": false
+      }
+    ]
+  },
+  "body-parts-1": {
+    "grade": 0,
+    "videoUrl": "https://www.youtube.com/embed/VETWVYWsyko",
+    "title": "What Is This Called in English? 🇬🇧 | Face Parts #8",
+    "channel": "@JourneyEnglishTalk",
+    "words": [
+      "Nose",
+      "Mouth",
+      "Eye",
+      "Ear",
+      "Explore"
+    ],
+    "questions": [
+      {
+        "question": "Which organ on our face do we use to breathe and smell things?",
+        "choices": [
+          "Mouth",
+          "Nose",
+          "Ear",
+          "Eye"
+        ],
+        "choiceIpas": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "correctAnswer": "Nose",
+        "explanation": "The nose is the organ on our face used for smelling and breathing.",
+        "imageUrl": "https://images.pexels.com/photos/8727385/pexels-photo-8727385.jpeg?auto=compress&cs=tinysrgb&h=350",
+        "ipa": "",
+        "isMissingCustomIcon": false
+      },
+      {
+        "question": "Which body part do we use to eat, talk, and smile?",
+        "choices": [
+          "Mouth",
+          "Nose",
+          "Ear",
+          "Eye"
+        ],
+        "choiceIpas": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "correctAnswer": "Mouth",
+        "explanation": "The mouth contains our teeth and tongue, helping us speak and eat.",
+        "imageUrl": "https://images.pexels.com/photos/8727479/pexels-photo-8727479.jpeg?auto=compress&cs=tinysrgb&h=350",
+        "ipa": "",
+        "isMissingCustomIcon": false
+      },
+      {
+        "question": "Which word best describes this image?",
+        "choices": [
+          "Ear",
+          "Nose",
+          "Mouth",
+          "Eye"
+        ],
+        "choiceIpas": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "correctAnswer": "Eye",
+        "explanation": "\"Eye\" is the correct vocabulary word for this picture.",
+        "imageUrl": "https://images.pexels.com/photos/2440264/pexels-photo-2440264.jpeg?auto=compress&cs=tinysrgb&h=350",
+        "ipa": "",
+        "isMissingCustomIcon": false
+      },
+      {
+        "question": "Which word best describes this image?",
+        "choices": [
+          "Eye",
+          "Ear",
+          "Mouth",
+          "Nose"
+        ],
+        "choiceIpas": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "correctAnswer": "Ear",
+        "explanation": "\"Ear\" is the correct vocabulary word for this picture.",
+        "imageUrl": "https://images.pexels.com/photos/13308389/pexels-photo-13308389.jpeg?auto=compress&cs=tinysrgb&h=350",
+        "ipa": "",
+        "isMissingCustomIcon": false
+      },
+      {
+        "question": "Which word means to travel through a new area to learn about it?",
+        "choices": [
+          "Explore",
+          "Nose",
+          "Mouth",
+          "Eye"
+        ],
+        "choiceIpas": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "correctAnswer": "Explore",
+        "explanation": "To explore is to discover and examine new surroundings.",
+        "imageUrl": "https://images.pexels.com/photos/4555538/pexels-photo-4555538.jpeg?auto=compress&cs=tinysrgb&h=350",
+        "ipa": "",
+        "isMissingCustomIcon": false
+      }
+    ]
+  },
+  "wild-animals-1": {
+    "grade": 2,
+    "videoUrl": "https://www.youtube.com/embed/UIEIkXJAoog",
+    "title": "What Is This Called in English? | Learn English Word | 07",
+    "channel": "@JourneyEnglishTalk",
+    "words": [
+      "Deer",
+      "Fox",
+      "Bear",
+      "Wolf",
+      "Panther"
+    ],
+    "questions": [
+      {
+        "question": "Which word best describes this image?",
+        "choices": [
+          "Fox",
+          "Bear",
+          "Wolf",
+          "Deer"
+        ],
+        "choiceIpas": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "correctAnswer": "Deer",
+        "explanation": "\"Deer\" is the correct vocabulary word for this picture.",
+        "imageUrl": "https://images.pexels.com/photos/31805554/pexels-photo-31805554.jpeg?auto=compress&cs=tinysrgb&h=350",
+        "ipa": "",
+        "isMissingCustomIcon": false
+      },
+      {
+        "question": "Which word best describes this image?",
+        "choices": [
+          "Bear",
+          "Deer",
+          "Fox",
+          "Wolf"
+        ],
+        "choiceIpas": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "correctAnswer": "Fox",
+        "explanation": "\"Fox\" is the correct vocabulary word for this picture.",
+        "imageUrl": "https://images.pexels.com/photos/9681754/pexels-photo-9681754.jpeg?auto=compress&cs=tinysrgb&h=350",
+        "ipa": "",
+        "isMissingCustomIcon": false
+      },
+      {
+        "question": "Which word best describes this image?",
+        "choices": [
+          "Deer",
+          "Bear",
+          "Wolf",
+          "Fox"
+        ],
+        "choiceIpas": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "correctAnswer": "Bear",
+        "explanation": "\"Bear\" is the correct vocabulary word for this picture.",
+        "imageUrl": "https://images.pexels.com/photos/17646625/pexels-photo-17646625.jpeg?auto=compress&cs=tinysrgb&h=350",
+        "ipa": "",
+        "isMissingCustomIcon": false
+      },
+      {
+        "question": "Which word best describes this image?",
+        "choices": [
+          "Wolf",
+          "Deer",
+          "Fox",
+          "Bear"
+        ],
+        "choiceIpas": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "correctAnswer": "Wolf",
+        "explanation": "\"Wolf\" is the correct vocabulary word for this picture.",
+        "imageUrl": "https://images.pexels.com/photos/7249475/pexels-photo-7249475.jpeg?auto=compress&cs=tinysrgb&h=350",
+        "ipa": "",
+        "isMissingCustomIcon": false
+      },
+      {
+        "question": "Which word best describes this image?",
+        "choices": [
+          "Deer",
+          "Fox",
+          "Panther",
+          "Bear"
+        ],
+        "choiceIpas": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "correctAnswer": "Panther",
+        "explanation": "\"Panther\" is the correct vocabulary word for this picture.",
+        "imageUrl": "https://images.pexels.com/photos/7867206/pexels-photo-7867206.jpeg?auto=compress&cs=tinysrgb&h=350",
+        "ipa": "",
+        "isMissingCustomIcon": false
+      }
+    ]
+  },
+  "toys-games-1": {
+    "grade": 0,
+    "videoUrl": "https://www.youtube.com/embed/k5pTmDPDY8Q",
+    "title": "What Is This Called in English? | Learn English Word | 06",
+    "channel": "@JourneyEnglishTalk",
+    "words": [
+      "Balloon",
+      "Party hat",
+      "Decoration light",
+      "Greeting",
+      "Gift"
+    ],
+    "questions": [
+      {
+        "question": "Which colorful toy floats high in the sky when filled with helium?",
+        "choices": [
+          "Balloon",
+          "Party hat",
+          "Decoration light",
+          "Greeting"
+        ],
+        "choiceIpas": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "correctAnswer": "Balloon",
+        "explanation": "Balloons are made of rubber and expand when filled with air or gas.",
+        "imageUrl": "https://images.pexels.com/photos/19326083/pexels-photo-19326083.jpeg?auto=compress&cs=tinysrgb&h=350",
+        "ipa": "",
+        "isMissingCustomIcon": false
+      },
+      {
+        "question": "Which word best describes this image?",
+        "choices": [
+          "Balloon",
+          "Decoration light",
+          "Party hat",
+          "Greeting"
+        ],
+        "choiceIpas": [
+          "",
+          "",
+          "",
+          "/ˈɡɹiːtɪŋ/"
+        ],
+        "correctAnswer": "Party hat",
+        "explanation": "\"Party hat\" is the correct vocabulary word for this picture.",
+        "imageUrl": "https://images.pexels.com/photos/9628004/pexels-photo-9628004.jpeg?auto=compress&cs=tinysrgb&h=350",
+        "ipa": "",
+        "isMissingCustomIcon": false
+      },
+      {
+        "question": "Which word best describes this image?",
+        "choices": [
+          "Greeting",
+          "Balloon",
+          "Decoration light",
+          "Party hat"
+        ],
+        "choiceIpas": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "correctAnswer": "Decoration light",
+        "explanation": "\"Decoration light\" is the correct vocabulary word for this picture.",
+        "imageUrl": "https://images.pexels.com/photos/34649416/pexels-photo-34649416.jpeg?auto=compress&cs=tinysrgb&h=350",
+        "ipa": "",
+        "isMissingCustomIcon": false
+      },
+      {
+        "question": "Which word describes the action happening in this image?",
+        "choices": [
+          "Greeting",
+          "Decoration light",
+          "Balloon",
+          "Party hat"
+        ],
+        "choiceIpas": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "correctAnswer": "Greeting",
+        "explanation": "Action verbs ending in \"-ing\" describe ongoing actions like the one shown here.",
+        "imageUrl": "https://images.pexels.com/photos/5537978/pexels-photo-5537978.jpeg?auto=compress&cs=tinysrgb&h=350",
+        "ipa": "",
+        "isMissingCustomIcon": false
+      },
+      {
+        "question": "Which word best describes this image?",
+        "choices": [
+          "Gift",
+          "Balloon",
+          "Party hat",
+          "Decoration light"
+        ],
+        "choiceIpas": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "correctAnswer": "Gift",
+        "explanation": "\"Gift\" is the correct vocabulary word for this picture.",
+        "imageUrl": "https://images.pexels.com/photos/6334844/pexels-photo-6334844.jpeg?auto=compress&cs=tinysrgb&h=350",
+        "ipa": "",
+        "isMissingCustomIcon": false
+      }
+    ]
+  },
+  "fruit-veggies-1": {
+    "grade": 0,
+    "videoUrl": "https://www.youtube.com/embed/xFeaApa5sHw",
+    "title": "What Is This Called in English? | Learn English Word | 05",
+    "channel": "@JourneyEnglishTalk",
+    "words": [
+      "Apple",
+      "Orange",
+      "Milk",
+      "Egg",
+      "Banana"
+    ],
+    "questions": [
+      {
+        "question": "Which sweet, round fruit can be red, green, or yellow?",
+        "choices": [
+          "Apple",
+          "Egg",
+          "Milk",
+          "Orange"
+        ],
+        "choiceIpas": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "correctAnswer": "Apple",
+        "explanation": "Apples grow on trees and make a nice, crunchy snack.",
+        "imageUrl": "https://images.pexels.com/photos/17406436/pexels-photo-17406436.jpeg?auto=compress&cs=tinysrgb&h=350",
+        "ipa": "",
+        "isMissingCustomIcon": false
+      },
+      {
+        "question": "What fruit shares its name with its bright color?",
+        "choices": [
+          "Egg",
+          "Milk",
+          "Orange",
+          "Apple"
+        ],
+        "choiceIpas": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "correctAnswer": "Orange",
+        "explanation": "An orange is a citrus fruit that has a bright orange peel.",
+        "imageUrl": "https://images.pexels.com/photos/5689624/pexels-photo-5689624.jpeg?auto=compress&cs=tinysrgb&h=350",
+        "ipa": "",
+        "isMissingCustomIcon": false
+      },
+      {
+        "question": "Which word best describes this image?",
+        "choices": [
+          "Egg",
+          "Orange",
+          "Milk",
+          "Apple"
+        ],
+        "choiceIpas": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "correctAnswer": "Milk",
+        "explanation": "\"Milk\" is the correct vocabulary word for this picture.",
+        "imageUrl": "https://images.pexels.com/photos/33789468/pexels-photo-33789468.jpeg?auto=compress&cs=tinysrgb&h=350",
+        "ipa": "",
+        "isMissingCustomIcon": false
+      },
+      {
+        "question": "Which word best describes this image?",
+        "choices": [
+          "Apple",
+          "Egg",
+          "Milk",
+          "Orange"
+        ],
+        "choiceIpas": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "correctAnswer": "Egg",
+        "explanation": "\"Egg\" is the correct vocabulary word for this picture.",
+        "imageUrl": "https://images.pexels.com/photos/32149473/pexels-photo-32149473.jpeg?auto=compress&cs=tinysrgb&h=350",
+        "ipa": "",
+        "isMissingCustomIcon": false
+      },
+      {
+        "question": "Which word best describes this image?",
+        "choices": [
+          "Orange",
+          "Apple",
+          "Milk",
+          "Banana"
+        ],
+        "choiceIpas": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "correctAnswer": "Banana",
+        "explanation": "\"Banana\" is the correct vocabulary word for this picture.",
+        "imageUrl": "https://images.pexels.com/photos/33653885/pexels-photo-33653885.jpeg?auto=compress&cs=tinysrgb&h=350",
+        "ipa": "",
+        "isMissingCustomIcon": false
+      }
+    ]
+  },
+  "fruit-veggies-2": {
+    "grade": 0,
+    "videoUrl": "https://www.youtube.com/embed/2-ZjXvMACEY",
+    "title": "What Is This Called in English? | Learn English Word | 04",
+    "channel": "@JourneyEnglishTalk",
+    "words": [
+      "Apple",
+      "Orange",
+      "Banana",
+      "Mango",
+      "Grape"
+    ],
+    "questions": [
+      {
+        "question": "Which sweet, round fruit can be red, green, or yellow?",
+        "choices": [
+          "Apple",
+          "Mango",
+          "Orange",
+          "Banana"
+        ],
+        "choiceIpas": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "correctAnswer": "Apple",
+        "explanation": "Apples grow on trees and make a nice, crunchy snack.",
+        "imageUrl": "https://images.pexels.com/photos/8286692/pexels-photo-8286692.jpeg?auto=compress&cs=tinysrgb&h=350",
+        "ipa": "",
+        "isMissingCustomIcon": false
+      },
+      {
+        "question": "What fruit shares its name with its bright color?",
+        "choices": [
+          "Orange",
+          "Apple",
+          "Mango",
+          "Banana"
+        ],
+        "choiceIpas": [
+          "",
+          "",
+          "",
+          "/bəˈnɑːnə/"
+        ],
+        "correctAnswer": "Orange",
+        "explanation": "An orange is a citrus fruit that has a bright orange peel.",
+        "imageUrl": "https://images.pexels.com/photos/11065671/pexels-photo-11065671.jpeg?auto=compress&cs=tinysrgb&h=350",
+        "ipa": "",
+        "isMissingCustomIcon": false
+      },
+      {
+        "question": "Which word best describes this image?",
+        "choices": [
+          "Apple",
+          "Banana",
+          "Orange",
+          "Mango"
+        ],
+        "choiceIpas": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "correctAnswer": "Banana",
+        "explanation": "\"Banana\" is the correct vocabulary word for this picture.",
+        "imageUrl": "https://images.pexels.com/photos/10899478/pexels-photo-10899478.jpeg?auto=compress&cs=tinysrgb&h=350",
+        "ipa": "",
+        "isMissingCustomIcon": false
+      },
+      {
+        "question": "Which word best describes this image?",
+        "choices": [
+          "Orange",
+          "Apple",
+          "Banana",
+          "Mango"
+        ],
+        "choiceIpas": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "correctAnswer": "Mango",
+        "explanation": "\"Mango\" is the correct vocabulary word for this picture.",
+        "imageUrl": "https://images.pexels.com/photos/32134957/pexels-photo-32134957.jpeg?auto=compress&cs=tinysrgb&h=350",
+        "ipa": "",
+        "isMissingCustomIcon": false
+      },
+      {
+        "question": "Which word best describes this image?",
+        "choices": [
+          "Apple",
+          "Banana",
+          "Orange",
+          "Grape"
+        ],
+        "choiceIpas": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "correctAnswer": "Grape",
+        "explanation": "\"Grape\" is the correct vocabulary word for this picture.",
+        "imageUrl": "https://images.pexels.com/photos/6844554/pexels-photo-6844554.jpeg?auto=compress&cs=tinysrgb&h=350",
+        "ipa": "",
+        "isMissingCustomIcon": false
+      }
+    ]
+  },
+  "fruit-veggies-3": {
+    "grade": 0,
+    "videoUrl": "https://www.youtube.com/embed/r9p9SunFcMY",
+    "title": "What Is This Called in English? | Learn English Word | 03",
+    "channel": "@JourneyEnglishTalk",
+    "words": [
+      "Carrot",
+      "Tomato",
+      "Potato",
+      "Lemon",
+      "Pineapple"
+    ],
+    "questions": [
+      {
+        "question": "Which word best describes this image?",
+        "choices": [
+          "Carrot",
+          "Potato",
+          "Tomato",
+          "Lemon"
+        ],
+        "choiceIpas": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "correctAnswer": "Carrot",
+        "explanation": "\"Carrot\" is the correct vocabulary word for this picture.",
+        "imageUrl": "https://images.pexels.com/photos/7607823/pexels-photo-7607823.jpeg?auto=compress&cs=tinysrgb&h=350",
+        "ipa": "",
+        "isMissingCustomIcon": false
+      },
+      {
+        "question": "Which word best describes this image?",
+        "choices": [
+          "Tomato",
+          "Lemon",
+          "Potato",
+          "Carrot"
+        ],
+        "choiceIpas": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "correctAnswer": "Tomato",
+        "explanation": "\"Tomato\" is the correct vocabulary word for this picture.",
+        "imageUrl": "https://images.pexels.com/photos/34993617/pexels-photo-34993617.jpeg?auto=compress&cs=tinysrgb&h=350",
+        "ipa": "",
+        "isMissingCustomIcon": false
+      },
+      {
+        "question": "Which word best describes this image?",
+        "choices": [
+          "Potato",
+          "Lemon",
+          "Tomato",
+          "Carrot"
+        ],
+        "choiceIpas": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "correctAnswer": "Potato",
+        "explanation": "\"Potato\" is the correct vocabulary word for this picture.",
+        "imageUrl": "https://images.pexels.com/photos/27961865/pexels-photo-27961865.jpeg?auto=compress&cs=tinysrgb&h=350",
+        "ipa": "",
+        "isMissingCustomIcon": false
+      },
+      {
+        "question": "Which word best describes this image?",
+        "choices": [
+          "Lemon",
+          "Tomato",
+          "Carrot",
+          "Potato"
+        ],
+        "choiceIpas": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "correctAnswer": "Lemon",
+        "explanation": "\"Lemon\" is the correct vocabulary word for this picture.",
+        "imageUrl": "https://images.pexels.com/photos/7195128/pexels-photo-7195128.jpeg?auto=compress&cs=tinysrgb&h=350",
+        "ipa": "",
+        "isMissingCustomIcon": false
+      },
+      {
+        "question": "Which word best describes this image?",
+        "choices": [
+          "Potato",
+          "Pineapple",
+          "Carrot",
+          "Tomato"
+        ],
+        "choiceIpas": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "correctAnswer": "Pineapple",
+        "explanation": "\"Pineapple\" is the correct vocabulary word for this picture.",
+        "imageUrl": "https://images.pexels.com/photos/28870569/pexels-photo-28870569.jpeg?auto=compress&cs=tinysrgb&h=350",
+        "ipa": "",
+        "isMissingCustomIcon": false
+      }
+    ]
+  },
+  "fruit-veggies-4": {
+    "grade": 0,
+    "videoUrl": "https://www.youtube.com/embed/YJKIvSR_Wdw",
+    "title": "What Is This Called in English? | Learn English Word | 02",
+    "channel": "@JourneyEnglishTalk",
+    "words": [
+      "Guava",
+      "Grape",
+      "Honeydew",
+      "Watermelon",
+      "Kiwi"
+    ],
+    "questions": [
+      {
+        "question": "Which word best describes this image?",
+        "choices": [
+          "Watermelon",
+          "Honeydew",
+          "Guava",
+          "Grape"
+        ],
+        "choiceIpas": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "correctAnswer": "Guava",
+        "explanation": "\"Guava\" is the correct vocabulary word for this picture.",
+        "imageUrl": "https://images.pexels.com/photos/28536571/pexels-photo-28536571.jpeg?auto=compress&cs=tinysrgb&h=350",
+        "ipa": "",
+        "isMissingCustomIcon": false
+      },
+      {
+        "question": "Which word best describes this image?",
+        "choices": [
+          "Honeydew",
+          "Grape",
+          "Guava",
+          "Watermelon"
+        ],
+        "choiceIpas": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "correctAnswer": "Grape",
+        "explanation": "\"Grape\" is the correct vocabulary word for this picture.",
+        "imageUrl": "https://images.pexels.com/photos/29195196/pexels-photo-29195196.jpeg?auto=compress&cs=tinysrgb&h=350",
+        "ipa": "",
+        "isMissingCustomIcon": false
+      },
+      {
+        "question": "Which word best describes this image?",
+        "choices": [
+          "Grape",
+          "Guava",
+          "Honeydew",
+          "Watermelon"
+        ],
+        "choiceIpas": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "correctAnswer": "Honeydew",
+        "explanation": "\"Honeydew\" is the correct vocabulary word for this picture.",
+        "imageUrl": "https://images.pexels.com/photos/4943056/pexels-photo-4943056.jpeg?auto=compress&cs=tinysrgb&h=350",
+        "ipa": "",
+        "isMissingCustomIcon": false
+      },
+      {
+        "question": "Which word best describes this image?",
+        "choices": [
+          "Honeydew",
+          "Guava",
+          "Watermelon",
+          "Grape"
+        ],
+        "choiceIpas": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "correctAnswer": "Watermelon",
+        "explanation": "\"Watermelon\" is the correct vocabulary word for this picture.",
+        "imageUrl": "https://images.pexels.com/photos/3429784/pexels-photo-3429784.jpeg?auto=compress&cs=tinysrgb&h=350",
+        "ipa": "",
+        "isMissingCustomIcon": false
+      },
+      {
+        "question": "Which word best describes this image?",
+        "choices": [
+          "Honeydew",
+          "Grape",
+          "Guava",
+          "Kiwi"
+        ],
+        "choiceIpas": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "correctAnswer": "Kiwi",
+        "explanation": "\"Kiwi\" is the correct vocabulary word for this picture.",
+        "imageUrl": "https://images.pexels.com/photos/30781384/pexels-photo-30781384.jpeg?auto=compress&cs=tinysrgb&h=350",
+        "ipa": "",
+        "isMissingCustomIcon": false
+      }
+    ]
+  },
+  "body-illnesses-1": {
+    "grade": 2,
+    "videoUrl": "https://www.youtube.com/embed/ViGE5pjVdjU",
+    "title": "What Is This Called in English? | Learn English Word | 01",
+    "channel": "@JourneyEnglishTalk",
+    "words": [
+      "Chapped",
+      "Scab",
+      "Vitiligo",
+      "Frenulum",
+      "Explore"
+    ],
+    "questions": [
+      {
+        "question": "Which word best describes this image?",
+        "choices": [
+          "Frenulum",
+          "Chapped",
+          "Scab",
+          "Vitiligo"
+        ],
+        "choiceIpas": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "correctAnswer": "Chapped",
+        "explanation": "\"Chapped\" is the correct vocabulary word for this picture.",
+        "imageUrl": "https://images.pexels.com/photos/11487245/pexels-photo-11487245.jpeg?auto=compress&cs=tinysrgb&h=350",
+        "ipa": "",
+        "isMissingCustomIcon": false
+      },
+      {
+        "question": "Which word best describes this image?",
+        "choices": [
+          "Vitiligo",
+          "Chapped",
+          "Frenulum",
+          "Scab"
+        ],
+        "choiceIpas": [
+          "",
+          "/tʃæpt/",
+          "/ˈfrɛnjələm/",
+          "/skæb/"
+        ],
+        "correctAnswer": "Scab",
+        "explanation": "\"Scab\" is the correct vocabulary word for this picture.",
+        "imageUrl": "https://images.pexels.com/photos/7699355/pexels-photo-7699355.jpeg?auto=compress&cs=tinysrgb&h=350",
+        "ipa": "",
+        "isMissingCustomIcon": false
+      },
+      {
+        "question": "Which word best describes this image?",
+        "choices": [
+          "Chapped",
+          "Frenulum",
+          "Vitiligo",
+          "Scab"
+        ],
+        "choiceIpas": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "correctAnswer": "Vitiligo",
+        "explanation": "\"Vitiligo\" is the correct vocabulary word for this picture.",
+        "imageUrl": "https://images.pexels.com/photos/5301539/pexels-photo-5301539.jpeg?auto=compress&cs=tinysrgb&h=350",
+        "ipa": "",
+        "isMissingCustomIcon": false
+      },
+      {
+        "question": "Which word best describes this image?",
+        "choices": [
+          "Chapped",
+          "Vitiligo",
+          "Frenulum",
+          "Scab"
+        ],
+        "choiceIpas": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "correctAnswer": "Frenulum",
+        "explanation": "\"Frenulum\" is the correct vocabulary word for this picture.",
+        "imageUrl": "https://images.pexels.com/photos/34529448/pexels-photo-34529448.jpeg?auto=compress&cs=tinysrgb&h=350",
+        "ipa": "",
+        "isMissingCustomIcon": false
+      },
+      {
+        "question": "Which word means to travel through a new area to learn about it?",
+        "choices": [
+          "Vitiligo",
+          "Scab",
+          "Chapped",
+          "Explore"
+        ],
+        "choiceIpas": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "correctAnswer": "Explore",
+        "explanation": "To explore is to discover and examine new surroundings.",
+        "imageUrl": "https://images.pexels.com/photos/18569408/pexels-photo-18569408.jpeg?auto=compress&cs=tinysrgb&h=350",
+        "ipa": "",
+        "isMissingCustomIcon": false
+      }
+    ]
+  }
+}
