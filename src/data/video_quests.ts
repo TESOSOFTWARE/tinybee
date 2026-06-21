@@ -974,26 +974,32 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
     },
     "1-10": {
         "grade": 1,
-        "topicId": "school-supplies",
-        "videoUrl": "https://www.youtube.com/embed/JlNqWAZlcsc",
-        "title": "Learn School Supplies | Talking Flashcards",
-        "channel": "@Mapleleaflearning",
-        "transcriptText": "talking flash cards school are you ready here we go a pencil a pencil an eraser [Music] an eraser a book [Music] a book a ruler a ruler a pen a pen [Music] a desk [Music] a desk a pencil case [Music] a pencil case a clock [Music] a clock a chair a chair a crayon a crayon a stapler a stapler a notebook a notebook [Music] a sharpener a sharpener a backpack a backpack glue [Music] glue scissors scissors you can get these flashcards and many many more at www.mapleleaflearning.com [Music] please come by and check out our site we have games flash cards songs and many many more activities to make your classroom more fun anyways hope to see you soon where's the stapler where is it where is it on the desk on the desk where's the broom where is it where is it in the box in the box where's the crayon where is it where is it under the chair under the chair on in and under yeah where's the pencil where is it where is it on the book on the book where's the glue where is it where is it in the basket in the basket where's the sharpener where is it where is it under the desk under the desk on in and under great the paintbrush where is it where is it on the chair on the chair where's the ruler where is it where is it in the bag in the bag where's the pen where is it where is it under the book under the book on in and under see you next time",
+        "topicId": "home-furniture",
+        "videoUrl": "https://www.youtube.com/embed/xgL_x49dG20",
+        "title": "Kitchen Utensils - English Vocabulary",
+        "channel": "@EnglishinGeneral",
+        "transcriptText": "cutting board Cutlery whisk Ladle spatula frying pan rolling pin peeler colander greater teapot",
         "words": [
-            "Http",
-            "Pencil",
-            "Music",
-            "Under",
-            "Ruler"
+            "Cutting Board",
+            "Cutlery",
+            "Whisk",
+            "Ladle",
+            "Spatula",
+            "Frying Pan",
+            "Rolling Pin",
+            "Peeler",
+            "Colander",
+            "Grater",
+            "Teapot"
         ],
         "questions": [
             {
                 "question": "Which word best describes this image?",
                 "choices": [
-                    "Pencil",
-                    "Http",
-                    "Music",
-                    "Under"
+                    "Whisk",
+                    "Cutting Board",
+                    "Ladle",
+                    "Cutlery"
                 ],
                 "choiceIpas": [
                     "",
@@ -1001,79 +1007,79 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                     "",
                     ""
                 ],
-                "correctAnswer": "Http",
-                "explanation": "\"Http\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/270488/pexels-photo-270488.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
-                "isMissingCustomIcon": false
-            },
-            {
-                "question": "What writing tool contains graphite and has an eraser on top?",
-                "choices": [
-                    "Music",
-                    "Under",
-                    "Pencil",
-                    "Http"
-                ],
-                "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
-                ],
-                "correctAnswer": "Pencil",
-                "explanation": "Pencils are perfect for schoolwork because you can erase mistakes.",
-                "imageUrl": "https://images.pexels.com/photos/6952393/pexels-photo-6952393.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
+                "correctAnswer": "Cutting Board",
+                "explanation": "\"Cutting Board\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/12349170/pexels-photo-12349170.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/bɔːd/",
                 "isMissingCustomIcon": false
             },
             {
                 "question": "Which word best describes this image?",
                 "choices": [
-                    "Under",
-                    "Music",
-                    "Http",
-                    "Pencil"
+                    "Cutting Board",
+                    "Whisk",
+                    "Ladle",
+                    "Cutlery"
                 ],
                 "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
+                    "/ˈkʌtɪŋ/ /bɔːd/",
+                    "/(h)wɪsk/",
+                    "/ˈleɪ.dəl/",
+                    "/ˈkʌt.lə.ɹi/"
                 ],
-                "correctAnswer": "Music",
-                "explanation": "\"Music\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/1718380/pexels-photo-1718380.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
+                "correctAnswer": "Cutlery",
+                "explanation": "\"Cutlery\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/7140435/pexels-photo-7140435.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/ˈkʌt.lə.ɹi/",
                 "isMissingCustomIcon": false
             },
             {
                 "question": "Which word best describes this image?",
                 "choices": [
-                    "Http",
-                    "Pencil",
-                    "Under",
-                    "Music"
+                    "Cutting Board",
+                    "Ladle",
+                    "Whisk",
+                    "Cutlery"
                 ],
                 "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
+                    "/ˈkʌtɪŋ/ /bɔːd/",
+                    "/ˈleɪ.dəl/",
+                    "/(h)wɪsk/",
+                    "/ˈkʌt.lə.ɹi/"
                 ],
-                "correctAnswer": "Under",
-                "explanation": "\"Under\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/7320698/pexels-photo-7320698.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
+                "correctAnswer": "Whisk",
+                "explanation": "\"Whisk\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/8004542/pexels-photo-8004542.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/(h)wɪsk/",
                 "isMissingCustomIcon": false
             },
             {
-                "question": "What straight strip of plastic or wood is used to measure length?",
+                "question": "Which word best describes this image?",
                 "choices": [
-                    "Music",
-                    "Ruler",
-                    "Http",
-                    "Pencil"
+                    "Ladle",
+                    "Cutting Board",
+                    "Cutlery",
+                    "Whisk"
+                ],
+                "choiceIpas": [
+                    "/ˈleɪ.dəl/",
+                    "/ˈkʌtɪŋ/ /bɔːd/",
+                    "/ˈkʌt.lə.ɹi/",
+                    "/(h)wɪsk/"
+                ],
+                "correctAnswer": "Ladle",
+                "explanation": "\"Ladle\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/12181753/pexels-photo-12181753.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/ˈleɪ.dəl/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Cutting Board",
+                    "Cutlery",
+                    "Spatula",
+                    "Whisk"
                 ],
                 "choiceIpas": [
                     "",
@@ -1081,9 +1087,129 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                     "",
                     ""
                 ],
-                "correctAnswer": "Ruler",
-                "explanation": "A ruler has marked measurements to help draw straight lines.",
-                "imageUrl": "https://images.pexels.com/photos/35242187/pexels-photo-35242187.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "correctAnswer": "Spatula",
+                "explanation": "\"Spatula\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/6035328/pexels-photo-6035328.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/ˈspætjʊlə/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Frying Pan",
+                    "Whisk",
+                    "Cutting Board",
+                    "Cutlery"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Frying Pan",
+                "explanation": "\"Frying Pan\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/4781427/pexels-photo-4781427.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/ˈfɹaɪ.ɪŋ/ /pæn/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Whisk",
+                    "Cutlery",
+                    "Cutting Board",
+                    "Rolling Pin"
+                ],
+                "choiceIpas": [
+                    "/(h)wɪsk/",
+                    "/ˈkʌt.lə.ɹi/",
+                    "/bɔːd/",
+                    "/ˈɹəʊlɪŋ/ /pɪn/"
+                ],
+                "correctAnswer": "Rolling Pin",
+                "explanation": "\"Rolling Pin\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/6175803/pexels-photo-6175803.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/ˈɹəʊlɪŋ/ /pɪn/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Whisk",
+                    "Cutting Board",
+                    "Peeler",
+                    "Cutlery"
+                ],
+                "choiceIpas": [
+                    "/(h)wɪsk/",
+                    "/ˈkʌtɪŋ/ /bɔːd/",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Peeler",
+                "explanation": "\"Peeler\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/4110464/pexels-photo-4110464.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/ˈpiːlə/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Whisk",
+                    "Cutting Board",
+                    "Colander",
+                    "Cutlery"
+                ],
+                "choiceIpas": [
+                    "/(h)wɪsk/",
+                    "/ˈkʌtɪŋ/ /bɔːd/",
+                    "/ˈkɑləndəɹ/",
+                    "/ˈkʌt.lə.ɹi/"
+                ],
+                "correctAnswer": "Colander",
+                "explanation": "\"Colander\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/6794908/pexels-photo-6794908.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/ˈkɑləndəɹ/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Cutting Board",
+                    "Grater",
+                    "Cutlery",
+                    "Whisk"
+                ],
+                "choiceIpas": [
+                    "/ˈkʌtɪŋ/ /bɔːd/",
+                    "/ˈɡɹeɪtə/",
+                    "",
+                    "/(h)wɪsk/"
+                ],
+                "correctAnswer": "Grater",
+                "explanation": "\"Grater\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/6287529/pexels-photo-6287529.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/ˈɡɹeɪtə/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Whisk",
+                    "Cutlery",
+                    "Cutting Board",
+                    "Teapot"
+                ],
+                "choiceIpas": [
+                    "/(h)wɪsk/",
+                    "/ˈkʌt.lə.ɹi/",
+                    "/ˈkʌtɪŋ/ /bɔːd/",
+                    ""
+                ],
+                "correctAnswer": "Teapot",
+                "explanation": "\"Teapot\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/12096067/pexels-photo-12096067.jpeg?auto=compress&cs=tinysrgb&h=350",
                 "ipa": "",
                 "isMissingCustomIcon": false
             }
@@ -1865,111 +1991,90 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
         "channel": "@EnglishSingsing",
         "transcriptText": "foreign school supplies what's in your backpack it's my book I can read book book [Applause] it's my notebook I can write on it notebook [Music] notebook [Applause] these are my scissors I can cut the paper [Applause] [Music] scissors [Music] scissors it's my glue I can stick them with it glue [Music]",
         "words": [
-            "Wwwyoutubecom",
-            "User",
-            "Backpack",
-            "Music",
-            "Music scissor"
+            "Book",
+            "Notebook",
+            "Scissors",
+            "Glue"
         ],
         "questions": [
             {
                 "question": "Which word best describes this image?",
                 "choices": [
-                    "Wwwyoutubecom",
-                    "Backpack",
-                    "Music",
-                    "User"
+                    "Notebook",
+                    "Scissors",
+                    "Book",
+                    "Glue"
                 ],
                 "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
+                    "/ˈnəʊtˌbʊk/",
+                    "/ˈsɪzəz/",
+                    "/buːk/",
+                    "/ɡluː/"
                 ],
-                "correctAnswer": "Wwwyoutubecom",
-                "explanation": "\"Wwwyoutubecom\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/3227986/pexels-photo-3227986.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
+                "correctAnswer": "Book",
+                "explanation": "\"Book\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/12308108/pexels-photo-12308108.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/buːk/",
                 "isMissingCustomIcon": false
             },
             {
                 "question": "Which word best describes this image?",
                 "choices": [
-                    "User",
-                    "Backpack",
-                    "Wwwyoutubecom",
-                    "Music"
+                    "Book",
+                    "Glue",
+                    "Notebook",
+                    "Scissors"
                 ],
                 "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
+                    "/buːk/",
+                    "/ɡluː/",
+                    "/ˈnəʊtˌbʊk/",
+                    "/ˈsɪzəz/"
                 ],
-                "correctAnswer": "User",
-                "explanation": "\"User\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/33989917/pexels-photo-33989917.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
-                "isMissingCustomIcon": false
-            },
-            {
-                "question": "What bag do we wear on our backs to carry books and school supplies?",
-                "choices": [
-                    "Wwwyoutubecom",
-                    "Backpack",
-                    "User",
-                    "Music"
-                ],
-                "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
-                ],
-                "correctAnswer": "Backpack",
-                "explanation": "A backpack holds pencils, books, and other tools for learning.",
-                "imageUrl": "https://images.pexels.com/photos/16372801/pexels-photo-16372801.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
+                "correctAnswer": "Notebook",
+                "explanation": "\"Notebook\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/7439131/pexels-photo-7439131.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/ˈnəʊtˌbʊk/",
                 "isMissingCustomIcon": false
             },
             {
                 "question": "Which word best describes this image?",
                 "choices": [
-                    "Backpack",
-                    "User",
-                    "Wwwyoutubecom",
-                    "Music"
+                    "Glue",
+                    "Scissors",
+                    "Book",
+                    "Notebook"
                 ],
                 "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
+                    "/ɡluː/",
+                    "/ˈsɪzəz/",
+                    "/buːk/",
+                    "/ˈnəʊtˌbʊk/"
                 ],
-                "correctAnswer": "Music",
-                "explanation": "\"Music\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/9418650/pexels-photo-9418650.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
+                "correctAnswer": "Scissors",
+                "explanation": "\"Scissors\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/8058752/pexels-photo-8058752.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/ˈsɪzəz/",
                 "isMissingCustomIcon": false
             },
             {
                 "question": "Which word best describes this image?",
                 "choices": [
-                    "Backpack",
-                    "User",
-                    "Wwwyoutubecom",
-                    "Music scissor"
+                    "Book",
+                    "Glue",
+                    "Scissors",
+                    "Notebook"
                 ],
                 "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
+                    "/buːk/",
+                    "/ɡluː/",
+                    "/ˈsɪzəz/",
+                    "/ˈnəʊtˌbʊk/"
                 ],
-                "correctAnswer": "Music scissor",
-                "explanation": "\"Music scissor\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/11650293/pexels-photo-11650293.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
+                "correctAnswer": "Glue",
+                "explanation": "\"Glue\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/7869784/pexels-photo-7869784.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/ɡluː/",
                 "isMissingCustomIcon": false
             }
         ]
@@ -1982,111 +2087,90 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
         "channel": "@EnglishSingsing",
         "transcriptText": "[Music] [Applause] pencil pencil pencil book book book ruler ruler ruler eraser eraser eraser [Music]",
         "words": [
-            "Wwwyoutubecom",
-            "User",
             "Pencil",
+            "Book",
             "Ruler",
             "Eraser"
         ],
         "questions": [
             {
-                "question": "Which word best describes this image?",
-                "choices": [
-                    "Ruler",
-                    "User",
-                    "Pencil",
-                    "Wwwyoutubecom"
-                ],
-                "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
-                ],
-                "correctAnswer": "Wwwyoutubecom",
-                "explanation": "\"Wwwyoutubecom\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/27680443/pexels-photo-27680443.png?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
-                "isMissingCustomIcon": false
-            },
-            {
-                "question": "Which word best describes this image?",
-                "choices": [
-                    "Pencil",
-                    "Ruler",
-                    "User",
-                    "Wwwyoutubecom"
-                ],
-                "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
-                ],
-                "correctAnswer": "User",
-                "explanation": "\"User\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/20896020/pexels-photo-20896020.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
-                "isMissingCustomIcon": false
-            },
-            {
                 "question": "What writing tool contains graphite and has an eraser on top?",
                 "choices": [
                     "Ruler",
-                    "User",
-                    "Wwwyoutubecom",
-                    "Pencil"
+                    "Pencil",
+                    "Eraser",
+                    "Book"
                 ],
                 "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
+                    "/ˈɹuːlə(ɹ)/",
+                    "/ˈpɛnsɪl/",
+                    "/ɪˈɹeɪzə/",
+                    "/buːk/"
                 ],
                 "correctAnswer": "Pencil",
                 "explanation": "Pencils are perfect for schoolwork because you can erase mistakes.",
-                "imageUrl": "https://images.pexels.com/photos/8099373/pexels-photo-8099373.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
+                "imageUrl": "https://images.pexels.com/photos/7718870/pexels-photo-7718870.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/ˈpɛnsɪl/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Pencil",
+                    "Book",
+                    "Ruler",
+                    "Eraser"
+                ],
+                "choiceIpas": [
+                    "/ˈpɛnsɪl/",
+                    "/buːk/",
+                    "/ˈɹuːlə(ɹ)/",
+                    "/ɪˈɹeɪzə/"
+                ],
+                "correctAnswer": "Book",
+                "explanation": "\"Book\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/4887106/pexels-photo-4887106.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/buːk/",
                 "isMissingCustomIcon": false
             },
             {
                 "question": "What straight strip of plastic or wood is used to measure length?",
                 "choices": [
                     "Ruler",
+                    "Book",
                     "Pencil",
-                    "Wwwyoutubecom",
-                    "User"
+                    "Eraser"
                 ],
                 "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
+                    "/ˈɹuːlə(ɹ)/",
+                    "/buːk/",
+                    "/ˈpɛnsɪl/",
+                    "/ɪˈɹeɪzə/"
                 ],
                 "correctAnswer": "Ruler",
                 "explanation": "A ruler has marked measurements to help draw straight lines.",
-                "imageUrl": "https://images.pexels.com/photos/17750881/pexels-photo-17750881.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
+                "imageUrl": "https://images.pexels.com/photos/8099589/pexels-photo-8099589.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/ˈɹuːlə(ɹ)/",
                 "isMissingCustomIcon": false
             },
             {
                 "question": "What small rubber tool is used to remove pencil marks?",
                 "choices": [
-                    "Wwwyoutubecom",
+                    "Book",
                     "Eraser",
-                    "User",
-                    "Pencil"
+                    "Pencil",
+                    "Ruler"
                 ],
                 "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
+                    "/buːk/",
+                    "/ɪˈɹeɪzə/",
+                    "/ˈpɛnsɪl/",
+                    "/ˈɹuːlə(ɹ)/"
                 ],
                 "correctAnswer": "Eraser",
                 "explanation": "An eraser rubs off pencil graphite to correct spelling mistakes.",
-                "imageUrl": "https://images.pexels.com/photos/5088023/pexels-photo-5088023.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
+                "imageUrl": "https://pixabay.com/get/gec9cb466ca04f7c6ce441a158f5eea885816c533313cd555bf66c00dd95585f4fd222c831a64689166fc9659f6e5a6e548b4e44e0e9098c6f59ec005c95f14fc_640.png",
+                "ipa": "/ɪˈɹeɪzə/",
                 "isMissingCustomIcon": false
             }
         ]
@@ -2099,20 +2183,25 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
         "channel": "@SmileandLearnEnglish",
         "transcriptText": "[Music] smile and learn hello friends today we're going to visit our school and we're going to learn many words related to this place are you ready to find out more about the school let's go for it [Music] the classroom is the place where students learn and do activities classroom the teacher teaches children in school thank you teacher teacher we can read books and learn many things book the alphabet is a set of letters in a fixed order a b c d e alphabet the desk is the table where pupils study and do their work desk the computer is an electronic device that allows us to look up information and create content and assignments we love learning using the computer computer we write or draw using the pencil i love it pencil the pencil case is used to keep some school supplies like the eraser the pencil the pen or the pencil sharpener pencil case the ruler is a tool used to draw straight lines or to measure ruler the clock indicates hours and minutes and tells us when our school day ends recess time clock let's see if you remember any of the words we learned who teaches children in school the teacher where do students learn and do classwork in class how do we recap the order of letters with the alphabet [Music] how do we call the table where students do their classwork the desk where do we keep the pencil the pen or the eraser in the pencil case what do we use to write the pencil [Applause] these have been some words related to school but there are so many more don't miss the second video about school [Music] did you like the video we have so many more subscribe by clicking on the seal ah and if you want to keep watching more videos click on the boxes [Music]",
         "words": [
+            "Classroom",
+            "Teacher",
+            "Book",
+            "Alphabet",
+            "Desk",
+            "Computer",
             "Pencil",
-            "Student",
-            "Pencil case",
-            "Eraser",
-            "Ruler"
+            "Pencil Case",
+            "Ruler",
+            "Clock"
         ],
         "questions": [
             {
-                "question": "What writing tool contains graphite and has an eraser on top?",
+                "question": "Which word best describes this image?",
                 "choices": [
-                    "Student",
-                    "Pencil",
-                    "Eraser",
-                    "Pencil case"
+                    "Classroom",
+                    "Alphabet",
+                    "Teacher",
+                    "Book"
                 ],
                 "choiceIpas": [
                     "",
@@ -2120,79 +2209,179 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                     "",
                     ""
                 ],
-                "correctAnswer": "Pencil",
-                "explanation": "Pencils are perfect for schoolwork because you can erase mistakes.",
-                "imageUrl": "https://images.pexels.com/photos/30583224/pexels-photo-30583224.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
+                "correctAnswer": "Classroom",
+                "explanation": "\"Classroom\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/36159720/pexels-photo-36159720.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/ˈklɑːsɹʊm/",
                 "isMissingCustomIcon": false
             },
             {
-                "question": "What do we call a person who is studying or learning in school?",
+                "question": "Who is the person that helps students learn new things in school?",
                 "choices": [
-                    "Eraser",
-                    "Pencil case",
-                    "Student",
-                    "Pencil"
+                    "Classroom",
+                    "Book",
+                    "Alphabet",
+                    "Teacher"
                 ],
                 "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
+                    "/ˈklɑːsɹʊm/",
+                    "/buːk/",
+                    "/ˈæl.fə.bɛt/",
+                    "/ˈtiːt͡ʃə/"
                 ],
-                "correctAnswer": "Student",
-                "explanation": "Students attend school to gain knowledge and learn new skills.",
-                "imageUrl": "https://images.pexels.com/photos/8199161/pexels-photo-8199161.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
+                "correctAnswer": "Teacher",
+                "explanation": "A teacher guides students and explains lessons in a classroom.",
+                "imageUrl": "https://images.pexels.com/photos/37795357/pexels-photo-37795357.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/ˈtiːt͡ʃə/",
                 "isMissingCustomIcon": false
             },
             {
                 "question": "Which word best describes this image?",
                 "choices": [
-                    "Student",
-                    "Pencil",
-                    "Pencil case",
-                    "Eraser"
+                    "Classroom",
+                    "Alphabet",
+                    "Teacher",
+                    "Book"
                 ],
                 "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
+                    "/ˈklɑːsɹʊm/",
+                    "/ˈæl.fə.bɛt/",
+                    "/ˈtiːt͡ʃə/",
+                    "/buːk/"
                 ],
-                "correctAnswer": "Pencil case",
-                "explanation": "\"Pencil case\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/3731255/pexels-photo-3731255.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
+                "correctAnswer": "Book",
+                "explanation": "\"Book\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/28124384/pexels-photo-28124384.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/buːk/",
                 "isMissingCustomIcon": false
             },
             {
-                "question": "What small rubber tool is used to remove pencil marks?",
+                "question": "Which word best describes this image?",
                 "choices": [
-                    "Student",
-                    "Pencil case",
-                    "Pencil",
-                    "Eraser"
+                    "Classroom",
+                    "Alphabet",
+                    "Teacher",
+                    "Book"
                 ],
                 "choiceIpas": [
-                    "",
+                    "/ˈklɑːsɹʊm/",
+                    "/ˈæl.fə.bɛt/",
+                    "/ˈtiːt͡ʃə/",
+                    "/buːk/"
+                ],
+                "correctAnswer": "Alphabet",
+                "explanation": "\"Alphabet\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/4564603/pexels-photo-4564603.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/ˈæl.fə.bɛt/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Book",
+                    "Classroom",
+                    "Desk",
+                    "Teacher"
+                ],
+                "choiceIpas": [
+                    "/buːk/",
+                    "/ˈklɑːsɹʊm/",
+                    "/dɛsk/",
+                    ""
+                ],
+                "correctAnswer": "Desk",
+                "explanation": "\"Desk\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/12885118/pexels-photo-12885118.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/dɛsk/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Classroom",
+                    "Computer",
+                    "Book",
+                    "Teacher"
+                ],
+                "choiceIpas": [
+                    "/ˈklɑːsɹʊm/",
+                    "/kəmˈpjuːtə/",
+                    "/buːk/",
+                    "/ˈtiːt͡ʃə/"
+                ],
+                "correctAnswer": "Computer",
+                "explanation": "\"Computer\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/17489155/pexels-photo-17489155.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/kəmˈpjuːtə/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "What writing tool contains graphite and has an eraser on top?",
+                "choices": [
+                    "Teacher",
+                    "Book",
+                    "Pencil",
+                    "Classroom"
+                ],
+                "choiceIpas": [
+                    "/ˈtiːt͡ʃə/",
+                    "/buːk/",
+                    "/ˈpɛnsɪl/",
+                    "/ˈklɑːsɹʊm/"
+                ],
+                "correctAnswer": "Pencil",
+                "explanation": "Pencils are perfect for schoolwork because you can erase mistakes.",
+                "imageUrl": "https://images.pexels.com/photos/12969416/pexels-photo-12969416.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/ˈpɛnsɪl/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Classroom",
+                    "Pencil Case",
+                    "Book",
+                    "Teacher"
+                ],
+                "choiceIpas": [
+                    "/ˈklɑːsɹʊm/",
                     "",
                     "",
                     ""
                 ],
-                "correctAnswer": "Eraser",
-                "explanation": "An eraser rubs off pencil graphite to correct spelling mistakes.",
-                "imageUrl": "https://images.pexels.com/photos/5412134/pexels-photo-5412134.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
+                "correctAnswer": "Pencil Case",
+                "explanation": "\"Pencil Case\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/3731255/pexels-photo-3731255.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/ˈpɛnsɪl/ /keɪs/",
                 "isMissingCustomIcon": false
             },
             {
                 "question": "What straight strip of plastic or wood is used to measure length?",
                 "choices": [
-                    "Pencil",
-                    "Student",
-                    "Ruler",
-                    "Pencil case"
+                    "Teacher",
+                    "Classroom",
+                    "Book",
+                    "Ruler"
+                ],
+                "choiceIpas": [
+                    "/ˈtiːt͡ʃə/",
+                    "/ˈklɑːsɹʊm/",
+                    "/buːk/",
+                    "/ˈɹuːlə(ɹ)/"
+                ],
+                "correctAnswer": "Ruler",
+                "explanation": "A ruler has marked measurements to help draw straight lines.",
+                "imageUrl": "https://images.pexels.com/photos/9743165/pexels-photo-9743165.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/ˈɹuːlə(ɹ)/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Classroom",
+                    "Book",
+                    "Teacher",
+                    "Clock"
                 ],
                 "choiceIpas": [
                     "",
@@ -2200,10 +2389,10 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                     "",
                     ""
                 ],
-                "correctAnswer": "Ruler",
-                "explanation": "A ruler has marked measurements to help draw straight lines.",
-                "imageUrl": "https://images.pexels.com/photos/34918663/pexels-photo-34918663.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
+                "correctAnswer": "Clock",
+                "explanation": "\"Clock\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/5477668/pexels-photo-5477668.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/klɒk/",
                 "isMissingCustomIcon": false
             }
         ]
@@ -2216,254 +2405,30 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
         "channel": "@beenglishkids1402",
         "transcriptText": "",
         "words": [
-            "What is itDO",
-            "Supplie",
-            "Silhouette",
-            "Game",
-            "ESL"
-        ],
-        "questions": [
-            {
-                "question": "Which word best describes this image?",
-                "choices": [
-                    "Game",
-                    "Silhouette",
-                    "What is itDO",
-                    "Supplie"
-                ],
-                "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
-                ],
-                "correctAnswer": "What is itDO",
-                "explanation": "\"What is itDO\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/1181598/pexels-photo-1181598.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
-                "isMissingCustomIcon": false
-            },
-            {
-                "question": "Which word best describes this image?",
-                "choices": [
-                    "What is itDO",
-                    "Supplie",
-                    "Silhouette",
-                    "Game"
-                ],
-                "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
-                ],
-                "correctAnswer": "Supplie",
-                "explanation": "\"Supplie\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/9714426/pexels-photo-9714426.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
-                "isMissingCustomIcon": false
-            },
-            {
-                "question": "Which word best describes this image?",
-                "choices": [
-                    "Game",
-                    "Silhouette",
-                    "Supplie",
-                    "What is itDO"
-                ],
-                "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
-                ],
-                "correctAnswer": "Silhouette",
-                "explanation": "\"Silhouette\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/18613638/pexels-photo-18613638.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
-                "isMissingCustomIcon": false
-            },
-            {
-                "question": "Which word best describes this image?",
-                "choices": [
-                    "Supplie",
-                    "What is itDO",
-                    "Game",
-                    "Silhouette"
-                ],
-                "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
-                ],
-                "correctAnswer": "Game",
-                "explanation": "\"Game\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/9068972/pexels-photo-9068972.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
-                "isMissingCustomIcon": false
-            },
-            {
-                "question": "Which word best describes this image?",
-                "choices": [
-                    "What is itDO",
-                    "ESL",
-                    "Supplie",
-                    "Silhouette"
-                ],
-                "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
-                ],
-                "correctAnswer": "ESL",
-                "explanation": "\"ESL\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/6929167/pexels-photo-6929167.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
-                "isMissingCustomIcon": false
-            }
-        ]
-    },
-    "1-8": {
-        "grade": 1,
-        "topicId": "school-supplies",
-        "videoUrl": "https://www.youtube.com/embed/aVSnDZHNEQc",
-        "title": "What is In Your Bag? Song with Matt | School Classroom Items | Learn English Kids",
-        "channel": "@DreamEnglishKids",
-        "transcriptText": "woaaaah!! Dream English Kids Hi, friends. Are you ready to sing the What's in your bag? Song? Here we go! What's in your bag? It's my pencil. What's in your bag? It's my notebook. What's in your bag? It's my pet snake. You don't have a pet snake. Ahhh! What's in your bag? It's my ruler. What's in your bag? It's my eraser. What's in your bag? It's my pet spider. You don't have a pet spider. Ahhh! What's in your bag? It's my pencil case. What's in your bag? It's my book. What's in your bag? It's my pet dinosaur. You don't have a pet dinosaur. Ahhh! One more time! Faster! What's in your bag? It's my pencil. What's in your bag? It's my notebook. What's in your bag? It's my pet snake. You don't have a pet snake. Ahhh! What's in your bag? It's my ruler. What's in your bag? It's my eraser. What's in your bag? It's my pet spider. You don't have a pet spider. Ahhh! What's in your bag? It's my pencil case. What's in your bag? It's my book. What's in your bag? It's my pet dinosaur. You don't have a pet dinosaur. Ahhh! Great job! Hello. My name is Matt. What's your name? Let's learn some more!",
-        "words": [
-            "Bag",
-            "Pet",
-            "Song",
-            "Lets",
-            "Matt"
-        ],
-        "questions": [
-            {
-                "question": "Which word best describes this image?",
-                "choices": [
-                    "Pet",
-                    "Bag",
-                    "Song",
-                    "Lets"
-                ],
-                "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
-                ],
-                "correctAnswer": "Bag",
-                "explanation": "\"Bag\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/6633602/pexels-photo-6633602.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "/ˈbæːɡ/",
-                "isMissingCustomIcon": false
-            },
-            {
-                "question": "Which word best describes this image?",
-                "choices": [
-                    "Lets",
-                    "Song",
-                    "Pet",
-                    "Bag"
-                ],
-                "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
-                ],
-                "correctAnswer": "Pet",
-                "explanation": "\"Pet\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/30070537/pexels-photo-30070537.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "/pɛt/",
-                "isMissingCustomIcon": false
-            },
-            {
-                "question": "Which word best describes this image?",
-                "choices": [
-                    "Bag",
-                    "Pet",
-                    "Lets",
-                    "Song"
-                ],
-                "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
-                ],
-                "correctAnswer": "Song",
-                "explanation": "\"Song\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/19262077/pexels-photo-19262077.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
-                "isMissingCustomIcon": false
-            },
-            {
-                "question": "Which word best describes this image?",
-                "choices": [
-                    "Lets",
-                    "Song",
-                    "Bag",
-                    "Pet"
-                ],
-                "choiceIpas": [
-                    "/lɛts/",
-                    "/sɒŋ/",
-                    "/ˈbæːɡ/",
-                    "/pɛt/"
-                ],
-                "correctAnswer": "Lets",
-                "explanation": "\"Lets\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/8879788/pexels-photo-8879788.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "/lɛts/",
-                "isMissingCustomIcon": false
-            },
-            {
-                "question": "Which word best describes this image?",
-                "choices": [
-                    "Pet",
-                    "Matt",
-                    "Song",
-                    "Bag"
-                ],
-                "choiceIpas": [
-                    "/pɛt/",
-                    "",
-                    "/sɒŋ/",
-                    "/ˈbæːɡ/"
-                ],
-                "correctAnswer": "Matt",
-                "explanation": "\"Matt\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/7005061/pexels-photo-7005061.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
-                "isMissingCustomIcon": false
-            }
-        ]
-    },
-    "1-9": {
-        "grade": 1,
-        "topicId": "school-supplies",
-        "videoUrl": "https://www.youtube.com/embed/zo3NUvGNjLY",
-        "title": "School Supplies Finger Family Song | Learn English Children",
-        "channel": "@DreamEnglishKids",
-        "transcriptText": "[Music] it's a five finger school supplies finger family wow cool dream english kids [Applause] hi friends are you ready for the school supplies finger family song here we go backpack finger backpack finger where are you here i am [Music] finger pencil finger where are you here i am here i am how do you do pencil [Music] pencil eraser finger eraser finger where are you here i am here i am eraser eraser ruler finger ruler finger where are you here i am here i am how do you do ruler [Music] ruler notebook finger notebook finger where are you here i am here i am how do you do [Music] no no this is a pencil no it's a banana oh [Music] this is a pencil no it's a notebook oh this is a pencil yes [Music] let's sing the family finger song one more time here we go backpack finger backpack finger where are you here i am here i am [Music] finger pencil finger where are you here i am here i am how do you do [Music] pencil [Music] pencil eraser finger eraser finger where are you here i am here i am how do you do eraser eraser ruler finger ruler finger where are you here i am here i am how do you do ruler ruler notebook finger notebook finger where are you here i am here i am how do you do [Music] nofa [Music] richa hello my name is matt what's your name it's great to see you what do you have in your backpack in my backpack i have a pencil [Music] an eraser [Music] a ruler and a notebook oh and there's one more thing in here a banana [Music] goodbye see you thank you goodbye [Music] [Applause] dream english kids let's have a look at another song [Music]",
-        "words": [
-            "Finger",
-            "Music",
+            "Rubber",
+            "Notebook",
+            "Board",
+            "Crayon",
+            "Book",
+            "Scissors",
+            "Pencil Case",
+            "Sharpener",
             "Pencil",
-            "Eraser",
+            "Desk",
+            "Chair",
+            "School Bag",
+            "Pen",
+            "Glue",
             "Ruler"
         ],
         "questions": [
             {
                 "question": "Which word best describes this image?",
                 "choices": [
-                    "Eraser",
-                    "Music",
-                    "Finger",
-                    "Pencil"
+                    "Board",
+                    "Rubber",
+                    "Crayon",
+                    "Notebook"
                 ],
                 "choiceIpas": [
                     "",
@@ -2471,19 +2436,99 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                     "",
                     ""
                 ],
-                "correctAnswer": "Finger",
-                "explanation": "\"Finger\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/11731122/pexels-photo-11731122.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "correctAnswer": "Rubber",
+                "explanation": "\"Rubber\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuh6y67YakCNFTwOMjvdapmMLB82xNJ0h5Q6c0tdlGtA&s=10",
+                "ipa": "/ˈɹʌbə(ɹ)/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Crayon",
+                    "Board",
+                    "Notebook",
+                    "Rubber"
+                ],
+                "choiceIpas": [
+                    "/ˈkɹeɪ.ɒ̃/",
+                    "/bɔːd/",
+                    "/ˈnəʊtˌbʊk/",
+                    "/ˈɹʌbə(ɹ)/"
+                ],
+                "correctAnswer": "Notebook",
+                "explanation": "\"Notebook\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/28503352/pexels-photo-28503352.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/ˈnəʊtˌbʊk/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Crayon",
+                    "Rubber",
+                    "Notebook",
+                    "Board"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Board",
+                "explanation": "\"Board\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/17174005/pexels-photo-17174005.png?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "What colored wax stick do children use for drawing and coloring?",
+                "choices": [
+                    "Crayon",
+                    "Notebook",
+                    "Rubber",
+                    "Board"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Crayon",
+                "explanation": "Crayons are fun drawing tools that come in colorful boxes.",
+                "imageUrl": "https://images.pexels.com/photos/37916783/pexels-photo-37916783.jpeg?auto=compress&cs=tinysrgb&h=350",
                 "ipa": "",
                 "isMissingCustomIcon": false
             },
             {
                 "question": "Which word best describes this image?",
                 "choices": [
-                    "Eraser",
-                    "Finger",
-                    "Pencil",
-                    "Music"
+                    "Board",
+                    "Book",
+                    "Notebook",
+                    "Rubber"
+                ],
+                "choiceIpas": [
+                    "/bɔːd/",
+                    "/buːk/",
+                    "/ˈnəʊtˌbʊk/",
+                    "/ˈɹʌbə(ɹ)/"
+                ],
+                "correctAnswer": "Book",
+                "explanation": "\"Book\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/7034613/pexels-photo-7034613.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/buːk/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Scissors",
+                    "Board",
+                    "Rubber",
+                    "Notebook"
                 ],
                 "choiceIpas": [
                     "",
@@ -2491,19 +2536,59 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                     "",
                     ""
                 ],
-                "correctAnswer": "Music",
-                "explanation": "\"Music\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/7095510/pexels-photo-7095510.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
+                "correctAnswer": "Scissors",
+                "explanation": "\"Scissors\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/11231614/pexels-photo-11231614.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/ˈsɪzəz/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Board",
+                    "Rubber",
+                    "Notebook",
+                    "Pencil Case"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Pencil Case",
+                "explanation": "\"Pencil Case\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/8423074/pexels-photo-8423074.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/ˈpɛnsɪl/ /keɪs/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Notebook",
+                    "Rubber",
+                    "Sharpener",
+                    "Board"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    "/bɔːd/"
+                ],
+                "correctAnswer": "Sharpener",
+                "explanation": "\"Sharpener\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/6837778/pexels-photo-6837778.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/ˈʃɑː(ɹ)pənə(ɹ)/",
                 "isMissingCustomIcon": false
             },
             {
                 "question": "What writing tool contains graphite and has an eraser on top?",
                 "choices": [
-                    "Pencil",
-                    "Finger",
-                    "Eraser",
-                    "Music"
+                    "Notebook",
+                    "Rubber",
+                    "Board",
+                    "Pencil"
                 ],
                 "choiceIpas": [
                     "",
@@ -2513,17 +2598,77 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                 ],
                 "correctAnswer": "Pencil",
                 "explanation": "Pencils are perfect for schoolwork because you can erase mistakes.",
-                "imageUrl": "https://images.pexels.com/photos/8386695/pexels-photo-8386695.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
+                "imageUrl": "https://images.pexels.com/photos/8478389/pexels-photo-8478389.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/ˈpɛnsɪl/",
                 "isMissingCustomIcon": false
             },
             {
-                "question": "What small rubber tool is used to remove pencil marks?",
+                "question": "Which word best describes this image?",
                 "choices": [
-                    "Finger",
-                    "Eraser",
-                    "Music",
-                    "Pencil"
+                    "Board",
+                    "Notebook",
+                    "Desk",
+                    "Rubber"
+                ],
+                "choiceIpas": [
+                    "/bɔːd/",
+                    "/ˈnəʊtˌbʊk/",
+                    "/dɛsk/",
+                    "/ˈɹʌbə(ɹ)/"
+                ],
+                "correctAnswer": "Desk",
+                "explanation": "\"Desk\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/7658310/pexels-photo-7658310.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/dɛsk/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Board",
+                    "Chair",
+                    "Rubber",
+                    "Notebook"
+                ],
+                "choiceIpas": [
+                    "/bɔːd/",
+                    "/t͡ʃɛə(ɹ)/",
+                    "/ˈɹʌbə(ɹ)/",
+                    "/ˈnəʊtˌbʊk/"
+                ],
+                "correctAnswer": "Chair",
+                "explanation": "\"Chair\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/4963886/pexels-photo-4963886.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/t͡ʃɛə(ɹ)/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Rubber",
+                    "Board",
+                    "School Bag",
+                    "Notebook"
+                ],
+                "choiceIpas": [
+                    "/ˈɹʌbə(ɹ)/",
+                    "/bɔːd/",
+                    "/skuːl/ /ˈbæːɡ/",
+                    ""
+                ],
+                "correctAnswer": "School Bag",
+                "explanation": "\"School Bag\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/7395291/pexels-photo-7395291.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/skuːl/ /ˈbæːɡ/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Board",
+                    "Rubber",
+                    "Notebook",
+                    "Pen"
                 ],
                 "choiceIpas": [
                     "",
@@ -2531,19 +2676,39 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                     "",
                     ""
                 ],
-                "correctAnswer": "Eraser",
-                "explanation": "An eraser rubs off pencil graphite to correct spelling mistakes.",
-                "imageUrl": "https://images.pexels.com/photos/37121878/pexels-photo-37121878.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
+                "correctAnswer": "Pen",
+                "explanation": "\"Pen\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/33911281/pexels-photo-33911281.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/pɛn/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Notebook",
+                    "Rubber",
+                    "Board",
+                    "Glue"
+                ],
+                "choiceIpas": [
+                    "/ˈnəʊtˌbʊk/",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Glue",
+                "explanation": "\"Glue\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/7695191/pexels-photo-7695191.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/ɡluː/",
                 "isMissingCustomIcon": false
             },
             {
                 "question": "What straight strip of plastic or wood is used to measure length?",
                 "choices": [
-                    "Finger",
-                    "Pencil",
                     "Ruler",
-                    "Music"
+                    "Board",
+                    "Rubber",
+                    "Notebook"
                 ],
                 "choiceIpas": [
                     "",
@@ -2553,8 +2718,347 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                 ],
                 "correctAnswer": "Ruler",
                 "explanation": "A ruler has marked measurements to help draw straight lines.",
-                "imageUrl": "https://images.pexels.com/photos/5412363/pexels-photo-5412363.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
+                "imageUrl": "https://images.pexels.com/photos/8099506/pexels-photo-8099506.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/ˈɹuːlə(ɹ)/",
+                "isMissingCustomIcon": false
+            }
+        ]
+    },
+    "1-8": {
+        "grade": 1,
+        "topicId": "home-furniture",
+        "videoUrl": "https://www.youtube.com/embed/c178kbMe7E0",
+        "title": "What is This Called Common Furniture Items Couch, Coffee Table, Dresser, and More",
+        "channel": "@LearnItFast-k6w",
+        "transcriptText": "this is called a couch it's where you relax or hang out with friends and family this is a coffee table it's perfect for holding your drinks magazines or the TV remote this is a lamp it lights up the room making it cozy and inviting this is a rug it adds warmth and style to the floor of your living room this is a bookshelf it's where you can store your favorite books and decorative item this is an armchair it's a comfortable seat with armrests perfect for reading or relaxing these are curtains they provide privacy and can enhance the look of your windows this is a dresser it's where you store your clothes and other personal items in your bedroom more new material coming soon",
+        "words": [
+            "Couch",
+            "Coffee Table",
+            "Lamp",
+            "Rug",
+            "Bookshelf",
+            "Armchair",
+            "Curtains",
+            "Dresser"
+        ],
+        "questions": [
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Lamp",
+                    "Coffee Table",
+                    "Couch",
+                    "Rug"
+                ],
+                "choiceIpas": [
+                    "/læmp/",
+                    "/ˈkɑ.fi/ /ˈteɪbəl/",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Couch",
+                "explanation": "\"Couch\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/4915583/pexels-photo-4915583.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/kaʊtʃ/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Rug",
+                    "Couch",
+                    "Coffee Table",
+                    "Lamp"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Coffee Table",
+                "explanation": "\"Coffee Table\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/35741389/pexels-photo-35741389.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/ˈkɑ.fi/ /ˈteɪbəl/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Couch",
+                    "Lamp",
+                    "Coffee Table",
+                    "Rug"
+                ],
+                "choiceIpas": [
+                    "/kaʊtʃ/",
+                    "/læmp/",
+                    "/ˈkɑ.fi/ /ˈteɪbəl/",
+                    "/ɹʌɡ/"
+                ],
+                "correctAnswer": "Lamp",
+                "explanation": "\"Lamp\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/1552616/pexels-photo-1552616.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/læmp/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Couch",
+                    "Rug",
+                    "Coffee Table",
+                    "Lamp"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Rug",
+                "explanation": "\"Rug\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/34084602/pexels-photo-34084602.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/ɹʌɡ/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Couch",
+                    "Bookshelf",
+                    "Coffee Table",
+                    "Lamp"
+                ],
+                "choiceIpas": [
+                    "",
+                    "/ˈbʊkˌʃɛlf/",
+                    "/ˈkɑ.fi/ /ˈteɪbəl/",
+                    "/læmp/"
+                ],
+                "correctAnswer": "Bookshelf",
+                "explanation": "\"Bookshelf\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/30947329/pexels-photo-30947329.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/ˈbʊkˌʃɛlf/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Couch",
+                    "Armchair",
+                    "Lamp",
+                    "Coffee Table"
+                ],
+                "choiceIpas": [
+                    "/kaʊtʃ/",
+                    "/ˈɑː(ɹ)mtʃɛə(ɹ)/",
+                    "/læmp/",
+                    "/ˈkɑ.fi/ /ˈteɪbəl/"
+                ],
+                "correctAnswer": "Armchair",
+                "explanation": "\"Armchair\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/12212553/pexels-photo-12212553.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/ˈɑː(ɹ)mtʃɛə(ɹ)/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Coffee Table",
+                    "Lamp",
+                    "Couch",
+                    "Curtains"
+                ],
+                "choiceIpas": [
+                    "/ˈkɑ.fi/ /ˈteɪbəl/",
+                    "/læmp/",
+                    "/kaʊtʃ/",
+                    "/ˈkɜː(ɹ).tənz/"
+                ],
+                "correctAnswer": "Curtains",
+                "explanation": "\"Curtains\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/23110026/pexels-photo-23110026.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/ˈkɜː(ɹ).tənz/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Lamp",
+                    "Couch",
+                    "Dresser",
+                    "Coffee Table"
+                ],
+                "choiceIpas": [
+                    "/læmp/",
+                    "/kaʊtʃ/",
+                    "/ˈdɹɛsə/",
+                    "/ˈkɑ.fi/ /ˈteɪbəl/"
+                ],
+                "correctAnswer": "Dresser",
+                "explanation": "\"Dresser\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/30355552/pexels-photo-30355552.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/ˈdɹɛsə/",
+                "isMissingCustomIcon": false
+            }
+        ]
+    },
+    "1-9": {
+        "grade": 1,
+        "topicId": "home-furniture",
+        "videoUrl": "https://www.youtube.com/embed/3DSMC-DLokw",
+        "title": "Bedroom & Living Room Vocabulary – Learn Common Words Easily!",
+        "channel": "@learnenglishonline-s6h",
+        "transcriptText": "Blanket, cushion, pillow, mattress, bed, armchair, sofa. Uh,",
+        "words": [
+            "Blanket",
+            "Cushion",
+            "Pillow",
+            "Mattress",
+            "Bed",
+            "Armchair",
+            "Sofa"
+        ],
+        "questions": [
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Blanket",
+                    "Cushion",
+                    "Pillow",
+                    "Mattress"
+                ],
+                "choiceIpas": [
+                    "/ˈblæŋkɪt/",
+                    "/ˈkʊʃən/",
+                    "/ˈpɪləʊ/",
+                    "/ˈmætɹɪs/"
+                ],
+                "correctAnswer": "Blanket",
+                "explanation": "\"Blanket\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/23719547/pexels-photo-23719547.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/ˈblæŋkɪt/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Mattress",
+                    "Cushion",
+                    "Blanket",
+                    "Pillow"
+                ],
+                "choiceIpas": [
+                    "/ˈmætɹɪs/",
+                    "/ˈkʊʃən/",
+                    "/ˈblæŋkɪt/",
+                    "/ˈpɪləʊ/"
+                ],
+                "correctAnswer": "Cushion",
+                "explanation": "\"Cushion\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/19836809/pexels-photo-19836809.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/ˈkʊʃən/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Pillow",
+                    "Blanket",
+                    "Mattress",
+                    "Cushion"
+                ],
+                "choiceIpas": [
+                    "/ˈpɪləʊ/",
+                    "/ˈblæŋkɪt/",
+                    "/ˈmætɹɪs/",
+                    "/ˈkʊʃən/"
+                ],
+                "correctAnswer": "Pillow",
+                "explanation": "\"Pillow\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/10061393/pexels-photo-10061393.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/ˈpɪləʊ/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Blanket",
+                    "Mattress",
+                    "Pillow",
+                    "Cushion"
+                ],
+                "choiceIpas": [
+                    "/ˈblæŋkɪt/",
+                    "/ˈmætɹɪs/",
+                    "/ˈpɪləʊ/",
+                    "/ˈkʊʃən/"
+                ],
+                "correctAnswer": "Mattress",
+                "explanation": "\"Mattress\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/28680426/pexels-photo-28680426.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/ˈmætɹɪs/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Blanket",
+                    "Pillow",
+                    "Bed",
+                    "Cushion"
+                ],
+                "choiceIpas": [
+                    "/ˈblæŋkɪt/",
+                    "/ˈpɪləʊ/",
+                    "/bed/",
+                    "/ˈkʊʃən/"
+                ],
+                "correctAnswer": "Bed",
+                "explanation": "\"Bed\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/10608085/pexels-photo-10608085.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/bed/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Blanket",
+                    "Pillow",
+                    "Armchair",
+                    "Cushion"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Armchair",
+                "explanation": "\"Armchair\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/12212553/pexels-photo-12212553.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/ˈɑː(ɹ)mtʃɛə(ɹ)/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Blanket",
+                    "Sofa",
+                    "Pillow",
+                    "Cushion"
+                ],
+                "choiceIpas": [
+                    "/ˈblæŋkɪt/",
+                    "/ˈsəʊfə/",
+                    "/ˈpɪləʊ/",
+                    "/ˈkʊʃən/"
+                ],
+                "correctAnswer": "Sofa",
+                "explanation": "\"Sofa\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/10408437/pexels-photo-10408437.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/ˈsəʊfə/",
                 "isMissingCustomIcon": false
             }
         ]
@@ -10599,66 +11103,31 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
         "channel": "@johnsnow_show",
         "transcriptText": "What is this called? Bed. What is this called? Table. What is this called? The chair. What is this called? Sofa. What is this called? Wardrobe. What is this called? Bookshelf. What is this called? Desk. What is this called? Dining table. What is this called? Nightstand. What is this called? Mirror. What is this called? Mirror. Don't forget to tell me your score and comment.",
         "words": [
-            "Mirror",
-            "Dining",
             "Bed",
             "Table",
-            "Dining table"
+            "Chair",
+            "Sofa",
+            "Wardrobe",
+            "Bookshelf",
+            "Desk",
+            "Dining Table",
+            "Nightstand",
+            "Mirror"
         ],
         "questions": [
             {
                 "question": "Which word best describes this image?",
                 "choices": [
-                    "Dining",
                     "Table",
-                    "Mirror",
+                    "Sofa",
+                    "Chair",
                     "Bed"
                 ],
                 "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
-                ],
-                "correctAnswer": "Mirror",
-                "explanation": "\"Mirror\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/36535598/pexels-photo-36535598.png?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
-                "isMissingCustomIcon": false
-            },
-            {
-                "question": "Which word describes the action happening in this image?",
-                "choices": [
-                    "Dining",
-                    "Bed",
-                    "Mirror",
-                    "Table"
-                ],
-                "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
-                ],
-                "correctAnswer": "Dining",
-                "explanation": "Action verbs ending in \"-ing\" describe ongoing actions like the one shown here.",
-                "imageUrl": "https://images.pexels.com/photos/186769/pexels-photo-186769.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
-                "isMissingCustomIcon": false
-            },
-            {
-                "question": "Which word best describes this image?",
-                "choices": [
-                    "Table",
-                    "Mirror",
-                    "Bed",
-                    "Dining"
-                ],
-                "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
+                    "/ˈteɪbəl/",
+                    "/ˈsəʊfə/",
+                    "/t͡ʃɛə(ɹ)/",
+                    "/bed/"
                 ],
                 "correctAnswer": "Bed",
                 "explanation": "\"Bed\" is the correct vocabulary word for this picture.",
@@ -10669,30 +11138,150 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
             {
                 "question": "Which word best describes this image?",
                 "choices": [
-                    "Dining",
                     "Table",
-                    "Mirror",
-                    "Bed"
+                    "Bed",
+                    "Chair",
+                    "Sofa"
                 ],
                 "choiceIpas": [
+                    "/ˈteɪbəl/",
                     "",
-                    "",
-                    "",
+                    "/t͡ʃɛə(ɹ)/",
                     ""
                 ],
                 "correctAnswer": "Table",
                 "explanation": "\"Table\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/29459845/pexels-photo-29459845.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
+                "imageUrl": "https://images.pexels.com/photos/24244066/pexels-photo-24244066.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/ˈteɪbəl/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Table",
+                    "Sofa",
+                    "Bed",
+                    "Chair"
+                ],
+                "choiceIpas": [
+                    "/ˈteɪbəl/",
+                    "/ˈsəʊfə/",
+                    "/bed/",
+                    "/t͡ʃɛə(ɹ)/"
+                ],
+                "correctAnswer": "Chair",
+                "explanation": "\"Chair\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/36394418/pexels-photo-36394418.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/t͡ʃɛə(ɹ)/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Chair",
+                    "Table",
+                    "Sofa",
+                    "Bed"
+                ],
+                "choiceIpas": [
+                    "/t͡ʃɛə(ɹ)/",
+                    "/ˈteɪbəl/",
+                    "/ˈsəʊfə/",
+                    "/bed/"
+                ],
+                "correctAnswer": "Sofa",
+                "explanation": "\"Sofa\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/6758245/pexels-photo-6758245.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/ˈsəʊfə/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Table",
+                    "Chair",
+                    "Wardrobe",
+                    "Bed"
+                ],
+                "choiceIpas": [
+                    "/ˈteɪbəl/",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Wardrobe",
+                "explanation": "\"Wardrobe\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/5705496/pexels-photo-5705496.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/ ˈwɔːdɹəʊb/",
                 "isMissingCustomIcon": false
             },
             {
                 "question": "Which word best describes this image?",
                 "choices": [
                     "Bed",
-                    "Mirror",
-                    "Dining",
-                    "Dining table"
+                    "Table",
+                    "Chair",
+                    "Bookshelf"
+                ],
+                "choiceIpas": [
+                    "/bed/",
+                    "/ˈteɪbəl/",
+                    "/t͡ʃɛə(ɹ)/",
+                    "/ˈbʊkˌʃɛlf/"
+                ],
+                "correctAnswer": "Bookshelf",
+                "explanation": "\"Bookshelf\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/7643400/pexels-photo-7643400.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/ˈbʊkˌʃɛlf/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Chair",
+                    "Desk",
+                    "Bed",
+                    "Table"
+                ],
+                "choiceIpas": [
+                    "/t͡ʃɛə(ɹ)/",
+                    "/dɛsk/",
+                    "/bed/",
+                    "/ˈteɪbəl/"
+                ],
+                "correctAnswer": "Desk",
+                "explanation": "\"Desk\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/6177563/pexels-photo-6177563.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/dɛsk/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Chair",
+                    "Table",
+                    "Dining Table",
+                    "Bed"
+                ],
+                "choiceIpas": [
+                    "/t͡ʃɛə(ɹ)/",
+                    "/ˈteɪbəl/",
+                    "/ˈdaɪnɪŋ(ɡ)/ /ˈteɪbəl/",
+                    "/bed/"
+                ],
+                "correctAnswer": "Dining Table",
+                "explanation": "\"Dining Table\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/17057009/pexels-photo-17057009.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/ˈdaɪnɪŋ(ɡ)/ /ˈteɪbəl/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Nightstand",
+                    "Chair",
+                    "Bed",
+                    "Table"
                 ],
                 "choiceIpas": [
                     "",
@@ -10700,9 +11289,29 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                     "",
                     ""
                 ],
-                "correctAnswer": "Dining table",
-                "explanation": "\"Dining table\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/5472818/pexels-photo-5472818.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "correctAnswer": "Nightstand",
+                "explanation": "\"Nightstand\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/6266190/pexels-photo-6266190.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Chair",
+                    "Mirror",
+                    "Bed",
+                    "Table"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Mirror",
+                "explanation": "\"Mirror\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/19188690/pexels-photo-19188690.jpeg?auto=compress&cs=tinysrgb&h=350",
                 "ipa": "",
                 "isMissingCustomIcon": false
             }
@@ -10726,40 +11335,40 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
             {
                 "question": "Which word best describes this image?",
                 "choices": [
-                    "Shelf",
                     "Armchair",
                     "Bench",
+                    "Shelf",
                     "Ottoman"
                 ],
                 "choiceIpas": [
-                    "/ʃɛlf/",
                     "/ˈɑː(ɹ)mtʃɛə(ɹ)/",
                     "/bɛntʃ/",
+                    "/ʃɛlf/",
                     "/ˈɒtəmən/"
                 ],
                 "correctAnswer": "Bench",
                 "explanation": "\"Bench\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://pixabay.com/get/g5fab6f72b42f6c6a8b6012b1b14021e3c34500eff3743ee68399964fb30edd6f1c1e86b0472df7c9996e1913f4b5abad1823fd68fd124fab3b8a7d490ab3f108_640.png",
+                "imageUrl": "https://images.pexels.com/photos/19175811/pexels-photo-19175811.jpeg?auto=compress&cs=tinysrgb&h=350",
                 "ipa": "/bɛntʃ/",
                 "isMissingCustomIcon": false
             },
             {
                 "question": "Which word best describes this image?",
                 "choices": [
-                    "Bench",
+                    "Armchair",
                     "Shelf",
-                    "Ottoman",
-                    "Armchair"
+                    "Bench",
+                    "Ottoman"
                 ],
                 "choiceIpas": [
-                    "/bɛntʃ/",
+                    "/ˈɑː(ɹ)mtʃɛə(ɹ)/",
                     "/ʃɛlf/",
-                    "/ˈɒtəmən/",
-                    "/ˈɑː(ɹ)mtʃɛə(ɹ)/"
+                    "/bɛntʃ/",
+                    "/ˈɒtəmən/"
                 ],
                 "correctAnswer": "Shelf",
                 "explanation": "\"Shelf\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://pixabay.com/get/g7603b8f441df338db955698aa4285cfd104c07eec079a7127147589de5acdfebbd6edcf1386b99efb1c4b7d9e96946506ed378670275c658dac8f3b5f809d293_640.jpg",
+                "imageUrl": "https://images.pexels.com/photos/10495675/pexels-photo-10495675.png?auto=compress&cs=tinysrgb&h=350",
                 "ipa": "/ʃɛlf/",
                 "isMissingCustomIcon": false
             },
@@ -10767,59 +11376,59 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                 "question": "Which word best describes this image?",
                 "choices": [
                     "Bench",
-                    "Ottoman",
                     "Armchair",
-                    "Shelf"
+                    "Shelf",
+                    "Ottoman"
                 ],
                 "choiceIpas": [
                     "/bɛntʃ/",
-                    "/ˈɒtəmən/",
                     "/ˈɑː(ɹ)mtʃɛə(ɹ)/",
-                    "/ʃɛlf/"
+                    "/ʃɛlf/",
+                    "/ˈɒtəmən/"
                 ],
                 "correctAnswer": "Ottoman",
                 "explanation": "\"Ottoman\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/19268316/pexels-photo-19268316.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "imageUrl": "https://images.pexels.com/photos/7535017/pexels-photo-7535017.jpeg?auto=compress&cs=tinysrgb&h=350",
                 "ipa": "/ˈɒtəmən/",
                 "isMissingCustomIcon": false
             },
             {
                 "question": "Which word best describes this image?",
                 "choices": [
-                    "Ottoman",
                     "Shelf",
                     "Bench",
-                    "Armchair"
+                    "Armchair",
+                    "Ottoman"
                 ],
                 "choiceIpas": [
-                    "/ˈɒtəmən/",
                     "/ʃɛlf/",
                     "/bɛntʃ/",
-                    "/ˈɑː(ɹ)mtʃɛə(ɹ)/"
+                    "/ˈɑː(ɹ)mtʃɛə(ɹ)/",
+                    "/ˈɒtəmən/"
                 ],
                 "correctAnswer": "Armchair",
                 "explanation": "\"Armchair\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/12269764/pexels-photo-12269764.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "imageUrl": "https://images.pexels.com/photos/4278985/pexels-photo-4278985.jpeg?auto=compress&cs=tinysrgb&h=350",
                 "ipa": "/ˈɑː(ɹ)mtʃɛə(ɹ)/",
                 "isMissingCustomIcon": false
             },
             {
                 "question": "Which word best describes this image?",
                 "choices": [
+                    "Furniture",
                     "Bench",
                     "Shelf",
-                    "Ottoman",
-                    "Furniture"
+                    "Ottoman"
                 ],
                 "choiceIpas": [
+                    "/ˈfɜːnɪtʃə/",
                     "/bɛntʃ/",
                     "/ʃɛlf/",
-                    "/ˈɒtəmən/",
-                    "/ˈfɜːnɪtʃə/"
+                    "/ˈɒtəmən/"
                 ],
                 "correctAnswer": "Furniture",
                 "explanation": "\"Furniture\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/7546707/pexels-photo-7546707.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "imageUrl": "https://images.pexels.com/photos/2343465/pexels-photo-2343465.jpeg?auto=compress&cs=tinysrgb&h=350",
                 "ipa": "/ˈfɜːnɪtʃə/",
                 "isMissingCustomIcon": false
             }
@@ -10833,40 +11442,43 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
         "channel": "@LearnItFast-k6w",
         "transcriptText": "this is called a couch it's where you relax or hang out with friends and family this is a coffee table it's perfect for holding your drinks magazines or the TV remote this is a lamp it lights up the room making it cozy and inviting this is a rug it adds warmth and style to the floor of your living room this is a bookshelf it's where you can store your favorite books and decorative item this is an armchair it's a comfortable seat with armrests perfect for reading or relaxing these are curtains they provide privacy and can enhance the look of your windows this is a dresser it's where you store your clothes and other personal items in your bedroom more new material coming soon",
         "words": [
-            "Perfect",
-            "Comfortable seat",
-            "Curtain",
-            "Hang out",
-            "Armrest perfect"
+            "Couch",
+            "Coffee Table",
+            "Lamp",
+            "Rug",
+            "Bookshelf",
+            "Armchair",
+            "Curtains",
+            "Dresser"
         ],
         "questions": [
             {
                 "question": "Which word best describes this image?",
                 "choices": [
-                    "Comfortable seat",
-                    "Hang out",
-                    "Perfect",
-                    "Curtain"
+                    "Lamp",
+                    "Coffee Table",
+                    "Couch",
+                    "Rug"
                 ],
                 "choiceIpas": [
-                    "",
-                    "",
+                    "/læmp/",
+                    "/ˈkɑ.fi/ /ˈteɪbəl/",
                     "",
                     ""
                 ],
-                "correctAnswer": "Perfect",
-                "explanation": "\"Perfect\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/4717553/pexels-photo-4717553.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
+                "correctAnswer": "Couch",
+                "explanation": "\"Couch\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/4915583/pexels-photo-4915583.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/kaʊtʃ/",
                 "isMissingCustomIcon": false
             },
             {
                 "question": "Which word best describes this image?",
                 "choices": [
-                    "Comfortable seat",
-                    "Perfect",
-                    "Hang out",
-                    "Curtain"
+                    "Rug",
+                    "Couch",
+                    "Coffee Table",
+                    "Lamp"
                 ],
                 "choiceIpas": [
                     "",
@@ -10874,39 +11486,39 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                     "",
                     ""
                 ],
-                "correctAnswer": "Comfortable seat",
-                "explanation": "\"Comfortable seat\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/8886310/pexels-photo-8886310.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
+                "correctAnswer": "Coffee Table",
+                "explanation": "\"Coffee Table\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/35741389/pexels-photo-35741389.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/ˈkɑ.fi/ /ˈteɪbəl/",
                 "isMissingCustomIcon": false
             },
             {
                 "question": "Which word best describes this image?",
                 "choices": [
-                    "Hang out",
-                    "Comfortable seat",
-                    "Perfect",
-                    "Curtain"
+                    "Couch",
+                    "Lamp",
+                    "Coffee Table",
+                    "Rug"
                 ],
                 "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
+                    "/kaʊtʃ/",
+                    "/læmp/",
+                    "/ˈkɑ.fi/ /ˈteɪbəl/",
+                    "/ɹʌɡ/"
                 ],
-                "correctAnswer": "Curtain",
-                "explanation": "\"Curtain\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/16752645/pexels-photo-16752645.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
+                "correctAnswer": "Lamp",
+                "explanation": "\"Lamp\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/1552616/pexels-photo-1552616.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/læmp/",
                 "isMissingCustomIcon": false
             },
             {
                 "question": "Which word best describes this image?",
                 "choices": [
-                    "Curtain",
-                    "Hang out",
-                    "Perfect",
-                    "Comfortable seat"
+                    "Couch",
+                    "Rug",
+                    "Coffee Table",
+                    "Lamp"
                 ],
                 "choiceIpas": [
                     "",
@@ -10914,30 +11526,90 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                     "",
                     ""
                 ],
-                "correctAnswer": "Hang out",
-                "explanation": "\"Hang out\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/13723599/pexels-photo-13723599.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
+                "correctAnswer": "Rug",
+                "explanation": "\"Rug\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/34084602/pexels-photo-34084602.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/ɹʌɡ/",
                 "isMissingCustomIcon": false
             },
             {
                 "question": "Which word best describes this image?",
                 "choices": [
-                    "Curtain",
-                    "Armrest perfect",
-                    "Comfortable seat",
-                    "Perfect"
+                    "Couch",
+                    "Bookshelf",
+                    "Coffee Table",
+                    "Lamp"
                 ],
                 "choiceIpas": [
                     "",
-                    "",
-                    "",
-                    ""
+                    "/ˈbʊkˌʃɛlf/",
+                    "/ˈkɑ.fi/ /ˈteɪbəl/",
+                    "/læmp/"
                 ],
-                "correctAnswer": "Armrest perfect",
-                "explanation": "\"Armrest perfect\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/9401726/pexels-photo-9401726.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
+                "correctAnswer": "Bookshelf",
+                "explanation": "\"Bookshelf\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/30947329/pexels-photo-30947329.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/ˈbʊkˌʃɛlf/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Couch",
+                    "Armchair",
+                    "Lamp",
+                    "Coffee Table"
+                ],
+                "choiceIpas": [
+                    "/kaʊtʃ/",
+                    "/ˈɑː(ɹ)mtʃɛə(ɹ)/",
+                    "/læmp/",
+                    "/ˈkɑ.fi/ /ˈteɪbəl/"
+                ],
+                "correctAnswer": "Armchair",
+                "explanation": "\"Armchair\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/12212553/pexels-photo-12212553.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/ˈɑː(ɹ)mtʃɛə(ɹ)/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Coffee Table",
+                    "Lamp",
+                    "Couch",
+                    "Curtains"
+                ],
+                "choiceIpas": [
+                    "/ˈkɑ.fi/ /ˈteɪbəl/",
+                    "/læmp/",
+                    "/kaʊtʃ/",
+                    "/ˈkɜː(ɹ).tənz/"
+                ],
+                "correctAnswer": "Curtains",
+                "explanation": "\"Curtains\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/23110026/pexels-photo-23110026.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/ˈkɜː(ɹ).tənz/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Lamp",
+                    "Couch",
+                    "Dresser",
+                    "Coffee Table"
+                ],
+                "choiceIpas": [
+                    "/læmp/",
+                    "/kaʊtʃ/",
+                    "/ˈdɹɛsə/",
+                    "/ˈkɑ.fi/ /ˈteɪbəl/"
+                ],
+                "correctAnswer": "Dresser",
+                "explanation": "\"Dresser\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/30355552/pexels-photo-30355552.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/ˈdɹɛsə/",
                 "isMissingCustomIcon": false
             }
         ]
@@ -10950,100 +11622,122 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
         "channel": "@learnenglishonline-s6h",
         "transcriptText": "Blanket, cushion, pillow, mattress, bed, armchair, sofa. Uh,",
         "words": [
-            "Mattress bed",
-            "Living",
             "Blanket",
-            "Easily",
-            "Blanket cushion"
+            "Cushion",
+            "Pillow",
+            "Mattress",
+            "Bed",
+            "Armchair",
+            "Sofa"
         ],
         "questions": [
             {
                 "question": "Which word best describes this image?",
                 "choices": [
-                    "Living",
-                    "Mattress bed",
-                    "Easily",
-                    "Blanket"
-                ],
-                "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
-                ],
-                "correctAnswer": "Mattress bed",
-                "explanation": "\"Mattress bed\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/6489093/pexels-photo-6489093.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
-                "isMissingCustomIcon": false
-            },
-            {
-                "question": "Which word describes the action happening in this image?",
-                "choices": [
-                    "Mattress bed",
-                    "Living",
-                    "Easily",
-                    "Blanket"
-                ],
-                "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
-                ],
-                "correctAnswer": "Living",
-                "explanation": "Action verbs ending in \"-ing\" describe ongoing actions like the one shown here.",
-                "imageUrl": "https://images.pexels.com/photos/8418389/pexels-photo-8418389.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
-                "isMissingCustomIcon": false
-            },
-            {
-                "question": "Which word best describes this image?",
-                "choices": [
                     "Blanket",
-                    "Easily",
-                    "Living",
-                    "Mattress bed"
+                    "Cushion",
+                    "Pillow",
+                    "Mattress"
                 ],
                 "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
+                    "/ˈblæŋkɪt/",
+                    "/ˈkʊʃən/",
+                    "/ˈpɪləʊ/",
+                    "/ˈmætɹɪs/"
                 ],
                 "correctAnswer": "Blanket",
                 "explanation": "\"Blanket\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/31542019/pexels-photo-31542019.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
-                "isMissingCustomIcon": false
-            },
-            {
-                "question": "Which word describes how the action in this image is being performed?",
-                "choices": [
-                    "Easily",
-                    "Blanket",
-                    "Mattress bed",
-                    "Living"
-                ],
-                "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
-                ],
-                "correctAnswer": "Easily",
-                "explanation": "Adverbs ending in \"-ly\" explain how actions are carried out.",
-                "imageUrl": "https://images.pexels.com/photos/7563673/pexels-photo-7563673.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
+                "imageUrl": "https://images.pexels.com/photos/23719547/pexels-photo-23719547.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/ˈblæŋkɪt/",
                 "isMissingCustomIcon": false
             },
             {
                 "question": "Which word best describes this image?",
                 "choices": [
-                    "Blanket cushion",
-                    "Living",
+                    "Mattress",
+                    "Cushion",
                     "Blanket",
-                    "Mattress bed"
+                    "Pillow"
+                ],
+                "choiceIpas": [
+                    "/ˈmætɹɪs/",
+                    "/ˈkʊʃən/",
+                    "/ˈblæŋkɪt/",
+                    "/ˈpɪləʊ/"
+                ],
+                "correctAnswer": "Cushion",
+                "explanation": "\"Cushion\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/19836809/pexels-photo-19836809.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/ˈkʊʃən/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Pillow",
+                    "Blanket",
+                    "Mattress",
+                    "Cushion"
+                ],
+                "choiceIpas": [
+                    "/ˈpɪləʊ/",
+                    "/ˈblæŋkɪt/",
+                    "/ˈmætɹɪs/",
+                    "/ˈkʊʃən/"
+                ],
+                "correctAnswer": "Pillow",
+                "explanation": "\"Pillow\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/10061393/pexels-photo-10061393.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/ˈpɪləʊ/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Blanket",
+                    "Mattress",
+                    "Pillow",
+                    "Cushion"
+                ],
+                "choiceIpas": [
+                    "/ˈblæŋkɪt/",
+                    "/ˈmætɹɪs/",
+                    "/ˈpɪləʊ/",
+                    "/ˈkʊʃən/"
+                ],
+                "correctAnswer": "Mattress",
+                "explanation": "\"Mattress\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/28680426/pexels-photo-28680426.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/ˈmætɹɪs/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Blanket",
+                    "Pillow",
+                    "Bed",
+                    "Cushion"
+                ],
+                "choiceIpas": [
+                    "/ˈblæŋkɪt/",
+                    "/ˈpɪləʊ/",
+                    "/bed/",
+                    "/ˈkʊʃən/"
+                ],
+                "correctAnswer": "Bed",
+                "explanation": "\"Bed\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/10608085/pexels-photo-10608085.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/bed/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Blanket",
+                    "Pillow",
+                    "Armchair",
+                    "Cushion"
                 ],
                 "choiceIpas": [
                     "",
@@ -11051,10 +11745,30 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                     "",
                     ""
                 ],
-                "correctAnswer": "Blanket cushion",
-                "explanation": "\"Blanket cushion\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/27399644/pexels-photo-27399644.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
+                "correctAnswer": "Armchair",
+                "explanation": "\"Armchair\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/12212553/pexels-photo-12212553.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/ˈɑː(ɹ)mtʃɛə(ɹ)/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Blanket",
+                    "Sofa",
+                    "Pillow",
+                    "Cushion"
+                ],
+                "choiceIpas": [
+                    "/ˈblæŋkɪt/",
+                    "/ˈsəʊfə/",
+                    "/ˈpɪləʊ/",
+                    "/ˈkʊʃən/"
+                ],
+                "correctAnswer": "Sofa",
+                "explanation": "\"Sofa\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/10408437/pexels-photo-10408437.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/ˈsəʊfə/",
                 "isMissingCustomIcon": false
             }
         ]
@@ -11067,20 +11781,26 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
         "channel": "@EnglishinGeneral",
         "transcriptText": "cutting board Cutlery whisk Ladle spatula frying pan rolling pin peeler colander greater teapot",
         "words": [
-            "Spatula frying",
-            "Pan rolling",
-            "Greater teapot",
-            "Cutting",
-            "Kitchen"
+            "Cutting Board",
+            "Cutlery",
+            "Whisk",
+            "Ladle",
+            "Spatula",
+            "Frying Pan",
+            "Rolling Pin",
+            "Peeler",
+            "Colander",
+            "Grater",
+            "Teapot"
         ],
         "questions": [
             {
-                "question": "Which word describes the action happening in this image?",
+                "question": "Which word best describes this image?",
                 "choices": [
-                    "Greater teapot",
-                    "Pan rolling",
-                    "Spatula frying",
-                    "Cutting"
+                    "Whisk",
+                    "Cutting Board",
+                    "Ladle",
+                    "Cutlery"
                 ],
                 "choiceIpas": [
                     "",
@@ -11088,79 +11808,79 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                     "",
                     ""
                 ],
-                "correctAnswer": "Spatula frying",
-                "explanation": "Action verbs ending in \"-ing\" describe ongoing actions like the one shown here.",
-                "imageUrl": "https://images.pexels.com/photos/8250375/pexels-photo-8250375.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
-                "isMissingCustomIcon": false
-            },
-            {
-                "question": "Which word describes the action happening in this image?",
-                "choices": [
-                    "Spatula frying",
-                    "Pan rolling",
-                    "Cutting",
-                    "Greater teapot"
-                ],
-                "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
-                ],
-                "correctAnswer": "Pan rolling",
-                "explanation": "Action verbs ending in \"-ing\" describe ongoing actions like the one shown here.",
-                "imageUrl": "https://images.pexels.com/photos/29037271/pexels-photo-29037271.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
+                "correctAnswer": "Cutting Board",
+                "explanation": "\"Cutting Board\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/12349170/pexels-photo-12349170.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/bɔːd/",
                 "isMissingCustomIcon": false
             },
             {
                 "question": "Which word best describes this image?",
                 "choices": [
-                    "Cutting",
-                    "Spatula frying",
-                    "Pan rolling",
-                    "Greater teapot"
+                    "Cutting Board",
+                    "Whisk",
+                    "Ladle",
+                    "Cutlery"
                 ],
                 "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
+                    "/ˈkʌtɪŋ/ /bɔːd/",
+                    "/(h)wɪsk/",
+                    "/ˈleɪ.dəl/",
+                    "/ˈkʌt.lə.ɹi/"
                 ],
-                "correctAnswer": "Greater teapot",
-                "explanation": "\"Greater teapot\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/11532730/pexels-photo-11532730.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
-                "isMissingCustomIcon": false
-            },
-            {
-                "question": "Which word describes the action happening in this image?",
-                "choices": [
-                    "Greater teapot",
-                    "Cutting",
-                    "Spatula frying",
-                    "Pan rolling"
-                ],
-                "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
-                ],
-                "correctAnswer": "Cutting",
-                "explanation": "Action verbs ending in \"-ing\" describe ongoing actions like the one shown here.",
-                "imageUrl": "https://images.pexels.com/photos/7015913/pexels-photo-7015913.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
+                "correctAnswer": "Cutlery",
+                "explanation": "\"Cutlery\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/7140435/pexels-photo-7140435.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/ˈkʌt.lə.ɹi/",
                 "isMissingCustomIcon": false
             },
             {
                 "question": "Which word best describes this image?",
                 "choices": [
-                    "Pan rolling",
-                    "Greater teapot",
-                    "Spatula frying",
-                    "Kitchen"
+                    "Cutting Board",
+                    "Ladle",
+                    "Whisk",
+                    "Cutlery"
+                ],
+                "choiceIpas": [
+                    "/ˈkʌtɪŋ/ /bɔːd/",
+                    "/ˈleɪ.dəl/",
+                    "/(h)wɪsk/",
+                    "/ˈkʌt.lə.ɹi/"
+                ],
+                "correctAnswer": "Whisk",
+                "explanation": "\"Whisk\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/8004542/pexels-photo-8004542.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/(h)wɪsk/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Ladle",
+                    "Cutting Board",
+                    "Cutlery",
+                    "Whisk"
+                ],
+                "choiceIpas": [
+                    "/ˈleɪ.dəl/",
+                    "/ˈkʌtɪŋ/ /bɔːd/",
+                    "/ˈkʌt.lə.ɹi/",
+                    "/(h)wɪsk/"
+                ],
+                "correctAnswer": "Ladle",
+                "explanation": "\"Ladle\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/12181753/pexels-photo-12181753.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/ˈleɪ.dəl/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Cutting Board",
+                    "Cutlery",
+                    "Spatula",
+                    "Whisk"
                 ],
                 "choiceIpas": [
                     "",
@@ -11168,9 +11888,129 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                     "",
                     ""
                 ],
-                "correctAnswer": "Kitchen",
-                "explanation": "\"Kitchen\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/7746626/pexels-photo-7746626.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "correctAnswer": "Spatula",
+                "explanation": "\"Spatula\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/6035328/pexels-photo-6035328.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/ˈspætjʊlə/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Frying Pan",
+                    "Whisk",
+                    "Cutting Board",
+                    "Cutlery"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Frying Pan",
+                "explanation": "\"Frying Pan\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/4781427/pexels-photo-4781427.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/ˈfɹaɪ.ɪŋ/ /pæn/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Whisk",
+                    "Cutlery",
+                    "Cutting Board",
+                    "Rolling Pin"
+                ],
+                "choiceIpas": [
+                    "/(h)wɪsk/",
+                    "/ˈkʌt.lə.ɹi/",
+                    "/bɔːd/",
+                    "/ˈɹəʊlɪŋ/ /pɪn/"
+                ],
+                "correctAnswer": "Rolling Pin",
+                "explanation": "\"Rolling Pin\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/6175803/pexels-photo-6175803.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/ˈɹəʊlɪŋ/ /pɪn/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Whisk",
+                    "Cutting Board",
+                    "Peeler",
+                    "Cutlery"
+                ],
+                "choiceIpas": [
+                    "/(h)wɪsk/",
+                    "/ˈkʌtɪŋ/ /bɔːd/",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Peeler",
+                "explanation": "\"Peeler\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/4110464/pexels-photo-4110464.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/ˈpiːlə/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Whisk",
+                    "Cutting Board",
+                    "Colander",
+                    "Cutlery"
+                ],
+                "choiceIpas": [
+                    "/(h)wɪsk/",
+                    "/ˈkʌtɪŋ/ /bɔːd/",
+                    "/ˈkɑləndəɹ/",
+                    "/ˈkʌt.lə.ɹi/"
+                ],
+                "correctAnswer": "Colander",
+                "explanation": "\"Colander\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/6794908/pexels-photo-6794908.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/ˈkɑləndəɹ/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Cutting Board",
+                    "Grater",
+                    "Cutlery",
+                    "Whisk"
+                ],
+                "choiceIpas": [
+                    "/ˈkʌtɪŋ/ /bɔːd/",
+                    "/ˈɡɹeɪtə/",
+                    "",
+                    "/(h)wɪsk/"
+                ],
+                "correctAnswer": "Grater",
+                "explanation": "\"Grater\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/6287529/pexels-photo-6287529.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/ˈɡɹeɪtə/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Whisk",
+                    "Cutlery",
+                    "Cutting Board",
+                    "Teapot"
+                ],
+                "choiceIpas": [
+                    "/(h)wɪsk/",
+                    "/ˈkʌt.lə.ɹi/",
+                    "/ˈkʌtɪŋ/ /bɔːd/",
+                    ""
+                ],
+                "correctAnswer": "Teapot",
+                "explanation": "\"Teapot\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/12096067/pexels-photo-12096067.jpeg?auto=compress&cs=tinysrgb&h=350",
                 "ipa": "",
                 "isMissingCustomIcon": false
             }
@@ -12391,111 +13231,90 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
         "channel": "@EnglishSingsing",
         "transcriptText": "foreign school supplies what's in your backpack it's my book I can read book book [Applause] it's my notebook I can write on it notebook [Music] notebook [Applause] these are my scissors I can cut the paper [Applause] [Music] scissors [Music] scissors it's my glue I can stick them with it glue [Music]",
         "words": [
-            "Wwwyoutubecom",
-            "User",
-            "Backpack",
-            "Music",
-            "Music scissor"
+            "Book",
+            "Notebook",
+            "Scissors",
+            "Glue"
         ],
         "questions": [
             {
                 "question": "Which word best describes this image?",
                 "choices": [
-                    "Wwwyoutubecom",
-                    "Backpack",
-                    "Music",
-                    "User"
+                    "Notebook",
+                    "Scissors",
+                    "Book",
+                    "Glue"
                 ],
                 "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
+                    "/ˈnəʊtˌbʊk/",
+                    "/ˈsɪzəz/",
+                    "/buːk/",
+                    "/ɡluː/"
                 ],
-                "correctAnswer": "Wwwyoutubecom",
-                "explanation": "\"Wwwyoutubecom\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/3227986/pexels-photo-3227986.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
+                "correctAnswer": "Book",
+                "explanation": "\"Book\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/12308108/pexels-photo-12308108.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/buːk/",
                 "isMissingCustomIcon": false
             },
             {
                 "question": "Which word best describes this image?",
                 "choices": [
-                    "User",
-                    "Backpack",
-                    "Wwwyoutubecom",
-                    "Music"
+                    "Book",
+                    "Glue",
+                    "Notebook",
+                    "Scissors"
                 ],
                 "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
+                    "/buːk/",
+                    "/ɡluː/",
+                    "/ˈnəʊtˌbʊk/",
+                    "/ˈsɪzəz/"
                 ],
-                "correctAnswer": "User",
-                "explanation": "\"User\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/33989917/pexels-photo-33989917.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
-                "isMissingCustomIcon": false
-            },
-            {
-                "question": "What bag do we wear on our backs to carry books and school supplies?",
-                "choices": [
-                    "Wwwyoutubecom",
-                    "Backpack",
-                    "User",
-                    "Music"
-                ],
-                "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
-                ],
-                "correctAnswer": "Backpack",
-                "explanation": "A backpack holds pencils, books, and other tools for learning.",
-                "imageUrl": "https://images.pexels.com/photos/16372801/pexels-photo-16372801.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
+                "correctAnswer": "Notebook",
+                "explanation": "\"Notebook\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/7439131/pexels-photo-7439131.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/ˈnəʊtˌbʊk/",
                 "isMissingCustomIcon": false
             },
             {
                 "question": "Which word best describes this image?",
                 "choices": [
-                    "Backpack",
-                    "User",
-                    "Wwwyoutubecom",
-                    "Music"
+                    "Glue",
+                    "Scissors",
+                    "Book",
+                    "Notebook"
                 ],
                 "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
+                    "/ɡluː/",
+                    "/ˈsɪzəz/",
+                    "/buːk/",
+                    "/ˈnəʊtˌbʊk/"
                 ],
-                "correctAnswer": "Music",
-                "explanation": "\"Music\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/9418650/pexels-photo-9418650.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
+                "correctAnswer": "Scissors",
+                "explanation": "\"Scissors\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/8058752/pexels-photo-8058752.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/ˈsɪzəz/",
                 "isMissingCustomIcon": false
             },
             {
                 "question": "Which word best describes this image?",
                 "choices": [
-                    "Backpack",
-                    "User",
-                    "Wwwyoutubecom",
-                    "Music scissor"
+                    "Book",
+                    "Glue",
+                    "Scissors",
+                    "Notebook"
                 ],
                 "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
+                    "/buːk/",
+                    "/ɡluː/",
+                    "/ˈsɪzəz/",
+                    "/ˈnəʊtˌbʊk/"
                 ],
-                "correctAnswer": "Music scissor",
-                "explanation": "\"Music scissor\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/11650293/pexels-photo-11650293.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
+                "correctAnswer": "Glue",
+                "explanation": "\"Glue\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/7869784/pexels-photo-7869784.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/ɡluː/",
                 "isMissingCustomIcon": false
             }
         ]
@@ -12508,111 +13327,90 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
         "channel": "@EnglishSingsing",
         "transcriptText": "[Music] [Applause] pencil pencil pencil book book book ruler ruler ruler eraser eraser eraser [Music]",
         "words": [
-            "Wwwyoutubecom",
-            "User",
             "Pencil",
+            "Book",
             "Ruler",
             "Eraser"
         ],
         "questions": [
             {
-                "question": "Which word best describes this image?",
-                "choices": [
-                    "Ruler",
-                    "User",
-                    "Pencil",
-                    "Wwwyoutubecom"
-                ],
-                "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
-                ],
-                "correctAnswer": "Wwwyoutubecom",
-                "explanation": "\"Wwwyoutubecom\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/27680443/pexels-photo-27680443.png?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
-                "isMissingCustomIcon": false
-            },
-            {
-                "question": "Which word best describes this image?",
-                "choices": [
-                    "Pencil",
-                    "Ruler",
-                    "User",
-                    "Wwwyoutubecom"
-                ],
-                "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
-                ],
-                "correctAnswer": "User",
-                "explanation": "\"User\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/20896020/pexels-photo-20896020.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
-                "isMissingCustomIcon": false
-            },
-            {
                 "question": "What writing tool contains graphite and has an eraser on top?",
                 "choices": [
                     "Ruler",
-                    "User",
-                    "Wwwyoutubecom",
-                    "Pencil"
+                    "Pencil",
+                    "Eraser",
+                    "Book"
                 ],
                 "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
+                    "/ˈɹuːlə(ɹ)/",
+                    "/ˈpɛnsɪl/",
+                    "/ɪˈɹeɪzə/",
+                    "/buːk/"
                 ],
                 "correctAnswer": "Pencil",
                 "explanation": "Pencils are perfect for schoolwork because you can erase mistakes.",
-                "imageUrl": "https://images.pexels.com/photos/8099373/pexels-photo-8099373.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
+                "imageUrl": "https://images.pexels.com/photos/7718870/pexels-photo-7718870.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/ˈpɛnsɪl/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Pencil",
+                    "Book",
+                    "Ruler",
+                    "Eraser"
+                ],
+                "choiceIpas": [
+                    "/ˈpɛnsɪl/",
+                    "/buːk/",
+                    "/ˈɹuːlə(ɹ)/",
+                    "/ɪˈɹeɪzə/"
+                ],
+                "correctAnswer": "Book",
+                "explanation": "\"Book\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/4887106/pexels-photo-4887106.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/buːk/",
                 "isMissingCustomIcon": false
             },
             {
                 "question": "What straight strip of plastic or wood is used to measure length?",
                 "choices": [
                     "Ruler",
+                    "Book",
                     "Pencil",
-                    "Wwwyoutubecom",
-                    "User"
+                    "Eraser"
                 ],
                 "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
+                    "/ˈɹuːlə(ɹ)/",
+                    "/buːk/",
+                    "/ˈpɛnsɪl/",
+                    "/ɪˈɹeɪzə/"
                 ],
                 "correctAnswer": "Ruler",
                 "explanation": "A ruler has marked measurements to help draw straight lines.",
-                "imageUrl": "https://images.pexels.com/photos/17750881/pexels-photo-17750881.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
+                "imageUrl": "https://images.pexels.com/photos/8099589/pexels-photo-8099589.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/ˈɹuːlə(ɹ)/",
                 "isMissingCustomIcon": false
             },
             {
                 "question": "What small rubber tool is used to remove pencil marks?",
                 "choices": [
-                    "Wwwyoutubecom",
+                    "Book",
                     "Eraser",
-                    "User",
-                    "Pencil"
+                    "Pencil",
+                    "Ruler"
                 ],
                 "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
+                    "/buːk/",
+                    "/ɪˈɹeɪzə/",
+                    "/ˈpɛnsɪl/",
+                    "/ˈɹuːlə(ɹ)/"
                 ],
                 "correctAnswer": "Eraser",
                 "explanation": "An eraser rubs off pencil graphite to correct spelling mistakes.",
-                "imageUrl": "https://images.pexels.com/photos/5088023/pexels-photo-5088023.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
+                "imageUrl": "https://pixabay.com/get/gec9cb466ca04f7c6ce441a158f5eea885816c533313cd555bf66c00dd95585f4fd222c831a64689166fc9659f6e5a6e548b4e44e0e9098c6f59ec005c95f14fc_640.png",
+                "ipa": "/ɪˈɹeɪzə/",
                 "isMissingCustomIcon": false
             }
         ]
@@ -12625,20 +13423,25 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
         "channel": "@SmileandLearnEnglish",
         "transcriptText": "[Music] smile and learn hello friends today we're going to visit our school and we're going to learn many words related to this place are you ready to find out more about the school let's go for it [Music] the classroom is the place where students learn and do activities classroom the teacher teaches children in school thank you teacher teacher we can read books and learn many things book the alphabet is a set of letters in a fixed order a b c d e alphabet the desk is the table where pupils study and do their work desk the computer is an electronic device that allows us to look up information and create content and assignments we love learning using the computer computer we write or draw using the pencil i love it pencil the pencil case is used to keep some school supplies like the eraser the pencil the pen or the pencil sharpener pencil case the ruler is a tool used to draw straight lines or to measure ruler the clock indicates hours and minutes and tells us when our school day ends recess time clock let's see if you remember any of the words we learned who teaches children in school the teacher where do students learn and do classwork in class how do we recap the order of letters with the alphabet [Music] how do we call the table where students do their classwork the desk where do we keep the pencil the pen or the eraser in the pencil case what do we use to write the pencil [Applause] these have been some words related to school but there are so many more don't miss the second video about school [Music] did you like the video we have so many more subscribe by clicking on the seal ah and if you want to keep watching more videos click on the boxes [Music]",
         "words": [
+            "Classroom",
+            "Teacher",
+            "Book",
+            "Alphabet",
+            "Desk",
+            "Computer",
             "Pencil",
-            "Student",
-            "Pencil case",
-            "Eraser",
-            "Ruler"
+            "Pencil Case",
+            "Ruler",
+            "Clock"
         ],
         "questions": [
             {
-                "question": "What writing tool contains graphite and has an eraser on top?",
+                "question": "Which word best describes this image?",
                 "choices": [
-                    "Student",
-                    "Pencil",
-                    "Eraser",
-                    "Pencil case"
+                    "Classroom",
+                    "Alphabet",
+                    "Teacher",
+                    "Book"
                 ],
                 "choiceIpas": [
                     "",
@@ -12646,79 +13449,179 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                     "",
                     ""
                 ],
-                "correctAnswer": "Pencil",
-                "explanation": "Pencils are perfect for schoolwork because you can erase mistakes.",
-                "imageUrl": "https://images.pexels.com/photos/30583224/pexels-photo-30583224.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
+                "correctAnswer": "Classroom",
+                "explanation": "\"Classroom\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/36159720/pexels-photo-36159720.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/ˈklɑːsɹʊm/",
                 "isMissingCustomIcon": false
             },
             {
-                "question": "What do we call a person who is studying or learning in school?",
+                "question": "Who is the person that helps students learn new things in school?",
                 "choices": [
-                    "Eraser",
-                    "Pencil case",
-                    "Student",
-                    "Pencil"
+                    "Classroom",
+                    "Book",
+                    "Alphabet",
+                    "Teacher"
                 ],
                 "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
+                    "/ˈklɑːsɹʊm/",
+                    "/buːk/",
+                    "/ˈæl.fə.bɛt/",
+                    "/ˈtiːt͡ʃə/"
                 ],
-                "correctAnswer": "Student",
-                "explanation": "Students attend school to gain knowledge and learn new skills.",
-                "imageUrl": "https://images.pexels.com/photos/8199161/pexels-photo-8199161.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
+                "correctAnswer": "Teacher",
+                "explanation": "A teacher guides students and explains lessons in a classroom.",
+                "imageUrl": "https://images.pexels.com/photos/37795357/pexels-photo-37795357.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/ˈtiːt͡ʃə/",
                 "isMissingCustomIcon": false
             },
             {
                 "question": "Which word best describes this image?",
                 "choices": [
-                    "Student",
-                    "Pencil",
-                    "Pencil case",
-                    "Eraser"
+                    "Classroom",
+                    "Alphabet",
+                    "Teacher",
+                    "Book"
                 ],
                 "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
+                    "/ˈklɑːsɹʊm/",
+                    "/ˈæl.fə.bɛt/",
+                    "/ˈtiːt͡ʃə/",
+                    "/buːk/"
                 ],
-                "correctAnswer": "Pencil case",
-                "explanation": "\"Pencil case\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/3731255/pexels-photo-3731255.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
+                "correctAnswer": "Book",
+                "explanation": "\"Book\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/28124384/pexels-photo-28124384.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/buːk/",
                 "isMissingCustomIcon": false
             },
             {
-                "question": "What small rubber tool is used to remove pencil marks?",
+                "question": "Which word best describes this image?",
                 "choices": [
-                    "Student",
-                    "Pencil case",
-                    "Pencil",
-                    "Eraser"
+                    "Classroom",
+                    "Alphabet",
+                    "Teacher",
+                    "Book"
                 ],
                 "choiceIpas": [
-                    "",
+                    "/ˈklɑːsɹʊm/",
+                    "/ˈæl.fə.bɛt/",
+                    "/ˈtiːt͡ʃə/",
+                    "/buːk/"
+                ],
+                "correctAnswer": "Alphabet",
+                "explanation": "\"Alphabet\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/4564603/pexels-photo-4564603.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/ˈæl.fə.bɛt/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Book",
+                    "Classroom",
+                    "Desk",
+                    "Teacher"
+                ],
+                "choiceIpas": [
+                    "/buːk/",
+                    "/ˈklɑːsɹʊm/",
+                    "/dɛsk/",
+                    ""
+                ],
+                "correctAnswer": "Desk",
+                "explanation": "\"Desk\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/12885118/pexels-photo-12885118.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/dɛsk/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Classroom",
+                    "Computer",
+                    "Book",
+                    "Teacher"
+                ],
+                "choiceIpas": [
+                    "/ˈklɑːsɹʊm/",
+                    "/kəmˈpjuːtə/",
+                    "/buːk/",
+                    "/ˈtiːt͡ʃə/"
+                ],
+                "correctAnswer": "Computer",
+                "explanation": "\"Computer\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/17489155/pexels-photo-17489155.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/kəmˈpjuːtə/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "What writing tool contains graphite and has an eraser on top?",
+                "choices": [
+                    "Teacher",
+                    "Book",
+                    "Pencil",
+                    "Classroom"
+                ],
+                "choiceIpas": [
+                    "/ˈtiːt͡ʃə/",
+                    "/buːk/",
+                    "/ˈpɛnsɪl/",
+                    "/ˈklɑːsɹʊm/"
+                ],
+                "correctAnswer": "Pencil",
+                "explanation": "Pencils are perfect for schoolwork because you can erase mistakes.",
+                "imageUrl": "https://images.pexels.com/photos/12969416/pexels-photo-12969416.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/ˈpɛnsɪl/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Classroom",
+                    "Pencil Case",
+                    "Book",
+                    "Teacher"
+                ],
+                "choiceIpas": [
+                    "/ˈklɑːsɹʊm/",
                     "",
                     "",
                     ""
                 ],
-                "correctAnswer": "Eraser",
-                "explanation": "An eraser rubs off pencil graphite to correct spelling mistakes.",
-                "imageUrl": "https://images.pexels.com/photos/5412134/pexels-photo-5412134.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
+                "correctAnswer": "Pencil Case",
+                "explanation": "\"Pencil Case\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/3731255/pexels-photo-3731255.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/ˈpɛnsɪl/ /keɪs/",
                 "isMissingCustomIcon": false
             },
             {
                 "question": "What straight strip of plastic or wood is used to measure length?",
                 "choices": [
-                    "Pencil",
-                    "Student",
-                    "Ruler",
-                    "Pencil case"
+                    "Teacher",
+                    "Classroom",
+                    "Book",
+                    "Ruler"
+                ],
+                "choiceIpas": [
+                    "/ˈtiːt͡ʃə/",
+                    "/ˈklɑːsɹʊm/",
+                    "/buːk/",
+                    "/ˈɹuːlə(ɹ)/"
+                ],
+                "correctAnswer": "Ruler",
+                "explanation": "A ruler has marked measurements to help draw straight lines.",
+                "imageUrl": "https://images.pexels.com/photos/9743165/pexels-photo-9743165.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/ˈɹuːlə(ɹ)/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Classroom",
+                    "Book",
+                    "Teacher",
+                    "Clock"
                 ],
                 "choiceIpas": [
                     "",
@@ -12726,10 +13629,10 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                     "",
                     ""
                 ],
-                "correctAnswer": "Ruler",
-                "explanation": "A ruler has marked measurements to help draw straight lines.",
-                "imageUrl": "https://images.pexels.com/photos/34918663/pexels-photo-34918663.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
+                "correctAnswer": "Clock",
+                "explanation": "\"Clock\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/5477668/pexels-photo-5477668.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/klɒk/",
                 "isMissingCustomIcon": false
             }
         ]
@@ -12742,20 +13645,30 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
         "channel": "@beenglishkids1402",
         "transcriptText": "",
         "words": [
-            "What is itDO",
-            "Supplie",
-            "Silhouette",
-            "Game",
-            "ESL"
+            "Rubber",
+            "Notebook",
+            "Board",
+            "Crayon",
+            "Book",
+            "Scissors",
+            "Pencil Case",
+            "Sharpener",
+            "Pencil",
+            "Desk",
+            "Chair",
+            "School Bag",
+            "Pen",
+            "Glue",
+            "Ruler"
         ],
         "questions": [
             {
                 "question": "Which word best describes this image?",
                 "choices": [
-                    "Game",
-                    "Silhouette",
-                    "What is itDO",
-                    "Supplie"
+                    "Board",
+                    "Rubber",
+                    "Crayon",
+                    "Notebook"
                 ],
                 "choiceIpas": [
                     "",
@@ -12763,39 +13676,99 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                     "",
                     ""
                 ],
-                "correctAnswer": "What is itDO",
-                "explanation": "\"What is itDO\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/1181598/pexels-photo-1181598.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "correctAnswer": "Rubber",
+                "explanation": "\"Rubber\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuh6y67YakCNFTwOMjvdapmMLB82xNJ0h5Q6c0tdlGtA&s=10",
+                "ipa": "/ˈɹʌbə(ɹ)/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Crayon",
+                    "Board",
+                    "Notebook",
+                    "Rubber"
+                ],
+                "choiceIpas": [
+                    "/ˈkɹeɪ.ɒ̃/",
+                    "/bɔːd/",
+                    "/ˈnəʊtˌbʊk/",
+                    "/ˈɹʌbə(ɹ)/"
+                ],
+                "correctAnswer": "Notebook",
+                "explanation": "\"Notebook\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/28503352/pexels-photo-28503352.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/ˈnəʊtˌbʊk/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Crayon",
+                    "Rubber",
+                    "Notebook",
+                    "Board"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Board",
+                "explanation": "\"Board\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/17174005/pexels-photo-17174005.png?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "What colored wax stick do children use for drawing and coloring?",
+                "choices": [
+                    "Crayon",
+                    "Notebook",
+                    "Rubber",
+                    "Board"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Crayon",
+                "explanation": "Crayons are fun drawing tools that come in colorful boxes.",
+                "imageUrl": "https://images.pexels.com/photos/37916783/pexels-photo-37916783.jpeg?auto=compress&cs=tinysrgb&h=350",
                 "ipa": "",
                 "isMissingCustomIcon": false
             },
             {
                 "question": "Which word best describes this image?",
                 "choices": [
-                    "What is itDO",
-                    "Supplie",
-                    "Silhouette",
-                    "Game"
+                    "Board",
+                    "Book",
+                    "Notebook",
+                    "Rubber"
                 ],
                 "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
+                    "/bɔːd/",
+                    "/buːk/",
+                    "/ˈnəʊtˌbʊk/",
+                    "/ˈɹʌbə(ɹ)/"
                 ],
-                "correctAnswer": "Supplie",
-                "explanation": "\"Supplie\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/9714426/pexels-photo-9714426.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
+                "correctAnswer": "Book",
+                "explanation": "\"Book\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/7034613/pexels-photo-7034613.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/buːk/",
                 "isMissingCustomIcon": false
             },
             {
                 "question": "Which word best describes this image?",
                 "choices": [
-                    "Game",
-                    "Silhouette",
-                    "Supplie",
-                    "What is itDO"
+                    "Scissors",
+                    "Board",
+                    "Rubber",
+                    "Notebook"
                 ],
                 "choiceIpas": [
                     "",
@@ -12803,19 +13776,19 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                     "",
                     ""
                 ],
-                "correctAnswer": "Silhouette",
-                "explanation": "\"Silhouette\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/18613638/pexels-photo-18613638.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
+                "correctAnswer": "Scissors",
+                "explanation": "\"Scissors\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/11231614/pexels-photo-11231614.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/ˈsɪzəz/",
                 "isMissingCustomIcon": false
             },
             {
                 "question": "Which word best describes this image?",
                 "choices": [
-                    "Supplie",
-                    "What is itDO",
-                    "Game",
-                    "Silhouette"
+                    "Board",
+                    "Rubber",
+                    "Notebook",
+                    "Pencil Case"
                 ],
                 "choiceIpas": [
                     "",
@@ -12823,19 +13796,39 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                     "",
                     ""
                 ],
-                "correctAnswer": "Game",
-                "explanation": "\"Game\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/9068972/pexels-photo-9068972.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
+                "correctAnswer": "Pencil Case",
+                "explanation": "\"Pencil Case\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/8423074/pexels-photo-8423074.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/ˈpɛnsɪl/ /keɪs/",
                 "isMissingCustomIcon": false
             },
             {
                 "question": "Which word best describes this image?",
                 "choices": [
-                    "What is itDO",
-                    "ESL",
-                    "Supplie",
-                    "Silhouette"
+                    "Notebook",
+                    "Rubber",
+                    "Sharpener",
+                    "Board"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    "/bɔːd/"
+                ],
+                "correctAnswer": "Sharpener",
+                "explanation": "\"Sharpener\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/6837778/pexels-photo-6837778.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/ˈʃɑː(ɹ)pənə(ɹ)/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "What writing tool contains graphite and has an eraser on top?",
+                "choices": [
+                    "Notebook",
+                    "Rubber",
+                    "Board",
+                    "Pencil"
                 ],
                 "choiceIpas": [
                     "",
@@ -12843,10 +13836,130 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                     "",
                     ""
                 ],
-                "correctAnswer": "ESL",
-                "explanation": "\"ESL\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/6929167/pexels-photo-6929167.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
+                "correctAnswer": "Pencil",
+                "explanation": "Pencils are perfect for schoolwork because you can erase mistakes.",
+                "imageUrl": "https://images.pexels.com/photos/8478389/pexels-photo-8478389.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/ˈpɛnsɪl/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Board",
+                    "Notebook",
+                    "Desk",
+                    "Rubber"
+                ],
+                "choiceIpas": [
+                    "/bɔːd/",
+                    "/ˈnəʊtˌbʊk/",
+                    "/dɛsk/",
+                    "/ˈɹʌbə(ɹ)/"
+                ],
+                "correctAnswer": "Desk",
+                "explanation": "\"Desk\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/7658310/pexels-photo-7658310.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/dɛsk/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Board",
+                    "Chair",
+                    "Rubber",
+                    "Notebook"
+                ],
+                "choiceIpas": [
+                    "/bɔːd/",
+                    "/t͡ʃɛə(ɹ)/",
+                    "/ˈɹʌbə(ɹ)/",
+                    "/ˈnəʊtˌbʊk/"
+                ],
+                "correctAnswer": "Chair",
+                "explanation": "\"Chair\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/4963886/pexels-photo-4963886.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/t͡ʃɛə(ɹ)/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Rubber",
+                    "Board",
+                    "School Bag",
+                    "Notebook"
+                ],
+                "choiceIpas": [
+                    "/ˈɹʌbə(ɹ)/",
+                    "/bɔːd/",
+                    "/skuːl/ /ˈbæːɡ/",
+                    ""
+                ],
+                "correctAnswer": "School Bag",
+                "explanation": "\"School Bag\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/7395291/pexels-photo-7395291.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/skuːl/ /ˈbæːɡ/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Board",
+                    "Rubber",
+                    "Notebook",
+                    "Pen"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Pen",
+                "explanation": "\"Pen\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/33911281/pexels-photo-33911281.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/pɛn/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Notebook",
+                    "Rubber",
+                    "Board",
+                    "Glue"
+                ],
+                "choiceIpas": [
+                    "/ˈnəʊtˌbʊk/",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Glue",
+                "explanation": "\"Glue\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/7695191/pexels-photo-7695191.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/ɡluː/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "What straight strip of plastic or wood is used to measure length?",
+                "choices": [
+                    "Ruler",
+                    "Board",
+                    "Rubber",
+                    "Notebook"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Ruler",
+                "explanation": "A ruler has marked measurements to help draw straight lines.",
+                "imageUrl": "https://images.pexels.com/photos/8099506/pexels-photo-8099506.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/ˈɹuːlə(ɹ)/",
                 "isMissingCustomIcon": false
             }
         ]
