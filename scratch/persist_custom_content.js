@@ -16,28 +16,64 @@ try {
   const data = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
   console.log('Successfully loaded export file.');
 
-  // Sanitize data: Ensure all grade properties are numbers (e.g. converting "1" to 1)
+  const capitalize = (str) => {
+    if (!str || typeof str !== 'string') return str;
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  };
+
+  // Sanitize data: Ensure all grade properties are numbers and capitalize vocabulary items
   if (data.videoQuests) {
     Object.keys(data.videoQuests).forEach(key => {
       const q = data.videoQuests[key];
-      if (q && q.grade !== undefined) {
-        q.grade = q.grade === 'K' ? 0 : Number(q.grade);
+      if (q) {
+        if (q.grade !== undefined) {
+          q.grade = q.grade === 'K' ? 0 : Number(q.grade);
+        }
+        if (Array.isArray(q.words)) {
+          q.words = q.words.map(capitalize);
+        }
+        if (Array.isArray(q.questions)) {
+          q.questions.forEach(quest => {
+            if (quest.correctAnswer) {
+              quest.correctAnswer = capitalize(quest.correctAnswer);
+            }
+            if (Array.isArray(quest.choices)) {
+              quest.choices = quest.choices.map(capitalize);
+            }
+          });
+        }
       }
     });
   }
 
   if (data.mathQuestions && Array.isArray(data.mathQuestions)) {
     data.mathQuestions.forEach(q => {
-      if (q && q.grade !== undefined) {
-        q.grade = q.grade === 'K' ? 0 : Number(q.grade);
+      if (q) {
+        if (q.grade !== undefined) {
+          q.grade = q.grade === 'K' ? 0 : Number(q.grade);
+        }
+        if (q.correctAnswer) {
+          q.correctAnswer = capitalize(q.correctAnswer);
+        }
+        if (Array.isArray(q.choices)) {
+          q.choices = q.choices.map(capitalize);
+        }
       }
     });
   }
 
   if (data.englishQuestions && Array.isArray(data.englishQuestions)) {
     data.englishQuestions.forEach(q => {
-      if (q && q.grade !== undefined) {
-        q.grade = q.grade === 'K' ? 0 : Number(q.grade);
+      if (q) {
+        if (q.grade !== undefined) {
+          q.grade = q.grade === 'K' ? 0 : Number(q.grade);
+        }
+        if (q.correctAnswer) {
+          q.correctAnswer = capitalize(q.correctAnswer);
+        }
+        if (Array.isArray(q.choices)) {
+          q.choices = q.choices.map(capitalize);
+        }
       }
     });
   }

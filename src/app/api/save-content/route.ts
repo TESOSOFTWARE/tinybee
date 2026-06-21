@@ -15,13 +15,33 @@ export async function POST(request: Request) {
     const mathQuestionsPath = path.join(process.cwd(), 'src/data/questions.ts');
     const englishQuestionsPath = path.join(process.cwd(), 'src/data/english_questions.ts');
 
-    // Helper to sanitize grades to number
+    const capitalize = (str: string) => {
+      if (!str || typeof str !== 'string') return str;
+      return str.charAt(0).toUpperCase() + str.slice(1);
+    };
+
+    // Helper to sanitize grades to number and capitalize vocabulary items
     const sanitizeQuests = (quests: any) => {
       if (!quests) return;
       Object.keys(quests).forEach(key => {
         const q = quests[key];
-        if (q && q.grade !== undefined) {
-          q.grade = q.grade === 'K' ? 0 : Number(q.grade);
+        if (q) {
+          if (q.grade !== undefined) {
+            q.grade = q.grade === 'K' ? 0 : Number(q.grade);
+          }
+          if (Array.isArray(q.words)) {
+            q.words = q.words.map(capitalize);
+          }
+          if (Array.isArray(q.questions)) {
+            q.questions.forEach((quest: any) => {
+              if (quest.correctAnswer) {
+                quest.correctAnswer = capitalize(quest.correctAnswer);
+              }
+              if (Array.isArray(quest.choices)) {
+                quest.choices = quest.choices.map(capitalize);
+              }
+            });
+          }
         }
       });
     };
@@ -29,8 +49,16 @@ export async function POST(request: Request) {
     const sanitizeQuestions = (questions: any) => {
       if (!questions || !Array.isArray(questions)) return;
       questions.forEach(q => {
-        if (q && q.grade !== undefined) {
-          q.grade = q.grade === 'K' ? 0 : Number(q.grade);
+        if (q) {
+          if (q.grade !== undefined) {
+            q.grade = q.grade === 'K' ? 0 : Number(q.grade);
+          }
+          if (q.correctAnswer) {
+            q.correctAnswer = capitalize(q.correctAnswer);
+          }
+          if (Array.isArray(q.choices)) {
+            q.choices = q.choices.map(capitalize);
+          }
         }
       });
     };

@@ -8,25 +8,25 @@
       "channel": "@EnglishTreeTV",
       "transcriptText": "[Música] pencil pencil sharpener sharpener eraser eraser ruler ruler Book book scissors scissors chare Cher desk desk pen pen b [Aplausos] [Música] b pencil pencil sharpener sharpener eraser eraser ruler ruler Book Book scissors scissors chair chair desk desk pen he Back [Aplausos] [Música] [Música] back [Música] Oh",
       "words": [
-        "pencil",
-        "sharpener",
-        "eraser",
-        "ruler",
-        "book",
-        "scissors",
-        "chair",
-        "desk",
-        "pen",
-        "backpack"
+        "Pencil",
+        "Sharpener",
+        "Eraser",
+        "Ruler",
+        "Book",
+        "Scissors",
+        "Chair",
+        "Desk",
+        "Pen",
+        "Backpack"
       ],
       "questions": [
         {
           "question": "What writing tool contains graphite and has an eraser on top?",
           "choices": [
-            "sharpener",
-            "pencil sharpener",
-            "pencil",
-            "eraser"
+            "Sharpener",
+            "Pencil sharpener",
+            "Pencil",
+            "Eraser"
           ],
           "choiceIpas": [
             "",
@@ -34,7 +34,7 @@
             "",
             ""
           ],
-          "correctAnswer": "pencil",
+          "correctAnswer": "Pencil",
           "explanation": "Pencils are perfect for schoolwork because you can erase mistakes.",
           "imageUrl": "https://images.pexels.com/photos/8386693/pexels-photo-8386693.jpeg?auto=compress&cs=tinysrgb&h=350",
           "ipa": "/ˈpɛnsɪl/",
@@ -43,10 +43,10 @@
         {
           "question": "Which word best describes this image?",
           "choices": [
-            "sharpener",
-            "eraser",
-            "pencil",
-            "pencil sharpener"
+            "Sharpener",
+            "Eraser",
+            "Pencil",
+            "Pencil sharpener"
           ],
           "choiceIpas": [
             "/ˈʃɑː(ɹ)pənə(ɹ)/",
@@ -54,7 +54,7 @@
             "/ˈpɛnsɪl/",
             "/ˈpɛnsɪl/ /ˈʃɑː(ɹ)pənə(ɹ)/"
           ],
-          "correctAnswer": "sharpener",
+          "correctAnswer": "Sharpener",
           "explanation": "\"sharpener\" is the correct vocabulary word for this picture.",
           "imageUrl": "https://images.pexels.com/photos/237414/pexels-photo-237414.jpeg?auto=compress&cs=tinysrgb&h=350",
           "ipa": "/ˈʃɑː(ɹ)pənə(ɹ)/",
@@ -63,10 +63,10 @@
         {
           "question": "What small rubber tool is used to remove pencil marks?",
           "choices": [
-            "eraser",
-            "pencil",
-            "pencil sharpener",
-            "sharpener"
+            "Eraser",
+            "Pencil",
+            "Pencil sharpener",
+            "Sharpener"
           ],
           "choiceIpas": [
             "",
@@ -74,7 +74,7 @@
             "/ˈpɛnsɪl/",
             ""
           ],
-          "correctAnswer": "eraser",
+          "correctAnswer": "Eraser",
           "explanation": "An eraser rubs off pencil graphite to correct spelling mistakes.",
           "imageUrl": "https://images.pexels.com/photos/6193755/pexels-photo-6193755.jpeg?auto=compress&cs=tinysrgb&h=350",
           "ipa": "/ɪˈɹeɪzə/",
@@ -83,10 +83,10 @@
         {
           "question": "What straight strip of plastic or wood is used to measure length?",
           "choices": [
-            "pencil",
-            "sharpener",
-            "pencil sharpener",
-            "ruler"
+            "Pencil",
+            "Sharpener",
+            "Pencil sharpener",
+            "Ruler"
           ],
           "choiceIpas": [
             "/ˈpɛnsɪl/",
@@ -94,7 +94,7 @@
             "",
             ""
           ],
-          "correctAnswer": "ruler",
+          "correctAnswer": "Ruler",
           "explanation": "A ruler has marked measurements to help draw straight lines.",
           "imageUrl": "https://images.pexels.com/photos/29279407/pexels-photo-29279407.jpeg?auto=compress&cs=tinysrgb&h=350",
           "ipa": "/ˈɹuːlə(ɹ)/",
@@ -103,10 +103,10 @@
         {
           "question": "Which word best describes this image?",
           "choices": [
-            "pencil sharpener",
-            "pencil",
-            "sharpener",
-            "book"
+            "Pencil sharpener",
+            "Pencil",
+            "Sharpener",
+            "Book"
           ],
           "choiceIpas": [
             "/ˈpɛnsɪl/",
@@ -114,7 +114,7 @@
             "",
             ""
           ],
-          "correctAnswer": "book",
+          "correctAnswer": "Book",
           "explanation": "\"book\" is the correct vocabulary word for this picture.",
           "imageUrl": "https://images.pexels.com/photos/5905439/pexels-photo-5905439.jpeg?auto=compress&cs=tinysrgb&h=350",
           "ipa": "/buːk/",
@@ -123,10 +123,10 @@
         {
           "question": "Which word best describes this image?",
           "choices": [
-            "pencil sharpener",
-            "scissors",
-            "pencil",
-            "sharpener"
+            "Pencil sharpener",
+            "Scissors",
+            "Pencil",
+            "Sharpener"
           ],
           "choiceIpas": [
             "/ˈpɛnsɪl/",
@@ -134,7 +134,7 @@
             "",
             "/ˈʃɑː(ɹ)pənə(ɹ)/"
           ],
-          "correctAnswer": "scissors",
+          "correctAnswer": "Scissors",
           "explanation": "\"scissors\" is the correct vocabulary word for this picture.",
           "imageUrl": "https://images.pexels.com/photos/1212183/pexels-photo-1212183.jpeg?auto=compress&cs=tinysrgb&h=350",
           "ipa": "/ˈsɪzəz/",
@@ -143,10 +143,10 @@
         {
           "question": "Which word best describes this image?",
           "choices": [
-            "pencil sharpener",
-            "chair",
-            "sharpener",
-            "pencil"
+            "Pencil sharpener",
+            "Chair",
+            "Sharpener",
+            "Pencil"
           ],
           "choiceIpas": [
             "/ˈpɛnsɪl/ /ˈʃɑː(ɹ)pənə(ɹ)/",
@@ -154,7 +154,7 @@
             "",
             ""
           ],
-          "correctAnswer": "chair",
+          "correctAnswer": "Chair",
           "explanation": "\"chair\" is the correct vocabulary word for this picture.",
           "imageUrl": "https://images.pexels.com/photos/17466659/pexels-photo-17466659.jpeg?auto=compress&cs=tinysrgb&h=350",
           "ipa": "/t͡ʃɛə(ɹ)/",
@@ -163,10 +163,10 @@
         {
           "question": "Which word best describes this image?",
           "choices": [
-            "desk",
-            "pencil",
-            "sharpener",
-            "pencil sharpener"
+            "Desk",
+            "Pencil",
+            "Sharpener",
+            "Pencil sharpener"
           ],
           "choiceIpas": [
             "",
@@ -174,7 +174,7 @@
             "",
             ""
           ],
-          "correctAnswer": "desk",
+          "correctAnswer": "Desk",
           "explanation": "\"desk\" is the correct vocabulary word for this picture.",
           "imageUrl": "https://virco.com/wp-content/uploads/desk-280opnm-red70-brn96-gry02_0-1.png",
           "ipa": "/dɛsk/",
@@ -183,10 +183,10 @@
         {
           "question": "Which word best describes this image?",
           "choices": [
-            "sharpener",
-            "pencil sharpener",
-            "pencil",
-            "pen"
+            "Sharpener",
+            "Pencil sharpener",
+            "Pencil",
+            "Pen"
           ],
           "choiceIpas": [
             "/ˈʃɑː(ɹ)pənə(ɹ)/",
@@ -194,7 +194,7 @@
             "",
             ""
           ],
-          "correctAnswer": "pen",
+          "correctAnswer": "Pen",
           "explanation": "\"pen\" is the correct vocabulary word for this picture.",
           "imageUrl": "https://images.pexels.com/photos/19364472/pexels-photo-19364472.jpeg?auto=compress&cs=tinysrgb&h=350",
           "ipa": "/pɛn/",
@@ -203,10 +203,10 @@
         {
           "question": "What bag do we wear on our backs to carry books and school supplies?",
           "choices": [
-            "pencil",
-            "sharpener",
-            "pencil sharpener",
-            "backpack"
+            "Pencil",
+            "Sharpener",
+            "Pencil sharpener",
+            "Backpack"
           ],
           "choiceIpas": [
             "",
@@ -214,7 +214,7 @@
             "",
             ""
           ],
-          "correctAnswer": "backpack",
+          "correctAnswer": "Backpack",
           "explanation": "A backpack holds pencils, books, and other tools for learning.",
           "imageUrl": "https://images.pexels.com/photos/4907460/pexels-photo-4907460.jpeg?auto=compress&cs=tinysrgb&h=350",
           "ipa": "/ˈbæk.pæk/",
@@ -9794,26 +9794,26 @@
       "channel": "@Speakwithconfidence4065",
       "transcriptText": "what is this called armchair what is this called ottoman what is this called Chas long what is this called coffee table what is this called wardrobe what is this called dresser what is this called nightstand what is this called recliner what is this called chest of drawers what is this called side table what is this called coat rack",
       "words": [
-        "armchair",
-        "ottoman",
+        "Armchair",
+        "Ottoman",
         "Coffee table",
         "Side table",
         "Coat rack",
-        "wardrobe",
-        "dresser",
-        "nightstand",
-        "recliner",
-        "chest of drawers",
-        "side table",
-        "coat rack"
+        "Wardrobe",
+        "Dresser",
+        "Nightstand",
+        "Recliner",
+        "Chest of drawers",
+        "Side table",
+        "Coat rack"
       ],
       "questions": [
         {
           "question": "Which word best describes this image?",
           "choices": [
-            "ottoman",
+            "Ottoman",
             "Side table",
-            "armchair",
+            "Armchair",
             "Coffee table"
           ],
           "choiceIpas": [
@@ -9822,7 +9822,7 @@
             "/ˈɑː(ɹ)mtʃɛə(ɹ)/",
             "/ˈkɑ.fi/ /ˈteɪbəl/"
           ],
-          "correctAnswer": "armchair",
+          "correctAnswer": "Armchair",
           "explanation": "\"armchair\" is the correct vocabulary word for this picture.",
           "imageUrl": "https://images.pexels.com/photos/33646085/pexels-photo-33646085.jpeg?auto=compress&cs=tinysrgb&h=350",
           "ipa": "/ˈɑː(ɹ)mtʃɛə(ɹ)/",
@@ -9831,10 +9831,10 @@
         {
           "question": "Which word best describes this image?",
           "choices": [
-            "armchair",
+            "Armchair",
             "Side table",
             "Coffee table",
-            "ottoman"
+            "Ottoman"
           ],
           "choiceIpas": [
             "",
@@ -9842,7 +9842,7 @@
             "/ˈkɑ.fi/ /ˈteɪbəl/",
             "/ˈɒtəmən/"
           ],
-          "correctAnswer": "ottoman",
+          "correctAnswer": "Ottoman",
           "explanation": "\"ottoman\" is the correct vocabulary word for this picture.",
           "imageUrl": "https://images.pexels.com/photos/7535017/pexels-photo-7535017.jpeg?auto=compress&cs=tinysrgb&h=350",
           "ipa": "/ˈɒtəmən/",
@@ -9852,8 +9852,8 @@
           "question": "Which word best describes this image?",
           "choices": [
             "Coffee table",
-            "ottoman",
-            "armchair",
+            "Ottoman",
+            "Armchair",
             "Side table"
           ],
           "choiceIpas": [
@@ -9873,8 +9873,8 @@
           "choices": [
             "Side table",
             "Coffee table",
-            "armchair",
-            "ottoman"
+            "Armchair",
+            "Ottoman"
           ],
           "choiceIpas": [
             "",
@@ -9891,9 +9891,9 @@
         {
           "question": "Which word best describes this image?",
           "choices": [
-            "armchair",
+            "Armchair",
             "Coat rack",
-            "ottoman",
+            "Ottoman",
             "Coffee table"
           ],
           "choiceIpas": [
@@ -9911,10 +9911,10 @@
         {
           "question": "Which word best describes this image?",
           "choices": [
-            "ottoman",
-            "armchair",
+            "Ottoman",
+            "Armchair",
             "Coffee table",
-            "wardrobe"
+            "Wardrobe"
           ],
           "choiceIpas": [
             "/ˈɒtəmən/",
@@ -9922,7 +9922,7 @@
             "",
             ""
           ],
-          "correctAnswer": "wardrobe",
+          "correctAnswer": "Wardrobe",
           "explanation": "\"wardrobe\" is the correct vocabulary word for this picture.",
           "imageUrl": "https://images.pexels.com/photos/6580394/pexels-photo-6580394.jpeg?auto=compress&cs=tinysrgb&h=350",
           "ipa": "/ ˈwɔːdɹəʊb/",
@@ -9931,10 +9931,10 @@
         {
           "question": "Which word best describes this image?",
           "choices": [
-            "armchair",
+            "Armchair",
             "Coffee table",
-            "dresser",
-            "ottoman"
+            "Dresser",
+            "Ottoman"
           ],
           "choiceIpas": [
             "",
@@ -9942,7 +9942,7 @@
             "",
             ""
           ],
-          "correctAnswer": "dresser",
+          "correctAnswer": "Dresser",
           "explanation": "\"dresser\" is the correct vocabulary word for this picture.",
           "imageUrl": "https://images.pexels.com/photos/37360094/pexels-photo-37360094.jpeg?auto=compress&cs=tinysrgb&h=350",
           "ipa": "",
@@ -9951,10 +9951,10 @@
         {
           "question": "Which word best describes this image?",
           "choices": [
-            "nightstand",
+            "Nightstand",
             "Coffee table",
-            "ottoman",
-            "armchair"
+            "Ottoman",
+            "Armchair"
           ],
           "choiceIpas": [
             "",
@@ -9962,7 +9962,7 @@
             "",
             ""
           ],
-          "correctAnswer": "nightstand",
+          "correctAnswer": "Nightstand",
           "explanation": "\"nightstand\" is the correct vocabulary word for this picture.",
           "imageUrl": "https://images.pexels.com/photos/5825694/pexels-photo-5825694.jpeg?auto=compress&cs=tinysrgb&h=350",
           "ipa": "",
@@ -9972,9 +9972,9 @@
           "question": "Which word best describes this image?",
           "choices": [
             "Coffee table",
-            "armchair",
-            "recliner",
-            "ottoman"
+            "Armchair",
+            "Recliner",
+            "Ottoman"
           ],
           "choiceIpas": [
             "",
@@ -9982,7 +9982,7 @@
             "",
             ""
           ],
-          "correctAnswer": "recliner",
+          "correctAnswer": "Recliner",
           "explanation": "\"recliner\" is the correct vocabulary word for this picture.",
           "imageUrl": "https://images.pexels.com/photos/20020103/pexels-photo-20020103.jpeg?auto=compress&cs=tinysrgb&h=350",
           "ipa": "",
@@ -9992,9 +9992,9 @@
           "question": "Which word best describes this image?",
           "choices": [
             "Coffee table",
-            "chest of drawers",
-            "armchair",
-            "ottoman"
+            "Chest of drawers",
+            "Armchair",
+            "Ottoman"
           ],
           "choiceIpas": [
             "",
@@ -10002,7 +10002,7 @@
             "",
             ""
           ],
-          "correctAnswer": "chest of drawers",
+          "correctAnswer": "Chest of drawers",
           "explanation": "\"chest of drawers\" is the correct vocabulary word for this picture.",
           "imageUrl": "https://images.pexels.com/photos/6956842/pexels-photo-6956842.jpeg?auto=compress&cs=tinysrgb&h=350",
           "ipa": "",
@@ -10011,9 +10011,9 @@
         {
           "question": "Which word best describes this image?",
           "choices": [
-            "coat rack",
-            "armchair",
-            "ottoman",
+            "Coat rack",
+            "Armchair",
+            "Ottoman",
             "Coffee table"
           ],
           "choiceIpas": [
@@ -10022,7 +10022,7 @@
             "",
             ""
           ],
-          "correctAnswer": "coat rack",
+          "correctAnswer": "Coat rack",
           "explanation": "\"coat rack\" is the correct vocabulary word for this picture.",
           "imageUrl": "https://images.pexels.com/photos/15945663/pexels-photo-15945663.jpeg?auto=compress&cs=tinysrgb&h=350",
           "ipa": "",
@@ -10176,25 +10176,25 @@
       "channel": "@EnglishwithMaya-z1i",
       "transcriptText": "sofa, pillow, blanket, armchair, chair, mirror, drawer, table, bed, wardrobe. Don't forget to subscribe to the",
       "words": [
-        "sofa",
-        "pillow",
-        "blanket",
-        "armchair",
-        "chair",
-        "mirror",
-        "drawer",
-        "table",
-        "bed",
-        "wardrobe."
+        "Sofa",
+        "Pillow",
+        "Blanket",
+        "Armchair",
+        "Chair",
+        "Mirror",
+        "Drawer",
+        "Table",
+        "Bed",
+        "Wardrobe."
       ],
       "questions": [
         {
           "question": "Which word best describes this image?",
           "choices": [
-            "pillow",
-            "blanket",
-            "armchair",
-            "sofa"
+            "Pillow",
+            "Blanket",
+            "Armchair",
+            "Sofa"
           ],
           "choiceIpas": [
             "/ˈpɪləʊ/",
@@ -10202,7 +10202,7 @@
             "/ˈɑː(ɹ)mtʃɛə(ɹ)/",
             "/ˈsəʊfə/"
           ],
-          "correctAnswer": "sofa",
+          "correctAnswer": "Sofa",
           "explanation": "\"sofa\" is the correct vocabulary word for this picture.",
           "imageUrl": "https://images.pexels.com/photos/7018400/pexels-photo-7018400.jpeg?auto=compress&cs=tinysrgb&h=350",
           "ipa": "/ˈsəʊfə/",
@@ -10211,10 +10211,10 @@
         {
           "question": "Which word best describes this image?",
           "choices": [
-            "blanket",
-            "armchair",
-            "pillow",
-            "sofa"
+            "Blanket",
+            "Armchair",
+            "Pillow",
+            "Sofa"
           ],
           "choiceIpas": [
             "/ˈblæŋkɪt/",
@@ -10222,7 +10222,7 @@
             "",
             "/ˈsəʊfə/"
           ],
-          "correctAnswer": "pillow",
+          "correctAnswer": "Pillow",
           "explanation": "\"pillow\" is the correct vocabulary word for this picture.",
           "imageUrl": "https://images.pexels.com/photos/12289352/pexels-photo-12289352.jpeg?auto=compress&cs=tinysrgb&h=350",
           "ipa": "/ˈpɪləʊ/",
@@ -10231,10 +10231,10 @@
         {
           "question": "Which word best describes this image?",
           "choices": [
-            "sofa",
-            "armchair",
-            "blanket",
-            "pillow"
+            "Sofa",
+            "Armchair",
+            "Blanket",
+            "Pillow"
           ],
           "choiceIpas": [
             "/ˈsəʊfə/",
@@ -10242,7 +10242,7 @@
             "/ˈblæŋkɪt/",
             "/ˈpɪləʊ/"
           ],
-          "correctAnswer": "blanket",
+          "correctAnswer": "Blanket",
           "explanation": "\"blanket\" is the correct vocabulary word for this picture.",
           "imageUrl": "https://images.pexels.com/photos/8238750/pexels-photo-8238750.jpeg?auto=compress&cs=tinysrgb&h=350",
           "ipa": "/ˈblæŋkɪt/",
@@ -10251,10 +10251,10 @@
         {
           "question": "Which word best describes this image?",
           "choices": [
-            "armchair",
-            "pillow",
-            "blanket",
-            "sofa"
+            "Armchair",
+            "Pillow",
+            "Blanket",
+            "Sofa"
           ],
           "choiceIpas": [
             "/ˈɑː(ɹ)mtʃɛə(ɹ)/",
@@ -10262,7 +10262,7 @@
             "",
             ""
           ],
-          "correctAnswer": "armchair",
+          "correctAnswer": "Armchair",
           "explanation": "\"armchair\" is the correct vocabulary word for this picture.",
           "imageUrl": "https://images.pexels.com/photos/30710413/pexels-photo-30710413.jpeg?auto=compress&cs=tinysrgb&h=350",
           "ipa": "/ˈɑː(ɹ)mtʃɛə(ɹ)/",
@@ -10271,10 +10271,10 @@
         {
           "question": "Which word best describes this image?",
           "choices": [
-            "pillow",
-            "chair",
-            "sofa",
-            "blanket"
+            "Pillow",
+            "Chair",
+            "Sofa",
+            "Blanket"
           ],
           "choiceIpas": [
             "/ˈpɪləʊ/",
@@ -10282,7 +10282,7 @@
             "/ˈsəʊfə/",
             "/ˈblæŋkɪt/"
           ],
-          "correctAnswer": "chair",
+          "correctAnswer": "Chair",
           "explanation": "\"chair\" is the correct vocabulary word for this picture.",
           "imageUrl": "https://images.pexels.com/photos/9962719/pexels-photo-9962719.jpeg?auto=compress&cs=tinysrgb&h=350",
           "ipa": "/t͡ʃɛə(ɹ)/",
@@ -10291,10 +10291,10 @@
         {
           "question": "Which word best describes this image?",
           "choices": [
-            "sofa",
-            "mirror",
-            "pillow",
-            "blanket"
+            "Sofa",
+            "Mirror",
+            "Pillow",
+            "Blanket"
           ],
           "choiceIpas": [
             "/ˈsəʊfə/",
@@ -10302,7 +10302,7 @@
             "",
             ""
           ],
-          "correctAnswer": "mirror",
+          "correctAnswer": "Mirror",
           "explanation": "\"mirror\" is the correct vocabulary word for this picture.",
           "imageUrl": "https://pixabay.com/get/ga82bde0548a67091d03de29bd3a800dcfb477f25c8467c7e9353112c91f08b42554544ca36f9828b521d858027d2de025a85d5d2e6fed285f7668f87123c2be4_640.jpg",
           "ipa": "/ˈmɘ.ɹɘ/",
@@ -10311,10 +10311,10 @@
         {
           "question": "Which word best describes this image?",
           "choices": [
-            "blanket",
-            "pillow",
-            "drawer",
-            "sofa"
+            "Blanket",
+            "Pillow",
+            "Drawer",
+            "Sofa"
           ],
           "choiceIpas": [
             "",
@@ -10322,7 +10322,7 @@
             "",
             ""
           ],
-          "correctAnswer": "drawer",
+          "correctAnswer": "Drawer",
           "explanation": "\"drawer\" is the correct vocabulary word for this picture.",
           "imageUrl": "https://images.pexels.com/photos/11112745/pexels-photo-11112745.jpeg?auto=compress&cs=tinysrgb&h=350",
           "ipa": "/dɹɔː(ɹ)/",
@@ -10331,10 +10331,10 @@
         {
           "question": "Which word best describes this image?",
           "choices": [
-            "table",
-            "sofa",
-            "blanket",
-            "pillow"
+            "Table",
+            "Sofa",
+            "Blanket",
+            "Pillow"
           ],
           "choiceIpas": [
             "/ˈteɪbəl/",
@@ -10342,7 +10342,7 @@
             "/ˈblæŋkɪt/",
             "/ˈpɪləʊ/"
           ],
-          "correctAnswer": "table",
+          "correctAnswer": "Table",
           "explanation": "\"table\" is the correct vocabulary word for this picture.",
           "imageUrl": "https://images.pexels.com/photos/23541001/pexels-photo-23541001.jpeg?auto=compress&cs=tinysrgb&h=350",
           "ipa": "/ˈteɪbəl/",
@@ -10351,10 +10351,10 @@
         {
           "question": "Which word best describes this image?",
           "choices": [
-            "bed",
-            "blanket",
-            "sofa",
-            "pillow"
+            "Bed",
+            "Blanket",
+            "Sofa",
+            "Pillow"
           ],
           "choiceIpas": [
             "/bed/",
@@ -10362,7 +10362,7 @@
             "/ˈsəʊfə/",
             "/ˈpɪləʊ/"
           ],
-          "correctAnswer": "bed",
+          "correctAnswer": "Bed",
           "explanation": "\"bed\" is the correct vocabulary word for this picture.",
           "imageUrl": "https://images.pexels.com/photos/31967700/pexels-photo-31967700.jpeg?auto=compress&cs=tinysrgb&h=350",
           "ipa": "/bed/",
@@ -10371,10 +10371,10 @@
         {
           "question": "Which word best describes this image?",
           "choices": [
-            "pillow",
-            "sofa",
-            "wardrobe",
-            "blanket"
+            "Pillow",
+            "Sofa",
+            "Wardrobe",
+            "Blanket"
           ],
           "choiceIpas": [
             "",
@@ -10382,7 +10382,7 @@
             "",
             ""
           ],
-          "correctAnswer": "wardrobe",
+          "correctAnswer": "Wardrobe",
           "explanation": "\"wardrobe.\" is the correct vocabulary word for this picture.",
           "imageUrl": "https://images.pexels.com/photos/6316064/pexels-photo-6316064.jpeg?auto=compress&cs=tinysrgb&h=350",
           "ipa": "/ ˈwɔːdɹəʊb/",
@@ -11395,25 +11395,25 @@
       "channel": "@EnglishTreeTV",
       "transcriptText": "[Música] pencil pencil sharpener sharpener eraser eraser ruler ruler Book book scissors scissors chare Cher desk desk pen pen b [Aplausos] [Música] b pencil pencil sharpener sharpener eraser eraser ruler ruler Book Book scissors scissors chair chair desk desk pen he Back [Aplausos] [Música] [Música] back [Música] Oh",
       "words": [
-        "pencil",
-        "sharpener",
-        "eraser",
-        "ruler",
-        "book",
-        "scissors",
-        "chair",
-        "desk",
-        "pen",
-        "backpack"
+        "Pencil",
+        "Sharpener",
+        "Eraser",
+        "Ruler",
+        "Book",
+        "Scissors",
+        "Chair",
+        "Desk",
+        "Pen",
+        "Backpack"
       ],
       "questions": [
         {
           "question": "What writing tool contains graphite and has an eraser on top?",
           "choices": [
-            "sharpener",
-            "pencil sharpener",
-            "pencil",
-            "eraser"
+            "Sharpener",
+            "Pencil sharpener",
+            "Pencil",
+            "Eraser"
           ],
           "choiceIpas": [
             "",
@@ -11421,7 +11421,7 @@
             "",
             ""
           ],
-          "correctAnswer": "pencil",
+          "correctAnswer": "Pencil",
           "explanation": "Pencils are perfect for schoolwork because you can erase mistakes.",
           "imageUrl": "https://images.pexels.com/photos/8386693/pexels-photo-8386693.jpeg?auto=compress&cs=tinysrgb&h=350",
           "ipa": "/ˈpɛnsɪl/",
@@ -11430,10 +11430,10 @@
         {
           "question": "Which word best describes this image?",
           "choices": [
-            "sharpener",
-            "eraser",
-            "pencil",
-            "pencil sharpener"
+            "Sharpener",
+            "Eraser",
+            "Pencil",
+            "Pencil sharpener"
           ],
           "choiceIpas": [
             "/ˈʃɑː(ɹ)pənə(ɹ)/",
@@ -11441,7 +11441,7 @@
             "/ˈpɛnsɪl/",
             "/ˈpɛnsɪl/ /ˈʃɑː(ɹ)pənə(ɹ)/"
           ],
-          "correctAnswer": "sharpener",
+          "correctAnswer": "Sharpener",
           "explanation": "\"sharpener\" is the correct vocabulary word for this picture.",
           "imageUrl": "https://images.pexels.com/photos/237414/pexels-photo-237414.jpeg?auto=compress&cs=tinysrgb&h=350",
           "ipa": "/ˈʃɑː(ɹ)pənə(ɹ)/",
@@ -11450,10 +11450,10 @@
         {
           "question": "What small rubber tool is used to remove pencil marks?",
           "choices": [
-            "eraser",
-            "pencil",
-            "pencil sharpener",
-            "sharpener"
+            "Eraser",
+            "Pencil",
+            "Pencil sharpener",
+            "Sharpener"
           ],
           "choiceIpas": [
             "",
@@ -11461,7 +11461,7 @@
             "/ˈpɛnsɪl/",
             ""
           ],
-          "correctAnswer": "eraser",
+          "correctAnswer": "Eraser",
           "explanation": "An eraser rubs off pencil graphite to correct spelling mistakes.",
           "imageUrl": "https://images.pexels.com/photos/6193755/pexels-photo-6193755.jpeg?auto=compress&cs=tinysrgb&h=350",
           "ipa": "/ɪˈɹeɪzə/",
@@ -11470,10 +11470,10 @@
         {
           "question": "What straight strip of plastic or wood is used to measure length?",
           "choices": [
-            "pencil",
-            "sharpener",
-            "pencil sharpener",
-            "ruler"
+            "Pencil",
+            "Sharpener",
+            "Pencil sharpener",
+            "Ruler"
           ],
           "choiceIpas": [
             "/ˈpɛnsɪl/",
@@ -11481,7 +11481,7 @@
             "",
             ""
           ],
-          "correctAnswer": "ruler",
+          "correctAnswer": "Ruler",
           "explanation": "A ruler has marked measurements to help draw straight lines.",
           "imageUrl": "https://images.pexels.com/photos/29279407/pexels-photo-29279407.jpeg?auto=compress&cs=tinysrgb&h=350",
           "ipa": "/ˈɹuːlə(ɹ)/",
@@ -11490,10 +11490,10 @@
         {
           "question": "Which word best describes this image?",
           "choices": [
-            "pencil sharpener",
-            "pencil",
-            "sharpener",
-            "book"
+            "Pencil sharpener",
+            "Pencil",
+            "Sharpener",
+            "Book"
           ],
           "choiceIpas": [
             "/ˈpɛnsɪl/",
@@ -11501,7 +11501,7 @@
             "",
             ""
           ],
-          "correctAnswer": "book",
+          "correctAnswer": "Book",
           "explanation": "\"book\" is the correct vocabulary word for this picture.",
           "imageUrl": "https://images.pexels.com/photos/5905439/pexels-photo-5905439.jpeg?auto=compress&cs=tinysrgb&h=350",
           "ipa": "/buːk/",
@@ -11510,10 +11510,10 @@
         {
           "question": "Which word best describes this image?",
           "choices": [
-            "pencil sharpener",
-            "scissors",
-            "pencil",
-            "sharpener"
+            "Pencil sharpener",
+            "Scissors",
+            "Pencil",
+            "Sharpener"
           ],
           "choiceIpas": [
             "/ˈpɛnsɪl/",
@@ -11521,7 +11521,7 @@
             "",
             "/ˈʃɑː(ɹ)pənə(ɹ)/"
           ],
-          "correctAnswer": "scissors",
+          "correctAnswer": "Scissors",
           "explanation": "\"scissors\" is the correct vocabulary word for this picture.",
           "imageUrl": "https://images.pexels.com/photos/1212183/pexels-photo-1212183.jpeg?auto=compress&cs=tinysrgb&h=350",
           "ipa": "/ˈsɪzəz/",
@@ -11530,10 +11530,10 @@
         {
           "question": "Which word best describes this image?",
           "choices": [
-            "pencil sharpener",
-            "chair",
-            "sharpener",
-            "pencil"
+            "Pencil sharpener",
+            "Chair",
+            "Sharpener",
+            "Pencil"
           ],
           "choiceIpas": [
             "/ˈpɛnsɪl/ /ˈʃɑː(ɹ)pənə(ɹ)/",
@@ -11541,7 +11541,7 @@
             "",
             ""
           ],
-          "correctAnswer": "chair",
+          "correctAnswer": "Chair",
           "explanation": "\"chair\" is the correct vocabulary word for this picture.",
           "imageUrl": "https://images.pexels.com/photos/17466659/pexels-photo-17466659.jpeg?auto=compress&cs=tinysrgb&h=350",
           "ipa": "/t͡ʃɛə(ɹ)/",
@@ -11550,10 +11550,10 @@
         {
           "question": "Which word best describes this image?",
           "choices": [
-            "desk",
-            "pencil",
-            "sharpener",
-            "pencil sharpener"
+            "Desk",
+            "Pencil",
+            "Sharpener",
+            "Pencil sharpener"
           ],
           "choiceIpas": [
             "",
@@ -11561,7 +11561,7 @@
             "",
             ""
           ],
-          "correctAnswer": "desk",
+          "correctAnswer": "Desk",
           "explanation": "\"desk\" is the correct vocabulary word for this picture.",
           "imageUrl": "https://virco.com/wp-content/uploads/desk-280opnm-red70-brn96-gry02_0-1.png",
           "ipa": "/dɛsk/",
@@ -11570,10 +11570,10 @@
         {
           "question": "Which word best describes this image?",
           "choices": [
-            "sharpener",
-            "pencil sharpener",
-            "pencil",
-            "pen"
+            "Sharpener",
+            "Pencil sharpener",
+            "Pencil",
+            "Pen"
           ],
           "choiceIpas": [
             "/ˈʃɑː(ɹ)pənə(ɹ)/",
@@ -11581,7 +11581,7 @@
             "",
             ""
           ],
-          "correctAnswer": "pen",
+          "correctAnswer": "Pen",
           "explanation": "\"pen\" is the correct vocabulary word for this picture.",
           "imageUrl": "https://images.pexels.com/photos/19364472/pexels-photo-19364472.jpeg?auto=compress&cs=tinysrgb&h=350",
           "ipa": "/pɛn/",
@@ -11590,10 +11590,10 @@
         {
           "question": "What bag do we wear on our backs to carry books and school supplies?",
           "choices": [
-            "pencil",
-            "sharpener",
-            "pencil sharpener",
-            "backpack"
+            "Pencil",
+            "Sharpener",
+            "Pencil sharpener",
+            "Backpack"
           ],
           "choiceIpas": [
             "",
@@ -11601,7 +11601,7 @@
             "",
             ""
           ],
-          "correctAnswer": "backpack",
+          "correctAnswer": "Backpack",
           "explanation": "A backpack holds pencils, books, and other tools for learning.",
           "imageUrl": "https://images.pexels.com/photos/4907460/pexels-photo-4907460.jpeg?auto=compress&cs=tinysrgb&h=350",
           "ipa": "/ˈbæk.pæk/",
@@ -11809,25 +11809,25 @@
       "channel": "@EnglishTreeTV",
       "transcriptText": "[Música] pencil pencil sharpener sharpener eraser eraser ruler ruler Book book scissors scissors chare Cher desk desk pen pen b [Aplausos] [Música] b pencil pencil sharpener sharpener eraser eraser ruler ruler Book Book scissors scissors chair chair desk desk pen he Back [Aplausos] [Música] [Música] back [Música] Oh",
       "words": [
-        "pencil",
-        "sharpener",
-        "eraser",
-        "ruler",
-        "book",
-        "scissors",
-        "chair",
-        "desk",
-        "pen",
-        "backpack"
+        "Pencil",
+        "Sharpener",
+        "Eraser",
+        "Ruler",
+        "Book",
+        "Scissors",
+        "Chair",
+        "Desk",
+        "Pen",
+        "Backpack"
       ],
       "questions": [
         {
           "question": "What writing tool contains graphite and has an eraser on top?",
           "choices": [
-            "sharpener",
-            "pencil sharpener",
-            "pencil",
-            "eraser"
+            "Sharpener",
+            "Pencil sharpener",
+            "Pencil",
+            "Eraser"
           ],
           "choiceIpas": [
             "",
@@ -11835,7 +11835,7 @@
             "",
             ""
           ],
-          "correctAnswer": "pencil",
+          "correctAnswer": "Pencil",
           "explanation": "Pencils are perfect for schoolwork because you can erase mistakes.",
           "imageUrl": "https://images.pexels.com/photos/8386693/pexels-photo-8386693.jpeg?auto=compress&cs=tinysrgb&h=350",
           "ipa": "/ˈpɛnsɪl/",
@@ -11844,10 +11844,10 @@
         {
           "question": "Which word best describes this image?",
           "choices": [
-            "sharpener",
-            "eraser",
-            "pencil",
-            "pencil sharpener"
+            "Sharpener",
+            "Eraser",
+            "Pencil",
+            "Pencil sharpener"
           ],
           "choiceIpas": [
             "/ˈʃɑː(ɹ)pənə(ɹ)/",
@@ -11855,7 +11855,7 @@
             "/ˈpɛnsɪl/",
             "/ˈpɛnsɪl/ /ˈʃɑː(ɹ)pənə(ɹ)/"
           ],
-          "correctAnswer": "sharpener",
+          "correctAnswer": "Sharpener",
           "explanation": "\"sharpener\" is the correct vocabulary word for this picture.",
           "imageUrl": "https://images.pexels.com/photos/237414/pexels-photo-237414.jpeg?auto=compress&cs=tinysrgb&h=350",
           "ipa": "/ˈʃɑː(ɹ)pənə(ɹ)/",
@@ -11864,10 +11864,10 @@
         {
           "question": "What small rubber tool is used to remove pencil marks?",
           "choices": [
-            "eraser",
-            "pencil",
-            "pencil sharpener",
-            "sharpener"
+            "Eraser",
+            "Pencil",
+            "Pencil sharpener",
+            "Sharpener"
           ],
           "choiceIpas": [
             "",
@@ -11875,7 +11875,7 @@
             "/ˈpɛnsɪl/",
             ""
           ],
-          "correctAnswer": "eraser",
+          "correctAnswer": "Eraser",
           "explanation": "An eraser rubs off pencil graphite to correct spelling mistakes.",
           "imageUrl": "https://images.pexels.com/photos/6193755/pexels-photo-6193755.jpeg?auto=compress&cs=tinysrgb&h=350",
           "ipa": "/ɪˈɹeɪzə/",
@@ -11884,10 +11884,10 @@
         {
           "question": "What straight strip of plastic or wood is used to measure length?",
           "choices": [
-            "pencil",
-            "sharpener",
-            "pencil sharpener",
-            "ruler"
+            "Pencil",
+            "Sharpener",
+            "Pencil sharpener",
+            "Ruler"
           ],
           "choiceIpas": [
             "/ˈpɛnsɪl/",
@@ -11895,7 +11895,7 @@
             "",
             ""
           ],
-          "correctAnswer": "ruler",
+          "correctAnswer": "Ruler",
           "explanation": "A ruler has marked measurements to help draw straight lines.",
           "imageUrl": "https://images.pexels.com/photos/29279407/pexels-photo-29279407.jpeg?auto=compress&cs=tinysrgb&h=350",
           "ipa": "/ˈɹuːlə(ɹ)/",
@@ -11904,10 +11904,10 @@
         {
           "question": "Which word best describes this image?",
           "choices": [
-            "pencil sharpener",
-            "pencil",
-            "sharpener",
-            "book"
+            "Pencil sharpener",
+            "Pencil",
+            "Sharpener",
+            "Book"
           ],
           "choiceIpas": [
             "/ˈpɛnsɪl/",
@@ -11915,7 +11915,7 @@
             "",
             ""
           ],
-          "correctAnswer": "book",
+          "correctAnswer": "Book",
           "explanation": "\"book\" is the correct vocabulary word for this picture.",
           "imageUrl": "https://images.pexels.com/photos/5905439/pexels-photo-5905439.jpeg?auto=compress&cs=tinysrgb&h=350",
           "ipa": "/buːk/",
@@ -11924,10 +11924,10 @@
         {
           "question": "Which word best describes this image?",
           "choices": [
-            "pencil sharpener",
-            "scissors",
-            "pencil",
-            "sharpener"
+            "Pencil sharpener",
+            "Scissors",
+            "Pencil",
+            "Sharpener"
           ],
           "choiceIpas": [
             "/ˈpɛnsɪl/",
@@ -11935,7 +11935,7 @@
             "",
             "/ˈʃɑː(ɹ)pənə(ɹ)/"
           ],
-          "correctAnswer": "scissors",
+          "correctAnswer": "Scissors",
           "explanation": "\"scissors\" is the correct vocabulary word for this picture.",
           "imageUrl": "https://images.pexels.com/photos/1212183/pexels-photo-1212183.jpeg?auto=compress&cs=tinysrgb&h=350",
           "ipa": "/ˈsɪzəz/",
@@ -11944,10 +11944,10 @@
         {
           "question": "Which word best describes this image?",
           "choices": [
-            "pencil sharpener",
-            "chair",
-            "sharpener",
-            "pencil"
+            "Pencil sharpener",
+            "Chair",
+            "Sharpener",
+            "Pencil"
           ],
           "choiceIpas": [
             "/ˈpɛnsɪl/ /ˈʃɑː(ɹ)pənə(ɹ)/",
@@ -11955,7 +11955,7 @@
             "",
             ""
           ],
-          "correctAnswer": "chair",
+          "correctAnswer": "Chair",
           "explanation": "\"chair\" is the correct vocabulary word for this picture.",
           "imageUrl": "https://images.pexels.com/photos/17466659/pexels-photo-17466659.jpeg?auto=compress&cs=tinysrgb&h=350",
           "ipa": "/t͡ʃɛə(ɹ)/",
@@ -11964,10 +11964,10 @@
         {
           "question": "Which word best describes this image?",
           "choices": [
-            "desk",
-            "pencil",
-            "sharpener",
-            "pencil sharpener"
+            "Desk",
+            "Pencil",
+            "Sharpener",
+            "Pencil sharpener"
           ],
           "choiceIpas": [
             "",
@@ -11975,7 +11975,7 @@
             "",
             ""
           ],
-          "correctAnswer": "desk",
+          "correctAnswer": "Desk",
           "explanation": "\"desk\" is the correct vocabulary word for this picture.",
           "imageUrl": "https://virco.com/wp-content/uploads/desk-280opnm-red70-brn96-gry02_0-1.png",
           "ipa": "/dɛsk/",
@@ -11984,10 +11984,10 @@
         {
           "question": "Which word best describes this image?",
           "choices": [
-            "sharpener",
-            "pencil sharpener",
-            "pencil",
-            "pen"
+            "Sharpener",
+            "Pencil sharpener",
+            "Pencil",
+            "Pen"
           ],
           "choiceIpas": [
             "/ˈʃɑː(ɹ)pənə(ɹ)/",
@@ -11995,7 +11995,7 @@
             "",
             ""
           ],
-          "correctAnswer": "pen",
+          "correctAnswer": "Pen",
           "explanation": "\"pen\" is the correct vocabulary word for this picture.",
           "imageUrl": "https://images.pexels.com/photos/19364472/pexels-photo-19364472.jpeg?auto=compress&cs=tinysrgb&h=350",
           "ipa": "/pɛn/",
@@ -12004,10 +12004,10 @@
         {
           "question": "What bag do we wear on our backs to carry books and school supplies?",
           "choices": [
-            "pencil",
-            "sharpener",
-            "pencil sharpener",
-            "backpack"
+            "Pencil",
+            "Sharpener",
+            "Pencil sharpener",
+            "Backpack"
           ],
           "choiceIpas": [
             "",
@@ -12015,7 +12015,7 @@
             "",
             ""
           ],
-          "correctAnswer": "backpack",
+          "correctAnswer": "Backpack",
           "explanation": "A backpack holds pencils, books, and other tools for learning.",
           "imageUrl": "https://images.pexels.com/photos/4907460/pexels-photo-4907460.jpeg?auto=compress&cs=tinysrgb&h=350",
           "ipa": "/ˈbæk.pæk/",
@@ -12031,25 +12031,25 @@
       "channel": "@EnglishTreeTV",
       "transcriptText": "[Música] pencil pencil sharpener sharpener eraser eraser ruler ruler Book book scissors scissors chare Cher desk desk pen pen b [Aplausos] [Música] b pencil pencil sharpener sharpener eraser eraser ruler ruler Book Book scissors scissors chair chair desk desk pen he Back [Aplausos] [Música] [Música] back [Música] Oh",
       "words": [
-        "pencil",
-        "sharpener",
-        "eraser",
-        "ruler",
-        "book",
-        "scissors",
-        "chair",
-        "desk",
-        "pen",
-        "backpack"
+        "Pencil",
+        "Sharpener",
+        "Eraser",
+        "Ruler",
+        "Book",
+        "Scissors",
+        "Chair",
+        "Desk",
+        "Pen",
+        "Backpack"
       ],
       "questions": [
         {
           "question": "What writing tool contains graphite and has an eraser on top?",
           "choices": [
-            "sharpener",
-            "pencil sharpener",
-            "pencil",
-            "eraser"
+            "Sharpener",
+            "Pencil sharpener",
+            "Pencil",
+            "Eraser"
           ],
           "choiceIpas": [
             "",
@@ -12057,7 +12057,7 @@
             "",
             ""
           ],
-          "correctAnswer": "pencil",
+          "correctAnswer": "Pencil",
           "explanation": "Pencils are perfect for schoolwork because you can erase mistakes.",
           "imageUrl": "https://images.pexels.com/photos/8386693/pexels-photo-8386693.jpeg?auto=compress&cs=tinysrgb&h=350",
           "ipa": "/ˈpɛnsɪl/",
@@ -12066,10 +12066,10 @@
         {
           "question": "Which word best describes this image?",
           "choices": [
-            "sharpener",
-            "eraser",
-            "pencil",
-            "pencil sharpener"
+            "Sharpener",
+            "Eraser",
+            "Pencil",
+            "Pencil sharpener"
           ],
           "choiceIpas": [
             "/ˈʃɑː(ɹ)pənə(ɹ)/",
@@ -12077,7 +12077,7 @@
             "/ˈpɛnsɪl/",
             "/ˈpɛnsɪl/ /ˈʃɑː(ɹ)pənə(ɹ)/"
           ],
-          "correctAnswer": "sharpener",
+          "correctAnswer": "Sharpener",
           "explanation": "\"sharpener\" is the correct vocabulary word for this picture.",
           "imageUrl": "https://images.pexels.com/photos/237414/pexels-photo-237414.jpeg?auto=compress&cs=tinysrgb&h=350",
           "ipa": "/ˈʃɑː(ɹ)pənə(ɹ)/",
@@ -12086,10 +12086,10 @@
         {
           "question": "What small rubber tool is used to remove pencil marks?",
           "choices": [
-            "eraser",
-            "pencil",
-            "pencil sharpener",
-            "sharpener"
+            "Eraser",
+            "Pencil",
+            "Pencil sharpener",
+            "Sharpener"
           ],
           "choiceIpas": [
             "",
@@ -12097,7 +12097,7 @@
             "/ˈpɛnsɪl/",
             ""
           ],
-          "correctAnswer": "eraser",
+          "correctAnswer": "Eraser",
           "explanation": "An eraser rubs off pencil graphite to correct spelling mistakes.",
           "imageUrl": "https://images.pexels.com/photos/6193755/pexels-photo-6193755.jpeg?auto=compress&cs=tinysrgb&h=350",
           "ipa": "/ɪˈɹeɪzə/",
@@ -12106,10 +12106,10 @@
         {
           "question": "What straight strip of plastic or wood is used to measure length?",
           "choices": [
-            "pencil",
-            "sharpener",
-            "pencil sharpener",
-            "ruler"
+            "Pencil",
+            "Sharpener",
+            "Pencil sharpener",
+            "Ruler"
           ],
           "choiceIpas": [
             "/ˈpɛnsɪl/",
@@ -12117,7 +12117,7 @@
             "",
             ""
           ],
-          "correctAnswer": "ruler",
+          "correctAnswer": "Ruler",
           "explanation": "A ruler has marked measurements to help draw straight lines.",
           "imageUrl": "https://images.pexels.com/photos/29279407/pexels-photo-29279407.jpeg?auto=compress&cs=tinysrgb&h=350",
           "ipa": "/ˈɹuːlə(ɹ)/",
@@ -12126,10 +12126,10 @@
         {
           "question": "Which word best describes this image?",
           "choices": [
-            "pencil sharpener",
-            "pencil",
-            "sharpener",
-            "book"
+            "Pencil sharpener",
+            "Pencil",
+            "Sharpener",
+            "Book"
           ],
           "choiceIpas": [
             "/ˈpɛnsɪl/",
@@ -12137,7 +12137,7 @@
             "",
             ""
           ],
-          "correctAnswer": "book",
+          "correctAnswer": "Book",
           "explanation": "\"book\" is the correct vocabulary word for this picture.",
           "imageUrl": "https://images.pexels.com/photos/5905439/pexels-photo-5905439.jpeg?auto=compress&cs=tinysrgb&h=350",
           "ipa": "/buːk/",
@@ -12146,10 +12146,10 @@
         {
           "question": "Which word best describes this image?",
           "choices": [
-            "pencil sharpener",
-            "scissors",
-            "pencil",
-            "sharpener"
+            "Pencil sharpener",
+            "Scissors",
+            "Pencil",
+            "Sharpener"
           ],
           "choiceIpas": [
             "/ˈpɛnsɪl/",
@@ -12157,7 +12157,7 @@
             "",
             "/ˈʃɑː(ɹ)pənə(ɹ)/"
           ],
-          "correctAnswer": "scissors",
+          "correctAnswer": "Scissors",
           "explanation": "\"scissors\" is the correct vocabulary word for this picture.",
           "imageUrl": "https://images.pexels.com/photos/1212183/pexels-photo-1212183.jpeg?auto=compress&cs=tinysrgb&h=350",
           "ipa": "/ˈsɪzəz/",
@@ -12166,10 +12166,10 @@
         {
           "question": "Which word best describes this image?",
           "choices": [
-            "pencil sharpener",
-            "chair",
-            "sharpener",
-            "pencil"
+            "Pencil sharpener",
+            "Chair",
+            "Sharpener",
+            "Pencil"
           ],
           "choiceIpas": [
             "/ˈpɛnsɪl/ /ˈʃɑː(ɹ)pənə(ɹ)/",
@@ -12177,7 +12177,7 @@
             "",
             ""
           ],
-          "correctAnswer": "chair",
+          "correctAnswer": "Chair",
           "explanation": "\"chair\" is the correct vocabulary word for this picture.",
           "imageUrl": "https://images.pexels.com/photos/17466659/pexels-photo-17466659.jpeg?auto=compress&cs=tinysrgb&h=350",
           "ipa": "/t͡ʃɛə(ɹ)/",
@@ -12186,10 +12186,10 @@
         {
           "question": "Which word best describes this image?",
           "choices": [
-            "desk",
-            "pencil",
-            "sharpener",
-            "pencil sharpener"
+            "Desk",
+            "Pencil",
+            "Sharpener",
+            "Pencil sharpener"
           ],
           "choiceIpas": [
             "",
@@ -12197,7 +12197,7 @@
             "",
             ""
           ],
-          "correctAnswer": "desk",
+          "correctAnswer": "Desk",
           "explanation": "\"desk\" is the correct vocabulary word for this picture.",
           "imageUrl": "https://virco.com/wp-content/uploads/desk-280opnm-red70-brn96-gry02_0-1.png",
           "ipa": "/dɛsk/",
@@ -12206,10 +12206,10 @@
         {
           "question": "Which word best describes this image?",
           "choices": [
-            "sharpener",
-            "pencil sharpener",
-            "pencil",
-            "pen"
+            "Sharpener",
+            "Pencil sharpener",
+            "Pencil",
+            "Pen"
           ],
           "choiceIpas": [
             "/ˈʃɑː(ɹ)pənə(ɹ)/",
@@ -12217,7 +12217,7 @@
             "",
             ""
           ],
-          "correctAnswer": "pen",
+          "correctAnswer": "Pen",
           "explanation": "\"pen\" is the correct vocabulary word for this picture.",
           "imageUrl": "https://images.pexels.com/photos/19364472/pexels-photo-19364472.jpeg?auto=compress&cs=tinysrgb&h=350",
           "ipa": "/pɛn/",
@@ -12226,10 +12226,10 @@
         {
           "question": "What bag do we wear on our backs to carry books and school supplies?",
           "choices": [
-            "pencil",
-            "sharpener",
-            "pencil sharpener",
-            "backpack"
+            "Pencil",
+            "Sharpener",
+            "Pencil sharpener",
+            "Backpack"
           ],
           "choiceIpas": [
             "",
@@ -12237,7 +12237,7 @@
             "",
             ""
           ],
-          "correctAnswer": "backpack",
+          "correctAnswer": "Backpack",
           "explanation": "A backpack holds pencils, books, and other tools for learning.",
           "imageUrl": "https://images.pexels.com/photos/4907460/pexels-photo-4907460.jpeg?auto=compress&cs=tinysrgb&h=350",
           "ipa": "/ˈbæk.pæk/",
@@ -13305,25 +13305,25 @@
       "channel": "@JourneyEnglishTalk",
       "transcriptText": "What is this called? >> [music] >> Paint. What is this called? [music] Canvas. What [music] is this called? Clay. What is this [music] called? Sculpture. What [music] is this called? Sketch. >> [music] >> What is this called? Portrait. What is [music] this called? Gallery. What is this called? >> [music] >> Museum. What is this called? >> [music] >> Charcoal. What is this called? Watercolor.",
       "words": [
-        "paint",
-        "canvas",
-        "clay",
-        "sculpture",
-        "sketch",
-        "portrait",
-        "gallery",
-        "museum",
-        "charcoal",
-        "watercolor"
+        "Paint",
+        "Canvas",
+        "Clay",
+        "Sculpture",
+        "Sketch",
+        "Portrait",
+        "Gallery",
+        "Museum",
+        "Charcoal",
+        "Watercolor"
       ],
       "questions": [
         {
           "question": "Which word best describes this image?",
           "choices": [
-            "clay",
-            "sculpture",
-            "canvas",
-            "paint"
+            "Clay",
+            "Sculpture",
+            "Canvas",
+            "Paint"
           ],
           "choiceIpas": [
             "/kleɪ/",
@@ -13331,7 +13331,7 @@
             "",
             ""
           ],
-          "correctAnswer": "paint",
+          "correctAnswer": "Paint",
           "explanation": "\"paint\" is the correct vocabulary word for this picture.",
           "imageUrl": "https://images.pexels.com/photos/13343865/pexels-photo-13343865.jpeg?auto=compress&cs=tinysrgb&h=350",
           "ipa": "/peɪnt/",
@@ -13340,10 +13340,10 @@
         {
           "question": "Which word best describes this image?",
           "choices": [
-            "paint",
-            "canvas",
-            "clay",
-            "sculpture"
+            "Paint",
+            "Canvas",
+            "Clay",
+            "Sculpture"
           ],
           "choiceIpas": [
             "/peɪnt/",
@@ -13351,7 +13351,7 @@
             "/kleɪ/",
             ""
           ],
-          "correctAnswer": "canvas",
+          "correctAnswer": "Canvas",
           "explanation": "\"canvas\" is the correct vocabulary word for this picture.",
           "imageUrl": "https://images.pexels.com/photos/31246805/pexels-photo-31246805.jpeg?auto=compress&cs=tinysrgb&h=350",
           "ipa": "/ˈkæn.vəs/",
@@ -13360,10 +13360,10 @@
         {
           "question": "Which word best describes this image?",
           "choices": [
-            "paint",
-            "sculpture",
-            "canvas",
-            "clay"
+            "Paint",
+            "Sculpture",
+            "Canvas",
+            "Clay"
           ],
           "choiceIpas": [
             "/peɪnt/",
@@ -13371,7 +13371,7 @@
             "/ˈkæn.vəs/",
             "/kleɪ/"
           ],
-          "correctAnswer": "clay",
+          "correctAnswer": "Clay",
           "explanation": "\"clay\" is the correct vocabulary word for this picture.",
           "imageUrl": "https://images.pexels.com/photos/9304544/pexels-photo-9304544.jpeg?auto=compress&cs=tinysrgb&h=350",
           "ipa": "/kleɪ/",
@@ -13380,10 +13380,10 @@
         {
           "question": "Which word best describes this image?",
           "choices": [
-            "canvas",
-            "sculpture",
-            "paint",
-            "clay"
+            "Canvas",
+            "Sculpture",
+            "Paint",
+            "Clay"
           ],
           "choiceIpas": [
             "",
@@ -13391,7 +13391,7 @@
             "",
             ""
           ],
-          "correctAnswer": "sculpture",
+          "correctAnswer": "Sculpture",
           "explanation": "\"sculpture\" is the correct vocabulary word for this picture.",
           "imageUrl": "https://images.pexels.com/photos/37109655/pexels-photo-37109655.jpeg?auto=compress&cs=tinysrgb&h=350",
           "ipa": "",
@@ -13400,10 +13400,10 @@
         {
           "question": "Which word best describes this image?",
           "choices": [
-            "clay",
-            "paint",
-            "sketch",
-            "canvas"
+            "Clay",
+            "Paint",
+            "Sketch",
+            "Canvas"
           ],
           "choiceIpas": [
             "",
@@ -13411,7 +13411,7 @@
             "",
             ""
           ],
-          "correctAnswer": "sketch",
+          "correctAnswer": "Sketch",
           "explanation": "\"sketch\" is the correct vocabulary word for this picture.",
           "imageUrl": "https://images.pexels.com/photos/14849507/pexels-photo-14849507.jpeg?auto=compress&cs=tinysrgb&h=350",
           "ipa": "/skɛtʃ/",
@@ -13420,10 +13420,10 @@
         {
           "question": "Which word best describes this image?",
           "choices": [
-            "portrait",
-            "paint",
-            "canvas",
-            "clay"
+            "Portrait",
+            "Paint",
+            "Canvas",
+            "Clay"
           ],
           "choiceIpas": [
             "/ˈpɔːtɹeɪt/",
@@ -13431,7 +13431,7 @@
             "",
             ""
           ],
-          "correctAnswer": "portrait",
+          "correctAnswer": "Portrait",
           "explanation": "\"portrait\" is the correct vocabulary word for this picture.",
           "imageUrl": "https://images.pexels.com/photos/18853747/pexels-photo-18853747.jpeg?auto=compress&cs=tinysrgb&h=350",
           "ipa": "/ˈpɔːtɹeɪt/",
@@ -13440,10 +13440,10 @@
         {
           "question": "Which word best describes this image?",
           "choices": [
-            "clay",
-            "canvas",
-            "paint",
-            "gallery"
+            "Clay",
+            "Canvas",
+            "Paint",
+            "Gallery"
           ],
           "choiceIpas": [
             "",
@@ -13451,7 +13451,7 @@
             "",
             ""
           ],
-          "correctAnswer": "gallery",
+          "correctAnswer": "Gallery",
           "explanation": "\"gallery\" is the correct vocabulary word for this picture.",
           "imageUrl": "https://images.pexels.com/photos/13432768/pexels-photo-13432768.jpeg?auto=compress&cs=tinysrgb&h=350",
           "ipa": "/ˈɡæləɹi/",
@@ -13460,10 +13460,10 @@
         {
           "question": "Which word best describes this image?",
           "choices": [
-            "clay",
-            "museum",
-            "paint",
-            "canvas"
+            "Clay",
+            "Museum",
+            "Paint",
+            "Canvas"
           ],
           "choiceIpas": [
             "",
@@ -13471,7 +13471,7 @@
             "",
             ""
           ],
-          "correctAnswer": "museum",
+          "correctAnswer": "Museum",
           "explanation": "\"museum\" is the correct vocabulary word for this picture.",
           "imageUrl": "https://images.pexels.com/photos/20268598/pexels-photo-20268598.jpeg?auto=compress&cs=tinysrgb&h=350",
           "ipa": "/mjuːˈziːəm/",
@@ -13480,10 +13480,10 @@
         {
           "question": "Which word best describes this image?",
           "choices": [
-            "charcoal",
-            "clay",
-            "paint",
-            "canvas"
+            "Charcoal",
+            "Clay",
+            "Paint",
+            "Canvas"
           ],
           "choiceIpas": [
             "/ˈtʃɑː.kəʊl/",
@@ -13491,7 +13491,7 @@
             "/peɪnt/",
             "/ˈkæn.vəs/"
           ],
-          "correctAnswer": "charcoal",
+          "correctAnswer": "Charcoal",
           "explanation": "\"charcoal\" is the correct vocabulary word for this picture.",
           "imageUrl": "https://images.pexels.com/photos/8021316/pexels-photo-8021316.jpeg?auto=compress&cs=tinysrgb&h=350",
           "ipa": "/ˈtʃɑː.kəʊl/",
@@ -13500,10 +13500,10 @@
         {
           "question": "Which word best describes this image?",
           "choices": [
-            "watercolor",
-            "paint",
-            "clay",
-            "canvas"
+            "Watercolor",
+            "Paint",
+            "Clay",
+            "Canvas"
           ],
           "choiceIpas": [
             "",
@@ -13511,7 +13511,7 @@
             "",
             ""
           ],
-          "correctAnswer": "watercolor",
+          "correctAnswer": "Watercolor",
           "explanation": "\"watercolor\" is the correct vocabulary word for this picture.",
           "imageUrl": "https://images.pexels.com/photos/30552130/pexels-photo-30552130.jpeg?auto=compress&cs=tinysrgb&h=350",
           "ipa": "",
@@ -13527,25 +13527,25 @@
       "channel": "@JourneyEnglishTalk",
       "transcriptText": "What is this called? >> [music] >> Paint. What is this called? [music] Canvas. What [music] is this called? Clay. What is this [music] called? Sculpture. What [music] is this called? Sketch. >> [music] >> What is this called? Portrait. What is [music] this called? Gallery. What is this called? >> [music] >> Museum. What is this called? >> [music] >> Charcoal. What is this called? Watercolor.",
       "words": [
-        "paint",
-        "canvas",
-        "clay",
-        "sculpture",
-        "sketch",
-        "portrait",
-        "gallery",
-        "museum",
-        "charcoal",
-        "watercolor"
+        "Paint",
+        "Canvas",
+        "Clay",
+        "Sculpture",
+        "Sketch",
+        "Portrait",
+        "Gallery",
+        "Museum",
+        "Charcoal",
+        "Watercolor"
       ],
       "questions": [
         {
           "question": "Which word best describes this image?",
           "choices": [
-            "clay",
-            "sculpture",
-            "canvas",
-            "paint"
+            "Clay",
+            "Sculpture",
+            "Canvas",
+            "Paint"
           ],
           "choiceIpas": [
             "/kleɪ/",
@@ -13553,7 +13553,7 @@
             "",
             ""
           ],
-          "correctAnswer": "paint",
+          "correctAnswer": "Paint",
           "explanation": "\"paint\" is the correct vocabulary word for this picture.",
           "imageUrl": "https://images.pexels.com/photos/13343865/pexels-photo-13343865.jpeg?auto=compress&cs=tinysrgb&h=350",
           "ipa": "/peɪnt/",
@@ -13562,10 +13562,10 @@
         {
           "question": "Which word best describes this image?",
           "choices": [
-            "paint",
-            "canvas",
-            "clay",
-            "sculpture"
+            "Paint",
+            "Canvas",
+            "Clay",
+            "Sculpture"
           ],
           "choiceIpas": [
             "/peɪnt/",
@@ -13573,7 +13573,7 @@
             "/kleɪ/",
             ""
           ],
-          "correctAnswer": "canvas",
+          "correctAnswer": "Canvas",
           "explanation": "\"canvas\" is the correct vocabulary word for this picture.",
           "imageUrl": "https://images.pexels.com/photos/31246805/pexels-photo-31246805.jpeg?auto=compress&cs=tinysrgb&h=350",
           "ipa": "/ˈkæn.vəs/",
@@ -13582,10 +13582,10 @@
         {
           "question": "Which word best describes this image?",
           "choices": [
-            "paint",
-            "sculpture",
-            "canvas",
-            "clay"
+            "Paint",
+            "Sculpture",
+            "Canvas",
+            "Clay"
           ],
           "choiceIpas": [
             "/peɪnt/",
@@ -13593,7 +13593,7 @@
             "/ˈkæn.vəs/",
             "/kleɪ/"
           ],
-          "correctAnswer": "clay",
+          "correctAnswer": "Clay",
           "explanation": "\"clay\" is the correct vocabulary word for this picture.",
           "imageUrl": "https://images.pexels.com/photos/9304544/pexels-photo-9304544.jpeg?auto=compress&cs=tinysrgb&h=350",
           "ipa": "/kleɪ/",
@@ -13602,10 +13602,10 @@
         {
           "question": "Which word best describes this image?",
           "choices": [
-            "canvas",
-            "sculpture",
-            "paint",
-            "clay"
+            "Canvas",
+            "Sculpture",
+            "Paint",
+            "Clay"
           ],
           "choiceIpas": [
             "",
@@ -13613,7 +13613,7 @@
             "",
             ""
           ],
-          "correctAnswer": "sculpture",
+          "correctAnswer": "Sculpture",
           "explanation": "\"sculpture\" is the correct vocabulary word for this picture.",
           "imageUrl": "https://images.pexels.com/photos/37109655/pexels-photo-37109655.jpeg?auto=compress&cs=tinysrgb&h=350",
           "ipa": "",
@@ -13622,10 +13622,10 @@
         {
           "question": "Which word best describes this image?",
           "choices": [
-            "clay",
-            "paint",
-            "sketch",
-            "canvas"
+            "Clay",
+            "Paint",
+            "Sketch",
+            "Canvas"
           ],
           "choiceIpas": [
             "",
@@ -13633,7 +13633,7 @@
             "",
             ""
           ],
-          "correctAnswer": "sketch",
+          "correctAnswer": "Sketch",
           "explanation": "\"sketch\" is the correct vocabulary word for this picture.",
           "imageUrl": "https://images.pexels.com/photos/14849507/pexels-photo-14849507.jpeg?auto=compress&cs=tinysrgb&h=350",
           "ipa": "/skɛtʃ/",
@@ -13642,10 +13642,10 @@
         {
           "question": "Which word best describes this image?",
           "choices": [
-            "portrait",
-            "paint",
-            "canvas",
-            "clay"
+            "Portrait",
+            "Paint",
+            "Canvas",
+            "Clay"
           ],
           "choiceIpas": [
             "/ˈpɔːtɹeɪt/",
@@ -13653,7 +13653,7 @@
             "",
             ""
           ],
-          "correctAnswer": "portrait",
+          "correctAnswer": "Portrait",
           "explanation": "\"portrait\" is the correct vocabulary word for this picture.",
           "imageUrl": "https://images.pexels.com/photos/18853747/pexels-photo-18853747.jpeg?auto=compress&cs=tinysrgb&h=350",
           "ipa": "/ˈpɔːtɹeɪt/",
@@ -13662,10 +13662,10 @@
         {
           "question": "Which word best describes this image?",
           "choices": [
-            "clay",
-            "canvas",
-            "paint",
-            "gallery"
+            "Clay",
+            "Canvas",
+            "Paint",
+            "Gallery"
           ],
           "choiceIpas": [
             "",
@@ -13673,7 +13673,7 @@
             "",
             ""
           ],
-          "correctAnswer": "gallery",
+          "correctAnswer": "Gallery",
           "explanation": "\"gallery\" is the correct vocabulary word for this picture.",
           "imageUrl": "https://images.pexels.com/photos/13432768/pexels-photo-13432768.jpeg?auto=compress&cs=tinysrgb&h=350",
           "ipa": "/ˈɡæləɹi/",
@@ -13682,10 +13682,10 @@
         {
           "question": "Which word best describes this image?",
           "choices": [
-            "clay",
-            "museum",
-            "paint",
-            "canvas"
+            "Clay",
+            "Museum",
+            "Paint",
+            "Canvas"
           ],
           "choiceIpas": [
             "",
@@ -13693,7 +13693,7 @@
             "",
             ""
           ],
-          "correctAnswer": "museum",
+          "correctAnswer": "Museum",
           "explanation": "\"museum\" is the correct vocabulary word for this picture.",
           "imageUrl": "https://images.pexels.com/photos/20268598/pexels-photo-20268598.jpeg?auto=compress&cs=tinysrgb&h=350",
           "ipa": "/mjuːˈziːəm/",
@@ -13702,10 +13702,10 @@
         {
           "question": "Which word best describes this image?",
           "choices": [
-            "charcoal",
-            "clay",
-            "paint",
-            "canvas"
+            "Charcoal",
+            "Clay",
+            "Paint",
+            "Canvas"
           ],
           "choiceIpas": [
             "/ˈtʃɑː.kəʊl/",
@@ -13713,7 +13713,7 @@
             "/peɪnt/",
             "/ˈkæn.vəs/"
           ],
-          "correctAnswer": "charcoal",
+          "correctAnswer": "Charcoal",
           "explanation": "\"charcoal\" is the correct vocabulary word for this picture.",
           "imageUrl": "https://images.pexels.com/photos/8021316/pexels-photo-8021316.jpeg?auto=compress&cs=tinysrgb&h=350",
           "ipa": "/ˈtʃɑː.kəʊl/",
@@ -13722,10 +13722,10 @@
         {
           "question": "Which word best describes this image?",
           "choices": [
-            "watercolor",
-            "paint",
-            "clay",
-            "canvas"
+            "Watercolor",
+            "Paint",
+            "Clay",
+            "Canvas"
           ],
           "choiceIpas": [
             "",
@@ -13733,7 +13733,7 @@
             "",
             ""
           ],
-          "correctAnswer": "watercolor",
+          "correctAnswer": "Watercolor",
           "explanation": "\"watercolor\" is the correct vocabulary word for this picture.",
           "imageUrl": "https://images.pexels.com/photos/30552130/pexels-photo-30552130.jpeg?auto=compress&cs=tinysrgb&h=350",
           "ipa": "",
@@ -15582,11 +15582,11 @@
       "question": "Which expression represents '5 less than a number y'?",
       "choices": [
         "5 - y",
-        "y - 5",
+        "Y - 5",
         "5y",
-        "y / 5"
+        "Y / 5"
       ],
-      "correctAnswer": "y - 5",
+      "correctAnswer": "Y - 5",
       "hint": "Think about taking 5 away from y.",
       "explanation": "'5 less than y' means you start with y and subtract 5, which is y - 5."
     },
@@ -15647,7 +15647,7 @@
       "choices": [
         "3p + 4",
         "3p + 12",
-        "p + 12",
+        "P + 12",
         "12p"
       ],
       "correctAnswer": "3p + 12",
@@ -16157,12 +16157,12 @@
       "difficulty": "easy",
       "question": "Simplify: x^3 * x^4 = ?",
       "choices": [
-        "x^7",
-        "x^12",
-        "x^1",
+        "X^7",
+        "X^12",
+        "X^1",
         "2x^7"
       ],
-      "correctAnswer": "x^7",
+      "correctAnswer": "X^7",
       "hint": "When multiplying like bases, add the exponents together.",
       "explanation": "x^3 * x^4 = x^(3 + 4) = x^7."
     },
@@ -16349,12 +16349,12 @@
       "difficulty": "easy",
       "question": "Find the vertex form axis of symmetry for y = (x - 4)^2 + 3.",
       "choices": [
-        "x = -4",
-        "x = 4",
-        "x = 3",
-        "x = -3"
+        "X = -4",
+        "X = 4",
+        "X = 3",
+        "X = -3"
       ],
-      "correctAnswer": "x = 4",
+      "correctAnswer": "X = 4",
       "hint": "The vertex is at (h, k) in y = (x - h)^2 + k. Axis is x = h.",
       "explanation": "The vertex is (4, 3), so axis is x = 4."
     },
@@ -16365,12 +16365,12 @@
       "difficulty": "medium",
       "question": "Solve the quadratic equation: x^2 - 5x + 6 = 0.",
       "choices": [
-        "x = 2, 3",
-        "x = -2, -3",
-        "x = 1, 6",
-        "x = -1, -6"
+        "X = 2, 3",
+        "X = -2, -3",
+        "X = 1, 6",
+        "X = -1, -6"
       ],
-      "correctAnswer": "x = 2, 3",
+      "correctAnswer": "X = 2, 3",
       "hint": "Factor the quadratic into (x - 2)(x - 3) = 0 and solve.",
       "explanation": "Factors are (x - 2)(x - 3) = 0, giving roots x = 2 and x = 3."
     },
@@ -16397,12 +16397,12 @@
       "difficulty": "hard",
       "question": "Solve using the quadratic formula: x^2 - 3x - 4 = 0.",
       "choices": [
-        "x = -1, 4",
-        "x = 1, -4",
-        "x = 2, -2",
-        "x = 0, 3"
+        "X = -1, 4",
+        "X = 1, -4",
+        "X = 2, -2",
+        "X = 0, 3"
       ],
-      "correctAnswer": "x = -1, 4",
+      "correctAnswer": "X = -1, 4",
       "hint": "Factor into (x - 4)(x + 1) = 0 or use x = [-b +- sqrt(b^2 - 4ac)] / 2a.",
       "explanation": "(x - 4)(x + 1) = 0 leads to roots x = 4 and x = -1."
     },
@@ -16525,12 +16525,12 @@
       "difficulty": "easy",
       "question": "Solve for x: x - 3 < 5.",
       "choices": [
-        "x < 2",
-        "x < 8",
-        "x > 8",
-        "x > 2"
+        "X < 2",
+        "X < 8",
+        "X > 8",
+        "X > 2"
       ],
-      "correctAnswer": "x < 8",
+      "correctAnswer": "X < 8",
       "hint": "Add 3 to both sides of the inequality sign.",
       "explanation": "x < 5 + 3 => x < 8."
     },
@@ -16541,12 +16541,12 @@
       "difficulty": "easy",
       "question": "Solve for x: 3x >= 12.",
       "choices": [
-        "x >= 4",
-        "x <= 4",
-        "x >= 36",
-        "x <= 36"
+        "X >= 4",
+        "X <= 4",
+        "X >= 36",
+        "X <= 36"
       ],
-      "correctAnswer": "x >= 4",
+      "correctAnswer": "X >= 4",
       "hint": "Divide both sides by 3.",
       "explanation": "x >= 12 / 3 => x >= 4."
     },
@@ -16557,12 +16557,12 @@
       "difficulty": "medium",
       "question": "Solve for x: -2x < 10.",
       "choices": [
-        "x < -5",
-        "x > -5",
-        "x < 5",
-        "x > 5"
+        "X < -5",
+        "X > -5",
+        "X < 5",
+        "X > 5"
       ],
-      "correctAnswer": "x > -5",
+      "correctAnswer": "X > -5",
       "hint": "When dividing or multiplying by a negative number, flip the inequality sign!",
       "explanation": "Dividing by -2: x > 10 / -2 => x > -5."
     },
@@ -16573,12 +16573,12 @@
       "difficulty": "medium",
       "question": "Solve the inequality: 2x + 5 <= 11.",
       "choices": [
-        "x <= 3",
-        "x <= 8",
-        "x >= 3",
-        "x >= 8"
+        "X <= 3",
+        "X <= 8",
+        "X >= 3",
+        "X >= 8"
       ],
-      "correctAnswer": "x <= 3",
+      "correctAnswer": "X <= 3",
       "hint": "Subtract 5 from both sides, then divide by 2.",
       "explanation": "2x <= 6 => x <= 3."
     },
@@ -16607,7 +16607,7 @@
       "choices": [
         "1 <= x <= 7",
         "-1 <= x <= 7",
-        "x <= 7",
+        "X <= 7",
         "1 < x < 7"
       ],
       "correctAnswer": "1 <= x <= 7",
@@ -16688,7 +16688,7 @@
         "0",
         "1",
         "2",
-        "tan^2(x)"
+        "Tan^2(x)"
       ],
       "correctAnswer": "1",
       "hint": "This is the fundamental Pythagorean trigonometric identity.",
@@ -16717,9 +16717,9 @@
       "difficulty": "easy",
       "question": "What is the formula for the circumference of a circle?",
       "choices": [
-        "pi * r^2",
+        "Pi * r^2",
         "2 * pi * r",
-        "pi * d^2",
+        "Pi * d^2",
         "2 * pi * d"
       ],
       "correctAnswer": "2 * pi * r",
@@ -16877,12 +16877,12 @@
       "difficulty": "hard",
       "question": "Find the equation of a line with slope 2 passing through (1, 5).",
       "choices": [
-        "y = 2x + 3",
-        "y = 2x + 5",
-        "y = 2x + 4",
-        "y = 2x - 3"
+        "Y = 2x + 3",
+        "Y = 2x + 5",
+        "Y = 2x + 4",
+        "Y = 2x - 3"
       ],
-      "correctAnswer": "y = 2x + 3",
+      "correctAnswer": "Y = 2x + 3",
       "hint": "Use point-slope form: y - y1 = m(x - x1). y - 5 = 2(x - 1).",
       "explanation": "y - 5 = 2x - 2 => y = 2x + 3."
     },
@@ -16911,7 +16911,7 @@
       "choices": [
         "1",
         "-1",
-        "sqrt(-1)",
+        "Sqrt(-1)",
         "0"
       ],
       "correctAnswer": "-1",
@@ -16943,7 +16943,7 @@
       "choices": [
         "1",
         "-1",
-        "i",
+        "I",
         "-i"
       ],
       "correctAnswer": "-i",
@@ -16976,7 +16976,7 @@
         "5",
         "7",
         "25",
-        "sqrt(7)"
+        "Sqrt(7)"
       ],
       "correctAnswer": "5",
       "hint": "Use absolute value formula: |a + bi| = sqrt(a^2 + b^2).",
@@ -16991,7 +16991,7 @@
       "choices": [
         "1",
         "-1",
-        "i",
+        "I",
         "-i"
       ],
       "correctAnswer": "1",
@@ -17037,12 +17037,12 @@
       "difficulty": "medium",
       "question": "Expand: log(x * y) = ?",
       "choices": [
-        "log(x) * log(y)",
-        "log(x) + log(y)",
-        "log(x) - log(y)",
-        "y * log(x)"
+        "Log(x) * log(y)",
+        "Log(x) + log(y)",
+        "Log(x) - log(y)",
+        "Y * log(x)"
       ],
-      "correctAnswer": "log(x) + log(y)",
+      "correctAnswer": "Log(x) + log(y)",
       "hint": "The log of a product is the sum of the logs.",
       "explanation": "Product rule: log(xy) = log(x) + log(y)."
     },
@@ -17087,8 +17087,8 @@
       "choices": [
         "1",
         "5",
-        "e",
-        "ln(5)"
+        "E",
+        "Ln(5)"
       ],
       "correctAnswer": "5",
       "hint": "The natural log ln is the base-e logarithm. ln(e^x) = x.",
@@ -17231,8 +17231,8 @@
       "choices": [
         "0",
         "1",
-        "infinity",
-        "undefined"
+        "Infinity",
+        "Undefined"
       ],
       "correctAnswer": "0",
       "hint": "Think about what happens to 1 divided by an extremely large number.",
@@ -17248,7 +17248,7 @@
         "0",
         "2",
         "4",
-        "undefined"
+        "Undefined"
       ],
       "correctAnswer": "4",
       "hint": "Factor numerator first: (x - 2)(x + 2). Simplify by cancelling (x - 2).",
@@ -17264,7 +17264,7 @@
         "0",
         "1.5",
         "3",
-        "infinity"
+        "Infinity"
       ],
       "correctAnswer": "1.5",
       "hint": "Compare leading coefficients of the highest degree terms (3x^2 / 2x^2).",
@@ -17279,8 +17279,8 @@
       "choices": [
         "0",
         "1",
-        "undefined",
-        "pi"
+        "Undefined",
+        "Pi"
       ],
       "correctAnswer": "1",
       "hint": "This is a fundamental limit theorem in calculus.",
@@ -17293,10 +17293,10 @@
       "difficulty": "easy",
       "question": "What is the derivative of x^2? (Find d/dx x^2)",
       "choices": [
-        "x",
+        "X",
         "2x",
         "2",
-        "x^3"
+        "X^3"
       ],
       "correctAnswer": "2x",
       "hint": "Use the Power Rule: d/dx (x^n) = n * x^(n - 1).",
@@ -17312,7 +17312,7 @@
         "0",
         "5",
         "1",
-        "x"
+        "X"
       ],
       "correctAnswer": "0",
       "hint": "A constant function has a slope of zero everywhere.",
@@ -17341,12 +17341,12 @@
       "difficulty": "medium",
       "question": "What is the derivative of sin(x)?",
       "choices": [
-        "cos(x)",
+        "Cos(x)",
         "-cos(x)",
-        "sin(x)",
+        "Sin(x)",
         "-sin(x)"
       ],
-      "correctAnswer": "cos(x)",
+      "correctAnswer": "Cos(x)",
       "hint": "The rate of change of sine is represented by cosine.",
       "explanation": "d/dx sin(x) = cos(x)."
     },
@@ -17358,9 +17358,9 @@
       "question": "Find the derivative of f(x) = ln(x).",
       "choices": [
         "1/x",
-        "e^x",
+        "E^x",
         "1",
-        "x"
+        "X"
       ],
       "correctAnswer": "1/x",
       "hint": "The slope of natural logarithm at x is the reciprocal of x.",
@@ -17373,7 +17373,7 @@
       "difficulty": "hard",
       "question": "Find the derivative of f(x) = e^(3x).",
       "choices": [
-        "e^(3x)",
+        "E^(3x)",
         "3 * e^(3x)",
         "3x * e^(3x-1)",
         "3"
@@ -17389,12 +17389,12 @@
       "difficulty": "easy",
       "question": "Find the indefinite integral: integral of 2x dx = ?",
       "choices": [
-        "x^2 + C",
+        "X^2 + C",
         "2x^2 + C",
-        "x + C",
+        "X + C",
         "2 + C"
       ],
-      "correctAnswer": "x^2 + C",
+      "correctAnswer": "X^2 + C",
       "hint": "Think: what function has a derivative of 2x? Remember to add the constant + C.",
       "explanation": "d/dx(x^2 + C) = 2x. Thus, the integral is x^2 + C."
     },
@@ -17405,12 +17405,12 @@
       "difficulty": "easy",
       "question": "Find the integral: integral of 1 dx = ?",
       "choices": [
-        "x + C",
+        "X + C",
         "1 + C",
         "0 + C",
-        "x^2 + C"
+        "X^2 + C"
       ],
-      "correctAnswer": "x + C",
+      "correctAnswer": "X + C",
       "hint": "What function has a derivative of 1?",
       "explanation": "d/dx(x + C) = 1. Thus, the integral is x + C."
     },
@@ -17437,12 +17437,12 @@
       "difficulty": "medium",
       "question": "Find the indefinite integral: integral of cos(x) dx = ?",
       "choices": [
-        "sin(x) + C",
+        "Sin(x) + C",
         "-sin(x) + C",
-        "cos(x) + C",
+        "Cos(x) + C",
         "-cos(x) + C"
       ],
-      "correctAnswer": "sin(x) + C",
+      "correctAnswer": "Sin(x) + C",
       "hint": "What function has a derivative of cos(x)?",
       "explanation": "d/dx(sin(x)) = cos(x), so the integral is sin(x) + C."
     },
@@ -17453,12 +17453,12 @@
       "difficulty": "hard",
       "question": "Find the indefinite integral: integral of 1/x dx (for x > 0).",
       "choices": [
-        "ln(x) + C",
-        "e^x + C",
+        "Ln(x) + C",
+        "E^x + C",
         "-1/x^2 + C",
-        "x + C"
+        "X + C"
       ],
-      "correctAnswer": "ln(x) + C",
+      "correctAnswer": "Ln(x) + C",
       "hint": "What function has a derivative of 1/x?",
       "explanation": "d/dx(ln(x)) = 1/x, so the integral is ln(x) + C."
     },

@@ -29,25 +29,25 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
         "channel": "@EnglishTreeTV",
         "transcriptText": "[Música] pencil pencil sharpener sharpener eraser eraser ruler ruler Book book scissors scissors chare Cher desk desk pen pen b [Aplausos] [Música] b pencil pencil sharpener sharpener eraser eraser ruler ruler Book Book scissors scissors chair chair desk desk pen he Back [Aplausos] [Música] [Música] back [Música] Oh",
         "words": [
-            "pencil",
-            "sharpener",
-            "eraser",
-            "ruler",
-            "book",
-            "scissors",
-            "chair",
-            "desk",
-            "pen",
-            "backpack"
+            "Pencil",
+            "Sharpener",
+            "Eraser",
+            "Ruler",
+            "Book",
+            "Scissors",
+            "Chair",
+            "Desk",
+            "Pen",
+            "Backpack"
         ],
         "questions": [
             {
                 "question": "What writing tool contains graphite and has an eraser on top?",
                 "choices": [
-                    "sharpener",
-                    "pencil sharpener",
-                    "pencil",
-                    "eraser"
+                    "Sharpener",
+                    "Pencil sharpener",
+                    "Pencil",
+                    "Eraser"
                 ],
                 "choiceIpas": [
                     "",
@@ -55,7 +55,7 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                     "",
                     ""
                 ],
-                "correctAnswer": "pencil",
+                "correctAnswer": "Pencil",
                 "explanation": "Pencils are perfect for schoolwork because you can erase mistakes.",
                 "imageUrl": "https://images.pexels.com/photos/8386693/pexels-photo-8386693.jpeg?auto=compress&cs=tinysrgb&h=350",
                 "ipa": "/ˈpɛnsɪl/",
@@ -64,10 +64,10 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
             {
                 "question": "Which word best describes this image?",
                 "choices": [
-                    "sharpener",
-                    "eraser",
-                    "pencil",
-                    "pencil sharpener"
+                    "Sharpener",
+                    "Eraser",
+                    "Pencil",
+                    "Pencil sharpener"
                 ],
                 "choiceIpas": [
                     "/ˈʃɑː(ɹ)pənə(ɹ)/",
@@ -75,7 +75,7 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                     "/ˈpɛnsɪl/",
                     "/ˈpɛnsɪl/ /ˈʃɑː(ɹ)pənə(ɹ)/"
                 ],
-                "correctAnswer": "sharpener",
+                "correctAnswer": "Sharpener",
                 "explanation": "\"sharpener\" is the correct vocabulary word for this picture.",
                 "imageUrl": "https://images.pexels.com/photos/237414/pexels-photo-237414.jpeg?auto=compress&cs=tinysrgb&h=350",
                 "ipa": "/ˈʃɑː(ɹ)pənə(ɹ)/",
@@ -84,10 +84,10 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
             {
                 "question": "What small rubber tool is used to remove pencil marks?",
                 "choices": [
-                    "eraser",
-                    "pencil",
-                    "pencil sharpener",
-                    "sharpener"
+                    "Eraser",
+                    "Pencil",
+                    "Pencil sharpener",
+                    "Sharpener"
                 ],
                 "choiceIpas": [
                     "",
@@ -95,7 +95,7 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                     "/ˈpɛnsɪl/",
                     ""
                 ],
-                "correctAnswer": "eraser",
+                "correctAnswer": "Eraser",
                 "explanation": "An eraser rubs off pencil graphite to correct spelling mistakes.",
                 "imageUrl": "https://images.pexels.com/photos/6193755/pexels-photo-6193755.jpeg?auto=compress&cs=tinysrgb&h=350",
                 "ipa": "/ɪˈɹeɪzə/",
@@ -104,10 +104,10 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
             {
                 "question": "What straight strip of plastic or wood is used to measure length?",
                 "choices": [
-                    "pencil",
-                    "sharpener",
-                    "pencil sharpener",
-                    "ruler"
+                    "Pencil",
+                    "Sharpener",
+                    "Pencil sharpener",
+                    "Ruler"
                 ],
                 "choiceIpas": [
                     "/ˈpɛnsɪl/",
@@ -115,7 +115,7 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                     "",
                     ""
                 ],
-                "correctAnswer": "ruler",
+                "correctAnswer": "Ruler",
                 "explanation": "A ruler has marked measurements to help draw straight lines.",
                 "imageUrl": "https://images.pexels.com/photos/29279407/pexels-photo-29279407.jpeg?auto=compress&cs=tinysrgb&h=350",
                 "ipa": "/ˈɹuːlə(ɹ)/",
@@ -124,10 +124,10 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
             {
                 "question": "Which word best describes this image?",
                 "choices": [
-                    "pencil sharpener",
-                    "pencil",
-                    "sharpener",
-                    "book"
+                    "Pencil sharpener",
+                    "Pencil",
+                    "Sharpener",
+                    "Book"
                 ],
                 "choiceIpas": [
                     "/ˈpɛnsɪl/",
@@ -135,7 +135,7 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                     "",
                     ""
                 ],
-                "correctAnswer": "book",
+                "correctAnswer": "Book",
                 "explanation": "\"book\" is the correct vocabulary word for this picture.",
                 "imageUrl": "https://images.pexels.com/photos/5905439/pexels-photo-5905439.jpeg?auto=compress&cs=tinysrgb&h=350",
                 "ipa": "/buːk/",
@@ -144,10 +144,10 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
             {
                 "question": "Which word best describes this image?",
                 "choices": [
-                    "pencil sharpener",
-                    "scissors",
-                    "pencil",
-                    "sharpener"
+                    "Pencil sharpener",
+                    "Scissors",
+                    "Pencil",
+                    "Sharpener"
                 ],
                 "choiceIpas": [
                     "/ˈpɛnsɪl/",
@@ -155,7 +155,7 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                     "",
                     "/ˈʃɑː(ɹ)pənə(ɹ)/"
                 ],
-                "correctAnswer": "scissors",
+                "correctAnswer": "Scissors",
                 "explanation": "\"scissors\" is the correct vocabulary word for this picture.",
                 "imageUrl": "https://images.pexels.com/photos/1212183/pexels-photo-1212183.jpeg?auto=compress&cs=tinysrgb&h=350",
                 "ipa": "/ˈsɪzəz/",
@@ -164,10 +164,10 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
             {
                 "question": "Which word best describes this image?",
                 "choices": [
-                    "pencil sharpener",
-                    "chair",
-                    "sharpener",
-                    "pencil"
+                    "Pencil sharpener",
+                    "Chair",
+                    "Sharpener",
+                    "Pencil"
                 ],
                 "choiceIpas": [
                     "/ˈpɛnsɪl/ /ˈʃɑː(ɹ)pənə(ɹ)/",
@@ -175,7 +175,7 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                     "",
                     ""
                 ],
-                "correctAnswer": "chair",
+                "correctAnswer": "Chair",
                 "explanation": "\"chair\" is the correct vocabulary word for this picture.",
                 "imageUrl": "https://images.pexels.com/photos/17466659/pexels-photo-17466659.jpeg?auto=compress&cs=tinysrgb&h=350",
                 "ipa": "/t͡ʃɛə(ɹ)/",
@@ -184,10 +184,10 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
             {
                 "question": "Which word best describes this image?",
                 "choices": [
-                    "desk",
-                    "pencil",
-                    "sharpener",
-                    "pencil sharpener"
+                    "Desk",
+                    "Pencil",
+                    "Sharpener",
+                    "Pencil sharpener"
                 ],
                 "choiceIpas": [
                     "",
@@ -195,7 +195,7 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                     "",
                     ""
                 ],
-                "correctAnswer": "desk",
+                "correctAnswer": "Desk",
                 "explanation": "\"desk\" is the correct vocabulary word for this picture.",
                 "imageUrl": "https://virco.com/wp-content/uploads/desk-280opnm-red70-brn96-gry02_0-1.png",
                 "ipa": "/dɛsk/",
@@ -204,10 +204,10 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
             {
                 "question": "Which word best describes this image?",
                 "choices": [
-                    "sharpener",
-                    "pencil sharpener",
-                    "pencil",
-                    "pen"
+                    "Sharpener",
+                    "Pencil sharpener",
+                    "Pencil",
+                    "Pen"
                 ],
                 "choiceIpas": [
                     "/ˈʃɑː(ɹ)pənə(ɹ)/",
@@ -215,7 +215,7 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                     "",
                     ""
                 ],
-                "correctAnswer": "pen",
+                "correctAnswer": "Pen",
                 "explanation": "\"pen\" is the correct vocabulary word for this picture.",
                 "imageUrl": "https://images.pexels.com/photos/19364472/pexels-photo-19364472.jpeg?auto=compress&cs=tinysrgb&h=350",
                 "ipa": "/pɛn/",
@@ -224,10 +224,10 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
             {
                 "question": "What bag do we wear on our backs to carry books and school supplies?",
                 "choices": [
-                    "pencil",
-                    "sharpener",
-                    "pencil sharpener",
-                    "backpack"
+                    "Pencil",
+                    "Sharpener",
+                    "Pencil sharpener",
+                    "Backpack"
                 ],
                 "choiceIpas": [
                     "",
@@ -235,7 +235,7 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                     "",
                     ""
                 ],
-                "correctAnswer": "backpack",
+                "correctAnswer": "Backpack",
                 "explanation": "A backpack holds pencils, books, and other tools for learning.",
                 "imageUrl": "https://images.pexels.com/photos/4907460/pexels-photo-4907460.jpeg?auto=compress&cs=tinysrgb&h=350",
                 "ipa": "/ˈbæk.pæk/",
@@ -9815,26 +9815,26 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
         "channel": "@Speakwithconfidence4065",
         "transcriptText": "what is this called armchair what is this called ottoman what is this called Chas long what is this called coffee table what is this called wardrobe what is this called dresser what is this called nightstand what is this called recliner what is this called chest of drawers what is this called side table what is this called coat rack",
         "words": [
-            "armchair",
-            "ottoman",
+            "Armchair",
+            "Ottoman",
             "Coffee table",
             "Side table",
             "Coat rack",
-            "wardrobe",
-            "dresser",
-            "nightstand",
-            "recliner",
-            "chest of drawers",
-            "side table",
-            "coat rack"
+            "Wardrobe",
+            "Dresser",
+            "Nightstand",
+            "Recliner",
+            "Chest of drawers",
+            "Side table",
+            "Coat rack"
         ],
         "questions": [
             {
                 "question": "Which word best describes this image?",
                 "choices": [
-                    "ottoman",
+                    "Ottoman",
                     "Side table",
-                    "armchair",
+                    "Armchair",
                     "Coffee table"
                 ],
                 "choiceIpas": [
@@ -9843,7 +9843,7 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                     "/ˈɑː(ɹ)mtʃɛə(ɹ)/",
                     "/ˈkɑ.fi/ /ˈteɪbəl/"
                 ],
-                "correctAnswer": "armchair",
+                "correctAnswer": "Armchair",
                 "explanation": "\"armchair\" is the correct vocabulary word for this picture.",
                 "imageUrl": "https://images.pexels.com/photos/33646085/pexels-photo-33646085.jpeg?auto=compress&cs=tinysrgb&h=350",
                 "ipa": "/ˈɑː(ɹ)mtʃɛə(ɹ)/",
@@ -9852,10 +9852,10 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
             {
                 "question": "Which word best describes this image?",
                 "choices": [
-                    "armchair",
+                    "Armchair",
                     "Side table",
                     "Coffee table",
-                    "ottoman"
+                    "Ottoman"
                 ],
                 "choiceIpas": [
                     "",
@@ -9863,7 +9863,7 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                     "/ˈkɑ.fi/ /ˈteɪbəl/",
                     "/ˈɒtəmən/"
                 ],
-                "correctAnswer": "ottoman",
+                "correctAnswer": "Ottoman",
                 "explanation": "\"ottoman\" is the correct vocabulary word for this picture.",
                 "imageUrl": "https://images.pexels.com/photos/7535017/pexels-photo-7535017.jpeg?auto=compress&cs=tinysrgb&h=350",
                 "ipa": "/ˈɒtəmən/",
@@ -9873,8 +9873,8 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                 "question": "Which word best describes this image?",
                 "choices": [
                     "Coffee table",
-                    "ottoman",
-                    "armchair",
+                    "Ottoman",
+                    "Armchair",
                     "Side table"
                 ],
                 "choiceIpas": [
@@ -9894,8 +9894,8 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                 "choices": [
                     "Side table",
                     "Coffee table",
-                    "armchair",
-                    "ottoman"
+                    "Armchair",
+                    "Ottoman"
                 ],
                 "choiceIpas": [
                     "",
@@ -9912,9 +9912,9 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
             {
                 "question": "Which word best describes this image?",
                 "choices": [
-                    "armchair",
+                    "Armchair",
                     "Coat rack",
-                    "ottoman",
+                    "Ottoman",
                     "Coffee table"
                 ],
                 "choiceIpas": [
@@ -9932,10 +9932,10 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
             {
                 "question": "Which word best describes this image?",
                 "choices": [
-                    "ottoman",
-                    "armchair",
+                    "Ottoman",
+                    "Armchair",
                     "Coffee table",
-                    "wardrobe"
+                    "Wardrobe"
                 ],
                 "choiceIpas": [
                     "/ˈɒtəmən/",
@@ -9943,7 +9943,7 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                     "",
                     ""
                 ],
-                "correctAnswer": "wardrobe",
+                "correctAnswer": "Wardrobe",
                 "explanation": "\"wardrobe\" is the correct vocabulary word for this picture.",
                 "imageUrl": "https://images.pexels.com/photos/6580394/pexels-photo-6580394.jpeg?auto=compress&cs=tinysrgb&h=350",
                 "ipa": "/ ˈwɔːdɹəʊb/",
@@ -9952,10 +9952,10 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
             {
                 "question": "Which word best describes this image?",
                 "choices": [
-                    "armchair",
+                    "Armchair",
                     "Coffee table",
-                    "dresser",
-                    "ottoman"
+                    "Dresser",
+                    "Ottoman"
                 ],
                 "choiceIpas": [
                     "",
@@ -9963,7 +9963,7 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                     "",
                     ""
                 ],
-                "correctAnswer": "dresser",
+                "correctAnswer": "Dresser",
                 "explanation": "\"dresser\" is the correct vocabulary word for this picture.",
                 "imageUrl": "https://images.pexels.com/photos/37360094/pexels-photo-37360094.jpeg?auto=compress&cs=tinysrgb&h=350",
                 "ipa": "",
@@ -9972,10 +9972,10 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
             {
                 "question": "Which word best describes this image?",
                 "choices": [
-                    "nightstand",
+                    "Nightstand",
                     "Coffee table",
-                    "ottoman",
-                    "armchair"
+                    "Ottoman",
+                    "Armchair"
                 ],
                 "choiceIpas": [
                     "",
@@ -9983,7 +9983,7 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                     "",
                     ""
                 ],
-                "correctAnswer": "nightstand",
+                "correctAnswer": "Nightstand",
                 "explanation": "\"nightstand\" is the correct vocabulary word for this picture.",
                 "imageUrl": "https://images.pexels.com/photos/5825694/pexels-photo-5825694.jpeg?auto=compress&cs=tinysrgb&h=350",
                 "ipa": "",
@@ -9993,9 +9993,9 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                 "question": "Which word best describes this image?",
                 "choices": [
                     "Coffee table",
-                    "armchair",
-                    "recliner",
-                    "ottoman"
+                    "Armchair",
+                    "Recliner",
+                    "Ottoman"
                 ],
                 "choiceIpas": [
                     "",
@@ -10003,7 +10003,7 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                     "",
                     ""
                 ],
-                "correctAnswer": "recliner",
+                "correctAnswer": "Recliner",
                 "explanation": "\"recliner\" is the correct vocabulary word for this picture.",
                 "imageUrl": "https://images.pexels.com/photos/20020103/pexels-photo-20020103.jpeg?auto=compress&cs=tinysrgb&h=350",
                 "ipa": "",
@@ -10013,9 +10013,9 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                 "question": "Which word best describes this image?",
                 "choices": [
                     "Coffee table",
-                    "chest of drawers",
-                    "armchair",
-                    "ottoman"
+                    "Chest of drawers",
+                    "Armchair",
+                    "Ottoman"
                 ],
                 "choiceIpas": [
                     "",
@@ -10023,7 +10023,7 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                     "",
                     ""
                 ],
-                "correctAnswer": "chest of drawers",
+                "correctAnswer": "Chest of drawers",
                 "explanation": "\"chest of drawers\" is the correct vocabulary word for this picture.",
                 "imageUrl": "https://images.pexels.com/photos/6956842/pexels-photo-6956842.jpeg?auto=compress&cs=tinysrgb&h=350",
                 "ipa": "",
@@ -10032,9 +10032,9 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
             {
                 "question": "Which word best describes this image?",
                 "choices": [
-                    "coat rack",
-                    "armchair",
-                    "ottoman",
+                    "Coat rack",
+                    "Armchair",
+                    "Ottoman",
                     "Coffee table"
                 ],
                 "choiceIpas": [
@@ -10043,7 +10043,7 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                     "",
                     ""
                 ],
-                "correctAnswer": "coat rack",
+                "correctAnswer": "Coat rack",
                 "explanation": "\"coat rack\" is the correct vocabulary word for this picture.",
                 "imageUrl": "https://images.pexels.com/photos/15945663/pexels-photo-15945663.jpeg?auto=compress&cs=tinysrgb&h=350",
                 "ipa": "",
@@ -10197,25 +10197,25 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
         "channel": "@EnglishwithMaya-z1i",
         "transcriptText": "sofa, pillow, blanket, armchair, chair, mirror, drawer, table, bed, wardrobe. Don't forget to subscribe to the",
         "words": [
-            "sofa",
-            "pillow",
-            "blanket",
-            "armchair",
-            "chair",
-            "mirror",
-            "drawer",
-            "table",
-            "bed",
-            "wardrobe."
+            "Sofa",
+            "Pillow",
+            "Blanket",
+            "Armchair",
+            "Chair",
+            "Mirror",
+            "Drawer",
+            "Table",
+            "Bed",
+            "Wardrobe."
         ],
         "questions": [
             {
                 "question": "Which word best describes this image?",
                 "choices": [
-                    "pillow",
-                    "blanket",
-                    "armchair",
-                    "sofa"
+                    "Pillow",
+                    "Blanket",
+                    "Armchair",
+                    "Sofa"
                 ],
                 "choiceIpas": [
                     "/ˈpɪləʊ/",
@@ -10223,7 +10223,7 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                     "/ˈɑː(ɹ)mtʃɛə(ɹ)/",
                     "/ˈsəʊfə/"
                 ],
-                "correctAnswer": "sofa",
+                "correctAnswer": "Sofa",
                 "explanation": "\"sofa\" is the correct vocabulary word for this picture.",
                 "imageUrl": "https://images.pexels.com/photos/7018400/pexels-photo-7018400.jpeg?auto=compress&cs=tinysrgb&h=350",
                 "ipa": "/ˈsəʊfə/",
@@ -10232,10 +10232,10 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
             {
                 "question": "Which word best describes this image?",
                 "choices": [
-                    "blanket",
-                    "armchair",
-                    "pillow",
-                    "sofa"
+                    "Blanket",
+                    "Armchair",
+                    "Pillow",
+                    "Sofa"
                 ],
                 "choiceIpas": [
                     "/ˈblæŋkɪt/",
@@ -10243,7 +10243,7 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                     "",
                     "/ˈsəʊfə/"
                 ],
-                "correctAnswer": "pillow",
+                "correctAnswer": "Pillow",
                 "explanation": "\"pillow\" is the correct vocabulary word for this picture.",
                 "imageUrl": "https://images.pexels.com/photos/12289352/pexels-photo-12289352.jpeg?auto=compress&cs=tinysrgb&h=350",
                 "ipa": "/ˈpɪləʊ/",
@@ -10252,10 +10252,10 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
             {
                 "question": "Which word best describes this image?",
                 "choices": [
-                    "sofa",
-                    "armchair",
-                    "blanket",
-                    "pillow"
+                    "Sofa",
+                    "Armchair",
+                    "Blanket",
+                    "Pillow"
                 ],
                 "choiceIpas": [
                     "/ˈsəʊfə/",
@@ -10263,7 +10263,7 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                     "/ˈblæŋkɪt/",
                     "/ˈpɪləʊ/"
                 ],
-                "correctAnswer": "blanket",
+                "correctAnswer": "Blanket",
                 "explanation": "\"blanket\" is the correct vocabulary word for this picture.",
                 "imageUrl": "https://images.pexels.com/photos/8238750/pexels-photo-8238750.jpeg?auto=compress&cs=tinysrgb&h=350",
                 "ipa": "/ˈblæŋkɪt/",
@@ -10272,10 +10272,10 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
             {
                 "question": "Which word best describes this image?",
                 "choices": [
-                    "armchair",
-                    "pillow",
-                    "blanket",
-                    "sofa"
+                    "Armchair",
+                    "Pillow",
+                    "Blanket",
+                    "Sofa"
                 ],
                 "choiceIpas": [
                     "/ˈɑː(ɹ)mtʃɛə(ɹ)/",
@@ -10283,7 +10283,7 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                     "",
                     ""
                 ],
-                "correctAnswer": "armchair",
+                "correctAnswer": "Armchair",
                 "explanation": "\"armchair\" is the correct vocabulary word for this picture.",
                 "imageUrl": "https://images.pexels.com/photos/30710413/pexels-photo-30710413.jpeg?auto=compress&cs=tinysrgb&h=350",
                 "ipa": "/ˈɑː(ɹ)mtʃɛə(ɹ)/",
@@ -10292,10 +10292,10 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
             {
                 "question": "Which word best describes this image?",
                 "choices": [
-                    "pillow",
-                    "chair",
-                    "sofa",
-                    "blanket"
+                    "Pillow",
+                    "Chair",
+                    "Sofa",
+                    "Blanket"
                 ],
                 "choiceIpas": [
                     "/ˈpɪləʊ/",
@@ -10303,7 +10303,7 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                     "/ˈsəʊfə/",
                     "/ˈblæŋkɪt/"
                 ],
-                "correctAnswer": "chair",
+                "correctAnswer": "Chair",
                 "explanation": "\"chair\" is the correct vocabulary word for this picture.",
                 "imageUrl": "https://images.pexels.com/photos/9962719/pexels-photo-9962719.jpeg?auto=compress&cs=tinysrgb&h=350",
                 "ipa": "/t͡ʃɛə(ɹ)/",
@@ -10312,10 +10312,10 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
             {
                 "question": "Which word best describes this image?",
                 "choices": [
-                    "sofa",
-                    "mirror",
-                    "pillow",
-                    "blanket"
+                    "Sofa",
+                    "Mirror",
+                    "Pillow",
+                    "Blanket"
                 ],
                 "choiceIpas": [
                     "/ˈsəʊfə/",
@@ -10323,7 +10323,7 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                     "",
                     ""
                 ],
-                "correctAnswer": "mirror",
+                "correctAnswer": "Mirror",
                 "explanation": "\"mirror\" is the correct vocabulary word for this picture.",
                 "imageUrl": "https://pixabay.com/get/ga82bde0548a67091d03de29bd3a800dcfb477f25c8467c7e9353112c91f08b42554544ca36f9828b521d858027d2de025a85d5d2e6fed285f7668f87123c2be4_640.jpg",
                 "ipa": "/ˈmɘ.ɹɘ/",
@@ -10332,10 +10332,10 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
             {
                 "question": "Which word best describes this image?",
                 "choices": [
-                    "blanket",
-                    "pillow",
-                    "drawer",
-                    "sofa"
+                    "Blanket",
+                    "Pillow",
+                    "Drawer",
+                    "Sofa"
                 ],
                 "choiceIpas": [
                     "",
@@ -10343,7 +10343,7 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                     "",
                     ""
                 ],
-                "correctAnswer": "drawer",
+                "correctAnswer": "Drawer",
                 "explanation": "\"drawer\" is the correct vocabulary word for this picture.",
                 "imageUrl": "https://images.pexels.com/photos/11112745/pexels-photo-11112745.jpeg?auto=compress&cs=tinysrgb&h=350",
                 "ipa": "/dɹɔː(ɹ)/",
@@ -10352,10 +10352,10 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
             {
                 "question": "Which word best describes this image?",
                 "choices": [
-                    "table",
-                    "sofa",
-                    "blanket",
-                    "pillow"
+                    "Table",
+                    "Sofa",
+                    "Blanket",
+                    "Pillow"
                 ],
                 "choiceIpas": [
                     "/ˈteɪbəl/",
@@ -10363,7 +10363,7 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                     "/ˈblæŋkɪt/",
                     "/ˈpɪləʊ/"
                 ],
-                "correctAnswer": "table",
+                "correctAnswer": "Table",
                 "explanation": "\"table\" is the correct vocabulary word for this picture.",
                 "imageUrl": "https://images.pexels.com/photos/23541001/pexels-photo-23541001.jpeg?auto=compress&cs=tinysrgb&h=350",
                 "ipa": "/ˈteɪbəl/",
@@ -10372,10 +10372,10 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
             {
                 "question": "Which word best describes this image?",
                 "choices": [
-                    "bed",
-                    "blanket",
-                    "sofa",
-                    "pillow"
+                    "Bed",
+                    "Blanket",
+                    "Sofa",
+                    "Pillow"
                 ],
                 "choiceIpas": [
                     "/bed/",
@@ -10383,7 +10383,7 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                     "/ˈsəʊfə/",
                     "/ˈpɪləʊ/"
                 ],
-                "correctAnswer": "bed",
+                "correctAnswer": "Bed",
                 "explanation": "\"bed\" is the correct vocabulary word for this picture.",
                 "imageUrl": "https://images.pexels.com/photos/31967700/pexels-photo-31967700.jpeg?auto=compress&cs=tinysrgb&h=350",
                 "ipa": "/bed/",
@@ -10392,10 +10392,10 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
             {
                 "question": "Which word best describes this image?",
                 "choices": [
-                    "pillow",
-                    "sofa",
-                    "wardrobe",
-                    "blanket"
+                    "Pillow",
+                    "Sofa",
+                    "Wardrobe",
+                    "Blanket"
                 ],
                 "choiceIpas": [
                     "",
@@ -10403,7 +10403,7 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                     "",
                     ""
                 ],
-                "correctAnswer": "wardrobe",
+                "correctAnswer": "Wardrobe",
                 "explanation": "\"wardrobe.\" is the correct vocabulary word for this picture.",
                 "imageUrl": "https://images.pexels.com/photos/6316064/pexels-photo-6316064.jpeg?auto=compress&cs=tinysrgb&h=350",
                 "ipa": "/ ˈwɔːdɹəʊb/",
@@ -11416,25 +11416,25 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
         "channel": "@EnglishTreeTV",
         "transcriptText": "[Música] pencil pencil sharpener sharpener eraser eraser ruler ruler Book book scissors scissors chare Cher desk desk pen pen b [Aplausos] [Música] b pencil pencil sharpener sharpener eraser eraser ruler ruler Book Book scissors scissors chair chair desk desk pen he Back [Aplausos] [Música] [Música] back [Música] Oh",
         "words": [
-            "pencil",
-            "sharpener",
-            "eraser",
-            "ruler",
-            "book",
-            "scissors",
-            "chair",
-            "desk",
-            "pen",
-            "backpack"
+            "Pencil",
+            "Sharpener",
+            "Eraser",
+            "Ruler",
+            "Book",
+            "Scissors",
+            "Chair",
+            "Desk",
+            "Pen",
+            "Backpack"
         ],
         "questions": [
             {
                 "question": "What writing tool contains graphite and has an eraser on top?",
                 "choices": [
-                    "sharpener",
-                    "pencil sharpener",
-                    "pencil",
-                    "eraser"
+                    "Sharpener",
+                    "Pencil sharpener",
+                    "Pencil",
+                    "Eraser"
                 ],
                 "choiceIpas": [
                     "",
@@ -11442,7 +11442,7 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                     "",
                     ""
                 ],
-                "correctAnswer": "pencil",
+                "correctAnswer": "Pencil",
                 "explanation": "Pencils are perfect for schoolwork because you can erase mistakes.",
                 "imageUrl": "https://images.pexels.com/photos/8386693/pexels-photo-8386693.jpeg?auto=compress&cs=tinysrgb&h=350",
                 "ipa": "/ˈpɛnsɪl/",
@@ -11451,10 +11451,10 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
             {
                 "question": "Which word best describes this image?",
                 "choices": [
-                    "sharpener",
-                    "eraser",
-                    "pencil",
-                    "pencil sharpener"
+                    "Sharpener",
+                    "Eraser",
+                    "Pencil",
+                    "Pencil sharpener"
                 ],
                 "choiceIpas": [
                     "/ˈʃɑː(ɹ)pənə(ɹ)/",
@@ -11462,7 +11462,7 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                     "/ˈpɛnsɪl/",
                     "/ˈpɛnsɪl/ /ˈʃɑː(ɹ)pənə(ɹ)/"
                 ],
-                "correctAnswer": "sharpener",
+                "correctAnswer": "Sharpener",
                 "explanation": "\"sharpener\" is the correct vocabulary word for this picture.",
                 "imageUrl": "https://images.pexels.com/photos/237414/pexels-photo-237414.jpeg?auto=compress&cs=tinysrgb&h=350",
                 "ipa": "/ˈʃɑː(ɹ)pənə(ɹ)/",
@@ -11471,10 +11471,10 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
             {
                 "question": "What small rubber tool is used to remove pencil marks?",
                 "choices": [
-                    "eraser",
-                    "pencil",
-                    "pencil sharpener",
-                    "sharpener"
+                    "Eraser",
+                    "Pencil",
+                    "Pencil sharpener",
+                    "Sharpener"
                 ],
                 "choiceIpas": [
                     "",
@@ -11482,7 +11482,7 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                     "/ˈpɛnsɪl/",
                     ""
                 ],
-                "correctAnswer": "eraser",
+                "correctAnswer": "Eraser",
                 "explanation": "An eraser rubs off pencil graphite to correct spelling mistakes.",
                 "imageUrl": "https://images.pexels.com/photos/6193755/pexels-photo-6193755.jpeg?auto=compress&cs=tinysrgb&h=350",
                 "ipa": "/ɪˈɹeɪzə/",
@@ -11491,10 +11491,10 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
             {
                 "question": "What straight strip of plastic or wood is used to measure length?",
                 "choices": [
-                    "pencil",
-                    "sharpener",
-                    "pencil sharpener",
-                    "ruler"
+                    "Pencil",
+                    "Sharpener",
+                    "Pencil sharpener",
+                    "Ruler"
                 ],
                 "choiceIpas": [
                     "/ˈpɛnsɪl/",
@@ -11502,7 +11502,7 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                     "",
                     ""
                 ],
-                "correctAnswer": "ruler",
+                "correctAnswer": "Ruler",
                 "explanation": "A ruler has marked measurements to help draw straight lines.",
                 "imageUrl": "https://images.pexels.com/photos/29279407/pexels-photo-29279407.jpeg?auto=compress&cs=tinysrgb&h=350",
                 "ipa": "/ˈɹuːlə(ɹ)/",
@@ -11511,10 +11511,10 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
             {
                 "question": "Which word best describes this image?",
                 "choices": [
-                    "pencil sharpener",
-                    "pencil",
-                    "sharpener",
-                    "book"
+                    "Pencil sharpener",
+                    "Pencil",
+                    "Sharpener",
+                    "Book"
                 ],
                 "choiceIpas": [
                     "/ˈpɛnsɪl/",
@@ -11522,7 +11522,7 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                     "",
                     ""
                 ],
-                "correctAnswer": "book",
+                "correctAnswer": "Book",
                 "explanation": "\"book\" is the correct vocabulary word for this picture.",
                 "imageUrl": "https://images.pexels.com/photos/5905439/pexels-photo-5905439.jpeg?auto=compress&cs=tinysrgb&h=350",
                 "ipa": "/buːk/",
@@ -11531,10 +11531,10 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
             {
                 "question": "Which word best describes this image?",
                 "choices": [
-                    "pencil sharpener",
-                    "scissors",
-                    "pencil",
-                    "sharpener"
+                    "Pencil sharpener",
+                    "Scissors",
+                    "Pencil",
+                    "Sharpener"
                 ],
                 "choiceIpas": [
                     "/ˈpɛnsɪl/",
@@ -11542,7 +11542,7 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                     "",
                     "/ˈʃɑː(ɹ)pənə(ɹ)/"
                 ],
-                "correctAnswer": "scissors",
+                "correctAnswer": "Scissors",
                 "explanation": "\"scissors\" is the correct vocabulary word for this picture.",
                 "imageUrl": "https://images.pexels.com/photos/1212183/pexels-photo-1212183.jpeg?auto=compress&cs=tinysrgb&h=350",
                 "ipa": "/ˈsɪzəz/",
@@ -11551,10 +11551,10 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
             {
                 "question": "Which word best describes this image?",
                 "choices": [
-                    "pencil sharpener",
-                    "chair",
-                    "sharpener",
-                    "pencil"
+                    "Pencil sharpener",
+                    "Chair",
+                    "Sharpener",
+                    "Pencil"
                 ],
                 "choiceIpas": [
                     "/ˈpɛnsɪl/ /ˈʃɑː(ɹ)pənə(ɹ)/",
@@ -11562,7 +11562,7 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                     "",
                     ""
                 ],
-                "correctAnswer": "chair",
+                "correctAnswer": "Chair",
                 "explanation": "\"chair\" is the correct vocabulary word for this picture.",
                 "imageUrl": "https://images.pexels.com/photos/17466659/pexels-photo-17466659.jpeg?auto=compress&cs=tinysrgb&h=350",
                 "ipa": "/t͡ʃɛə(ɹ)/",
@@ -11571,10 +11571,10 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
             {
                 "question": "Which word best describes this image?",
                 "choices": [
-                    "desk",
-                    "pencil",
-                    "sharpener",
-                    "pencil sharpener"
+                    "Desk",
+                    "Pencil",
+                    "Sharpener",
+                    "Pencil sharpener"
                 ],
                 "choiceIpas": [
                     "",
@@ -11582,7 +11582,7 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                     "",
                     ""
                 ],
-                "correctAnswer": "desk",
+                "correctAnswer": "Desk",
                 "explanation": "\"desk\" is the correct vocabulary word for this picture.",
                 "imageUrl": "https://virco.com/wp-content/uploads/desk-280opnm-red70-brn96-gry02_0-1.png",
                 "ipa": "/dɛsk/",
@@ -11591,10 +11591,10 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
             {
                 "question": "Which word best describes this image?",
                 "choices": [
-                    "sharpener",
-                    "pencil sharpener",
-                    "pencil",
-                    "pen"
+                    "Sharpener",
+                    "Pencil sharpener",
+                    "Pencil",
+                    "Pen"
                 ],
                 "choiceIpas": [
                     "/ˈʃɑː(ɹ)pənə(ɹ)/",
@@ -11602,7 +11602,7 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                     "",
                     ""
                 ],
-                "correctAnswer": "pen",
+                "correctAnswer": "Pen",
                 "explanation": "\"pen\" is the correct vocabulary word for this picture.",
                 "imageUrl": "https://images.pexels.com/photos/19364472/pexels-photo-19364472.jpeg?auto=compress&cs=tinysrgb&h=350",
                 "ipa": "/pɛn/",
@@ -11611,10 +11611,10 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
             {
                 "question": "What bag do we wear on our backs to carry books and school supplies?",
                 "choices": [
-                    "pencil",
-                    "sharpener",
-                    "pencil sharpener",
-                    "backpack"
+                    "Pencil",
+                    "Sharpener",
+                    "Pencil sharpener",
+                    "Backpack"
                 ],
                 "choiceIpas": [
                     "",
@@ -11622,7 +11622,7 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                     "",
                     ""
                 ],
-                "correctAnswer": "backpack",
+                "correctAnswer": "Backpack",
                 "explanation": "A backpack holds pencils, books, and other tools for learning.",
                 "imageUrl": "https://images.pexels.com/photos/4907460/pexels-photo-4907460.jpeg?auto=compress&cs=tinysrgb&h=350",
                 "ipa": "/ˈbæk.pæk/",
@@ -11830,25 +11830,25 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
         "channel": "@EnglishTreeTV",
         "transcriptText": "[Música] pencil pencil sharpener sharpener eraser eraser ruler ruler Book book scissors scissors chare Cher desk desk pen pen b [Aplausos] [Música] b pencil pencil sharpener sharpener eraser eraser ruler ruler Book Book scissors scissors chair chair desk desk pen he Back [Aplausos] [Música] [Música] back [Música] Oh",
         "words": [
-            "pencil",
-            "sharpener",
-            "eraser",
-            "ruler",
-            "book",
-            "scissors",
-            "chair",
-            "desk",
-            "pen",
-            "backpack"
+            "Pencil",
+            "Sharpener",
+            "Eraser",
+            "Ruler",
+            "Book",
+            "Scissors",
+            "Chair",
+            "Desk",
+            "Pen",
+            "Backpack"
         ],
         "questions": [
             {
                 "question": "What writing tool contains graphite and has an eraser on top?",
                 "choices": [
-                    "sharpener",
-                    "pencil sharpener",
-                    "pencil",
-                    "eraser"
+                    "Sharpener",
+                    "Pencil sharpener",
+                    "Pencil",
+                    "Eraser"
                 ],
                 "choiceIpas": [
                     "",
@@ -11856,7 +11856,7 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                     "",
                     ""
                 ],
-                "correctAnswer": "pencil",
+                "correctAnswer": "Pencil",
                 "explanation": "Pencils are perfect for schoolwork because you can erase mistakes.",
                 "imageUrl": "https://images.pexels.com/photos/8386693/pexels-photo-8386693.jpeg?auto=compress&cs=tinysrgb&h=350",
                 "ipa": "/ˈpɛnsɪl/",
@@ -11865,10 +11865,10 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
             {
                 "question": "Which word best describes this image?",
                 "choices": [
-                    "sharpener",
-                    "eraser",
-                    "pencil",
-                    "pencil sharpener"
+                    "Sharpener",
+                    "Eraser",
+                    "Pencil",
+                    "Pencil sharpener"
                 ],
                 "choiceIpas": [
                     "/ˈʃɑː(ɹ)pənə(ɹ)/",
@@ -11876,7 +11876,7 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                     "/ˈpɛnsɪl/",
                     "/ˈpɛnsɪl/ /ˈʃɑː(ɹ)pənə(ɹ)/"
                 ],
-                "correctAnswer": "sharpener",
+                "correctAnswer": "Sharpener",
                 "explanation": "\"sharpener\" is the correct vocabulary word for this picture.",
                 "imageUrl": "https://images.pexels.com/photos/237414/pexels-photo-237414.jpeg?auto=compress&cs=tinysrgb&h=350",
                 "ipa": "/ˈʃɑː(ɹ)pənə(ɹ)/",
@@ -11885,10 +11885,10 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
             {
                 "question": "What small rubber tool is used to remove pencil marks?",
                 "choices": [
-                    "eraser",
-                    "pencil",
-                    "pencil sharpener",
-                    "sharpener"
+                    "Eraser",
+                    "Pencil",
+                    "Pencil sharpener",
+                    "Sharpener"
                 ],
                 "choiceIpas": [
                     "",
@@ -11896,7 +11896,7 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                     "/ˈpɛnsɪl/",
                     ""
                 ],
-                "correctAnswer": "eraser",
+                "correctAnswer": "Eraser",
                 "explanation": "An eraser rubs off pencil graphite to correct spelling mistakes.",
                 "imageUrl": "https://images.pexels.com/photos/6193755/pexels-photo-6193755.jpeg?auto=compress&cs=tinysrgb&h=350",
                 "ipa": "/ɪˈɹeɪzə/",
@@ -11905,10 +11905,10 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
             {
                 "question": "What straight strip of plastic or wood is used to measure length?",
                 "choices": [
-                    "pencil",
-                    "sharpener",
-                    "pencil sharpener",
-                    "ruler"
+                    "Pencil",
+                    "Sharpener",
+                    "Pencil sharpener",
+                    "Ruler"
                 ],
                 "choiceIpas": [
                     "/ˈpɛnsɪl/",
@@ -11916,7 +11916,7 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                     "",
                     ""
                 ],
-                "correctAnswer": "ruler",
+                "correctAnswer": "Ruler",
                 "explanation": "A ruler has marked measurements to help draw straight lines.",
                 "imageUrl": "https://images.pexels.com/photos/29279407/pexels-photo-29279407.jpeg?auto=compress&cs=tinysrgb&h=350",
                 "ipa": "/ˈɹuːlə(ɹ)/",
@@ -11925,10 +11925,10 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
             {
                 "question": "Which word best describes this image?",
                 "choices": [
-                    "pencil sharpener",
-                    "pencil",
-                    "sharpener",
-                    "book"
+                    "Pencil sharpener",
+                    "Pencil",
+                    "Sharpener",
+                    "Book"
                 ],
                 "choiceIpas": [
                     "/ˈpɛnsɪl/",
@@ -11936,7 +11936,7 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                     "",
                     ""
                 ],
-                "correctAnswer": "book",
+                "correctAnswer": "Book",
                 "explanation": "\"book\" is the correct vocabulary word for this picture.",
                 "imageUrl": "https://images.pexels.com/photos/5905439/pexels-photo-5905439.jpeg?auto=compress&cs=tinysrgb&h=350",
                 "ipa": "/buːk/",
@@ -11945,10 +11945,10 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
             {
                 "question": "Which word best describes this image?",
                 "choices": [
-                    "pencil sharpener",
-                    "scissors",
-                    "pencil",
-                    "sharpener"
+                    "Pencil sharpener",
+                    "Scissors",
+                    "Pencil",
+                    "Sharpener"
                 ],
                 "choiceIpas": [
                     "/ˈpɛnsɪl/",
@@ -11956,7 +11956,7 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                     "",
                     "/ˈʃɑː(ɹ)pənə(ɹ)/"
                 ],
-                "correctAnswer": "scissors",
+                "correctAnswer": "Scissors",
                 "explanation": "\"scissors\" is the correct vocabulary word for this picture.",
                 "imageUrl": "https://images.pexels.com/photos/1212183/pexels-photo-1212183.jpeg?auto=compress&cs=tinysrgb&h=350",
                 "ipa": "/ˈsɪzəz/",
@@ -11965,10 +11965,10 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
             {
                 "question": "Which word best describes this image?",
                 "choices": [
-                    "pencil sharpener",
-                    "chair",
-                    "sharpener",
-                    "pencil"
+                    "Pencil sharpener",
+                    "Chair",
+                    "Sharpener",
+                    "Pencil"
                 ],
                 "choiceIpas": [
                     "/ˈpɛnsɪl/ /ˈʃɑː(ɹ)pənə(ɹ)/",
@@ -11976,7 +11976,7 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                     "",
                     ""
                 ],
-                "correctAnswer": "chair",
+                "correctAnswer": "Chair",
                 "explanation": "\"chair\" is the correct vocabulary word for this picture.",
                 "imageUrl": "https://images.pexels.com/photos/17466659/pexels-photo-17466659.jpeg?auto=compress&cs=tinysrgb&h=350",
                 "ipa": "/t͡ʃɛə(ɹ)/",
@@ -11985,10 +11985,10 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
             {
                 "question": "Which word best describes this image?",
                 "choices": [
-                    "desk",
-                    "pencil",
-                    "sharpener",
-                    "pencil sharpener"
+                    "Desk",
+                    "Pencil",
+                    "Sharpener",
+                    "Pencil sharpener"
                 ],
                 "choiceIpas": [
                     "",
@@ -11996,7 +11996,7 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                     "",
                     ""
                 ],
-                "correctAnswer": "desk",
+                "correctAnswer": "Desk",
                 "explanation": "\"desk\" is the correct vocabulary word for this picture.",
                 "imageUrl": "https://virco.com/wp-content/uploads/desk-280opnm-red70-brn96-gry02_0-1.png",
                 "ipa": "/dɛsk/",
@@ -12005,10 +12005,10 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
             {
                 "question": "Which word best describes this image?",
                 "choices": [
-                    "sharpener",
-                    "pencil sharpener",
-                    "pencil",
-                    "pen"
+                    "Sharpener",
+                    "Pencil sharpener",
+                    "Pencil",
+                    "Pen"
                 ],
                 "choiceIpas": [
                     "/ˈʃɑː(ɹ)pənə(ɹ)/",
@@ -12016,7 +12016,7 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                     "",
                     ""
                 ],
-                "correctAnswer": "pen",
+                "correctAnswer": "Pen",
                 "explanation": "\"pen\" is the correct vocabulary word for this picture.",
                 "imageUrl": "https://images.pexels.com/photos/19364472/pexels-photo-19364472.jpeg?auto=compress&cs=tinysrgb&h=350",
                 "ipa": "/pɛn/",
@@ -12025,10 +12025,10 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
             {
                 "question": "What bag do we wear on our backs to carry books and school supplies?",
                 "choices": [
-                    "pencil",
-                    "sharpener",
-                    "pencil sharpener",
-                    "backpack"
+                    "Pencil",
+                    "Sharpener",
+                    "Pencil sharpener",
+                    "Backpack"
                 ],
                 "choiceIpas": [
                     "",
@@ -12036,7 +12036,7 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                     "",
                     ""
                 ],
-                "correctAnswer": "backpack",
+                "correctAnswer": "Backpack",
                 "explanation": "A backpack holds pencils, books, and other tools for learning.",
                 "imageUrl": "https://images.pexels.com/photos/4907460/pexels-photo-4907460.jpeg?auto=compress&cs=tinysrgb&h=350",
                 "ipa": "/ˈbæk.pæk/",
@@ -12052,25 +12052,25 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
         "channel": "@EnglishTreeTV",
         "transcriptText": "[Música] pencil pencil sharpener sharpener eraser eraser ruler ruler Book book scissors scissors chare Cher desk desk pen pen b [Aplausos] [Música] b pencil pencil sharpener sharpener eraser eraser ruler ruler Book Book scissors scissors chair chair desk desk pen he Back [Aplausos] [Música] [Música] back [Música] Oh",
         "words": [
-            "pencil",
-            "sharpener",
-            "eraser",
-            "ruler",
-            "book",
-            "scissors",
-            "chair",
-            "desk",
-            "pen",
-            "backpack"
+            "Pencil",
+            "Sharpener",
+            "Eraser",
+            "Ruler",
+            "Book",
+            "Scissors",
+            "Chair",
+            "Desk",
+            "Pen",
+            "Backpack"
         ],
         "questions": [
             {
                 "question": "What writing tool contains graphite and has an eraser on top?",
                 "choices": [
-                    "sharpener",
-                    "pencil sharpener",
-                    "pencil",
-                    "eraser"
+                    "Sharpener",
+                    "Pencil sharpener",
+                    "Pencil",
+                    "Eraser"
                 ],
                 "choiceIpas": [
                     "",
@@ -12078,7 +12078,7 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                     "",
                     ""
                 ],
-                "correctAnswer": "pencil",
+                "correctAnswer": "Pencil",
                 "explanation": "Pencils are perfect for schoolwork because you can erase mistakes.",
                 "imageUrl": "https://images.pexels.com/photos/8386693/pexels-photo-8386693.jpeg?auto=compress&cs=tinysrgb&h=350",
                 "ipa": "/ˈpɛnsɪl/",
@@ -12087,10 +12087,10 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
             {
                 "question": "Which word best describes this image?",
                 "choices": [
-                    "sharpener",
-                    "eraser",
-                    "pencil",
-                    "pencil sharpener"
+                    "Sharpener",
+                    "Eraser",
+                    "Pencil",
+                    "Pencil sharpener"
                 ],
                 "choiceIpas": [
                     "/ˈʃɑː(ɹ)pənə(ɹ)/",
@@ -12098,7 +12098,7 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                     "/ˈpɛnsɪl/",
                     "/ˈpɛnsɪl/ /ˈʃɑː(ɹ)pənə(ɹ)/"
                 ],
-                "correctAnswer": "sharpener",
+                "correctAnswer": "Sharpener",
                 "explanation": "\"sharpener\" is the correct vocabulary word for this picture.",
                 "imageUrl": "https://images.pexels.com/photos/237414/pexels-photo-237414.jpeg?auto=compress&cs=tinysrgb&h=350",
                 "ipa": "/ˈʃɑː(ɹ)pənə(ɹ)/",
@@ -12107,10 +12107,10 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
             {
                 "question": "What small rubber tool is used to remove pencil marks?",
                 "choices": [
-                    "eraser",
-                    "pencil",
-                    "pencil sharpener",
-                    "sharpener"
+                    "Eraser",
+                    "Pencil",
+                    "Pencil sharpener",
+                    "Sharpener"
                 ],
                 "choiceIpas": [
                     "",
@@ -12118,7 +12118,7 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                     "/ˈpɛnsɪl/",
                     ""
                 ],
-                "correctAnswer": "eraser",
+                "correctAnswer": "Eraser",
                 "explanation": "An eraser rubs off pencil graphite to correct spelling mistakes.",
                 "imageUrl": "https://images.pexels.com/photos/6193755/pexels-photo-6193755.jpeg?auto=compress&cs=tinysrgb&h=350",
                 "ipa": "/ɪˈɹeɪzə/",
@@ -12127,10 +12127,10 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
             {
                 "question": "What straight strip of plastic or wood is used to measure length?",
                 "choices": [
-                    "pencil",
-                    "sharpener",
-                    "pencil sharpener",
-                    "ruler"
+                    "Pencil",
+                    "Sharpener",
+                    "Pencil sharpener",
+                    "Ruler"
                 ],
                 "choiceIpas": [
                     "/ˈpɛnsɪl/",
@@ -12138,7 +12138,7 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                     "",
                     ""
                 ],
-                "correctAnswer": "ruler",
+                "correctAnswer": "Ruler",
                 "explanation": "A ruler has marked measurements to help draw straight lines.",
                 "imageUrl": "https://images.pexels.com/photos/29279407/pexels-photo-29279407.jpeg?auto=compress&cs=tinysrgb&h=350",
                 "ipa": "/ˈɹuːlə(ɹ)/",
@@ -12147,10 +12147,10 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
             {
                 "question": "Which word best describes this image?",
                 "choices": [
-                    "pencil sharpener",
-                    "pencil",
-                    "sharpener",
-                    "book"
+                    "Pencil sharpener",
+                    "Pencil",
+                    "Sharpener",
+                    "Book"
                 ],
                 "choiceIpas": [
                     "/ˈpɛnsɪl/",
@@ -12158,7 +12158,7 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                     "",
                     ""
                 ],
-                "correctAnswer": "book",
+                "correctAnswer": "Book",
                 "explanation": "\"book\" is the correct vocabulary word for this picture.",
                 "imageUrl": "https://images.pexels.com/photos/5905439/pexels-photo-5905439.jpeg?auto=compress&cs=tinysrgb&h=350",
                 "ipa": "/buːk/",
@@ -12167,10 +12167,10 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
             {
                 "question": "Which word best describes this image?",
                 "choices": [
-                    "pencil sharpener",
-                    "scissors",
-                    "pencil",
-                    "sharpener"
+                    "Pencil sharpener",
+                    "Scissors",
+                    "Pencil",
+                    "Sharpener"
                 ],
                 "choiceIpas": [
                     "/ˈpɛnsɪl/",
@@ -12178,7 +12178,7 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                     "",
                     "/ˈʃɑː(ɹ)pənə(ɹ)/"
                 ],
-                "correctAnswer": "scissors",
+                "correctAnswer": "Scissors",
                 "explanation": "\"scissors\" is the correct vocabulary word for this picture.",
                 "imageUrl": "https://images.pexels.com/photos/1212183/pexels-photo-1212183.jpeg?auto=compress&cs=tinysrgb&h=350",
                 "ipa": "/ˈsɪzəz/",
@@ -12187,10 +12187,10 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
             {
                 "question": "Which word best describes this image?",
                 "choices": [
-                    "pencil sharpener",
-                    "chair",
-                    "sharpener",
-                    "pencil"
+                    "Pencil sharpener",
+                    "Chair",
+                    "Sharpener",
+                    "Pencil"
                 ],
                 "choiceIpas": [
                     "/ˈpɛnsɪl/ /ˈʃɑː(ɹ)pənə(ɹ)/",
@@ -12198,7 +12198,7 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                     "",
                     ""
                 ],
-                "correctAnswer": "chair",
+                "correctAnswer": "Chair",
                 "explanation": "\"chair\" is the correct vocabulary word for this picture.",
                 "imageUrl": "https://images.pexels.com/photos/17466659/pexels-photo-17466659.jpeg?auto=compress&cs=tinysrgb&h=350",
                 "ipa": "/t͡ʃɛə(ɹ)/",
@@ -12207,10 +12207,10 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
             {
                 "question": "Which word best describes this image?",
                 "choices": [
-                    "desk",
-                    "pencil",
-                    "sharpener",
-                    "pencil sharpener"
+                    "Desk",
+                    "Pencil",
+                    "Sharpener",
+                    "Pencil sharpener"
                 ],
                 "choiceIpas": [
                     "",
@@ -12218,7 +12218,7 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                     "",
                     ""
                 ],
-                "correctAnswer": "desk",
+                "correctAnswer": "Desk",
                 "explanation": "\"desk\" is the correct vocabulary word for this picture.",
                 "imageUrl": "https://virco.com/wp-content/uploads/desk-280opnm-red70-brn96-gry02_0-1.png",
                 "ipa": "/dɛsk/",
@@ -12227,10 +12227,10 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
             {
                 "question": "Which word best describes this image?",
                 "choices": [
-                    "sharpener",
-                    "pencil sharpener",
-                    "pencil",
-                    "pen"
+                    "Sharpener",
+                    "Pencil sharpener",
+                    "Pencil",
+                    "Pen"
                 ],
                 "choiceIpas": [
                     "/ˈʃɑː(ɹ)pənə(ɹ)/",
@@ -12238,7 +12238,7 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                     "",
                     ""
                 ],
-                "correctAnswer": "pen",
+                "correctAnswer": "Pen",
                 "explanation": "\"pen\" is the correct vocabulary word for this picture.",
                 "imageUrl": "https://images.pexels.com/photos/19364472/pexels-photo-19364472.jpeg?auto=compress&cs=tinysrgb&h=350",
                 "ipa": "/pɛn/",
@@ -12247,10 +12247,10 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
             {
                 "question": "What bag do we wear on our backs to carry books and school supplies?",
                 "choices": [
-                    "pencil",
-                    "sharpener",
-                    "pencil sharpener",
-                    "backpack"
+                    "Pencil",
+                    "Sharpener",
+                    "Pencil sharpener",
+                    "Backpack"
                 ],
                 "choiceIpas": [
                     "",
@@ -12258,7 +12258,7 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                     "",
                     ""
                 ],
-                "correctAnswer": "backpack",
+                "correctAnswer": "Backpack",
                 "explanation": "A backpack holds pencils, books, and other tools for learning.",
                 "imageUrl": "https://images.pexels.com/photos/4907460/pexels-photo-4907460.jpeg?auto=compress&cs=tinysrgb&h=350",
                 "ipa": "/ˈbæk.pæk/",
@@ -13326,25 +13326,25 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
         "channel": "@JourneyEnglishTalk",
         "transcriptText": "What is this called? >> [music] >> Paint. What is this called? [music] Canvas. What [music] is this called? Clay. What is this [music] called? Sculpture. What [music] is this called? Sketch. >> [music] >> What is this called? Portrait. What is [music] this called? Gallery. What is this called? >> [music] >> Museum. What is this called? >> [music] >> Charcoal. What is this called? Watercolor.",
         "words": [
-            "paint",
-            "canvas",
-            "clay",
-            "sculpture",
-            "sketch",
-            "portrait",
-            "gallery",
-            "museum",
-            "charcoal",
-            "watercolor"
+            "Paint",
+            "Canvas",
+            "Clay",
+            "Sculpture",
+            "Sketch",
+            "Portrait",
+            "Gallery",
+            "Museum",
+            "Charcoal",
+            "Watercolor"
         ],
         "questions": [
             {
                 "question": "Which word best describes this image?",
                 "choices": [
-                    "clay",
-                    "sculpture",
-                    "canvas",
-                    "paint"
+                    "Clay",
+                    "Sculpture",
+                    "Canvas",
+                    "Paint"
                 ],
                 "choiceIpas": [
                     "/kleɪ/",
@@ -13352,7 +13352,7 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                     "",
                     ""
                 ],
-                "correctAnswer": "paint",
+                "correctAnswer": "Paint",
                 "explanation": "\"paint\" is the correct vocabulary word for this picture.",
                 "imageUrl": "https://images.pexels.com/photos/13343865/pexels-photo-13343865.jpeg?auto=compress&cs=tinysrgb&h=350",
                 "ipa": "/peɪnt/",
@@ -13361,10 +13361,10 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
             {
                 "question": "Which word best describes this image?",
                 "choices": [
-                    "paint",
-                    "canvas",
-                    "clay",
-                    "sculpture"
+                    "Paint",
+                    "Canvas",
+                    "Clay",
+                    "Sculpture"
                 ],
                 "choiceIpas": [
                     "/peɪnt/",
@@ -13372,7 +13372,7 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                     "/kleɪ/",
                     ""
                 ],
-                "correctAnswer": "canvas",
+                "correctAnswer": "Canvas",
                 "explanation": "\"canvas\" is the correct vocabulary word for this picture.",
                 "imageUrl": "https://images.pexels.com/photos/31246805/pexels-photo-31246805.jpeg?auto=compress&cs=tinysrgb&h=350",
                 "ipa": "/ˈkæn.vəs/",
@@ -13381,10 +13381,10 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
             {
                 "question": "Which word best describes this image?",
                 "choices": [
-                    "paint",
-                    "sculpture",
-                    "canvas",
-                    "clay"
+                    "Paint",
+                    "Sculpture",
+                    "Canvas",
+                    "Clay"
                 ],
                 "choiceIpas": [
                     "/peɪnt/",
@@ -13392,7 +13392,7 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                     "/ˈkæn.vəs/",
                     "/kleɪ/"
                 ],
-                "correctAnswer": "clay",
+                "correctAnswer": "Clay",
                 "explanation": "\"clay\" is the correct vocabulary word for this picture.",
                 "imageUrl": "https://images.pexels.com/photos/9304544/pexels-photo-9304544.jpeg?auto=compress&cs=tinysrgb&h=350",
                 "ipa": "/kleɪ/",
@@ -13401,10 +13401,10 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
             {
                 "question": "Which word best describes this image?",
                 "choices": [
-                    "canvas",
-                    "sculpture",
-                    "paint",
-                    "clay"
+                    "Canvas",
+                    "Sculpture",
+                    "Paint",
+                    "Clay"
                 ],
                 "choiceIpas": [
                     "",
@@ -13412,7 +13412,7 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                     "",
                     ""
                 ],
-                "correctAnswer": "sculpture",
+                "correctAnswer": "Sculpture",
                 "explanation": "\"sculpture\" is the correct vocabulary word for this picture.",
                 "imageUrl": "https://images.pexels.com/photos/37109655/pexels-photo-37109655.jpeg?auto=compress&cs=tinysrgb&h=350",
                 "ipa": "",
@@ -13421,10 +13421,10 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
             {
                 "question": "Which word best describes this image?",
                 "choices": [
-                    "clay",
-                    "paint",
-                    "sketch",
-                    "canvas"
+                    "Clay",
+                    "Paint",
+                    "Sketch",
+                    "Canvas"
                 ],
                 "choiceIpas": [
                     "",
@@ -13432,7 +13432,7 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                     "",
                     ""
                 ],
-                "correctAnswer": "sketch",
+                "correctAnswer": "Sketch",
                 "explanation": "\"sketch\" is the correct vocabulary word for this picture.",
                 "imageUrl": "https://images.pexels.com/photos/14849507/pexels-photo-14849507.jpeg?auto=compress&cs=tinysrgb&h=350",
                 "ipa": "/skɛtʃ/",
@@ -13441,10 +13441,10 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
             {
                 "question": "Which word best describes this image?",
                 "choices": [
-                    "portrait",
-                    "paint",
-                    "canvas",
-                    "clay"
+                    "Portrait",
+                    "Paint",
+                    "Canvas",
+                    "Clay"
                 ],
                 "choiceIpas": [
                     "/ˈpɔːtɹeɪt/",
@@ -13452,7 +13452,7 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                     "",
                     ""
                 ],
-                "correctAnswer": "portrait",
+                "correctAnswer": "Portrait",
                 "explanation": "\"portrait\" is the correct vocabulary word for this picture.",
                 "imageUrl": "https://images.pexels.com/photos/18853747/pexels-photo-18853747.jpeg?auto=compress&cs=tinysrgb&h=350",
                 "ipa": "/ˈpɔːtɹeɪt/",
@@ -13461,10 +13461,10 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
             {
                 "question": "Which word best describes this image?",
                 "choices": [
-                    "clay",
-                    "canvas",
-                    "paint",
-                    "gallery"
+                    "Clay",
+                    "Canvas",
+                    "Paint",
+                    "Gallery"
                 ],
                 "choiceIpas": [
                     "",
@@ -13472,7 +13472,7 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                     "",
                     ""
                 ],
-                "correctAnswer": "gallery",
+                "correctAnswer": "Gallery",
                 "explanation": "\"gallery\" is the correct vocabulary word for this picture.",
                 "imageUrl": "https://images.pexels.com/photos/13432768/pexels-photo-13432768.jpeg?auto=compress&cs=tinysrgb&h=350",
                 "ipa": "/ˈɡæləɹi/",
@@ -13481,10 +13481,10 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
             {
                 "question": "Which word best describes this image?",
                 "choices": [
-                    "clay",
-                    "museum",
-                    "paint",
-                    "canvas"
+                    "Clay",
+                    "Museum",
+                    "Paint",
+                    "Canvas"
                 ],
                 "choiceIpas": [
                     "",
@@ -13492,7 +13492,7 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                     "",
                     ""
                 ],
-                "correctAnswer": "museum",
+                "correctAnswer": "Museum",
                 "explanation": "\"museum\" is the correct vocabulary word for this picture.",
                 "imageUrl": "https://images.pexels.com/photos/20268598/pexels-photo-20268598.jpeg?auto=compress&cs=tinysrgb&h=350",
                 "ipa": "/mjuːˈziːəm/",
@@ -13501,10 +13501,10 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
             {
                 "question": "Which word best describes this image?",
                 "choices": [
-                    "charcoal",
-                    "clay",
-                    "paint",
-                    "canvas"
+                    "Charcoal",
+                    "Clay",
+                    "Paint",
+                    "Canvas"
                 ],
                 "choiceIpas": [
                     "/ˈtʃɑː.kəʊl/",
@@ -13512,7 +13512,7 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                     "/peɪnt/",
                     "/ˈkæn.vəs/"
                 ],
-                "correctAnswer": "charcoal",
+                "correctAnswer": "Charcoal",
                 "explanation": "\"charcoal\" is the correct vocabulary word for this picture.",
                 "imageUrl": "https://images.pexels.com/photos/8021316/pexels-photo-8021316.jpeg?auto=compress&cs=tinysrgb&h=350",
                 "ipa": "/ˈtʃɑː.kəʊl/",
@@ -13521,10 +13521,10 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
             {
                 "question": "Which word best describes this image?",
                 "choices": [
-                    "watercolor",
-                    "paint",
-                    "clay",
-                    "canvas"
+                    "Watercolor",
+                    "Paint",
+                    "Clay",
+                    "Canvas"
                 ],
                 "choiceIpas": [
                     "",
@@ -13532,7 +13532,7 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                     "",
                     ""
                 ],
-                "correctAnswer": "watercolor",
+                "correctAnswer": "Watercolor",
                 "explanation": "\"watercolor\" is the correct vocabulary word for this picture.",
                 "imageUrl": "https://images.pexels.com/photos/30552130/pexels-photo-30552130.jpeg?auto=compress&cs=tinysrgb&h=350",
                 "ipa": "",
@@ -13548,25 +13548,25 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
         "channel": "@JourneyEnglishTalk",
         "transcriptText": "What is this called? >> [music] >> Paint. What is this called? [music] Canvas. What [music] is this called? Clay. What is this [music] called? Sculpture. What [music] is this called? Sketch. >> [music] >> What is this called? Portrait. What is [music] this called? Gallery. What is this called? >> [music] >> Museum. What is this called? >> [music] >> Charcoal. What is this called? Watercolor.",
         "words": [
-            "paint",
-            "canvas",
-            "clay",
-            "sculpture",
-            "sketch",
-            "portrait",
-            "gallery",
-            "museum",
-            "charcoal",
-            "watercolor"
+            "Paint",
+            "Canvas",
+            "Clay",
+            "Sculpture",
+            "Sketch",
+            "Portrait",
+            "Gallery",
+            "Museum",
+            "Charcoal",
+            "Watercolor"
         ],
         "questions": [
             {
                 "question": "Which word best describes this image?",
                 "choices": [
-                    "clay",
-                    "sculpture",
-                    "canvas",
-                    "paint"
+                    "Clay",
+                    "Sculpture",
+                    "Canvas",
+                    "Paint"
                 ],
                 "choiceIpas": [
                     "/kleɪ/",
@@ -13574,7 +13574,7 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                     "",
                     ""
                 ],
-                "correctAnswer": "paint",
+                "correctAnswer": "Paint",
                 "explanation": "\"paint\" is the correct vocabulary word for this picture.",
                 "imageUrl": "https://images.pexels.com/photos/13343865/pexels-photo-13343865.jpeg?auto=compress&cs=tinysrgb&h=350",
                 "ipa": "/peɪnt/",
@@ -13583,10 +13583,10 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
             {
                 "question": "Which word best describes this image?",
                 "choices": [
-                    "paint",
-                    "canvas",
-                    "clay",
-                    "sculpture"
+                    "Paint",
+                    "Canvas",
+                    "Clay",
+                    "Sculpture"
                 ],
                 "choiceIpas": [
                     "/peɪnt/",
@@ -13594,7 +13594,7 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                     "/kleɪ/",
                     ""
                 ],
-                "correctAnswer": "canvas",
+                "correctAnswer": "Canvas",
                 "explanation": "\"canvas\" is the correct vocabulary word for this picture.",
                 "imageUrl": "https://images.pexels.com/photos/31246805/pexels-photo-31246805.jpeg?auto=compress&cs=tinysrgb&h=350",
                 "ipa": "/ˈkæn.vəs/",
@@ -13603,10 +13603,10 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
             {
                 "question": "Which word best describes this image?",
                 "choices": [
-                    "paint",
-                    "sculpture",
-                    "canvas",
-                    "clay"
+                    "Paint",
+                    "Sculpture",
+                    "Canvas",
+                    "Clay"
                 ],
                 "choiceIpas": [
                     "/peɪnt/",
@@ -13614,7 +13614,7 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                     "/ˈkæn.vəs/",
                     "/kleɪ/"
                 ],
-                "correctAnswer": "clay",
+                "correctAnswer": "Clay",
                 "explanation": "\"clay\" is the correct vocabulary word for this picture.",
                 "imageUrl": "https://images.pexels.com/photos/9304544/pexels-photo-9304544.jpeg?auto=compress&cs=tinysrgb&h=350",
                 "ipa": "/kleɪ/",
@@ -13623,10 +13623,10 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
             {
                 "question": "Which word best describes this image?",
                 "choices": [
-                    "canvas",
-                    "sculpture",
-                    "paint",
-                    "clay"
+                    "Canvas",
+                    "Sculpture",
+                    "Paint",
+                    "Clay"
                 ],
                 "choiceIpas": [
                     "",
@@ -13634,7 +13634,7 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                     "",
                     ""
                 ],
-                "correctAnswer": "sculpture",
+                "correctAnswer": "Sculpture",
                 "explanation": "\"sculpture\" is the correct vocabulary word for this picture.",
                 "imageUrl": "https://images.pexels.com/photos/37109655/pexels-photo-37109655.jpeg?auto=compress&cs=tinysrgb&h=350",
                 "ipa": "",
@@ -13643,10 +13643,10 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
             {
                 "question": "Which word best describes this image?",
                 "choices": [
-                    "clay",
-                    "paint",
-                    "sketch",
-                    "canvas"
+                    "Clay",
+                    "Paint",
+                    "Sketch",
+                    "Canvas"
                 ],
                 "choiceIpas": [
                     "",
@@ -13654,7 +13654,7 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                     "",
                     ""
                 ],
-                "correctAnswer": "sketch",
+                "correctAnswer": "Sketch",
                 "explanation": "\"sketch\" is the correct vocabulary word for this picture.",
                 "imageUrl": "https://images.pexels.com/photos/14849507/pexels-photo-14849507.jpeg?auto=compress&cs=tinysrgb&h=350",
                 "ipa": "/skɛtʃ/",
@@ -13663,10 +13663,10 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
             {
                 "question": "Which word best describes this image?",
                 "choices": [
-                    "portrait",
-                    "paint",
-                    "canvas",
-                    "clay"
+                    "Portrait",
+                    "Paint",
+                    "Canvas",
+                    "Clay"
                 ],
                 "choiceIpas": [
                     "/ˈpɔːtɹeɪt/",
@@ -13674,7 +13674,7 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                     "",
                     ""
                 ],
-                "correctAnswer": "portrait",
+                "correctAnswer": "Portrait",
                 "explanation": "\"portrait\" is the correct vocabulary word for this picture.",
                 "imageUrl": "https://images.pexels.com/photos/18853747/pexels-photo-18853747.jpeg?auto=compress&cs=tinysrgb&h=350",
                 "ipa": "/ˈpɔːtɹeɪt/",
@@ -13683,10 +13683,10 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
             {
                 "question": "Which word best describes this image?",
                 "choices": [
-                    "clay",
-                    "canvas",
-                    "paint",
-                    "gallery"
+                    "Clay",
+                    "Canvas",
+                    "Paint",
+                    "Gallery"
                 ],
                 "choiceIpas": [
                     "",
@@ -13694,7 +13694,7 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                     "",
                     ""
                 ],
-                "correctAnswer": "gallery",
+                "correctAnswer": "Gallery",
                 "explanation": "\"gallery\" is the correct vocabulary word for this picture.",
                 "imageUrl": "https://images.pexels.com/photos/13432768/pexels-photo-13432768.jpeg?auto=compress&cs=tinysrgb&h=350",
                 "ipa": "/ˈɡæləɹi/",
@@ -13703,10 +13703,10 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
             {
                 "question": "Which word best describes this image?",
                 "choices": [
-                    "clay",
-                    "museum",
-                    "paint",
-                    "canvas"
+                    "Clay",
+                    "Museum",
+                    "Paint",
+                    "Canvas"
                 ],
                 "choiceIpas": [
                     "",
@@ -13714,7 +13714,7 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                     "",
                     ""
                 ],
-                "correctAnswer": "museum",
+                "correctAnswer": "Museum",
                 "explanation": "\"museum\" is the correct vocabulary word for this picture.",
                 "imageUrl": "https://images.pexels.com/photos/20268598/pexels-photo-20268598.jpeg?auto=compress&cs=tinysrgb&h=350",
                 "ipa": "/mjuːˈziːəm/",
@@ -13723,10 +13723,10 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
             {
                 "question": "Which word best describes this image?",
                 "choices": [
-                    "charcoal",
-                    "clay",
-                    "paint",
-                    "canvas"
+                    "Charcoal",
+                    "Clay",
+                    "Paint",
+                    "Canvas"
                 ],
                 "choiceIpas": [
                     "/ˈtʃɑː.kəʊl/",
@@ -13734,7 +13734,7 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                     "/peɪnt/",
                     "/ˈkæn.vəs/"
                 ],
-                "correctAnswer": "charcoal",
+                "correctAnswer": "Charcoal",
                 "explanation": "\"charcoal\" is the correct vocabulary word for this picture.",
                 "imageUrl": "https://images.pexels.com/photos/8021316/pexels-photo-8021316.jpeg?auto=compress&cs=tinysrgb&h=350",
                 "ipa": "/ˈtʃɑː.kəʊl/",
@@ -13743,10 +13743,10 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
             {
                 "question": "Which word best describes this image?",
                 "choices": [
-                    "watercolor",
-                    "paint",
-                    "clay",
-                    "canvas"
+                    "Watercolor",
+                    "Paint",
+                    "Clay",
+                    "Canvas"
                 ],
                 "choiceIpas": [
                     "",
@@ -13754,7 +13754,7 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                     "",
                     ""
                 ],
-                "correctAnswer": "watercolor",
+                "correctAnswer": "Watercolor",
                 "explanation": "\"watercolor\" is the correct vocabulary word for this picture.",
                 "imageUrl": "https://images.pexels.com/photos/30552130/pexels-photo-30552130.jpeg?auto=compress&cs=tinysrgb&h=350",
                 "ipa": "",

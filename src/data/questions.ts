@@ -1853,11 +1853,11 @@ const STATIC_MATH_QUESTIONS: Question[] = [
         "question": "Which expression represents '5 less than a number y'?",
         "choices": [
             "5 - y",
-            "y - 5",
+            "Y - 5",
             "5y",
-            "y / 5"
+            "Y / 5"
         ],
-        "correctAnswer": "y - 5",
+        "correctAnswer": "Y - 5",
         "hint": "Think about taking 5 away from y.",
         "explanation": "'5 less than y' means you start with y and subtract 5, which is y - 5."
     },
@@ -1918,7 +1918,7 @@ const STATIC_MATH_QUESTIONS: Question[] = [
         "choices": [
             "3p + 4",
             "3p + 12",
-            "p + 12",
+            "P + 12",
             "12p"
         ],
         "correctAnswer": "3p + 12",
@@ -2428,12 +2428,12 @@ const STATIC_MATH_QUESTIONS: Question[] = [
         "difficulty": "easy",
         "question": "Simplify: x^3 * x^4 = ?",
         "choices": [
-            "x^7",
-            "x^12",
-            "x^1",
+            "X^7",
+            "X^12",
+            "X^1",
             "2x^7"
         ],
-        "correctAnswer": "x^7",
+        "correctAnswer": "X^7",
         "hint": "When multiplying like bases, add the exponents together.",
         "explanation": "x^3 * x^4 = x^(3 + 4) = x^7."
     },
@@ -2620,12 +2620,12 @@ const STATIC_MATH_QUESTIONS: Question[] = [
         "difficulty": "easy",
         "question": "Find the vertex form axis of symmetry for y = (x - 4)^2 + 3.",
         "choices": [
-            "x = -4",
-            "x = 4",
-            "x = 3",
-            "x = -3"
+            "X = -4",
+            "X = 4",
+            "X = 3",
+            "X = -3"
         ],
-        "correctAnswer": "x = 4",
+        "correctAnswer": "X = 4",
         "hint": "The vertex is at (h, k) in y = (x - h)^2 + k. Axis is x = h.",
         "explanation": "The vertex is (4, 3), so axis is x = 4."
     },
@@ -2636,12 +2636,12 @@ const STATIC_MATH_QUESTIONS: Question[] = [
         "difficulty": "medium",
         "question": "Solve the quadratic equation: x^2 - 5x + 6 = 0.",
         "choices": [
-            "x = 2, 3",
-            "x = -2, -3",
-            "x = 1, 6",
-            "x = -1, -6"
+            "X = 2, 3",
+            "X = -2, -3",
+            "X = 1, 6",
+            "X = -1, -6"
         ],
-        "correctAnswer": "x = 2, 3",
+        "correctAnswer": "X = 2, 3",
         "hint": "Factor the quadratic into (x - 2)(x - 3) = 0 and solve.",
         "explanation": "Factors are (x - 2)(x - 3) = 0, giving roots x = 2 and x = 3."
     },
@@ -2668,12 +2668,12 @@ const STATIC_MATH_QUESTIONS: Question[] = [
         "difficulty": "hard",
         "question": "Solve using the quadratic formula: x^2 - 3x - 4 = 0.",
         "choices": [
-            "x = -1, 4",
-            "x = 1, -4",
-            "x = 2, -2",
-            "x = 0, 3"
+            "X = -1, 4",
+            "X = 1, -4",
+            "X = 2, -2",
+            "X = 0, 3"
         ],
-        "correctAnswer": "x = -1, 4",
+        "correctAnswer": "X = -1, 4",
         "hint": "Factor into (x - 4)(x + 1) = 0 or use x = [-b +- sqrt(b^2 - 4ac)] / 2a.",
         "explanation": "(x - 4)(x + 1) = 0 leads to roots x = 4 and x = -1."
     },
@@ -2796,12 +2796,12 @@ const STATIC_MATH_QUESTIONS: Question[] = [
         "difficulty": "easy",
         "question": "Solve for x: x - 3 < 5.",
         "choices": [
-            "x < 2",
-            "x < 8",
-            "x > 8",
-            "x > 2"
+            "X < 2",
+            "X < 8",
+            "X > 8",
+            "X > 2"
         ],
-        "correctAnswer": "x < 8",
+        "correctAnswer": "X < 8",
         "hint": "Add 3 to both sides of the inequality sign.",
         "explanation": "x < 5 + 3 => x < 8."
     },
@@ -2812,12 +2812,12 @@ const STATIC_MATH_QUESTIONS: Question[] = [
         "difficulty": "easy",
         "question": "Solve for x: 3x >= 12.",
         "choices": [
-            "x >= 4",
-            "x <= 4",
-            "x >= 36",
-            "x <= 36"
+            "X >= 4",
+            "X <= 4",
+            "X >= 36",
+            "X <= 36"
         ],
-        "correctAnswer": "x >= 4",
+        "correctAnswer": "X >= 4",
         "hint": "Divide both sides by 3.",
         "explanation": "x >= 12 / 3 => x >= 4."
     },
@@ -2828,12 +2828,12 @@ const STATIC_MATH_QUESTIONS: Question[] = [
         "difficulty": "medium",
         "question": "Solve for x: -2x < 10.",
         "choices": [
-            "x < -5",
-            "x > -5",
-            "x < 5",
-            "x > 5"
+            "X < -5",
+            "X > -5",
+            "X < 5",
+            "X > 5"
         ],
-        "correctAnswer": "x > -5",
+        "correctAnswer": "X > -5",
         "hint": "When dividing or multiplying by a negative number, flip the inequality sign!",
         "explanation": "Dividing by -2: x > 10 / -2 => x > -5."
     },
@@ -2844,12 +2844,12 @@ const STATIC_MATH_QUESTIONS: Question[] = [
         "difficulty": "medium",
         "question": "Solve the inequality: 2x + 5 <= 11.",
         "choices": [
-            "x <= 3",
-            "x <= 8",
-            "x >= 3",
-            "x >= 8"
+            "X <= 3",
+            "X <= 8",
+            "X >= 3",
+            "X >= 8"
         ],
-        "correctAnswer": "x <= 3",
+        "correctAnswer": "X <= 3",
         "hint": "Subtract 5 from both sides, then divide by 2.",
         "explanation": "2x <= 6 => x <= 3."
     },
@@ -2878,7 +2878,7 @@ const STATIC_MATH_QUESTIONS: Question[] = [
         "choices": [
             "1 <= x <= 7",
             "-1 <= x <= 7",
-            "x <= 7",
+            "X <= 7",
             "1 < x < 7"
         ],
         "correctAnswer": "1 <= x <= 7",
@@ -2959,7 +2959,7 @@ const STATIC_MATH_QUESTIONS: Question[] = [
             "0",
             "1",
             "2",
-            "tan^2(x)"
+            "Tan^2(x)"
         ],
         "correctAnswer": "1",
         "hint": "This is the fundamental Pythagorean trigonometric identity.",
@@ -2988,9 +2988,9 @@ const STATIC_MATH_QUESTIONS: Question[] = [
         "difficulty": "easy",
         "question": "What is the formula for the circumference of a circle?",
         "choices": [
-            "pi * r^2",
+            "Pi * r^2",
             "2 * pi * r",
-            "pi * d^2",
+            "Pi * d^2",
             "2 * pi * d"
         ],
         "correctAnswer": "2 * pi * r",
@@ -3148,12 +3148,12 @@ const STATIC_MATH_QUESTIONS: Question[] = [
         "difficulty": "hard",
         "question": "Find the equation of a line with slope 2 passing through (1, 5).",
         "choices": [
-            "y = 2x + 3",
-            "y = 2x + 5",
-            "y = 2x + 4",
-            "y = 2x - 3"
+            "Y = 2x + 3",
+            "Y = 2x + 5",
+            "Y = 2x + 4",
+            "Y = 2x - 3"
         ],
-        "correctAnswer": "y = 2x + 3",
+        "correctAnswer": "Y = 2x + 3",
         "hint": "Use point-slope form: y - y1 = m(x - x1). y - 5 = 2(x - 1).",
         "explanation": "y - 5 = 2x - 2 => y = 2x + 3."
     },
@@ -3182,7 +3182,7 @@ const STATIC_MATH_QUESTIONS: Question[] = [
         "choices": [
             "1",
             "-1",
-            "sqrt(-1)",
+            "Sqrt(-1)",
             "0"
         ],
         "correctAnswer": "-1",
@@ -3214,7 +3214,7 @@ const STATIC_MATH_QUESTIONS: Question[] = [
         "choices": [
             "1",
             "-1",
-            "i",
+            "I",
             "-i"
         ],
         "correctAnswer": "-i",
@@ -3247,7 +3247,7 @@ const STATIC_MATH_QUESTIONS: Question[] = [
             "5",
             "7",
             "25",
-            "sqrt(7)"
+            "Sqrt(7)"
         ],
         "correctAnswer": "5",
         "hint": "Use absolute value formula: |a + bi| = sqrt(a^2 + b^2).",
@@ -3262,7 +3262,7 @@ const STATIC_MATH_QUESTIONS: Question[] = [
         "choices": [
             "1",
             "-1",
-            "i",
+            "I",
             "-i"
         ],
         "correctAnswer": "1",
@@ -3308,12 +3308,12 @@ const STATIC_MATH_QUESTIONS: Question[] = [
         "difficulty": "medium",
         "question": "Expand: log(x * y) = ?",
         "choices": [
-            "log(x) * log(y)",
-            "log(x) + log(y)",
-            "log(x) - log(y)",
-            "y * log(x)"
+            "Log(x) * log(y)",
+            "Log(x) + log(y)",
+            "Log(x) - log(y)",
+            "Y * log(x)"
         ],
-        "correctAnswer": "log(x) + log(y)",
+        "correctAnswer": "Log(x) + log(y)",
         "hint": "The log of a product is the sum of the logs.",
         "explanation": "Product rule: log(xy) = log(x) + log(y)."
     },
@@ -3358,8 +3358,8 @@ const STATIC_MATH_QUESTIONS: Question[] = [
         "choices": [
             "1",
             "5",
-            "e",
-            "ln(5)"
+            "E",
+            "Ln(5)"
         ],
         "correctAnswer": "5",
         "hint": "The natural log ln is the base-e logarithm. ln(e^x) = x.",
@@ -3502,8 +3502,8 @@ const STATIC_MATH_QUESTIONS: Question[] = [
         "choices": [
             "0",
             "1",
-            "infinity",
-            "undefined"
+            "Infinity",
+            "Undefined"
         ],
         "correctAnswer": "0",
         "hint": "Think about what happens to 1 divided by an extremely large number.",
@@ -3519,7 +3519,7 @@ const STATIC_MATH_QUESTIONS: Question[] = [
             "0",
             "2",
             "4",
-            "undefined"
+            "Undefined"
         ],
         "correctAnswer": "4",
         "hint": "Factor numerator first: (x - 2)(x + 2). Simplify by cancelling (x - 2).",
@@ -3535,7 +3535,7 @@ const STATIC_MATH_QUESTIONS: Question[] = [
             "0",
             "1.5",
             "3",
-            "infinity"
+            "Infinity"
         ],
         "correctAnswer": "1.5",
         "hint": "Compare leading coefficients of the highest degree terms (3x^2 / 2x^2).",
@@ -3550,8 +3550,8 @@ const STATIC_MATH_QUESTIONS: Question[] = [
         "choices": [
             "0",
             "1",
-            "undefined",
-            "pi"
+            "Undefined",
+            "Pi"
         ],
         "correctAnswer": "1",
         "hint": "This is a fundamental limit theorem in calculus.",
@@ -3564,10 +3564,10 @@ const STATIC_MATH_QUESTIONS: Question[] = [
         "difficulty": "easy",
         "question": "What is the derivative of x^2? (Find d/dx x^2)",
         "choices": [
-            "x",
+            "X",
             "2x",
             "2",
-            "x^3"
+            "X^3"
         ],
         "correctAnswer": "2x",
         "hint": "Use the Power Rule: d/dx (x^n) = n * x^(n - 1).",
@@ -3583,7 +3583,7 @@ const STATIC_MATH_QUESTIONS: Question[] = [
             "0",
             "5",
             "1",
-            "x"
+            "X"
         ],
         "correctAnswer": "0",
         "hint": "A constant function has a slope of zero everywhere.",
@@ -3612,12 +3612,12 @@ const STATIC_MATH_QUESTIONS: Question[] = [
         "difficulty": "medium",
         "question": "What is the derivative of sin(x)?",
         "choices": [
-            "cos(x)",
+            "Cos(x)",
             "-cos(x)",
-            "sin(x)",
+            "Sin(x)",
             "-sin(x)"
         ],
-        "correctAnswer": "cos(x)",
+        "correctAnswer": "Cos(x)",
         "hint": "The rate of change of sine is represented by cosine.",
         "explanation": "d/dx sin(x) = cos(x)."
     },
@@ -3629,9 +3629,9 @@ const STATIC_MATH_QUESTIONS: Question[] = [
         "question": "Find the derivative of f(x) = ln(x).",
         "choices": [
             "1/x",
-            "e^x",
+            "E^x",
             "1",
-            "x"
+            "X"
         ],
         "correctAnswer": "1/x",
         "hint": "The slope of natural logarithm at x is the reciprocal of x.",
@@ -3644,7 +3644,7 @@ const STATIC_MATH_QUESTIONS: Question[] = [
         "difficulty": "hard",
         "question": "Find the derivative of f(x) = e^(3x).",
         "choices": [
-            "e^(3x)",
+            "E^(3x)",
             "3 * e^(3x)",
             "3x * e^(3x-1)",
             "3"
@@ -3660,12 +3660,12 @@ const STATIC_MATH_QUESTIONS: Question[] = [
         "difficulty": "easy",
         "question": "Find the indefinite integral: integral of 2x dx = ?",
         "choices": [
-            "x^2 + C",
+            "X^2 + C",
             "2x^2 + C",
-            "x + C",
+            "X + C",
             "2 + C"
         ],
-        "correctAnswer": "x^2 + C",
+        "correctAnswer": "X^2 + C",
         "hint": "Think: what function has a derivative of 2x? Remember to add the constant + C.",
         "explanation": "d/dx(x^2 + C) = 2x. Thus, the integral is x^2 + C."
     },
@@ -3676,12 +3676,12 @@ const STATIC_MATH_QUESTIONS: Question[] = [
         "difficulty": "easy",
         "question": "Find the integral: integral of 1 dx = ?",
         "choices": [
-            "x + C",
+            "X + C",
             "1 + C",
             "0 + C",
-            "x^2 + C"
+            "X^2 + C"
         ],
-        "correctAnswer": "x + C",
+        "correctAnswer": "X + C",
         "hint": "What function has a derivative of 1?",
         "explanation": "d/dx(x + C) = 1. Thus, the integral is x + C."
     },
@@ -3708,12 +3708,12 @@ const STATIC_MATH_QUESTIONS: Question[] = [
         "difficulty": "medium",
         "question": "Find the indefinite integral: integral of cos(x) dx = ?",
         "choices": [
-            "sin(x) + C",
+            "Sin(x) + C",
             "-sin(x) + C",
-            "cos(x) + C",
+            "Cos(x) + C",
             "-cos(x) + C"
         ],
-        "correctAnswer": "sin(x) + C",
+        "correctAnswer": "Sin(x) + C",
         "hint": "What function has a derivative of cos(x)?",
         "explanation": "d/dx(sin(x)) = cos(x), so the integral is sin(x) + C."
     },
@@ -3724,12 +3724,12 @@ const STATIC_MATH_QUESTIONS: Question[] = [
         "difficulty": "hard",
         "question": "Find the indefinite integral: integral of 1/x dx (for x > 0).",
         "choices": [
-            "ln(x) + C",
-            "e^x + C",
+            "Ln(x) + C",
+            "E^x + C",
             "-1/x^2 + C",
-            "x + C"
+            "X + C"
         ],
-        "correctAnswer": "ln(x) + C",
+        "correctAnswer": "Ln(x) + C",
         "hint": "What function has a derivative of 1/x?",
         "explanation": "d/dx(ln(x)) = 1/x, so the integral is ln(x) + C."
     },
