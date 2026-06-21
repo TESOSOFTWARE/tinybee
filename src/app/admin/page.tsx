@@ -634,6 +634,7 @@ export default function AdminDashboardPage() {
   const [videoQuests, setVideoQuests] = useState<any>({});
   const [mathQuestions, setMathQuestions] = useState<any[]>([]);
   const [englishQuestions, setEnglishQuestions] = useState<any[]>([]);
+  const [isSyncing, setIsSyncing] = useState(false);
   const [customWorlds, setCustomWorlds] = useState<Record<string, WorldConfig>>({});
   const [poolSearchQuery, setPoolSearchQuery] = useState('');
   const [poolSelectedGrade, setPoolSelectedGrade] = useState('');
@@ -2120,6 +2121,29 @@ export default function AdminDashboardPage() {
     showNotification("Content exported as JSON!");
   };
 
+  const handleSyncToCodebase = async () => {
+    setIsSyncing(true);
+    showNotification("Syncing content to codebase...");
+    try {
+      const res = await fetch('/api/save-content', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ videoQuests, mathQuestions, englishQuestions })
+      });
+      const result = await res.json();
+      if (res.ok && result.success) {
+        showNotification(`Codebase updated successfully! Files: ${result.updatedFiles.join(', ')}`);
+      } else {
+        showNotification(result.error || "Failed to sync to codebase.", true);
+      }
+    } catch (err: any) {
+      console.error(err);
+      showNotification(err.message || "Failed to sync to codebase.", true);
+    } finally {
+      setIsSyncing(false);
+    }
+  };
+
   const handleImportJSON = (e: React.ChangeEvent<HTMLInputElement>) => {
     const fileReader = new FileReader();
     const files = e.target.files;
@@ -2663,6 +2687,18 @@ export default function AdminDashboardPage() {
           </div>
 
           <div className="flex items-center gap-2.5">
+            {process.env.NODE_ENV === 'development' && (
+              <Button
+                variant="gray"
+                size="sm"
+                onClick={handleSyncToCodebase}
+                disabled={isSyncing}
+                className="text-xs font-bold border border-violet-200 bg-violet-50 hover:bg-violet-100 text-violet-700 flex items-center gap-1.5 cursor-pointer shadow-sm disabled:opacity-50"
+              >
+                <Save className="w-3.5 h-3.5" /> {isSyncing ? "Syncing..." : "Sync to Codebase"}
+              </Button>
+            )}
+
             <Button
               variant="gray"
               size="sm"
