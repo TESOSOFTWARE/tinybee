@@ -696,8 +696,8 @@ export default function AdminDashboardPage() {
     questions: [] as any[]
   });
 
-  const [imageSource, setImageSource] = useState('antigravity');
-  const [batchImageSource, setBatchImageSource] = useState('antigravity');
+  const [imageSource, setImageSource] = useState('pexels');
+  const [batchImageSource, setBatchImageSource] = useState('pexels');
   const [singleImageSources, setSingleImageSources] = useState<Record<number, string>>({});
   const [selectedQuestions, setSelectedQuestions] = useState<number[]>([]);
   const [isRegeneratingBatch, setIsRegeneratingBatch] = useState(false);
@@ -715,7 +715,7 @@ export default function AdminDashboardPage() {
   const [bulkStartingLevelNum, setBulkStartingLevelNum] = useState<number>(1);
   const [bulkImportGrade, setBulkImportGrade] = useState<string | number>('1');
   const [bulkImportWorld, setBulkImportWorld] = useState<string>('auto');
-  const [bulkImportImageSource, setBulkImportImageSource] = useState<string>('antigravity');
+  const [bulkImportImageSource, setBulkImportImageSource] = useState<string>('pexels');
   const [isImportingBulk, setIsImportingBulk] = useState(false);
   const [bulkImportProgress, setBulkImportProgress] = useState<{ current: number; total: number; log: string[] }>({
     current: 0,
@@ -3005,7 +3005,7 @@ export default function AdminDashboardPage() {
                         setSelectedPlaylistVideos([]);
                         setBulkImportGrade(selectedGradeId || '1');
                         setBulkImportWorld(selectedWorldId || 'auto');
-                        setBulkImportImageSource('antigravity');
+                        setBulkImportImageSource('pexels');
                         setIsBulkImportOpen(true);
                       }}
                       className="flex items-center gap-1.5 shadow-sm cursor-pointer"
@@ -3334,9 +3334,9 @@ export default function AdminDashboardPage() {
                         onChange={(e) => setImageSource(e.target.value)}
                         className="text-[10px] font-bold text-slate-600 bg-slate-100 rounded px-1.5 py-1 border border-slate-200 outline-none cursor-pointer"
                       >
-                        <option value="antigravity">Antigravity (Custom Cartoon)</option>
                         <option value="pexels">Pexels (Photos)</option>
                         <option value="pixabay">Pixabay (Vectors)</option>
+                        <option value="antigravity">Antigravity (Custom Cartoon)</option>
                       </select>
                       <button
                         onClick={handleGenerateQuestionsStep2}
@@ -3408,9 +3408,9 @@ export default function AdminDashboardPage() {
                         className="text-[10px] font-bold text-indigo-900 bg-white rounded-lg px-2 py-1.5 border border-indigo-200 outline-none cursor-pointer"
                         disabled={isRegeneratingBatch}
                       >
-                        <option value="antigravity">Antigravity (Custom Cartoon)</option>
                         <option value="pexels">Pexels (Photos)</option>
                         <option value="pixabay">Pixabay (Vectors)</option>
+                        <option value="antigravity">Antigravity (Custom Cartoon)</option>
                       </select>
                       <button
                         onClick={handleRegenerateSelectedImages}
@@ -3497,9 +3497,9 @@ export default function AdminDashboardPage() {
                                     onChange={(e) => setSingleImageSources(prev => ({ ...prev, [qIdx]: e.target.value }))}
                                     className="shrink-0 bg-slate-50 border border-slate-200 text-slate-700 px-3 py-2 rounded-xl text-xs font-bold outline-none focus:border-indigo-500 cursor-pointer shadow-sm"
                                   >
-                                    <option value="antigravity">Antigravity (Custom Cartoon)</option>
                                     <option value="pexels">Pexels (Photos)</option>
                                     <option value="pixabay">Pixabay (Vectors)</option>
+                                    <option value="antigravity">Antigravity (Custom Cartoon)</option>
                                   </select>
                                   <button
                                     onClick={() => handleRegenerateSingleImage(qIdx)}
@@ -3936,7 +3936,7 @@ export default function AdminDashboardPage() {
                         setSelectedPlaylistVideos([]);
                         setBulkImportGrade(selectedGradeId || '1');
                         setBulkImportWorld('auto');
-                        setBulkImportImageSource('antigravity');
+                        setBulkImportImageSource('pexels');
                         setIsBulkImportOpen(true);
                       }}
                       className="flex items-center gap-1.5 shadow-sm cursor-pointer"
@@ -5051,9 +5051,9 @@ export default function AdminDashboardPage() {
                           onChange={(e) => setBulkImportImageSource(e.target.value)}
                           className="w-full bg-white border-2 border-slate-200 text-slate-700 px-3 py-2 rounded-xl text-xs font-bold outline-none focus:border-indigo-500 cursor-pointer shadow-sm"
                         >
-                          <option value="antigravity">Antigravity (Cartoon)</option>
                           <option value="pexels">Pexels (Photos)</option>
                           <option value="pixabay">Pixabay (Vectors)</option>
+                          <option value="antigravity">Antigravity (Cartoon)</option>
                         </select>
                       </div>
                     </div>
@@ -5351,9 +5351,9 @@ export default function AdminDashboardPage() {
                             defaultValue=""
                           >
                             <option value="" disabled>— choose —</option>
-                            <option value="antigravity">Antigravity AI</option>
                             <option value="pexels">Pexels Photos</option>
                             <option value="pixabay">Pixabay Illustrations</option>
+                            <option value="antigravity">Antigravity AI</option>
                           </select>
                         </div>
                       </div>
@@ -5405,9 +5405,9 @@ export default function AdminDashboardPage() {
                                 onClick={e => e.preventDefault()}
                                 className="mt-1.5 text-[10px] font-bold bg-white border border-slate-200 rounded-lg px-1.5 py-0.5 outline-none cursor-pointer w-full"
                               >
-                                <option value="antigravity">🤖 Antigravity AI</option>
                                 <option value="pexels">📷 Pexels</option>
                                 <option value="pixabay">🎨 Pixabay</option>
+                                <option value="antigravity">🤖 Antigravity AI</option>
                               </select>
                             </div>
                           </label>
