@@ -16,19 +16,45 @@ try {
   const data = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
   console.log('Successfully loaded export file.');
 
+  // Sanitize data: Ensure all grade properties are numbers (e.g. converting "1" to 1)
+  if (data.videoQuests) {
+    Object.keys(data.videoQuests).forEach(key => {
+      const q = data.videoQuests[key];
+      if (q && q.grade !== undefined) {
+        q.grade = q.grade === 'K' ? 0 : Number(q.grade);
+      }
+    });
+  }
+
+  if (data.mathQuestions && Array.isArray(data.mathQuestions)) {
+    data.mathQuestions.forEach(q => {
+      if (q && q.grade !== undefined) {
+        q.grade = q.grade === 'K' ? 0 : Number(q.grade);
+      }
+    });
+  }
+
+  if (data.englishQuestions && Array.isArray(data.englishQuestions)) {
+    data.englishQuestions.forEach(q => {
+      if (q && q.grade !== undefined) {
+        q.grade = q.grade === 'K' ? 0 : Number(q.grade);
+      }
+    });
+  }
+
   // 1. Persist videoQuests to video_quests.ts
   if (data.videoQuests && fs.existsSync(videoQuestsPath)) {
     console.log('Persisting videoQuests to video_quests.ts...');
     let content = fs.readFileSync(videoQuestsPath, 'utf8');
-    const startTag = 'const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {';
+    const startTag = 'const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = ';
     const endTag = '};\n\nexport const VIDEO_QUESTS_DATABASE = new Proxy';
     
     const startIndex = content.indexOf(startTag);
     const endIndex = content.indexOf(endTag);
     
     if (startIndex !== -1 && endIndex !== -1) {
-      const newPart = `${startTag}\n  ${JSON.stringify(data.videoQuests, null, 4).replace(/\n/g, '\n  ')}`;
-      content = content.substring(0, startIndex) + newPart + content.substring(endIndex);
+      const newPart = `${startTag}${JSON.stringify(data.videoQuests, null, 4)}`;
+      content = content.substring(0, startIndex) + newPart + content.substring(endIndex + 1); // Keep the closing bracket
       fs.writeFileSync(videoQuestsPath, content);
       console.log('✅ Successfully updated video_quests.ts');
     } else {
@@ -40,15 +66,15 @@ try {
   if (data.mathQuestions && fs.existsSync(mathQuestionsPath)) {
     console.log('Persisting mathQuestions to questions.ts...');
     let content = fs.readFileSync(mathQuestionsPath, 'utf8');
-    const startTag = 'const STATIC_MATH_QUESTIONS: Question[] = [';
+    const startTag = 'const STATIC_MATH_QUESTIONS: Question[] = ';
     const endTag = '];\n\nexport const mathQuestions = new Proxy(STATIC_MATH_QUESTIONS';
     
     const startIndex = content.indexOf(startTag);
     const endIndex = content.indexOf(endTag);
     
     if (startIndex !== -1 && endIndex !== -1) {
-      const newPart = `${startTag}\n  ${JSON.stringify(data.mathQuestions, null, 4).replace(/\n/g, '\n  ')}`;
-      content = content.substring(0, startIndex) + newPart + content.substring(endIndex);
+      const newPart = `${startTag}${JSON.stringify(data.mathQuestions, null, 4)}`;
+      content = content.substring(0, startIndex) + newPart + content.substring(endIndex + 1); // Keep the closing bracket
       fs.writeFileSync(mathQuestionsPath, content);
       console.log('✅ Successfully updated questions.ts');
     } else {
@@ -67,7 +93,7 @@ try {
     const endIndex = content.indexOf(endTag);
     
     if (startIndex !== -1 && endIndex !== -1) {
-      const newPart = `${startTag} ${JSON.stringify(data.englishQuestions, null, 4).replace(/\n/g, '\n')}`;
+      const newPart = `${startTag} ${JSON.stringify(data.englishQuestions, null, 4)}`;
       content = content.substring(0, startIndex) + newPart + content.substring(endIndex);
       fs.writeFileSync(englishQuestionsPath, content);
       console.log('✅ Successfully updated english_questions.ts');
