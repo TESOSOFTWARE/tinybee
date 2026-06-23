@@ -9,11 +9,17 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
     }
 
-    const prompt = `Extract exactly 5 important english vocabulary words from the following video transcript. Return them as a simple JSON array of strings (e.g. ["word1", "word2"]). Transcript: ${transcriptText}`;
+    const prompt = `You are an expert ESL teacher. I will give you a video transcript. Extract ALL the key English vocabulary words taught or highlighted in this transcript.
+Rules:
+1. Return ONLY the core vocabulary words (e.g. "Rooster", "Hen", "Turkey").
+2. Remove any sound effects, speaker names, brackets, or extra punctuation (e.g., remove "[Music]", ">>").
+3. DO NOT group multiple words into a single string unless it is a compound noun.
+4. Output EXACTLY a valid JSON array of strings, and nothing else.
+Transcript: ${transcriptText}`;
     let parsedWords: string[] = [];
 
     if (aiProvider === 'gemini') {
-      const aiRes = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${aiApiKey}`, {
+      const aiRes = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent?key=${aiApiKey}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] })
@@ -31,7 +37,7 @@ export async function POST(request: Request) {
           'Authorization': `Bearer ${aiApiKey}`
         },
         body: JSON.stringify({
-          model: 'gpt-4o-mini',
+          model: 'gpt-4o',
           messages: [{ role: 'user', content: prompt }]
         })
       });
@@ -43,6 +49,13 @@ export async function POST(request: Request) {
     } else {
       throw new Error('Unsupported AI provider');
     }
+
+    // Capitalize first letter and format words nicely
+    parsedWords = parsedWords.map(w => {
+      const trimmed = w.trim();
+      if (!trimmed) return trimmed;
+      return trimmed.charAt(0).toUpperCase() + trimmed.slice(1);
+    }).filter(Boolean);
 
     return NextResponse.json({ words: parsedWords });
   } catch (error: any) {

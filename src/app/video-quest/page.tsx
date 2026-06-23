@@ -27,7 +27,11 @@ function VideoQuestContent() {
     setMounted(true);
   }, []);
 
-  const quest: VideoQuest = getVideoQuest(grade, levelId, world.topicId);
+  const rawQuest: VideoQuest = getVideoQuest(grade, levelId, world.topicId);
+  const quest = {
+    ...rawQuest,
+    questions: rawQuest.questions ? rawQuest.questions.filter((q: any) => !q.isHidden) : []
+  };
 
   // Game states: 'watch' | 'quiz' | 'completed' | 'failed'
   const [stage, setStage] = useState<'watch' | 'quiz' | 'result'>('watch');

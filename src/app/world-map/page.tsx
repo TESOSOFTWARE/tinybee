@@ -19,7 +19,33 @@ function WorldMapContent() {
 
   const worldId = searchParams.get('worldId') || 'g1-addition';
   const world = WORLDS_DATABASE[worldId] || WORLDS_DATABASE['g1-addition'];
-  const totalLevels = Math.min(world.totalLevels || 10, 10);
+  
+  const [actualTotalLevels, setActualTotalLevels] = React.useState<number>(Math.min(world.totalLevels || 10, 10));
+
+  React.useEffect(() => {
+    try {
+      const stored = localStorage.getItem('tinybee_video_quests');
+      if (stored) {
+        const parsed = JSON.parse(stored);
+        const prefix = `${world.topicId || world.id}-`;
+        
+        let count = 0;
+        Object.keys(parsed).forEach(key => {
+          if (key.startsWith(prefix)) {
+            const num = parseInt(key.split('-').pop() || '0', 10);
+            if (!isNaN(num) && num > 0) count++;
+          }
+        });
+        
+        // Use the actual count of levels configured (max 10), minimum 1 so the start node isn't entirely alone
+        setActualTotalLevels(Math.max(1, Math.min(count, 10)));
+      }
+    } catch (e) {
+      console.error(e);
+    }
+  }, [world.topicId, world.id]);
+
+  const totalLevels = actualTotalLevels;
 
   if (isLoading) {
     return (

@@ -2,11 +2,24 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { ArrowLeft, Save, Trash2, Plus, Download, Upload, RotateCcw, Edit3, Check, X, Film, HelpCircle, GraduationCap, Sparkles, Loader2, Search, Copy, Globe, ImageOff, RefreshCw, Eye, EyeOff, AlertTriangle } from 'lucide-react';
+import { ArrowLeft, Save, Trash2, Plus, Download, Upload, RotateCcw, Edit3, Check, X, Film, HelpCircle, GraduationCap, Sparkles, Loader2, Search, Copy, Globe, ImageOff, RefreshCw, Eye, EyeOff, AlertTriangle, GripVertical, Settings } from 'lucide-react';
 import { Button } from '@/components/UI/Button';
 import { Card } from '@/components/UI/Card';
 import { getYouTubeEmbedUrl } from '@/data/video_quests';
 import { WorldConfig, WORLDS_DATABASE } from '@/data/worlds';
+
+const getYouTubeWatchUrl = (url: string) => {
+  if (!url) return '';
+  const shortsMatch = url.match(/\/shorts\/([a-zA-Z0-9_-]{11})/);
+  if (shortsMatch && shortsMatch[1]) {
+    return `https://www.youtube.com/shorts/${shortsMatch[1]}`;
+  }
+  const match = url.match(/(?:embed\/|v=|youtu\.be\/)([a-zA-Z0-9_-]{11})/);
+  if (match && match[1]) {
+    return `https://www.youtube.com/watch?v=${match[1]}`;
+  }
+  return url;
+};
 
 const normalizeGrade = (g: string | number | null | undefined): string => {
   if (g === null || g === undefined) return '';
@@ -659,6 +672,8 @@ export default function AdminDashboardPage() {
   const [selectedGradeId, setSelectedGradeId] = useState<string | number | null>(null);
   const [selectedWorldId, setSelectedWorldId] = useState<string | null>(null);
   const [selectedLevelNum, setSelectedLevelNum] = useState<number | null>(null);
+  const [isLevelDeleteMode, setIsLevelDeleteMode] = useState(false);
+  const [selectedLevelsToDelete, setSelectedLevelsToDelete] = useState<number[]>([]);
 
   // Metadata edit states
   const [editingGradeMetadata, setEditingGradeMetadata] = useState<{ grade: string | number, title: string, description: string } | null>(null);
@@ -696,9 +711,10 @@ export default function AdminDashboardPage() {
     questions: [] as any[]
   });
 
-  const [imageSource, setImageSource] = useState('pexels');
-  const [batchImageSource, setBatchImageSource] = useState('pexels');
+  const [imageSource, setImageSource] = useState('google');
+  const [batchImageSource, setBatchImageSource] = useState('google');
   const [singleImageSources, setSingleImageSources] = useState<Record<number, string>>({});
+  const [singleImageIndices, setSingleImageIndices] = useState<Record<number, number>>({});
   const [selectedQuestions, setSelectedQuestions] = useState<number[]>([]);
   const [isRegeneratingBatch, setIsRegeneratingBatch] = useState(false);
   const [isRegeneratingSingle, setIsRegeneratingSingle] = useState<number | null>(null);
@@ -712,10 +728,11 @@ export default function AdminDashboardPage() {
   const [isFetchingPlaylist, setIsFetchingPlaylist] = useState(false);
   const [extractedPlaylistVideos, setExtractedPlaylistVideos] = useState<any[]>([]);
   const [selectedPlaylistVideos, setSelectedPlaylistVideos] = useState<number[]>([]);
+  const [draggedItemIndex, setDraggedItemIndex] = useState<number | null>(null);
   const [bulkStartingLevelNum, setBulkStartingLevelNum] = useState<number>(1);
   const [bulkImportGrade, setBulkImportGrade] = useState<string | number>('1');
   const [bulkImportWorld, setBulkImportWorld] = useState<string>('auto');
-  const [bulkImportImageSource, setBulkImportImageSource] = useState<string>('pexels');
+  const [bulkImportImageSource, setBulkImportImageSource] = useState<string>('google');
   const [isImportingBulk, setIsImportingBulk] = useState(false);
   const [bulkImportProgress, setBulkImportProgress] = useState<{ current: number; total: number; log: string[] }>({
     current: 0,
@@ -785,8 +802,9 @@ export default function AdminDashboardPage() {
     textStyle: '',
     description: ''
   });
-  const [aiProvider, setAiProvider] = useState<'gemini' | 'openai'>('gemini');
+  const [aiProvider, setAiProvider] = useState<'gemini' | 'openai'>('openai');
   const [aiApiKey, setAiApiKey] = useState('');
+  const [isSettingsModalOpen, setIsSettingsModalOpen] = useState(false);
 
   // Hydrate data
   useEffect(() => {
@@ -949,7 +967,7 @@ export default function AdminDashboardPage() {
     if (q) {
       setQuestForm({
         grade: selectedGradeId === 'K' ? 0 : (Number(selectedGradeId) || 1),
-        videoUrl: q.videoUrl || '',
+        videoUrl: getYouTubeWatchUrl(q.videoUrl || ''),
         title: q.title || '',
         channel: q.channel || '',
         words: q.words || [],
@@ -989,13 +1007,13 @@ export default function AdminDashboardPage() {
       return;
     }
 
-    const normalizedUrl = getYouTubeEmbedUrl(rawUrl);
+    const watchUrl = getYouTubeWatchUrl(rawUrl);
 
     setIsExtracting(true);
     setExtractionStep("Fetching YouTube page details & metadata...");
 
     try {
-      const fetchPromise = fetch(`/api/extract-video?videoUrl=${encodeURIComponent(normalizedUrl)}`)
+      const fetchPromise = fetch(`/api/extract-video?videoUrl=${encodeURIComponent(watchUrl)}`)
         .then(res => {
           if (!res.ok) throw new Error("Failed to extract details from YouTube");
           return res.json();
@@ -1056,7 +1074,7 @@ export default function AdminDashboardPage() {
 
       setQuestForm({
         ...questForm,
-        videoUrl: normalizedUrl,
+        videoUrl: watchUrl,
         title: data.title || '',
         channel: data.channel || '',
         words: extractedWords,
@@ -1517,8 +1535,9 @@ export default function AdminDashboardPage() {
       }
     }
 
-    setVideoQuests(updatedQuests);
-    localStorage.setItem(STORAGE_KEYS.videoQuests, JSON.stringify(updatedQuests));
+    const compactedQuests = compactQuests(updatedQuests, selectedGradeId, selectedWorldId);
+    setVideoQuests(compactedQuests);
+    localStorage.setItem(STORAGE_KEYS.videoQuests, JSON.stringify(compactedQuests));
     
     // Automatically select the target level so the UI loads the dropped level's form
     setSelectedLevelNum(targetLvl);
@@ -1556,9 +1575,19 @@ export default function AdminDashboardPage() {
 
       // Check existing video IDs to exclude from initial selection
       const existingIds = new Set<string>();
-      Object.values(videoQuests).forEach((quest: any) => {
-        if (quest && quest.videoUrl) {
-          const match = quest.videoUrl.match(/(?:embed\/|v=|\/shorts\/|youtu\.be\/)([a-zA-Z0-9_-]{11})/);
+      const allActiveQuests = getAllQuests();
+      allActiveQuests.forEach((q: any) => {
+        // Skip if world is deleted
+        if (q.topicId && deletedWorldIds.includes(q.topicId)) return;
+        
+        // Skip if it's an orphaned grade-key (topic-key missing but should exist)
+        if (q.topicId) {
+          const canonicalKey = `${q.topicId}-${q.levelNum}`;
+          if (!videoQuests[canonicalKey]) return;
+        }
+
+        if (q.quest && q.quest.videoUrl) {
+          const match = q.quest.videoUrl.match(/(?:embed\/|v=|\/shorts\/|youtu\.be\/)([a-zA-Z0-9_-]{11})/);
           if (match) existingIds.add(match[1]);
         }
       });
@@ -1566,11 +1595,23 @@ export default function AdminDashboardPage() {
       setExtractedPlaylistVideos(data.videos);
       
       const initialSelected: number[] = [];
+      const duplicateIndices: number[] = [];
+      
       data.videos.forEach((video: any, idx: number) => {
-        if (!existingIds.has(video.videoId)) {
+        if (existingIds.has(video.videoId)) {
+          duplicateIndices.push(idx);
+        } else {
           initialSelected.push(idx);
         }
       });
+
+      // Give a tiny delay so the UI can draw the list first if possible, or just ask directly
+      if (duplicateIndices.length > 0) {
+        if (window.confirm("Some videos in this playlist have already been imported. Do you want to override the duplicated videos? (Click Cancel to skip them)")) {
+          initialSelected.push(...duplicateIndices);
+          initialSelected.sort((a, b) => a - b);
+        }
+      }
       setSelectedPlaylistVideos(initialSelected);
     } catch (e: any) {
       console.error(e);
@@ -1605,21 +1646,25 @@ export default function AdminDashboardPage() {
         const video = extractedPlaylistVideos[videoIdx];
         
         try {
-          // Check duplicates to prevent importing the same video multiple times
-          const existingIds = new Set<string>();
-          Object.values(updatedQuests).forEach((quest: any) => {
+          // Find any existing keys for this video to remove them (override/move)
+          const existingKeysToRemove: string[] = [];
+          Object.entries(updatedQuests).forEach(([key, quest]: [string, any]) => {
             if (quest && quest.videoUrl) {
               const match = quest.videoUrl.match(/(?:embed\/|v=|\/shorts\/|youtu\.be\/)([a-zA-Z0-9_-]{11})/);
-              if (match) existingIds.add(match[1]);
+              if (match && match[1] === video.videoId) {
+                existingKeysToRemove.push(key);
+              }
             }
           });
 
-          if (existingIds.has(video.videoId)) {
+          if (existingKeysToRemove.length > 0) {
             setBulkImportProgress(prev => ({
               ...prev,
-              log: [...prev.log, `⚠️ Skipping duplicate video: "${video.title}" (ID: ${video.videoId}) — already in library.`]
+              log: [...prev.log, `⚠️ Overriding existing video: "${video.title}" (ID: ${video.videoId})...`]
             }));
-            continue;
+            existingKeysToRemove.forEach(k => {
+              delete updatedQuests[k];
+            });
           }
 
           // 1. Initial processing logs
@@ -1639,6 +1684,40 @@ export default function AdminDashboardPage() {
           }
           const extractData = await extractRes.json();
           if (extractData.error) throw new Error(extractData.error);
+
+          // 2.5 Use AI Extractor if configured
+          if (aiApiKey && extractData.transcriptText) {
+            setBulkImportProgress(prev => ({
+              ...prev,
+              log: [...prev.log, `Asking AI to extract vocabulary for "${video.title}"...`]
+            }));
+            try {
+              const aiRes = await fetch('/api/ai-extract', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                  transcriptText: extractData.transcriptText,
+                  aiProvider,
+                  aiApiKey
+                })
+              });
+              const aiData = await aiRes.json();
+              if (aiData.words && aiData.words.length > 0) {
+                extractData.words = aiData.words;
+              } else {
+                setBulkImportProgress(prev => ({
+                  ...prev,
+                  log: [...prev.log, `⚠️ AI returned empty words for "${video.title}", using fallback words.`]
+                }));
+              }
+            } catch (err: any) {
+              console.error("Bulk AI Extraction failed:", err);
+              setBulkImportProgress(prev => ({
+                ...prev,
+                log: [...prev.log, `⚠️ AI Extraction failed for "${video.title}", using fallback words.`]
+              }));
+            }
+          }
 
           // 3. Determine topic/world categorization
           let targetWorldId: string | undefined = undefined;
@@ -1666,39 +1745,6 @@ export default function AdminDashboardPage() {
             updatedQuests,
             bulkStartingLevelNum
           );
-
-          // Check target limit (totalLevels) dynamically
-          const targetWorldObj = targetWorldId 
-            ? Object.values({ ...WORLDS_DATABASE, ...customWorlds }).find(w => w.topicId === targetWorldId)
-            : undefined;
-          const maxWorldLevels = targetWorldObj?.totalLevels || 10;
-
-          if (targetWorldId && (targetLevel === null || targetLevel > maxWorldLevels)) {
-            // Topic has exceeded levels, demote to uncategorized (none)
-            setBulkImportProgress(prev => ({
-              ...prev,
-              log: [...prev.log, `⚠️ World: ${worldLabel} has exceeded limit of ${maxWorldLevels} levels. Placing video without category...`]
-            }));
-            targetWorldId = undefined;
-            worldLabel = 'none';
-            targetLevel = findNextAvailableLevel(
-              String(bulkImportGrade),
-              '',
-              updatedQuests,
-              bulkStartingLevelNum
-            );
-          }
-
-          if (targetLevel === null) {
-            // If 1-10 is completely full for uncategorized too, look up to 1000
-            for (let lvl = bulkStartingLevelNum; lvl <= 1000; lvl++) {
-              const key = targetWorldId ? `${targetWorldId}-${lvl}` : `${bulkImportGrade}-${lvl}`;
-              if (!updatedQuests[key]) {
-                targetLevel = lvl;
-                break;
-              }
-            }
-          }
 
           if (targetLevel === null) {
             setBulkImportProgress(prev => ({
@@ -1873,6 +1919,9 @@ export default function AdminDashboardPage() {
       return;
     }
 
+    const currentIndex = singleImageIndices[qIdx] || 0;
+    const nextIndex = currentIndex + 1;
+
     try {
       const res = await fetch('/api/extract-video', {
         method: 'POST',
@@ -1881,7 +1930,8 @@ export default function AdminDashboardPage() {
           words: [wordToProcess],
           transcriptText: questForm.transcriptText,
           imageSource: singleImageSources[qIdx] || batchImageSource,
-          title: questForm.title
+          title: questForm.title,
+          imageIndex: nextIndex
         })
       });
 
@@ -1901,6 +1951,7 @@ export default function AdminDashboardPage() {
           ipa: newQ.ipa
         };
         setQuestForm({ ...questForm, questions: updatedQuestions });
+        setSingleImageIndices(prev => ({ ...prev, [qIdx]: nextIndex }));
       }
 
       if (data.missingWords && data.missingWords.length > 0) {
@@ -2273,6 +2324,12 @@ export default function AdminDashboardPage() {
 
       const isGradeKey = firstPart === 'K' || !isNaN(Number(firstPart));
       const topicId = questObj.topicId || (isGradeKey ? '' : firstPart);
+
+      // Skip grade-mirrored keys if the quest belongs to a specific topic.
+      // This prevents orphaned grade keys (e.g., left behind if a world was moved to another grade)
+      // from leaking deleted videos and causing false "duplicate" warnings.
+      if (isGradeKey && topicId) return;
+
       const grade = questObj.grade !== undefined ? String(questObj.grade) : (isGradeKey ? firstPart : '');
 
       const canonicalKey = `${grade}_${topicId}_${levelNum}`;
@@ -2302,13 +2359,7 @@ export default function AdminDashboardPage() {
     startFrom = 1,
     ignoreKeys: string[] = []
   ) => {
-    let maxLevels = 10;
-    if (topicId) {
-      const wObj = Object.values({ ...WORLDS_DATABASE, ...customWorlds }).find(w => w.topicId === topicId);
-      if (wObj && wObj.totalLevels) {
-        maxLevels = wObj.totalLevels;
-      }
-    }
+    let maxLevels = 1000;
 
     for (let lvl = startFrom; lvl <= maxLevels; lvl++) {
       if (topicId) {
@@ -2595,6 +2646,54 @@ export default function AdminDashboardPage() {
     setSelectedLevelNum(levelNum);
   };
 
+  const compactQuests = (questsToCompact: any, gradeId: string | number | null, topicId: string | null) => {
+    const prefixKey = topicId ? String(topicId) : String(gradeId);
+    if (!prefixKey) return questsToCompact;
+
+    const prefix = `${prefixKey}-`;
+    const levelsWithContent: number[] = [];
+    
+    Object.keys(questsToCompact).forEach(key => {
+      if (key.startsWith(prefix)) {
+        const parts = key.split('-');
+        const num = parseInt(parts[parts.length - 1], 10);
+        if (!isNaN(num)) levelsWithContent.push(num);
+      }
+    });
+    
+    levelsWithContent.sort((a, b) => a - b);
+    
+    // Grab the quests in order
+    const orderedQuests = levelsWithContent.map(lvl => questsToCompact[`${prefixKey}-${lvl}`]);
+    
+    // Clear all existing keys for this topic/grade
+    levelsWithContent.forEach(lvl => {
+      if (topicId) {
+        delete questsToCompact[`${topicId}-${lvl}`];
+        if (lvl === 1) delete questsToCompact[topicId];
+      }
+      if (gradeId !== null) {
+        delete questsToCompact[`${gradeId}-${lvl}`];
+        if (lvl === 1) delete questsToCompact[String(gradeId)];
+      }
+    });
+    
+    // Re-assign them starting from 1
+    orderedQuests.forEach((q, idx) => {
+      const newLvl = idx + 1;
+      if (topicId) {
+        questsToCompact[`${topicId}-${newLvl}`] = q;
+        if (newLvl === 1) questsToCompact[topicId] = q;
+      }
+      if (gradeId !== null) {
+        questsToCompact[`${gradeId}-${newLvl}`] = q;
+        if (newLvl === 1) questsToCompact[String(gradeId)] = q;
+      }
+    });
+    
+    return questsToCompact;
+  };
+
   const handleDeleteQuestFromPool = (grade: string, topicId: string, levelNum: number) => {
     if (!confirm(`Are you sure you want to delete this quest (Grade ${grade}, Level ${levelNum})?`)) return;
 
@@ -2611,8 +2710,11 @@ export default function AdminDashboardPage() {
       delete updatedQuests[String(grade)];
     }
 
-    setVideoQuests(updatedQuests);
-    localStorage.setItem(STORAGE_KEYS.videoQuests, JSON.stringify(updatedQuests));
+    const compactedQuests = compactQuests(updatedQuests, grade, topicId);
+
+    setVideoQuests(compactedQuests);
+    localStorage.setItem(STORAGE_KEYS.videoQuests, JSON.stringify(compactedQuests));
+    if (selectedLevelNum !== null) setSelectedLevelNum(null);
     showNotification(`Deleted quest: Grade ${grade}, Level ${levelNum}.`);
   };
 
@@ -2720,6 +2822,15 @@ export default function AdminDashboardPage() {
               className="text-xs font-black flex items-center gap-1.5 bg-rose-50 hover:bg-rose-100 text-rose-700 border border-rose-200 cursor-pointer shadow-sm"
             >
               <RotateCcw className="w-3.5 h-3.5" /> Reset Defaults
+            </Button>
+
+            <Button
+              variant="gray"
+              size="sm"
+              onClick={() => setIsSettingsModalOpen(true)}
+              className="text-xs font-black flex items-center gap-1.5 bg-slate-50 hover:bg-slate-100 text-slate-700 border border-slate-200 cursor-pointer shadow-sm"
+            >
+              <Settings className="w-3.5 h-3.5" /> Settings
             </Button>
 
             <Button
@@ -3005,7 +3116,7 @@ export default function AdminDashboardPage() {
                         setSelectedPlaylistVideos([]);
                         setBulkImportGrade(selectedGradeId || '1');
                         setBulkImportWorld(selectedWorldId || 'auto');
-                        setBulkImportImageSource('pexels');
+                        setBulkImportImageSource('google');
                         setIsBulkImportOpen(true);
                       }}
                       className="flex items-center gap-1.5 shadow-sm cursor-pointer"
@@ -3080,34 +3191,154 @@ export default function AdminDashboardPage() {
 
                 {/* ── Level selector grid ── */}
                 <div className="space-y-2">
-                  <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Level</span>
+                  <div className="flex justify-between items-center w-full">
+                    <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Level</span>
+                    <div className="flex gap-2">
+                      <button
+                        onClick={() => {
+                          const compacted = compactQuests({ ...videoQuests }, selectedGradeId, selectedWorldId);
+                          setVideoQuests(compacted);
+                          localStorage.setItem(STORAGE_KEYS.videoQuests, JSON.stringify(compacted));
+                          showNotification('Levels compacted successfully!');
+                          if (selectedLevelNum !== null) setSelectedLevelNum(null);
+                        }}
+                        className="text-[10px] font-bold px-2 py-0.5 rounded transition-colors cursor-pointer bg-emerald-100 text-emerald-700 hover:bg-emerald-200 flex items-center gap-1"
+                        title="Remove any empty gaps between levels"
+                      >
+                        Auto-Compact Gaps
+                      </button>
+                      <button
+                        onClick={() => {
+                          if (isLevelDeleteMode) {
+                            setIsLevelDeleteMode(false);
+                            setSelectedLevelsToDelete([]);
+                          } else {
+                            setIsLevelDeleteMode(true);
+                          }
+                        }}
+                        className={`text-[10px] font-bold px-2 py-0.5 rounded transition-colors cursor-pointer ${
+                          isLevelDeleteMode ? 'bg-red-100 text-red-600 hover:bg-red-200' : 'bg-slate-100 text-slate-500 hover:bg-slate-200'
+                        }`}
+                      >
+                        {isLevelDeleteMode ? 'Cancel Delete Mode' : 'Multi-Delete Levels'}
+                      </button>
+                    </div>
+                  </div>
                   <div className="flex flex-wrap gap-2">
                     {levels.map(lvl => {
                       const hasTopicContent = !!(selectedWorldId && videoQuests[`${selectedWorldId}-${lvl}`]);
                       const hasGradeContent = !!videoQuests[`${selectedGradeId}-${lvl}`];
                       const hasContent = selectedWorldId ? hasTopicContent : hasGradeContent;
                       const isActive = selectedLevelNum === lvl;
+                      const isDragging = draggingLevelNum === lvl;
+                      const isDraggedOver = draggedOverLevelNum === lvl;
+                      const isSelectedForDeletion = selectedLevelsToDelete.includes(lvl);
+                      
                       return (
                         <button
                           key={lvl}
-                          onClick={() => setSelectedLevelNum(lvl)}
+                          draggable={!isLevelDeleteMode}
+                          onDragStart={(e) => {
+                            if (isLevelDeleteMode) return;
+                            setDraggingLevelNum(lvl);
+                            e.dataTransfer.effectAllowed = 'move';
+                          }}
+                          onDragOver={(e) => {
+                            if (isLevelDeleteMode) return;
+                            e.preventDefault();
+                            if (draggingLevelNum !== lvl) {
+                              setDraggedOverLevelNum(lvl);
+                            }
+                          }}
+                          onDragLeave={() => {
+                            if (isLevelDeleteMode) return;
+                            if (draggedOverLevelNum === lvl) {
+                              setDraggedOverLevelNum(null);
+                            }
+                          }}
+                          onDrop={(e) => {
+                            if (isLevelDeleteMode) return;
+                            e.preventDefault();
+                            if (draggingLevelNum !== null && draggingLevelNum !== lvl) {
+                              handleReorderLevels(draggingLevelNum, lvl);
+                            }
+                            setDraggingLevelNum(null);
+                            setDraggedOverLevelNum(null);
+                          }}
+                          onDragEnd={() => {
+                            setDraggingLevelNum(null);
+                            setDraggedOverLevelNum(null);
+                          }}
+                          onClick={() => {
+                            if (isLevelDeleteMode) {
+                              setSelectedLevelsToDelete(prev => 
+                                prev.includes(lvl) ? prev.filter(l => l !== lvl) : [...prev, lvl]
+                              );
+                            } else {
+                              setSelectedLevelNum(lvl);
+                            }
+                          }}
                           className={`relative w-10 h-10 rounded-xl border-2 text-xs font-black transition-all cursor-pointer flex items-center justify-center ${
+                            isLevelDeleteMode && isSelectedForDeletion ? 'border-red-500 bg-red-100 text-red-700 shadow-md scale-105 z-10' :
+                            isLevelDeleteMode ? 'border-slate-200 bg-white text-slate-400 hover:border-red-300' :
+                            isDragging ? 'opacity-40 border-dashed border-slate-350 bg-slate-50' :
+                            isDraggedOver ? 'border-indigo-500 bg-indigo-50/50 scale-105 shadow-md z-10' :
                             isActive
                               ? 'border-indigo-500 bg-indigo-600 text-white shadow-md scale-105'
                               : hasContent
-                                ? 'border-emerald-400 bg-emerald-50 text-emerald-700 hover:border-emerald-500'
-                                : 'border-slate-200 bg-white text-slate-400 hover:border-slate-300'
+                                ? lvl > 10 
+                                  ? 'border-amber-400 bg-amber-50 text-amber-700 hover:border-amber-500' 
+                                  : 'border-emerald-400 bg-emerald-50 text-emerald-700 hover:border-emerald-500'
+                                : 'border-slate-200 bg-slate-100 text-slate-300 hover:border-slate-300'
                           }`}
-                          title={`Level ${lvl}${hasTopicContent ? ' ✓ (world-specific)' : hasGradeContent ? ' ✓ (grade fallback)' : ' (empty)'}`}
+                          title={`Level ${lvl}${hasTopicContent ? ' ✓ (world-specific)' : hasGradeContent ? ' ✓ (grade fallback)' : ' (empty)'}${lvl > 10 ? ' - Extra Level' : ''}`}
                         >
                           {lvl}
-                          {hasContent && !isActive && (
+                          {isLevelDeleteMode && isSelectedForDeletion && (
+                            <span className="absolute -top-1.5 -right-1.5 bg-red-500 text-white rounded-full w-4 h-4 flex items-center justify-center text-[10px]">
+                              ×
+                            </span>
+                          )}
+                          {!isLevelDeleteMode && hasContent && !isActive && (
                             <span className="absolute -top-1 -right-1 w-2 h-2 rounded-full bg-emerald-400 border border-white" />
                           )}
                         </button>
                       );
                     })}
                   </div>
+                  {isLevelDeleteMode && selectedLevelsToDelete.length > 0 && (
+                    <div className="flex justify-start animate-fade-in mt-2 mb-2">
+                      <button
+                        onClick={() => {
+                          if (confirm(`Are you sure you want to delete ${selectedLevelsToDelete.length} selected level(s)?`)) {
+                            const updatedQuests = { ...videoQuests };
+                            selectedLevelsToDelete.forEach(lvl => {
+                              if (selectedWorldId) {
+                                delete updatedQuests[`${selectedWorldId}-${lvl}`];
+                                if (lvl === 1) delete updatedQuests[selectedWorldId];
+                              }
+                              if (selectedGradeId !== null) {
+                                delete updatedQuests[`${selectedGradeId}-${lvl}`];
+                                if (lvl === 1) delete updatedQuests[String(selectedGradeId)];
+                              }
+                            });
+                            
+                            const compactedQuests = compactQuests(updatedQuests, selectedGradeId, selectedWorldId);
+
+                            setVideoQuests(compactedQuests);
+                            localStorage.setItem(STORAGE_KEYS.videoQuests, JSON.stringify(compactedQuests));
+                            showNotification(`Deleted ${selectedLevelsToDelete.length} level(s).`);
+                            setIsLevelDeleteMode(false);
+                            setSelectedLevelsToDelete([]);
+                            setSelectedLevelNum(null);
+                          }
+                        }}
+                        className="px-3 py-1.5 bg-red-50 text-red-600 font-bold text-xs rounded-lg border border-red-200 hover:bg-red-100 shadow-sm flex items-center gap-1 cursor-pointer"
+                      >
+                        <Trash2 className="w-3.5 h-3.5" /> Delete {selectedLevelsToDelete.length} Selected Levels
+                      </button>
+                    </div>
+                  )}
                   <p className="text-[10px] text-slate-400 font-medium">
                     <span className="inline-block w-2 h-2 rounded-full bg-emerald-400 mr-1 align-middle" />has content &nbsp;
                     <span className="inline-block w-2 h-2 rounded-full bg-indigo-500 mr-1 align-middle" />currently editing
@@ -3177,7 +3408,7 @@ export default function AdminDashboardPage() {
 
                           {/* Level badge */}
                           <div className={`w-8 h-8 rounded-lg flex items-center justify-center text-xs font-black shrink-0 ${
-                            quest ? 'bg-emerald-100 text-emerald-850 border border-emerald-250' : 'bg-slate-100 text-slate-450 border border-slate-200'
+                            quest ? (lvl > 10 ? 'bg-amber-100 text-amber-800 border border-amber-300' : 'bg-emerald-100 text-emerald-850 border border-emerald-250') : 'bg-slate-100 text-slate-450 border border-slate-200'
                           }`}>
                             {lvl}
                           </div>
@@ -3266,21 +3497,17 @@ export default function AdminDashboardPage() {
                           setAiProvider(val);
                           localStorage.setItem('tinybee_ai_provider', val);
                         }}
-                        className="text-[10px] font-bold text-slate-600 bg-white rounded px-2 py-1.5 border border-slate-200 outline-none cursor-pointer"
+                        className="text-[10px] font-bold text-slate-600 bg-white rounded px-2 py-1.5 border border-slate-200 outline-none cursor-pointer flex-1"
                       >
-                        <option value="gemini">Gemini API</option>
-                        <option value="openai">OpenAI API</option>
+                        <option value="openai">OpenAI (GPT-4o)</option>
+                        <option value="gemini">Google Gemini</option>
                       </select>
-                      <input
-                        type="password"
-                        placeholder="Enter API Key (saved locally)"
-                        value={aiApiKey}
-                        onChange={(e) => {
-                          setAiApiKey(e.target.value);
-                          localStorage.setItem('tinybee_ai_api_key', e.target.value);
-                        }}
-                        className="flex-1 bg-white border border-slate-200 rounded px-2 py-1 text-xs outline-none focus:border-indigo-500"
-                      />
+                      <button
+                        onClick={() => setIsSettingsModalOpen(true)}
+                        className="text-[10px] font-bold text-indigo-700 bg-white hover:bg-indigo-50 border border-indigo-200 rounded px-2 py-1.5 cursor-pointer shadow-sm flex items-center gap-1"
+                      >
+                        <Settings className="w-3 h-3" /> Config Key
+                      </button>
                     </div>
                   )}
                   <input
@@ -3288,18 +3515,34 @@ export default function AdminDashboardPage() {
                     value={questForm.videoUrl}
                     onChange={(e) => setQuestForm({ ...questForm, videoUrl: e.target.value })}
                     onBlur={(e) => {
-                      const normalized = getYouTubeEmbedUrl(e.target.value);
-                      if (normalized !== e.target.value) {
-                        setQuestForm({ ...questForm, videoUrl: normalized });
+                      const watchUrl = getYouTubeWatchUrl(e.target.value);
+                      if (watchUrl !== e.target.value) {
+                        setQuestForm({ ...questForm, videoUrl: watchUrl });
                       }
                     }}
-                    placeholder="https://www.youtube.com/embed/uR7bSJYQEc0"
+                    placeholder="https://www.youtube.com/watch?v=uR7bSJYQEc0"
                     className="w-full bg-white border-2 border-slate-200 rounded-xl px-3.5 py-2 text-sm font-semibold text-slate-800 outline-none focus:border-indigo-500 focus:bg-slate-50/50 transition-all"
                   />
                   <span className="text-[10px] text-slate-400 font-bold block">Supports any YouTube video URL format (Shorts, Watch, Share, or Embed)</span>
+                  
                 </div>
 
-                {/* Row 2: Title and Channel */}
+                <div className="flex flex-col lg:flex-row gap-6 items-start">
+                  {/* Left Column: Video Preview */}
+                  {questForm.videoUrl && getYouTubeEmbedUrl(questForm.videoUrl) && (
+                    <div className={`w-full lg:w-[320px] shrink-0 rounded-xl overflow-hidden border-2 border-slate-200 shadow-sm ${questForm.videoUrl.includes('/shorts/') ? 'aspect-[9/16]' : 'aspect-video'}`}>
+                      <iframe
+                        src={getYouTubeEmbedUrl(questForm.videoUrl)}
+                        className="w-full h-full"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                      />
+                    </div>
+                  )}
+
+                  {/* Right Column: Details Form */}
+                  <div className="flex-1 w-full flex flex-col gap-4">
+                    {/* Row 2: Title and Channel */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="space-y-1">
                     <label className="text-xs font-black text-slate-500 block">Lesson Title</label>
@@ -3334,6 +3577,7 @@ export default function AdminDashboardPage() {
                         onChange={(e) => setImageSource(e.target.value)}
                         className="text-[10px] font-bold text-slate-600 bg-slate-100 rounded px-1.5 py-1 border border-slate-200 outline-none cursor-pointer"
                       >
+                        <option value="google">Google Images</option>
                         <option value="pexels">Pexels (Photos)</option>
                         <option value="pixabay">Pixabay (Vectors)</option>
                         <option value="antigravity">Antigravity (Custom Cartoon)</option>
@@ -3364,6 +3608,8 @@ export default function AdminDashboardPage() {
                     placeholder="Video transcript will appear here after extraction..."
                     className="w-full bg-slate-50 border-2 border-slate-200 rounded-xl px-3.5 py-2 text-xs font-medium text-slate-600 outline-none h-24 resize-y"
                   />
+                </div>
+                  </div>
                 </div>
               </div>
 
@@ -3402,12 +3648,25 @@ export default function AdminDashboardPage() {
                       <span className="bg-indigo-200 text-indigo-900 px-1.5 py-0.5 rounded-md mr-1">{selectedQuestions.length}</span> questions selected
                     </div>
                     <div className="flex items-center gap-2">
+                      <button
+                        onClick={() => {
+                          if (confirm(`Are you sure you want to delete ${selectedQuestions.length} selected question(s)?`)) {
+                            const newQuestions = questForm.questions.filter((_, idx) => !selectedQuestions.includes(idx));
+                            setQuestForm({ ...questForm, questions: newQuestions });
+                            setSelectedQuestions([]);
+                          }
+                        }}
+                        className="text-[10px] font-black text-red-600 transition-colors flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-red-200 bg-red-50 hover:bg-red-100 cursor-pointer shadow-sm mr-2"
+                      >
+                        <Trash2 className="w-3.5 h-3.5" /> Delete Selected
+                      </button>
                       <select
                         value={batchImageSource}
                         onChange={(e) => setBatchImageSource(e.target.value)}
                         className="text-[10px] font-bold text-indigo-900 bg-white rounded-lg px-2 py-1.5 border border-indigo-200 outline-none cursor-pointer"
                         disabled={isRegeneratingBatch}
                       >
+                        <option value="google">Google Images</option>
                         <option value="pexels">Pexels (Photos)</option>
                         <option value="pixabay">Pixabay (Vectors)</option>
                         <option value="antigravity">Antigravity (Custom Cartoon)</option>
@@ -3431,14 +3690,28 @@ export default function AdminDashboardPage() {
                 ) : (
                   <div className="space-y-4">
                     {questForm.questions.map((q, qIdx) => (
-                      <div key={`qst-itm-${qIdx}`} className="border border-slate-250 bg-slate-55 p-4 rounded-2xl relative space-y-4 shadow-sm">
-                        <button
-                          onClick={() => handleDeleteQuestQuestion(qIdx)}
-                          className="absolute top-4 right-4 text-slate-400 hover:text-red-500 transition-colors cursor-pointer"
-                          title="Delete"
-                        >
-                          <Trash2 className="w-4.5 h-4.5" />
-                        </button>
+                      <div key={`qst-itm-${qIdx}`} className={`border p-4 rounded-2xl relative space-y-4 shadow-sm transition-all ${q.isHidden ? 'border-dashed border-slate-300 bg-slate-50 opacity-75' : 'border-slate-250 bg-slate-55'}`}>
+                        <div className="absolute top-4 right-4 flex items-center gap-2">
+                          {q.isHidden && (
+                            <span className="text-[9px] font-black bg-slate-200 text-slate-500 px-1.5 py-0.5 rounded uppercase tracking-widest mr-1">
+                              Hidden
+                            </span>
+                          )}
+                          <button
+                            onClick={() => handleQuestQuestionChange(qIdx, 'isHidden', !q.isHidden)}
+                            className={`transition-colors cursor-pointer ${q.isHidden ? 'text-slate-400 hover:text-indigo-500' : 'text-indigo-500 hover:text-slate-400'}`}
+                            title={q.isHidden ? "Unhide Question" : "Hide Question"}
+                          >
+                            {q.isHidden ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+                          </button>
+                          <button
+                            onClick={() => handleDeleteQuestQuestion(qIdx)}
+                            className="text-slate-400 hover:text-red-500 transition-colors cursor-pointer"
+                            title="Delete"
+                          >
+                            <Trash2 className="w-4 h-4" />
+                          </button>
+                        </div>
 
                         <div className="flex items-center gap-2">
                           <input
@@ -3497,6 +3770,7 @@ export default function AdminDashboardPage() {
                                     onChange={(e) => setSingleImageSources(prev => ({ ...prev, [qIdx]: e.target.value }))}
                                     className="shrink-0 bg-slate-50 border border-slate-200 text-slate-700 px-3 py-2 rounded-xl text-xs font-bold outline-none focus:border-indigo-500 cursor-pointer shadow-sm"
                                   >
+                                    <option value="google">Google Images</option>
                                     <option value="pexels">Pexels (Photos)</option>
                                     <option value="pixabay">Pixabay (Vectors)</option>
                                     <option value="antigravity">Antigravity (Custom Cartoon)</option>
@@ -3936,7 +4210,7 @@ export default function AdminDashboardPage() {
                         setSelectedPlaylistVideos([]);
                         setBulkImportGrade(selectedGradeId || '1');
                         setBulkImportWorld('auto');
-                        setBulkImportImageSource('pexels');
+                        setBulkImportImageSource('google');
                         setIsBulkImportOpen(true);
                       }}
                       className="flex items-center gap-1.5 shadow-sm cursor-pointer"
@@ -4946,25 +5220,58 @@ export default function AdminDashboardPage() {
                         return (
                           <label 
                             key={`bulk-vid-${video.videoId}-${idx}`}
+                            draggable={true}
+                            onDragStart={(e) => {
+                              setDraggedItemIndex(idx);
+                              e.dataTransfer.effectAllowed = 'move';
+                              e.dataTransfer.setData('text/plain', idx.toString());
+                            }}
+                            onDragOver={(e) => {
+                              e.preventDefault();
+                              e.dataTransfer.dropEffect = 'move';
+                            }}
+                            onDrop={(e) => {
+                              e.preventDefault();
+                              if (draggedItemIndex === null || draggedItemIndex === idx) return;
+
+                              const newVideos = [...extractedPlaylistVideos];
+                              const itemToMove = newVideos[draggedItemIndex];
+                              newVideos.splice(draggedItemIndex, 1);
+                              newVideos.splice(idx, 0, itemToMove);
+
+                              const newSelected = selectedPlaylistVideos.map(sIdx => {
+                                if (sIdx === draggedItemIndex) return idx;
+                                if (draggedItemIndex < idx) {
+                                  if (sIdx > draggedItemIndex && sIdx <= idx) return sIdx - 1;
+                                } else {
+                                  if (sIdx >= idx && sIdx < draggedItemIndex) return sIdx + 1;
+                                }
+                                return sIdx;
+                              });
+
+                              setExtractedPlaylistVideos(newVideos);
+                              setSelectedPlaylistVideos(newSelected);
+                              setDraggedItemIndex(null);
+                            }}
+                            onDragEnd={() => setDraggedItemIndex(null)}
                             className={`flex items-center gap-3 p-2 bg-white rounded-xl border transition-all ${
-                              isAlreadyImported 
-                                ? 'opacity-65 border-slate-100 bg-slate-50 cursor-not-allowed'
-                                : isChecked 
-                                ? 'border-indigo-200 bg-indigo-50/20 cursor-pointer' 
+                              isChecked 
+                                ? (isAlreadyImported ? 'border-amber-400 bg-amber-50/20 cursor-pointer' : 'border-indigo-200 bg-indigo-50/20 cursor-pointer') 
                                 : 'border-slate-100 hover:border-slate-200 cursor-pointer'
-                            }`}
+                            } ${draggedItemIndex === idx ? 'opacity-50 border-dashed border-indigo-400' : ''}`}
                           >
+                            <div className="p-1 shrink-0 text-slate-400 cursor-grab hover:text-indigo-600 active:cursor-grabbing">
+                              <GripVertical className="w-4 h-4" />
+                            </div>
                             <input 
                               type="checkbox"
                               checked={isChecked}
-                              disabled={isAlreadyImported}
                               onChange={() => {
-                                if (isAlreadyImported) return;
                                 setSelectedPlaylistVideos(prev => 
                                   prev.includes(idx) ? prev.filter(i => i !== idx) : [...prev, idx]
                                 );
                               }}
-                              className="rounded border-slate-300 text-indigo-650 focus:ring-indigo-500 w-4 h-4 cursor-pointer disabled:cursor-not-allowed"
+                              className="rounded border-slate-300 text-indigo-650 focus:ring-indigo-500 w-4 h-4 cursor-pointer"
                             />
                             <div className="bg-slate-100 rounded-lg p-2 text-slate-500 shrink-0">
                               <Film className="w-4 h-4" />
@@ -4987,7 +5294,7 @@ export default function AdminDashboardPage() {
                   </div>
 
                   <div className="bg-indigo-50/45 border border-indigo-100 rounded-2xl p-4 space-y-4">
-                    <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+                    <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-3">
                       {/* Grade Selector */}
                       <div className="space-y-1 col-span-1">
                         <label className="text-xs font-black text-indigo-900 block">Target Grade</label>
@@ -5037,10 +5344,36 @@ export default function AdminDashboardPage() {
                           onChange={(e) => setBulkStartingLevelNum(Number(e.target.value))}
                           className="w-full bg-white border-2 border-slate-200 text-slate-700 px-3 py-2 rounded-xl text-xs font-bold outline-none focus:border-indigo-500 cursor-pointer shadow-sm"
                         >
-                          {Array.from({ length: 10 }, (_, i) => i + 1).map(num => (
+                          {Array.from({ length: 50 }, (_, i) => i + 1).map(num => (
                             <option key={`bulk-import-lvl-${num}`} value={num}>Level {num}</option>
                           ))}
                         </select>
+                      </div>
+
+                      {/* AI Extractor Selector */}
+                      <div className="space-y-1 col-span-1">
+                        <label className="text-xs font-black text-indigo-900 block">AI Extractor</label>
+                        <div className="flex gap-1">
+                          <select
+                            value={aiProvider}
+                            onChange={(e) => {
+                              const val = e.target.value as 'gemini' | 'openai';
+                              setAiProvider(val);
+                              localStorage.setItem('tinybee_ai_provider', val);
+                            }}
+                            className="w-full bg-white border-2 border-slate-200 text-slate-700 px-3 py-2 rounded-xl text-xs font-bold outline-none focus:border-indigo-500 cursor-pointer shadow-sm"
+                          >
+                            <option value="openai">OpenAI (GPT-4o)</option>
+                            <option value="gemini">Google Gemini</option>
+                          </select>
+                          <button
+                            onClick={() => setIsSettingsModalOpen(true)}
+                            className="bg-white border-2 border-slate-200 text-slate-500 hover:text-indigo-600 hover:border-indigo-300 px-3 py-2 rounded-xl cursor-pointer shadow-sm"
+                            title="Configure API Key"
+                          >
+                            <Settings className="w-4 h-4" />
+                          </button>
+                        </div>
                       </div>
 
                       {/* Image Generator Selector */}
@@ -5051,6 +5384,7 @@ export default function AdminDashboardPage() {
                           onChange={(e) => setBulkImportImageSource(e.target.value)}
                           className="w-full bg-white border-2 border-slate-200 text-slate-700 px-3 py-2 rounded-xl text-xs font-bold outline-none focus:border-indigo-500 cursor-pointer shadow-sm"
                         >
+                          <option value="google">Google Images</option>
                           <option value="pexels">Pexels (Photos)</option>
                           <option value="pixabay">Pixabay (Vectors)</option>
                           <option value="antigravity">Antigravity (Cartoon)</option>
@@ -5065,7 +5399,7 @@ export default function AdminDashboardPage() {
                         : bulkImportWorld === 'none'
                         ? " All videos will be left uncategorized (none)."
                         : ` All videos will be placed in the "${Object.values({ ...WORLDS_DATABASE, ...customWorlds }).find(w => w.topicId === bulkImportWorld)?.name || bulkImportWorld}" world.`
-                      } Levels will start from Level {bulkStartingLevelNum} and fill the next available levels up to Level 10.
+                      } Levels will start from Level {bulkStartingLevelNum} and fill the next available slots sequentially. Extra levels (Level 11+) will be highlighted in amber.
                     </p>
                   </div>
 
@@ -5214,6 +5548,69 @@ export default function AdminDashboardPage() {
         </div>
       )}
       {/* Scan & Fix Broken Images Modal — 3-step wizard */}
+      {/* Settings Modal */}
+      {isSettingsModalOpen && (
+        <div className="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+          <Card className="bg-white border-4 border-slate-800/20 max-w-md w-full p-6 space-y-5 rounded-3xl shadow-2xl relative animate-pop-in">
+            <button
+              onClick={() => setIsSettingsModalOpen(false)}
+              className="absolute top-4 right-4 text-slate-400 hover:text-slate-700 transition-colors"
+            >
+              <X className="w-6 h-6" />
+            </button>
+            <div className="text-center">
+              <span className="text-4xl">⚙️</span>
+              <h3 className="font-black text-slate-900 text-xl mt-2">API Settings</h3>
+              <p className="text-xs text-slate-500 font-bold">Configure your AI extraction keys.</p>
+            </div>
+            
+            <div className="space-y-3 bg-slate-50 p-4 rounded-xl border border-slate-200">
+              <div className="space-y-1">
+                <label className="text-xs font-black text-slate-700 block">Default AI Extractor</label>
+                <select
+                  value={aiProvider}
+                  onChange={(e) => {
+                    const val = e.target.value as 'gemini' | 'openai';
+                    setAiProvider(val);
+                    localStorage.setItem('tinybee_ai_provider', val);
+                  }}
+                  className="w-full bg-white border-2 border-slate-200 text-slate-700 px-3 py-2 rounded-xl text-sm font-bold outline-none focus:border-indigo-500 cursor-pointer shadow-sm"
+                >
+                  <option value="openai">OpenAI (GPT-4o)</option>
+                  <option value="gemini">Google Gemini</option>
+                </select>
+              </div>
+
+              <div className="space-y-1">
+                <label className="text-xs font-black text-slate-700 block">API Key ({aiProvider === 'openai' ? 'OpenAI' : 'Gemini'})</label>
+                <input
+                  type="password"
+                  placeholder={`Enter your ${aiProvider === 'openai' ? 'OpenAI' : 'Gemini'} API Key...`}
+                  value={aiApiKey}
+                  onChange={(e) => {
+                    setAiApiKey(e.target.value);
+                    localStorage.setItem('tinybee_ai_api_key', e.target.value);
+                  }}
+                  className="w-full bg-white border-2 border-slate-200 text-slate-700 px-3 py-2 rounded-xl text-sm outline-none focus:border-indigo-500 shadow-sm"
+                />
+                <p className="text-[10px] text-slate-400 font-semibold leading-snug pt-1">
+                  Your key is saved locally in your browser and is never stored on any database.
+                </p>
+              </div>
+            </div>
+
+            <Button
+              variant="purple"
+              fullWidth
+              onClick={() => setIsSettingsModalOpen(false)}
+              className="py-3 font-black uppercase tracking-wider text-sm shadow-md"
+            >
+              Done
+            </Button>
+          </Card>
+        </div>
+      )}
+
       {isScanningImages && (
         <div className="fixed inset-0 bg-slate-900/75 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-fade-in">
           <Card className="bg-white border border-slate-200 max-w-3xl w-full shadow-2xl rounded-3xl overflow-hidden flex flex-col" style={{ maxHeight: '92vh' }}>
@@ -5351,6 +5748,7 @@ export default function AdminDashboardPage() {
                             defaultValue=""
                           >
                             <option value="" disabled>— choose —</option>
+                            <option value="google">Google Images</option>
                             <option value="pexels">Pexels Photos</option>
                             <option value="pixabay">Pixabay Illustrations</option>
                             <option value="antigravity">Antigravity AI</option>
@@ -5405,6 +5803,7 @@ export default function AdminDashboardPage() {
                                 onClick={e => e.preventDefault()}
                                 className="mt-1.5 text-[10px] font-bold bg-white border border-slate-200 rounded-lg px-1.5 py-0.5 outline-none cursor-pointer w-full"
                               >
+                                <option value="google">🌐 Google Images</option>
                                 <option value="pexels">📷 Pexels</option>
                                 <option value="pixabay">🎨 Pixabay</option>
                                 <option value="antigravity">🤖 Antigravity AI</option>

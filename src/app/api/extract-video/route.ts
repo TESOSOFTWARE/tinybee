@@ -916,7 +916,67 @@ async function getPhraseIPA(phrase: string): Promise<string> {
   }
 }
 
-async function generateQuestionForWord(word: string, choices: string[], transcriptText?: string, imageSource?: string): Promise<any> {
+async function crawlGoogleImages(query: string): Promise<string[]> {
+  // First attempt: DuckDuckGo images (very reliable proxy search)
+  try {
+    const initUrl = `https://duckduckgo.com/?q=${encodeURIComponent(query)}`;
+    const initRes = await fetch(initUrl, {
+      headers: {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36'
+      }
+    });
+    if (initRes.ok) {
+      const initHtml = await initRes.text();
+      const vqdMatch = initHtml.match(/vqd=([#~?=&%0-9a-zA-Z-\._]+)/) || initHtml.match(/vqd\s*=\s*['"]([^'"]+)['"]/);
+      if (vqdMatch) {
+        const vqd = vqdMatch[1];
+        const imagesUrl = `https://duckduckgo.com/i.js?l=us-en&o=json&q=${encodeURIComponent(query)}&vqd=${vqd}&f=,,,`;
+        const imagesRes = await fetch(imagesUrl, {
+          headers: {
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36',
+            'Referer': 'https://duckduckgo.com/'
+          }
+        });
+        if (imagesRes.ok) {
+          const data = await imagesRes.json();
+          if (data.results && data.results.length > 0) {
+            return data.results.map((r: any) => r.image).filter(Boolean);
+          }
+        }
+      }
+    }
+  } catch (error) {
+    console.error("DuckDuckGo image crawl failed:", error);
+  }
+
+  // Second/Fallback attempt: Google Images (directly querying and extracting encrypted/thumbnail URLs if possible)
+  try {
+    const url = `https://www.google.com/search?q=${encodeURIComponent(query)}&tbm=isch&safe=active`;
+    const res = await fetch(url, {
+      headers: {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36'
+      }
+    });
+    if (res.ok) {
+      const html = await res.text();
+      const gstaticUrls: string[] = [];
+      const gstaticRegex = /https:\/\/encrypted-tbn[0-9]\.gstatic\.com\/images\?q=[^"\s'\\&]+/g;
+      let match;
+      while ((match = gstaticRegex.exec(html)) !== null) {
+        gstaticUrls.push(match[0]);
+      }
+      if (gstaticUrls.length > 0) {
+        return gstaticUrls;
+      }
+    }
+  } catch (error) {
+    console.error("Google Image fallback crawl failed:", error);
+  }
+
+  return [];
+}
+
+async function generateQuestionForWord(word: string, choices: string[], transcriptText?: string, imageSource?: string, imageIndex = 0): Promise<any> {
   const cleanWord = word.toLowerCase().trim();
   const dictEntry = VOCAB_DICTIONARY[cleanWord];
 
@@ -954,7 +1014,7 @@ async function generateQuestionForWord(word: string, choices: string[], transcri
     }
   }
 
-  // Try Pixabay/Pexels for a dynamic illustration if Antigravity (pure custom) is not selected
+  // Try Google / Pixabay / Pexels for dynamic illustrations or web search
   if (!imageUrl && imageSource !== 'antigravity') {
     let searchQuery = cleanWord;
     const cleanContext = (transcriptSentence || dictEntry?.question || "").toLowerCase();
@@ -974,8 +1034,21 @@ async function generateQuestionForWord(word: string, choices: string[], transcri
       }
     }
 
+    // Try Google Images (Crawled) if selected
+    if (imageSource === 'google') {
+      try {
+        const urls = await crawlGoogleImages(searchQuery);
+        if (urls && urls.length > 0) {
+          const idx = imageIndex % urls.length;
+          imageUrl = urls[idx];
+        }
+      } catch (error) {
+        console.error("Google images crawling failed:", error);
+      }
+    }
+
     // Try Pexels if selected
-    if (imageSource === 'pexels') {
+    if (!imageUrl && imageSource === 'pexels') {
       try {
         const pexelsRes = await fetch(`https://api.pexels.com/v1/search?query=${encodeURIComponent(searchQuery)}&per_page=20`, {
           headers: { Authorization: PEXELS_API_KEY }
@@ -983,8 +1056,8 @@ async function generateQuestionForWord(word: string, choices: string[], transcri
         if (pexelsRes.ok) {
           const data = await pexelsRes.json();
           if (data.photos && data.photos.length > 0) {
-            const randomIndex = Math.floor(Math.random() * data.photos.length);
-            imageUrl = data.photos[randomIndex].src.medium;
+            const idx = imageIndex % data.photos.length;
+            imageUrl = data.photos[idx].src.medium;
           }
         }
       } catch (error) {
@@ -992,15 +1065,15 @@ async function generateQuestionForWord(word: string, choices: string[], transcri
       }
     }
 
-    // Try Pixabay if Pexels failed or if Pixabay was selected
+    // Try Pixabay if Pexels/Google failed or if Pixabay was selected
     if (!imageUrl) {
       try {
         const pixabayRes = await fetch(`https://pixabay.com/api/?key=${PIXABAY_API_KEY}&q=${encodeURIComponent(searchQuery)}&image_type=illustration&per_page=20&safesearch=true`);
         if (pixabayRes.ok) {
           const data = await pixabayRes.json();
           if (data.hits && data.hits.length > 0) {
-            const randomIndex = Math.floor(Math.random() * data.hits.length);
-            imageUrl = data.hits[randomIndex].webformatURL;
+            const idx = imageIndex % data.hits.length;
+            imageUrl = data.hits[idx].webformatURL;
           }
         }
       } catch (error) {
@@ -1009,7 +1082,7 @@ async function generateQuestionForWord(word: string, choices: string[], transcri
     }
   }
 
-  // Fallback to Iconify if no image found on Pixabay
+  // Fallback to Iconify if no image found
   if (!imageUrl) {
     imageUrl = getVocabularyIcon(word, transcriptSentence || dictEntry?.question);
   }
@@ -1202,7 +1275,7 @@ export async function GET(request: Request) {
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { words, transcriptText, imageSource, title } = body;
+    const { words, transcriptText, imageSource, title, imageIndex } = body;
 
     if (!words || !Array.isArray(words)) {
       return NextResponse.json({ error: 'Missing or invalid words array' }, { status: 400 });
@@ -1237,7 +1310,7 @@ export async function POST(request: Request) {
       }
 
       const choices = [word, ...selectedWrongs].sort(() => Math.random() - 0.5);
-      return await generateQuestionForWord(word, choices, transcriptText || '', imageSource || 'antigravity');
+      return await generateQuestionForWord(word, choices, transcriptText || '', imageSource || 'antigravity', imageIndex || 0);
     }));
 
     const missingWords = questions
