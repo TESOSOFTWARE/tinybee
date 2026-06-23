@@ -7,6 +7,7 @@ export interface VideoQuestQuestion {
   imageUrl?: string;
   ipa?: string;
   isMissingCustomIcon?: boolean;
+  isHidden?: boolean;
 }
 
 export interface VideoQuest {
