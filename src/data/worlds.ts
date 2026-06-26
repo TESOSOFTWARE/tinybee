@@ -22,6 +22,7 @@ export interface WorldConfig {
   textStyle?: string;
   description?: string;
   levels?: LevelConfig[];
+  isHidden?: boolean;
 }
 
 export const STATIC_WORLDS_DATABASE: { [id: string]: WorldConfig } = {

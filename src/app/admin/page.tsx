@@ -2238,6 +2238,18 @@ export default function AdminDashboardPage() {
     showNotification("World saved successfully!");
   };
 
+  const handleToggleWorldVisibility = (id: string, currentIsHidden: boolean | undefined) => {
+    const targetWorld = customWorlds[id] || WORLDS_DATABASE[id];
+    if (!targetWorld) return;
+
+    const updatedWorld = { ...targetWorld, isHidden: !currentIsHidden };
+    const updatedCustomWorlds = { ...customWorlds, [id]: updatedWorld };
+    
+    setCustomWorlds(updatedCustomWorlds);
+    localStorage.setItem(STORAGE_KEYS.worlds, JSON.stringify(updatedCustomWorlds));
+    showNotification(`World ${!currentIsHidden ? 'hidden' : 'visible'} successfully!`);
+  };
+
   const handleDeleteWorld = (id: string) => {
     if (!confirm("Are you sure you want to delete this world?")) return;
     
@@ -3151,23 +3163,50 @@ export default function AdminDashboardPage() {
                           .filter(lvl => !!videoQuests[`${w.topicId}-${lvl}`])
                           .length;
                         return (
-                          <button
+                          <div
                             key={w.id}
-                            onClick={() => setSelectedWorldId(w.topicId)}
-                            className={`flex items-center gap-2 px-3 py-2 rounded-xl border-2 text-xs font-bold transition-all cursor-pointer ${
-                              isActive
-                                ? 'border-emerald-500 bg-emerald-50 text-emerald-800 shadow-sm'
-                                : 'border-slate-200 bg-slate-50 text-slate-600 hover:border-slate-300 hover:bg-white'
+                            className={`flex items-stretch rounded-xl border-2 transition-all group ${
+                              w.isHidden
+                                ? 'border-dashed border-slate-300 bg-slate-50 opacity-75'
+                                : isActive
+                                  ? 'border-emerald-500 bg-emerald-50 shadow-sm'
+                                  : 'border-slate-200 bg-slate-50 hover:border-slate-300 hover:bg-white'
                             }`}
                           >
-                            <span className="text-base leading-none">{w.emoji}</span>
-                            <span>{w.name}</span>
-                            {savedCount > 0 && (
-                              <span className={`text-[10px] font-black px-1.5 py-0.5 rounded-full ${
-                                isActive ? 'bg-emerald-200 text-emerald-700' : 'bg-slate-200 text-slate-500'
-                              }`}>{savedCount} lvl</span>
-                            )}
-                          </button>
+                            <button
+                              onClick={() => setSelectedWorldId(w.topicId)}
+                              className={`flex items-center gap-2 px-3 py-2 text-xs font-bold cursor-pointer rounded-l-xl ${
+                                isActive ? 'text-emerald-800' : 'text-slate-600'
+                              }`}
+                            >
+                              <span className="text-base leading-none">{w.emoji}</span>
+                              <span className="flex items-center gap-1.5">
+                                {w.isHidden && <span className="text-[9px] font-black uppercase tracking-wider bg-slate-200 text-slate-500 px-1.5 py-0.5 rounded">Hidden</span>}
+                                {w.name}
+                              </span>
+                              {savedCount > 0 && (
+                                <span className={`text-[10px] font-black px-1.5 py-0.5 rounded-full ${
+                                  isActive ? 'bg-emerald-200 text-emerald-700' : 'bg-slate-200 text-slate-500'
+                                }`}>{savedCount} lvl</span>
+                              )}
+                            </button>
+                            <button
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                handleToggleWorldVisibility(w.id, w.isHidden);
+                              }}
+                              className={`px-2 flex items-center justify-center border-l cursor-pointer rounded-r-xl transition-colors ${
+                                w.isHidden 
+                                  ? 'border-slate-300 text-slate-400 hover:text-indigo-600 hover:bg-slate-100' 
+                                  : isActive 
+                                    ? 'border-emerald-200 text-emerald-600 hover:bg-emerald-100' 
+                                    : 'border-slate-200 text-slate-400 hover:text-indigo-600 hover:bg-slate-100'
+                              }`}
+                              title={w.isHidden ? "Unhide World" : "Hide World"}
+                            >
+                              {w.isHidden ? <EyeOff className="w-3.5 h-3.5" /> : <Eye className="w-3.5 h-3.5" />}
+                            </button>
+                          </div>
                         );
                       })}
                     </div>
@@ -4894,18 +4933,28 @@ export default function AdminDashboardPage() {
                         return true;
                       })
                       .map(([id, world]) => (
-                        <Card key={`world-card-${id}`} className="p-4 border border-slate-200 hover:border-indigo-300 transition-all group">
+                        <Card key={`world-card-${id}`} className={`p-4 border transition-all group ${world.isHidden ? 'border-dashed border-slate-300 bg-slate-50 opacity-75' : 'border-slate-200 hover:border-indigo-300'}`}>
                           <div className="flex justify-between items-start mb-3">
                             <div className="flex items-center gap-3">
                               <span className="text-3xl">{world.emoji}</span>
                               <div>
-                                <h4 className="font-black text-slate-900 leading-tight">{world.name}</h4>
+                                <h4 className="font-black text-slate-900 leading-tight">
+                                  {world.isHidden && <span className="text-[9px] font-black bg-slate-200 text-slate-500 px-1.5 py-0.5 rounded uppercase tracking-widest mr-1.5 align-middle">Hidden</span>}
+                                  {world.name}
+                                </h4>
                                 <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">
                                   {world.subject === 'english' ? '🔤 English' : '📐 Math'} • Grade {world.grade}
                                 </span>
                               </div>
                             </div>
                             <div className="flex gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                              <button
+                                onClick={() => handleToggleWorldVisibility(id, world.isHidden)}
+                                className={`p-1.5 transition-colors rounded-lg ${world.isHidden ? 'text-slate-400 hover:text-indigo-650 hover:bg-slate-100' : 'text-indigo-500 hover:text-slate-400 hover:bg-slate-100'}`}
+                                title={world.isHidden ? "Unhide World" : "Hide World"}
+                              >
+                                {world.isHidden ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+                              </button>
                               <button
                                 onClick={() => {
                                   setEditingWorldId(id);
@@ -5022,16 +5071,24 @@ export default function AdminDashboardPage() {
                                 e.dataTransfer.setData('text/plain', id);
                                 e.dataTransfer.effectAllowed = 'move';
                               }}
-                              className="p-3 bg-white border border-slate-200 rounded-xl hover:border-indigo-300 hover:shadow-sm cursor-grab active:cursor-grabbing transition-all select-none group"
+                              className={`p-3 border rounded-xl hover:border-indigo-300 hover:shadow-sm cursor-grab active:cursor-grabbing transition-all select-none group ${world.isHidden ? 'border-dashed border-slate-300 bg-slate-50 opacity-75' : 'bg-white border-slate-200'}`}
                             >
                               <div className="flex items-center justify-between">
                                 <div className="flex items-center gap-2">
                                   <span className="text-xl">{world.emoji}</span>
                                   <h4 className="font-bold text-slate-800 text-xs truncate max-w-[160px]">
+                                    {world.isHidden && <span className="text-[9px] font-black bg-slate-200 text-slate-500 px-1 py-0.5 rounded uppercase tracking-widest mr-1 align-middle">Hidden</span>}
                                     {world.name}
                                   </h4>
                                 </div>
                                 <div className="flex gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                                  <button
+                                    onClick={() => handleToggleWorldVisibility(id, world.isHidden)}
+                                    className={`p-1 transition-colors rounded ${world.isHidden ? 'text-slate-400 hover:text-indigo-650 hover:bg-slate-100' : 'text-indigo-500 hover:text-slate-400 hover:bg-slate-100'}`}
+                                    title={world.isHidden ? "Unhide World" : "Hide World"}
+                                  >
+                                    {world.isHidden ? <EyeOff className="w-3.5 h-3.5" /> : <Eye className="w-3.5 h-3.5" />}
+                                  </button>
                                   <button
                                     onClick={() => {
                                       setEditingWorldId(id);

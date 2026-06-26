@@ -30,6 +30,7 @@ export default function SelectGradePage() {
   const [selectedSubject, setSelectedSubject] = useState<'math' | 'english'>('math');
   const [deletedWorldIds, setDeletedWorldIds] = useState<string[]>([]);
   const [hiddenGradeIds, setHiddenGradeIds] = useState<string[]>([]);
+  const [customWorlds, setCustomWorlds] = useState<{ [id: string]: WorldConfig }>({});
 
   useEffect(() => {
     const savedSubject = localStorage.getItem('selected_arena_subject');
@@ -46,6 +47,12 @@ export default function SelectGradePage() {
     if (savedHidden) {
       try {
         setHiddenGradeIds(JSON.parse(savedHidden));
+      } catch (e) {}
+    }
+    const savedWorlds = localStorage.getItem('tinybee_worlds_database');
+    if (savedWorlds) {
+      try {
+        setCustomWorlds(JSON.parse(savedWorlds));
       } catch (e) {}
     }
   }, []);
@@ -65,14 +72,16 @@ export default function SelectGradePage() {
 
   // Helper to group worlds by grade
   const getGradesList = (subject: 'math' | 'english'): GradeCardProps[] => {
-    const worlds = Object.values(WORLDS_DATABASE).filter(w => {
+    const allWorlds = { ...WORLDS_DATABASE, ...customWorlds };
+    const worlds = Object.values(allWorlds).filter(w => {
       const isCorrectSubject = (w.subject || 'math') === subject;
       const isDeleted = deletedWorldIds.includes(w.id);
+      const isHiddenWorld = !!w.isHidden;
       
       const gradeKey = w.grade.toString() === '0' ? 'K' : w.grade.toString();
       const isHidden = hiddenGradeIds.includes(gradeKey);
       
-      return isCorrectSubject && !isDeleted && !isHidden;
+      return isCorrectSubject && !isDeleted && !isHiddenWorld && !isHidden;
     });
     const gradesMap: { [key: string]: GradeCardProps } = {};
 
