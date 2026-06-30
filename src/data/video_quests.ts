@@ -309,75 +309,58 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
     },
     "2": {
         "grade": 2,
+        "topicId": "food-drinks",
         "videoUrl": "https://www.youtube.com/embed/HbvG-nV4DaM",
         "title": "What Is This Called in English? 🇬🇧 | Tea & Coffee #16",
         "channel": "@JourneyEnglishTalk",
+        "transcriptText": "",
         "words": [
             "Coffee",
             "Teapot",
             "Moka pot",
             "Teacup",
-            "Explore"
+            "Creamer",
+            "Tea bag",
+            "Paper cup"
         ],
-        "topicId": "food-drinks",
         "questions": [
             {
                 "question": "Which word best describes this image?",
                 "choices": [
-                    "Coffee",
                     "Teapot",
-                    "Teacup",
-                    "Moka pot"
-                ],
-                "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
-                ],
-                "correctAnswer": "Coffee",
-                "explanation": "\"Coffee\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/20130929/pexels-photo-20130929.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
-                "isMissingCustomIcon": false
-            },
-            {
-                "question": "Which word best describes this image?",
-                "choices": [
                     "Coffee",
                     "Moka pot",
-                    "Teacup",
-                    "Teapot"
-                ],
-                "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
-                ],
-                "correctAnswer": "Teapot",
-                "explanation": "\"Teapot\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/11532730/pexels-photo-11532730.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
-                "isMissingCustomIcon": false
-            },
-            {
-                "question": "Which word best describes this image?",
-                "choices": [
-                    "Moka pot",
-                    "Coffee",
-                    "Teapot",
                     "Teacup"
                 ],
                 "choiceIpas": [
                     "",
-                    "",
-                    "",
-                    ""
+                    "/ˈkɑ.fi/",
+                    "/pɒt/",
+                    "/tiː.kʌp/"
                 ],
-                "correctAnswer": "Moka pot",
-                "explanation": "\"Moka pot\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/5996061/pexels-photo-5996061.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "correctAnswer": "Coffee",
+                "explanation": "\"Coffee\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://wallpapers.com/images/hd/coffee-cup-and-robusta-beans-nygy7dk13dzee47r.jpg",
+                "ipa": "/ˈkɑ.fi/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Teapot",
+                    "Coffee",
+                    "Teacup",
+                    "Moka pot"
+                ],
+                "choiceIpas": [
+                    "",
+                    "/ˈkɑ.fi/",
+                    "/tiː.kʌp/",
+                    "/pɒt/"
+                ],
+                "correctAnswer": "Teapot",
+                "explanation": "\"Teapot\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://m.media-amazon.com/images/I/715wHfBGGFL._AC_SL1500_.jpg",
                 "ipa": "",
                 "isMissingCustomIcon": false
             },
@@ -385,40 +368,100 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                 "question": "Which word best describes this image?",
                 "choices": [
                     "Coffee",
+                    "Moka pot",
                     "Teapot",
+                    "Teacup"
+                ],
+                "choiceIpas": [
+                    "/ˈkɑ.fi/",
+                    "/pɒt/",
+                    "",
+                    "/tiː.kʌp/"
+                ],
+                "correctAnswer": "Moka pot",
+                "explanation": "\"Moka pot\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://m.media-amazon.com/images/I/71zkNTy1i+L._AC_SL1500_.jpg",
+                "ipa": "/pɒt/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Coffee",
                     "Teacup",
+                    "Teapot",
                     "Moka pot"
                 ],
                 "choiceIpas": [
-                    "",
-                    "",
+                    "/ˈkɑ.fi/",
+                    "/tiː.kʌp/",
                     "",
                     ""
                 ],
                 "correctAnswer": "Teacup",
                 "explanation": "\"Teacup\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/35380303/pexels-photo-35380303.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
+                "imageUrl": "https://img.freepik.com/premium-photo/delicate-floral-porcelain-teacup-white-background_905033-13514.jpg?w=2000",
+                "ipa": "/tiː.kʌp/",
                 "isMissingCustomIcon": false
             },
             {
-                "question": "Which word means to travel through a new area to learn about it?",
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Moka pot",
+                    "Coffee",
+                    "Creamer",
+                    "Teapot"
+                ],
+                "choiceIpas": [
+                    "/pɒt/",
+                    "/ˈkɑ.fi/",
+                    "/ˈkɹiː.mə(ɹ)/",
+                    ""
+                ],
+                "correctAnswer": "Creamer",
+                "explanation": "\"Creamer\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.heb.com/is/image/HEBGrocery/006835528-1",
+                "ipa": "/ˈkɹiː.mə(ɹ)/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
                 "choices": [
                     "Teapot",
-                    "Explore",
+                    "Tea bag",
                     "Moka pot",
                     "Coffee"
                 ],
                 "choiceIpas": [
                     "",
+                    "/tiː/ /ˈbæːɡ/",
+                    "",
+                    "/ˈkɑ.fi/"
+                ],
+                "correctAnswer": "Tea bag",
+                "explanation": "\"Tea bag\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://m.media-amazon.com/images/I/81OrnumnMnL._AC_.jpg",
+                "ipa": "/tiː/ /ˈbæːɡ/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Coffee",
+                    "Paper cup",
+                    "Teapot",
+                    "Moka pot"
+                ],
+                "choiceIpas": [
+                    "/ˈkɑ.fi/",
                     "",
                     "",
                     ""
                 ],
-                "correctAnswer": "Explore",
-                "explanation": "To explore is to discover and examine new surroundings.",
-                "imageUrl": "https://images.pexels.com/photos/4640946/pexels-photo-4640946.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
+                "correctAnswer": "Paper cup",
+                "explanation": "\"Paper cup\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://m.media-amazon.com/images/I/61j+WfLyGGL.jpg",
+                "ipa": "/ˈpeɪpə/ /kʌp/",
                 "isMissingCustomIcon": false
             }
         ]
@@ -1433,787 +1476,6 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                 ],
                 "correctAnswer": "Symbolism",
                 "explanation": "Symbolism uses symbols to represent ideas or qualities beyond the literal meaning."
-            }
-        ]
-    },
-    "2-1": {
-        "grade": 2,
-        "videoUrl": "https://www.youtube.com/embed/HbvG-nV4DaM",
-        "title": "What Is This Called in English? 🇬🇧 | Tea & Coffee #16",
-        "channel": "@JourneyEnglishTalk",
-        "words": [
-            "Coffee",
-            "Teapot",
-            "Moka pot",
-            "Teacup",
-            "Explore"
-        ],
-        "topicId": "food-drinks",
-        "questions": [
-            {
-                "question": "Which word best describes this image?",
-                "choices": [
-                    "Coffee",
-                    "Teapot",
-                    "Teacup",
-                    "Moka pot"
-                ],
-                "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
-                ],
-                "correctAnswer": "Coffee",
-                "explanation": "\"Coffee\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/20130929/pexels-photo-20130929.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
-                "isMissingCustomIcon": false
-            },
-            {
-                "question": "Which word best describes this image?",
-                "choices": [
-                    "Coffee",
-                    "Moka pot",
-                    "Teacup",
-                    "Teapot"
-                ],
-                "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
-                ],
-                "correctAnswer": "Teapot",
-                "explanation": "\"Teapot\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/11532730/pexels-photo-11532730.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
-                "isMissingCustomIcon": false
-            },
-            {
-                "question": "Which word best describes this image?",
-                "choices": [
-                    "Moka pot",
-                    "Coffee",
-                    "Teapot",
-                    "Teacup"
-                ],
-                "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
-                ],
-                "correctAnswer": "Moka pot",
-                "explanation": "\"Moka pot\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/5996061/pexels-photo-5996061.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
-                "isMissingCustomIcon": false
-            },
-            {
-                "question": "Which word best describes this image?",
-                "choices": [
-                    "Coffee",
-                    "Teapot",
-                    "Teacup",
-                    "Moka pot"
-                ],
-                "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
-                ],
-                "correctAnswer": "Teacup",
-                "explanation": "\"Teacup\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/35380303/pexels-photo-35380303.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
-                "isMissingCustomIcon": false
-            },
-            {
-                "question": "Which word means to travel through a new area to learn about it?",
-                "choices": [
-                    "Teapot",
-                    "Explore",
-                    "Moka pot",
-                    "Coffee"
-                ],
-                "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
-                ],
-                "correctAnswer": "Explore",
-                "explanation": "To explore is to discover and examine new surroundings.",
-                "imageUrl": "https://images.pexels.com/photos/4640946/pexels-photo-4640946.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
-                "isMissingCustomIcon": false
-            }
-        ]
-    },
-    "2-2": {
-        "grade": 2,
-        "videoUrl": "https://www.youtube.com/embed/0xKYNv73vtw",
-        "title": "What Is This Called in English? 🇬🇧 | Law & Court #18",
-        "channel": "@JourneyEnglishTalk",
-        "words": [
-            "Judge",
-            "Cell",
-            "Scale",
-            "Courthouse",
-            "Explore"
-        ],
-        "topicId": "jobs-occupations",
-        "questions": [
-            {
-                "question": "Which word best describes this image?",
-                "choices": [
-                    "Cell",
-                    "Scale",
-                    "Judge",
-                    "Courthouse"
-                ],
-                "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
-                ],
-                "correctAnswer": "Judge",
-                "explanation": "\"Judge\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/6077240/pexels-photo-6077240.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
-                "isMissingCustomIcon": false
-            },
-            {
-                "question": "Which word best describes this image?",
-                "choices": [
-                    "Judge",
-                    "Courthouse",
-                    "Cell",
-                    "Scale"
-                ],
-                "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
-                ],
-                "correctAnswer": "Cell",
-                "explanation": "\"Cell\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/16882902/pexels-photo-16882902.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
-                "isMissingCustomIcon": false
-            },
-            {
-                "question": "Which word best describes this image?",
-                "choices": [
-                    "Courthouse",
-                    "Judge",
-                    "Scale",
-                    "Cell"
-                ],
-                "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
-                ],
-                "correctAnswer": "Scale",
-                "explanation": "\"Scale\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/8112195/pexels-photo-8112195.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
-                "isMissingCustomIcon": false
-            },
-            {
-                "question": "Which word best describes this image?",
-                "choices": [
-                    "Courthouse",
-                    "Cell",
-                    "Scale",
-                    "Judge"
-                ],
-                "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
-                ],
-                "correctAnswer": "Courthouse",
-                "explanation": "\"Courthouse\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/16750823/pexels-photo-16750823.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
-                "isMissingCustomIcon": false
-            },
-            {
-                "question": "Which word means to travel through a new area to learn about it?",
-                "choices": [
-                    "Judge",
-                    "Cell",
-                    "Explore",
-                    "Scale"
-                ],
-                "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
-                ],
-                "correctAnswer": "Explore",
-                "explanation": "To explore is to discover and examine new surroundings.",
-                "imageUrl": "https://images.pexels.com/photos/4641233/pexels-photo-4641233.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
-                "isMissingCustomIcon": false
-            }
-        ]
-    },
-    "2-3": {
-        "grade": 2,
-        "videoUrl": "https://www.youtube.com/embed/UFHw7A3ovp8",
-        "title": "What Is This Called in English? 🇬🇧 | Car Parts #15",
-        "channel": "@JourneyEnglishTalk",
-        "words": [
-            "Steering",
-            "Headlight",
-            "Tail light",
-            "Dashboard",
-            "Explore"
-        ],
-        "topicId": "vehicles-travel",
-        "questions": [
-            {
-                "question": "Which word describes the action happening in this image?",
-                "choices": [
-                    "Tail light",
-                    "Dashboard",
-                    "Headlight",
-                    "Steering"
-                ],
-                "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
-                ],
-                "correctAnswer": "Steering",
-                "explanation": "Action verbs ending in \"-ing\" describe ongoing actions like the one shown here.",
-                "imageUrl": "https://images.pexels.com/photos/37421212/pexels-photo-37421212.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
-                "isMissingCustomIcon": false
-            },
-            {
-                "question": "Which word best describes this image?",
-                "choices": [
-                    "Dashboard",
-                    "Steering",
-                    "Headlight",
-                    "Tail light"
-                ],
-                "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
-                ],
-                "correctAnswer": "Headlight",
-                "explanation": "\"Headlight\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/16040150/pexels-photo-16040150.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
-                "isMissingCustomIcon": false
-            },
-            {
-                "question": "Which word best describes this image?",
-                "choices": [
-                    "Headlight",
-                    "Steering",
-                    "Dashboard",
-                    "Tail light"
-                ],
-                "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
-                ],
-                "correctAnswer": "Tail light",
-                "explanation": "\"Tail light\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/28914526/pexels-photo-28914526.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
-                "isMissingCustomIcon": false
-            },
-            {
-                "question": "Which word best describes this image?",
-                "choices": [
-                    "Dashboard",
-                    "Steering",
-                    "Headlight",
-                    "Tail light"
-                ],
-                "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
-                ],
-                "correctAnswer": "Dashboard",
-                "explanation": "\"Dashboard\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/9530906/pexels-photo-9530906.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
-                "isMissingCustomIcon": false
-            },
-            {
-                "question": "Which word means to travel through a new area to learn about it?",
-                "choices": [
-                    "Headlight",
-                    "Steering",
-                    "Tail light",
-                    "Explore"
-                ],
-                "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
-                ],
-                "correctAnswer": "Explore",
-                "explanation": "To explore is to discover and examine new surroundings.",
-                "imageUrl": "https://images.pexels.com/photos/4640946/pexels-photo-4640946.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
-                "isMissingCustomIcon": false
-            }
-        ]
-    },
-    "2-4": {
-        "grade": 2,
-        "videoUrl": "https://www.youtube.com/embed/2W4eR4EngLo",
-        "title": "What Is This Called in English? 🇬🇧 | Transportation #10",
-        "channel": "@JourneyEnglishTalk",
-        "words": [
-            "Train",
-            "Airplane",
-            "Ship",
-            "Bicycle",
-            "Helicopter"
-        ],
-        "topicId": "vehicles-travel",
-        "questions": [
-            {
-                "question": "Which word best describes this image?",
-                "choices": [
-                    "Bicycle",
-                    "Ship",
-                    "Train",
-                    "Airplane"
-                ],
-                "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
-                ],
-                "correctAnswer": "Train",
-                "explanation": "\"Train\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/16673166/pexels-photo-16673166.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
-                "isMissingCustomIcon": false
-            },
-            {
-                "question": "Which word best describes this image?",
-                "choices": [
-                    "Train",
-                    "Airplane",
-                    "Bicycle",
-                    "Ship"
-                ],
-                "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
-                ],
-                "correctAnswer": "Airplane",
-                "explanation": "\"Airplane\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/32325153/pexels-photo-32325153.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
-                "isMissingCustomIcon": false
-            },
-            {
-                "question": "Which word best describes this image?",
-                "choices": [
-                    "Bicycle",
-                    "Train",
-                    "Ship",
-                    "Airplane"
-                ],
-                "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
-                ],
-                "correctAnswer": "Ship",
-                "explanation": "\"Ship\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/27402391/pexels-photo-27402391.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
-                "isMissingCustomIcon": false
-            },
-            {
-                "question": "Which word best describes this image?",
-                "choices": [
-                    "Train",
-                    "Bicycle",
-                    "Ship",
-                    "Airplane"
-                ],
-                "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
-                ],
-                "correctAnswer": "Bicycle",
-                "explanation": "\"Bicycle\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/19353575/pexels-photo-19353575.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
-                "isMissingCustomIcon": false
-            },
-            {
-                "question": "Which word best describes this image?",
-                "choices": [
-                    "Train",
-                    "Ship",
-                    "Helicopter",
-                    "Airplane"
-                ],
-                "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
-                ],
-                "correctAnswer": "Helicopter",
-                "explanation": "\"Helicopter\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/16863610/pexels-photo-16863610.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
-                "isMissingCustomIcon": false
-            }
-        ]
-    },
-    "2-5": {
-        "grade": 2,
-        "videoUrl": "https://www.youtube.com/embed/bN7zKzW2eUo",
-        "title": "Weather and Atmospheric Elements 🌪️",
-        "channel": "@PRES.ENGLISH",
-        "words": [
-            "Breeze",
-            "Blizzard",
-            "Drizzle",
-            "Hurricane",
-            "Tornado"
-        ],
-        "topicId": "weather-seasons",
-        "questions": [
-            {
-                "question": "What is a gentle, light wind called?",
-                "choices": [
-                    "Breeze",
-                    "Blizzard",
-                    "Hurricane",
-                    "Tornado"
-                ],
-                "correctAnswer": "Breeze",
-                "explanation": "A breeze is a soft, refreshing, light wind."
-            },
-            {
-                "question": "What is a severe snowstorm with high winds and low visibility called?",
-                "choices": [
-                    "Blizzard",
-                    "Drizzle",
-                    "Tornado",
-                    "Breeze"
-                ],
-                "correctAnswer": "Blizzard",
-                "explanation": "A blizzard is a freezing, heavy snowstorm with powerful winds."
-            },
-            {
-                "question": "What do we call very light rain falling in fine drops?",
-                "choices": [
-                    "Drizzle",
-                    "Hurricane",
-                    "Breeze",
-                    "Blizzard"
-                ],
-                "correctAnswer": "Drizzle",
-                "explanation": "Drizzle is light, misty rain that falls very softly."
-            },
-            {
-                "question": "What is a violent tropical storm with circular winds over the ocean?",
-                "choices": [
-                    "Hurricane",
-                    "Tornado",
-                    "Drizzle",
-                    "Breeze"
-                ],
-                "correctAnswer": "Hurricane",
-                "explanation": "A hurricane is a massive spinning tropical storm that forms over warm waters."
-            },
-            {
-                "question": "What is a fast-spinning column of air touching both a cloud and the ground?",
-                "choices": [
-                    "Tornado",
-                    "Blizzard",
-                    "Hurricane",
-                    "Drizzle"
-                ],
-                "correctAnswer": "Tornado",
-                "explanation": "A tornado is a destructive rotating funnel of air extending from a thunderstorm."
-            }
-        ]
-    },
-    "2-6": {
-        "grade": 2,
-        "videoUrl": "https://www.youtube.com/embed/UIEIkXJAoog",
-        "title": "What Is This Called in English? | Learn English Word | 07",
-        "channel": "@JourneyEnglishTalk",
-        "words": [
-            "Deer",
-            "Fox",
-            "Bear",
-            "Wolf",
-            "Panther"
-        ],
-        "topicId": "wild-animals",
-        "questions": [
-            {
-                "question": "Which word best describes this image?",
-                "choices": [
-                    "Fox",
-                    "Bear",
-                    "Wolf",
-                    "Deer"
-                ],
-                "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
-                ],
-                "correctAnswer": "Deer",
-                "explanation": "\"Deer\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/31805554/pexels-photo-31805554.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
-                "isMissingCustomIcon": false
-            },
-            {
-                "question": "Which word best describes this image?",
-                "choices": [
-                    "Bear",
-                    "Deer",
-                    "Fox",
-                    "Wolf"
-                ],
-                "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
-                ],
-                "correctAnswer": "Fox",
-                "explanation": "\"Fox\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/9681754/pexels-photo-9681754.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
-                "isMissingCustomIcon": false
-            },
-            {
-                "question": "Which word best describes this image?",
-                "choices": [
-                    "Deer",
-                    "Bear",
-                    "Wolf",
-                    "Fox"
-                ],
-                "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
-                ],
-                "correctAnswer": "Bear",
-                "explanation": "\"Bear\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/17646625/pexels-photo-17646625.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
-                "isMissingCustomIcon": false
-            },
-            {
-                "question": "Which word best describes this image?",
-                "choices": [
-                    "Wolf",
-                    "Deer",
-                    "Fox",
-                    "Bear"
-                ],
-                "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
-                ],
-                "correctAnswer": "Wolf",
-                "explanation": "\"Wolf\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/7249475/pexels-photo-7249475.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
-                "isMissingCustomIcon": false
-            },
-            {
-                "question": "Which word best describes this image?",
-                "choices": [
-                    "Deer",
-                    "Fox",
-                    "Panther",
-                    "Bear"
-                ],
-                "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
-                ],
-                "correctAnswer": "Panther",
-                "explanation": "\"Panther\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/7867206/pexels-photo-7867206.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
-                "isMissingCustomIcon": false
-            }
-        ]
-    },
-    "2-7": {
-        "grade": 2,
-        "videoUrl": "https://www.youtube.com/embed/HEV51Qee0M8",
-        "title": "English quiz: animals #animalname #animalsnamee...",
-        "channel": "@EnglishWordsCorner",
-        "words": [
-            "Tiger",
-            "Lion",
-            "Chimpanzee",
-            "Zebra"
-        ],
-        "topicId": "wild-animals",
-        "questions": [
-            {
-                "question": "Which wild cat is known for its orange fur with black stripes?",
-                "choices": [
-                    "Tiger",
-                    "Lion",
-                    "Chimpanzee",
-                    "Zebra"
-                ],
-                "correctAnswer": "Tiger",
-                "explanation": "Tigers are the largest cat species, instantly recognizable by their black stripes on orange fur."
-            },
-            {
-                "question": "Which animal is a primate, very intelligent, and lives in trees?",
-                "choices": [
-                    "Chimpanzee",
-                    "Tiger",
-                    "Lion",
-                    "Zebra"
-                ],
-                "correctAnswer": "Chimpanzee",
-                "explanation": "Chimpanzees are highly intelligent great apes native to forests and wet savannas of tropical Africa."
-            },
-            {
-                "question": "Which animal has black and white stripes and looks like a horse?",
-                "choices": [
-                    "Zebra",
-                    "Tiger",
-                    "Lion",
-                    "Chimpanzee"
-                ],
-                "correctAnswer": "Zebra",
-                "explanation": "Zebras are African equines known for their distinctive black-and-white striped coats."
-            },
-            {
-                "question": "Which animal is known as the King of the Jungle?",
-                "choices": [
-                    "Lion",
-                    "Tiger",
-                    "Chimpanzee",
-                    "Zebra"
-                ],
-                "correctAnswer": "Lion",
-                "explanation": "The lion is a large cat of the genus Panthera, native to Africa and India, often called the king of the jungle."
-            }
-        ]
-    },
-    "2-8": {
-        "grade": 2,
-        "videoUrl": "https://www.youtube.com/embed/HEV51Qee0M8",
-        "title": "Animal Sounds and Names for Kids 🐯",
-        "channel": "@PRES.ENGLISH",
-        "words": [
-            "Lion",
-            "Monkey",
-            "Elephant",
-            "Giraffe",
-            "Zebra"
-        ],
-        "topicId": "wild-animals",
-        "questions": [
-            {
-                "question": "Which animal has black and white stripes?",
-                "choices": [
-                    "Zebra",
-                    "Lion",
-                    "Giraffe",
-                    "Monkey"
-                ],
-                "correctAnswer": "Zebra",
-                "explanation": "Zebras have beautiful black and white stripes all over their bodies!"
-            },
-            {
-                "question": "Which animal is known as the King of the Jungle?",
-                "choices": [
-                    "Lion",
-                    "Elephant",
-                    "Zebra",
-                    "Giraffe"
-                ],
-                "correctAnswer": "Lion",
-                "explanation": "The mighty lion is famously known as the King of the Jungle!"
-            },
-            {
-                "question": "Which animal has a very long neck to reach tall leaves?",
-                "choices": [
-                    "Giraffe",
-                    "Monkey",
-                    "Elephant",
-                    "Zebra"
-                ],
-                "correctAnswer": "Giraffe",
-                "explanation": "Giraffes have incredibly long necks to eat leaves from high trees!"
-            },
-            {
-                "question": "Which animal loves to swing on trees and eat bananas?",
-                "choices": [
-                    "Monkey",
-                    "Lion",
-                    "Giraffe",
-                    "Elephant"
-                ],
-                "correctAnswer": "Monkey",
-                "explanation": "Monkeys are active swingers and love eating yummy bananas!"
-            },
-            {
-                "question": "Which animal is the largest land mammal with big ears?",
-                "choices": [
-                    "Elephant",
-                    "Zebra",
-                    "Lion",
-                    "Giraffe"
-                ],
-                "correctAnswer": "Elephant",
-                "explanation": "The elephant is the largest mammal living on land!"
             }
         ]
     },
@@ -3753,238 +3015,6 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                 ],
                 "correctAnswer": "Kakotopia / Dystopia",
                 "explanation": "Kakotopia (or dystopia) is a state or society characterized by human misery, oppression, and disease."
-            }
-        ]
-    },
-    "food-drinks": {
-        "grade": 2,
-        "videoUrl": "https://www.youtube.com/embed/HbvG-nV4DaM",
-        "title": "What Is This Called in English? 🇬🇧 | Tea & Coffee #16",
-        "channel": "@JourneyEnglishTalk",
-        "words": [
-            "Coffee",
-            "Teapot",
-            "Moka pot",
-            "Teacup",
-            "Explore"
-        ],
-        "topicId": "food-drinks",
-        "questions": [
-            {
-                "question": "Which word best describes this image?",
-                "choices": [
-                    "Coffee",
-                    "Teapot",
-                    "Teacup",
-                    "Moka pot"
-                ],
-                "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
-                ],
-                "correctAnswer": "Coffee",
-                "explanation": "\"Coffee\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/20130929/pexels-photo-20130929.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
-                "isMissingCustomIcon": false
-            },
-            {
-                "question": "Which word best describes this image?",
-                "choices": [
-                    "Coffee",
-                    "Moka pot",
-                    "Teacup",
-                    "Teapot"
-                ],
-                "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
-                ],
-                "correctAnswer": "Teapot",
-                "explanation": "\"Teapot\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/11532730/pexels-photo-11532730.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
-                "isMissingCustomIcon": false
-            },
-            {
-                "question": "Which word best describes this image?",
-                "choices": [
-                    "Moka pot",
-                    "Coffee",
-                    "Teapot",
-                    "Teacup"
-                ],
-                "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
-                ],
-                "correctAnswer": "Moka pot",
-                "explanation": "\"Moka pot\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/5996061/pexels-photo-5996061.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
-                "isMissingCustomIcon": false
-            },
-            {
-                "question": "Which word best describes this image?",
-                "choices": [
-                    "Coffee",
-                    "Teapot",
-                    "Teacup",
-                    "Moka pot"
-                ],
-                "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
-                ],
-                "correctAnswer": "Teacup",
-                "explanation": "\"Teacup\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/35380303/pexels-photo-35380303.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
-                "isMissingCustomIcon": false
-            },
-            {
-                "question": "Which word means to travel through a new area to learn about it?",
-                "choices": [
-                    "Teapot",
-                    "Explore",
-                    "Moka pot",
-                    "Coffee"
-                ],
-                "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
-                ],
-                "correctAnswer": "Explore",
-                "explanation": "To explore is to discover and examine new surroundings.",
-                "imageUrl": "https://images.pexels.com/photos/4640946/pexels-photo-4640946.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
-                "isMissingCustomIcon": false
-            }
-        ]
-    },
-    "food-drinks-1": {
-        "grade": 2,
-        "videoUrl": "https://www.youtube.com/embed/HbvG-nV4DaM",
-        "title": "What Is This Called in English? 🇬🇧 | Tea & Coffee #16",
-        "channel": "@JourneyEnglishTalk",
-        "words": [
-            "Coffee",
-            "Teapot",
-            "Moka pot",
-            "Teacup",
-            "Explore"
-        ],
-        "topicId": "food-drinks",
-        "questions": [
-            {
-                "question": "Which word best describes this image?",
-                "choices": [
-                    "Coffee",
-                    "Teapot",
-                    "Teacup",
-                    "Moka pot"
-                ],
-                "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
-                ],
-                "correctAnswer": "Coffee",
-                "explanation": "\"Coffee\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/20130929/pexels-photo-20130929.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
-                "isMissingCustomIcon": false
-            },
-            {
-                "question": "Which word best describes this image?",
-                "choices": [
-                    "Coffee",
-                    "Moka pot",
-                    "Teacup",
-                    "Teapot"
-                ],
-                "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
-                ],
-                "correctAnswer": "Teapot",
-                "explanation": "\"Teapot\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/11532730/pexels-photo-11532730.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
-                "isMissingCustomIcon": false
-            },
-            {
-                "question": "Which word best describes this image?",
-                "choices": [
-                    "Moka pot",
-                    "Coffee",
-                    "Teapot",
-                    "Teacup"
-                ],
-                "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
-                ],
-                "correctAnswer": "Moka pot",
-                "explanation": "\"Moka pot\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/5996061/pexels-photo-5996061.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
-                "isMissingCustomIcon": false
-            },
-            {
-                "question": "Which word best describes this image?",
-                "choices": [
-                    "Coffee",
-                    "Teapot",
-                    "Teacup",
-                    "Moka pot"
-                ],
-                "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
-                ],
-                "correctAnswer": "Teacup",
-                "explanation": "\"Teacup\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/35380303/pexels-photo-35380303.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
-                "isMissingCustomIcon": false
-            },
-            {
-                "question": "Which word means to travel through a new area to learn about it?",
-                "choices": [
-                    "Teapot",
-                    "Explore",
-                    "Moka pot",
-                    "Coffee"
-                ],
-                "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
-                ],
-                "correctAnswer": "Explore",
-                "explanation": "To explore is to discover and examine new surroundings.",
-                "imageUrl": "https://images.pexels.com/photos/4640946/pexels-photo-4640946.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
-                "isMissingCustomIcon": false
             }
         ]
     },
@@ -7692,368 +6722,6 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                 ],
                 "correctAnswer": "Tornado",
                 "explanation": "A tornado is a destructive rotating funnel of air extending from a thunderstorm."
-            }
-        ]
-    },
-    "wild-animals": {
-        "grade": 2,
-        "videoUrl": "https://www.youtube.com/embed/UIEIkXJAoog",
-        "title": "What Is This Called in English? | Learn English Word | 07",
-        "channel": "@JourneyEnglishTalk",
-        "words": [
-            "Deer",
-            "Fox",
-            "Bear",
-            "Wolf",
-            "Panther"
-        ],
-        "topicId": "wild-animals",
-        "questions": [
-            {
-                "question": "Which word best describes this image?",
-                "choices": [
-                    "Fox",
-                    "Bear",
-                    "Wolf",
-                    "Deer"
-                ],
-                "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
-                ],
-                "correctAnswer": "Deer",
-                "explanation": "\"Deer\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/31805554/pexels-photo-31805554.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
-                "isMissingCustomIcon": false
-            },
-            {
-                "question": "Which word best describes this image?",
-                "choices": [
-                    "Bear",
-                    "Deer",
-                    "Fox",
-                    "Wolf"
-                ],
-                "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
-                ],
-                "correctAnswer": "Fox",
-                "explanation": "\"Fox\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/9681754/pexels-photo-9681754.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
-                "isMissingCustomIcon": false
-            },
-            {
-                "question": "Which word best describes this image?",
-                "choices": [
-                    "Deer",
-                    "Bear",
-                    "Wolf",
-                    "Fox"
-                ],
-                "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
-                ],
-                "correctAnswer": "Bear",
-                "explanation": "\"Bear\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/17646625/pexels-photo-17646625.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
-                "isMissingCustomIcon": false
-            },
-            {
-                "question": "Which word best describes this image?",
-                "choices": [
-                    "Wolf",
-                    "Deer",
-                    "Fox",
-                    "Bear"
-                ],
-                "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
-                ],
-                "correctAnswer": "Wolf",
-                "explanation": "\"Wolf\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/7249475/pexels-photo-7249475.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
-                "isMissingCustomIcon": false
-            },
-            {
-                "question": "Which word best describes this image?",
-                "choices": [
-                    "Deer",
-                    "Fox",
-                    "Panther",
-                    "Bear"
-                ],
-                "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
-                ],
-                "correctAnswer": "Panther",
-                "explanation": "\"Panther\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/7867206/pexels-photo-7867206.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
-                "isMissingCustomIcon": false
-            }
-        ]
-    },
-    "wild-animals-1": {
-        "grade": 2,
-        "videoUrl": "https://www.youtube.com/embed/UIEIkXJAoog",
-        "title": "What Is This Called in English? | Learn English Word | 07",
-        "channel": "@JourneyEnglishTalk",
-        "words": [
-            "Deer",
-            "Fox",
-            "Bear",
-            "Wolf",
-            "Panther"
-        ],
-        "topicId": "wild-animals",
-        "questions": [
-            {
-                "question": "Which word best describes this image?",
-                "choices": [
-                    "Fox",
-                    "Bear",
-                    "Wolf",
-                    "Deer"
-                ],
-                "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
-                ],
-                "correctAnswer": "Deer",
-                "explanation": "\"Deer\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/31805554/pexels-photo-31805554.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
-                "isMissingCustomIcon": false
-            },
-            {
-                "question": "Which word best describes this image?",
-                "choices": [
-                    "Bear",
-                    "Deer",
-                    "Fox",
-                    "Wolf"
-                ],
-                "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
-                ],
-                "correctAnswer": "Fox",
-                "explanation": "\"Fox\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/9681754/pexels-photo-9681754.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
-                "isMissingCustomIcon": false
-            },
-            {
-                "question": "Which word best describes this image?",
-                "choices": [
-                    "Deer",
-                    "Bear",
-                    "Wolf",
-                    "Fox"
-                ],
-                "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
-                ],
-                "correctAnswer": "Bear",
-                "explanation": "\"Bear\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/17646625/pexels-photo-17646625.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
-                "isMissingCustomIcon": false
-            },
-            {
-                "question": "Which word best describes this image?",
-                "choices": [
-                    "Wolf",
-                    "Deer",
-                    "Fox",
-                    "Bear"
-                ],
-                "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
-                ],
-                "correctAnswer": "Wolf",
-                "explanation": "\"Wolf\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/7249475/pexels-photo-7249475.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
-                "isMissingCustomIcon": false
-            },
-            {
-                "question": "Which word best describes this image?",
-                "choices": [
-                    "Deer",
-                    "Fox",
-                    "Panther",
-                    "Bear"
-                ],
-                "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
-                ],
-                "correctAnswer": "Panther",
-                "explanation": "\"Panther\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/7867206/pexels-photo-7867206.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
-                "isMissingCustomIcon": false
-            }
-        ]
-    },
-    "wild-animals-2": {
-        "grade": 2,
-        "videoUrl": "https://www.youtube.com/embed/HEV51Qee0M8",
-        "title": "English quiz: animals #animalname #animalsnamee...",
-        "channel": "@EnglishWordsCorner",
-        "words": [
-            "Tiger",
-            "Lion",
-            "Chimpanzee",
-            "Zebra"
-        ],
-        "topicId": "wild-animals",
-        "questions": [
-            {
-                "question": "Which wild cat is known for its orange fur with black stripes?",
-                "choices": [
-                    "Tiger",
-                    "Lion",
-                    "Chimpanzee",
-                    "Zebra"
-                ],
-                "correctAnswer": "Tiger",
-                "explanation": "Tigers are the largest cat species, instantly recognizable by their black stripes on orange fur."
-            },
-            {
-                "question": "Which animal is a primate, very intelligent, and lives in trees?",
-                "choices": [
-                    "Chimpanzee",
-                    "Tiger",
-                    "Lion",
-                    "Zebra"
-                ],
-                "correctAnswer": "Chimpanzee",
-                "explanation": "Chimpanzees are highly intelligent great apes native to forests and wet savannas of tropical Africa."
-            },
-            {
-                "question": "Which animal has black and white stripes and looks like a horse?",
-                "choices": [
-                    "Zebra",
-                    "Tiger",
-                    "Lion",
-                    "Chimpanzee"
-                ],
-                "correctAnswer": "Zebra",
-                "explanation": "Zebras are African equines known for their distinctive black-and-white striped coats."
-            },
-            {
-                "question": "Which animal is known as the King of the Jungle?",
-                "choices": [
-                    "Lion",
-                    "Tiger",
-                    "Chimpanzee",
-                    "Zebra"
-                ],
-                "correctAnswer": "Lion",
-                "explanation": "The lion is a large cat of the genus Panthera, native to Africa and India, often called the king of the jungle."
-            }
-        ]
-    },
-    "wild-animals-3": {
-        "grade": 2,
-        "videoUrl": "https://www.youtube.com/embed/HEV51Qee0M8",
-        "title": "Animal Sounds and Names for Kids 🐯",
-        "channel": "@PRES.ENGLISH",
-        "words": [
-            "Lion",
-            "Monkey",
-            "Elephant",
-            "Giraffe",
-            "Zebra"
-        ],
-        "topicId": "wild-animals",
-        "questions": [
-            {
-                "question": "Which animal has black and white stripes?",
-                "choices": [
-                    "Zebra",
-                    "Lion",
-                    "Giraffe",
-                    "Monkey"
-                ],
-                "correctAnswer": "Zebra",
-                "explanation": "Zebras have beautiful black and white stripes all over their bodies!"
-            },
-            {
-                "question": "Which animal is known as the King of the Jungle?",
-                "choices": [
-                    "Lion",
-                    "Elephant",
-                    "Zebra",
-                    "Giraffe"
-                ],
-                "correctAnswer": "Lion",
-                "explanation": "The mighty lion is famously known as the King of the Jungle!"
-            },
-            {
-                "question": "Which animal has a very long neck to reach tall leaves?",
-                "choices": [
-                    "Giraffe",
-                    "Monkey",
-                    "Elephant",
-                    "Zebra"
-                ],
-                "correctAnswer": "Giraffe",
-                "explanation": "Giraffes have incredibly long necks to eat leaves from high trees!"
-            },
-            {
-                "question": "Which animal loves to swing on trees and eat bananas?",
-                "choices": [
-                    "Monkey",
-                    "Lion",
-                    "Giraffe",
-                    "Elephant"
-                ],
-                "correctAnswer": "Monkey",
-                "explanation": "Monkeys are active swingers and love eating yummy bananas!"
-            },
-            {
-                "question": "Which animal is the largest land mammal with big ears?",
-                "choices": [
-                    "Elephant",
-                    "Zebra",
-                    "Lion",
-                    "Giraffe"
-                ],
-                "correctAnswer": "Elephant",
-                "explanation": "The elephant is the largest mammal living on land!"
             }
         ]
     },
@@ -14225,123 +12893,6 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
             }
         ]
     },
-    "farm-animals-4": {
-        "grade": 1,
-        "topicId": "farm-animals",
-        "videoUrl": "https://www.youtube.com/embed/hF7f7jHanOY",
-        "title": "Animals Name And Sound Learn Animals Species in English |  Animal World",
-        "channel": "@cuteanimalworld6514",
-        "transcriptText": "",
-        "words": [
-            "Animal",
-            "Name",
-            "Sound",
-            "Specie",
-            "World"
-        ],
-        "questions": [
-            {
-                "question": "Which word best describes this image?",
-                "choices": [
-                    "Specie",
-                    "Sound",
-                    "Name",
-                    "Animal"
-                ],
-                "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
-                ],
-                "correctAnswer": "Animal",
-                "explanation": "\"Animal\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/28751650/pexels-photo-28751650.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
-                "isMissingCustomIcon": false
-            },
-            {
-                "question": "Which word best describes this image?",
-                "choices": [
-                    "Sound",
-                    "Animal",
-                    "Name",
-                    "Specie"
-                ],
-                "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
-                ],
-                "correctAnswer": "Name",
-                "explanation": "\"Name\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/33481387/pexels-photo-33481387.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
-                "isMissingCustomIcon": false
-            },
-            {
-                "question": "Which word best describes this image?",
-                "choices": [
-                    "Specie",
-                    "Animal",
-                    "Sound",
-                    "Name"
-                ],
-                "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
-                ],
-                "correctAnswer": "Sound",
-                "explanation": "\"Sound\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/7270006/pexels-photo-7270006.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
-                "isMissingCustomIcon": false
-            },
-            {
-                "question": "Which word best describes this image?",
-                "choices": [
-                    "Name",
-                    "Sound",
-                    "Animal",
-                    "Specie"
-                ],
-                "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
-                ],
-                "correctAnswer": "Specie",
-                "explanation": "\"Specie\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/5566884/pexels-photo-5566884.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
-                "isMissingCustomIcon": false
-            },
-            {
-                "question": "Which word best describes this image?",
-                "choices": [
-                    "World",
-                    "Name",
-                    "Sound",
-                    "Animal"
-                ],
-                "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
-                ],
-                "correctAnswer": "World",
-                "explanation": "\"World\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/12167976/pexels-photo-12167976.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
-                "isMissingCustomIcon": false
-            }
-        ]
-    },
     "farm-animals-5": {
         "grade": 1,
         "topicId": "farm-animals",
@@ -14454,123 +13005,6 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                 "correctAnswer": "Nest Hub",
                 "explanation": "\"Nest Hub\" is the correct vocabulary word for this picture.",
                 "imageUrl": "https://images.pexels.com/photos/36326800/pexels-photo-36326800.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
-                "isMissingCustomIcon": false
-            }
-        ]
-    },
-    "farm-animals-6": {
-        "grade": 1,
-        "topicId": "farm-animals",
-        "videoUrl": "https://www.youtube.com/embed/EX9O9D_kezU",
-        "title": "Wild Animals Names for Kids 🐯 | Learn with Pictures & Spelling",
-        "channel": "@safarikids-y5t",
-        "transcriptText": "Wild animals. Lion. Tiger. Elephant. Zebra. Giraffe. Bear. Fox. Wolf. Rhinoceros. Hippopotamus. Monkey. Kangaroo. Ostrich. Koala.",
-        "words": [
-            "Elephant",
-            "Lion",
-            "Monkey",
-            "Spelling",
-            "Wild animal"
-        ],
-        "questions": [
-            {
-                "question": "Which mammal is the largest on land and has a long trunk?",
-                "choices": [
-                    "Monkey",
-                    "Elephant",
-                    "Lion",
-                    "Spelling"
-                ],
-                "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
-                ],
-                "correctAnswer": "Elephant",
-                "explanation": "Elephants use their long trunks to drink water and pick up food.",
-                "imageUrl": "https://images.pexels.com/photos/25754094/pexels-photo-25754094.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
-                "isMissingCustomIcon": false
-            },
-            {
-                "question": "Which wild cat has a large mane and is called the King of the Jungle?",
-                "choices": [
-                    "Elephant",
-                    "Monkey",
-                    "Spelling",
-                    "Lion"
-                ],
-                "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
-                ],
-                "correctAnswer": "Lion",
-                "explanation": "Lions live in grasslands and are famous for their loud roars.",
-                "imageUrl": "https://images.pexels.com/photos/11838539/pexels-photo-11838539.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
-                "isMissingCustomIcon": false
-            },
-            {
-                "question": "Which playful animal loves to swing from trees and eat bananas?",
-                "choices": [
-                    "Monkey",
-                    "Spelling",
-                    "Lion",
-                    "Elephant"
-                ],
-                "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
-                ],
-                "correctAnswer": "Monkey",
-                "explanation": "Monkeys are primates with long tails for balancing in trees.",
-                "imageUrl": "https://images.pexels.com/photos/31591558/pexels-photo-31591558.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
-                "isMissingCustomIcon": false
-            },
-            {
-                "question": "Which word describes the action happening in this image?",
-                "choices": [
-                    "Elephant",
-                    "Lion",
-                    "Monkey",
-                    "Spelling"
-                ],
-                "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
-                ],
-                "correctAnswer": "Spelling",
-                "explanation": "Action verbs ending in \"-ing\" describe ongoing actions like the one shown here.",
-                "imageUrl": "https://images.pexels.com/photos/6005118/pexels-photo-6005118.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
-                "isMissingCustomIcon": false
-            },
-            {
-                "question": "Which word best describes this image?",
-                "choices": [
-                    "Lion",
-                    "Elephant",
-                    "Wild animal",
-                    "Monkey"
-                ],
-                "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
-                ],
-                "correctAnswer": "Wild animal",
-                "explanation": "\"Wild animal\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/5649002/pexels-photo-5649002.jpeg?auto=compress&cs=tinysrgb&h=350",
                 "ipa": "",
                 "isMissingCustomIcon": false
             }
@@ -14805,123 +13239,6 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                 "correctAnswer": "Chicken Pig",
                 "explanation": "\"Chicken Pig\" is the correct vocabulary word for this picture.",
                 "imageUrl": "https://images.pexels.com/photos/30586308/pexels-photo-30586308.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
-                "isMissingCustomIcon": false
-            }
-        ]
-    },
-    "farm-animals-9": {
-        "grade": 1,
-        "topicId": "farm-animals",
-        "videoUrl": "https://www.youtube.com/embed/KLPIe6au3Oo",
-        "title": "Master English Reptile Names: Simple & Fun!",
-        "channel": "@LearnEnglishwithDailyPractice",
-        "transcriptText": "crocodile turtle lizard Cobra chameleon gecko frilled lizard python",
-        "words": [
-            "Gecko frilled",
-            "Crocodile turtle",
-            "Turtle lizard",
-            "Lizard Cobra",
-            "Cobra chameleon"
-        ],
-        "questions": [
-            {
-                "question": "Which word best describes this image?",
-                "choices": [
-                    "Lizard Cobra",
-                    "Gecko frilled",
-                    "Crocodile turtle",
-                    "Turtle lizard"
-                ],
-                "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
-                ],
-                "correctAnswer": "Gecko frilled",
-                "explanation": "\"Gecko frilled\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/31130862/pexels-photo-31130862.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
-                "isMissingCustomIcon": false
-            },
-            {
-                "question": "Which word best describes this image?",
-                "choices": [
-                    "Crocodile turtle",
-                    "Gecko frilled",
-                    "Lizard Cobra",
-                    "Turtle lizard"
-                ],
-                "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
-                ],
-                "correctAnswer": "Crocodile turtle",
-                "explanation": "\"Crocodile turtle\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/17792073/pexels-photo-17792073.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
-                "isMissingCustomIcon": false
-            },
-            {
-                "question": "Which word best describes this image?",
-                "choices": [
-                    "Turtle lizard",
-                    "Crocodile turtle",
-                    "Gecko frilled",
-                    "Lizard Cobra"
-                ],
-                "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
-                ],
-                "correctAnswer": "Turtle lizard",
-                "explanation": "\"Turtle lizard\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/7723174/pexels-photo-7723174.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
-                "isMissingCustomIcon": false
-            },
-            {
-                "question": "Which word best describes this image?",
-                "choices": [
-                    "Crocodile turtle",
-                    "Turtle lizard",
-                    "Lizard Cobra",
-                    "Gecko frilled"
-                ],
-                "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
-                ],
-                "correctAnswer": "Lizard Cobra",
-                "explanation": "\"Lizard Cobra\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/14144154/pexels-photo-14144154.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "ipa": "",
-                "isMissingCustomIcon": false
-            },
-            {
-                "question": "Which word best describes this image?",
-                "choices": [
-                    "Gecko frilled",
-                    "Cobra chameleon",
-                    "Crocodile turtle",
-                    "Turtle lizard"
-                ],
-                "choiceIpas": [
-                    "",
-                    "",
-                    "",
-                    ""
-                ],
-                "correctAnswer": "Cobra chameleon",
-                "explanation": "\"Cobra chameleon\" is the correct vocabulary word for this picture.",
-                "imageUrl": "https://images.pexels.com/photos/53971/chameleon-parduckameleon-furcifer-pardalis-reptile-53971.jpeg?auto=compress&cs=tinysrgb&h=350",
                 "ipa": "",
                 "isMissingCustomIcon": false
             }
@@ -40728,6 +39045,8546 @@ const STATIC_VIDEO_QUESTS_DATABASE: { [key: string]: VideoQuest } = {
                 "explanation": "\"Secret\" is the correct vocabulary word for this picture.",
                 "imageUrl": "https://pixabay.com/get/g9d76daa3b43d0795b851329c558132c4219ffc2a2a6d9a8e8588fa8abeca73c8d97d48af79408aa742b64de8e5f0ffe4bde05e960578855225e61b063ef320eb_640.jpg",
                 "ipa": "",
+                "isMissingCustomIcon": false
+            }
+        ]
+    },
+    "wild-animals-1": {
+        "grade": 2,
+        "videoUrl": "https://www.youtube.com/embed/UIEIkXJAoog",
+        "title": "What Is This Called in English? | Learn English Word | 07",
+        "channel": "@JourneyEnglishTalk",
+        "words": [
+            "Deer",
+            "Fox",
+            "Bear",
+            "Wolf",
+            "Panther"
+        ],
+        "topicId": "wild-animals",
+        "questions": [
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Fox",
+                    "Bear",
+                    "Wolf",
+                    "Deer"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Deer",
+                "explanation": "\"Deer\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/31805554/pexels-photo-31805554.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Bear",
+                    "Deer",
+                    "Fox",
+                    "Wolf"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Fox",
+                "explanation": "\"Fox\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/9681754/pexels-photo-9681754.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Deer",
+                    "Bear",
+                    "Wolf",
+                    "Fox"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Bear",
+                "explanation": "\"Bear\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/17646625/pexels-photo-17646625.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Wolf",
+                    "Deer",
+                    "Fox",
+                    "Bear"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Wolf",
+                "explanation": "\"Wolf\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/7249475/pexels-photo-7249475.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Deer",
+                    "Fox",
+                    "Panther",
+                    "Bear"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Panther",
+                "explanation": "\"Panther\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/7867206/pexels-photo-7867206.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            }
+        ]
+    },
+    "wild-animals": {
+        "grade": 2,
+        "videoUrl": "https://www.youtube.com/embed/UIEIkXJAoog",
+        "title": "What Is This Called in English? | Learn English Word | 07",
+        "channel": "@JourneyEnglishTalk",
+        "words": [
+            "Deer",
+            "Fox",
+            "Bear",
+            "Wolf",
+            "Panther"
+        ],
+        "topicId": "wild-animals",
+        "questions": [
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Fox",
+                    "Bear",
+                    "Wolf",
+                    "Deer"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Deer",
+                "explanation": "\"Deer\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/31805554/pexels-photo-31805554.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Bear",
+                    "Deer",
+                    "Fox",
+                    "Wolf"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Fox",
+                "explanation": "\"Fox\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/9681754/pexels-photo-9681754.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Deer",
+                    "Bear",
+                    "Wolf",
+                    "Fox"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Bear",
+                "explanation": "\"Bear\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/17646625/pexels-photo-17646625.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Wolf",
+                    "Deer",
+                    "Fox",
+                    "Bear"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Wolf",
+                "explanation": "\"Wolf\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/7249475/pexels-photo-7249475.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Deer",
+                    "Fox",
+                    "Panther",
+                    "Bear"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Panther",
+                "explanation": "\"Panther\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/7867206/pexels-photo-7867206.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            }
+        ]
+    },
+    "wild-animals-2": {
+        "grade": 2,
+        "topicId": "wild-animals",
+        "videoUrl": "https://www.youtube.com/embed/wI0BeLWajNE",
+        "title": "Learn Wild Animals for Kids | Video Flashcards | Kindergarten, Preschool, ESL | Fun Kids English",
+        "channel": "@Funkidsenglish",
+        "transcriptText": "Hey kids! Are you ready to learn about African animals? Here we go! elephant elephant hippo hippo snake snake zebra zebra monkey monkey tiger tiger giraffe giraffe lion lion rhino rhino alligator alligator Good job! How about we do this one more time? Are you ready? Let's go! elephant hippo snake zebra monkey tiger giraffe lion rhino alligator Well done, that was great. See you next time.",
+        "words": [
+            "Elephant",
+            "Hippo",
+            "Snake",
+            "Zebra",
+            "Monkey",
+            "Tiger",
+            "Giraffe",
+            "Lion",
+            "Rhino",
+            "Alligator"
+        ],
+        "questions": [
+            {
+                "question": "Which mammal is the largest on land and has a long trunk?",
+                "choices": [
+                    "Elephant",
+                    "Zebra",
+                    "Hippo",
+                    "Snake"
+                ],
+                "choiceIpas": [
+                    "/ˈɛləfənt/",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Elephant",
+                "explanation": "Elephants use their long trunks to drink water and pick up food.",
+                "imageUrl": "https://tiger-universe.com/cdn/shop/articles/thumbnail_c7a746e3-d398-451c-b58f-36e9e19d9b72_1600x.jpg?v=1720700648",
+                "ipa": "/ˈɛləfənt/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Snake",
+                    "Zebra",
+                    "Elephant",
+                    "Hippo"
+                ],
+                "choiceIpas": [
+                    "/ˈsneɪk/",
+                    "/ˈziːbɹə/",
+                    "/ˈɛləfənt/",
+                    "/ˈhɪpəʊ/"
+                ],
+                "correctAnswer": "Hippo",
+                "explanation": "\"Hippo\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://cdn.animalmatchup.com/images/matchups/highlight/tiger-vs-hippo/screaming/tiger-animalmatchup.com.webp",
+                "ipa": "/ˈhɪpəʊ/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Elephant",
+                    "Snake",
+                    "Hippo",
+                    "Zebra"
+                ],
+                "choiceIpas": [
+                    "/ˈɛləfənt/",
+                    "/ˈsneɪk/",
+                    "/ˈhɪpəʊ/",
+                    "/ˈziːbɹə/"
+                ],
+                "correctAnswer": "Snake",
+                "explanation": "\"Snake\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/16003895/pexels-photo-16003895.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "ipa": "/ˈsneɪk/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Elephant",
+                    "Zebra",
+                    "Hippo",
+                    "Snake"
+                ],
+                "choiceIpas": [
+                    "/ˈɛləfənt/",
+                    "/ˈziːbɹə/",
+                    "/ˈhɪpəʊ/",
+                    ""
+                ],
+                "correctAnswer": "Zebra",
+                "explanation": "\"Zebra\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://www.maxwaugh.com/wp-content/uploads/2019/04/lionafrican0219tanzania49.jpg",
+                "ipa": "/ˈziːbɹə/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which playful animal loves to swing from trees and eat bananas?",
+                "choices": [
+                    "Snake",
+                    "Hippo",
+                    "Monkey",
+                    "Elephant"
+                ],
+                "choiceIpas": [
+                    "/ˈsneɪk/",
+                    "",
+                    "/ˈmʌŋki/",
+                    ""
+                ],
+                "correctAnswer": "Monkey",
+                "explanation": "Monkeys are primates with long tails for balancing in trees.",
+                "imageUrl": "https://www.creativefabrica.com/wp-content/uploads/2023/07/14/Lion-And-Monkey-Playing-Near-The-River-74508045-1-1.png",
+                "ipa": "/ˈmʌŋki/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Hippo",
+                    "Elephant",
+                    "Snake",
+                    "Tiger"
+                ],
+                "choiceIpas": [
+                    "/ˈhɪpəʊ/",
+                    "/ˈɛləfənt/",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Tiger",
+                "explanation": "\"Tiger\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://www.tigersafari.net/wp-content/uploads/2025/10/Tiger-vs-Lion_-Difference-in-strength-hunting.webp",
+                "ipa": "/ˈtaɪɡə/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Giraffe",
+                    "Elephant",
+                    "Hippo",
+                    "Snake"
+                ],
+                "choiceIpas": [
+                    "/dʒɪˈɹɑːf/",
+                    "/ˈɛləfənt/",
+                    "",
+                    "/ˈsneɪk/"
+                ],
+                "correctAnswer": "Giraffe",
+                "explanation": "\"Giraffe\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://c8.alamy.com/comp/M52J48/a-young-lion-chasing-a-giraffe-a-risky-game-as-giraffes-have-been-M52J48.jpg",
+                "ipa": "/dʒɪˈɹɑːf/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which wild cat has a large mane and is called the King of the Jungle?",
+                "choices": [
+                    "Snake",
+                    "Elephant",
+                    "Lion",
+                    "Hippo"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Lion",
+                "explanation": "Lions live in grasslands and are famous for their loud roars.",
+                "imageUrl": "data:image/jpeg;base64,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",
+                "ipa": "/ˈlaɪən/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Snake",
+                    "Hippo",
+                    "Elephant",
+                    "Rhino"
+                ],
+                "choiceIpas": [
+                    "/ˈsneɪk/",
+                    "/ˈhɪpəʊ/",
+                    "/ˈɛləfənt/",
+                    "/ˈɹaɪ.nəʊ/"
+                ],
+                "correctAnswer": "Rhino",
+                "explanation": "\"Rhino\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://www.rhinolion.co.za/wp-content/uploads/2025/05/P1288759-2jpg.jpg",
+                "ipa": "/ˈɹaɪ.nəʊ/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Elephant",
+                    "Hippo",
+                    "Snake",
+                    "Alligator"
+                ],
+                "choiceIpas": [
+                    "/ˈɛləfənt/",
+                    "/ˈhɪpəʊ/",
+                    "/ˈsneɪk/",
+                    "/ˈæl.ɪ.ɡeɪ.tə/"
+                ],
+                "correctAnswer": "Alligator",
+                "explanation": "\"Alligator\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://i.ytimg.com/vi/mRYl1DtiZsM/maxresdefault.jpg",
+                "ipa": "/ˈæl.ɪ.ɡeɪ.tə/",
+                "isMissingCustomIcon": false
+            }
+        ]
+    },
+    "wild-animals-3": {
+        "grade": 2,
+        "topicId": "wild-animals",
+        "videoUrl": "https://www.youtube.com/embed/iS5e6jlvo7M",
+        "title": "English Vocabulary: Wild Animals 🦌 | Repeat and Learn | Daily Practice",
+        "channel": "@SmartFamilyEnglish",
+        "transcriptText": "okapi okapi Panther Panther meerkat meerkat killer whale killer whale loose loose squirrel squirrel snake snake Hedgehog Hedgehog salmon salmon wannabe wannabe Wolverine Wolverine dear dear magpie magpie while she while she honey badger honey badger Bieber Bieber sloth small Bobcat Bobcat loon noon [Music] silicon-silicon you",
+        "words": [
+            "Okapi",
+            "Panther",
+            "Meerkat",
+            "Killer whale",
+            "Loose",
+            "Squirrel",
+            "Snake",
+            "Hedgehog",
+            "Salmon",
+            "Wannabe",
+            "Wolverine",
+            "Dear",
+            "Magpie",
+            "Honey badger",
+            "Bieber",
+            "Sloth",
+            "Small",
+            "Bobcat",
+            "Loon",
+            "Silicon"
+        ],
+        "questions": [
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Meerkat",
+                    "Panther",
+                    "Okapi",
+                    "Killer whale"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Okapi",
+                "explanation": "\"Okapi\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://as2.ftcdn.net/v2/jpg/02/34/48/37/1000_F_234483798_8R0DG6YQGdItsopkYEiQCT6wJS5ajS0h.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Panther",
+                    "Killer whale",
+                    "Okapi",
+                    "Meerkat"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Panther",
+                "explanation": "\"Panther\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://cdn.pixabay.com/photo/2023/01/01/13/32/panther-7690091_1280.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Okapi",
+                    "Killer whale",
+                    "Panther",
+                    "Meerkat"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Meerkat",
+                "explanation": "\"Meerkat\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/60588/meerkat-animal-wild-wildlife-60588.jpeg?cs=srgb&dl=pexels-pixabay-60588.jpg&fm=jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Meerkat",
+                    "Okapi",
+                    "Panther",
+                    "Killer whale"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    "/weɪl/"
+                ],
+                "correctAnswer": "Killer whale",
+                "explanation": "\"Killer whale\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://wallpapers.com/images/hd/leaping-orca-whale-w3a47wqujuxurksg.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Okapi",
+                    "Loose",
+                    "Meerkat",
+                    "Panther"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Loose",
+                "explanation": "\"Loose\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://i5.walmartimages.com/seo/Signature-by-Levi-Strauss-Co-Women-s-Heritage-High-Rise-Loose-Straight-Jean_827200dd-f96a-4593-b179-008a72475e6d.65cfa2c675fd15384322e69cbd411318.jpeg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Squirrel",
+                    "Panther",
+                    "Meerkat",
+                    "Okapi"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Squirrel",
+                "explanation": "\"Squirrel\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://cdn.pixabay.com/photo/2023/08/24/17/34/squirrel-8211238_1280.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Snake",
+                    "Okapi",
+                    "Panther",
+                    "Meerkat"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Snake",
+                "explanation": "\"Snake\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://cuteanimalplanet.com/wp-content/uploads/2024/12/1-snakes.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Panther",
+                    "Hedgehog",
+                    "Okapi",
+                    "Meerkat"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Hedgehog",
+                "explanation": "\"Hedgehog\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://www.rd.com/wp-content/uploads/2021/04/GettyImages-1053735888-scaled.jpg?w=2560",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Okapi",
+                    "Salmon",
+                    "Meerkat",
+                    "Panther"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Salmon",
+                "explanation": "\"Salmon\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://static01.nyt.com/images/2024/02/13/multimedia/LH-pan-seared-salmon-lwzt/LH-pan-seared-salmon-lwzt-mediumSquareAt3X.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Meerkat",
+                    "Wannabe",
+                    "Panther",
+                    "Okapi"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Wannabe",
+                "explanation": "\"Wannabe\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://0.soompi.io/wp-content/uploads/2021/12/20172420/itzy-wannabe.jpeg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Panther",
+                    "Meerkat",
+                    "Wolverine",
+                    "Okapi"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Wolverine",
+                "explanation": "\"Wolverine\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://pngfre.com/wp-content/uploads/Wolverine-16-620x1024.png",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Dear",
+                    "Okapi",
+                    "Panther",
+                    "Meerkat"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Dear",
+                "explanation": "\"Dear\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://www.shutterstock.com/shutterstock/photos/1364123093/display_1500/stock-photo-small-dear-standing-isolated-on-white-background-with-clipping-path-1364123093.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Panther",
+                    "Okapi",
+                    "Meerkat",
+                    "Magpie"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "/ˈmɪəkat/",
+                    ""
+                ],
+                "correctAnswer": "Magpie",
+                "explanation": "\"Magpie\" is the correct vocabulary word for this picture.",
+                "imageUrl": "http://2.bp.blogspot.com/-zY8AU3ElUN4/T5lgrXXNFbI/AAAAAAAAFbs/qa3rmeyAbbE/s1600/australian_magpie.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Panther",
+                    "Okapi",
+                    "Honey badger",
+                    "Meerkat"
+                ],
+                "choiceIpas": [
+                    "/ˈpænθə/",
+                    "/ə(ʊ)ˈkɑːpi/",
+                    "/ˈhʌni/ /ˈbædʒə/",
+                    "/ˈmɪəkat/"
+                ],
+                "correctAnswer": "Honey badger",
+                "explanation": "\"Honey badger\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b0/Honey_badger%2C_Mellivora_capensis%2C_carrying_young_pup_in_her_mouth_at_Kgalagadi_Transfrontier_Park%2C_Northern_Cape%2C_South_Africa_(34739009921).jpg",
+                "ipa": "/ˈhʌni/ /ˈbædʒə/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Bieber",
+                    "Panther",
+                    "Meerkat",
+                    "Okapi"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Bieber",
+                "explanation": "\"Bieber\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://smilefm.co.za/wp-content/uploads/2022/09/justin-bieber-performing-081522-ee52d6071e87497ea51e190584dc6139.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Okapi",
+                    "Sloth",
+                    "Panther",
+                    "Meerkat"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Sloth",
+                "explanation": "\"Sloth\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://i.natgeofe.com/n/b72d9339-1644-44e6-a1a3-b20c341d7ebe/3716810_square.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Panther",
+                    "Meerkat",
+                    "Small",
+                    "Okapi"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Small",
+                "explanation": "\"Small\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://cdn1.vectorstock.com/i/1000x1000/18/45/opposite-english-words-big-and-small-vector-42021845.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Meerkat",
+                    "Okapi",
+                    "Panther",
+                    "Bobcat"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Bobcat",
+                "explanation": "\"Bobcat\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://facts.net/wp-content/uploads/2023/07/17-facts-about-bobcat-1689159138.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Panther",
+                    "Loon",
+                    "Meerkat",
+                    "Okapi"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Loon",
+                "explanation": "\"Loon\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://pixnio.com/free-images/fauna-animals/birds/common-loon.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Silicon",
+                    "Meerkat",
+                    "Okapi",
+                    "Panther"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Silicon",
+                "explanation": "\"Silicon\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://www.sciencephoto.com/image/553876/530wm",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            }
+        ]
+    },
+    "wild-animals-4": {
+        "grade": 2,
+        "topicId": "wild-animals",
+        "videoUrl": "https://www.youtube.com/embed/mGg5q1hIUbQ",
+        "title": "ANIMALS IN ENGLISH #english #learnenglish",
+        "channel": "@LearnSmartece",
+        "transcriptText": "Animals in English. Lion. Tiger. Bear. Wolf. Panda. Elephant. Monkey. Zebra. Giraffe. Camel. Dog. Cat.",
+        "words": [
+            "Lion",
+            "Tiger",
+            "Bear",
+            "Wolf",
+            "Panda",
+            "Elephant",
+            "Monkey",
+            "Zebra",
+            "Giraffe",
+            "Camel",
+            "Dog",
+            "Cat"
+        ],
+        "questions": [
+            {
+                "question": "Which wild cat has a large mane and is called the King of the Jungle?",
+                "choices": [
+                    "Bear",
+                    "Tiger",
+                    "Wolf",
+                    "Lion"
+                ],
+                "choiceIpas": [
+                    "/bɛə(ɹ)/",
+                    "/ˈtaɪɡə/",
+                    "/wʊlf/",
+                    ""
+                ],
+                "correctAnswer": "Lion",
+                "explanation": "Lions live in grasslands and are famous for their loud roars.",
+                "imageUrl": "https://lookaside.fbsbx.com/lookaside/crawler/media/?media_id=122100375513352800",
+                "ipa": "/ˈlaɪən/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Bear",
+                    "Lion",
+                    "Tiger",
+                    "Wolf"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Tiger",
+                "explanation": "\"Tiger\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/34268624/pexels-photo-34268624.jpeg?cs=srgb&dl=pexels-graeme-travers-637657729-34268624.jpg&fm=jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Lion",
+                    "Bear",
+                    "Wolf",
+                    "Tiger"
+                ],
+                "choiceIpas": [
+                    "/ˈlaɪən/",
+                    "/bɛə(ɹ)/",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Bear",
+                "explanation": "\"Bear\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://i.natgeofe.com/n/7bd4e32f-9caf-4f2f-96f9-aa456d99896f/MM10120_230829_14318_4x3.jpg",
+                "ipa": "/bɛə(ɹ)/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Tiger",
+                    "Bear",
+                    "Wolf",
+                    "Lion"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Wolf",
+                "explanation": "\"Wolf\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://cdn.britannica.com/07/5207-050-5BC9F251/Gray-wolf.jpg",
+                "ipa": "/wʊlf/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Tiger",
+                    "Panda",
+                    "Lion",
+                    "Bear"
+                ],
+                "choiceIpas": [
+                    "/ˈtaɪɡə/",
+                    "/ˈpændə/",
+                    "/ˈlaɪən/",
+                    ""
+                ],
+                "correctAnswer": "Panda",
+                "explanation": "\"Panda\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/31047958/pexels-photo-31047958/free-photo-of-close-up-of-giant-panda-in-natural-habitat.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+                "ipa": "/ˈpændə/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which mammal is the largest on land and has a long trunk?",
+                "choices": [
+                    "Lion",
+                    "Tiger",
+                    "Bear",
+                    "Elephant"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Elephant",
+                "explanation": "Elephants use their long trunks to drink water and pick up food.",
+                "imageUrl": "https://cdn.britannica.com/02/152302-050-1A984FCB/African-savanna-elephant.jpg",
+                "ipa": "/ˈɛləfənt/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which playful animal loves to swing from trees and eat bananas?",
+                "choices": [
+                    "Bear",
+                    "Lion",
+                    "Monkey",
+                    "Tiger"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Monkey",
+                "explanation": "Monkeys are primates with long tails for balancing in trees.",
+                "imageUrl": "https://thumbs.dreamstime.com/b/monkeys-natural-habitat-trees-afternoon-primates-monkeys-natural-habitat-trees-afternoon-109161839.jpg",
+                "ipa": "/ˈmʌŋki/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Zebra",
+                    "Lion",
+                    "Tiger",
+                    "Bear"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "/ˈtaɪɡə/",
+                    ""
+                ],
+                "correctAnswer": "Zebra",
+                "explanation": "\"Zebra\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/19055366/pexels-photo-19055366.jpeg?cs=srgb&dl=pexels-mr-sketch-55235740-19055366.jpg&fm=jpg",
+                "ipa": "/ˈziːbɹə/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Lion",
+                    "Bear",
+                    "Giraffe",
+                    "Tiger"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Giraffe",
+                "explanation": "\"Giraffe\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://img.freepik.com/premium-photo/breathtaking-majestic-giraffe-gracefully-walks-through-african-savannah-its-long-neck-reachi_941265-22651.jpg?w=2000",
+                "ipa": "/dʒɪˈɹɑːf/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Lion",
+                    "Bear",
+                    "Camel",
+                    "Tiger"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Camel",
+                "explanation": "\"Camel\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://cdn.britannica.com/57/7057-050-33CEB562/Bactrian-camel.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Lion",
+                    "Dog",
+                    "Tiger",
+                    "Bear"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Dog",
+                "explanation": "\"Dog\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://koala.sh/api/image/v2-7jc0g-rmtjf.jpg?width=1216&height=832&dream",
+                "ipa": "/dɑɡ/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Tiger",
+                    "Cat",
+                    "Bear",
+                    "Lion"
+                ],
+                "choiceIpas": [
+                    "/ˈtaɪɡə/",
+                    "",
+                    "/bɛə(ɹ)/",
+                    "/ˈlaɪən/"
+                ],
+                "correctAnswer": "Cat",
+                "explanation": "\"Cat\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://cdn.pixabay.com/photo/2024/03/07/10/38/simba-8618301_1280.jpg",
+                "ipa": "/kat/",
+                "isMissingCustomIcon": false
+            }
+        ]
+    },
+    "wild-animals-5": {
+        "grade": 2,
+        "topicId": "wild-animals",
+        "videoUrl": "https://www.youtube.com/embed/9s2mWj6Qbj4",
+        "title": "10 Farm Animals In English || Animal Name",
+        "channel": "@improveenglish578",
+        "transcriptText": "10 farm animals in English. Dog, cow, pig, sheep, horse, donkey, rabbit, turkey, goat, hen. Like, share and subscribe.",
+        "words": [
+            "Dog",
+            "Cow",
+            "Pig",
+            "Sheep",
+            "Horse",
+            "Donkey",
+            "Rabbit",
+            "Turkey",
+            "Goat",
+            "Hen"
+        ],
+        "questions": [
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Sheep",
+                    "Cow",
+                    "Dog",
+                    "Pig"
+                ],
+                "choiceIpas": [
+                    "",
+                    "/kaʊ/",
+                    "/dɑɡ/",
+                    "/ˈpɪɡ/"
+                ],
+                "correctAnswer": "Dog",
+                "explanation": "\"Dog\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://thehomesteadinghippy.com/wp-content/uploads/2022/06/dog-catching-rabbit.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which farm animal makes a 'moo' sound and gives us fresh milk?",
+                "choices": [
+                    "Dog",
+                    "Sheep",
+                    "Cow",
+                    "Pig"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Cow",
+                "explanation": "Cows are dairy animals that graze on grass.",
+                "imageUrl": "https://media-be.chewy.com/wp-content/uploads/2021/06/14104417/australian-cattle-dog-5-1024x615.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Pig",
+                    "Dog",
+                    "Sheep",
+                    "Cow"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Pig",
+                "explanation": "\"Pig\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://i.pinimg.com/originals/c7/af/a1/c7afa1a8153ca2460303f16a7c8588da.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which animal has a thick coat of wool and makes a 'baa' sound?",
+                "choices": [
+                    "Dog",
+                    "Sheep",
+                    "Cow",
+                    "Pig"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Sheep",
+                "explanation": "Sheep are sheared once a year to make wool for clothing.",
+                "imageUrl": "https://images2.alphacoders.com/548/548729.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Dog",
+                    "Horse",
+                    "Cow",
+                    "Pig"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Horse",
+                "explanation": "\"Horse\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images7.alphacoders.com/704/704458.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Dog",
+                    "Pig",
+                    "Donkey",
+                    "Cow"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    "/kaʊ/"
+                ],
+                "correctAnswer": "Donkey",
+                "explanation": "\"Donkey\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://wallpapers.com/images/hd/dog-on-donkey-sgoe9d6r3i3lg1o6.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Cow",
+                    "Dog",
+                    "Pig",
+                    "Rabbit"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Rabbit",
+                "explanation": "\"Rabbit\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://i.ytimg.com/vi/FdzXX8o-GHM/maxresdefault.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Cow",
+                    "Dog",
+                    "Turkey",
+                    "Pig"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Turkey",
+                "explanation": "\"Turkey\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://www.brit.co/media-library/dog-turkey-costume.jpg?id=50520089&width=1200&height=1200",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Cow",
+                    "Pig",
+                    "Dog",
+                    "Goat"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Goat",
+                "explanation": "\"Goat\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://d34zrgnx1tq8w.cloudfront.net/614012/uploads/594bb280-d216-11ed-afd2-ddb129618006_1200_630.jpeg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Cow",
+                    "Hen",
+                    "Dog",
+                    "Pig"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Hen",
+                "explanation": "\"Hen\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://c8.alamy.com/comp/BWCT6E/a-yorkshire-terrier-and-a-hen-size-each-other-up-BWCT6E.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            }
+        ]
+    },
+    "wild-animals-6": {
+        "grade": 2,
+        "topicId": "wild-animals",
+        "videoUrl": "https://www.youtube.com/embed/KLPIe6au3Oo",
+        "title": "Master English Reptile Names: Simple & Fun!",
+        "channel": "@LearnEnglishwithDailyPractice",
+        "transcriptText": "crocodile turtle lizard cobra chameleon gecko frilled lizard python",
+        "words": [
+            "Crocodile",
+            "Turtle",
+            "Lizard",
+            "Cobra",
+            "Chameleon",
+            "Gecko",
+            "Frilled lizard",
+            "Python"
+        ],
+        "questions": [
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Crocodile",
+                    "Lizard",
+                    "Turtle",
+                    "Cobra"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Crocodile",
+                "explanation": "\"Crocodile\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://cdn.britannica.com/13/151913-120-EA90995D/Nile-crocodile-fish.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Cobra",
+                    "Lizard",
+                    "Turtle",
+                    "Crocodile"
+                ],
+                "choiceIpas": [
+                    "/ˈkɒbɹə/",
+                    "/ˈlɪz.əd/",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Turtle",
+                "explanation": "\"Turtle\" is the correct vocabulary word for this picture.",
+                "imageUrl": "http://2.bp.blogspot.com/-b6qT1WwvlEg/UM1Vqg41pFI/AAAAAAAABw0/AEiwBJj7K8k/s1600/Hawksbill+Turtle+Red+Sea.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Cobra",
+                    "Turtle",
+                    "Crocodile",
+                    "Lizard"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "/ˈkɹɒkədaɪl/",
+                    ""
+                ],
+                "correctAnswer": "Lizard",
+                "explanation": "\"Lizard\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://cdn.pixabay.com/photo/2024/09/26/14/08/lizard-9076520_1280.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Turtle",
+                    "Crocodile",
+                    "Lizard",
+                    "Cobra"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Cobra",
+                "explanation": "\"Cobra\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://animals.sandiegozoo.org/sites/default/files/2016-11/animals_hero_cobra.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Crocodile",
+                    "Chameleon",
+                    "Turtle",
+                    "Lizard"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    "/ˈlɪz.əd/"
+                ],
+                "correctAnswer": "Chameleon",
+                "explanation": "\"Chameleon\" is the correct vocabulary word for this picture.",
+                "imageUrl": "http://www.chameleonwebservices.co.uk/wp-content/uploads/2015/05/chameleon-image-5.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Crocodile",
+                    "Gecko",
+                    "Lizard",
+                    "Turtle"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    "/ˈtɜːtəl/"
+                ],
+                "correctAnswer": "Gecko",
+                "explanation": "\"Gecko\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images5.alphacoders.com/499/499449.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Crocodile",
+                    "Frilled lizard",
+                    "Lizard",
+                    "Turtle"
+                ],
+                "choiceIpas": [
+                    "",
+                    "/ˈlɪz.əd/",
+                    "/ˈlɪz.əd/",
+                    "/ˈtɜːtəl/"
+                ],
+                "correctAnswer": "Frilled lizard",
+                "explanation": "\"Frilled lizard\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://i.pinimg.com/originals/28/99/cd/2899cdc3db2ee9b6466d385640533f2d.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Python",
+                    "Lizard",
+                    "Turtle",
+                    "Crocodile"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Python",
+                "explanation": "\"Python\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/3840px-Python-logo-notext.svg.png",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            }
+        ]
+    },
+    "wild-animals-7": {
+        "grade": 2,
+        "topicId": "wild-animals",
+        "videoUrl": "https://www.youtube.com/embed/EX9O9D_kezU",
+        "title": "Wild Animals Names for Kids 🐯 | Learn with Pictures & Spelling",
+        "channel": "@safarikids-y5t",
+        "transcriptText": "Wild animals. Lion. Tiger. Elephant. Zebra. Giraffe. Bear. Fox. Wolf. Rhinoceros. Hippopotamus. Monkey. Kangaroo. Ostrich. Koala.",
+        "words": [
+            "Lion",
+            "Tiger",
+            "Elephant",
+            "Zebra",
+            "Giraffe",
+            "Bear",
+            "Fox",
+            "Wolf",
+            "Rhinoceros",
+            "Hippopotamus",
+            "Monkey",
+            "Kangaroo",
+            "Ostrich",
+            "Koala"
+        ],
+        "questions": [
+            {
+                "question": "Which wild cat has a large mane and is called the King of the Jungle?",
+                "choices": [
+                    "Lion",
+                    "Tiger",
+                    "Elephant",
+                    "Zebra"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Lion",
+                "explanation": "Lions live in grasslands and are famous for their loud roars.",
+                "imageUrl": "https://i.pinimg.com/originals/34/ec/02/34ec02ccdab21d3ba24f17f9e1940a23.jpg",
+                "ipa": "/ˈlaɪən/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Zebra",
+                    "Lion",
+                    "Elephant",
+                    "Tiger"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Tiger",
+                "explanation": "\"Tiger\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/34268624/pexels-photo-34268624.jpeg?cs=srgb&dl=pexels-graeme-travers-637657729-34268624.jpg&fm=jpg",
+                "ipa": "/ˈtaɪɡə/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which mammal is the largest on land and has a long trunk?",
+                "choices": [
+                    "Tiger",
+                    "Lion",
+                    "Zebra",
+                    "Elephant"
+                ],
+                "choiceIpas": [
+                    "/ˈtaɪɡə/",
+                    "/ˈlaɪən/",
+                    "/ˈziːbɹə/",
+                    "/ˈɛləfənt/"
+                ],
+                "correctAnswer": "Elephant",
+                "explanation": "Elephants use their long trunks to drink water and pick up food.",
+                "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a9/African_Bush_Elephants.jpg",
+                "ipa": "/ˈɛləfənt/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Tiger",
+                    "Elephant",
+                    "Lion",
+                    "Zebra"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Zebra",
+                "explanation": "\"Zebra\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/19055366/pexels-photo-19055366.jpeg?cs=srgb&dl=pexels-mr-sketch-55235740-19055366.jpg&fm=jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Giraffe",
+                    "Lion",
+                    "Tiger",
+                    "Elephant"
+                ],
+                "choiceIpas": [
+                    "/dʒɪˈɹɑːf/",
+                    "",
+                    "/ˈtaɪɡə/",
+                    "/ˈɛləfənt/"
+                ],
+                "correctAnswer": "Giraffe",
+                "explanation": "\"Giraffe\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://img.freepik.com/premium-photo/breathtaking-majestic-giraffe-gracefully-walks-through-african-savannah-its-long-neck-reachi_941265-22651.jpg?w=2000",
+                "ipa": "/dʒɪˈɹɑːf/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Elephant",
+                    "Lion",
+                    "Tiger",
+                    "Bear"
+                ],
+                "choiceIpas": [
+                    "/ˈɛləfənt/",
+                    "/ˈlaɪən/",
+                    "/ˈtaɪɡə/",
+                    "/bɛə(ɹ)/"
+                ],
+                "correctAnswer": "Bear",
+                "explanation": "\"Bear\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://i.pinimg.com/originals/ef/87/50/ef8750fc782325ee93129462089742f2.jpg",
+                "ipa": "/bɛə(ɹ)/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Elephant",
+                    "Fox",
+                    "Tiger",
+                    "Lion"
+                ],
+                "choiceIpas": [
+                    "/ˈɛləfənt/",
+                    "/fɒks/",
+                    "/ˈtaɪɡə/",
+                    "/ˈlaɪən/"
+                ],
+                "correctAnswer": "Fox",
+                "explanation": "\"Fox\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://sfondo.info/i/original/a/0/1/100760.jpg",
+                "ipa": "/fɒks/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Wolf",
+                    "Elephant",
+                    "Lion",
+                    "Tiger"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Wolf",
+                "explanation": "\"Wolf\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://d1jyxxz9imt9yb.cloudfront.net/medialib/4452/image/s1300x1300/JohnEMarriott_2009-10_BanffNationalPark-Alberta-Canada_WolfHowling_wlf0054_reduced.jpg",
+                "ipa": "/wʊlf/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Lion",
+                    "Elephant",
+                    "Rhinoceros",
+                    "Tiger"
+                ],
+                "choiceIpas": [
+                    "/ˈlaɪən/",
+                    "/ˈɛləfənt/",
+                    "/ɹaɪˈnɒsəɹəs/",
+                    "/ˈtaɪɡə/"
+                ],
+                "correctAnswer": "Rhinoceros",
+                "explanation": "\"Rhinoceros\" is the correct vocabulary word for this picture.",
+                "imageUrl": "http://www.richmondmom.com/wp-content/uploads/2024/09/Rhinoceros.jpeg",
+                "ipa": "/ɹaɪˈnɒsəɹəs/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Hippopotamus",
+                    "Lion",
+                    "Elephant",
+                    "Tiger"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Hippopotamus",
+                "explanation": "\"Hippopotamus\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://facts.net/wp-content/uploads/2024/01/18-great-facts-about-hippopotamuses-1706095378.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which playful animal loves to swing from trees and eat bananas?",
+                "choices": [
+                    "Lion",
+                    "Monkey",
+                    "Tiger",
+                    "Elephant"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Monkey",
+                "explanation": "Monkeys are primates with long tails for balancing in trees.",
+                "imageUrl": "https://thumbs.dreamstime.com/b/monkeys-natural-habitat-trees-afternoon-primates-monkeys-natural-habitat-trees-afternoon-109161839.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Tiger",
+                    "Kangaroo",
+                    "Elephant",
+                    "Lion"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Kangaroo",
+                "explanation": "\"Kangaroo\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://cdn.mos.cms.futurecdn.net/ETb2xLjvc62eb7PPLspSsU.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Ostrich",
+                    "Elephant",
+                    "Tiger",
+                    "Lion"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Ostrich",
+                "explanation": "\"Ostrich\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://cdn.britannica.com/58/152058-050-9BFAC1EF/Ostriches.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Elephant",
+                    "Koala",
+                    "Lion",
+                    "Tiger"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Koala",
+                "explanation": "\"Koala\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://www.australiangeographic.com.au/wp-content/uploads/2023/01/shutterstock_2161919939.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            }
+        ]
+    },
+    "wild-animals-8": {
+        "grade": 2,
+        "topicId": "wild-animals",
+        "videoUrl": "https://www.youtube.com/embed/hF7f7jHanOY",
+        "title": "Animals Name And Sound Learn Animals Species in English |  Animal World",
+        "channel": "@cuteanimalworld6514",
+        "transcriptText": "",
+        "words": [
+            "Animal",
+            "Name",
+            "Sound",
+            "Specie",
+            "World"
+        ],
+        "questions": [
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Animal",
+                    "Name",
+                    "Specie",
+                    "Sound"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Animal",
+                "explanation": "\"Animal\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://img.freepik.com/premium-photo/wildlife-photography-with-images-animals-their-natural-habitats_1091302-23710.jpg?w=2000",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Name",
+                    "Animal",
+                    "Specie",
+                    "Sound"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Name",
+                "explanation": "\"Name\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://www.paperheartfamily.com/wp-content/uploads/2024/03/Name-Coloring-Pages-For-Kids-800x1200.png",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Animal",
+                    "Name",
+                    "Specie",
+                    "Sound"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Sound",
+                "explanation": "\"Sound\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://media.istockphoto.com/id/2164118172/photo/sound-wave.jpg?s=1024x1024&w=is&k=20&c=9CzJ3Akqyw39tG2PQtq30FSF7u4mgzZjEW4_ALOv0B0=",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Animal",
+                    "Specie",
+                    "Name",
+                    "Sound"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Specie",
+                "explanation": "\"Specie\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://evidencenetwork.ca/wp-content/uploads/2025/06/1751156998_Biological-species-what-is-characteristics-and-examples.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Animal",
+                    "World",
+                    "Sound",
+                    "Name"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "World",
+                "explanation": "\"World\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://cdn.pixabay.com/photo/2016/04/01/22/32/world-1301744_1280.png",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            }
+        ]
+    },
+    "wild-animals-9": {
+        "grade": 2,
+        "topicId": "wild-animals",
+        "videoUrl": "https://www.youtube.com/embed/MusC9UWXwoI",
+        "title": "Learn 5 Wild Animals in English 🐯🦁 | A1 Vocabulary for ESL USA #levelupenglish #wildanimals",
+        "channel": "@LevelUpEnglish123",
+        "transcriptText": "Let's learn five wild animals in English. Tiger. A big cat with stripes that roars loudly in the jungle. Example. The tiger lives in the jungle. Bear. A big animal in the forest that eats honey and sleeps in a cave. Example. I see a bear in the forest. Monkey. An animal that climbs trees and jumps with a funny laugh. Example. The monkey jumps on the tree. Snake. An animal with no legs that slithers quietly on the ground. Example. A snake is in the grass. Lion. A big cat that roars and stands strong as the king of the jungle. Example, the lion roars at the zoo.",
+        "words": [
+            "Tiger",
+            "Bear",
+            "Monkey",
+            "Snake",
+            "Lion"
+        ],
+        "questions": [
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Tiger",
+                    "Bear",
+                    "Monkey",
+                    "Snake"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Tiger",
+                "explanation": "\"Tiger\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/34268624/pexels-photo-34268624.jpeg?cs=srgb&dl=pexels-graeme-travers-637657729-34268624.jpg&fm=jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Snake",
+                    "Bear",
+                    "Tiger",
+                    "Monkey"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Bear",
+                "explanation": "\"Bear\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://www.pixelstalk.net/wp-content/uploads/2025/12/Grizzly-Bear-Wallpapers-HD-Desktop.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which playful animal loves to swing from trees and eat bananas?",
+                "choices": [
+                    "Bear",
+                    "Snake",
+                    "Tiger",
+                    "Monkey"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Monkey",
+                "explanation": "Monkeys are primates with long tails for balancing in trees.",
+                "imageUrl": "https://thumbs.dreamstime.com/b/monkeys-natural-habitat-trees-afternoon-primates-monkeys-natural-habitat-trees-afternoon-109161839.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Bear",
+                    "Tiger",
+                    "Monkey",
+                    "Snake"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Snake",
+                "explanation": "\"Snake\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://cdn.pixabay.com/photo/2023/05/09/23/47/tree-snake-7982626_1280.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which wild cat has a large mane and is called the King of the Jungle?",
+                "choices": [
+                    "Tiger",
+                    "Bear",
+                    "Monkey",
+                    "Lion"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Lion",
+                "explanation": "Lions live in grasslands and are famous for their loud roars.",
+                "imageUrl": "https://lookaside.fbsbx.com/lookaside/crawler/media/?media_id=122100375513352800",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            }
+        ]
+    },
+    "wild-animals-10": {
+        "grade": 2,
+        "topicId": "wild-animals",
+        "videoUrl": "https://www.youtube.com/embed/5DyHGp12j0Q",
+        "title": "Learn animals and their Meat names 🍖",
+        "channel": "@LearnENGLISHWithAR-q2b",
+        "transcriptText": "",
+        "words": [
+            "Meat",
+            "Animal",
+            "Name",
+            "Lion",
+            "Tiger"
+        ],
+        "questions": [
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Animal",
+                    "Name",
+                    "Meat",
+                    "Lion"
+                ],
+                "choiceIpas": [
+                    "/ˈænɪməl/",
+                    "/neɪm/",
+                    "/miːt/",
+                    "/ˈlaɪən/"
+                ],
+                "correctAnswer": "Meat",
+                "explanation": "\"Meat\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://static.displate.com/1200x857/displate/2023-07-03/eaae1c1f54608d6f422d55e2f0ae7a06_56e2fa2d44ea651db75b3199ba24ea42.jpg",
+                "ipa": "/miːt/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Lion",
+                    "Name",
+                    "Meat",
+                    "Animal"
+                ],
+                "choiceIpas": [
+                    "/ˈlaɪən/",
+                    "/neɪm/",
+                    "/miːt/",
+                    "/ˈænɪməl/"
+                ],
+                "correctAnswer": "Animal",
+                "explanation": "\"Animal\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://img.freepik.com/premium-photo/captivating-scene-mixed-group-wild-animals-their-natural-jungle-habitat_1247367-94821.jpg",
+                "ipa": "/ˈænɪməl/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Name",
+                    "Meat",
+                    "Lion",
+                    "Animal"
+                ],
+                "choiceIpas": [
+                    "/neɪm/",
+                    "/miːt/",
+                    "/ˈlaɪən/",
+                    "/ˈænɪməl/"
+                ],
+                "correctAnswer": "Name",
+                "explanation": "\"Name\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://www.paperheartfamily.com/wp-content/uploads/2024/03/Name-Coloring-Pages-For-Kids-800x1200.png",
+                "ipa": "/neɪm/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which wild cat has a large mane and is called the King of the Jungle?",
+                "choices": [
+                    "Name",
+                    "Meat",
+                    "Lion",
+                    "Animal"
+                ],
+                "choiceIpas": [
+                    "/neɪm/",
+                    "/miːt/",
+                    "/ˈlaɪən/",
+                    "/ˈænɪməl/"
+                ],
+                "correctAnswer": "Lion",
+                "explanation": "Lions live in grasslands and are famous for their loud roars.",
+                "imageUrl": "https://www.the-sun.com/wp-content/uploads/sites/6/2021/10/C-_Users_CHooper1_Desktop_PSDS_COMP-CH-TWIN-CAT-LION.jpg?strip=all&quality=100&w=1500&h=1000&crop=1",
+                "ipa": "/ˈlaɪən/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Meat",
+                    "Tiger",
+                    "Name",
+                    "Animal"
+                ],
+                "choiceIpas": [
+                    "/miːt/",
+                    "/ˈtaɪɡə/",
+                    "/neɪm/",
+                    "/ˈænɪməl/"
+                ],
+                "correctAnswer": "Tiger",
+                "explanation": "\"Tiger\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/34268624/pexels-photo-34268624.jpeg?cs=srgb&dl=pexels-graeme-travers-637657729-34268624.jpg&fm=jpg",
+                "ipa": "/ˈtaɪɡə/",
+                "isMissingCustomIcon": false
+            }
+        ]
+    },
+    "wild-animals-11": {
+        "grade": 2,
+        "topicId": "wild-animals",
+        "videoUrl": "https://www.youtube.com/embed/EcBC6JH57Fw",
+        "title": "🐋 English Vocabulary | 8 Amazing Sea Creatures to Learn Fast | #Shorts",
+        "channel": "@SmartFamilyEnglish",
+        "transcriptText": "Puffer fish, dolphin, nautilus, orca, hammerhead shark, blue whale, hermit crab, beluga whale. Oh. Oh.",
+        "words": [
+            "Puffer fish",
+            "Dolphin",
+            "Nautilus",
+            "Orca",
+            "Hammerhead shark",
+            "Blue whale",
+            "Hermit crab",
+            "Beluga whale"
+        ],
+        "questions": [
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Dolphin",
+                    "Puffer fish",
+                    "Orca",
+                    "Nautilus"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Puffer fish",
+                "explanation": "\"Puffer fish\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://img.freepik.com/premium-photo/balloonlike-inflated-puffer-fish-blue-seawater_124507-31247.jpg?w=740",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Dolphin",
+                    "Puffer fish",
+                    "Nautilus",
+                    "Orca"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Dolphin",
+                "explanation": "\"Dolphin\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://www.thoughtco.com/thmb/N71AlmiBS7uHAp6itFu8v6YHFxs=/5700x3410/filters:fill(auto,1)/bull-dolphin-or-mahi-mahi--482194845-5c2b85b646e0fb00011dd9fe.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Puffer fish",
+                    "Orca",
+                    "Nautilus",
+                    "Dolphin"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Nautilus",
+                "explanation": "\"Nautilus\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://a-z-animals.com/media/2022/07/Nautilus-JB-01-768x576.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Nautilus",
+                    "Puffer fish",
+                    "Orca",
+                    "Dolphin"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Orca",
+                "explanation": "\"Orca\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://as1.ftcdn.net/v2/jpg/09/38/41/76/1000_F_938417649_q5HDmxOTf5DtDPOfcrtcaTKo8TTCItYn.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Nautilus",
+                    "Hammerhead shark",
+                    "Dolphin",
+                    "Puffer fish"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    "/ˈpʌfə/ /fɪʃ/"
+                ],
+                "correctAnswer": "Hammerhead shark",
+                "explanation": "\"Hammerhead shark\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://jooinn.com/images/hammerhead-shark-2.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Nautilus",
+                    "Puffer fish",
+                    "Dolphin",
+                    "Blue whale"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Blue whale",
+                "explanation": "\"Blue whale\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://koala.sh/api/image/v2-qii9h-ae2ab.jpg?width=1216&height=832&dream",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Hermit crab",
+                    "Puffer fish",
+                    "Nautilus",
+                    "Dolphin"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Hermit crab",
+                "explanation": "\"Hermit crab\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://reefbuilders.com/wp-content/blogs.dir/1/files/2017/02/candy-cane-hermit-crab-770x504.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Dolphin",
+                    "Nautilus",
+                    "Puffer fish",
+                    "Beluga whale"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Beluga whale",
+                "explanation": "\"Beluga whale\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://thumbs.dreamstime.com/b/beluga-whale-family-pod-whales-light-up-ocean-as-swim-together-near-surface-following-school-salmon-fish-336445652.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            }
+        ]
+    },
+    "wild-animals-12": {
+        "grade": 2,
+        "topicId": "wild-animals",
+        "videoUrl": "https://www.youtube.com/embed/P8peSV0agSE",
+        "title": "Learn Wild Animal Names in English 🐾 | Daily Forest Vocabulary with Audio",
+        "channel": "@SmartFamilyEnglish",
+        "transcriptText": "[Music] yes there there links legs loose loose [Music] mouse mouse McCune raccoon hedgehog Hedgehog right right squirrel squirrel Khun Kat Khun Kat [Music] da-da-da-dah Fox Fox [Music] you",
+        "words": [
+            "Rooster",
+            "Hen",
+            "Turkey",
+            "Animal",
+            "Raccoon",
+            "Hedgehog",
+            "Squirrel",
+            "Mouse",
+            "Fox"
+        ],
+        "questions": [
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Rooster",
+                    "Hen",
+                    "Turkey",
+                    "Animal"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Rooster",
+                "explanation": "\"Rooster\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://wallpapercave.com/wp/wp6627214.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Animal",
+                    "Rooster",
+                    "Turkey",
+                    "Hen"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Hen",
+                "explanation": "\"Hen\" is the correct vocabulary word for this picture.",
+                "imageUrl": "http://upload.wikimedia.org/wikipedia/commons/d/da/Norwegian_hen.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Rooster",
+                    "Turkey",
+                    "Hen",
+                    "Animal"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Turkey",
+                "explanation": "\"Turkey\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://www.birdnote.org/sites/default/files/wild-turkey-male-frank-schulenburg-web-cc.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Rooster",
+                    "Animal",
+                    "Hen",
+                    "Turkey"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Animal",
+                "explanation": "\"Animal\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://img.freepik.com/premium-photo/captivating-scene-mixed-group-wild-animals-their-natural-jungle-habitat_1247367-94821.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Turkey",
+                    "Rooster",
+                    "Hen",
+                    "Raccoon"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Raccoon",
+                "explanation": "\"Raccoon\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://wallpapers.com/images/hd/cute-raccoon-pictures-8ko711mdlu4npfad.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Rooster",
+                    "Hen",
+                    "Turkey",
+                    "Hedgehog"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "/ˈtɜːki/",
+                    "/ˈhɛdʒhɒɡ/"
+                ],
+                "correctAnswer": "Hedgehog",
+                "explanation": "\"Hedgehog\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://www.rd.com/wp-content/uploads/2021/04/GettyImages-1053735888-scaled.jpg?w=2560",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Turkey",
+                    "Hen",
+                    "Rooster",
+                    "Squirrel"
+                ],
+                "choiceIpas": [
+                    "/ˈtɜːki/",
+                    "",
+                    "/ˈɹuːstə/",
+                    "/ˈskwɪɹl̩/"
+                ],
+                "correctAnswer": "Squirrel",
+                "explanation": "\"Squirrel\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://cdn.pixabay.com/photo/2023/08/24/17/34/squirrel-8211238_1280.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Turkey",
+                    "Rooster",
+                    "Mouse",
+                    "Hen"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Mouse",
+                "explanation": "\"Mouse\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.techhive.com/images/article/2013/05/microsoft_sculpt_mobile_mouse_left_2013-100038808-orig.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Rooster",
+                    "Fox",
+                    "Hen",
+                    "Turkey"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Fox",
+                "explanation": "\"Fox\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://cdn.pixabay.com/photo/2025/08/31/09/00/fox-9807342_1280.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            }
+        ]
+    },
+    "wild-animals-13": {
+        "grade": 2,
+        "topicId": "wild-animals",
+        "videoUrl": "https://www.youtube.com/embed/XaB-ZC2W8To",
+        "title": "Wild Animals Vocabulary English ESL Lesson",
+        "channel": "@myenglishcenteronline7508",
+        "transcriptText": "English vocabulary wild animals In the wild what animal is it? It's a lion lion What animal is it? It's an elephant. Elephant. What animal is it? it's a snake Snake What animal is it? It's a zebra. Zebra. What animal is it? It's a tiger. Tiger What animal is it? It's a hippo. Hippo What animal is it? It's a monkey Monkey What animal is it? It's a crocodile. Crocodile What animal is it? It's a giraffe. Giraffe Please like and subscribe for more videos.\nyou",
+        "words": [
+            "Lion",
+            "Elephant",
+            "Snake",
+            "Zebra",
+            "Tiger",
+            "Hippo",
+            "Monkey",
+            "Crocodile",
+            "Giraffe"
+        ],
+        "questions": [
+            {
+                "question": "Which wild cat has a large mane and is called the King of the Jungle?",
+                "choices": [
+                    "Lion",
+                    "Zebra",
+                    "Elephant",
+                    "Snake"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Lion",
+                "explanation": "Lions live in grasslands and are famous for their loud roars.",
+                "imageUrl": "https://i.pinimg.com/originals/34/ec/02/34ec02ccdab21d3ba24f17f9e1940a23.jpg",
+                "ipa": "/ˈlaɪən/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which mammal is the largest on land and has a long trunk?",
+                "choices": [
+                    "Zebra",
+                    "Lion",
+                    "Snake",
+                    "Elephant"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Elephant",
+                "explanation": "Elephants use their long trunks to drink water and pick up food.",
+                "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a9/African_Bush_Elephants.jpg",
+                "ipa": "/ˈɛləfənt/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Lion",
+                    "Elephant",
+                    "Snake",
+                    "Zebra"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Snake",
+                "explanation": "\"Snake\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://cdn.pixabay.com/photo/2023/05/09/23/47/tree-snake-7982626_1280.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Elephant",
+                    "Zebra",
+                    "Lion",
+                    "Snake"
+                ],
+                "choiceIpas": [
+                    "/ˈɛləfənt/",
+                    "/ˈziːbɹə/",
+                    "/ˈlaɪən/",
+                    "/ˈsneɪk/"
+                ],
+                "correctAnswer": "Zebra",
+                "explanation": "\"Zebra\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://wallpapercave.com/wp/wp3400098.jpg",
+                "ipa": "/ˈziːbɹə/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Snake",
+                    "Elephant",
+                    "Tiger",
+                    "Lion"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Tiger",
+                "explanation": "\"Tiger\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.pexels.com/photos/162203/panthera-tigris-altaica-tiger-siberian-amurtiger-162203.jpeg?cs=srgb&dl=animal-grass-fur-162203.jpg&fm=jpg",
+                "ipa": "/ˈtaɪɡə/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Snake",
+                    "Lion",
+                    "Hippo",
+                    "Elephant"
+                ],
+                "choiceIpas": [
+                    "/ˈsneɪk/",
+                    "/ˈlaɪən/",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Hippo",
+                "explanation": "\"Hippo\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://i.pinimg.com/originals/37/d5/c2/37d5c2137588778e3a2ffed89ed7caec.jpg",
+                "ipa": "/ˈhɪpəʊ/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which playful animal loves to swing from trees and eat bananas?",
+                "choices": [
+                    "Lion",
+                    "Monkey",
+                    "Snake",
+                    "Elephant"
+                ],
+                "choiceIpas": [
+                    "/ˈlaɪən/",
+                    "/ˈmʌŋki/",
+                    "/ˈsneɪk/",
+                    "/ˈɛləfənt/"
+                ],
+                "correctAnswer": "Monkey",
+                "explanation": "Monkeys are primates with long tails for balancing in trees.",
+                "imageUrl": "https://thumbs.dreamstime.com/b/monkeys-natural-habitat-trees-afternoon-primates-monkeys-natural-habitat-trees-afternoon-109161839.jpg",
+                "ipa": "/ˈmʌŋki/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Crocodile",
+                    "Elephant",
+                    "Snake",
+                    "Lion"
+                ],
+                "choiceIpas": [
+                    "/ˈkɹɒkədaɪl/",
+                    "/ˈɛləfənt/",
+                    "/ˈsneɪk/",
+                    "/ˈlaɪən/"
+                ],
+                "correctAnswer": "Crocodile",
+                "explanation": "\"Crocodile\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://cdn.britannica.com/84/198884-050-A37B8971/crocodile-Nile-swath-one-sub-Saharan-Africa-Madagascar.jpg",
+                "ipa": "/ˈkɹɒkədaɪl/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Lion",
+                    "Elephant",
+                    "Snake",
+                    "Giraffe"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Giraffe",
+                "explanation": "\"Giraffe\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://img.freepik.com/premium-photo/breathtaking-majestic-giraffe-gracefully-walks-through-african-savannah-its-long-neck-reachi_941265-22651.jpg?w=2000",
+                "ipa": "/dʒɪˈɹɑːf/",
+                "isMissingCustomIcon": false
+            }
+        ]
+    },
+    "food-drinks-2": {
+        "grade": 2,
+        "topicId": "food-drinks",
+        "videoUrl": "https://www.youtube.com/embed/1m3E5FrzV4c",
+        "title": "Learn Food & Drinks Vocabulary Fast! | Vocabulary for Daily Use | Learn English Vocabulary",
+        "channel": "@conversationclub4076",
+        "transcriptText": "food and drinks bread Bagel cheese Olive butter egg honey Jam sausage salami meat chicken fish soup ice cream chips",
+        "words": [
+            "Bread",
+            "Bagel",
+            "Cheese",
+            "Olive",
+            "Butter",
+            "Egg",
+            "Honey",
+            "Jam",
+            "Sausage",
+            "Salami",
+            "Meat",
+            "Chicken",
+            "Fish",
+            "Soup",
+            "Ice cream",
+            "Chips"
+        ],
+        "questions": [
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Bagel",
+                    "Olive",
+                    "Cheese",
+                    "Bread"
+                ],
+                "choiceIpas": [
+                    "/bæ.ɡɫ̩/",
+                    "/ˈɒlɪv/",
+                    "/t͡ʃiz/",
+                    "/bɹeːd/"
+                ],
+                "correctAnswer": "Bread",
+                "explanation": "\"Bread\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://i.pinimg.com/originals/f2/99/50/f29950adf895ba8fc5fdef78394799e4.jpg",
+                "ipa": "/bɹeːd/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Bagel",
+                    "Cheese",
+                    "Olive",
+                    "Bread"
+                ],
+                "choiceIpas": [
+                    "/bæ.ɡɫ̩/",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Bagel",
+                "explanation": "\"Bagel\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://www.tasteofhome.com/wp-content/uploads/2018/01/Homemade-Bagels_EXPS_BMZ19_15702_E11_30_11b-4.jpg",
+                "ipa": "/bæ.ɡɫ̩/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Olive",
+                    "Cheese",
+                    "Bread",
+                    "Bagel"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Cheese",
+                "explanation": "\"Cheese\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://www.brinleyrecipes.com/wp-content/uploads/2025/09/psjawxjquxkwwynix3z5.webp",
+                "ipa": "/t͡ʃiz/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Bread",
+                    "Olive",
+                    "Cheese",
+                    "Bagel"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Olive",
+                "explanation": "\"Olive\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://i.pinimg.com/originals/42/fc/96/42fc9653e73aacc04f847ca177817d7b.jpg",
+                "ipa": "/ˈɒlɪv/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Cheese",
+                    "Bread",
+                    "Butter",
+                    "Bagel"
+                ],
+                "choiceIpas": [
+                    "/t͡ʃiz/",
+                    "/bɹeːd/",
+                    "/ˈbʊtə/",
+                    "/bæ.ɡɫ̩/"
+                ],
+                "correctAnswer": "Butter",
+                "explanation": "\"Butter\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://www.southernliving.com/thmb/JOV1II4ho49bEI50Drk4RDtDK1Y=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/How_To_Soften_Butter_013-2000-61e8b4e1ad9c431887472483ae714dbb.jpg",
+                "ipa": "/ˈbʊtə/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Bagel",
+                    "Cheese",
+                    "Bread",
+                    "Egg"
+                ],
+                "choiceIpas": [
+                    "/bæ.ɡɫ̩/",
+                    "/t͡ʃiz/",
+                    "/bɹeːd/",
+                    "/eɪɡ/"
+                ],
+                "correctAnswer": "Egg",
+                "explanation": "\"Egg\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://www.seriouseats.com/thmb/T5v_t4ZE06pasVLee8VYwkoG9Ec=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/perfect-soft-boiled-eggs-hero-05_1-7680c13e853046fd90db9e277911e4e8.JPG",
+                "ipa": "/eɪɡ/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Cheese",
+                    "Bread",
+                    "Bagel",
+                    "Honey"
+                ],
+                "choiceIpas": [
+                    "/t͡ʃiz/",
+                    "/bɹeːd/",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Honey",
+                "explanation": "\"Honey\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://blisscooking.com/wp-content/uploads/2026/01/Easy-Honey-Trick-Recipe-1.webp",
+                "ipa": "/ˈhʌni/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Bread",
+                    "Cheese",
+                    "Bagel",
+                    "Jam"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Jam",
+                "explanation": "\"Jam\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://recipeslily.com/wp-content/uploads/2025/05/Strawberry-Jam-1-new.webp",
+                "ipa": "/ˈdʒæːm/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Sausage",
+                    "Cheese",
+                    "Bread",
+                    "Bagel"
+                ],
+                "choiceIpas": [
+                    "/ˈsɑsɪd͡ʒ/",
+                    "/t͡ʃiz/",
+                    "/bɹeːd/",
+                    ""
+                ],
+                "correctAnswer": "Sausage",
+                "explanation": "\"Sausage\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://smokedbyewe.com/wp-content/uploads/what-is-fish-sausage-called.webp",
+                "ipa": "/ˈsɑsɪd͡ʒ/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Cheese",
+                    "Bread",
+                    "Salami",
+                    "Bagel"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Salami",
+                "explanation": "\"Salami\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://i.pinimg.com/736x/cc/e0/8d/cce08d892d975ffe81cde313f08375f5.jpg",
+                "ipa": "[səˈlɑːmɪ]",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Bread",
+                    "Meat",
+                    "Cheese",
+                    "Bagel"
+                ],
+                "choiceIpas": [
+                    "/bɹeːd/",
+                    "/miːt/",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Meat",
+                "explanation": "\"Meat\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://img.freepik.com/premium-photo/top-view-variety-raw-meat-fish-wooden-table_877015-428.jpg",
+                "ipa": "/miːt/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Bagel",
+                    "Cheese",
+                    "Bread",
+                    "Chicken"
+                ],
+                "choiceIpas": [
+                    "/bæ.ɡɫ̩/",
+                    "",
+                    "/bɹeːd/",
+                    ""
+                ],
+                "correctAnswer": "Chicken",
+                "explanation": "\"Chicken\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://imgcdn.stablediffusionweb.com/2024/4/5/8b5b2aae-fbd1-4d8a-92c8-ebee544f469b.jpg",
+                "ipa": "/ˈt͡ʃɪkɪn/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Bread",
+                    "Cheese",
+                    "Fish",
+                    "Bagel"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Fish",
+                "explanation": "\"Fish\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://www.outdoorcanada.ca/wp-content/uploads/2018/01/ss-ice-fishing.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Bagel",
+                    "Cheese",
+                    "Bread",
+                    "Soup"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Soup",
+                "explanation": "\"Soup\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://soupchick.s3.amazonaws.com/wp-content/uploads/2024/05/07131517/Creamy-And-Hearty-Fish-Soup-Recipe6.jpeg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Bread",
+                    "Ice cream",
+                    "Cheese",
+                    "Bagel"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Ice cream",
+                "explanation": "\"Ice cream\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://recipestimeless.com/wp-content/uploads/2025/01/u7157579595_A_vibrant_close-up_of_a_Korean_fish-shaped_ice_cr_34d3951f-a1a4-402e-99dd-07d495a4a53c_2.webp",
+                "ipa": "[ʌɪs] /kɹiːm/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Bread",
+                    "Chips",
+                    "Bagel",
+                    "Cheese"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Chips",
+                "explanation": "\"Chips\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://www.icecream.com/content/dam/dreyersgrandicecreaminc/us/en/licensed/chips-ahoy!/pdp/ChipsAhoy-1500x1140.png",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            }
+        ]
+    },
+    "2-2": {
+        "grade": 2,
+        "topicId": "food-drinks",
+        "videoUrl": "https://www.youtube.com/embed/1m3E5FrzV4c",
+        "title": "Learn Food & Drinks Vocabulary Fast! | Vocabulary for Daily Use | Learn English Vocabulary",
+        "channel": "@conversationclub4076",
+        "transcriptText": "food and drinks bread Bagel cheese Olive butter egg honey Jam sausage salami meat chicken fish soup ice cream chips",
+        "words": [
+            "Bread",
+            "Bagel",
+            "Cheese",
+            "Olive",
+            "Butter",
+            "Egg",
+            "Honey",
+            "Jam",
+            "Sausage",
+            "Salami",
+            "Meat",
+            "Chicken",
+            "Fish",
+            "Soup",
+            "Ice cream",
+            "Chips"
+        ],
+        "questions": [
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Bagel",
+                    "Olive",
+                    "Cheese",
+                    "Bread"
+                ],
+                "choiceIpas": [
+                    "/bæ.ɡɫ̩/",
+                    "/ˈɒlɪv/",
+                    "/t͡ʃiz/",
+                    "/bɹeːd/"
+                ],
+                "correctAnswer": "Bread",
+                "explanation": "\"Bread\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://i.pinimg.com/originals/f2/99/50/f29950adf895ba8fc5fdef78394799e4.jpg",
+                "ipa": "/bɹeːd/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Bagel",
+                    "Cheese",
+                    "Olive",
+                    "Bread"
+                ],
+                "choiceIpas": [
+                    "/bæ.ɡɫ̩/",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Bagel",
+                "explanation": "\"Bagel\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://www.tasteofhome.com/wp-content/uploads/2018/01/Homemade-Bagels_EXPS_BMZ19_15702_E11_30_11b-4.jpg",
+                "ipa": "/bæ.ɡɫ̩/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Olive",
+                    "Cheese",
+                    "Bread",
+                    "Bagel"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Cheese",
+                "explanation": "\"Cheese\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://www.brinleyrecipes.com/wp-content/uploads/2025/09/psjawxjquxkwwynix3z5.webp",
+                "ipa": "/t͡ʃiz/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Bread",
+                    "Olive",
+                    "Cheese",
+                    "Bagel"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Olive",
+                "explanation": "\"Olive\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://i.pinimg.com/originals/42/fc/96/42fc9653e73aacc04f847ca177817d7b.jpg",
+                "ipa": "/ˈɒlɪv/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Cheese",
+                    "Bread",
+                    "Butter",
+                    "Bagel"
+                ],
+                "choiceIpas": [
+                    "/t͡ʃiz/",
+                    "/bɹeːd/",
+                    "/ˈbʊtə/",
+                    "/bæ.ɡɫ̩/"
+                ],
+                "correctAnswer": "Butter",
+                "explanation": "\"Butter\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://www.southernliving.com/thmb/JOV1II4ho49bEI50Drk4RDtDK1Y=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/How_To_Soften_Butter_013-2000-61e8b4e1ad9c431887472483ae714dbb.jpg",
+                "ipa": "/ˈbʊtə/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Bagel",
+                    "Cheese",
+                    "Bread",
+                    "Egg"
+                ],
+                "choiceIpas": [
+                    "/bæ.ɡɫ̩/",
+                    "/t͡ʃiz/",
+                    "/bɹeːd/",
+                    "/eɪɡ/"
+                ],
+                "correctAnswer": "Egg",
+                "explanation": "\"Egg\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://www.seriouseats.com/thmb/T5v_t4ZE06pasVLee8VYwkoG9Ec=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/perfect-soft-boiled-eggs-hero-05_1-7680c13e853046fd90db9e277911e4e8.JPG",
+                "ipa": "/eɪɡ/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Cheese",
+                    "Bread",
+                    "Bagel",
+                    "Honey"
+                ],
+                "choiceIpas": [
+                    "/t͡ʃiz/",
+                    "/bɹeːd/",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Honey",
+                "explanation": "\"Honey\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://blisscooking.com/wp-content/uploads/2026/01/Easy-Honey-Trick-Recipe-1.webp",
+                "ipa": "/ˈhʌni/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Bread",
+                    "Cheese",
+                    "Bagel",
+                    "Jam"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Jam",
+                "explanation": "\"Jam\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://recipeslily.com/wp-content/uploads/2025/05/Strawberry-Jam-1-new.webp",
+                "ipa": "/ˈdʒæːm/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Sausage",
+                    "Cheese",
+                    "Bread",
+                    "Bagel"
+                ],
+                "choiceIpas": [
+                    "/ˈsɑsɪd͡ʒ/",
+                    "/t͡ʃiz/",
+                    "/bɹeːd/",
+                    ""
+                ],
+                "correctAnswer": "Sausage",
+                "explanation": "\"Sausage\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://smokedbyewe.com/wp-content/uploads/what-is-fish-sausage-called.webp",
+                "ipa": "/ˈsɑsɪd͡ʒ/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Cheese",
+                    "Bread",
+                    "Salami",
+                    "Bagel"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Salami",
+                "explanation": "\"Salami\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://i.pinimg.com/736x/cc/e0/8d/cce08d892d975ffe81cde313f08375f5.jpg",
+                "ipa": "[səˈlɑːmɪ]",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Bread",
+                    "Meat",
+                    "Cheese",
+                    "Bagel"
+                ],
+                "choiceIpas": [
+                    "/bɹeːd/",
+                    "/miːt/",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Meat",
+                "explanation": "\"Meat\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://img.freepik.com/premium-photo/top-view-variety-raw-meat-fish-wooden-table_877015-428.jpg",
+                "ipa": "/miːt/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Bagel",
+                    "Cheese",
+                    "Bread",
+                    "Chicken"
+                ],
+                "choiceIpas": [
+                    "/bæ.ɡɫ̩/",
+                    "",
+                    "/bɹeːd/",
+                    ""
+                ],
+                "correctAnswer": "Chicken",
+                "explanation": "\"Chicken\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://imgcdn.stablediffusionweb.com/2024/4/5/8b5b2aae-fbd1-4d8a-92c8-ebee544f469b.jpg",
+                "ipa": "/ˈt͡ʃɪkɪn/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Bread",
+                    "Cheese",
+                    "Fish",
+                    "Bagel"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Fish",
+                "explanation": "\"Fish\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://www.outdoorcanada.ca/wp-content/uploads/2018/01/ss-ice-fishing.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Bagel",
+                    "Cheese",
+                    "Bread",
+                    "Soup"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Soup",
+                "explanation": "\"Soup\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://soupchick.s3.amazonaws.com/wp-content/uploads/2024/05/07131517/Creamy-And-Hearty-Fish-Soup-Recipe6.jpeg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Bread",
+                    "Ice cream",
+                    "Cheese",
+                    "Bagel"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Ice cream",
+                "explanation": "\"Ice cream\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://recipestimeless.com/wp-content/uploads/2025/01/u7157579595_A_vibrant_close-up_of_a_Korean_fish-shaped_ice_cr_34d3951f-a1a4-402e-99dd-07d495a4a53c_2.webp",
+                "ipa": "[ʌɪs] /kɹiːm/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Bread",
+                    "Chips",
+                    "Bagel",
+                    "Cheese"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Chips",
+                "explanation": "\"Chips\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://www.icecream.com/content/dam/dreyersgrandicecreaminc/us/en/licensed/chips-ahoy!/pdp/ChipsAhoy-1500x1140.png",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            }
+        ]
+    },
+    "food-drinks-3": {
+        "grade": 2,
+        "topicId": "food-drinks",
+        "videoUrl": "https://www.youtube.com/embed/lW5TXrKbsq4",
+        "title": "Learn Food Vocabulary | Talking Flashcards",
+        "channel": "@Mapleleaflearning",
+        "transcriptText": "5ma wm ok so leave be here we feel to it to a tour de la soul 쌀 yet over the ce 그 eye to eye look too 쉔 쉽게 2 n ye ye the way a tea e25 씨야 to marvel 1.0 km per core 다 비스 자리에 예",
+        "words": [
+            "Pizza",
+            "French fries",
+            "Bread",
+            "Hamburger",
+            "Soup",
+            "Salad",
+            "Cheese",
+            "Curry rice",
+            "Noodle",
+            "Chicken",
+            "Rice",
+            "Fish"
+        ],
+        "questions": [
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Hamburger",
+                    "Bread",
+                    "French fries",
+                    "Pizza"
+                ],
+                "choiceIpas": [
+                    "/ˈhæm.bə.ɡə/",
+                    "/bɹeːd/",
+                    "/fɹɛnt͡ʃ/ /fɹaɪz/",
+                    "/ˈpiːt.sə/"
+                ],
+                "correctAnswer": "Pizza",
+                "explanation": "\"Pizza\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://cdn.britannica.com/08/177308-050-94D9D6BE/Food-Pizza-Basil-Tomato.jpg",
+                "ipa": "/ˈpiːt.sə/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "French fries",
+                    "Bread",
+                    "Hamburger",
+                    "Pizza"
+                ],
+                "choiceIpas": [
+                    "",
+                    "/bɹeːd/",
+                    "/ˈhæm.bə.ɡə/",
+                    "/ˈpiːt.sə/"
+                ],
+                "correctAnswer": "French fries",
+                "explanation": "\"French fries\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://www.thespruceeats.com/thmb/IHKuXcx3uUI1IWkM_cnnQdFH-zQ=/3485x2323/filters:fill(auto,1)/how-to-make-homemade-french-fries-2215971-hero-01-02f62a016f3e4aa4b41d0c27539885c3.jpg",
+                "ipa": "/fɹɛnt͡ʃ/ /fɹaɪz/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Bread",
+                    "Pizza",
+                    "French fries",
+                    "Hamburger"
+                ],
+                "choiceIpas": [
+                    "/bɹeːd/",
+                    "",
+                    "/fɹaɪz/",
+                    ""
+                ],
+                "correctAnswer": "Bread",
+                "explanation": "\"Bread\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://catchymeals.com/wp-content/uploads/2025/07/u6155484915_httpss.mj_.runEX_A1yunRAg_A_freshly_baked_loaf_of__15c3c4a8-97aa-405e-bb86-d4294d892a80_3.png",
+                "ipa": "/bɹeːd/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "French fries",
+                    "Bread",
+                    "Pizza",
+                    "Hamburger"
+                ],
+                "choiceIpas": [
+                    "/fɹɛnt͡ʃ/ /fɹaɪz/",
+                    "/bɹeːd/",
+                    "/ˈpiːt.sə/",
+                    "/ˈhæm.bə.ɡə/"
+                ],
+                "correctAnswer": "Hamburger",
+                "explanation": "\"Hamburger\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://www.shakentogetherlife.com/wp-content/uploads/2022/10/hamburger-baked-in-oven-1024x1024.jpg",
+                "ipa": "/ˈhæm.bə.ɡə/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Soup",
+                    "Pizza",
+                    "Bread",
+                    "French fries"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    "/fɹaɪz/"
+                ],
+                "correctAnswer": "Soup",
+                "explanation": "\"Soup\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://natashaskitchen.com/wp-content/uploads/2021/05/Vegetable-Soup-5.jpg",
+                "ipa": "/suːp/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Pizza",
+                    "Salad",
+                    "French fries",
+                    "Bread"
+                ],
+                "choiceIpas": [
+                    "/ˈpiːt.sə/",
+                    "/ˈsæləd/",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Salad",
+                "explanation": "\"Salad\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://recipesfromapantry.com/wp-content/uploads/2016/06/chopped-Veggie-Salad-42-of-66.jpg",
+                "ipa": "/ˈsæləd/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Pizza",
+                    "Cheese",
+                    "Bread",
+                    "French fries"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Cheese",
+                "explanation": "\"Cheese\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://thumbs.dreamstime.com/b/high-resolution-close-up-various-cheese-textures-swiss-cheddar-blue-discover-intricate-details-patterns-different-types-349631488.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Noodle",
+                    "Pizza",
+                    "Bread",
+                    "French fries"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Noodle",
+                "explanation": "\"Noodle\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://www.modernhoney.com/wp-content/uploads/2018/09/Asian-Garlic-Stir-Fry-Noodles-Recipe.jpg",
+                "ipa": "/nuːdl̩/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Pizza",
+                    "Chicken",
+                    "French fries",
+                    "Bread"
+                ],
+                "choiceIpas": [
+                    "/ˈpiːt.sə/",
+                    "/ˈt͡ʃɪkɪn/",
+                    "/fɹɛnt͡ʃ/ /fɹaɪz/",
+                    "/bɹeːd/"
+                ],
+                "correctAnswer": "Chicken",
+                "explanation": "\"Chicken\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://hertaste.net/thumb/768/crispy-herb-infused-roast-chicken.webp",
+                "ipa": "/ˈt͡ʃɪkɪn/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "French fries",
+                    "Rice",
+                    "Bread",
+                    "Pizza"
+                ],
+                "choiceIpas": [
+                    "/fɹɛnt͡ʃ/",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Rice",
+                "explanation": "\"Rice\" is the correct vocabulary word for this picture.",
+                "imageUrl": "http://media2.onsugar.com/files/2014/03/25/070/n/1922195/62a96c30e6ba6fd2_shutterstock_43165990.jpg.xxxlarge_2x.jpg",
+                "ipa": "/ɹaɪs/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Bread",
+                    "Pizza",
+                    "French fries",
+                    "Fish"
+                ],
+                "choiceIpas": [
+                    "/bɹeːd/",
+                    "/ˈpiːt.sə/",
+                    "/fɹaɪz/",
+                    ""
+                ],
+                "correctAnswer": "Fish",
+                "explanation": "\"Fish\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://www.foodrepublic.com/img/gallery/how-to-eat-a-whole-fish-and-look-like-a-pro-doing-it/l-intro-1711733432.jpg",
+                "ipa": "/fɪʃ/ /tʉː/ /iːt/",
+                "isMissingCustomIcon": false
+            }
+        ]
+    },
+    "2-3": {
+        "grade": 2,
+        "topicId": "food-drinks",
+        "videoUrl": "https://www.youtube.com/embed/lW5TXrKbsq4",
+        "title": "Learn Food Vocabulary | Talking Flashcards",
+        "channel": "@Mapleleaflearning",
+        "transcriptText": "5ma wm ok so leave be here we feel to it to a tour de la soul 쌀 yet over the ce 그 eye to eye look too 쉔 쉽게 2 n ye ye the way a tea e25 씨야 to marvel 1.0 km per core 다 비스 자리에 예",
+        "words": [
+            "Pizza",
+            "French fries",
+            "Bread",
+            "Hamburger",
+            "Soup",
+            "Salad",
+            "Cheese",
+            "Curry rice",
+            "Noodle",
+            "Chicken",
+            "Rice",
+            "Fish"
+        ],
+        "questions": [
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Hamburger",
+                    "Bread",
+                    "French fries",
+                    "Pizza"
+                ],
+                "choiceIpas": [
+                    "/ˈhæm.bə.ɡə/",
+                    "/bɹeːd/",
+                    "/fɹɛnt͡ʃ/ /fɹaɪz/",
+                    "/ˈpiːt.sə/"
+                ],
+                "correctAnswer": "Pizza",
+                "explanation": "\"Pizza\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://cdn.britannica.com/08/177308-050-94D9D6BE/Food-Pizza-Basil-Tomato.jpg",
+                "ipa": "/ˈpiːt.sə/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "French fries",
+                    "Bread",
+                    "Hamburger",
+                    "Pizza"
+                ],
+                "choiceIpas": [
+                    "",
+                    "/bɹeːd/",
+                    "/ˈhæm.bə.ɡə/",
+                    "/ˈpiːt.sə/"
+                ],
+                "correctAnswer": "French fries",
+                "explanation": "\"French fries\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://www.thespruceeats.com/thmb/IHKuXcx3uUI1IWkM_cnnQdFH-zQ=/3485x2323/filters:fill(auto,1)/how-to-make-homemade-french-fries-2215971-hero-01-02f62a016f3e4aa4b41d0c27539885c3.jpg",
+                "ipa": "/fɹɛnt͡ʃ/ /fɹaɪz/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Bread",
+                    "Pizza",
+                    "French fries",
+                    "Hamburger"
+                ],
+                "choiceIpas": [
+                    "/bɹeːd/",
+                    "",
+                    "/fɹaɪz/",
+                    ""
+                ],
+                "correctAnswer": "Bread",
+                "explanation": "\"Bread\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://catchymeals.com/wp-content/uploads/2025/07/u6155484915_httpss.mj_.runEX_A1yunRAg_A_freshly_baked_loaf_of__15c3c4a8-97aa-405e-bb86-d4294d892a80_3.png",
+                "ipa": "/bɹeːd/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "French fries",
+                    "Bread",
+                    "Pizza",
+                    "Hamburger"
+                ],
+                "choiceIpas": [
+                    "/fɹɛnt͡ʃ/ /fɹaɪz/",
+                    "/bɹeːd/",
+                    "/ˈpiːt.sə/",
+                    "/ˈhæm.bə.ɡə/"
+                ],
+                "correctAnswer": "Hamburger",
+                "explanation": "\"Hamburger\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://www.shakentogetherlife.com/wp-content/uploads/2022/10/hamburger-baked-in-oven-1024x1024.jpg",
+                "ipa": "/ˈhæm.bə.ɡə/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Soup",
+                    "Pizza",
+                    "Bread",
+                    "French fries"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    "/fɹaɪz/"
+                ],
+                "correctAnswer": "Soup",
+                "explanation": "\"Soup\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://natashaskitchen.com/wp-content/uploads/2021/05/Vegetable-Soup-5.jpg",
+                "ipa": "/suːp/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Pizza",
+                    "Salad",
+                    "French fries",
+                    "Bread"
+                ],
+                "choiceIpas": [
+                    "/ˈpiːt.sə/",
+                    "/ˈsæləd/",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Salad",
+                "explanation": "\"Salad\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://recipesfromapantry.com/wp-content/uploads/2016/06/chopped-Veggie-Salad-42-of-66.jpg",
+                "ipa": "/ˈsæləd/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Pizza",
+                    "Cheese",
+                    "Bread",
+                    "French fries"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Cheese",
+                "explanation": "\"Cheese\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://thumbs.dreamstime.com/b/high-resolution-close-up-various-cheese-textures-swiss-cheddar-blue-discover-intricate-details-patterns-different-types-349631488.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Noodle",
+                    "Pizza",
+                    "Bread",
+                    "French fries"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Noodle",
+                "explanation": "\"Noodle\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://www.modernhoney.com/wp-content/uploads/2018/09/Asian-Garlic-Stir-Fry-Noodles-Recipe.jpg",
+                "ipa": "/nuːdl̩/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Pizza",
+                    "Chicken",
+                    "French fries",
+                    "Bread"
+                ],
+                "choiceIpas": [
+                    "/ˈpiːt.sə/",
+                    "/ˈt͡ʃɪkɪn/",
+                    "/fɹɛnt͡ʃ/ /fɹaɪz/",
+                    "/bɹeːd/"
+                ],
+                "correctAnswer": "Chicken",
+                "explanation": "\"Chicken\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://hertaste.net/thumb/768/crispy-herb-infused-roast-chicken.webp",
+                "ipa": "/ˈt͡ʃɪkɪn/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "French fries",
+                    "Rice",
+                    "Bread",
+                    "Pizza"
+                ],
+                "choiceIpas": [
+                    "/fɹɛnt͡ʃ/",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Rice",
+                "explanation": "\"Rice\" is the correct vocabulary word for this picture.",
+                "imageUrl": "http://media2.onsugar.com/files/2014/03/25/070/n/1922195/62a96c30e6ba6fd2_shutterstock_43165990.jpg.xxxlarge_2x.jpg",
+                "ipa": "/ɹaɪs/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Bread",
+                    "Pizza",
+                    "French fries",
+                    "Fish"
+                ],
+                "choiceIpas": [
+                    "/bɹeːd/",
+                    "/ˈpiːt.sə/",
+                    "/fɹaɪz/",
+                    ""
+                ],
+                "correctAnswer": "Fish",
+                "explanation": "\"Fish\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://www.foodrepublic.com/img/gallery/how-to-eat-a-whole-fish-and-look-like-a-pro-doing-it/l-intro-1711733432.jpg",
+                "ipa": "/fɪʃ/ /tʉː/ /iːt/",
+                "isMissingCustomIcon": false
+            }
+        ]
+    },
+    "food-drinks-4": {
+        "grade": 2,
+        "topicId": "food-drinks",
+        "videoUrl": "https://www.youtube.com/embed/-_76wWvygJI",
+        "title": "Food | Talking about Food | Beginner English | A Conversation about Food",
+        "channel": "@LearnEnglishbyPocketPassport",
+        "transcriptText": "so what kind of food do you like I like everything how about you me too I really love spicy food do you like Mexican food yes I love it how about you yes I really like tacos and nachos but jalapenos are too spicy for me oh I see I love them I always add hot sauce on everything what is your favorite kind of food hmm difficult question I'm crazy about Indian food I love her sorry I didn't catch that you love what I'm crazy about Indian food I love curry and you let me see it's a difficult question hmm I really like sushi sushi is my favorite I like Japanese food too I'm a hungry let's order some burgers",
+        "words": [
+            "Spicy Food",
+            "Tacos",
+            "Nachos",
+            "Hot Sauce",
+            "Indian Food",
+            "Curry",
+            "Sushi",
+            "Japanese Food",
+            "Burgers"
+        ],
+        "questions": [
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Hot Sauce",
+                    "Spicy Food",
+                    "Tacos",
+                    "Nachos"
+                ],
+                "choiceIpas": [
+                    "/hɒt/ /sɔːs/",
+                    "/fuːd/",
+                    "",
+                    "/ˈnætʃəʊz/"
+                ],
+                "correctAnswer": "Spicy Food",
+                "explanation": "\"Spicy Food\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://amazingfoodanddrink.com/wp-content/uploads/2024/08/a-high-resolution-realistic-image-of-a-r_LVWo7CLpQ9-QDVqnuPLPJQ_EFhy7SpjT0KO1_U37F-Vyw.jpeg",
+                "ipa": "/fuːd/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Spicy Food",
+                    "Hot Sauce",
+                    "Tacos",
+                    "Nachos"
+                ],
+                "choiceIpas": [
+                    "/fuːd/",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Tacos",
+                "explanation": "\"Tacos\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://www.samtell.com/hs-fs/hubfs/Blogs/Four-Scrumptous-Tacos-Lined-up-with-ingredients-around-them-1.jpg?width=1800&name=Four-Scrumptous-Tacos-Lined-up-with-ingredients-around-them-1.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Nachos",
+                    "Spicy Food",
+                    "Hot Sauce",
+                    "Tacos"
+                ],
+                "choiceIpas": [
+                    "/ˈnætʃəʊz/",
+                    "/fuːd/",
+                    "/hɒt/ /sɔːs/",
+                    ""
+                ],
+                "correctAnswer": "Nachos",
+                "explanation": "\"Nachos\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://i.pinimg.com/originals/e5/c5/7b/e5c57b4babfada4a6a1bbcf8ae10c275.jpg",
+                "ipa": "/ˈnætʃəʊz/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Tacos",
+                    "Nachos",
+                    "Spicy Food",
+                    "Hot Sauce"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Hot Sauce",
+                "explanation": "\"Hot Sauce\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://s.yimg.com/ny/api/res/1.2/rNNX2Othqi0OVaieQ2fRhA--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD05MDA-/https://media.zenfs.com/en/aol_cheapism_430/d806ad1c1d732ab79836af109881896e",
+                "ipa": "/hɒt/ /sɔːs/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Nachos",
+                    "Indian Food",
+                    "Spicy Food",
+                    "Tacos"
+                ],
+                "choiceIpas": [
+                    "/ˈnætʃəʊz/",
+                    "/fuːd/",
+                    "/fuːd/",
+                    ""
+                ],
+                "correctAnswer": "Indian Food",
+                "explanation": "\"Indian Food\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://wallpapers.com/images/hd/traditional-thali-platter-indian-food-7ppdmw8bs4n1f36j.jpg",
+                "ipa": "/fuːd/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Nachos",
+                    "Spicy Food",
+                    "Curry",
+                    "Tacos"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Curry",
+                "explanation": "\"Curry\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://www.licious.in/blog/wp-content/uploads/2020/12/Chicken-Curry-recipe.jpg",
+                "ipa": "/ˈkʌ.ɹi/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Sushi",
+                    "Nachos",
+                    "Spicy Food",
+                    "Tacos"
+                ],
+                "choiceIpas": [
+                    "/ˈsuʃi/",
+                    "/ˈnætʃəʊz/",
+                    "/fuːd/",
+                    ""
+                ],
+                "correctAnswer": "Sushi",
+                "explanation": "\"Sushi\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://fleurdesushi.fr/wp-content/uploads/2023/03/Les-differents-types-de-sushi.webp",
+                "ipa": "/ˈsuʃi/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Tacos",
+                    "Nachos",
+                    "Spicy Food",
+                    "Burgers"
+                ],
+                "choiceIpas": [
+                    "",
+                    "/ˈnætʃəʊz/",
+                    "/fuːd/",
+                    ""
+                ],
+                "correctAnswer": "Burgers",
+                "explanation": "\"Burgers\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://www.tasteofhome.com/wp-content/uploads/2020/03/Smash-Burgers_EXPS_TOHcom20_246232_B10_06_10b.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            }
+        ]
+    },
+    "2-4": {
+        "grade": 2,
+        "topicId": "food-drinks",
+        "videoUrl": "https://www.youtube.com/embed/-_76wWvygJI",
+        "title": "Food | Talking about Food | Beginner English | A Conversation about Food",
+        "channel": "@LearnEnglishbyPocketPassport",
+        "transcriptText": "so what kind of food do you like I like everything how about you me too I really love spicy food do you like Mexican food yes I love it how about you yes I really like tacos and nachos but jalapenos are too spicy for me oh I see I love them I always add hot sauce on everything what is your favorite kind of food hmm difficult question I'm crazy about Indian food I love her sorry I didn't catch that you love what I'm crazy about Indian food I love curry and you let me see it's a difficult question hmm I really like sushi sushi is my favorite I like Japanese food too I'm a hungry let's order some burgers",
+        "words": [
+            "Spicy Food",
+            "Tacos",
+            "Nachos",
+            "Hot Sauce",
+            "Indian Food",
+            "Curry",
+            "Sushi",
+            "Japanese Food",
+            "Burgers"
+        ],
+        "questions": [
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Hot Sauce",
+                    "Spicy Food",
+                    "Tacos",
+                    "Nachos"
+                ],
+                "choiceIpas": [
+                    "/hɒt/ /sɔːs/",
+                    "/fuːd/",
+                    "",
+                    "/ˈnætʃəʊz/"
+                ],
+                "correctAnswer": "Spicy Food",
+                "explanation": "\"Spicy Food\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://amazingfoodanddrink.com/wp-content/uploads/2024/08/a-high-resolution-realistic-image-of-a-r_LVWo7CLpQ9-QDVqnuPLPJQ_EFhy7SpjT0KO1_U37F-Vyw.jpeg",
+                "ipa": "/fuːd/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Spicy Food",
+                    "Hot Sauce",
+                    "Tacos",
+                    "Nachos"
+                ],
+                "choiceIpas": [
+                    "/fuːd/",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Tacos",
+                "explanation": "\"Tacos\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://www.samtell.com/hs-fs/hubfs/Blogs/Four-Scrumptous-Tacos-Lined-up-with-ingredients-around-them-1.jpg?width=1800&name=Four-Scrumptous-Tacos-Lined-up-with-ingredients-around-them-1.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Nachos",
+                    "Spicy Food",
+                    "Hot Sauce",
+                    "Tacos"
+                ],
+                "choiceIpas": [
+                    "/ˈnætʃəʊz/",
+                    "/fuːd/",
+                    "/hɒt/ /sɔːs/",
+                    ""
+                ],
+                "correctAnswer": "Nachos",
+                "explanation": "\"Nachos\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://i.pinimg.com/originals/e5/c5/7b/e5c57b4babfada4a6a1bbcf8ae10c275.jpg",
+                "ipa": "/ˈnætʃəʊz/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Tacos",
+                    "Nachos",
+                    "Spicy Food",
+                    "Hot Sauce"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Hot Sauce",
+                "explanation": "\"Hot Sauce\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://s.yimg.com/ny/api/res/1.2/rNNX2Othqi0OVaieQ2fRhA--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD05MDA-/https://media.zenfs.com/en/aol_cheapism_430/d806ad1c1d732ab79836af109881896e",
+                "ipa": "/hɒt/ /sɔːs/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Nachos",
+                    "Indian Food",
+                    "Spicy Food",
+                    "Tacos"
+                ],
+                "choiceIpas": [
+                    "/ˈnætʃəʊz/",
+                    "/fuːd/",
+                    "/fuːd/",
+                    ""
+                ],
+                "correctAnswer": "Indian Food",
+                "explanation": "\"Indian Food\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://wallpapers.com/images/hd/traditional-thali-platter-indian-food-7ppdmw8bs4n1f36j.jpg",
+                "ipa": "/fuːd/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Nachos",
+                    "Spicy Food",
+                    "Curry",
+                    "Tacos"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Curry",
+                "explanation": "\"Curry\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://www.licious.in/blog/wp-content/uploads/2020/12/Chicken-Curry-recipe.jpg",
+                "ipa": "/ˈkʌ.ɹi/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Sushi",
+                    "Nachos",
+                    "Spicy Food",
+                    "Tacos"
+                ],
+                "choiceIpas": [
+                    "/ˈsuʃi/",
+                    "/ˈnætʃəʊz/",
+                    "/fuːd/",
+                    ""
+                ],
+                "correctAnswer": "Sushi",
+                "explanation": "\"Sushi\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://fleurdesushi.fr/wp-content/uploads/2023/03/Les-differents-types-de-sushi.webp",
+                "ipa": "/ˈsuʃi/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Tacos",
+                    "Nachos",
+                    "Spicy Food",
+                    "Burgers"
+                ],
+                "choiceIpas": [
+                    "",
+                    "/ˈnætʃəʊz/",
+                    "/fuːd/",
+                    ""
+                ],
+                "correctAnswer": "Burgers",
+                "explanation": "\"Burgers\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://www.tasteofhome.com/wp-content/uploads/2020/03/Smash-Burgers_EXPS_TOHcom20_246232_B10_06_10b.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            }
+        ]
+    },
+    "food-drinks-5": {
+        "grade": 2,
+        "topicId": "food-drinks",
+        "videoUrl": "https://www.youtube.com/embed/Gtb_jK1scL8",
+        "title": "I'm Thirsty! | Drinks Song for Kids | Kindergarten, Preschool & ESL | Fun Kids English",
+        "channel": "@Funkidsenglish",
+        "transcriptText": "I'm thirsty! Can I have some milk, please? I'm thirsty! Can I have some milk, please? I'm thirsty! Can I have some milk, please? Gulp, gulp, gulp, gulp. Ahhhhhhh! That's better! That's better! That's better! I'm thirsty! Can I have some juice, please? I'm thirsty! Can I have some juice, please? I'm thirsty! Can I have some juice, please? Gulp, gulp, gulp, gulp. Ahhhhhhh! That's better! That's better! That's better! I'm thirsty! Can I have some pop, please? I'm thirsty! Can I have some pop, please? I'm thirsty! Can I have some pop, please? Gulp, gulp, gulp, gulp. Ahhhhhhh! That's better! That's better! That's better! I'm thirsty! Can I have some tea, please? I'm thirsty! Can I have some tea, please? I'm thirsty! Can I have some tea, please? Gulp, gulp, gulp, gulp. Ahhhhhhh! That's better! That's better! That's better! I'm thirsty! I'm thirsty! I'm thirsty! I'm thirsty! I'm thirsty! I'm thirsty! I'm thirsty! Can I have a drink? Hi guys, thanks for watching. Click on our logo below to\nsubscribe for more fun kids videos. Thanks again and see you next time.",
+        "words": [
+            "Thirsty",
+            "Milk",
+            "Juice",
+            "Pop",
+            "Tea",
+            "Drink"
+        ],
+        "questions": [
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Milk",
+                    "Thirsty",
+                    "Juice",
+                    "Pop"
+                ],
+                "choiceIpas": [
+                    "[mɛlk]",
+                    "/ˈθɜː(ɹ)st.i/",
+                    "/d͡ʒuːs/",
+                    "/pɒp/"
+                ],
+                "correctAnswer": "Thirsty",
+                "explanation": "\"Thirsty\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://png.pngtree.com/png-clipart/20230705/original/pngtree-thirsty-vector-thirst-drinking-vector-png-image_9258649.png",
+                "ipa": "/ˈθɜː(ɹ)st.i/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Pop",
+                    "Juice",
+                    "Milk",
+                    "Thirsty"
+                ],
+                "choiceIpas": [
+                    "/pɒp/",
+                    "/d͡ʒuːs/",
+                    "[mɛlk]",
+                    "/ˈθɜː(ɹ)st.i/"
+                ],
+                "correctAnswer": "Milk",
+                "explanation": "\"Milk\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://annapooranimilksupply.com/wp-content/uploads/2025/02/2-1024x585.webp",
+                "ipa": "[mɛlk]",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Milk",
+                    "Juice",
+                    "Pop",
+                    "Thirsty"
+                ],
+                "choiceIpas": [
+                    "[mɛlk]",
+                    "/d͡ʒuːs/",
+                    "/pɒp/",
+                    "/ˈθɜː(ɹ)st.i/"
+                ],
+                "correctAnswer": "Juice",
+                "explanation": "\"Juice\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://wallpapercave.com/wp/wp4166366.jpg",
+                "ipa": "/d͡ʒuːs/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Juice",
+                    "Thirsty",
+                    "Milk",
+                    "Pop"
+                ],
+                "choiceIpas": [
+                    "/d͡ʒuːs/",
+                    "/ˈθɜː(ɹ)st.i/",
+                    "[mɛlk]",
+                    "/pɒp/"
+                ],
+                "correctAnswer": "Pop",
+                "explanation": "\"Pop\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://m.media-amazon.com/images/I/71yDe1OdKfL._SL1500_.jpg",
+                "ipa": "/pɒp/ /dɹɪŋk/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Tea",
+                    "Milk",
+                    "Thirsty",
+                    "Juice"
+                ],
+                "choiceIpas": [
+                    "/tiː/",
+                    "[mɛlk]",
+                    "/ˈθɜː(ɹ)st.i/",
+                    "/d͡ʒuːs/"
+                ],
+                "correctAnswer": "Tea",
+                "explanation": "\"Tea\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://teastory.blog/wp-content/uploads/2025/11/cover-2776.png",
+                "ipa": "/tiː/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Juice",
+                    "Drink",
+                    "Thirsty",
+                    "Milk"
+                ],
+                "choiceIpas": [
+                    "/d͡ʒuːs/",
+                    "/dɹɪŋk/",
+                    "/ˈθɜː(ɹ)st.i/",
+                    "[mɛlk]"
+                ],
+                "correctAnswer": "Drink",
+                "explanation": "\"Drink\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://get.pxhere.com/photo/background-beverage-bubble-caffeine-carbonated-carbonated-drink-carbonated-water-close-up-cola-cold-cold-drink-colorful-dehydration-drink-drinking-fizz-fizzy-flavored-flavoring-fresh-freshness-glass-green-ice-ice-cube-liquid-macro-orange-pop-red-refreshing-non-alcoholic-beverage-cocktail-liqueur-cuba-libre-mai-tai-mint-julep-dark-n-stormy-cocktail-garnish-long-island-iced-tea-iced-tea-beer-cocktail-grog-1436807.jpg",
+                "ipa": "/dɹɪŋk/",
+                "isMissingCustomIcon": false
+            }
+        ]
+    },
+    "2-5": {
+        "grade": 2,
+        "topicId": "food-drinks",
+        "videoUrl": "https://www.youtube.com/embed/Gtb_jK1scL8",
+        "title": "I'm Thirsty! | Drinks Song for Kids | Kindergarten, Preschool & ESL | Fun Kids English",
+        "channel": "@Funkidsenglish",
+        "transcriptText": "I'm thirsty! Can I have some milk, please? I'm thirsty! Can I have some milk, please? I'm thirsty! Can I have some milk, please? Gulp, gulp, gulp, gulp. Ahhhhhhh! That's better! That's better! That's better! I'm thirsty! Can I have some juice, please? I'm thirsty! Can I have some juice, please? I'm thirsty! Can I have some juice, please? Gulp, gulp, gulp, gulp. Ahhhhhhh! That's better! That's better! That's better! I'm thirsty! Can I have some pop, please? I'm thirsty! Can I have some pop, please? I'm thirsty! Can I have some pop, please? Gulp, gulp, gulp, gulp. Ahhhhhhh! That's better! That's better! That's better! I'm thirsty! Can I have some tea, please? I'm thirsty! Can I have some tea, please? I'm thirsty! Can I have some tea, please? Gulp, gulp, gulp, gulp. Ahhhhhhh! That's better! That's better! That's better! I'm thirsty! I'm thirsty! I'm thirsty! I'm thirsty! I'm thirsty! I'm thirsty! I'm thirsty! Can I have a drink? Hi guys, thanks for watching. Click on our logo below to\nsubscribe for more fun kids videos. Thanks again and see you next time.",
+        "words": [
+            "Thirsty",
+            "Milk",
+            "Juice",
+            "Pop",
+            "Tea",
+            "Drink"
+        ],
+        "questions": [
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Milk",
+                    "Thirsty",
+                    "Juice",
+                    "Pop"
+                ],
+                "choiceIpas": [
+                    "[mɛlk]",
+                    "/ˈθɜː(ɹ)st.i/",
+                    "/d͡ʒuːs/",
+                    "/pɒp/"
+                ],
+                "correctAnswer": "Thirsty",
+                "explanation": "\"Thirsty\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://png.pngtree.com/png-clipart/20230705/original/pngtree-thirsty-vector-thirst-drinking-vector-png-image_9258649.png",
+                "ipa": "/ˈθɜː(ɹ)st.i/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Pop",
+                    "Juice",
+                    "Milk",
+                    "Thirsty"
+                ],
+                "choiceIpas": [
+                    "/pɒp/",
+                    "/d͡ʒuːs/",
+                    "[mɛlk]",
+                    "/ˈθɜː(ɹ)st.i/"
+                ],
+                "correctAnswer": "Milk",
+                "explanation": "\"Milk\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://annapooranimilksupply.com/wp-content/uploads/2025/02/2-1024x585.webp",
+                "ipa": "[mɛlk]",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Milk",
+                    "Juice",
+                    "Pop",
+                    "Thirsty"
+                ],
+                "choiceIpas": [
+                    "[mɛlk]",
+                    "/d͡ʒuːs/",
+                    "/pɒp/",
+                    "/ˈθɜː(ɹ)st.i/"
+                ],
+                "correctAnswer": "Juice",
+                "explanation": "\"Juice\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://wallpapercave.com/wp/wp4166366.jpg",
+                "ipa": "/d͡ʒuːs/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Juice",
+                    "Thirsty",
+                    "Milk",
+                    "Pop"
+                ],
+                "choiceIpas": [
+                    "/d͡ʒuːs/",
+                    "/ˈθɜː(ɹ)st.i/",
+                    "[mɛlk]",
+                    "/pɒp/"
+                ],
+                "correctAnswer": "Pop",
+                "explanation": "\"Pop\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://m.media-amazon.com/images/I/71yDe1OdKfL._SL1500_.jpg",
+                "ipa": "/pɒp/ /dɹɪŋk/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Tea",
+                    "Milk",
+                    "Thirsty",
+                    "Juice"
+                ],
+                "choiceIpas": [
+                    "/tiː/",
+                    "[mɛlk]",
+                    "/ˈθɜː(ɹ)st.i/",
+                    "/d͡ʒuːs/"
+                ],
+                "correctAnswer": "Tea",
+                "explanation": "\"Tea\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://teastory.blog/wp-content/uploads/2025/11/cover-2776.png",
+                "ipa": "/tiː/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Juice",
+                    "Drink",
+                    "Thirsty",
+                    "Milk"
+                ],
+                "choiceIpas": [
+                    "/d͡ʒuːs/",
+                    "/dɹɪŋk/",
+                    "/ˈθɜː(ɹ)st.i/",
+                    "[mɛlk]"
+                ],
+                "correctAnswer": "Drink",
+                "explanation": "\"Drink\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://get.pxhere.com/photo/background-beverage-bubble-caffeine-carbonated-carbonated-drink-carbonated-water-close-up-cola-cold-cold-drink-colorful-dehydration-drink-drinking-fizz-fizzy-flavored-flavoring-fresh-freshness-glass-green-ice-ice-cube-liquid-macro-orange-pop-red-refreshing-non-alcoholic-beverage-cocktail-liqueur-cuba-libre-mai-tai-mint-julep-dark-n-stormy-cocktail-garnish-long-island-iced-tea-iced-tea-beer-cocktail-grog-1436807.jpg",
+                "ipa": "/dɹɪŋk/",
+                "isMissingCustomIcon": false
+            }
+        ]
+    },
+    "food-drinks-6": {
+        "grade": 2,
+        "topicId": "food-drinks",
+        "videoUrl": "https://www.youtube.com/embed/zjDSizgwvXE",
+        "title": "Learn 25 Food & Drink Words in English 🍎🥤 | Easy Vocabulary with Audio & Pictures",
+        "channel": "@SmartFamilyEnglish",
+        "transcriptText": "[music] water. Water. Coffee. Coffee. Bread. Bread. [music] Chicken. Chicken. Cucumber. [music] Cucumber. Cheese. Cheese. [music] Potato. Potato. Pizza. [music] Pizza. Apple. Apple. [music] Egg. Egg. >> [music] >> Juice. Juice. [music] Pasta. Pasta. Hot dog. [music] Hot dog. Tomato. Tomato. [music] Meat. Meat. banana. Banana. Burger. Burger. T. [music] Carrot. Carrot. Ice cream. Ice cream. Fish. Fish. Rice. [music] Rice. Milk. Milk. [music] Soup. Soup. [music] Cake.",
+        "words": [
+            "Water",
+            "Coffee",
+            "Bread",
+            "Chicken",
+            "Cucumber",
+            "Cheese",
+            "Potato",
+            "Pizza",
+            "Apple",
+            "Egg",
+            "Juice",
+            "Pasta",
+            "Hot dog",
+            "Tomato",
+            "Meat",
+            "Banana",
+            "Burger",
+            "Carrot",
+            "Ice cream",
+            "Fish",
+            "Rice",
+            "Milk",
+            "Soup",
+            "Cake"
+        ],
+        "questions": [
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Coffee",
+                    "Water",
+                    "Bread",
+                    "Chicken"
+                ],
+                "choiceIpas": [
+                    "/ˈkɑ.fi/",
+                    "/ˈwoːtə/",
+                    "/bɹeːd/",
+                    "/ˈt͡ʃɪkɪn/"
+                ],
+                "correctAnswer": "Water",
+                "explanation": "\"Water\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://as2.ftcdn.net/jpg/12/65/83/65/1000_F_1265836586_FiOOzmjfe1RDFwnguno6Vg17fpd3vG5d.jpg",
+                "ipa": "/ˈwoːtə/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Water",
+                    "Coffee",
+                    "Chicken",
+                    "Bread"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Coffee",
+                "explanation": "\"Coffee\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://wallpapers.com/images/hd/coffee-cup-and-robusta-beans-nygy7dk13dzee47r.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Water",
+                    "Bread",
+                    "Coffee",
+                    "Chicken"
+                ],
+                "choiceIpas": [
+                    "/ˈwoːtə/",
+                    "/bɹeːd/",
+                    "/ˈkɑ.fi/",
+                    "/ˈt͡ʃɪkɪn/"
+                ],
+                "correctAnswer": "Bread",
+                "explanation": "\"Bread\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://paularecipes.com/wp-content/uploads/2025/11/8-10-scaled.png",
+                "ipa": "/bɹeːd/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Coffee",
+                    "Water",
+                    "Chicken",
+                    "Bread"
+                ],
+                "choiceIpas": [
+                    "/ˈkɑ.fi/",
+                    "/ˈwoːtə/",
+                    "/ˈt͡ʃɪkɪn/",
+                    "/bɹeːd/"
+                ],
+                "correctAnswer": "Chicken",
+                "explanation": "\"Chicken\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://hertaste.net/thumb/768/crispy-herb-infused-roast-chicken.webp",
+                "ipa": "/ˈt͡ʃɪkɪn/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Bread",
+                    "Cucumber",
+                    "Water",
+                    "Coffee"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Cucumber",
+                "explanation": "\"Cucumber\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://www.thespruceeats.com/thmb/oEfR8FsIMn9nVve1TLVSmPEXWnE=/2044x1467/filters:no_upscale():max_bytes(150000):strip_icc()/Garden-cucumber-GettyImages-475297671-589884fa3df78caebc439b11.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Water",
+                    "Bread",
+                    "Cheese",
+                    "Coffee"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Cheese",
+                "explanation": "\"Cheese\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://thumbs.dreamstime.com/b/high-resolution-close-up-various-cheese-textures-swiss-cheddar-blue-discover-intricate-details-patterns-different-types-349631488.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Water",
+                    "Potato",
+                    "Bread",
+                    "Coffee"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Potato",
+                "explanation": "\"Potato\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images7.alphacoders.com/376/thumb-1920-376174.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Coffee",
+                    "Bread",
+                    "Water",
+                    "Pizza"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Pizza",
+                "explanation": "\"Pizza\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://cdn.britannica.com/08/177308-050-94D9D6BE/Food-Pizza-Basil-Tomato.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which sweet, round fruit can be red, green, or yellow?",
+                "choices": [
+                    "Water",
+                    "Coffee",
+                    "Bread",
+                    "Apple"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Apple",
+                "explanation": "Apples grow on trees and make a nice, crunchy snack.",
+                "imageUrl": "https://images.pexels.com/photos/8208/pexels-photo.jpg?cs=srgb&dl=apple-fruit-healthy-8208.jpg&fm=jpg",
+                "ipa": "/ˈæp.əl/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Water",
+                    "Coffee",
+                    "Egg",
+                    "Bread"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Egg",
+                "explanation": "\"Egg\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://www.seriouseats.com/thmb/T5v_t4ZE06pasVLee8VYwkoG9Ec=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/perfect-soft-boiled-eggs-hero-05_1-7680c13e853046fd90db9e277911e4e8.JPG",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Bread",
+                    "Water",
+                    "Juice",
+                    "Coffee"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Juice",
+                "explanation": "\"Juice\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://wallpapercave.com/wp/wp4166366.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Water",
+                    "Pasta",
+                    "Bread",
+                    "Coffee"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Pasta",
+                "explanation": "\"Pasta\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://i2.wp.com/nourish-and-fete.com/wp-content/uploads/2023/01/pasta-napoletana-8.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Hot dog",
+                    "Water",
+                    "Coffee",
+                    "Bread"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Hot dog",
+                "explanation": "\"Hot dog\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://img.freepik.com/premium-photo/hot-dog-with-ketchup-mustard-it_899870-9516.jpg?w=2000",
+                "ipa": "/hɒt/ /dɑɡ/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Tomato",
+                    "Bread",
+                    "Coffee",
+                    "Water"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Tomato",
+                "explanation": "\"Tomato\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://oldworldgardenfarms.com/wp-content/uploads/2023/07/ripe-tomatoes-off-plant-scaled.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Water",
+                    "Coffee",
+                    "Meat",
+                    "Bread"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Meat",
+                "explanation": "\"Meat\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://media.gettyimages.com/id/1143086160/photo/various-cuts-of-raw-meat-shot-from-above-on-a-cast-iron-grill.jpg?s=612x612&w=gi&k=20&c=U4UKLa_ls1W5jqhHwSL1_Qk-Rljfd4EWzseafHYw-dA=",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Coffee",
+                    "Banana",
+                    "Bread",
+                    "Water"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Banana",
+                "explanation": "\"Banana\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://www.thedailymeal.com/img/gallery/the-astonishingly-low-cost-of-a-single-whole-foods-banana/l-intro-1668962689.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Coffee",
+                    "Burger",
+                    "Bread",
+                    "Water"
+                ],
+                "choiceIpas": [
+                    "/ˈkɑ.fi/",
+                    "/ˈbɜː(ɹ)ɡə(ɹ)/",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Burger",
+                "explanation": "\"Burger\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://www.tasteofhome.com/wp-content/uploads/2017/10/exps28800_UG143377D12_18_1b_RMS.jpg",
+                "ipa": "/ˈbɜː(ɹ)ɡə(ɹ)/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Bread",
+                    "Carrot",
+                    "Water",
+                    "Coffee"
+                ],
+                "choiceIpas": [
+                    "/bɹeːd/",
+                    "/ˈkæɹ.ət/",
+                    "/ˈwoːtə/",
+                    "/ˈkɑ.fi/"
+                ],
+                "correctAnswer": "Carrot",
+                "explanation": "\"Carrot\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://www.homeperch.com/wp-content/uploads/2019/06/Fresh-Carrots-7-18-6.jpg",
+                "ipa": "/ˈkæɹ.ət/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Water",
+                    "Bread",
+                    "Ice cream",
+                    "Coffee"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Ice cream",
+                "explanation": "\"Ice cream\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://cdn.loveandlemons.com/wp-content/uploads/2025/05/chocolate-ice-cream.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Bread",
+                    "Fish",
+                    "Coffee",
+                    "Water"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Fish",
+                "explanation": "\"Fish\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://www.grammareer.com/wp-content/uploads/2025/10/Types-of-Fish-to-Eat-and-their-Benefits-768x1152.png",
+                "ipa": "/fɪʃ/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Water",
+                    "Bread",
+                    "Rice",
+                    "Coffee"
+                ],
+                "choiceIpas": [
+                    "/ˈwoːtə/",
+                    "/bɹeːd/",
+                    "/ɹaɪs/",
+                    "/ˈkɑ.fi/"
+                ],
+                "correctAnswer": "Rice",
+                "explanation": "\"Rice\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://cdn.loveandlemons.com/wp-content/uploads/2020/03/how-to-cook-rice.jpg",
+                "ipa": "/ɹaɪs/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Water",
+                    "Milk",
+                    "Coffee",
+                    "Bread"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Milk",
+                "explanation": "\"Milk\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://annapooranimilksupply.com/wp-content/uploads/2025/02/2-1024x585.webp",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Bread",
+                    "Coffee",
+                    "Water",
+                    "Soup"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Soup",
+                "explanation": "\"Soup\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://natashaskitchen.com/wp-content/uploads/2021/05/Vegetable-Soup-5.jpg",
+                "ipa": "/suːp/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Coffee",
+                    "Water",
+                    "Cake",
+                    "Bread"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Cake",
+                "explanation": "\"Cake\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://inbloombakery.com/wp-content/uploads/2021/05/Chocolate-Berry-Cake-2-1.jpg",
+                "ipa": "/keɪk/",
+                "isMissingCustomIcon": false
+            }
+        ]
+    },
+    "2-6": {
+        "grade": 2,
+        "topicId": "food-drinks",
+        "videoUrl": "https://www.youtube.com/embed/zjDSizgwvXE",
+        "title": "Learn 25 Food & Drink Words in English 🍎🥤 | Easy Vocabulary with Audio & Pictures",
+        "channel": "@SmartFamilyEnglish",
+        "transcriptText": "[music] water. Water. Coffee. Coffee. Bread. Bread. [music] Chicken. Chicken. Cucumber. [music] Cucumber. Cheese. Cheese. [music] Potato. Potato. Pizza. [music] Pizza. Apple. Apple. [music] Egg. Egg. >> [music] >> Juice. Juice. [music] Pasta. Pasta. Hot dog. [music] Hot dog. Tomato. Tomato. [music] Meat. Meat. banana. Banana. Burger. Burger. T. [music] Carrot. Carrot. Ice cream. Ice cream. Fish. Fish. Rice. [music] Rice. Milk. Milk. [music] Soup. Soup. [music] Cake.",
+        "words": [
+            "Water",
+            "Coffee",
+            "Bread",
+            "Chicken",
+            "Cucumber",
+            "Cheese",
+            "Potato",
+            "Pizza",
+            "Apple",
+            "Egg",
+            "Juice",
+            "Pasta",
+            "Hot dog",
+            "Tomato",
+            "Meat",
+            "Banana",
+            "Burger",
+            "Carrot",
+            "Ice cream",
+            "Fish",
+            "Rice",
+            "Milk",
+            "Soup",
+            "Cake"
+        ],
+        "questions": [
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Coffee",
+                    "Water",
+                    "Bread",
+                    "Chicken"
+                ],
+                "choiceIpas": [
+                    "/ˈkɑ.fi/",
+                    "/ˈwoːtə/",
+                    "/bɹeːd/",
+                    "/ˈt͡ʃɪkɪn/"
+                ],
+                "correctAnswer": "Water",
+                "explanation": "\"Water\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://as2.ftcdn.net/jpg/12/65/83/65/1000_F_1265836586_FiOOzmjfe1RDFwnguno6Vg17fpd3vG5d.jpg",
+                "ipa": "/ˈwoːtə/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Water",
+                    "Coffee",
+                    "Chicken",
+                    "Bread"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Coffee",
+                "explanation": "\"Coffee\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://wallpapers.com/images/hd/coffee-cup-and-robusta-beans-nygy7dk13dzee47r.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Water",
+                    "Bread",
+                    "Coffee",
+                    "Chicken"
+                ],
+                "choiceIpas": [
+                    "/ˈwoːtə/",
+                    "/bɹeːd/",
+                    "/ˈkɑ.fi/",
+                    "/ˈt͡ʃɪkɪn/"
+                ],
+                "correctAnswer": "Bread",
+                "explanation": "\"Bread\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://paularecipes.com/wp-content/uploads/2025/11/8-10-scaled.png",
+                "ipa": "/bɹeːd/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Coffee",
+                    "Water",
+                    "Chicken",
+                    "Bread"
+                ],
+                "choiceIpas": [
+                    "/ˈkɑ.fi/",
+                    "/ˈwoːtə/",
+                    "/ˈt͡ʃɪkɪn/",
+                    "/bɹeːd/"
+                ],
+                "correctAnswer": "Chicken",
+                "explanation": "\"Chicken\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://hertaste.net/thumb/768/crispy-herb-infused-roast-chicken.webp",
+                "ipa": "/ˈt͡ʃɪkɪn/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Bread",
+                    "Cucumber",
+                    "Water",
+                    "Coffee"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Cucumber",
+                "explanation": "\"Cucumber\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://www.thespruceeats.com/thmb/oEfR8FsIMn9nVve1TLVSmPEXWnE=/2044x1467/filters:no_upscale():max_bytes(150000):strip_icc()/Garden-cucumber-GettyImages-475297671-589884fa3df78caebc439b11.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Water",
+                    "Bread",
+                    "Cheese",
+                    "Coffee"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Cheese",
+                "explanation": "\"Cheese\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://thumbs.dreamstime.com/b/high-resolution-close-up-various-cheese-textures-swiss-cheddar-blue-discover-intricate-details-patterns-different-types-349631488.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Water",
+                    "Potato",
+                    "Bread",
+                    "Coffee"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Potato",
+                "explanation": "\"Potato\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images7.alphacoders.com/376/thumb-1920-376174.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Coffee",
+                    "Bread",
+                    "Water",
+                    "Pizza"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Pizza",
+                "explanation": "\"Pizza\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://cdn.britannica.com/08/177308-050-94D9D6BE/Food-Pizza-Basil-Tomato.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which sweet, round fruit can be red, green, or yellow?",
+                "choices": [
+                    "Water",
+                    "Coffee",
+                    "Bread",
+                    "Apple"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Apple",
+                "explanation": "Apples grow on trees and make a nice, crunchy snack.",
+                "imageUrl": "https://images.pexels.com/photos/8208/pexels-photo.jpg?cs=srgb&dl=apple-fruit-healthy-8208.jpg&fm=jpg",
+                "ipa": "/ˈæp.əl/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Water",
+                    "Coffee",
+                    "Egg",
+                    "Bread"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Egg",
+                "explanation": "\"Egg\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://www.seriouseats.com/thmb/T5v_t4ZE06pasVLee8VYwkoG9Ec=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/perfect-soft-boiled-eggs-hero-05_1-7680c13e853046fd90db9e277911e4e8.JPG",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Bread",
+                    "Water",
+                    "Juice",
+                    "Coffee"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Juice",
+                "explanation": "\"Juice\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://wallpapercave.com/wp/wp4166366.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Water",
+                    "Pasta",
+                    "Bread",
+                    "Coffee"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Pasta",
+                "explanation": "\"Pasta\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://i2.wp.com/nourish-and-fete.com/wp-content/uploads/2023/01/pasta-napoletana-8.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Hot dog",
+                    "Water",
+                    "Coffee",
+                    "Bread"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Hot dog",
+                "explanation": "\"Hot dog\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://img.freepik.com/premium-photo/hot-dog-with-ketchup-mustard-it_899870-9516.jpg?w=2000",
+                "ipa": "/hɒt/ /dɑɡ/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Tomato",
+                    "Bread",
+                    "Coffee",
+                    "Water"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Tomato",
+                "explanation": "\"Tomato\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://oldworldgardenfarms.com/wp-content/uploads/2023/07/ripe-tomatoes-off-plant-scaled.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Water",
+                    "Coffee",
+                    "Meat",
+                    "Bread"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Meat",
+                "explanation": "\"Meat\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://media.gettyimages.com/id/1143086160/photo/various-cuts-of-raw-meat-shot-from-above-on-a-cast-iron-grill.jpg?s=612x612&w=gi&k=20&c=U4UKLa_ls1W5jqhHwSL1_Qk-Rljfd4EWzseafHYw-dA=",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Coffee",
+                    "Banana",
+                    "Bread",
+                    "Water"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Banana",
+                "explanation": "\"Banana\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://www.thedailymeal.com/img/gallery/the-astonishingly-low-cost-of-a-single-whole-foods-banana/l-intro-1668962689.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Coffee",
+                    "Burger",
+                    "Bread",
+                    "Water"
+                ],
+                "choiceIpas": [
+                    "/ˈkɑ.fi/",
+                    "/ˈbɜː(ɹ)ɡə(ɹ)/",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Burger",
+                "explanation": "\"Burger\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://www.tasteofhome.com/wp-content/uploads/2017/10/exps28800_UG143377D12_18_1b_RMS.jpg",
+                "ipa": "/ˈbɜː(ɹ)ɡə(ɹ)/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Bread",
+                    "Carrot",
+                    "Water",
+                    "Coffee"
+                ],
+                "choiceIpas": [
+                    "/bɹeːd/",
+                    "/ˈkæɹ.ət/",
+                    "/ˈwoːtə/",
+                    "/ˈkɑ.fi/"
+                ],
+                "correctAnswer": "Carrot",
+                "explanation": "\"Carrot\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://www.homeperch.com/wp-content/uploads/2019/06/Fresh-Carrots-7-18-6.jpg",
+                "ipa": "/ˈkæɹ.ət/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Water",
+                    "Bread",
+                    "Ice cream",
+                    "Coffee"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Ice cream",
+                "explanation": "\"Ice cream\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://cdn.loveandlemons.com/wp-content/uploads/2025/05/chocolate-ice-cream.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Bread",
+                    "Fish",
+                    "Coffee",
+                    "Water"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Fish",
+                "explanation": "\"Fish\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://www.grammareer.com/wp-content/uploads/2025/10/Types-of-Fish-to-Eat-and-their-Benefits-768x1152.png",
+                "ipa": "/fɪʃ/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Water",
+                    "Bread",
+                    "Rice",
+                    "Coffee"
+                ],
+                "choiceIpas": [
+                    "/ˈwoːtə/",
+                    "/bɹeːd/",
+                    "/ɹaɪs/",
+                    "/ˈkɑ.fi/"
+                ],
+                "correctAnswer": "Rice",
+                "explanation": "\"Rice\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://cdn.loveandlemons.com/wp-content/uploads/2020/03/how-to-cook-rice.jpg",
+                "ipa": "/ɹaɪs/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Water",
+                    "Milk",
+                    "Coffee",
+                    "Bread"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Milk",
+                "explanation": "\"Milk\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://annapooranimilksupply.com/wp-content/uploads/2025/02/2-1024x585.webp",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Bread",
+                    "Coffee",
+                    "Water",
+                    "Soup"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Soup",
+                "explanation": "\"Soup\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://natashaskitchen.com/wp-content/uploads/2021/05/Vegetable-Soup-5.jpg",
+                "ipa": "/suːp/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Coffee",
+                    "Water",
+                    "Cake",
+                    "Bread"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Cake",
+                "explanation": "\"Cake\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://inbloombakery.com/wp-content/uploads/2021/05/Chocolate-Berry-Cake-2-1.jpg",
+                "ipa": "/keɪk/",
+                "isMissingCustomIcon": false
+            }
+        ]
+    },
+    "food-drinks-7": {
+        "grade": 2,
+        "topicId": "food-drinks",
+        "videoUrl": "https://www.youtube.com/embed/1WZoI5zjhag",
+        "title": "I Like Food Song with Matt | Dream English Kids",
+        "channel": "@DreamEnglishKids",
+        "transcriptText": "[Music] mer what's your favorite food hmm good question I like hamburgers I like hot dogs I like pizza I like eggs I like rice I like salad I like sandwiches I like spaghetti I like soup I like the cake cause it's yummy yummy yummy yummy yummy yummy yummy yummy yummy one more time faster I like hamburgers I like hot dogs I like pizza I like eggs I like rice I like salad I like sandwiches I like spaghetti I like soup I like cake yummy yummy yummy yummy yummy yummy yummy yummy [Music] great job the my first 100 words book with Matt available now on amazon.com get your copy see you",
+        "words": [
+            "Hamburgers",
+            "Hot dogs",
+            "Pizza",
+            "Eggs",
+            "Rice",
+            "Salad",
+            "Sandwiches",
+            "Spaghetti",
+            "Soup",
+            "Cake"
+        ],
+        "questions": [
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Hamburgers",
+                    "Pizza",
+                    "Eggs",
+                    "Hot dogs"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Hamburgers",
+                "explanation": "\"Hamburgers\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://www.tasteofhome.com/wp-content/uploads/2018/01/All-American-Hamburgers_EXPS_CWAS22_29321_P2_MD_04_19_1b_v2.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Eggs",
+                    "Hot dogs",
+                    "Hamburgers",
+                    "Pizza"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Hot dogs",
+                "explanation": "\"Hot dogs\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://www.thespruceeats.com/thmb/_UMAZnvOAw76qRpbRLdqz7aGqNI=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/chicago-hot-dogs-5222463-hero-01-15ef36adc5f94ccab9c4b2363c60ef97.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Eggs",
+                    "Hamburgers",
+                    "Pizza",
+                    "Hot dogs"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Pizza",
+                "explanation": "\"Pizza\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://cdn.britannica.com/08/177308-050-94D9D6BE/Food-Pizza-Basil-Tomato.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Pizza",
+                    "Eggs",
+                    "Hot dogs",
+                    "Hamburgers"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Eggs",
+                "explanation": "\"Eggs\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.healthshots.com/healthshots/en/uploads/2022/12/01205715/Boiled-eggs.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Hot dogs",
+                    "Pizza",
+                    "Hamburgers",
+                    "Rice"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Rice",
+                "explanation": "\"Rice\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://cdn.loveandlemons.com/wp-content/uploads/2020/03/how-to-cook-rice.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Hamburgers",
+                    "Pizza",
+                    "Salad",
+                    "Hot dogs"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Salad",
+                "explanation": "\"Salad\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://recipesfromapantry.com/wp-content/uploads/2016/06/chopped-Veggie-Salad-42-of-66.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Hamburgers",
+                    "Pizza",
+                    "Sandwiches",
+                    "Hot dogs"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Sandwiches",
+                "explanation": "\"Sandwiches\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://hips.hearstapps.com/hmg-prod/images/sandwich-ideas-italian-sandwich-646b916e1e458.jpeg?crop=0.8xw:1xh;center,top&resize=980:*",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Hot dogs",
+                    "Spaghetti",
+                    "Hamburgers",
+                    "Pizza"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Spaghetti",
+                "explanation": "\"Spaghetti\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://cookingwithrachel.com/wp-content/uploads/2025/10/spaghetti-with-meat-sauce-before_prepare.png",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Pizza",
+                    "Hamburgers",
+                    "Soup",
+                    "Hot dogs"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Soup",
+                "explanation": "\"Soup\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://veggiedesserts.com/wp-content/uploads/2021/04/tomato-soup-cake-2sq.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Cake",
+                    "Hamburgers",
+                    "Hot dogs",
+                    "Pizza"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Cake",
+                "explanation": "\"Cake\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://chelsweets.com/wp-content/uploads/2022/07/cut-into-piece-of-chocolate-cake-with-cream-cheese-frostingv5.jpg",
+                "ipa": "/keɪk/",
+                "isMissingCustomIcon": false
+            }
+        ]
+    },
+    "2-7": {
+        "grade": 2,
+        "topicId": "food-drinks",
+        "videoUrl": "https://www.youtube.com/embed/1WZoI5zjhag",
+        "title": "I Like Food Song with Matt | Dream English Kids",
+        "channel": "@DreamEnglishKids",
+        "transcriptText": "[Music] mer what's your favorite food hmm good question I like hamburgers I like hot dogs I like pizza I like eggs I like rice I like salad I like sandwiches I like spaghetti I like soup I like the cake cause it's yummy yummy yummy yummy yummy yummy yummy yummy yummy one more time faster I like hamburgers I like hot dogs I like pizza I like eggs I like rice I like salad I like sandwiches I like spaghetti I like soup I like cake yummy yummy yummy yummy yummy yummy yummy yummy [Music] great job the my first 100 words book with Matt available now on amazon.com get your copy see you",
+        "words": [
+            "Hamburgers",
+            "Hot dogs",
+            "Pizza",
+            "Eggs",
+            "Rice",
+            "Salad",
+            "Sandwiches",
+            "Spaghetti",
+            "Soup",
+            "Cake"
+        ],
+        "questions": [
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Hamburgers",
+                    "Pizza",
+                    "Eggs",
+                    "Hot dogs"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Hamburgers",
+                "explanation": "\"Hamburgers\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://www.tasteofhome.com/wp-content/uploads/2018/01/All-American-Hamburgers_EXPS_CWAS22_29321_P2_MD_04_19_1b_v2.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Eggs",
+                    "Hot dogs",
+                    "Hamburgers",
+                    "Pizza"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Hot dogs",
+                "explanation": "\"Hot dogs\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://www.thespruceeats.com/thmb/_UMAZnvOAw76qRpbRLdqz7aGqNI=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/chicago-hot-dogs-5222463-hero-01-15ef36adc5f94ccab9c4b2363c60ef97.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Eggs",
+                    "Hamburgers",
+                    "Pizza",
+                    "Hot dogs"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Pizza",
+                "explanation": "\"Pizza\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://cdn.britannica.com/08/177308-050-94D9D6BE/Food-Pizza-Basil-Tomato.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Pizza",
+                    "Eggs",
+                    "Hot dogs",
+                    "Hamburgers"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Eggs",
+                "explanation": "\"Eggs\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.healthshots.com/healthshots/en/uploads/2022/12/01205715/Boiled-eggs.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Hot dogs",
+                    "Pizza",
+                    "Hamburgers",
+                    "Rice"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Rice",
+                "explanation": "\"Rice\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://cdn.loveandlemons.com/wp-content/uploads/2020/03/how-to-cook-rice.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Hamburgers",
+                    "Pizza",
+                    "Salad",
+                    "Hot dogs"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Salad",
+                "explanation": "\"Salad\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://recipesfromapantry.com/wp-content/uploads/2016/06/chopped-Veggie-Salad-42-of-66.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Hamburgers",
+                    "Pizza",
+                    "Sandwiches",
+                    "Hot dogs"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Sandwiches",
+                "explanation": "\"Sandwiches\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://hips.hearstapps.com/hmg-prod/images/sandwich-ideas-italian-sandwich-646b916e1e458.jpeg?crop=0.8xw:1xh;center,top&resize=980:*",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Hot dogs",
+                    "Spaghetti",
+                    "Hamburgers",
+                    "Pizza"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Spaghetti",
+                "explanation": "\"Spaghetti\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://cookingwithrachel.com/wp-content/uploads/2025/10/spaghetti-with-meat-sauce-before_prepare.png",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Pizza",
+                    "Hamburgers",
+                    "Soup",
+                    "Hot dogs"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Soup",
+                "explanation": "\"Soup\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://veggiedesserts.com/wp-content/uploads/2021/04/tomato-soup-cake-2sq.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Cake",
+                    "Hamburgers",
+                    "Hot dogs",
+                    "Pizza"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Cake",
+                "explanation": "\"Cake\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://chelsweets.com/wp-content/uploads/2022/07/cut-into-piece-of-chocolate-cake-with-cream-cheese-frostingv5.jpg",
+                "ipa": "/keɪk/",
+                "isMissingCustomIcon": false
+            }
+        ]
+    },
+    "food-drinks-8": {
+        "grade": 2,
+        "topicId": "food-drinks",
+        "videoUrl": "https://www.youtube.com/embed/49QFHWIky-k",
+        "title": "[Order] May I take your order? Anything else? For here or to go. - English for Kids",
+        "channel": "@EnglishSingsing",
+        "transcriptText": "[Music] hi may I take your order yes I'd like a hamburger french fries and a coke anything else no thank you that's it okay for here or to go for here [Music] please hi may I take your order yes I'd like two cheeseburgers anything else yes two large Cokes please okay for here or to go to go [Music] please let's role play [Music] what [Music]",
+        "words": [
+            "Hamburger",
+            "French",
+            "Fries",
+            "Coke",
+            "Cheeseburgers",
+            "Cokes",
+            "Order"
+        ],
+        "questions": [
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Coke",
+                    "French",
+                    "Hamburger",
+                    "Fries"
+                ],
+                "choiceIpas": [
+                    "/kəʊk/",
+                    "/fɹɛnt͡ʃ/",
+                    "/ˈhæm.bə.ɡə/",
+                    ""
+                ],
+                "correctAnswer": "Hamburger",
+                "explanation": "\"Hamburger\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://natashaskitchen.com/wp-content/uploads/2019/04/Best-Burger-5.jpg",
+                "ipa": "/ˈhæm.bə.ɡə/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Coke",
+                    "Fries",
+                    "Hamburger",
+                    "French"
+                ],
+                "choiceIpas": [
+                    "/kəʊk/",
+                    "/fɹaɪz/",
+                    "",
+                    "/fɹɛnt͡ʃ/"
+                ],
+                "correctAnswer": "French",
+                "explanation": "\"French\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://promova.com/content/french_alphabet_2358bcfc33.png",
+                "ipa": "/fɹɛnt͡ʃ/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Hamburger",
+                    "Fries",
+                    "Coke",
+                    "French"
+                ],
+                "choiceIpas": [
+                    "/ˈhæm.bə.ɡə/",
+                    "/fɹaɪz/",
+                    "/kəʊk/",
+                    ""
+                ],
+                "correctAnswer": "Fries",
+                "explanation": "\"Fries\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://www.thespruceeats.com/thmb/IHKuXcx3uUI1IWkM_cnnQdFH-zQ=/3485x2323/filters:fill(auto,1)/how-to-make-homemade-french-fries-2215971-hero-01-02f62a016f3e4aa4b41d0c27539885c3.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "French",
+                    "Hamburger",
+                    "Fries",
+                    "Coke"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "/fɹaɪz/",
+                    ""
+                ],
+                "correctAnswer": "Coke",
+                "explanation": "\"Coke\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://www.nexpressdelivery.co.uk/img/product/main_697_cokecanpng.png",
+                "ipa": "/kəʊk/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Hamburger",
+                    "Fries",
+                    "Cheeseburgers",
+                    "French"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Cheeseburgers",
+                "explanation": "\"Cheeseburgers\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://thescranline.com/wp-content/uploads/2023/12/CHEESEBURGERS-S-07.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Hamburger",
+                    "Cokes",
+                    "Fries",
+                    "French"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Cokes",
+                "explanation": "\"Cokes\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://shop.uscoffee.com/images/items/large/cokes.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Order",
+                    "French",
+                    "Hamburger",
+                    "Fries"
+                ],
+                "choiceIpas": [
+                    "/ˈɔːdə/",
+                    "/fɹɛnt͡ʃ/",
+                    "/ˈhæm.bə.ɡə/",
+                    "/fɹaɪz/"
+                ],
+                "correctAnswer": "Order",
+                "explanation": "\"Order\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.template.net/130139/purchase-order-requisition-template-h8kfe.jpg",
+                "ipa": "/ˈɔːdə/",
+                "isMissingCustomIcon": false
+            }
+        ]
+    },
+    "2-8": {
+        "grade": 2,
+        "topicId": "food-drinks",
+        "videoUrl": "https://www.youtube.com/embed/49QFHWIky-k",
+        "title": "[Order] May I take your order? Anything else? For here or to go. - English for Kids",
+        "channel": "@EnglishSingsing",
+        "transcriptText": "[Music] hi may I take your order yes I'd like a hamburger french fries and a coke anything else no thank you that's it okay for here or to go for here [Music] please hi may I take your order yes I'd like two cheeseburgers anything else yes two large Cokes please okay for here or to go to go [Music] please let's role play [Music] what [Music]",
+        "words": [
+            "Hamburger",
+            "French",
+            "Fries",
+            "Coke",
+            "Cheeseburgers",
+            "Cokes",
+            "Order"
+        ],
+        "questions": [
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Coke",
+                    "French",
+                    "Hamburger",
+                    "Fries"
+                ],
+                "choiceIpas": [
+                    "/kəʊk/",
+                    "/fɹɛnt͡ʃ/",
+                    "/ˈhæm.bə.ɡə/",
+                    ""
+                ],
+                "correctAnswer": "Hamburger",
+                "explanation": "\"Hamburger\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://natashaskitchen.com/wp-content/uploads/2019/04/Best-Burger-5.jpg",
+                "ipa": "/ˈhæm.bə.ɡə/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Coke",
+                    "Fries",
+                    "Hamburger",
+                    "French"
+                ],
+                "choiceIpas": [
+                    "/kəʊk/",
+                    "/fɹaɪz/",
+                    "",
+                    "/fɹɛnt͡ʃ/"
+                ],
+                "correctAnswer": "French",
+                "explanation": "\"French\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://promova.com/content/french_alphabet_2358bcfc33.png",
+                "ipa": "/fɹɛnt͡ʃ/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Hamburger",
+                    "Fries",
+                    "Coke",
+                    "French"
+                ],
+                "choiceIpas": [
+                    "/ˈhæm.bə.ɡə/",
+                    "/fɹaɪz/",
+                    "/kəʊk/",
+                    ""
+                ],
+                "correctAnswer": "Fries",
+                "explanation": "\"Fries\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://www.thespruceeats.com/thmb/IHKuXcx3uUI1IWkM_cnnQdFH-zQ=/3485x2323/filters:fill(auto,1)/how-to-make-homemade-french-fries-2215971-hero-01-02f62a016f3e4aa4b41d0c27539885c3.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "French",
+                    "Hamburger",
+                    "Fries",
+                    "Coke"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "/fɹaɪz/",
+                    ""
+                ],
+                "correctAnswer": "Coke",
+                "explanation": "\"Coke\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://www.nexpressdelivery.co.uk/img/product/main_697_cokecanpng.png",
+                "ipa": "/kəʊk/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Hamburger",
+                    "Fries",
+                    "Cheeseburgers",
+                    "French"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Cheeseburgers",
+                "explanation": "\"Cheeseburgers\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://thescranline.com/wp-content/uploads/2023/12/CHEESEBURGERS-S-07.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Hamburger",
+                    "Cokes",
+                    "Fries",
+                    "French"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Cokes",
+                "explanation": "\"Cokes\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://shop.uscoffee.com/images/items/large/cokes.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Order",
+                    "French",
+                    "Hamburger",
+                    "Fries"
+                ],
+                "choiceIpas": [
+                    "/ˈɔːdə/",
+                    "/fɹɛnt͡ʃ/",
+                    "/ˈhæm.bə.ɡə/",
+                    "/fɹaɪz/"
+                ],
+                "correctAnswer": "Order",
+                "explanation": "\"Order\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.template.net/130139/purchase-order-requisition-template-h8kfe.jpg",
+                "ipa": "/ˈɔːdə/",
+                "isMissingCustomIcon": false
+            }
+        ]
+    },
+    "food-drinks-9": {
+        "grade": 2,
+        "topicId": "food-drinks",
+        "videoUrl": "https://www.youtube.com/embed/Ik7B4iYFRTU",
+        "title": "Ordering in a Restaurant | Beginner English | Food",
+        "channel": "@LearnEnglishbyPocketPassport",
+        "transcriptText": "",
+        "words": [
+            "Ordering",
+            "Restaurant",
+            "Beginner",
+            "Food",
+            "Apple"
+        ],
+        "questions": [
+            {
+                "question": "Which word describes the action happening in this image?",
+                "choices": [
+                    "Restaurant",
+                    "Ordering",
+                    "Food",
+                    "Beginner"
+                ],
+                "choiceIpas": [
+                    "/ˈɹɛs.t(ə).ɹ(ə)nt/",
+                    "",
+                    "/fuːd/",
+                    "/bɪˈɡɪnə/"
+                ],
+                "correctAnswer": "Ordering",
+                "explanation": "Action verbs ending in \"-ing\" describe ongoing actions like the one shown here.",
+                "imageUrl": "https://static.vecteezy.com/system/resources/previews/015/413/316/original/online-food-ordering-from-supermarket-using-mobile-app-smartphone-screen-with-order-button-and-paper-bag-icon-full-of-products-online-store-concept-for-infographics-web-design-illustration-vector.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Restaurant",
+                    "Ordering",
+                    "Beginner",
+                    "Food"
+                ],
+                "choiceIpas": [
+                    "/ˈɹɛs.t(ə).ɹ(ə)nt/",
+                    "",
+                    "/bɪˈɡɪnə/",
+                    "/fuːd/"
+                ],
+                "correctAnswer": "Restaurant",
+                "explanation": "\"Restaurant\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://dig-interiordesign.com/wp-content/uploads/2025/09/Restaurant-Interior-Design-NYC-3.jpg",
+                "ipa": "/ˈɹɛs.t(ə).ɹ(ə)nt/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Beginner",
+                    "Food",
+                    "Ordering",
+                    "Restaurant"
+                ],
+                "choiceIpas": [
+                    "/bɪˈɡɪnə/",
+                    "/fuːd/",
+                    "",
+                    "/ˈɹɛs.t(ə).ɹ(ə)nt/"
+                ],
+                "correctAnswer": "Beginner",
+                "explanation": "\"Beginner\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://i.pinimg.com/originals/77/77/3c/77773cb159f1527d351eeb15fb3b496a.png",
+                "ipa": "/bɪˈɡɪnə/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Ordering",
+                    "Beginner",
+                    "Food",
+                    "Restaurant"
+                ],
+                "choiceIpas": [
+                    "",
+                    "/bɪˈɡɪnə/",
+                    "/fuːd/",
+                    "/ˈɹɛs.t(ə).ɹ(ə)nt/"
+                ],
+                "correctAnswer": "Food",
+                "explanation": "\"Food\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/p-271-ted8071-chim.jpg?w=1300&dpr=1&fit=default&crop=default&q=80&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=bfa2e18dd58668c408548dbf1b8b7662",
+                "ipa": "/fuːd/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which sweet, round fruit can be red, green, or yellow?",
+                "choices": [
+                    "Restaurant",
+                    "Ordering",
+                    "Beginner",
+                    "Apple"
+                ],
+                "choiceIpas": [
+                    "/ˈɹɛs.t(ə).ɹ(ə)nt/",
+                    "",
+                    "/bɪˈɡɪnə/",
+                    "/ˈæp.əl/"
+                ],
+                "correctAnswer": "Apple",
+                "explanation": "Apples grow on trees and make a nice, crunchy snack.",
+                "imageUrl": "https://help.apple.com/assets/665F9C26873A6ED7440C41D7/665F9C27873A6ED7440C41DD/en_US/b2a01456b47f9c24a30087980101be2c.png",
+                "ipa": "/ˈæp.əl/",
+                "isMissingCustomIcon": false
+            }
+        ]
+    },
+    "2-9": {
+        "grade": 2,
+        "topicId": "food-drinks",
+        "videoUrl": "https://www.youtube.com/embed/Ik7B4iYFRTU",
+        "title": "Ordering in a Restaurant | Beginner English | Food",
+        "channel": "@LearnEnglishbyPocketPassport",
+        "transcriptText": "",
+        "words": [
+            "Ordering",
+            "Restaurant",
+            "Beginner",
+            "Food",
+            "Apple"
+        ],
+        "questions": [
+            {
+                "question": "Which word describes the action happening in this image?",
+                "choices": [
+                    "Restaurant",
+                    "Ordering",
+                    "Food",
+                    "Beginner"
+                ],
+                "choiceIpas": [
+                    "/ˈɹɛs.t(ə).ɹ(ə)nt/",
+                    "",
+                    "/fuːd/",
+                    "/bɪˈɡɪnə/"
+                ],
+                "correctAnswer": "Ordering",
+                "explanation": "Action verbs ending in \"-ing\" describe ongoing actions like the one shown here.",
+                "imageUrl": "https://static.vecteezy.com/system/resources/previews/015/413/316/original/online-food-ordering-from-supermarket-using-mobile-app-smartphone-screen-with-order-button-and-paper-bag-icon-full-of-products-online-store-concept-for-infographics-web-design-illustration-vector.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Restaurant",
+                    "Ordering",
+                    "Beginner",
+                    "Food"
+                ],
+                "choiceIpas": [
+                    "/ˈɹɛs.t(ə).ɹ(ə)nt/",
+                    "",
+                    "/bɪˈɡɪnə/",
+                    "/fuːd/"
+                ],
+                "correctAnswer": "Restaurant",
+                "explanation": "\"Restaurant\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://dig-interiordesign.com/wp-content/uploads/2025/09/Restaurant-Interior-Design-NYC-3.jpg",
+                "ipa": "/ˈɹɛs.t(ə).ɹ(ə)nt/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Beginner",
+                    "Food",
+                    "Ordering",
+                    "Restaurant"
+                ],
+                "choiceIpas": [
+                    "/bɪˈɡɪnə/",
+                    "/fuːd/",
+                    "",
+                    "/ˈɹɛs.t(ə).ɹ(ə)nt/"
+                ],
+                "correctAnswer": "Beginner",
+                "explanation": "\"Beginner\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://i.pinimg.com/originals/77/77/3c/77773cb159f1527d351eeb15fb3b496a.png",
+                "ipa": "/bɪˈɡɪnə/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Ordering",
+                    "Beginner",
+                    "Food",
+                    "Restaurant"
+                ],
+                "choiceIpas": [
+                    "",
+                    "/bɪˈɡɪnə/",
+                    "/fuːd/",
+                    "/ˈɹɛs.t(ə).ɹ(ə)nt/"
+                ],
+                "correctAnswer": "Food",
+                "explanation": "\"Food\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/p-271-ted8071-chim.jpg?w=1300&dpr=1&fit=default&crop=default&q=80&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=bfa2e18dd58668c408548dbf1b8b7662",
+                "ipa": "/fuːd/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which sweet, round fruit can be red, green, or yellow?",
+                "choices": [
+                    "Restaurant",
+                    "Ordering",
+                    "Beginner",
+                    "Apple"
+                ],
+                "choiceIpas": [
+                    "/ˈɹɛs.t(ə).ɹ(ə)nt/",
+                    "",
+                    "/bɪˈɡɪnə/",
+                    "/ˈæp.əl/"
+                ],
+                "correctAnswer": "Apple",
+                "explanation": "Apples grow on trees and make a nice, crunchy snack.",
+                "imageUrl": "https://help.apple.com/assets/665F9C26873A6ED7440C41D7/665F9C27873A6ED7440C41DD/en_US/b2a01456b47f9c24a30087980101be2c.png",
+                "ipa": "/ˈæp.əl/",
+                "isMissingCustomIcon": false
+            }
+        ]
+    },
+    "food-drinks-10": {
+        "grade": 2,
+        "topicId": "food-drinks",
+        "videoUrl": "https://www.youtube.com/embed/UfFu9zxA1CU",
+        "title": "Kids vocabulary - Food and drink - Learning English with Dolphin",
+        "channel": "@DolphinEnglishCentre",
+        "transcriptText": "[Music] rice rice I like rice pizza pizza I like pizza cake cake I like cake salad salad I like salad cookies cookies I like cookies donut donut I like donut water water I like water milk milk I like milk juice juice I like juice review what is this pizza or cake pizza what is this water or juice juice what is this cookies or donut cookies what is this rice or salad salad",
+        "words": [
+            "Rice",
+            "Pizza",
+            "Cake",
+            "Salad",
+            "Cookies",
+            "Donut",
+            "Water",
+            "Milk",
+            "Juice"
+        ],
+        "questions": [
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Cake",
+                    "Salad",
+                    "Rice",
+                    "Pizza"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Rice",
+                "explanation": "\"Rice\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://cdn.loveandlemons.com/wp-content/uploads/2020/03/how-to-cook-rice.jpg",
+                "ipa": "/ɹaɪs/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Pizza",
+                    "Cake",
+                    "Rice",
+                    "Salad"
+                ],
+                "choiceIpas": [
+                    "/ˈpiːt.sə/",
+                    "/keɪk/",
+                    "/ɹaɪs/",
+                    "/ˈsæləd/"
+                ],
+                "correctAnswer": "Pizza",
+                "explanation": "\"Pizza\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://cdn.britannica.com/08/177308-050-94D9D6BE/Food-Pizza-Basil-Tomato.jpg",
+                "ipa": "/ˈpiːt.sə/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Rice",
+                    "Cake",
+                    "Salad",
+                    "Pizza"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Cake",
+                "explanation": "\"Cake\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://www.lifeloveandsugar.com/wp-content/uploads/2014/08/Best-Moist-Chocolate-Cake1-1.jpg",
+                "ipa": "/keɪk/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Rice",
+                    "Salad",
+                    "Pizza",
+                    "Cake"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Salad",
+                "explanation": "\"Salad\" is the correct vocabulary word for this picture.",
+                "imageUrl": "data:image/jpeg;base64,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",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Cookies",
+                    "Pizza",
+                    "Rice",
+                    "Cake"
+                ],
+                "choiceIpas": [
+                    "/ˈkʊkiz/",
+                    "/ˈpiːt.sə/",
+                    "/ɹaɪs/",
+                    "/keɪk/"
+                ],
+                "correctAnswer": "Cookies",
+                "explanation": "\"Cookies\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://www.emilyrecipes.net/wp-content/uploads/2026/01/ki1tsxzaj6ykqvxvga97.webp",
+                "ipa": "/ˈkʊkiz/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Cake",
+                    "Rice",
+                    "Donut",
+                    "Pizza"
+                ],
+                "choiceIpas": [
+                    "/keɪk/",
+                    "/ɹaɪs/",
+                    "/ˈdoʊnət/",
+                    "/ˈpiːt.sə/"
+                ],
+                "correctAnswer": "Donut",
+                "explanation": "\"Donut\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://thumbs.dreamstime.com/z/assorted-donuts-chocolate-frosted-pink-glazed-sprinkles-donuts-carnival-concept-sugar-assorted-donuts-chocolate-160581521.jpg",
+                "ipa": "/ˈdoʊnət/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Water",
+                    "Cake",
+                    "Rice",
+                    "Pizza"
+                ],
+                "choiceIpas": [
+                    "/ˈwoːtə/",
+                    "/keɪk/",
+                    "/ɹaɪs/",
+                    "/ˈpiːt.sə/"
+                ],
+                "correctAnswer": "Water",
+                "explanation": "\"Water\" is the correct vocabulary word for this picture.",
+                "imageUrl": "data:image/jpeg;base64,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",
+                "ipa": "/ˈwoːtə/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Cake",
+                    "Milk",
+                    "Pizza",
+                    "Rice"
+                ],
+                "choiceIpas": [
+                    "/keɪk/",
+                    "[mɛlk]",
+                    "/ˈpiːt.sə/",
+                    "/ɹaɪs/"
+                ],
+                "correctAnswer": "Milk",
+                "explanation": "\"Milk\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://img.freepik.com/premium-photo/there-is-glass-milk-glass-water-table-generative-ai_958138-38270.jpg?w=2000",
+                "ipa": "[mɛlk]",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Pizza",
+                    "Juice",
+                    "Cake",
+                    "Rice"
+                ],
+                "choiceIpas": [
+                    "/ˈpiːt.sə/",
+                    "/d͡ʒuːs/",
+                    "/keɪk/",
+                    "/ɹaɪs/"
+                ],
+                "correctAnswer": "Juice",
+                "explanation": "\"Juice\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://i.pinimg.com/originals/2d/77/4e/2d774e414042779b486e607e91cdf52e.jpg",
+                "ipa": "/d͡ʒuːs/",
+                "isMissingCustomIcon": false
+            }
+        ]
+    },
+    "2-10": {
+        "grade": 2,
+        "topicId": "food-drinks",
+        "videoUrl": "https://www.youtube.com/embed/UfFu9zxA1CU",
+        "title": "Kids vocabulary - Food and drink - Learning English with Dolphin",
+        "channel": "@DolphinEnglishCentre",
+        "transcriptText": "[Music] rice rice I like rice pizza pizza I like pizza cake cake I like cake salad salad I like salad cookies cookies I like cookies donut donut I like donut water water I like water milk milk I like milk juice juice I like juice review what is this pizza or cake pizza what is this water or juice juice what is this cookies or donut cookies what is this rice or salad salad",
+        "words": [
+            "Rice",
+            "Pizza",
+            "Cake",
+            "Salad",
+            "Cookies",
+            "Donut",
+            "Water",
+            "Milk",
+            "Juice"
+        ],
+        "questions": [
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Cake",
+                    "Salad",
+                    "Rice",
+                    "Pizza"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Rice",
+                "explanation": "\"Rice\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://cdn.loveandlemons.com/wp-content/uploads/2020/03/how-to-cook-rice.jpg",
+                "ipa": "/ɹaɪs/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Pizza",
+                    "Cake",
+                    "Rice",
+                    "Salad"
+                ],
+                "choiceIpas": [
+                    "/ˈpiːt.sə/",
+                    "/keɪk/",
+                    "/ɹaɪs/",
+                    "/ˈsæləd/"
+                ],
+                "correctAnswer": "Pizza",
+                "explanation": "\"Pizza\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://cdn.britannica.com/08/177308-050-94D9D6BE/Food-Pizza-Basil-Tomato.jpg",
+                "ipa": "/ˈpiːt.sə/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Rice",
+                    "Cake",
+                    "Salad",
+                    "Pizza"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Cake",
+                "explanation": "\"Cake\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://www.lifeloveandsugar.com/wp-content/uploads/2014/08/Best-Moist-Chocolate-Cake1-1.jpg",
+                "ipa": "/keɪk/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Rice",
+                    "Salad",
+                    "Pizza",
+                    "Cake"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Salad",
+                "explanation": "\"Salad\" is the correct vocabulary word for this picture.",
+                "imageUrl": "data:image/jpeg;base64,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",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Cookies",
+                    "Pizza",
+                    "Rice",
+                    "Cake"
+                ],
+                "choiceIpas": [
+                    "/ˈkʊkiz/",
+                    "/ˈpiːt.sə/",
+                    "/ɹaɪs/",
+                    "/keɪk/"
+                ],
+                "correctAnswer": "Cookies",
+                "explanation": "\"Cookies\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://www.emilyrecipes.net/wp-content/uploads/2026/01/ki1tsxzaj6ykqvxvga97.webp",
+                "ipa": "/ˈkʊkiz/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Cake",
+                    "Rice",
+                    "Donut",
+                    "Pizza"
+                ],
+                "choiceIpas": [
+                    "/keɪk/",
+                    "/ɹaɪs/",
+                    "/ˈdoʊnət/",
+                    "/ˈpiːt.sə/"
+                ],
+                "correctAnswer": "Donut",
+                "explanation": "\"Donut\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://thumbs.dreamstime.com/z/assorted-donuts-chocolate-frosted-pink-glazed-sprinkles-donuts-carnival-concept-sugar-assorted-donuts-chocolate-160581521.jpg",
+                "ipa": "/ˈdoʊnət/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Water",
+                    "Cake",
+                    "Rice",
+                    "Pizza"
+                ],
+                "choiceIpas": [
+                    "/ˈwoːtə/",
+                    "/keɪk/",
+                    "/ɹaɪs/",
+                    "/ˈpiːt.sə/"
+                ],
+                "correctAnswer": "Water",
+                "explanation": "\"Water\" is the correct vocabulary word for this picture.",
+                "imageUrl": "data:image/jpeg;base64,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",
+                "ipa": "/ˈwoːtə/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Cake",
+                    "Milk",
+                    "Pizza",
+                    "Rice"
+                ],
+                "choiceIpas": [
+                    "/keɪk/",
+                    "[mɛlk]",
+                    "/ˈpiːt.sə/",
+                    "/ɹaɪs/"
+                ],
+                "correctAnswer": "Milk",
+                "explanation": "\"Milk\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://img.freepik.com/premium-photo/there-is-glass-milk-glass-water-table-generative-ai_958138-38270.jpg?w=2000",
+                "ipa": "[mɛlk]",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Pizza",
+                    "Juice",
+                    "Cake",
+                    "Rice"
+                ],
+                "choiceIpas": [
+                    "/ˈpiːt.sə/",
+                    "/d͡ʒuːs/",
+                    "/keɪk/",
+                    "/ɹaɪs/"
+                ],
+                "correctAnswer": "Juice",
+                "explanation": "\"Juice\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://i.pinimg.com/originals/2d/77/4e/2d774e414042779b486e607e91cdf52e.jpg",
+                "ipa": "/d͡ʒuːs/",
+                "isMissingCustomIcon": false
+            }
+        ]
+    },
+    "food-drinks-11": {
+        "grade": 2,
+        "topicId": "food-drinks",
+        "videoUrl": "https://www.youtube.com/embed/pr2GSnDicDI",
+        "title": "What’s Your Favourite Food? | ESL Kids Songs | Planet Pop",
+        "channel": "@ELTSongs",
+        "transcriptText": "",
+        "words": [
+            "Planet",
+            "Favourite",
+            "Food",
+            "ESL",
+            "Song"
+        ],
+        "questions": [
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Food",
+                    "Planet",
+                    "ESL",
+                    "Favourite"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Planet",
+                "explanation": "\"Planet\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://i.pinimg.com/736x/6d/e3/96/6de39604b930f4945ed80d060dde7607.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Favourite",
+                    "Food",
+                    "Planet",
+                    "ESL"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Favourite",
+                "explanation": "\"Favourite\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://7esl.com/wp-content/uploads/2023/12/favourite-or-favorite-NG-7ESL-scaled.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Planet",
+                    "Food",
+                    "Favourite",
+                    "ESL"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Food",
+                "explanation": "\"Food\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://wallpapers.com/images/hd/food-4k-spdnpz7bhmx4kv2r.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Favourite",
+                    "Food",
+                    "Planet",
+                    "ESL"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "ESL",
+                "explanation": "\"ESL\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://clipart-library.com/data_images/339970.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Song",
+                    "Favourite",
+                    "Food",
+                    "Planet"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Song",
+                "explanation": "\"Song\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/1e/ff/32/1eff3216-190d-6fd9-8f68-acbba846e6ee/8903431956026_cover.jpg/1200x1200bf-60.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            }
+        ]
+    },
+    "2-11": {
+        "grade": 2,
+        "topicId": "food-drinks",
+        "videoUrl": "https://www.youtube.com/embed/pr2GSnDicDI",
+        "title": "What’s Your Favourite Food? | ESL Kids Songs | Planet Pop",
+        "channel": "@ELTSongs",
+        "transcriptText": "",
+        "words": [
+            "Planet",
+            "Favourite",
+            "Food",
+            "ESL",
+            "Song"
+        ],
+        "questions": [
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Food",
+                    "Planet",
+                    "ESL",
+                    "Favourite"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Planet",
+                "explanation": "\"Planet\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://i.pinimg.com/736x/6d/e3/96/6de39604b930f4945ed80d060dde7607.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Favourite",
+                    "Food",
+                    "Planet",
+                    "ESL"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Favourite",
+                "explanation": "\"Favourite\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://7esl.com/wp-content/uploads/2023/12/favourite-or-favorite-NG-7ESL-scaled.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Planet",
+                    "Food",
+                    "Favourite",
+                    "ESL"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Food",
+                "explanation": "\"Food\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://wallpapers.com/images/hd/food-4k-spdnpz7bhmx4kv2r.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Favourite",
+                    "Food",
+                    "Planet",
+                    "ESL"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "ESL",
+                "explanation": "\"ESL\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://clipart-library.com/data_images/339970.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Song",
+                    "Favourite",
+                    "Food",
+                    "Planet"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Song",
+                "explanation": "\"Song\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/1e/ff/32/1eff3216-190d-6fd9-8f68-acbba846e6ee/8903431956026_cover.jpg/1200x1200bf-60.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            }
+        ]
+    },
+    "food-drinks-12": {
+        "grade": 2,
+        "topicId": "food-drinks",
+        "videoUrl": "https://www.youtube.com/embed/y6MM_21MH08",
+        "title": "Fun Food Chant - Learn 24 Foods - Kids Learn English",
+        "channel": "@ELFKidsVideos",
+        "transcriptText": "[âm nhạc] Yami yamily [âm nhạc] Apple and apple [âm nhạc] [âm nhạc] [âm nhạc] [Vỗ tay] [âm nhạc] [âm nhạc] [âm nhạc] [âm nhạc] [âm nhạc] [Vỗ tay] [âm nhạc]",
+        "words": [
+            "Apple"
+        ],
+        "questions": [
+            {
+                "question": "Which sweet, round fruit can be red, green, or yellow?",
+                "choices": [
+                    "Orange",
+                    "Apple",
+                    "Banana",
+                    "Strawberry"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Apple",
+                "explanation": "Apples grow on trees and make a nice, crunchy snack.",
+                "imageUrl": "https://media.cnn.com/api/v1/images/stellar/prod/111006055359-apple-logo-new-york.jpg?q=x_3,y_158,h_1684,w_2994,c_crop",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            }
+        ]
+    },
+    "2-12": {
+        "grade": 2,
+        "topicId": "food-drinks",
+        "videoUrl": "https://www.youtube.com/embed/y6MM_21MH08",
+        "title": "Fun Food Chant - Learn 24 Foods - Kids Learn English",
+        "channel": "@ELFKidsVideos",
+        "transcriptText": "[âm nhạc] Yami yamily [âm nhạc] Apple and apple [âm nhạc] [âm nhạc] [âm nhạc] [Vỗ tay] [âm nhạc] [âm nhạc] [âm nhạc] [âm nhạc] [âm nhạc] [Vỗ tay] [âm nhạc]",
+        "words": [
+            "Apple"
+        ],
+        "questions": [
+            {
+                "question": "Which sweet, round fruit can be red, green, or yellow?",
+                "choices": [
+                    "Orange",
+                    "Apple",
+                    "Banana",
+                    "Strawberry"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Apple",
+                "explanation": "Apples grow on trees and make a nice, crunchy snack.",
+                "imageUrl": "https://media.cnn.com/api/v1/images/stellar/prod/111006055359-apple-logo-new-york.jpg?q=x_3,y_158,h_1684,w_2994,c_crop",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            }
+        ]
+    },
+    "food-drinks-13": {
+        "grade": 2,
+        "topicId": "food-drinks",
+        "videoUrl": "https://www.youtube.com/embed/VItI2QIQaEQ",
+        "title": "Food And Drink | Learn English Words (Spelling) Video For Kids | Kids Planet #kids #education",
+        "channel": "@KidsPlanet-New",
+        "transcriptText": "let's start with fish spell it a fire Sage swimming in the sea it's a tasty dish now let's move to chicken spell let see h i c k n cluck cluck away it's a onard friend next up is bricks spell it b r e d for a sandwich Tre it's what you need juices next spell it to us so sweet and cool it's a refreshing Breeze now hamburger spell it t a m b u r g e it goes a delight to save te comes next spell it te hot test it's a comforting display moving on to steak spell it k is alling on the grill it's what meat lover seek french fries are up spell it and C for Golden then crispy a delightful prize coffee is next spell it c f [Music] f in a cup it bruise A bever so free sad comes after spell it lady fresh and GRE a healthy food fat Pizza is last spell it be z a but Che Delight let [Music] send",
+        "words": [
+            "Fish",
+            "Chicken",
+            "Bricks",
+            "Sandwich",
+            "Juices",
+            "Hamburger",
+            "Steak",
+            "French",
+            "Fries",
+            "Coffee",
+            "Pizza"
+        ],
+        "questions": [
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Chicken",
+                    "Bricks",
+                    "Fish",
+                    "Sandwich"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Fish",
+                "explanation": "\"Fish\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://thumbs.dreamstime.com/b/grilled-fish-fire-closeup-shot-two-fish-grilling-over-flames-fish-cooked-to-perfection-crispy-skin-336055501.jpg?w=992",
+                "ipa": "/fɪʃ/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Bricks",
+                    "Fish",
+                    "Chicken",
+                    "Sandwich"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Chicken",
+                "explanation": "\"Chicken\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://hertaste.net/thumb/768/crispy-herb-infused-roast-chicken.webp",
+                "ipa": "/ˈt͡ʃɪkɪn/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Fish",
+                    "Chicken",
+                    "Sandwich",
+                    "Bricks"
+                ],
+                "choiceIpas": [
+                    "/fɪʃ/",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Bricks",
+                "explanation": "\"Bricks\" is the correct vocabulary word for this picture.",
+                "imageUrl": "http://www.publicdomainpictures.net/pictures/20000/velka/stacked-bricks-2961292419383XVm.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Bricks",
+                    "Fish",
+                    "Chicken",
+                    "Sandwich"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Sandwich",
+                "explanation": "\"Sandwich\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://simplyhomecooked.com/wp-content/uploads/2023/12/turkey-club-sandwich-3.jpg",
+                "ipa": "/ˈsæmwɪd͡ʒ/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Juices",
+                    "Bricks",
+                    "Chicken",
+                    "Fish"
+                ],
+                "choiceIpas": [
+                    "",
+                    "/bɹɪks/",
+                    "/ˈt͡ʃɪkɪn/",
+                    "/fɪʃ/"
+                ],
+                "correctAnswer": "Juices",
+                "explanation": "\"Juices\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://www.cleaneatingkitchen.com/wp-content/uploads/2024/03/colorful-selection-of-fruit-juices-on-table.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Fish",
+                    "Hamburger",
+                    "Bricks",
+                    "Chicken"
+                ],
+                "choiceIpas": [
+                    "/fɪʃ/",
+                    "/ˈhæm.bə.ɡə/",
+                    "/bɹɪks/",
+                    "/ˈt͡ʃɪkɪn/"
+                ],
+                "correctAnswer": "Hamburger",
+                "explanation": "\"Hamburger\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://static.vecteezy.com/system/resources/previews/047/138/217/non_2x/hamburger-with-cheese-lettuce-and-tomato-free-photo.jpg",
+                "ipa": "/ˈhæm.bə.ɡə/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Bricks",
+                    "Steak",
+                    "Chicken",
+                    "Fish"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "/ˈt͡ʃɪkɪn/",
+                    ""
+                ],
+                "correctAnswer": "Steak",
+                "explanation": "\"Steak\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://natashaskitchen.com/wp-content/uploads/2020/03/Pan-Seared-Steak-4.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Bricks",
+                    "Fish",
+                    "French",
+                    "Chicken"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "French",
+                "explanation": "\"French\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://promova.com/content/french_alphabet_2358bcfc33.png",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Fish",
+                    "Chicken",
+                    "Fries",
+                    "Bricks"
+                ],
+                "choiceIpas": [
+                    "/fɪʃ/",
+                    "/ˈt͡ʃɪkɪn/",
+                    "/fɹaɪz/",
+                    "/bɹɪks/"
+                ],
+                "correctAnswer": "Fries",
+                "explanation": "\"Fries\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://www.thespruceeats.com/thmb/IHKuXcx3uUI1IWkM_cnnQdFH-zQ=/3485x2323/filters:fill(auto,1)/how-to-make-homemade-french-fries-2215971-hero-01-02f62a016f3e4aa4b41d0c27539885c3.jpg",
+                "ipa": "/fɹaɪz/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Bricks",
+                    "Chicken",
+                    "Coffee",
+                    "Fish"
+                ],
+                "choiceIpas": [
+                    "/bɹɪks/",
+                    "",
+                    "/ˈkɑ.fi/",
+                    "/fɪʃ/"
+                ],
+                "correctAnswer": "Coffee",
+                "explanation": "\"Coffee\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://wallpapers.com/images/hd/coffee-cup-and-robusta-beans-nygy7dk13dzee47r.jpg",
+                "ipa": "/ˈkɑ.fi/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Fish",
+                    "Bricks",
+                    "Pizza",
+                    "Chicken"
+                ],
+                "choiceIpas": [
+                    "/fɪʃ/",
+                    "/bɹɪks/",
+                    "",
+                    "/ˈt͡ʃɪkɪn/"
+                ],
+                "correctAnswer": "Pizza",
+                "explanation": "\"Pizza\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://cdn.britannica.com/08/177308-050-94D9D6BE/Food-Pizza-Basil-Tomato.jpg",
+                "ipa": "/ˈpiːt.sə/",
+                "isMissingCustomIcon": false
+            }
+        ]
+    },
+    "2-13": {
+        "grade": 2,
+        "topicId": "food-drinks",
+        "videoUrl": "https://www.youtube.com/embed/VItI2QIQaEQ",
+        "title": "Food And Drink | Learn English Words (Spelling) Video For Kids | Kids Planet #kids #education",
+        "channel": "@KidsPlanet-New",
+        "transcriptText": "let's start with fish spell it a fire Sage swimming in the sea it's a tasty dish now let's move to chicken spell let see h i c k n cluck cluck away it's a onard friend next up is bricks spell it b r e d for a sandwich Tre it's what you need juices next spell it to us so sweet and cool it's a refreshing Breeze now hamburger spell it t a m b u r g e it goes a delight to save te comes next spell it te hot test it's a comforting display moving on to steak spell it k is alling on the grill it's what meat lover seek french fries are up spell it and C for Golden then crispy a delightful prize coffee is next spell it c f [Music] f in a cup it bruise A bever so free sad comes after spell it lady fresh and GRE a healthy food fat Pizza is last spell it be z a but Che Delight let [Music] send",
+        "words": [
+            "Fish",
+            "Chicken",
+            "Bricks",
+            "Sandwich",
+            "Juices",
+            "Hamburger",
+            "Steak",
+            "French",
+            "Fries",
+            "Coffee",
+            "Pizza"
+        ],
+        "questions": [
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Chicken",
+                    "Bricks",
+                    "Fish",
+                    "Sandwich"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Fish",
+                "explanation": "\"Fish\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://thumbs.dreamstime.com/b/grilled-fish-fire-closeup-shot-two-fish-grilling-over-flames-fish-cooked-to-perfection-crispy-skin-336055501.jpg?w=992",
+                "ipa": "/fɪʃ/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Bricks",
+                    "Fish",
+                    "Chicken",
+                    "Sandwich"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Chicken",
+                "explanation": "\"Chicken\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://hertaste.net/thumb/768/crispy-herb-infused-roast-chicken.webp",
+                "ipa": "/ˈt͡ʃɪkɪn/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Fish",
+                    "Chicken",
+                    "Sandwich",
+                    "Bricks"
+                ],
+                "choiceIpas": [
+                    "/fɪʃ/",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Bricks",
+                "explanation": "\"Bricks\" is the correct vocabulary word for this picture.",
+                "imageUrl": "http://www.publicdomainpictures.net/pictures/20000/velka/stacked-bricks-2961292419383XVm.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Bricks",
+                    "Fish",
+                    "Chicken",
+                    "Sandwich"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Sandwich",
+                "explanation": "\"Sandwich\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://simplyhomecooked.com/wp-content/uploads/2023/12/turkey-club-sandwich-3.jpg",
+                "ipa": "/ˈsæmwɪd͡ʒ/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Juices",
+                    "Bricks",
+                    "Chicken",
+                    "Fish"
+                ],
+                "choiceIpas": [
+                    "",
+                    "/bɹɪks/",
+                    "/ˈt͡ʃɪkɪn/",
+                    "/fɪʃ/"
+                ],
+                "correctAnswer": "Juices",
+                "explanation": "\"Juices\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://www.cleaneatingkitchen.com/wp-content/uploads/2024/03/colorful-selection-of-fruit-juices-on-table.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Fish",
+                    "Hamburger",
+                    "Bricks",
+                    "Chicken"
+                ],
+                "choiceIpas": [
+                    "/fɪʃ/",
+                    "/ˈhæm.bə.ɡə/",
+                    "/bɹɪks/",
+                    "/ˈt͡ʃɪkɪn/"
+                ],
+                "correctAnswer": "Hamburger",
+                "explanation": "\"Hamburger\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://static.vecteezy.com/system/resources/previews/047/138/217/non_2x/hamburger-with-cheese-lettuce-and-tomato-free-photo.jpg",
+                "ipa": "/ˈhæm.bə.ɡə/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Bricks",
+                    "Steak",
+                    "Chicken",
+                    "Fish"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "/ˈt͡ʃɪkɪn/",
+                    ""
+                ],
+                "correctAnswer": "Steak",
+                "explanation": "\"Steak\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://natashaskitchen.com/wp-content/uploads/2020/03/Pan-Seared-Steak-4.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Bricks",
+                    "Fish",
+                    "French",
+                    "Chicken"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "French",
+                "explanation": "\"French\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://promova.com/content/french_alphabet_2358bcfc33.png",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Fish",
+                    "Chicken",
+                    "Fries",
+                    "Bricks"
+                ],
+                "choiceIpas": [
+                    "/fɪʃ/",
+                    "/ˈt͡ʃɪkɪn/",
+                    "/fɹaɪz/",
+                    "/bɹɪks/"
+                ],
+                "correctAnswer": "Fries",
+                "explanation": "\"Fries\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://www.thespruceeats.com/thmb/IHKuXcx3uUI1IWkM_cnnQdFH-zQ=/3485x2323/filters:fill(auto,1)/how-to-make-homemade-french-fries-2215971-hero-01-02f62a016f3e4aa4b41d0c27539885c3.jpg",
+                "ipa": "/fɹaɪz/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Bricks",
+                    "Chicken",
+                    "Coffee",
+                    "Fish"
+                ],
+                "choiceIpas": [
+                    "/bɹɪks/",
+                    "",
+                    "/ˈkɑ.fi/",
+                    "/fɪʃ/"
+                ],
+                "correctAnswer": "Coffee",
+                "explanation": "\"Coffee\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://wallpapers.com/images/hd/coffee-cup-and-robusta-beans-nygy7dk13dzee47r.jpg",
+                "ipa": "/ˈkɑ.fi/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Fish",
+                    "Bricks",
+                    "Pizza",
+                    "Chicken"
+                ],
+                "choiceIpas": [
+                    "/fɪʃ/",
+                    "/bɹɪks/",
+                    "",
+                    "/ˈt͡ʃɪkɪn/"
+                ],
+                "correctAnswer": "Pizza",
+                "explanation": "\"Pizza\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://cdn.britannica.com/08/177308-050-94D9D6BE/Food-Pizza-Basil-Tomato.jpg",
+                "ipa": "/ˈpiːt.sə/",
+                "isMissingCustomIcon": false
+            }
+        ]
+    },
+    "food-drinks-14": {
+        "grade": 2,
+        "topicId": "food-drinks",
+        "videoUrl": "https://www.youtube.com/embed/nxHKCytfio4",
+        "title": "Food & drinks - English Vocabulary #shorts",
+        "channel": "@Amelie_show",
+        "transcriptText": "durán rings white más viable hasta en youtube también [Música]",
+        "words": [
+            "Durn ring",
+            "Hasta en",
+            "Ring white",
+            "White m",
+            "Ms viable"
+        ],
+        "questions": [
+            {
+                "question": "Which word describes the action happening in this image?",
+                "choices": [
+                    "Hasta en",
+                    "White m",
+                    "Durn ring",
+                    "Ring white"
+                ],
+                "choiceIpas": [
+                    "/i.ɛn/",
+                    "/waɪt/",
+                    "/dɜː(ɹ)n/ /ɹɪŋ/",
+                    "/ɹɪŋ/ /waɪt/"
+                ],
+                "correctAnswer": "Durn ring",
+                "explanation": "Action verbs ending in \"-ing\" describe ongoing actions like the one shown here.",
+                "imageUrl": "https://images.dotmed.com/images/listingpics2/5/1/9/2/5192152.jpg",
+                "ipa": "/dɜː(ɹ)n/ /ɹɪŋ/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Durn ring",
+                    "White m",
+                    "Ring white",
+                    "Hasta en"
+                ],
+                "choiceIpas": [
+                    "/dɜː(ɹ)n/ /ɹɪŋ/",
+                    "/waɪt/",
+                    "/ɹɪŋ/ /waɪt/",
+                    "/i.ɛn/"
+                ],
+                "correctAnswer": "Hasta en",
+                "explanation": "\"Hasta en\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://imgv2-2-f.scribdassets.com/img/document/860552364/original/fdd3279e5c/1?v=1",
+                "ipa": "/i.ɛn/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "White m",
+                    "Durn ring",
+                    "Hasta en",
+                    "Ring white"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Ring white",
+                "explanation": "\"Ring white\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://content-pravins.sparkstone.co.uk/13/3/images/catalog/i/xxl_47520-A7238702.jpg",
+                "ipa": "/ɹɪŋ/ /waɪt/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "White m",
+                    "Durn ring",
+                    "Ring white",
+                    "Hasta en"
+                ],
+                "choiceIpas": [
+                    "/waɪt/",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "White m",
+                "explanation": "\"White m\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://static.vecteezy.com/system/resources/previews/056/099/385/non_2x/textured-white-letter-m-in-3d-style-with-unique-finish-free-png.png",
+                "ipa": "/waɪt/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Hasta en",
+                    "Ring white",
+                    "Durn ring",
+                    "Ms viable"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Ms viable",
+                "explanation": "\"Ms viable\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://www.bwl-lexikon.de/app/uploads/minimum-viable-product.png",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            }
+        ]
+    },
+    "2-14": {
+        "grade": 2,
+        "topicId": "food-drinks",
+        "videoUrl": "https://www.youtube.com/embed/nxHKCytfio4",
+        "title": "Food & drinks - English Vocabulary #shorts",
+        "channel": "@Amelie_show",
+        "transcriptText": "durán rings white más viable hasta en youtube también [Música]",
+        "words": [
+            "Durn ring",
+            "Hasta en",
+            "Ring white",
+            "White m",
+            "Ms viable"
+        ],
+        "questions": [
+            {
+                "question": "Which word describes the action happening in this image?",
+                "choices": [
+                    "Hasta en",
+                    "White m",
+                    "Durn ring",
+                    "Ring white"
+                ],
+                "choiceIpas": [
+                    "/i.ɛn/",
+                    "/waɪt/",
+                    "/dɜː(ɹ)n/ /ɹɪŋ/",
+                    "/ɹɪŋ/ /waɪt/"
+                ],
+                "correctAnswer": "Durn ring",
+                "explanation": "Action verbs ending in \"-ing\" describe ongoing actions like the one shown here.",
+                "imageUrl": "https://images.dotmed.com/images/listingpics2/5/1/9/2/5192152.jpg",
+                "ipa": "/dɜː(ɹ)n/ /ɹɪŋ/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Durn ring",
+                    "White m",
+                    "Ring white",
+                    "Hasta en"
+                ],
+                "choiceIpas": [
+                    "/dɜː(ɹ)n/ /ɹɪŋ/",
+                    "/waɪt/",
+                    "/ɹɪŋ/ /waɪt/",
+                    "/i.ɛn/"
+                ],
+                "correctAnswer": "Hasta en",
+                "explanation": "\"Hasta en\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://imgv2-2-f.scribdassets.com/img/document/860552364/original/fdd3279e5c/1?v=1",
+                "ipa": "/i.ɛn/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "White m",
+                    "Durn ring",
+                    "Hasta en",
+                    "Ring white"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Ring white",
+                "explanation": "\"Ring white\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://content-pravins.sparkstone.co.uk/13/3/images/catalog/i/xxl_47520-A7238702.jpg",
+                "ipa": "/ɹɪŋ/ /waɪt/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "White m",
+                    "Durn ring",
+                    "Ring white",
+                    "Hasta en"
+                ],
+                "choiceIpas": [
+                    "/waɪt/",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "White m",
+                "explanation": "\"White m\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://static.vecteezy.com/system/resources/previews/056/099/385/non_2x/textured-white-letter-m-in-3d-style-with-unique-finish-free-png.png",
+                "ipa": "/waɪt/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Hasta en",
+                    "Ring white",
+                    "Durn ring",
+                    "Ms viable"
+                ],
+                "choiceIpas": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Ms viable",
+                "explanation": "\"Ms viable\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://www.bwl-lexikon.de/app/uploads/minimum-viable-product.png",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            }
+        ]
+    },
+    "food-drinks-1": {
+        "grade": 2,
+        "topicId": "food-drinks",
+        "videoUrl": "https://www.youtube.com/embed/HbvG-nV4DaM",
+        "title": "What Is This Called in English? 🇬🇧 | Tea & Coffee #16",
+        "channel": "@JourneyEnglishTalk",
+        "transcriptText": "",
+        "words": [
+            "Coffee",
+            "Teapot",
+            "Moka pot",
+            "Teacup",
+            "Creamer",
+            "Tea bag",
+            "Paper cup"
+        ],
+        "questions": [
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Teapot",
+                    "Coffee",
+                    "Moka pot",
+                    "Teacup"
+                ],
+                "choiceIpas": [
+                    "",
+                    "/ˈkɑ.fi/",
+                    "/pɒt/",
+                    "/tiː.kʌp/"
+                ],
+                "correctAnswer": "Coffee",
+                "explanation": "\"Coffee\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://wallpapers.com/images/hd/coffee-cup-and-robusta-beans-nygy7dk13dzee47r.jpg",
+                "ipa": "/ˈkɑ.fi/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Teapot",
+                    "Coffee",
+                    "Teacup",
+                    "Moka pot"
+                ],
+                "choiceIpas": [
+                    "",
+                    "/ˈkɑ.fi/",
+                    "/tiː.kʌp/",
+                    "/pɒt/"
+                ],
+                "correctAnswer": "Teapot",
+                "explanation": "\"Teapot\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://m.media-amazon.com/images/I/715wHfBGGFL._AC_SL1500_.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Coffee",
+                    "Moka pot",
+                    "Teapot",
+                    "Teacup"
+                ],
+                "choiceIpas": [
+                    "/ˈkɑ.fi/",
+                    "/pɒt/",
+                    "",
+                    "/tiː.kʌp/"
+                ],
+                "correctAnswer": "Moka pot",
+                "explanation": "\"Moka pot\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://m.media-amazon.com/images/I/71zkNTy1i+L._AC_SL1500_.jpg",
+                "ipa": "/pɒt/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Coffee",
+                    "Teacup",
+                    "Teapot",
+                    "Moka pot"
+                ],
+                "choiceIpas": [
+                    "/ˈkɑ.fi/",
+                    "/tiː.kʌp/",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Teacup",
+                "explanation": "\"Teacup\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://img.freepik.com/premium-photo/delicate-floral-porcelain-teacup-white-background_905033-13514.jpg?w=2000",
+                "ipa": "/tiː.kʌp/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Moka pot",
+                    "Coffee",
+                    "Creamer",
+                    "Teapot"
+                ],
+                "choiceIpas": [
+                    "/pɒt/",
+                    "/ˈkɑ.fi/",
+                    "/ˈkɹiː.mə(ɹ)/",
+                    ""
+                ],
+                "correctAnswer": "Creamer",
+                "explanation": "\"Creamer\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.heb.com/is/image/HEBGrocery/006835528-1",
+                "ipa": "/ˈkɹiː.mə(ɹ)/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Teapot",
+                    "Tea bag",
+                    "Moka pot",
+                    "Coffee"
+                ],
+                "choiceIpas": [
+                    "",
+                    "/tiː/ /ˈbæːɡ/",
+                    "",
+                    "/ˈkɑ.fi/"
+                ],
+                "correctAnswer": "Tea bag",
+                "explanation": "\"Tea bag\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://m.media-amazon.com/images/I/81OrnumnMnL._AC_.jpg",
+                "ipa": "/tiː/ /ˈbæːɡ/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Coffee",
+                    "Paper cup",
+                    "Teapot",
+                    "Moka pot"
+                ],
+                "choiceIpas": [
+                    "/ˈkɑ.fi/",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Paper cup",
+                "explanation": "\"Paper cup\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://m.media-amazon.com/images/I/61j+WfLyGGL.jpg",
+                "ipa": "/ˈpeɪpə/ /kʌp/",
+                "isMissingCustomIcon": false
+            }
+        ]
+    },
+    "food-drinks": {
+        "grade": 2,
+        "topicId": "food-drinks",
+        "videoUrl": "https://www.youtube.com/embed/HbvG-nV4DaM",
+        "title": "What Is This Called in English? 🇬🇧 | Tea & Coffee #16",
+        "channel": "@JourneyEnglishTalk",
+        "transcriptText": "",
+        "words": [
+            "Coffee",
+            "Teapot",
+            "Moka pot",
+            "Teacup",
+            "Creamer",
+            "Tea bag",
+            "Paper cup"
+        ],
+        "questions": [
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Teapot",
+                    "Coffee",
+                    "Moka pot",
+                    "Teacup"
+                ],
+                "choiceIpas": [
+                    "",
+                    "/ˈkɑ.fi/",
+                    "/pɒt/",
+                    "/tiː.kʌp/"
+                ],
+                "correctAnswer": "Coffee",
+                "explanation": "\"Coffee\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://wallpapers.com/images/hd/coffee-cup-and-robusta-beans-nygy7dk13dzee47r.jpg",
+                "ipa": "/ˈkɑ.fi/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Teapot",
+                    "Coffee",
+                    "Teacup",
+                    "Moka pot"
+                ],
+                "choiceIpas": [
+                    "",
+                    "/ˈkɑ.fi/",
+                    "/tiː.kʌp/",
+                    "/pɒt/"
+                ],
+                "correctAnswer": "Teapot",
+                "explanation": "\"Teapot\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://m.media-amazon.com/images/I/715wHfBGGFL._AC_SL1500_.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Coffee",
+                    "Moka pot",
+                    "Teapot",
+                    "Teacup"
+                ],
+                "choiceIpas": [
+                    "/ˈkɑ.fi/",
+                    "/pɒt/",
+                    "",
+                    "/tiː.kʌp/"
+                ],
+                "correctAnswer": "Moka pot",
+                "explanation": "\"Moka pot\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://m.media-amazon.com/images/I/71zkNTy1i+L._AC_SL1500_.jpg",
+                "ipa": "/pɒt/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Coffee",
+                    "Teacup",
+                    "Teapot",
+                    "Moka pot"
+                ],
+                "choiceIpas": [
+                    "/ˈkɑ.fi/",
+                    "/tiː.kʌp/",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Teacup",
+                "explanation": "\"Teacup\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://img.freepik.com/premium-photo/delicate-floral-porcelain-teacup-white-background_905033-13514.jpg?w=2000",
+                "ipa": "/tiː.kʌp/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Moka pot",
+                    "Coffee",
+                    "Creamer",
+                    "Teapot"
+                ],
+                "choiceIpas": [
+                    "/pɒt/",
+                    "/ˈkɑ.fi/",
+                    "/ˈkɹiː.mə(ɹ)/",
+                    ""
+                ],
+                "correctAnswer": "Creamer",
+                "explanation": "\"Creamer\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.heb.com/is/image/HEBGrocery/006835528-1",
+                "ipa": "/ˈkɹiː.mə(ɹ)/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Teapot",
+                    "Tea bag",
+                    "Moka pot",
+                    "Coffee"
+                ],
+                "choiceIpas": [
+                    "",
+                    "/tiː/ /ˈbæːɡ/",
+                    "",
+                    "/ˈkɑ.fi/"
+                ],
+                "correctAnswer": "Tea bag",
+                "explanation": "\"Tea bag\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://m.media-amazon.com/images/I/81OrnumnMnL._AC_.jpg",
+                "ipa": "/tiː/ /ˈbæːɡ/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Coffee",
+                    "Paper cup",
+                    "Teapot",
+                    "Moka pot"
+                ],
+                "choiceIpas": [
+                    "/ˈkɑ.fi/",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Paper cup",
+                "explanation": "\"Paper cup\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://m.media-amazon.com/images/I/61j+WfLyGGL.jpg",
+                "ipa": "/ˈpeɪpə/ /kʌp/",
+                "isMissingCustomIcon": false
+            }
+        ]
+    },
+    "2-1": {
+        "grade": 2,
+        "topicId": "food-drinks",
+        "videoUrl": "https://www.youtube.com/embed/HbvG-nV4DaM",
+        "title": "What Is This Called in English? 🇬🇧 | Tea & Coffee #16",
+        "channel": "@JourneyEnglishTalk",
+        "transcriptText": "",
+        "words": [
+            "Coffee",
+            "Teapot",
+            "Moka pot",
+            "Teacup",
+            "Creamer",
+            "Tea bag",
+            "Paper cup"
+        ],
+        "questions": [
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Teapot",
+                    "Coffee",
+                    "Moka pot",
+                    "Teacup"
+                ],
+                "choiceIpas": [
+                    "",
+                    "/ˈkɑ.fi/",
+                    "/pɒt/",
+                    "/tiː.kʌp/"
+                ],
+                "correctAnswer": "Coffee",
+                "explanation": "\"Coffee\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://wallpapers.com/images/hd/coffee-cup-and-robusta-beans-nygy7dk13dzee47r.jpg",
+                "ipa": "/ˈkɑ.fi/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Teapot",
+                    "Coffee",
+                    "Teacup",
+                    "Moka pot"
+                ],
+                "choiceIpas": [
+                    "",
+                    "/ˈkɑ.fi/",
+                    "/tiː.kʌp/",
+                    "/pɒt/"
+                ],
+                "correctAnswer": "Teapot",
+                "explanation": "\"Teapot\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://m.media-amazon.com/images/I/715wHfBGGFL._AC_SL1500_.jpg",
+                "ipa": "",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Coffee",
+                    "Moka pot",
+                    "Teapot",
+                    "Teacup"
+                ],
+                "choiceIpas": [
+                    "/ˈkɑ.fi/",
+                    "/pɒt/",
+                    "",
+                    "/tiː.kʌp/"
+                ],
+                "correctAnswer": "Moka pot",
+                "explanation": "\"Moka pot\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://m.media-amazon.com/images/I/71zkNTy1i+L._AC_SL1500_.jpg",
+                "ipa": "/pɒt/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Coffee",
+                    "Teacup",
+                    "Teapot",
+                    "Moka pot"
+                ],
+                "choiceIpas": [
+                    "/ˈkɑ.fi/",
+                    "/tiː.kʌp/",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Teacup",
+                "explanation": "\"Teacup\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://img.freepik.com/premium-photo/delicate-floral-porcelain-teacup-white-background_905033-13514.jpg?w=2000",
+                "ipa": "/tiː.kʌp/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Moka pot",
+                    "Coffee",
+                    "Creamer",
+                    "Teapot"
+                ],
+                "choiceIpas": [
+                    "/pɒt/",
+                    "/ˈkɑ.fi/",
+                    "/ˈkɹiː.mə(ɹ)/",
+                    ""
+                ],
+                "correctAnswer": "Creamer",
+                "explanation": "\"Creamer\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://images.heb.com/is/image/HEBGrocery/006835528-1",
+                "ipa": "/ˈkɹiː.mə(ɹ)/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Teapot",
+                    "Tea bag",
+                    "Moka pot",
+                    "Coffee"
+                ],
+                "choiceIpas": [
+                    "",
+                    "/tiː/ /ˈbæːɡ/",
+                    "",
+                    "/ˈkɑ.fi/"
+                ],
+                "correctAnswer": "Tea bag",
+                "explanation": "\"Tea bag\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://m.media-amazon.com/images/I/81OrnumnMnL._AC_.jpg",
+                "ipa": "/tiː/ /ˈbæːɡ/",
+                "isMissingCustomIcon": false
+            },
+            {
+                "question": "Which word best describes this image?",
+                "choices": [
+                    "Coffee",
+                    "Paper cup",
+                    "Teapot",
+                    "Moka pot"
+                ],
+                "choiceIpas": [
+                    "/ˈkɑ.fi/",
+                    "",
+                    "",
+                    ""
+                ],
+                "correctAnswer": "Paper cup",
+                "explanation": "\"Paper cup\" is the correct vocabulary word for this picture.",
+                "imageUrl": "https://m.media-amazon.com/images/I/61j+WfLyGGL.jpg",
+                "ipa": "/ˈpeɪpə/ /kʌp/",
                 "isMissingCustomIcon": false
             }
         ]

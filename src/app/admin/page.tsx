@@ -672,8 +672,8 @@ export default function AdminDashboardPage() {
   const [selectedGradeId, setSelectedGradeId] = useState<string | number | null>(null);
   const [selectedWorldId, setSelectedWorldId] = useState<string | null>(null);
   const [selectedLevelNum, setSelectedLevelNum] = useState<number | null>(null);
-  const [isLevelDeleteMode, setIsLevelDeleteMode] = useState(false);
-  const [selectedLevelsToDelete, setSelectedLevelsToDelete] = useState<number[]>([]);
+  const [isLevelMultiSelectMode, setIsLevelMultiSelectMode] = useState(false);
+  const [selectedLevelsMulti, setSelectedLevelsMulti] = useState<number[]>([]);
 
   // Metadata edit states
   const [editingGradeMetadata, setEditingGradeMetadata] = useState<{ grade: string | number, title: string, description: string } | null>(null);
@@ -1402,6 +1402,28 @@ export default function AdminDashboardPage() {
   };
 
   // Save Learning Section changes
+  const handleDeleteCurrentLevel = () => {
+    if (selectedLevelNum === null) return;
+    if (confirm(`Are you sure you want to delete Level ${selectedLevelNum}?`)) {
+      const updatedQuests = { ...videoQuests };
+      if (selectedWorldId) {
+        delete updatedQuests[`${selectedWorldId}-${selectedLevelNum}`];
+        if (selectedLevelNum === 1) delete updatedQuests[selectedWorldId];
+      }
+      if (selectedGradeId !== null) {
+        delete updatedQuests[`${selectedGradeId}-${selectedLevelNum}`];
+        if (selectedLevelNum === 1) delete updatedQuests[String(selectedGradeId)];
+      }
+
+      const compactedQuests = compactQuests(updatedQuests, selectedGradeId, selectedWorldId);
+
+      setVideoQuests(compactedQuests);
+      localStorage.setItem(STORAGE_KEYS.videoQuests, JSON.stringify(compactedQuests));
+      showNotification(`Deleted Level ${selectedLevelNum}.`);
+      setSelectedLevelNum(null);
+    }
+  };
+
   const handleSaveQuest = () => {
     const finalVideoUrl = getYouTubeEmbedUrl(questForm.videoUrl);
     const updatedWords = questForm.wordsInput
@@ -3116,6 +3138,14 @@ export default function AdminDashboardPage() {
                     </p>
                   </div>
                   <div className="flex flex-wrap items-center gap-2 shrink-0">
+                    {selectedLevelNum !== null && (
+                      <button
+                        onClick={handleDeleteCurrentLevel}
+                        className="flex items-center gap-1.5 shadow-sm cursor-pointer px-3 py-1.5 bg-red-50 text-red-600 font-bold text-xs rounded-xl border-2 border-red-200 hover:bg-red-100 transition-colors"
+                      >
+                        <Trash2 className="w-4 h-4 shrink-0" /> Delete Level
+                      </button>
+                    )}
                     <Button variant="purple" size="sm" onClick={handleSaveQuest} className="flex items-center gap-1.5 shadow-sm cursor-pointer">
                       <Save className="w-4 h-4 shrink-0" /> Save
                     </Button>
@@ -3248,55 +3278,57 @@ export default function AdminDashboardPage() {
                       </button>
                       <button
                         onClick={() => {
-                          if (isLevelDeleteMode) {
-                            setIsLevelDeleteMode(false);
-                            setSelectedLevelsToDelete([]);
+                          if (isLevelMultiSelectMode) {
+                            setIsLevelMultiSelectMode(false);
+                            setSelectedLevelsMulti([]);
                           } else {
-                            setIsLevelDeleteMode(true);
+                            setIsLevelMultiSelectMode(true);
                           }
                         }}
                         className={`text-[10px] font-bold px-2 py-0.5 rounded transition-colors cursor-pointer ${
-                          isLevelDeleteMode ? 'bg-red-100 text-red-600 hover:bg-red-200' : 'bg-slate-100 text-slate-500 hover:bg-slate-200'
+                          isLevelMultiSelectMode ? 'bg-indigo-100 text-indigo-700 hover:bg-indigo-200' : 'bg-slate-100 text-slate-500 hover:bg-slate-200'
                         }`}
                       >
-                        {isLevelDeleteMode ? 'Cancel Delete Mode' : 'Multi-Delete Levels'}
+                        {isLevelMultiSelectMode ? 'Cancel Select Mode' : 'Multi-Select Levels'}
                       </button>
                     </div>
                   </div>
                   <div className="flex flex-wrap gap-2">
                     {levels.map(lvl => {
+                      const quest = selectedWorldId && videoQuests[`${selectedWorldId}-${lvl}`] ? videoQuests[`${selectedWorldId}-${lvl}`] : videoQuests[`${selectedGradeId}-${lvl}`];
                       const hasTopicContent = !!(selectedWorldId && videoQuests[`${selectedWorldId}-${lvl}`]);
                       const hasGradeContent = !!videoQuests[`${selectedGradeId}-${lvl}`];
                       const hasContent = selectedWorldId ? hasTopicContent : hasGradeContent;
                       const isActive = selectedLevelNum === lvl;
                       const isDragging = draggingLevelNum === lvl;
                       const isDraggedOver = draggedOverLevelNum === lvl;
-                      const isSelectedForDeletion = selectedLevelsToDelete.includes(lvl);
+                      const isSelectedForMulti = selectedLevelsMulti.includes(lvl);
+                      const isHidden = quest?.isHidden;
                       
                       return (
                         <button
                           key={lvl}
-                          draggable={!isLevelDeleteMode}
+                          draggable={!isLevelMultiSelectMode}
                           onDragStart={(e) => {
-                            if (isLevelDeleteMode) return;
+                            if (isLevelMultiSelectMode) return;
                             setDraggingLevelNum(lvl);
                             e.dataTransfer.effectAllowed = 'move';
                           }}
                           onDragOver={(e) => {
-                            if (isLevelDeleteMode) return;
+                            if (isLevelMultiSelectMode) return;
                             e.preventDefault();
                             if (draggingLevelNum !== lvl) {
                               setDraggedOverLevelNum(lvl);
                             }
                           }}
                           onDragLeave={() => {
-                            if (isLevelDeleteMode) return;
+                            if (isLevelMultiSelectMode) return;
                             if (draggedOverLevelNum === lvl) {
                               setDraggedOverLevelNum(null);
                             }
                           }}
                           onDrop={(e) => {
-                            if (isLevelDeleteMode) return;
+                            if (isLevelMultiSelectMode) return;
                             e.preventDefault();
                             if (draggingLevelNum !== null && draggingLevelNum !== lvl) {
                               handleReorderLevels(draggingLevelNum, lvl);
@@ -3309,8 +3341,8 @@ export default function AdminDashboardPage() {
                             setDraggedOverLevelNum(null);
                           }}
                           onClick={() => {
-                            if (isLevelDeleteMode) {
-                              setSelectedLevelsToDelete(prev => 
+                            if (isLevelMultiSelectMode) {
+                              setSelectedLevelsMulti(prev => 
                                 prev.includes(lvl) ? prev.filter(l => l !== lvl) : [...prev, lvl]
                               );
                             } else {
@@ -3318,40 +3350,72 @@ export default function AdminDashboardPage() {
                             }
                           }}
                           className={`relative w-10 h-10 rounded-xl border-2 text-xs font-black transition-all cursor-pointer flex items-center justify-center ${
-                            isLevelDeleteMode && isSelectedForDeletion ? 'border-red-500 bg-red-100 text-red-700 shadow-md scale-105 z-10' :
-                            isLevelDeleteMode ? 'border-slate-200 bg-white text-slate-400 hover:border-red-300' :
+                            isLevelMultiSelectMode && isSelectedForMulti ? 'border-indigo-500 bg-indigo-100 text-indigo-700 shadow-md scale-105 z-10' :
+                            isLevelMultiSelectMode ? 'border-slate-200 bg-white text-slate-400 hover:border-indigo-300' :
                             isDragging ? 'opacity-40 border-dashed border-slate-350 bg-slate-50' :
                             isDraggedOver ? 'border-indigo-500 bg-indigo-50/50 scale-105 shadow-md z-10' :
                             isActive
                               ? 'border-indigo-500 bg-indigo-600 text-white shadow-md scale-105'
                               : hasContent
-                                ? lvl > 10 
-                                  ? 'border-amber-400 bg-amber-50 text-amber-700 hover:border-amber-500' 
-                                  : 'border-emerald-400 bg-emerald-50 text-emerald-700 hover:border-emerald-500'
+                                ? (isHidden ? 'border-slate-300 bg-slate-100 text-slate-400 border-dashed' : (lvl > 10 ? 'border-amber-400 bg-amber-50 text-amber-700 hover:border-amber-500' : 'border-emerald-400 bg-emerald-50 text-emerald-700 hover:border-emerald-500'))
                                 : 'border-slate-200 bg-slate-100 text-slate-300 hover:border-slate-300'
                           }`}
-                          title={`Level ${lvl}${hasTopicContent ? ' ✓ (world-specific)' : hasGradeContent ? ' ✓ (grade fallback)' : ' (empty)'}${lvl > 10 ? ' - Extra Level' : ''}`}
+                          title={`Level ${lvl}${hasTopicContent ? ' ✓ (world-specific)' : hasGradeContent ? ' ✓ (grade fallback)' : ' (empty)'}${lvl > 10 ? ' - Extra Level' : ''}${isHidden ? ' [Hidden]' : ''}`}
                         >
                           {lvl}
-                          {isLevelDeleteMode && isSelectedForDeletion && (
-                            <span className="absolute -top-1.5 -right-1.5 bg-red-500 text-white rounded-full w-4 h-4 flex items-center justify-center text-[10px]">
-                              ×
+                          {isLevelMultiSelectMode && isSelectedForMulti && (
+                            <span className="absolute -top-1.5 -right-1.5 bg-indigo-500 text-white rounded-full w-4 h-4 flex items-center justify-center text-[10px]">
+                              ✓
                             </span>
                           )}
-                          {!isLevelDeleteMode && hasContent && !isActive && (
-                            <span className="absolute -top-1 -right-1 w-2 h-2 rounded-full bg-emerald-400 border border-white" />
+                          {!isLevelMultiSelectMode && hasContent && !isActive && (
+                            <span className={`absolute -top-1 -right-1 w-2 h-2 rounded-full border border-white ${isHidden ? 'bg-slate-400' : 'bg-emerald-400'}`} />
+                          )}
+                          {isHidden && !isLevelMultiSelectMode && (
+                            <EyeOff className="absolute w-3 h-3 text-slate-400 bottom-0.5 right-0.5 opacity-50" />
                           )}
                         </button>
                       );
                     })}
                   </div>
-                  {isLevelDeleteMode && selectedLevelsToDelete.length > 0 && (
-                    <div className="flex justify-start animate-fade-in mt-2 mb-2">
+                  {isLevelMultiSelectMode && selectedLevelsMulti.length > 0 && (
+                    <div className="flex justify-start animate-fade-in mt-2 mb-2 gap-2">
                       <button
                         onClick={() => {
-                          if (confirm(`Are you sure you want to delete ${selectedLevelsToDelete.length} selected level(s)?`)) {
+                          const updatedQuests = { ...videoQuests };
+                          let toggledCount = 0;
+                          selectedLevelsMulti.forEach(lvl => {
+                            let questKey = '';
+                            if (selectedWorldId && updatedQuests[`${selectedWorldId}-${lvl}`]) {
+                              questKey = `${selectedWorldId}-${lvl}`;
+                            } else if (selectedGradeId !== null && updatedQuests[`${selectedGradeId}-${lvl}`]) {
+                              questKey = `${selectedGradeId}-${lvl}`;
+                            }
+                            if (questKey && updatedQuests[questKey]) {
+                              updatedQuests[questKey] = {
+                                ...updatedQuests[questKey],
+                                isHidden: !updatedQuests[questKey].isHidden
+                              };
+                              toggledCount++;
+                            }
+                          });
+                          if (toggledCount > 0) {
+                            setVideoQuests(updatedQuests);
+                            localStorage.setItem(STORAGE_KEYS.videoQuests, JSON.stringify(updatedQuests));
+                            showNotification(`Toggled visibility for ${toggledCount} level(s).`);
+                          }
+                          setIsLevelMultiSelectMode(false);
+                          setSelectedLevelsMulti([]);
+                        }}
+                        className="px-3 py-1.5 bg-slate-50 text-slate-600 font-bold text-xs rounded-lg border border-slate-200 hover:bg-slate-100 shadow-sm flex items-center gap-1 cursor-pointer"
+                      >
+                        <EyeOff className="w-3.5 h-3.5" /> Toggle Visibility ({selectedLevelsMulti.length})
+                      </button>
+                      <button
+                        onClick={() => {
+                          if (confirm(`Are you sure you want to delete ${selectedLevelsMulti.length} selected level(s)?`)) {
                             const updatedQuests = { ...videoQuests };
-                            selectedLevelsToDelete.forEach(lvl => {
+                            selectedLevelsMulti.forEach(lvl => {
                               if (selectedWorldId) {
                                 delete updatedQuests[`${selectedWorldId}-${lvl}`];
                                 if (lvl === 1) delete updatedQuests[selectedWorldId];
@@ -3366,15 +3430,15 @@ export default function AdminDashboardPage() {
 
                             setVideoQuests(compactedQuests);
                             localStorage.setItem(STORAGE_KEYS.videoQuests, JSON.stringify(compactedQuests));
-                            showNotification(`Deleted ${selectedLevelsToDelete.length} level(s).`);
-                            setIsLevelDeleteMode(false);
-                            setSelectedLevelsToDelete([]);
+                            showNotification(`Deleted ${selectedLevelsMulti.length} level(s).`);
+                            setIsLevelMultiSelectMode(false);
+                            setSelectedLevelsMulti([]);
                             setSelectedLevelNum(null);
                           }
                         }}
                         className="px-3 py-1.5 bg-red-50 text-red-600 font-bold text-xs rounded-lg border border-red-200 hover:bg-red-100 shadow-sm flex items-center gap-1 cursor-pointer"
                       >
-                        <Trash2 className="w-3.5 h-3.5" /> Delete {selectedLevelsToDelete.length} Selected Levels
+                        <Trash2 className="w-3.5 h-3.5" /> Delete ({selectedLevelsMulti.length})
                       </button>
                     </div>
                   )}
