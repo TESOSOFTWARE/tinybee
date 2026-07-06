@@ -24,12 +24,13 @@ interface GradeCardProps {
 }
 
 import { WORLDS_DATABASE, WorldConfig } from '@/data/worlds';
+import { APP_CONFIG } from '@/data/config';
 
 export default function SelectGradePage() {
   const [viewAllGrade, setViewAllGrade] = useState<GradeCardProps | null>(null);
   const [selectedSubject, setSelectedSubject] = useState<'math' | 'english'>('math');
   const [deletedWorldIds, setDeletedWorldIds] = useState<string[]>([]);
-  const [hiddenGradeIds, setHiddenGradeIds] = useState<string[]>([]);
+  const [hiddenGradeIds, setHiddenGradeIds] = useState<string[]>(APP_CONFIG.hiddenGradeIds);
   const [customWorlds, setCustomWorlds] = useState<{ [id: string]: WorldConfig }>({});
 
   useEffect(() => {
@@ -46,7 +47,7 @@ export default function SelectGradePage() {
     const savedHidden = localStorage.getItem('hidden_grade_ids');
     if (savedHidden) {
       try {
-        setHiddenGradeIds(JSON.parse(savedHidden));
+        setHiddenGradeIds(Array.from(new Set([...APP_CONFIG.hiddenGradeIds, ...JSON.parse(savedHidden)])));
       } catch (e) {}
     }
     const savedWorlds = localStorage.getItem('tinybee_worlds_database');

@@ -14,6 +14,8 @@ export async function POST(request: Request) {
     const videoQuestsPath = path.join(process.cwd(), 'src/data/video_quests.ts');
     const mathQuestionsPath = path.join(process.cwd(), 'src/data/questions.ts');
     const englishQuestionsPath = path.join(process.cwd(), 'src/data/english_questions.ts');
+    const worldsPath = path.join(process.cwd(), 'src/data/worlds.ts');
+    const configPath = path.join(process.cwd(), 'src/data/config.ts');
 
     const capitalize = (str: string) => {
       if (!str || typeof str !== 'string') return str;
@@ -117,6 +119,42 @@ export async function POST(request: Request) {
         content = content.substring(0, startIndex) + newPart + content.substring(endIndex);
         fs.writeFileSync(englishQuestionsPath, content);
         updatedFiles.push('english_questions.ts');
+      }
+    }
+    // 4. Update worlds.ts
+    if (data.worlds && fs.existsSync(worldsPath)) {
+      let content = fs.readFileSync(worldsPath, 'utf8');
+      const startTag = 'export const STATIC_WORLDS_DATABASE: { [id: string]: WorldConfig } = ';
+      const endTag = '};\n\n// Proxy to allow overrides from localStorage';
+      
+      const startIndex = content.indexOf(startTag);
+      const endIndex = content.indexOf(endTag);
+      
+      if (startIndex !== -1 && endIndex !== -1) {
+        const newPart = `${startTag}${JSON.stringify(data.worlds, null, 4)}`;
+        content = content.substring(0, startIndex) + newPart + content.substring(endIndex + 1);
+        fs.writeFileSync(worldsPath, content);
+        updatedFiles.push('worlds.ts');
+      }
+    }
+
+    // 5. Update config.ts
+    if (data.hiddenGradeIds && fs.existsSync(configPath)) {
+      let content = fs.readFileSync(configPath, 'utf8');
+      const startTag = 'export const APP_CONFIG = {';
+      const endTag = '};\n';
+      
+      const startIndex = content.indexOf(startTag);
+      const endIndex = content.indexOf(endTag);
+      
+      if (startIndex !== -1 && endIndex !== -1) {
+        const newPart = `export const APP_CONFIG = {\n  hiddenGradeIds: ${JSON.stringify(data.hiddenGradeIds, null, 2)}\n`;
+        content = content.substring(0, startIndex) + newPart + content.substring(endIndex);
+        fs.writeFileSync(configPath, content);
+        updatedFiles.push('config.ts');
+      } else {
+        fs.writeFileSync(configPath, `export const APP_CONFIG = {\n  hiddenGradeIds: ${JSON.stringify(data.hiddenGradeIds, null, 2)}\n};\n`);
+        updatedFiles.push('config.ts');
       }
     }
 

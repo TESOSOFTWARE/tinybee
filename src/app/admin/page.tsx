@@ -2198,10 +2198,19 @@ export default function AdminDashboardPage() {
     setIsSyncing(true);
     showNotification("Syncing content to codebase...");
     try {
+      const finalWorlds = { ...WORLDS_DATABASE, ...customWorlds };
+      deletedWorldIds.forEach(id => delete finalWorlds[id]);
+
       const res = await fetch('/api/save-content', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ videoQuests, mathQuestions, englishQuestions })
+        body: JSON.stringify({ 
+          videoQuests, 
+          mathQuestions, 
+          englishQuestions,
+          worlds: finalWorlds,
+          hiddenGradeIds
+        })
       });
       const result = await res.json();
       if (res.ok && result.success) {
