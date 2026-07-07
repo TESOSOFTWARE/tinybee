@@ -903,6 +903,12 @@ export default function AdminDashboardPage() {
       const savedHiddenGrades = localStorage.getItem('hidden_grade_ids');
       if (savedHiddenGrades) {
         try { setHiddenGradeIds(JSON.parse(savedHiddenGrades)); } catch (e) { }
+      } else {
+        import('@/data/config').then((mod) => {
+          if (mod.APP_CONFIG?.hiddenGradeIds) {
+            setHiddenGradeIds(mod.APP_CONFIG.hiddenGradeIds);
+          }
+        });
       }
     }
   }, []);
