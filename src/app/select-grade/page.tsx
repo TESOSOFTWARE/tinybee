@@ -47,7 +47,7 @@ export default function SelectGradePage() {
     const savedHidden = localStorage.getItem('hidden_grade_ids');
     if (savedHidden) {
       try {
-        setHiddenGradeIds(Array.from(new Set([...APP_CONFIG.hiddenGradeIds, ...JSON.parse(savedHidden)])));
+        setHiddenGradeIds(JSON.parse(savedHidden));
       } catch (e) {}
     }
     const savedWorlds = localStorage.getItem('tinybee_worlds_database');
@@ -56,6 +56,24 @@ export default function SelectGradePage() {
         setCustomWorlds(JSON.parse(savedWorlds));
       } catch (e) {}
     }
+    
+    const handleStorageChange = (e: StorageEvent) => {
+      if (e.key === 'hidden_grade_ids' && e.newValue) {
+        try { setHiddenGradeIds(JSON.parse(e.newValue)); } catch (err) {}
+      }
+      if (e.key === 'deleted_world_ids' && e.newValue) {
+        try { setDeletedWorldIds(JSON.parse(e.newValue)); } catch (err) {}
+      }
+      if (e.key === 'tinybee_worlds_database' && e.newValue) {
+        try { setCustomWorlds(JSON.parse(e.newValue)); } catch (err) {}
+      }
+      if (e.key === 'selected_arena_subject' && (e.newValue === 'math' || e.newValue === 'english')) {
+        setSelectedSubject(e.newValue as 'math' | 'english');
+      }
+    };
+
+    window.addEventListener('storage', handleStorageChange);
+    return () => window.removeEventListener('storage', handleStorageChange);
   }, []);
 
   const handleSubjectChange = (subject: 'math' | 'english') => {

@@ -899,17 +899,38 @@ function getVocabularyIcon(word: string, context?: string): string {
   return "";
 }
 
+const ipaCache: Record<string, string> = {};
+
 async function getPhraseIPA(phrase: string): Promise<string> {
   try {
     const words = phrase.split(/\s+/);
-    const ipas = await Promise.all(words.map(async (w) => {
+    const ipas = [];
+    for (const w of words) {
+      const cleanW = w.toLowerCase().replace(/[^a-z-]/g, '');
+      if (!cleanW) continue;
+      
+      if (ipaCache[cleanW] !== undefined) {
+        if (ipaCache[cleanW]) ipas.push(ipaCache[cleanW]);
+        continue;
+      }
+      
       try {
-        const res = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${encodeURIComponent(w)}`);
-        if (!res.ok) return "";
+        const res = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${encodeURIComponent(cleanW)}`);
+        if (!res.ok) {
+          ipaCache[cleanW] = "";
+          await new Promise(r => setTimeout(r, 150));
+          continue;
+        }
         const data = await res.json();
-        return data[0]?.phonetics?.find((p: any) => p.text)?.text || "";
-      } catch (e) { return ""; }
-    }));
+        const ipa = data[0]?.phonetic || data[0]?.phonetics?.find((p: any) => p.text)?.text || "";
+        ipaCache[cleanW] = ipa;
+        if (ipa) ipas.push(ipa);
+      } catch (e) {
+        ipaCache[cleanW] = "";
+      }
+      // Small delay to prevent rate limiting
+      await new Promise(r => setTimeout(r, 150));
+    }
     return ipas.filter(Boolean).join(' ');
   } catch (e) {
     return "";
@@ -1088,7 +1109,11 @@ async function generateQuestionForWord(word: string, choices: string[], transcri
   }
 
   const ipa = await getPhraseIPA(cleanWord);
-  const choiceIpas = await Promise.all(choices.map(c => getPhraseIPA(c)));
+  
+  const choiceIpas = [];
+  for (const c of choices) {
+    choiceIpas.push(await getPhraseIPA(c));
+  }
 
   if (dictEntry) {
     return {
@@ -1294,7 +1319,8 @@ export async function POST(request: Request) {
     const topicPool = TOPIC_WORDS[matchedTopic] || TOPIC_WORDS.general;
 
     // Generate dynamic matching questions
-    const questions = await Promise.all(words.map(async (word) => {
+    const questions = [];
+    for (const word of words) {
       const otherExtracted = words.filter(w => w.toLowerCase() !== word.toLowerCase());
       const wrongPool = topicPool.filter(w => w.toLowerCase() !== word.toLowerCase());
       const combinedWrongs = Array.from(new Set([...otherExtracted, ...wrongPool]));
@@ -1310,8 +1336,9 @@ export async function POST(request: Request) {
       }
 
       const choices = [word, ...selectedWrongs].sort(() => Math.random() - 0.5);
-      return await generateQuestionForWord(word, choices, transcriptText || '', imageSource || 'antigravity', imageIndex || 0);
-    }));
+      const q = await generateQuestionForWord(word, choices, transcriptText || '', imageSource || 'antigravity', imageIndex || 0);
+      questions.push(q);
+    }
 
     const missingWords = questions
       .filter(q => q.isMissingCustomIcon)
