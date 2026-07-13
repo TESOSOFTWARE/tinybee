@@ -2893,7 +2893,7 @@ export default function AdminDashboardPage() {
             )}
 
             <Button
-              variant="indigo"
+              variant="blue"
               size="sm"
               onClick={handleForceCloudSync}
               className="text-xs font-bold border border-indigo-200 bg-indigo-50 hover:bg-indigo-100 text-indigo-700 flex items-center gap-1.5 cursor-pointer shadow-sm"
