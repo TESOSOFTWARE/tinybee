@@ -7,6 +7,27 @@ import { Button } from '@/components/UI/Button';
 import { Card } from '@/components/UI/Card';
 import { getYouTubeEmbedUrl } from '@/data/video_quests';
 import { WorldConfig, WORLDS_DATABASE } from '@/data/worlds';
+import { setAppContent } from '@/lib/contentService';
+
+const syncStorage = (key: string, stringValue: string) => {
+  localStorage.setItem(key, stringValue);
+  const syncableKeys = [
+    'custom_video_quests',
+    'custom_english_questions',
+    'custom_math_questions',
+    'custom_worlds',
+    'deleted_world_ids',
+    'hidden_grade_ids'
+  ];
+  if (syncableKeys.includes(key)) {
+    try {
+      const parsed = JSON.parse(stringValue);
+      setAppContent(key, parsed).catch(err => console.error('Supabase sync error', err));
+    } catch (e) {
+      console.error(e);
+    }
+  }
+};
 
 const getYouTubeWatchUrl = (url: string) => {
   if (!url) return '';
@@ -845,7 +866,7 @@ export default function AdminDashboardPage() {
           });
           setVideoQuests(parsed);
           if (modified) {
-            localStorage.setItem(STORAGE_KEYS.videoQuests, JSON.stringify(parsed));
+            syncStorage(STORAGE_KEYS.videoQuests, JSON.stringify(parsed));
           }
         } catch (e) { }
       } else {
@@ -1107,7 +1128,7 @@ export default function AdminDashboardPage() {
               // Merge with existing queue, avoiding duplicates
               const mergedQueue = Array.from(new Set([...missingIconsQueue, ...newMissing]));
               setMissingIconsQueue(mergedQueue);
-              localStorage.setItem('tinybee_missing_icons', JSON.stringify(mergedQueue));
+              syncStorage('tinybee_missing_icons', JSON.stringify(mergedQueue));
             }
           }
         } catch (err) {
@@ -1157,7 +1178,7 @@ export default function AdminDashboardPage() {
       if (data.missingWords && data.missingWords.length > 0) {
         setMissingIconsQueue(prev => {
           const updated = Array.from(new Set([...prev, ...data.missingWords]));
-          localStorage.setItem('tinybee_missing_icons', JSON.stringify(updated));
+          syncStorage('tinybee_missing_icons', JSON.stringify(updated));
           return updated;
         });
       }
@@ -1361,7 +1382,7 @@ export default function AdminDashboardPage() {
       }
     }
 
-    localStorage.setItem(STORAGE_KEYS.videoQuests, JSON.stringify(updatedQuests));
+    syncStorage(STORAGE_KEYS.videoQuests, JSON.stringify(updatedQuests));
     setVideoQuests(updatedQuests);
     setScanImageProgress(prev => ({
       ...prev,
@@ -1398,7 +1419,7 @@ export default function AdminDashboardPage() {
 
       const missingArray = Array.from(allMissing);
       setMissingIconsQueue(missingArray);
-      localStorage.setItem('tinybee_missing_icons', JSON.stringify(missingArray));
+      syncStorage('tinybee_missing_icons', JSON.stringify(missingArray));
 
       showNotification(`Scan complete! Found ${missingArray.length} missing icons globally.`);
     } catch (e: any) {
@@ -1424,7 +1445,7 @@ export default function AdminDashboardPage() {
       const compactedQuests = compactQuests(updatedQuests, selectedGradeId, selectedWorldId);
 
       setVideoQuests(compactedQuests);
-      localStorage.setItem(STORAGE_KEYS.videoQuests, JSON.stringify(compactedQuests));
+      syncStorage(STORAGE_KEYS.videoQuests, JSON.stringify(compactedQuests));
       showNotification(`Deleted Level ${selectedLevelNum}.`);
       setSelectedLevelNum(null);
     }
@@ -1467,7 +1488,7 @@ export default function AdminDashboardPage() {
     if (selectedLevelNum === 1) updatedQuests[selectedGradeId as string] = newQuestObj;
 
     setVideoQuests(updatedQuests);
-    localStorage.setItem(STORAGE_KEYS.videoQuests, JSON.stringify(updatedQuests));
+    syncStorage(STORAGE_KEYS.videoQuests, JSON.stringify(updatedQuests));
     const worldLabel = selectedWorldId ? ` (${selectedWorldId})` : '';
     showNotification(`Saved: Grade ${selectedGradeId}${worldLabel} Level ${selectedLevelNum}!`);
   };
@@ -1565,7 +1586,7 @@ export default function AdminDashboardPage() {
 
     const compactedQuests = compactQuests(updatedQuests, selectedGradeId, selectedWorldId);
     setVideoQuests(compactedQuests);
-    localStorage.setItem(STORAGE_KEYS.videoQuests, JSON.stringify(compactedQuests));
+    syncStorage(STORAGE_KEYS.videoQuests, JSON.stringify(compactedQuests));
     
     // Automatically select the target level so the UI loads the dropped level's form
     setSelectedLevelNum(targetLvl);
@@ -1803,7 +1824,7 @@ export default function AdminDashboardPage() {
           if (questionsData.missingWords && questionsData.missingWords.length > 0) {
             setMissingIconsQueue(prev => {
               const updated = Array.from(new Set([...prev, ...questionsData.missingWords]));
-              localStorage.setItem('tinybee_missing_icons', JSON.stringify(updated));
+              syncStorage('tinybee_missing_icons', JSON.stringify(updated));
               return updated;
             });
           }
@@ -1854,7 +1875,7 @@ export default function AdminDashboardPage() {
       }
 
       setVideoQuests(updatedQuests);
-      localStorage.setItem(STORAGE_KEYS.videoQuests, JSON.stringify(updatedQuests));
+      syncStorage(STORAGE_KEYS.videoQuests, JSON.stringify(updatedQuests));
       showNotification("Bulk import completed successfully!");
 
       setBulkImportProgress(prev => ({
@@ -1923,7 +1944,7 @@ export default function AdminDashboardPage() {
       if (data.missingWords && data.missingWords.length > 0) {
         setMissingIconsQueue(prev => {
           const updated = Array.from(new Set([...prev, ...data.missingWords]));
-          localStorage.setItem('tinybee_missing_icons', JSON.stringify(updated));
+          syncStorage('tinybee_missing_icons', JSON.stringify(updated));
           return updated;
         });
       }
@@ -1985,7 +2006,7 @@ export default function AdminDashboardPage() {
       if (data.missingWords && data.missingWords.length > 0) {
         setMissingIconsQueue(prev => {
           const updated = Array.from(new Set([...prev, ...data.missingWords]));
-          localStorage.setItem('tinybee_missing_icons', JSON.stringify(updated));
+          syncStorage('tinybee_missing_icons', JSON.stringify(updated));
           return updated;
         });
       }
@@ -2059,7 +2080,7 @@ export default function AdminDashboardPage() {
       // Remove from missing queue if it was there
       setMissingIconsQueue(prev => {
         const newQueue = prev.filter(w => w !== word);
-        localStorage.setItem('tinybee_missing_icons', JSON.stringify(newQueue));
+        syncStorage('tinybee_missing_icons', JSON.stringify(newQueue));
         return newQueue;
       });
 
@@ -2130,11 +2151,11 @@ export default function AdminDashboardPage() {
     if (activeTab === 'math') {
       const updated = mathQuestions.filter(q => q.id !== qId);
       setMathQuestions(updated);
-      localStorage.setItem(STORAGE_KEYS.mathQuestions, JSON.stringify(updated));
+      syncStorage(STORAGE_KEYS.mathQuestions, JSON.stringify(updated));
     } else {
       const updated = englishQuestions.filter(q => q.id !== qId);
       setEnglishQuestions(updated);
-      localStorage.setItem(STORAGE_KEYS.englishQuestions, JSON.stringify(updated));
+      syncStorage(STORAGE_KEYS.englishQuestions, JSON.stringify(updated));
     }
     showNotification("Question deleted!");
   };
@@ -2157,11 +2178,11 @@ export default function AdminDashboardPage() {
       if (activeTab === 'math') {
         const updated = [questionForm, ...mathQuestions];
         setMathQuestions(updated);
-        localStorage.setItem(STORAGE_KEYS.mathQuestions, JSON.stringify(updated));
+        syncStorage(STORAGE_KEYS.mathQuestions, JSON.stringify(updated));
       } else {
         const updated = [questionForm, ...englishQuestions];
         setEnglishQuestions(updated);
-        localStorage.setItem(STORAGE_KEYS.englishQuestions, JSON.stringify(updated));
+        syncStorage(STORAGE_KEYS.englishQuestions, JSON.stringify(updated));
       }
       setIsAddingQuestion(false);
       showNotification("Question added!");
@@ -2169,11 +2190,11 @@ export default function AdminDashboardPage() {
       if (activeTab === 'math') {
         const updated = mathQuestions.map(q => q.id === editingQuestionId ? { ...questionForm } : q);
         setMathQuestions(updated);
-        localStorage.setItem(STORAGE_KEYS.mathQuestions, JSON.stringify(updated));
+        syncStorage(STORAGE_KEYS.mathQuestions, JSON.stringify(updated));
       } else {
         const updated = englishQuestions.map(q => q.id === editingQuestionId ? { ...questionForm } : q);
         setEnglishQuestions(updated);
-        localStorage.setItem(STORAGE_KEYS.englishQuestions, JSON.stringify(updated));
+        syncStorage(STORAGE_KEYS.englishQuestions, JSON.stringify(updated));
       }
       setEditingQuestionId(null);
       showNotification("Question updated!");
@@ -2198,6 +2219,27 @@ export default function AdminDashboardPage() {
     dlAnchorElem.setAttribute("download", `tinybee_custom_content_${Date.now()}.json`);
     dlAnchorElem.click();
     showNotification("Content exported as JSON!");
+  };
+
+  const handleForceCloudSync = async () => {
+    showNotification("Syncing existing data to cloud...");
+    const keys = [
+      STORAGE_KEYS.videoQuests,
+      STORAGE_KEYS.englishQuestions,
+      STORAGE_KEYS.mathQuestions,
+      STORAGE_KEYS.worlds,
+      'deleted_world_ids',
+      'hidden_grade_ids'
+    ];
+    let synced = 0;
+    for (const key of keys) {
+      const val = localStorage.getItem(key);
+      if (val) {
+        syncStorage(key, val);
+        synced++;
+      }
+    }
+    showNotification(`Successfully backed up ${synced} data stores to Supabase!`);
   };
 
   const handleSyncToCodebase = async () => {
@@ -2243,15 +2285,15 @@ export default function AdminDashboardPage() {
         const parsed = JSON.parse(event.target?.result as string);
         if (parsed.videoQuests) {
           setVideoQuests(parsed.videoQuests);
-          localStorage.setItem(STORAGE_KEYS.videoQuests, JSON.stringify(parsed.videoQuests));
+          syncStorage(STORAGE_KEYS.videoQuests, JSON.stringify(parsed.videoQuests));
         }
         if (parsed.mathQuestions) {
           setMathQuestions(parsed.mathQuestions);
-          localStorage.setItem(STORAGE_KEYS.mathQuestions, JSON.stringify(parsed.mathQuestions));
+          syncStorage(STORAGE_KEYS.mathQuestions, JSON.stringify(parsed.mathQuestions));
         }
         if (parsed.englishQuestions) {
           setEnglishQuestions(parsed.englishQuestions);
-          localStorage.setItem(STORAGE_KEYS.englishQuestions, JSON.stringify(parsed.englishQuestions));
+          syncStorage(STORAGE_KEYS.englishQuestions, JSON.stringify(parsed.englishQuestions));
         }
         showNotification("Content imported successfully! Reloading configuration...");
         setTimeout(() => window.location.reload(), 1200);
@@ -2269,7 +2311,7 @@ export default function AdminDashboardPage() {
 
     const updatedWorlds = { ...customWorlds, [worldForm.id]: worldForm as WorldConfig };
     setCustomWorlds(updatedWorlds);
-    localStorage.setItem(STORAGE_KEYS.worlds, JSON.stringify(updatedWorlds));
+    syncStorage(STORAGE_KEYS.worlds, JSON.stringify(updatedWorlds));
     setEditingWorldId(null);
     setIsAddingWorld(false);
     showNotification("World saved successfully!");
@@ -2283,7 +2325,7 @@ export default function AdminDashboardPage() {
     const updatedCustomWorlds = { ...customWorlds, [id]: updatedWorld };
     
     setCustomWorlds(updatedCustomWorlds);
-    localStorage.setItem(STORAGE_KEYS.worlds, JSON.stringify(updatedCustomWorlds));
+    syncStorage(STORAGE_KEYS.worlds, JSON.stringify(updatedCustomWorlds));
     showNotification(`World ${!currentIsHidden ? 'hidden' : 'visible'} successfully!`);
   };
 
@@ -2293,13 +2335,13 @@ export default function AdminDashboardPage() {
     // Add to deletedWorldIds list
     const updatedDeleted = [...deletedWorldIds, id];
     setDeletedWorldIds(updatedDeleted);
-    localStorage.setItem('deleted_world_ids', JSON.stringify(updatedDeleted));
+    syncStorage('deleted_world_ids', JSON.stringify(updatedDeleted));
     
     // Also remove from customWorlds
     const updatedCustom = { ...customWorlds };
     delete updatedCustom[id];
     setCustomWorlds(updatedCustom);
-    localStorage.setItem(STORAGE_KEYS.worlds, JSON.stringify(updatedCustom));
+    syncStorage(STORAGE_KEYS.worlds, JSON.stringify(updatedCustom));
     
     // Deselect if active
     if (selectedWorldId === id) {
@@ -2319,7 +2361,7 @@ export default function AdminDashboardPage() {
       showNotification(`Grade ${gradeKey === '0' || gradeKey === 'K' ? 'Kindergarten' : `Grade ${gradeKey}`} is now hidden from students.`);
     }
     setHiddenGradeIds(updatedHidden);
-    localStorage.setItem('hidden_grade_ids', JSON.stringify(updatedHidden));
+    syncStorage('hidden_grade_ids', JSON.stringify(updatedHidden));
   };
 
   const handleDropWorld = (worldId: string, targetGrade: string) => {
@@ -2335,7 +2377,7 @@ export default function AdminDashboardPage() {
 
     const updatedCustom = { ...customWorlds, [worldId]: updatedWorld };
     setCustomWorlds(updatedCustom);
-    localStorage.setItem(STORAGE_KEYS.worlds, JSON.stringify(updatedCustom));
+    syncStorage(STORAGE_KEYS.worlds, JSON.stringify(updatedCustom));
     showNotification(`Moved "${worldToMove.name}" to Grade ${targetGrade === 'K' ? 'K' : targetGrade}`);
   };
 
@@ -2485,7 +2527,7 @@ export default function AdminDashboardPage() {
 
     // 5. Update state and localStorage
     setVideoQuests(updatedQuests);
-    localStorage.setItem(STORAGE_KEYS.videoQuests, JSON.stringify(updatedQuests));
+    syncStorage(STORAGE_KEYS.videoQuests, JSON.stringify(updatedQuests));
     
     const worldLabel = newTopicId ? `World: ${newTopicId}` : '(none)';
     showNotification(`Moved quest to Grade ${newGrade} ${worldLabel} Level ${newLevelNum}!`);
@@ -2553,7 +2595,7 @@ export default function AdminDashboardPage() {
     }
 
     setVideoQuests(updatedQuests);
-    localStorage.setItem(STORAGE_KEYS.videoQuests, JSON.stringify(updatedQuests));
+    syncStorage(STORAGE_KEYS.videoQuests, JSON.stringify(updatedQuests));
     setSelectedQuestKeys([]);
     
     if (failedCount > 0) {
@@ -2672,11 +2714,11 @@ export default function AdminDashboardPage() {
 
     if (organizedCount > 0) {
       setVideoQuests(updatedQuests);
-      localStorage.setItem(STORAGE_KEYS.videoQuests, JSON.stringify(updatedQuests));
+      syncStorage(STORAGE_KEYS.videoQuests, JSON.stringify(updatedQuests));
       
       if (newWorldsCount > 0) {
         setCustomWorlds(localCustomWorlds);
-        localStorage.setItem(STORAGE_KEYS.worlds, JSON.stringify(localCustomWorlds));
+        syncStorage(STORAGE_KEYS.worlds, JSON.stringify(localCustomWorlds));
       }
 
       showNotification(
@@ -2762,7 +2804,7 @@ export default function AdminDashboardPage() {
     const compactedQuests = compactQuests(updatedQuests, grade, topicId);
 
     setVideoQuests(compactedQuests);
-    localStorage.setItem(STORAGE_KEYS.videoQuests, JSON.stringify(compactedQuests));
+    syncStorage(STORAGE_KEYS.videoQuests, JSON.stringify(compactedQuests));
     if (selectedLevelNum !== null) setSelectedLevelNum(null);
     showNotification(`Deleted quest: Grade ${grade}, Level ${levelNum}.`);
   };
@@ -2849,6 +2891,15 @@ export default function AdminDashboardPage() {
                 <Save className="w-3.5 h-3.5" /> {isSyncing ? "Syncing..." : "Sync to Codebase"}
               </Button>
             )}
+
+            <Button
+              variant="indigo"
+              size="sm"
+              onClick={handleForceCloudSync}
+              className="text-xs font-bold border border-indigo-200 bg-indigo-50 hover:bg-indigo-100 text-indigo-700 flex items-center gap-1.5 cursor-pointer shadow-sm"
+            >
+              <Globe className="w-3.5 h-3.5" /> Backup to Cloud
+            </Button>
 
             <Button
               variant="gray"
@@ -3282,7 +3333,7 @@ export default function AdminDashboardPage() {
                         onClick={() => {
                           const compacted = compactQuests({ ...videoQuests }, selectedGradeId, selectedWorldId);
                           setVideoQuests(compacted);
-                          localStorage.setItem(STORAGE_KEYS.videoQuests, JSON.stringify(compacted));
+                          syncStorage(STORAGE_KEYS.videoQuests, JSON.stringify(compacted));
                           showNotification('Levels compacted successfully!');
                           if (selectedLevelNum !== null) setSelectedLevelNum(null);
                         }}
@@ -3416,7 +3467,7 @@ export default function AdminDashboardPage() {
                           });
                           if (toggledCount > 0) {
                             setVideoQuests(updatedQuests);
-                            localStorage.setItem(STORAGE_KEYS.videoQuests, JSON.stringify(updatedQuests));
+                            syncStorage(STORAGE_KEYS.videoQuests, JSON.stringify(updatedQuests));
                             showNotification(`Toggled visibility for ${toggledCount} level(s).`);
                           }
                           setIsLevelMultiSelectMode(false);
@@ -3444,7 +3495,7 @@ export default function AdminDashboardPage() {
                             const compactedQuests = compactQuests(updatedQuests, selectedGradeId, selectedWorldId);
 
                             setVideoQuests(compactedQuests);
-                            localStorage.setItem(STORAGE_KEYS.videoQuests, JSON.stringify(compactedQuests));
+                            syncStorage(STORAGE_KEYS.videoQuests, JSON.stringify(compactedQuests));
                             showNotification(`Deleted ${selectedLevelsMulti.length} level(s).`);
                             setIsLevelMultiSelectMode(false);
                             setSelectedLevelsMulti([]);
@@ -3590,7 +3641,7 @@ export default function AdminDashboardPage() {
                         onChange={(e) => {
                           const val = e.target.value as 'auto' | 'ai' | 'manual';
                           setExtractionMethod(val);
-                          localStorage.setItem('tinybee_extraction_method', val);
+                          syncStorage('tinybee_extraction_method', val);
                         }}
                         className="text-[10px] font-bold text-slate-600 bg-slate-100 rounded px-1.5 py-1 border border-slate-200 outline-none cursor-pointer"
                       >
@@ -3613,7 +3664,7 @@ export default function AdminDashboardPage() {
                         onChange={(e) => {
                           const val = e.target.value as 'gemini' | 'openai';
                           setAiProvider(val);
-                          localStorage.setItem('tinybee_ai_provider', val);
+                          syncStorage('tinybee_ai_provider', val);
                         }}
                         className="text-[10px] font-bold text-slate-600 bg-white rounded px-2 py-1.5 border border-slate-200 outline-none cursor-pointer flex-1"
                       >
@@ -5495,7 +5546,7 @@ export default function AdminDashboardPage() {
                             onChange={(e) => {
                               const val = e.target.value as 'gemini' | 'openai';
                               setAiProvider(val);
-                              localStorage.setItem('tinybee_ai_provider', val);
+                              syncStorage('tinybee_ai_provider', val);
                             }}
                             className="w-full bg-white border-2 border-slate-200 text-slate-700 px-3 py-2 rounded-xl text-xs font-bold outline-none focus:border-indigo-500 cursor-pointer shadow-sm"
                           >
@@ -5708,7 +5759,7 @@ export default function AdminDashboardPage() {
                   onChange={(e) => {
                     const val = e.target.value as 'gemini' | 'openai';
                     setAiProvider(val);
-                    localStorage.setItem('tinybee_ai_provider', val);
+                    syncStorage('tinybee_ai_provider', val);
                   }}
                   className="w-full bg-white border-2 border-slate-200 text-slate-700 px-3 py-2 rounded-xl text-sm font-bold outline-none focus:border-indigo-500 cursor-pointer shadow-sm"
                 >
@@ -5725,7 +5776,7 @@ export default function AdminDashboardPage() {
                   value={aiApiKey}
                   onChange={(e) => {
                     setAiApiKey(e.target.value);
-                    localStorage.setItem('tinybee_ai_api_key', e.target.value);
+                    syncStorage('tinybee_ai_api_key', e.target.value);
                   }}
                   className="w-full bg-white border-2 border-slate-200 text-slate-700 px-3 py-2 rounded-xl text-sm outline-none focus:border-indigo-500 shadow-sm"
                 />

@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { GameStateProvider } from "@/hooks/useGameState";
+import { SupabaseSyncProvider } from "@/components/SupabaseSyncProvider";
 
 export const metadata: Metadata = {
   title: "TinyBee | Gamified Math Learning for Kids",
@@ -25,7 +26,9 @@ export default function RootLayout({
     <html lang="en" className="h-full select-none">
       <body className="min-h-full flex flex-col bg-playful-dots text-slate-800 antialiased selection:bg-academy-blue/20">
         <GameStateProvider>
-          {children}
+          <SupabaseSyncProvider>
+            {children}
+          </SupabaseSyncProvider>
         </GameStateProvider>
       </body>
     </html>
