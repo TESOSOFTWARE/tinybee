@@ -14,7 +14,9 @@ export const SupabaseSyncProvider: React.FC<{ children: React.ReactNode }> = ({ 
           'custom_worlds',
           'custom_math_questions',
           'custom_english_questions',
-          'custom_video_quests'
+          'custom_video_quests',
+          'deleted_world_ids',
+          'hidden_grade_ids'
         ];
 
         // Fetch all data concurrently
