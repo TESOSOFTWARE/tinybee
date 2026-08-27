@@ -106,7 +106,7 @@ function RacingGameContent() {
     const topicName = worldInfo.topicId;
 
     const filtered = getQuestionsForGame(
-      worldInfo.subject || 'english',
+      worldInfo.subject || 'math',
       gradeVal,
       levelId,
       topicName,

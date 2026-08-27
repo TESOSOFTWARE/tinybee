@@ -77,7 +77,7 @@ function BattleContent() {
 
     // Select questions based on subject, grade, level
     const matched = getQuestionsForGame(
-      world.subject || 'english',
+      world.subject || 'math',
       Number(world.grade),
       parseInt(levelId),
       world.topicId,

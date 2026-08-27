@@ -2,17 +2,14 @@
 
 import React, { useEffect, useRef, Suspense } from 'react';
 import Link from 'next/link';
-import { useSearchParams, useRouter } from 'next/navigation';
+import { useSearchParams } from 'next/navigation';
 import { useGameState } from '@/hooks/useGameState';
-import { Button } from '@/components/UI/Button';
-import { Card } from '@/components/UI/Card';
-import { ArrowRight, RotateCcw, Map, Star } from 'lucide-react';
+import { ArrowRight, RotateCcw, Map as MapIcon, Star } from 'lucide-react';
 import confetti from 'canvas-confetti';
 
 function ResultsContent() {
   const searchParams = useSearchParams();
-  const router = useRouter();
-  const { addXP, addCoins, completeLevel, state, updateStreak } = useGameState();
+  const { addXP, addCoins, completeLevel, updateStreak } = useGameState();
 
   const worldId = searchParams.get('worldId') || 'g1-addition';
   const levelId = searchParams.get('levelId') || '1';
@@ -32,7 +29,7 @@ function ResultsContent() {
   // Calculate Rewards
   let stars = 0;
   let summaryMessage = "Awesome Effort! Let's try again! 🌟";
-  let summarySubtitle = "Mistakes are how we learn. Keep practicing to improve your skills!";
+  let summarySubtitle = "Mistakes are how we learn. Keep practicing to improve your magical spells!";
   let bannerEmoji = "💪";
 
   if (mode === 'racing') {
@@ -56,7 +53,7 @@ function ResultsContent() {
     if (accuracy >= 90) {
       stars = 3;
       summaryMessage = "Perfect Defense! Ultimate General! 👑";
-      summarySubtitle = "You answered every question flawlessly! Your base is completely safe!";
+      summarySubtitle = "You answered every question flawlessly! Your magical base is completely safe!";
       bannerEmoji = "🏰";
     } else if (accuracy >= 70) {
       stars = 2;
@@ -101,64 +98,68 @@ function ResultsContent() {
     } else if (accuracy >= 50) {
       stars = 1;
       summaryMessage = "Great Job, Brave Apprentice! ⚔️";
-      summarySubtitle = "You stood your ground! A bit more training will unlock 3-star legendary stats.";
+      summarySubtitle = "You stood your ground! A bit more training will unlock 3-star legendary spell stats.";
       bannerEmoji = "⚔️";
     }
   }
 
   const earnedCoins = correctCount * 10;
-  // XP = correct answers * 20 + perfect combo bonus (+30 XP if 100% accuracy)
   const earnedXP = correctCount * 20 + (accuracy === 100 ? 30 : 0);
 
   useEffect(() => {
-    // Prevent double state updates due to React 18 double-effects in development
     if (hasSavedRef.current) return;
     hasSavedRef.current = true;
 
-    // Trigger state changes
     addCoins(earnedCoins);
-    const { leveledUp, newLevel } = addXP(earnedXP);
+    addXP(earnedXP);
     completeLevel(worldId, levelId, stars, accuracy, timeSpent, correctCount, totalCount);
     updateStreak();
 
-    // Trigger confetti explosion on successful completion (>= 50% accuracy)
     if (accuracy >= 50) {
-      // Primary splash
       confetti({
-        particleCount: 100,
-        spread: 70,
+        particleCount: 120,
+        spread: 80,
         origin: { y: 0.6 }
       });
 
-      // Side fireworks splash
       setTimeout(() => {
         confetti({
-          particleCount: 50,
+          particleCount: 60,
           angle: 60,
-          spread: 55,
+          spread: 60,
           origin: { x: 0 }
         });
       }, 250);
       
       setTimeout(() => {
         confetti({
-          particleCount: 50,
+          particleCount: 60,
           angle: 120,
-          spread: 55,
+          spread: 60,
           origin: { x: 1 }
         });
-      }, 400);
+      }, 450);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const nextLevelId = parseInt(levelId) + 1;
-  const hasNextLevel = nextLevelId <= 5;
+  const hasNextLevel = nextLevelId <= 10;
 
   return (
-    <div className="min-h-screen bg-playful-dots py-6 px-4 flex flex-col justify-between select-none">
+    <div className="min-h-screen font-baloo text-slate-800 select-none relative py-8 px-4 flex flex-col justify-between items-center">
+      {/* Vibrant Background Synchronized with Home Page */}
+      <div 
+        aria-hidden="true" 
+        className="fixed inset-0 bg-cover bg-center -z-10" 
+        style={{
+          backgroundImage: 'linear-gradient(180deg, rgba(255,255,255,0.3), rgba(255,255,255,0.5)), url(/home-cards/background.jpg)',
+          backgroundColor: '#cdeafd'
+        }}
+      ></div>
       
-      <header className="max-w-md w-full mx-auto mb-4 text-center">
-        <span className="text-sm font-bold text-academy-blue uppercase tracking-widest">
+      <header className="max-w-md w-full text-center mb-2 z-10 animate-fade-in">
+        <span className="text-xs sm:text-sm font-black text-amber-600 uppercase tracking-widest bg-amber-100 border border-amber-300 px-4 py-1 rounded-full inline-block shadow-xs mb-2">
           {mode === 'racing' 
             ? 'Grand Prix Completed' 
             : mode === 'tower-defense' 
@@ -167,7 +168,7 @@ function ResultsContent() {
             ? 'Tug of War Match Ended'
             : 'Battle Completed'}
         </span>
-        <h1 className="text-2xl font-black text-slate-800 tracking-tight">
+        <h1 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight drop-shadow-sm">
           {mode === 'racing' 
             ? '🏎️ RACING REPORT' 
             : mode === 'tower-defense' 
@@ -178,90 +179,93 @@ function ResultsContent() {
         </h1>
       </header>
 
-      {/* Main Results Card */}
-      <main className="max-w-md w-full mx-auto flex-grow flex flex-col justify-center gap-6">
-        <Card padding="lg" className="text-center space-y-6 animate-pop-in">
+      {/* Main Results Celebratory 3D Card */}
+      <main className="max-w-md w-full flex-grow flex flex-col justify-center gap-6 z-10 my-4">
+        <div className="bg-white rounded-[3rem] border-[5px] border-amber-400 shadow-[0_16px_0_0_#d97706] p-6 sm:p-8 text-center space-y-6 animate-pop-in relative overflow-hidden">
           
           {/* Trophy / Banner */}
-          <div className="mx-auto w-20 h-20 bg-yellow-100 border-4 border-yellow-300 rounded-full flex items-center justify-center text-4xl shadow-md animate-bounce-slow">
+          <div className="mx-auto w-24 h-24 bg-gradient-to-b from-amber-100 to-amber-200 border-4 border-amber-400 rounded-3xl flex items-center justify-center text-5xl shadow-[0_6px_0_0_#d97706] animate-bounce-slow">
             {bannerEmoji}
           </div>
 
           <div className="space-y-1">
-            <h2 className="text-2xl font-black text-slate-800">{summaryMessage}</h2>
-            <p className="text-xs text-slate-500 font-medium leading-relaxed px-4">{summarySubtitle}</p>
+            <h2 className="text-2xl sm:text-3xl font-black text-slate-900 leading-tight">{summaryMessage}</h2>
+            <p className="text-sm sm:text-base text-slate-600 font-bold leading-relaxed px-2">{summarySubtitle}</p>
           </div>
 
           {/* Gold Stars Display */}
-          <div className="flex justify-center gap-2 py-2">
+          <div className="flex justify-center gap-3 py-2 bg-amber-50/50 rounded-2xl border-2 border-amber-200/60 p-3">
             {[1, 2, 3].map((star) => (
               <Star
                 key={`star-result-${star}`}
-                className={`w-12 h-12 stroke-[2px] transition-all duration-500 ${
+                className={`w-14 h-14 stroke-[2.5px] transition-all duration-500 ${
                   star <= stars
-                    ? 'text-yellow-400 fill-yellow-400 scale-110 drop-shadow-md animate-pulse-slow'
-                    : 'text-slate-200'
+                    ? 'text-amber-400 fill-amber-400 scale-110 drop-shadow-md animate-pulse-slow'
+                    : 'text-slate-200 stroke-slate-300'
                 }`}
               />
             ))}
           </div>
 
           {/* Rewards Grid */}
-          <div className="grid grid-cols-2 gap-4 bg-slate-50 p-4 rounded-2xl border-2 border-slate-200 shadow-inner">
-            <div className="text-center">
-              <span className="text-xs font-bold text-slate-400 uppercase">XP Gained</span>
-              <p className="text-2xl font-black text-amber-500 mt-0.5">+{earnedXP} XP</p>
+          <div className="grid grid-cols-2 gap-4">
+            <div className="bg-amber-50 border-4 border-amber-300 p-4 rounded-2xl shadow-[0_6px_0_0_#fde68a] transform hover:scale-105 transition-transform">
+              <span className="text-xs font-black text-amber-800 uppercase tracking-wider block">✨ XP Gained</span>
+              <p className="text-2xl sm:text-3xl font-black text-amber-600 mt-1">+{earnedXP} <span className="text-sm">XP</span></p>
             </div>
-            <div className="text-center">
-              <span className="text-xs font-bold text-slate-400 uppercase">Coins Earned</span>
-              <p className="text-2xl font-black text-yellow-500 mt-0.5">+{earnedCoins} 🪙</p>
+            <div className="bg-emerald-50 border-4 border-emerald-300 p-4 rounded-2xl shadow-[0_6px_0_0_#a7f3d0] transform hover:scale-105 transition-transform">
+              <span className="text-xs font-black text-emerald-800 uppercase tracking-wider block">🪙 Coins Earned</span>
+              <p className="text-2xl sm:text-3xl font-black text-emerald-600 mt-1">+{earnedCoins}</p>
             </div>
           </div>
 
           {/* Stats breakdown */}
-          <div className="grid grid-cols-2 gap-2 text-sm font-extrabold text-slate-600">
-            <div className="flex items-center justify-between border-r-2 border-slate-100 px-3">
-              <span>🎯 Accuracy:</span>
-              <span className="text-slate-800 font-black">{accuracy}%</span>
+          <div className="grid grid-cols-2 gap-2 text-sm sm:text-base font-black text-slate-700 bg-slate-100 p-3 rounded-2xl border-2 border-slate-200">
+            <div className="flex items-center justify-between border-r-2 border-slate-200 px-3">
+              <span className="text-slate-500 font-bold">🎯 Accuracy:</span>
+              <span className="text-indigo-600">{accuracy}%</span>
             </div>
             <div className="flex items-center justify-between px-3">
-              <span>⏱️ Time:</span>
-              <span className="text-slate-800 font-black">{timeSpent}s</span>
+              <span className="text-slate-500 font-bold">⏱️ Time:</span>
+              <span className="text-rose-600">{timeSpent}s</span>
             </div>
           </div>
-        </Card>
+        </div>
 
-        {/* Navigation CTAs */}
-        <div className="flex flex-col gap-3 animate-slide-up">
+        {/* Navigation Tactile 3D CTAs */}
+        <div className="flex flex-col gap-4 animate-slide-up mt-2">
           {accuracy >= 50 && hasNextLevel ? (
             <Link href={`/${mode}?worldId=${worldId}&levelId=${nextLevelId}`} className="w-full">
-              <Button variant="green" size="lg" fullWidth className="text-xl uppercase tracking-wider">
-                {mode === 'racing' 
+              <button className="w-full py-4 px-6 rounded-[1.6rem] font-black text-lg sm:text-xl bg-emerald-500 hover:bg-emerald-400 text-white border-4 border-emerald-300 shadow-[0_8px_0_0_#047857] active:translate-y-2 active:shadow-none transition-all flex items-center justify-center gap-2 cursor-pointer uppercase tracking-wider">
+                <span>{mode === 'racing' 
                   ? 'Next Race' 
                   : mode === 'tower-defense' 
                   ? 'Next Defense' 
                   : mode === 'tug-of-war'
                   ? 'Next Match'
-                  : 'Next Battle'} <ArrowRight className="ml-1 w-5 h-5" />
-              </Button>
+                  : 'Next Battle'}</span>
+                <ArrowRight className="w-6 h-6 stroke-[3]" />
+              </button>
             </Link>
           ) : null}
 
           <Link href={`/${mode}?worldId=${worldId}&levelId=${levelId}`} className="w-full">
-            <Button variant="blue" size="lg" fullWidth className="text-lg">
-              <RotateCcw className="mr-1 w-4 h-4" /> Practice Again
-            </Button>
+            <button className="w-full py-3.5 px-6 rounded-[1.4rem] font-black text-base sm:text-lg bg-sky-500 hover:bg-sky-400 text-white border-4 border-sky-300 shadow-[0_6px_0_0_#0369a1] active:translate-y-1.5 active:shadow-none transition-all flex items-center justify-center gap-2 cursor-pointer uppercase tracking-wider">
+              <RotateCcw className="w-5 h-5 stroke-[3]" />
+              <span>Practice Again</span>
+            </button>
           </Link>
 
           <Link href={`/world-map?worldId=${worldId}`} className="w-full">
-            <Button variant="gray" size="lg" fullWidth className="text-lg">
-              <Map className="mr-1 w-4 h-4" /> Back to World Map
-            </Button>
+            <button className="w-full py-3 px-6 rounded-[1.4rem] font-black text-sm sm:text-base bg-white hover:bg-slate-50 text-slate-700 border-4 border-slate-300 shadow-[0_5px_0_0_#cbd5e1] active:translate-y-1 active:shadow-none transition-all flex items-center justify-center gap-2 cursor-pointer uppercase tracking-wider">
+              <MapIcon className="w-5 h-5 text-slate-500 stroke-[3]" />
+              <span>Back to World Map</span>
+            </button>
           </Link>
         </div>
       </main>
 
-      <footer className="mt-6 py-2 text-center text-[10px] font-bold text-slate-400 uppercase tracking-widest">
+      <footer className="mt-8 py-2 text-center text-xs font-black text-amber-800/70 uppercase tracking-widest z-10">
         👑 Coins can be used to unlock mythical pets in the backpack shop!
       </footer>
     </div>
@@ -271,19 +275,18 @@ function ResultsContent() {
 export default function ResultsPage() {
   return (
     <Suspense fallback={
-      <div className="min-h-screen flex items-center justify-center bg-playful-dots">
+      <div className="min-h-screen flex items-center justify-center bg-amber-50 font-baloo">
         <div className="text-center space-y-4">
-          <span className="text-4xl animate-bounce inline-block">🏆</span>
-          <p className="text-lg font-bold text-slate-500 font-sans">Compiling Battle Report...</p>
+          <span className="text-6xl animate-bounce-slow inline-block">🏆</span>
+          <p className="text-xl font-black text-slate-700">Compiling Battle Report...</p>
         </div>
       </div>
     }>
-      <WorldMapContentWrapper />
+      <ResultsContentWrapper />
     </Suspense>
   );
 }
 
-// Rename Content component to prevent conflicts or keep it clean:
-function WorldMapContentWrapper() {
+function ResultsContentWrapper() {
   return <ResultsContent />;
 }

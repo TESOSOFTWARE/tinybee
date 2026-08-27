@@ -2,9 +2,10 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Card } from '@/components/UI/Card';
-import { Button } from '@/components/UI/Button';
-import { ArrowLeft, Lock, ShieldAlert, X, Sparkles, BookOpen, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ArrowLeft, Lock, X, Sparkles, ChevronLeft, ChevronRight } from 'lucide-react';
+
+import { WORLDS_DATABASE, WorldConfig } from '@/data/worlds';
+import { APP_CONFIG } from '@/data/config';
 
 interface Topic {
   name: string;
@@ -22,9 +23,6 @@ interface GradeCardProps {
   topics: Topic[];
   isLocked?: boolean;
 }
-
-import { WORLDS_DATABASE, WorldConfig } from '@/data/worlds';
-import { APP_CONFIG } from '@/data/config';
 
 export default function SelectGradePage() {
   const [viewAllGrade, setViewAllGrade] = useState<GradeCardProps | null>(null);
@@ -89,7 +87,6 @@ export default function SelectGradePage() {
     }
   };
 
-  // Helper to group worlds by grade
   const getGradesList = (subject: 'math' | 'english'): GradeCardProps[] => {
     const allWorlds = { ...WORLDS_DATABASE, ...customWorlds };
     const worlds = Object.values(allWorlds).filter(w => {
@@ -104,7 +101,6 @@ export default function SelectGradePage() {
     });
     const gradesMap: { [key: string]: GradeCardProps } = {};
 
-    // Define standard grade titles and descriptions
     const gradeInfo: { [key: string]: { title: string, description: string } } = {
       'K': {
         title: "Kindergarten - Novice",
@@ -202,13 +198,12 @@ export default function SelectGradePage() {
         name: world.name,
         worldId: world.id,
         icon: world.emoji,
-        bg: world.bgStyle || "bg-slate-50 border-slate-300 hover:border-slate-400",
+        bg: world.bgStyle || "bg-slate-50 border-slate-300",
         text: world.textStyle || "text-slate-900",
         badge: world.badge
       });
     });
 
-    // Sort by grade number (K first, then 1, 2, ...)
     return Object.values(gradesMap).sort((a, b) => {
       const aNum = a.gradeNum === 'K' ? 0 : Number(a.gradeNum);
       const bNum = b.gradeNum === 'K' ? 0 : Number(b.gradeNum);
@@ -218,8 +213,93 @@ export default function SelectGradePage() {
 
   const gradesList = getGradesList(selectedSubject);
 
+  const GRADE_THEMES = [
+    {
+      card: "bg-white border-4 border-emerald-400 shadow-[0_10px_0_0_#10b981] rounded-[2.2rem]",
+      badge: "bg-emerald-500 text-white border-4 border-emerald-200 shadow-[0_4px_0_0_#047857]",
+      viewAllBtn: "bg-emerald-50 text-emerald-700 border-2 border-emerald-400 hover:bg-emerald-500 hover:text-white shadow-[0_4px_0_0_#10b981] active:translate-y-1 active:shadow-none",
+      headerBorder: "border-b-2 border-emerald-100",
+      textColor: "text-emerald-950",
+      descColor: "text-emerald-700"
+    },
+    {
+      card: "bg-white border-4 border-sky-400 shadow-[0_10px_0_0_#0ea5e9] rounded-[2.2rem]",
+      badge: "bg-sky-500 text-white border-4 border-sky-200 shadow-[0_4px_0_0_#0369a1]",
+      viewAllBtn: "bg-sky-50 text-sky-700 border-2 border-sky-400 hover:bg-sky-500 hover:text-white shadow-[0_4px_0_0_#0ea5e9] active:translate-y-1 active:shadow-none",
+      headerBorder: "border-b-2 border-sky-100",
+      textColor: "text-sky-950",
+      descColor: "text-sky-700"
+    },
+    {
+      card: "bg-white border-4 border-purple-400 shadow-[0_10px_0_0_#a855f7] rounded-[2.2rem]",
+      badge: "bg-purple-500 text-white border-4 border-purple-200 shadow-[0_4px_0_0_#6b21a8]",
+      viewAllBtn: "bg-purple-50 text-purple-700 border-2 border-purple-400 hover:bg-purple-500 hover:text-white shadow-[0_4px_0_0_#a855f7] active:translate-y-1 active:shadow-none",
+      headerBorder: "border-b-2 border-purple-100",
+      textColor: "text-purple-950",
+      descColor: "text-purple-700"
+    },
+    {
+      card: "bg-white border-4 border-amber-400 shadow-[0_10px_0_0_#f59e0b] rounded-[2.2rem]",
+      badge: "bg-amber-500 text-white border-4 border-amber-200 shadow-[0_4px_0_0_#b45309]",
+      viewAllBtn: "bg-amber-50 text-amber-800 border-2 border-amber-400 hover:bg-amber-500 hover:text-white shadow-[0_4px_0_0_#f59e0b] active:translate-y-1 active:shadow-none",
+      headerBorder: "border-b-2 border-amber-100",
+      textColor: "text-amber-950",
+      descColor: "text-amber-800"
+    },
+    {
+      card: "bg-white border-4 border-rose-400 shadow-[0_10px_0_0_#f43f5e] rounded-[2.2rem]",
+      badge: "bg-rose-500 text-white border-4 border-rose-200 shadow-[0_4px_0_0_#be123c]",
+      viewAllBtn: "bg-rose-50 text-rose-700 border-2 border-rose-400 hover:bg-rose-500 hover:text-white shadow-[0_4px_0_0_#f43f5e] active:translate-y-1 active:shadow-none",
+      headerBorder: "border-b-2 border-rose-100",
+      textColor: "text-rose-950",
+      descColor: "text-rose-700"
+    },
+  ];
+
+  const TOPIC_PALETTES = [
+    {
+      box: "bg-[#eff6ff] border-[3px] border-[#3b82f6] shadow-[0_6px_0_0_#3b82f6] group-hover:shadow-[0_10px_0_0_#3b82f6] text-[#1e40af]",
+      badgeBg: "bg-[#dbeafe] text-[#1d4ed8] border border-[#93c5fd]",
+      playBtn: "bg-[#3b82f6] text-white shadow-[0_3px_0_0_#1d4ed8]"
+    },
+    {
+      box: "bg-[#f0fdf4] border-[3px] border-[#22c55e] shadow-[0_6px_0_0_#22c55e] group-hover:shadow-[0_10px_0_0_#22c55e] text-[#15803d]",
+      badgeBg: "bg-[#dcfce7] text-[#15803d] border border-[#86efac]",
+      playBtn: "bg-[#22c55e] text-white shadow-[0_3px_0_0_#15803d]"
+    },
+    {
+      box: "bg-[#fffbeb] border-[3px] border-[#f59e0b] shadow-[0_6px_0_0_#f59e0b] group-hover:shadow-[0_10px_0_0_#f59e0b] text-[#92400e]",
+      badgeBg: "bg-[#fef3c7] text-[#b45309] border border-[#fde68a]",
+      playBtn: "bg-[#f59e0b] text-white shadow-[0_3px_0_0_#b45309]"
+    },
+    {
+      box: "bg-[#faf5ff] border-[3px] border-[#a855f7] shadow-[0_6px_0_0_#a855f7] group-hover:shadow-[0_10px_0_0_#a855f7] text-[#6b21a8]",
+      badgeBg: "bg-[#f3e8ff] text-[#7e22ce] border border-[#d8b4fe]",
+      playBtn: "bg-[#a855f7] text-white shadow-[0_3px_0_0_#7e22ce]"
+    },
+    {
+      box: "bg-[#fff1f2] border-[3px] border-[#f43f5e] shadow-[0_6px_0_0_#f43f5e] group-hover:shadow-[0_10px_0_0_#f43f5e] text-[#9f1239]",
+      badgeBg: "bg-[#ffe4e6] text-[#be123c] border border-[#fda4af]",
+      playBtn: "bg-[#f43f5e] text-white shadow-[0_3px_0_0_#be123c]"
+    },
+    {
+      box: "bg-[#ecfeff] border-[3px] border-[#06b6d4] shadow-[0_6px_0_0_#06b6d4] group-hover:shadow-[0_10px_0_0_#06b6d4] text-[#0e7490]",
+      badgeBg: "bg-[#cffafe] text-[#0e7490] border border-[#67e8f9]",
+      playBtn: "bg-[#06b6d4] text-white shadow-[0_3px_0_0_#0e7490]"
+    }
+  ];
+
   return (
-    <div className="min-h-screen bg-playful-dots py-6 px-4 flex flex-col select-none">
+    <div className="relative min-h-screen font-baloo text-[#38345c] select-none flex flex-col">
+      {/* Background with overlay */}
+      <div 
+        aria-hidden="true" 
+        className="fixed inset-0 bg-cover bg-center -z-10" 
+        style={{
+          backgroundImage: 'linear-gradient(180deg, rgba(255,255,255,0.3), rgba(255,255,255,0.5)), url(/home-cards/background.jpg)',
+          backgroundColor: '#cdeafd'
+        }}
+      ></div>
 
       {/* Scrollbar hiding styles */}
       <style dangerouslySetInnerHTML={{
@@ -233,42 +313,49 @@ export default function SelectGradePage() {
         }
       `}} />
 
-      {/* Back navigation header */}
-      <header className="max-w-4xl w-full mx-auto mb-6 flex items-center justify-between">
-        <Link href="/">
-          <Button variant="gray" size="sm" className="flex items-center gap-1">
-            <ArrowLeft className="w-4 h-4" /> Home
-          </Button>
-        </Link>
-        <h1 className="text-xl md:text-2xl font-black text-slate-800 tracking-tight">
-          🧙‍♂️ SELECT YOUR ARENA
-        </h1>
-        <div className="w-16"></div> {/* Spacer to keep header title centered */}
+      {/* Header */}
+      <header className="border-b border-white/40 sticky top-0 z-20 bg-white/80 backdrop-blur-md shadow-sm">
+        <div className="mx-auto max-w-[100rem] px-4 sm:px-6 lg:px-8 h-14 flex items-center justify-between">
+          <Link href="/">
+            <button className="flex items-center gap-2 whitespace-nowrap rounded-full bg-white border-2 border-[#cbd5e1] px-4 py-1.5 text-sm font-extrabold hover:bg-slate-50 hover:border-slate-400 transition-all shadow-[0_3px_0_0_#cbd5e1] active:translate-y-0.5 active:shadow-none cursor-pointer text-[#38345c]">
+              <ArrowLeft className="w-4 h-4 text-blue-500 stroke-[3]" />
+              <span>Back Home</span>
+            </button>
+          </Link>
+          <div className="text-xl font-black text-slate-800 tracking-tight flex items-center gap-2">
+            <span>🧙‍♂️</span>
+            <span className="hidden sm:inline">SELECT ARENA</span>
+          </div>
+          <div className="w-[110px]"></div> {/* Spacer */}
+        </div>
       </header>
 
-      {/* Main registry panel */}
-      <main className="max-w-4xl w-full mx-auto flex-grow flex flex-col gap-6 animate-pop-in">
-        <div className="text-center space-y-2">
-          <p className="text-sm font-bold text-indigo-500 uppercase tracking-wider">Spell Book Registry</p>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-slate-800">
+      {/* Main Content */}
+      <main className="max-w-4xl w-full mx-auto flex-grow flex flex-col gap-6 pt-6 sm:pt-8 pb-16 px-4 sm:px-6 animate-pop-in">
+        
+        {/* Title */}
+        <div className="text-center w-full">
+          <p className="text-sm sm:text-base font-extrabold text-blue-600 uppercase tracking-[0.15em] drop-shadow-sm">Spell Book Registry</p>
+          <h2 className="mt-1 text-3xl sm:text-5xl font-black text-slate-900 drop-shadow-sm">
             Choose Your {selectedSubject === 'math' ? 'Math' : 'English'} Arena
           </h2>
-          <p className="text-slate-500 max-w-md mx-auto text-sm md:text-base font-medium">
-            Each grade corresponds to different magical world maps. Scroll through topics or view all to embark on your {selectedSubject === 'math' ? 'math' : 'English'} battle campaign!
+          <p className="mx-auto mt-2 max-w-lg text-sm sm:text-base font-bold text-slate-700">
+            Each grade corresponds to different magical world maps. Scroll through topics or view all to embark on your campaign!
           </p>
         </div>
 
         {/* Dynamic Subject Switcher Tabs */}
-        <div className="flex gap-4 max-w-md w-full mx-auto mb-2 bg-slate-100 p-2 rounded-3xl border-4 border-slate-200 shadow-sm">
+        <div className="flex gap-3 max-w-md w-full mx-auto mb-4 bg-white/90 p-2.5 rounded-full border-4 border-slate-300 shadow-[0_6px_0_0_#cbd5e1] backdrop-blur-sm">
           <button
             onClick={() => {
               handleSubjectChange('math');
               setViewAllGrade(null);
             }}
-            className={`flex-1 py-3 px-4 sm:px-6 rounded-2xl font-black text-sm sm:text-base transition-all flex items-center justify-center gap-2 cursor-pointer ${selectedSubject === 'math'
-                ? 'bg-amber-400 text-slate-800 shadow-md border-2 border-amber-500 scale-102 font-black'
-                : 'bg-transparent text-slate-500 hover:text-slate-700 font-bold border-2 border-transparent'
-              }`}
+            className={`flex-1 py-3 px-4 sm:px-6 rounded-full font-black text-sm sm:text-base transition-all flex items-center justify-center gap-2 cursor-pointer ${
+              selectedSubject === 'math'
+                ? 'bg-[#16a34a] text-white shadow-[0_4px_0_0_#15803d] border-2 border-[#22c55e] scale-100'
+                : 'bg-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-100/70 font-black border-2 border-transparent'
+            }`}
           >
             📐 Math Arena
           </button>
@@ -277,220 +364,233 @@ export default function SelectGradePage() {
               handleSubjectChange('english');
               setViewAllGrade(null);
             }}
-            className={`flex-1 py-3 px-4 sm:px-6 rounded-2xl font-black text-sm sm:text-base transition-all flex items-center justify-center gap-2 cursor-pointer ${selectedSubject === 'english'
-                ? 'bg-indigo-500 text-white shadow-md border-2 border-indigo-600 scale-102 font-black'
-                : 'bg-transparent text-slate-500 hover:text-slate-700 font-bold border-2 border-transparent'
-              }`}
+            className={`flex-1 py-3 px-4 sm:px-6 rounded-full font-black text-sm sm:text-base transition-all flex items-center justify-center gap-2 cursor-pointer ${
+              selectedSubject === 'english'
+                ? 'bg-[#0284c7] text-white shadow-[0_4px_0_0_#0369a1] border-2 border-[#38bdf8] scale-100'
+                : 'bg-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-100/70 font-black border-2 border-transparent'
+            }`}
           >
             🔤 English Arena
           </button>
         </div>
 
         {/* Grades list grid */}
-        <div className="grid grid-cols-1 gap-6 pt-4">
-          {gradesList.map((grade, idx) => (
-            <Card
-              key={`grade-${idx}`}
-              className={`flex flex-col gap-3 relative overflow-hidden ${grade.isLocked ? 'opacity-70 bg-slate-50 border-dashed border-2' : 'border-4 border-slate-200 shadow-sm'
+        <div className="grid grid-cols-1 gap-8 pt-2">
+          {gradesList.map((grade, idx) => {
+            const theme = GRADE_THEMES[idx % GRADE_THEMES.length];
+            return (
+              <div
+                key={`grade-${idx}`}
+                className={`flex flex-col gap-4 relative overflow-hidden p-5 sm:p-6 transition-all duration-300 ${
+                  grade.isLocked 
+                    ? 'opacity-75 bg-slate-100/90 border-4 border-dashed border-slate-300 rounded-[2.2rem]' 
+                    : theme.card
                 }`}
-            >
-              {/* Corner ribbon for locks */}
-              {grade.isLocked && (
-                <div className="absolute top-4 right-4 bg-slate-400 text-white p-1.5 rounded-full shadow-sm z-10">
-                  <Lock className="w-4 h-4" />
-                </div>
-              )}
+              >
+                {/* Corner ribbon for locks */}
+                {grade.isLocked && (
+                  <div className="absolute top-4 right-4 bg-slate-500 text-white p-2 rounded-full shadow-sm z-10">
+                    <Lock className="w-4 h-4" />
+                  </div>
+                )}
 
-              {/* Header Info */}
-              <div className="flex items-center justify-between border-b border-slate-100 pb-3">
-                <div className="flex items-center gap-4">
-                  <div className={`w-12 h-12 flex-shrink-0 flex items-center justify-center rounded-2xl font-black text-xl border-4 ${grade.isLocked
-                      ? 'bg-slate-200 border-slate-300 text-slate-500'
-                      : grade.gradeNum === 1
-                        ? 'bg-emerald-100 border-emerald-300 text-emerald-600 animate-float-fast'
-                        : grade.gradeNum === 2
-                          ? 'bg-sky-100 border-sky-300 text-sky-600 animate-float'
-                          : 'bg-orange-100 border-orange-300 text-orange-600 animate-float-slow'
+                {/* Header Info */}
+                <div className={`flex items-center justify-between pb-4 ${grade.isLocked ? 'border-b-2 border-slate-200' : theme.headerBorder}`}>
+                  <div className="flex items-center gap-4 sm:gap-5">
+                    <div className={`w-14 h-14 sm:w-16 sm:h-16 flex-shrink-0 flex items-center justify-center rounded-2xl font-black text-2xl sm:text-3xl transition-transform ${
+                      grade.isLocked ? 'bg-slate-200 border-4 border-slate-300 text-slate-500' : `${theme.badge} animate-bounce-slow`
                     }`}>
-                    {grade.gradeNum}
+                      {grade.gradeNum}
+                    </div>
+
+                    <div>
+                      <h3 className={`text-lg sm:text-2xl font-black leading-tight ${grade.isLocked ? 'text-slate-700' : theme.textColor}`}>
+                        {grade.title}
+                      </h3>
+                      <p className={`text-xs sm:text-sm font-bold leading-relaxed mt-1 line-clamp-2 ${grade.isLocked ? 'text-slate-500' : theme.descColor}`}>
+                        {grade.description}
+                      </p>
+                    </div>
                   </div>
 
-                  <div>
-                    <h3 className="text-base font-black text-slate-800">{grade.title}</h3>
-                    <p className="text-xs text-slate-500 font-medium leading-relaxed mt-0.5">{grade.description}</p>
-                  </div>
+                  {/* View All Button */}
+                  {!grade.isLocked && (
+                    <button
+                      onClick={() => setViewAllGrade(grade)}
+                      className={`hidden sm:flex text-xs font-black items-center gap-1.5 transition-all uppercase py-2.5 px-4 rounded-2xl shrink-0 cursor-pointer ${theme.viewAllBtn}`}
+                    >
+                      View All <Sparkles className="w-4 h-4 text-amber-400 fill-amber-400 shrink-0" />
+                    </button>
+                  )}
                 </div>
 
-                {/* View All Button */}
+                {/* Playable Topics Slider */}
                 {!grade.isLocked && (
-                  <Button
-                    variant="gray"
-                    size="sm"
-                    onClick={() => setViewAllGrade(grade)}
-                    className="text-xs font-black flex items-center gap-1 hover:bg-slate-200 transition-colors uppercase py-1.5 px-3 shrink-0"
-                  >
-                    View All <Sparkles className="w-3.5 h-3.5 text-indigo-500" />
-                  </Button>
+                  <div className="relative w-full pt-1">
+                    <div className="flex items-center justify-between text-xs font-black text-slate-500 uppercase tracking-widest mb-3 px-1">
+                      <span className="flex items-center gap-1">Swipe Quests <span className="text-sm">➔</span></span>
+                      <span className="bg-slate-100 text-slate-700 font-extrabold px-2.5 py-0.5 rounded-full border border-slate-200">{grade.topics.length} Quests</span>
+                    </div>
+
+                    {/* Left scroll arrow button */}
+                    <button
+                      onClick={() => scrollSlider(grade.gradeNum, 'left')}
+                      className="absolute -left-2 sm:-left-4 top-[65%] -translate-y-1/2 bg-white hover:bg-amber-100 text-slate-800 border-4 border-slate-300 hover:border-amber-400 shadow-[0_5px_0_0_#cbd5e1] hover:shadow-[0_5px_0_0_#f59e0b] active:shadow-none active:translate-y-1 p-2 sm:p-2.5 rounded-full z-20 transition-all flex items-center justify-center cursor-pointer"
+                      aria-label="Scroll left"
+                    >
+                      <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6 stroke-[3] text-slate-800" />
+                    </button>
+
+                    {/* Right scroll arrow button */}
+                    <button
+                      onClick={() => scrollSlider(grade.gradeNum, 'right')}
+                      className="absolute -right-2 sm:-right-4 top-[65%] -translate-y-1/2 bg-white hover:bg-amber-100 text-slate-800 border-4 border-slate-300 hover:border-amber-400 shadow-[0_5px_0_0_#cbd5e1] hover:shadow-[0_5px_0_0_#f59e0b] active:shadow-none active:translate-y-1 p-2 sm:p-2.5 rounded-full z-20 transition-all flex items-center justify-center cursor-pointer"
+                      aria-label="Scroll right"
+                    >
+                      <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6 stroke-[3] text-slate-800" />
+                    </button>
+
+                    {/* Horizontal Scroll Slider Track */}
+                    <div
+                      id={`slider-${grade.gradeNum}`}
+                      className="flex gap-4 sm:gap-5 overflow-x-auto scrollbar-none snap-x snap-mandatory pb-4 pt-1 px-4 sm:px-6 scroll-smooth"
+                    >
+                      {grade.topics.map((topic, tIdx) => {
+                        const palette = TOPIC_PALETTES[tIdx % TOPIC_PALETTES.length];
+                        return (
+                          <Link
+                            key={`topic-${idx}-${tIdx}`}
+                            href={`/world-map?worldId=${topic.worldId}`}
+                            className="snap-start shrink-0 group perspective-1000"
+                          >
+                            <div className={`w-[210px] h-[140px] flex flex-col justify-between p-4 rounded-2xl cursor-pointer group-active:translate-y-1.5 group-active:shadow-none group-hover:-translate-y-1 transition-all duration-200 ${palette.box} gap-2 relative overflow-hidden`}>
+                              
+                              {/* Top: Icon + Title */}
+                              <div className="flex items-start gap-3 relative z-10">
+                                <span className="text-3xl shrink-0 drop-shadow group-hover:scale-110 group-hover:rotate-6 transition-all duration-200">{topic.icon}</span>
+                                <div className="min-w-0 pt-0.5">
+                                  <span className="text-sm font-black leading-tight block text-current">{topic.name}</span>
+                                </div>
+                              </div>
+
+                              {/* Bottom: Quest badge & Action */}
+                              <div className="flex justify-between items-center pt-2 mt-auto relative z-10">
+                                {topic.badge ? (
+                                  <span className={`text-[9px] font-black px-2 py-0.5 rounded-full uppercase tracking-wider shadow-sm truncate max-w-[110px] ${palette.badgeBg}`}>
+                                    {topic.badge}
+                                  </span>
+                                ) : (
+                                  <div />
+                                )}
+                                <span className={`text-[11px] font-black px-2.5 py-1 rounded-xl flex items-center gap-1 group-hover:scale-105 transition-transform shrink-0 ${palette.playBtn}`}>
+                                  Play <span className="group-hover:translate-x-0.5 transition-transform">➔</span>
+                                </span>
+                              </div>
+
+                            </div>
+                          </Link>
+                        );
+                      })}
+                    </div>
+                  </div>
+                )}
+
+                {/* Locked Grade Block */}
+                {grade.isLocked && (
+                  <div className="py-6 text-center">
+                    <div className="flex items-center justify-center gap-2 text-sm font-black uppercase tracking-wide text-slate-500">
+                      <Lock className="w-4 h-4" />
+                      <span>Locked Territory</span>
+                    </div>
+                    <p className="text-xs sm:text-sm font-bold leading-normal text-slate-400 mt-2">This magic spellbook will be unlocked in a future semester!</p>
+                  </div>
                 )}
               </div>
-
-              {/* Playable Topics Slider */}
-              {!grade.isLocked && (
-                <div className="relative w-full">
-                  <div className="flex items-center justify-between text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2 px-1">
-                    <span>Swipe Quests ➔</span>
-                    <span>{grade.topics.length} Available</span>
-                  </div>
-
-                  {/* Left scroll arrow button */}
-                  <button
-                    onClick={() => scrollSlider(grade.gradeNum, 'left')}
-                    className="absolute left-1 top-[60%] -translate-y-1/2 bg-white/95 hover:bg-white text-slate-700 hover:text-indigo-600 border-2 border-slate-200 hover:border-indigo-300 shadow-md p-1.5 rounded-full z-10 transition-all hover:scale-110 active:scale-95 flex items-center justify-center cursor-pointer"
-                    aria-label="Scroll left"
-                  >
-                    <ChevronLeft className="w-4 h-4" />
-                  </button>
-
-                  {/* Right scroll arrow button */}
-                  <button
-                    onClick={() => scrollSlider(grade.gradeNum, 'right')}
-                    className="absolute right-1 top-[60%] -translate-y-1/2 bg-white/95 hover:bg-white text-slate-700 hover:text-indigo-600 border-2 border-slate-200 hover:border-indigo-300 shadow-md p-1.5 rounded-full z-10 transition-all hover:scale-110 active:scale-95 flex items-center justify-center cursor-pointer"
-                    aria-label="Scroll right"
-                  >
-                    <ChevronRight className="w-4 h-4" />
-                  </button>
-
-                  {/* Horizontal Scroll Slider Track */}
-                  <div
-                    id={`slider-${grade.gradeNum}`}
-                    className="flex gap-4 overflow-x-auto scrollbar-none snap-x snap-mandatory pb-3 px-8 scroll-smooth"
-                  >
-                    {grade.topics.map((topic, tIdx) => (
-                      <Link
-                        key={`topic-${idx}-${tIdx}`}
-                        href={`/world-map?worldId=${topic.worldId}`}
-                        className="snap-start shrink-0"
-                      >
-                        <div className={`w-[200px] h-[120px] flex flex-col justify-between p-3.5 rounded-2xl border-2 cursor-pointer shadow-sm active:translate-y-0.5 transition-all ${topic.bg} hover:shadow-inner gap-2`}>
-
-                          {/* Top: Icon + Title */}
-                          <div className="flex items-start gap-2.5">
-                            <span className="text-2xl shrink-0">{topic.icon}</span>
-                            <div className="min-w-0">
-                              <span className={`text-xs font-black leading-tight block truncate ${topic.text}`}>{topic.name}</span>
-                            </div>
-                          </div>
-
-                          {/* Bottom: Quest badge & Action */}
-                          <div className="flex justify-between items-center border-t border-slate-700/5 pt-2 mt-auto">
-                            {topic.badge ? (
-                              <span className="text-[8px] font-black bg-white/70 px-1.5 py-0.5 rounded-full uppercase tracking-wider text-slate-650 shadow-[0_1px_2px_rgba(0,0,0,0.05)] border border-slate-200/50">
-                                {topic.badge}
-                              </span>
-                            ) : (
-                              <div />
-                            )}
-                            <span className="text-[9px] font-bold text-indigo-600 flex items-center gap-0.5">
-                              Play ➔
-                            </span>
-                          </div>
-
-                        </div>
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              )}
-
-              {/* Locked Grade Block */}
-              {grade.isLocked && (
-                <div className="py-4 text-center text-slate-400">
-                  <div className="flex items-center justify-center gap-2 text-xs font-extrabold uppercase tracking-wide">
-                    <Lock className="w-3.5 h-3.5 text-slate-400" />
-                    <span>Locked Territory</span>
-                  </div>
-                  <p className="text-[10px] font-medium leading-normal text-slate-400 mt-1">This magic spellbook will be unlocked in a future semester!</p>
-                </div>
-              )}
-            </Card>
-          ))}
+            );
+          })}
         </div>
       </main>
 
       {/* View All Overlay Modal */}
       {viewAllGrade !== null && (
         <div className="fixed inset-0 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4 z-50 animate-fade-in">
-          <Card padding="lg" className="w-full max-w-2xl max-h-[85vh] overflow-y-auto relative animate-pop-in border-4 border-slate-800/20 bg-white flex flex-col gap-4">
-
-            {/* Close button */}
-            <button
-              onClick={() => setViewAllGrade(null)}
-              className="absolute top-4 right-4 text-slate-400 hover:text-slate-700 transition-colors p-1.5 bg-slate-100 hover:bg-slate-200 rounded-full"
-            >
-              <X className="w-5 h-5" />
-            </button>
-
+          <div className="w-full max-w-4xl max-h-[90vh] flex flex-col relative animate-pop-in bg-white rounded-[2.5rem] shadow-[0_24px_64px_rgba(0,0,0,0.4)] border-4 border-slate-200 overflow-hidden">
+            
             {/* Modal Header */}
-            <div className="text-center pb-4 border-b-2 border-slate-150">
-              <span className="text-4xl animate-bounce-slow inline-block">📖</span>
-              <h3 className="text-xl font-black text-slate-800 mt-1">{viewAllGrade.title}</h3>
-              <p className="text-xs text-slate-400 font-extrabold uppercase tracking-wider mt-0.5">
+            <div className="bg-gradient-to-b from-slate-100 to-white p-6 text-center border-b-4 border-slate-200 relative">
+              {/* Close button */}
+              <button
+                onClick={() => setViewAllGrade(null)}
+                className="absolute top-6 right-6 text-slate-500 hover:text-slate-800 transition-all p-2 bg-white hover:bg-rose-100 border-2 border-slate-300 hover:border-rose-400 rounded-full shadow-[0_3px_0_0_#cbd5e1] hover:shadow-[0_3px_0_0_#f43f5e] active:translate-y-0.5 active:shadow-none cursor-pointer"
+              >
+                <X className="w-6 h-6 stroke-[3]" />
+              </button>
+              
+              <span className="text-5xl animate-bounce-slow inline-block drop-shadow-md">📖</span>
+              <h3 className="text-2xl sm:text-3xl font-black text-slate-900 mt-2">{viewAllGrade.title}</h3>
+              <p className="text-xs sm:text-sm text-slate-500 font-black uppercase tracking-widest mt-1">
                 Complete Quest Catalog • {viewAllGrade.topics.length} {selectedSubject === 'math' ? 'Math' : 'English'} Arenas
               </p>
             </div>
 
             {/* Expanded Quest Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 py-4 overflow-y-auto max-h-[45vh] pr-1 scrollbar-thin">
-              {viewAllGrade.topics.map((topic, tIdx) => (
-                <Link
-                  key={`expanded-topic-${tIdx}`}
-                  href={`/world-map?worldId=${topic.worldId}`}
-                  onClick={() => setViewAllGrade(null)}
-                >
-                  <div className={`flex flex-col justify-between p-4 rounded-2xl border-2 cursor-pointer shadow-sm active:translate-y-0.5 hover:shadow-inner transition-all h-[130px] ${topic.bg} gap-2`}>
+            <div className="p-6 overflow-y-auto scrollbar-thin bg-slate-50/50">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 pb-4">
+                {viewAllGrade.topics.map((topic, tIdx) => {
+                  const palette = TOPIC_PALETTES[tIdx % TOPIC_PALETTES.length];
+                  return (
+                    <Link
+                      key={`expanded-topic-${tIdx}`}
+                      href={`/world-map?worldId=${topic.worldId}`}
+                      onClick={() => setViewAllGrade(null)}
+                      className="group perspective-1000"
+                    >
+                      <div className={`w-full h-[140px] flex flex-col justify-between p-4 rounded-2xl cursor-pointer group-active:translate-y-1.5 group-active:shadow-none group-hover:-translate-y-1 transition-all duration-200 ${palette.box} gap-2 relative overflow-hidden`}>
+                        
+                        {/* Top Icon + Title */}
+                        <div className="flex items-start gap-3 relative z-10">
+                          <span className="text-3xl shrink-0 drop-shadow group-hover:scale-110 group-hover:rotate-6 transition-all duration-200">{topic.icon}</span>
+                          <div className="min-w-0 pt-0.5">
+                            <span className="text-sm font-black leading-tight block text-current">{topic.name}</span>
+                          </div>
+                        </div>
 
-                    {/* Top Icon + Title */}
-                    <div className="flex items-start gap-2.5">
-                      <span className="text-3xl shrink-0">{topic.icon}</span>
-                      <div className="min-w-0">
-                        <span className={`text-xs font-black leading-tight block ${topic.text}`}>{topic.name}</span>
+                        {/* Bottom Info */}
+                        <div className="flex justify-between items-center pt-2 mt-auto relative z-10">
+                          {topic.badge ? (
+                            <span className={`text-[9px] font-black px-2 py-0.5 rounded-full uppercase tracking-wider shadow-sm truncate max-w-[120px] ${palette.badgeBg}`}>
+                              {topic.badge}
+                            </span>
+                          ) : (
+                            <div />
+                          )}
+                          <span className={`text-[11px] font-black px-2.5 py-1 rounded-xl flex items-center gap-1 group-hover:scale-105 transition-transform shrink-0 ${palette.playBtn}`}>
+                            Play <span className="group-hover:translate-x-0.5 transition-transform">➔</span>
+                          </span>
+                        </div>
+
                       </div>
-                    </div>
-
-                    {/* Bottom Info */}
-                    <div className="flex justify-between items-center border-t border-slate-700/5 pt-2 mt-auto">
-                      {topic.badge ? (
-                        <span className="text-[8px] font-black bg-white/70 px-1.5 py-0.5 rounded-full uppercase tracking-wider text-slate-650 border border-slate-205">
-                          {topic.badge}
-                        </span>
-                      ) : (
-                        <div />
-                      )}
-                      <span className="text-[9px] font-bold text-indigo-600">
-                        Play ➔
-                      </span>
-                    </div>
-
-                  </div>
-                </Link>
-              ))}
+                    </Link>
+                  );
+                })}
+              </div>
             </div>
 
-            {/* Close spellbook CTA */}
-            <Button
-              variant="gray"
-              fullWidth
-              onClick={() => setViewAllGrade(null)}
-              className="font-black text-xs uppercase py-2.5"
-            >
-              Close Spellbook 📖
-            </Button>
-          </Card>
+            {/* Bottom action */}
+            <div className="p-5 bg-white border-t-4 border-slate-200 text-center">
+              <button
+                onClick={() => setViewAllGrade(null)}
+                className="font-black text-sm uppercase py-3 px-10 rounded-full bg-slate-800 text-white hover:bg-slate-700 hover:-translate-y-0.5 shadow-[0_6px_0_0_#334155] active:translate-y-1 active:shadow-none transition-all cursor-pointer"
+              >
+                Close Spellbook
+              </button>
+            </div>
+          </div>
         </div>
       )}
 
       {/* Simple footer branding */}
-      <footer className="mt-12 text-center text-slate-400 text-xs font-medium py-4">
+      <footer className="mt-auto text-center text-slate-500 text-xs font-extrabold py-6 bg-white/70 backdrop-blur-md border-t border-white/40">
         🔒 TinyBee is a safe ad-free learning zone.
       </footer>
     </div>

@@ -96,7 +96,17 @@ function VideoQuestContent() {
   };
 
   return (
-    <div className={`min-h-screen flex flex-col select-none ${world.bgClass}`}>
+    <div className="min-h-screen font-baloo text-slate-800 flex flex-col select-none relative">
+      {/* Vibrant Background Synchronized with Home Page */}
+      <div 
+        aria-hidden="true" 
+        className="fixed inset-0 bg-cover bg-center -z-10" 
+        style={{
+          backgroundImage: 'linear-gradient(180deg, rgba(255,255,255,0.3), rgba(255,255,255,0.5)), url(/home-cards/background.jpg)',
+          backgroundColor: '#cdeafd'
+        }}
+      ></div>
+
       {/* Navigation Header */}
       <header className="w-full bg-white/85 backdrop-blur border-b-4 border-slate-100 px-4 py-3 sticky top-0 z-30 animate-slide-down">
         <div className="max-w-4xl mx-auto flex items-center justify-between">

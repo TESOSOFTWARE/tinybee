@@ -2,13 +2,10 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { useGameState } from '@/hooks/useGameState';
-import { Button } from '@/components/UI/Button';
-import { Card } from '@/components/UI/Card';
-import { XPBar } from '@/components/UI/XPBar';
-import { ParentGate } from '@/components/Parent/ParentGate';
-import { ShieldCheck, ShieldAlert, Award, Star, Compass, Sparkles, BookOpen } from 'lucide-react';
 import { useRouter } from 'next/navigation';
+import { useGameState } from '@/hooks/useGameState';
+import { ParentGate } from '@/components/Parent/ParentGate';
+import { Sword, BookOpen, Backpack, Flame, Lock, Sparkles } from 'lucide-react';
 
 export default function LandingPage() {
   const { state, isLoading } = useGameState();
@@ -21,181 +18,230 @@ export default function LandingPage() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-playful-dots select-none">
-      {/* Header / Navbar */}
-      <header className="w-full bg-white/80 backdrop-blur-md border-b-4 border-slate-100 px-4 py-3 sticky top-0 z-30">
-        <div className="max-w-5xl mx-auto flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2">
-            <span className="text-2xl md:text-3xl">🐝</span>
-            <span className="text-xl md:text-2xl font-black text-slate-800 tracking-tight">
-              TINY<span className="text-academy-blue font-bold">BEE</span>
+    <div className="relative min-h-[calc(100vh-3.5rem)] font-baloo text-[#38345c] select-none">
+      {/* Background with overlay */}
+      <div 
+        aria-hidden="true" 
+        className="fixed inset-0 bg-cover bg-center -z-10" 
+        style={{
+          backgroundImage: 'linear-gradient(180deg, rgba(255,255,255,0.3), rgba(255,255,255,0.5)), url(/home-cards/background.jpg)',
+          backgroundColor: '#cdeafd'
+        }}
+      ></div>
+
+      {/* Header */}
+      <header className="border-b border-white/40 sticky top-0 z-20 bg-white/80 backdrop-blur-md shadow-sm">
+        <div className="mx-auto max-w-[100rem] px-4 sm:px-6 lg:px-8 h-14 flex items-center justify-between">
+          <Link href="/" className="flex items-center gap-2 group">
+            <span className="text-2xl group-hover:rotate-12 transition-transform inline-block">🐝</span>
+            <span className="text-xl font-black text-slate-900 tracking-tight">
+              TINY<span className="text-blue-500">BEE</span>
             </span>
           </Link>
-
-          <div className="flex items-center gap-3">
-            <Button
-              variant="gray"
-              size="sm"
-              onClick={() => setShowParentGate(true)}
-              className="text-xs md:text-sm font-bold flex items-center gap-1"
-            >
-              🔑 Parents
-            </Button>
-            
+          
+          <nav className="flex gap-3 sm:gap-4 items-center text-base">
             {!isLoading && state.xp > 0 && (
               <Link href="/profile">
-                <div className="flex items-center gap-2 bg-slate-100 hover:bg-slate-200 transition-colors px-3 py-1.5 rounded-2xl border-2 border-slate-200 cursor-pointer">
-                  <span className="text-base">🐱</span>
-                  <span className="text-xs md:text-sm font-extrabold text-slate-700">Lvl {state.level}</span>
+                <div className="flex items-center gap-2 bg-amber-400 hover:bg-amber-300 transition-all px-3.5 py-1 rounded-full border-2 border-amber-300 shadow-[0_3px_0_0_#b45309] active:translate-y-0.5 active:shadow-none cursor-pointer">
+                  <span className="text-base animate-bounce-slow">🐱</span>
+                  <span className="text-xs md:text-sm font-black text-amber-950">Lvl {state.level}</span>
                 </div>
               </Link>
             )}
-          </div>
+            
+            <button 
+              onClick={() => setShowParentGate(true)}
+              className="flex items-center gap-2 whitespace-nowrap rounded-full bg-white border-2 border-slate-300 px-4 py-1.5 text-sm font-black hover:bg-slate-50 hover:border-slate-400 transition-all shadow-[0_3px_0_0_#cbd5e1] active:translate-y-0.5 active:shadow-none cursor-pointer text-slate-800"
+            >
+              <Lock className="w-4 h-4 text-blue-600 stroke-[3]" />
+              <span className="hidden sm:inline">Phụ huynh</span>
+            </button>
+          </nav>
         </div>
       </header>
 
-      {/* Hero Section */}
-      <main className="flex-grow max-w-5xl w-full mx-auto px-4 py-8 md:py-16 flex flex-col items-center text-center gap-12">
-        <div className="space-y-6 max-w-2xl animate-pop-in">
-          {/* Decorative Magic Badge */}
-          <div className="inline-flex items-center gap-1.5 bg-yellow-100 border-2 border-yellow-300 text-yellow-800 px-4 py-1.5 rounded-full text-sm font-black shadow-sm animate-bounce-slow">
-            <Sparkles className="w-4 h-4 text-amber-500 fill-amber-500" />
-            THE ULTIMATE LEARNING ADVENTURE
-          </div>
-
-          <h1 className="text-4xl md:text-6xl font-black text-slate-800 leading-tight tracking-tight">
-            Solve Math & English. <br />
-            <span className="text-academy-blue">Defeat Monsters.</span> <br />
-            Earn Cute Pets!
-          </h1>
-          
-          <p className="text-lg md:text-xl font-medium text-slate-500 max-w-lg mx-auto">
-            Become a legendary wizard! Master counting, equations, alphabet letters, phonics, spelling, and grammar to level up your magical companions.
+      {/* Main Content */}
+      <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 pt-6 sm:pt-10 lg:pt-8 pb-14 sm:pb-16 flex flex-col items-center animate-pop-in">
+        
+        {/* Hero Section */}
+        <header className="text-center w-full">
+          <p className="text-sm sm:text-base font-extrabold uppercase tracking-[0.2em] text-blue-600 drop-shadow-sm flex items-center justify-center gap-1.5">
+            <Sparkles className="w-4 h-4 text-amber-500 fill-amber-500 inline" /> TINYBEE FANTASY ARENA
           </p>
+          <h1 className="mt-2 text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 drop-shadow-sm leading-tight">
+            Solve Math & English.<br/>
+            <span className="text-blue-600">Defeat Monsters.</span>
+          </h1>
+          <p className="mx-auto mt-3 sm:mt-4 max-w-xl text-base sm:text-lg font-bold text-slate-700">
+            Become a legendary wizard! Master counting, equations, and phonics to level up your magical companions.
+          </p>
+        </header>
 
-          <div className="pt-4 flex flex-col sm:flex-row gap-4 justify-center items-center w-full max-w-sm mx-auto">
-            <Link href="/select-grade" className="w-full">
-              <Button variant="green" size="lg" fullWidth className="text-xl md:text-2xl uppercase tracking-wider py-4 animate-pulse-slow">
-                ⚔️ Start Playing Now
-              </Button>
-            </Link>
-            {!isLoading && state.xp > 0 && (
-              <Link href="/profile" className="w-full">
-                <Button variant="purple" size="lg" fullWidth className="text-xl">
-                  🎒 Open Backpack
-                </Button>
-              </Link>
-            )}
-          </div>
-        </div>
-
-        {/* Live RPG stats container for returning wizards */}
+        {/* Dynamic User Stats if logged in */}
         {!isLoading && state.xp > 0 && (
-          <div className="w-full max-w-md animate-slide-up">
-            <Card padding="md" className="space-y-4">
-              <h3 className="text-lg font-bold text-slate-700 flex items-center justify-center gap-1.5">
-                👋 Welcome Back, Young Adventurer!
-              </h3>
-              <XPBar xp={state.xp} level={state.level} />
-              <div className="flex justify-around items-center pt-2 text-sm font-extrabold text-slate-600">
-                <span className="flex items-center gap-1">🪙 {state.coins} Coins</span>
-                <span className="flex items-center gap-1">🔥 {state.streak} Day Streak</span>
-                <span className="flex items-center gap-1">🏆 {state.battleStats.correctAnswers} Solved</span>
-              </div>
-            </Card>
+          <div className="mt-6 flex flex-wrap justify-center gap-4 text-sm sm:text-base font-black text-slate-800 bg-white/95 backdrop-blur-sm px-6 py-2.5 rounded-full border-4 border-slate-300 shadow-[0_6px_0_0_#cbd5e1]">
+            <span className="flex items-center gap-1.5 text-amber-700">🪙 <span className="text-slate-900">{state.coins} Coins</span></span>
+            <span className="text-slate-300">•</span>
+            <span className="flex items-center gap-1.5 text-rose-600">🔥 <span className="text-slate-900">{state.streak} Day Streak</span></span>
+            <span className="text-slate-300">•</span>
+            <span className="flex items-center gap-1.5 text-emerald-600">🏆 <span className="text-slate-900">{state.battleStats?.correctAnswers || 0} Solved</span></span>
           </div>
         )}
 
-        {/* Dynamic Graphic Mockup (SVG illustration) */}
-        <div className="w-full max-w-xl bg-gradient-to-b from-sky-100 to-sky-50 border-4 border-slate-200 rounded-3xl p-6 shadow-lg relative overflow-hidden animate-slide-up">
-          {/* Background grid overlay */}
-          <div className="absolute inset-0 bg-[radial-gradient(#bae6fd_1px,transparent_1px)] bg-[size:16px_16px] opacity-40"></div>
-
-          <div className="relative flex justify-between items-center gap-4 py-8">
-            {/* Player's Leaf Kitten (SVG) */}
-            <div className="text-center animate-float flex flex-col items-center">
-              <svg className="w-24 h-24 drop-shadow" viewBox="0 0 100 100" fill="none">
-                <circle cx="50" cy="50" r="30" fill="#4ade80" stroke="#1e293b" strokeWidth="4" />
-                <path d="M28 28L18 8L36 22Z" fill="#16a34a" stroke="#1e293b" strokeWidth="3" />
-                <path d="M72 28L82 8L64 22Z" fill="#16a34a" stroke="#1e293b" strokeWidth="3" />
-                <circle cx="40" cy="45" r="4" fill="#1e293b" />
-                <circle cx="60" cy="45" r="4" fill="#1e293b" />
-                <circle cx="38" cy="43" r="1" fill="white" />
-                <circle cx="58" cy="43" r="1" fill="white" />
-                <path d="M47 52C48 54 52 54 53 52" stroke="#1e293b" strokeWidth="2.5" strokeLinecap="round" />
-              </svg>
-              <span className="mt-2 text-xs font-black bg-slate-800 text-white px-2 py-0.5 rounded-full uppercase">Kitten</span>
+        {/* Feature Cards Grid (Vibrant 3D Gamified Cards) */}
+        <div className="w-full mt-8 sm:mt-12 lg:mt-10 grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 lg:gap-8">
+          
+          {/* Card 1: Math Battles */}
+          <Link href="/select-grade" className="group relative flex flex-col lg:grid lg:grid-cols-[45%_1fr] lg:items-stretch rounded-[2.2rem] border-4 border-emerald-400 bg-white p-4 shadow-[0_12px_0_0_#10b981] transition-all duration-200 hover:-translate-y-1.5 hover:shadow-[0_16px_0_0_#10b981] active:translate-y-1 active:shadow-[0_4px_0_0_#10b981] gap-4 cursor-pointer">
+            <span aria-hidden="true" className="absolute -top-3 left-1/2 h-5 w-20 -translate-x-1/2 rotate-[-3deg] rounded-[6px] bg-emerald-500 border-2 border-emerald-200 shadow-sm"></span>
+            <div className="relative h-44 lg:h-full lg:min-h-[170px] overflow-hidden rounded-[1.5rem] border-2 border-emerald-100 bg-emerald-50">
+              <div 
+                className="w-full h-full flex items-center justify-center group-hover:scale-105 transition-transform duration-500 bg-cover bg-center"
+                style={{ backgroundImage: 'url(/home-cards/math-battles.jpg)' }}
+              >
+                <Sword className="w-16 h-16 text-emerald-500 hidden" />
+              </div>
+              <span aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></span>
             </div>
-
-            {/* Combat Clash */}
-            <div className="flex flex-col items-center gap-1.5">
-              <span className="text-4xl font-extrabold text-amber-500 animate-pulse">VS</span>
-              <span className="px-3 py-1 bg-red-100 text-red-700 border-2 border-red-200 text-xs font-bold rounded-full">BATTLE STAGE</span>
+            <div className="flex flex-1 flex-col justify-between px-1 py-1 lg:py-2">
+              <div>
+                <h2 className="text-2xl sm:text-3xl font-black leading-tight text-emerald-700">Math Battles</h2>
+                <p className="mt-0.5 text-base font-black leading-tight text-slate-900">Chiến đấu Toán học</p>
+                <p className="mt-2 text-sm sm:text-sm font-bold leading-relaxed text-slate-600">Giải các bài toán cộng trừ nhân chia để đánh bại quái vật Slime và nhận thưởng vàng.</p>
+              </div>
+              <div className="mt-4 flex justify-end">
+                <span className="inline-flex items-center gap-1.5 text-sm font-black bg-emerald-500 text-white px-4 py-2 rounded-2xl shadow-[0_4px_0_0_#047857] group-hover:scale-105 transition-transform">
+                  Vào chơi <span className="text-lg leading-none">→</span>
+                </span>
+              </div>
             </div>
+          </Link>
 
-            {/* Cute Slime Monster (SVG) */}
-            <div className="text-center animate-float-slow flex flex-col items-center">
-              <svg className="w-24 h-24 drop-shadow" viewBox="0 0 100 100" fill="none">
-                <ellipse cx="50" cy="50" rx="30" ry="25" fill="#c084fc" stroke="#1e293b" strokeWidth="4" />
-                <circle cx="50" cy="45" r="10" fill="white" stroke="#1e293b" strokeWidth="3" />
-                <circle cx="50" cy="45" r="4" fill="#0284c7" />
-                <path d="M43 65L46 60L49 65H43Z" fill="white" stroke="#1e293b" strokeWidth="2" />
-                <path d="M51 65L54 60L57 65H51Z" fill="white" stroke="#1e293b" strokeWidth="2" />
-              </svg>
-              <span className="mt-2 text-xs font-black bg-slate-800 text-white px-2 py-0.5 rounded-full uppercase">Slime</span>
+          {/* Card 2: English Quests */}
+          <Link href="/select-grade" className="group relative flex flex-col lg:grid lg:grid-cols-[45%_1fr] lg:items-stretch rounded-[2.2rem] border-4 border-sky-400 bg-white p-4 shadow-[0_12px_0_0_#0ea5e9] transition-all duration-200 hover:-translate-y-1.5 hover:shadow-[0_16px_0_0_#0ea5e9] active:translate-y-1 active:shadow-[0_4px_0_0_#0ea5e9] gap-4 cursor-pointer">
+            <span aria-hidden="true" className="absolute -top-3 left-1/2 h-5 w-20 -translate-x-1/2 rotate-[3deg] rounded-[6px] bg-sky-500 border-2 border-sky-200 shadow-sm"></span>
+            <div className="relative h-44 lg:h-full lg:min-h-[170px] overflow-hidden rounded-[1.5rem] border-2 border-sky-100 bg-sky-50">
+              <div 
+                className="w-full h-full flex items-center justify-center group-hover:scale-105 transition-transform duration-500 bg-cover bg-center"
+                style={{ backgroundImage: 'url(/home-cards/english-quests.jpg)' }}
+              >
+                <BookOpen className="w-16 h-16 text-sky-500 hidden" />
+              </div>
+              <span aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></span>
             </div>
-          </div>
+            <div className="flex flex-1 flex-col justify-between px-1 py-1 lg:py-2">
+              <div>
+                <h2 className="text-2xl sm:text-3xl font-black leading-tight text-sky-700">English Quests</h2>
+                <p className="mt-0.5 text-base font-black leading-tight text-slate-900">Thử thách Tiếng Anh</p>
+                <p className="mt-2 text-sm sm:text-sm font-bold leading-relaxed text-slate-600">Luyện tập từ vựng, ngữ pháp và phát âm để thu thập vật phẩm phép thuật.</p>
+              </div>
+              <div className="mt-4 flex justify-end">
+                <span className="inline-flex items-center gap-1.5 text-sm font-black bg-sky-500 text-white px-4 py-2 rounded-2xl shadow-[0_4px_0_0_#0369a1] group-hover:scale-105 transition-transform">
+                  Vào chơi <span className="text-lg leading-none">→</span>
+                </span>
+              </div>
+            </div>
+          </Link>
 
-          <div className="bg-white/90 backdrop-blur border-2 border-amber-200 p-3 rounded-2xl shadow-inner max-w-xs mx-auto text-sm font-extrabold text-amber-950 flex items-center justify-center gap-2">
-            ✨ Solve <span className="bg-amber-100 px-2 py-0.5 rounded-lg text-amber-600">8 + 2 = ?</span> to strike!
-          </div>
+          {/* Card 3: Magic Pets */}
+          <Link href="/profile" className="group relative flex flex-col lg:grid lg:grid-cols-[45%_1fr] lg:items-stretch rounded-[2.2rem] border-4 border-amber-400 bg-white p-4 shadow-[0_12px_0_0_#f59e0b] transition-all duration-200 hover:-translate-y-1.5 hover:shadow-[0_16px_0_0_#f59e0b] active:translate-y-1 active:shadow-[0_4px_0_0_#f59e0b] gap-4 cursor-pointer">
+            <span aria-hidden="true" className="absolute -top-3 left-1/2 h-5 w-20 -translate-x-1/2 rotate-[-2deg] rounded-[6px] bg-amber-500 border-2 border-amber-200 shadow-sm"></span>
+            <div className="relative h-44 lg:h-full lg:min-h-[170px] overflow-hidden rounded-[1.5rem] border-2 border-amber-100 bg-amber-50">
+              <div 
+                className="w-full h-full flex items-center justify-center group-hover:scale-105 transition-transform duration-500 bg-cover bg-center"
+                style={{ backgroundImage: 'url(/home-cards/magic-pets.jpg)' }}
+              >
+                <Backpack className="w-16 h-16 text-amber-600 hidden" />
+              </div>
+              <span aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></span>
+            </div>
+            <div className="flex flex-1 flex-col justify-between px-1 py-1 lg:py-2">
+              <div>
+                <h2 className="text-2xl sm:text-3xl font-black leading-tight text-amber-700">Magic Pets</h2>
+                <p className="mt-0.5 text-base font-black leading-tight text-slate-900">Thú cưng Phép thuật</p>
+                <p className="mt-2 text-sm sm:text-sm font-bold leading-relaxed text-slate-600">Mở ba lô, xem bộ sưu tập thú cưng đáng yêu của bạn và nâng cấp chúng mỗi ngày.</p>
+              </div>
+              <div className="mt-4 flex justify-end">
+                <span className="inline-flex items-center gap-1.5 text-sm font-black bg-amber-500 text-white px-4 py-2 rounded-2xl shadow-[0_4px_0_0_#b45309] group-hover:scale-105 transition-transform">
+                  Mở Ba lô <span className="text-lg leading-none">→</span>
+                </span>
+              </div>
+            </div>
+          </Link>
+
+          {/* Card 4: Daily Streaks */}
+          <Link href="/select-grade" className="group relative flex flex-col lg:grid lg:grid-cols-[45%_1fr] lg:items-stretch rounded-[2.2rem] border-4 border-purple-400 bg-white p-4 shadow-[0_12px_0_0_#a855f7] transition-all duration-200 hover:-translate-y-1.5 hover:shadow-[0_16px_0_0_#a855f7] active:translate-y-1 active:shadow-[0_4px_0_0_#a855f7] gap-4 cursor-pointer">
+            <span aria-hidden="true" className="absolute -top-3 left-1/2 h-5 w-20 -translate-x-1/2 rotate-[2deg] rounded-[6px] bg-purple-500 border-2 border-purple-200 shadow-sm"></span>
+            <div className="relative h-44 lg:h-full lg:min-h-[170px] overflow-hidden rounded-[1.5rem] border-2 border-purple-100 bg-purple-50">
+              <div 
+                className="w-full h-full flex items-center justify-center group-hover:scale-105 transition-transform duration-500 bg-cover bg-center"
+                style={{ backgroundImage: 'url(/home-cards/daily-streaks.jpg)' }}
+              >
+                <Flame className="w-16 h-16 text-purple-500 hidden" />
+              </div>
+              <span aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></span>
+            </div>
+            <div className="flex flex-1 flex-col justify-between px-1 py-1 lg:py-2">
+              <div>
+                <h2 className="text-2xl sm:text-3xl font-black leading-tight text-purple-700">Daily Streaks</h2>
+                <p className="mt-0.5 text-base font-black leading-tight text-slate-900">Chuỗi ngày học tập</p>
+                <p className="mt-2 text-sm sm:text-sm font-bold leading-relaxed text-slate-600">Giữ vững chuỗi ngày học tập để nhận những rương kho báu đặc biệt vào cuối tuần.</p>
+              </div>
+              <div className="mt-4 flex justify-end">
+                <span className="inline-flex items-center gap-1.5 text-sm font-black bg-purple-500 text-white px-4 py-2 rounded-2xl shadow-[0_4px_0_0_#6b21a8] group-hover:scale-105 transition-transform">
+                  {state.streak > 0 ? `🔥 Đang có ${state.streak} streak` : 'Bắt đầu ngay'} <span className="text-lg leading-none">→</span>
+                </span>
+              </div>
+            </div>
+          </Link>
         </div>
 
-        {/* Parent-Friendly Section */}
-        <div className="w-full pt-10 border-t-4 border-slate-100">
-          <h2 className="text-2xl md:text-3xl font-black text-slate-800 mb-8">
+        {/* Parent-Friendly Section (Vibrant 3D Theme) */}
+        <div className="w-full pt-16 mt-14 border-t-4 border-slate-300/50 text-center">
+          <h2 className="text-2xl md:text-4xl font-black text-slate-900 mb-8 drop-shadow-sm">
             🛡️ Parents & Educators Love TinyBee
           </h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <Card padding="md" className="text-left space-y-2">
-              <div className="bg-emerald-100 text-emerald-600 rounded-2xl w-10 h-10 flex items-center justify-center text-xl font-bold">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+            
+            <div className="bg-white p-6 rounded-[2rem] border-4 border-emerald-400 shadow-[0_8px_0_0_#10b981] hover:-translate-y-1 transition-all">
+              <div className="bg-emerald-500 text-white rounded-2xl w-14 h-14 flex items-center justify-center text-2xl font-bold mb-4 border-2 border-emerald-200 shadow-[0_4px_0_0_#047857]">
                 🎯
               </div>
-              <h4 className="text-lg font-black text-slate-800">100% Educational</h4>
-              <p className="text-sm text-slate-500 font-medium">
-                Rigorous curriculum-aligned questions covering Grade K-5 arithmetic, conceptual number bonds, addition carry-overs, and divisions.
+              <h4 className="text-xl font-black text-slate-900">100% Educational</h4>
+              <p className="mt-2 text-sm text-slate-600 font-bold leading-relaxed">
+                Rigorous curriculum-aligned questions covering Grade K-5 arithmetic and English phonics.
               </p>
-            </Card>
+            </div>
 
-            <Card padding="md" className="text-left space-y-2">
-              <div className="bg-sky-100 text-sky-600 rounded-2xl w-10 h-10 flex items-center justify-center text-xl font-bold">
+            <div className="bg-white p-6 rounded-[2rem] border-4 border-sky-400 shadow-[0_8px_0_0_#0ea5e9] hover:-translate-y-1 transition-all">
+              <div className="bg-sky-500 text-white rounded-2xl w-14 h-14 flex items-center justify-center text-2xl font-bold mb-4 border-2 border-sky-200 shadow-[0_4px_0_0_#0369a1]">
                 🔒
               </div>
-              <h4 className="text-lg font-black text-slate-800">Kid-Safe by Design</h4>
-              <p className="text-sm text-slate-500 font-medium">
-                Completely self-contained. No open chat features, no dynamic user content, zero advertising, and no commercial manipulation.
+              <h4 className="text-xl font-black text-slate-900">Kid-Safe by Design</h4>
+              <p className="mt-2 text-sm text-slate-600 font-bold leading-relaxed">
+                Completely self-contained. No open chat features, no advertising, and zero distractions.
               </p>
-            </Card>
+            </div>
 
-            <Card padding="md" className="text-left space-y-2">
-              <div className="bg-purple-100 text-purple-600 rounded-2xl w-10 h-10 flex items-center justify-center text-xl font-bold">
+            <div className="bg-white p-6 rounded-[2rem] border-4 border-purple-400 shadow-[0_8px_0_0_#a855f7] hover:-translate-y-1 transition-all">
+              <div className="bg-purple-500 text-white rounded-2xl w-14 h-14 flex items-center justify-center text-2xl font-bold mb-4 border-2 border-purple-200 shadow-[0_4px_0_0_#6b21a8]">
                 💖
               </div>
-              <h4 className="text-lg font-black text-slate-800">Positive Encouragement</h4>
-              <p className="text-sm text-slate-500 font-medium">
-                No harsh game-over punishments. An incorrect answer leads to a friendly wizard scroll explanation that makes complex math easy.
+              <h4 className="text-xl font-black text-slate-900">Positive Play</h4>
+              <p className="mt-2 text-sm text-slate-600 font-bold leading-relaxed">
+                No harsh game-overs. Friendly wizard scrolls explain mistakes to make complex concepts easy.
               </p>
-            </Card>
+            </div>
           </div>
         </div>
-      </main>
+
+      </div>
 
       {/* Footer */}
-      <footer className="w-full bg-slate-900 text-slate-400 py-8 px-4 text-center text-sm border-t-4 border-slate-950 font-medium">
-        <div className="max-w-5xl mx-auto space-y-2">
-          <p>© {new Date().getFullYear()} TinyBee. Built for young brave mathematicians.</p>
-          <p className="text-xs text-slate-600">Educational gaming platform. All content generated originally.</p>
+      <footer className="w-full bg-white/70 backdrop-blur-md border-t border-white/40 text-slate-600 py-8 px-4 text-center text-sm font-black">
+        <div className="max-w-5xl mx-auto space-y-1">
+          <p>🔒 TinyBee is a safe ad-free learning zone. © {new Date().getFullYear()} TinyBee.</p>
         </div>
       </footer>
 

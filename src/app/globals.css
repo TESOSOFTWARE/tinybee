@@ -12,6 +12,14 @@ html {
 
 @theme {
   --font-sans: 'Fredoka', var(--font-geist-sans), sans-serif;
+  --font-baloo: var(--font-baloo);
+  
+  --color-background: #f8fafc;
+  --color-foreground: #1e293b;
+  --color-border: #e2e8f0;
+  --color-accent: #38bdf8;
+  --color-accent-ink: #0284c7;
+  --color-muted: #64748b;
   
   /* Custom Child-Safe Palette */
   --color-academy-blue: #38bdf8;       /* sky-400 */

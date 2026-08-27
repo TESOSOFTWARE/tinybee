@@ -2212,7 +2212,14 @@ export default function AdminDashboardPage() {
 
   const handleExportJSON = () => {
     const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(
-      JSON.stringify({ videoQuests, mathQuestions, englishQuestions }, null, 2)
+      JSON.stringify({ 
+        videoQuests, 
+        mathQuestions, 
+        englishQuestions,
+        customWorlds,
+        deletedWorldIds,
+        hiddenGradeIds
+      }, null, 2)
     );
     const dlAnchorElem = document.createElement('a');
     dlAnchorElem.setAttribute("href", dataStr);
@@ -2294,6 +2301,18 @@ export default function AdminDashboardPage() {
         if (parsed.englishQuestions) {
           setEnglishQuestions(parsed.englishQuestions);
           syncStorage(STORAGE_KEYS.englishQuestions, JSON.stringify(parsed.englishQuestions));
+        }
+        if (parsed.customWorlds) {
+          setCustomWorlds(parsed.customWorlds);
+          syncStorage(STORAGE_KEYS.worlds, JSON.stringify(parsed.customWorlds));
+        }
+        if (parsed.deletedWorldIds) {
+          setDeletedWorldIds(parsed.deletedWorldIds);
+          syncStorage('deleted_world_ids', JSON.stringify(parsed.deletedWorldIds));
+        }
+        if (parsed.hiddenGradeIds) {
+          setHiddenGradeIds(parsed.hiddenGradeIds);
+          syncStorage('hidden_grade_ids', JSON.stringify(parsed.hiddenGradeIds));
         }
         showNotification("Content imported successfully! Reloading configuration...");
         setTimeout(() => window.location.reload(), 1200);
@@ -3189,6 +3208,7 @@ export default function AdminDashboardPage() {
             const levels = getLevelsList();
 
             return (
+              <>
             <Card className="bg-white border border-slate-200 p-6 space-y-5 shadow-sm rounded-2xl">
 
               {/* ── Header row ── */}
@@ -4047,10 +4067,57 @@ export default function AdminDashboardPage() {
                  )}
               </div>
             </Card>
-            );
-          })()}
 
-          {/* 2. STANDARD QUESTIONS EDITOR */}
+            {/* Quick Preview of Quest Pool Questions */}
+            <div className="mt-8 pt-6 border-t border-slate-200 animate-slide-up">
+              <h3 className="text-sm font-black text-slate-700 mb-3 flex items-center gap-2">
+                <span className="text-xl">🎓</span>
+                Quest Pool Questions for {selectedWorldId}
+                <span className="bg-slate-100 text-slate-500 px-2 py-0.5 rounded-full text-[10px]">
+                  {englishQuestions.filter(q => q.topicId === selectedWorldId && normalizeGrade(q.grade) === normalizeGrade(selectedGradeId)).length} items
+                </span>
+              </h3>
+              <p className="text-xs text-slate-500 mb-4 font-semibold">
+                These questions belong to the main Quest Pool for this topic. Switch to the <strong>Quest Pools</strong> tab above to edit them.
+              </p>
+              
+              <div className="bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm">
+                <div className="max-h-[300px] overflow-y-auto">
+                  <table className="w-full text-left text-[11px] font-medium text-slate-600">
+                    <thead className="bg-slate-50 uppercase font-black tracking-wider text-slate-500 border-b border-slate-200 sticky top-0 z-10">
+                      <tr>
+                        <th className="px-3 py-2">ID</th>
+                        <th className="px-3 py-2">Question Prompt</th>
+                        <th className="px-3 py-2">Correct Answer</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-slate-100">
+                      {englishQuestions
+                        .filter(q => q.topicId === selectedWorldId && normalizeGrade(q.grade) === normalizeGrade(selectedGradeId))
+                        .map(q => (
+                          <tr key={`qp-${q.id}`} className="hover:bg-slate-50/50 transition-colors">
+                            <td className="px-3 py-2.5 font-bold text-slate-400">{q.id}</td>
+                            <td className="px-3 py-2.5 font-bold text-slate-700 max-w-[300px] truncate" title={q.question}>{q.question}</td>
+                            <td className="px-3 py-2.5 font-black text-emerald-600">{q.correctAnswer}</td>
+                          </tr>
+                        ))}
+                      {englishQuestions.filter(q => q.topicId === selectedWorldId && normalizeGrade(q.grade) === normalizeGrade(selectedGradeId)).length === 0 && (
+                        <tr>
+                          <td colSpan={3} className="px-3 py-6 text-center text-slate-400 font-bold bg-slate-50/50">
+                            No quest pool questions found for this topic.
+                          </td>
+                        </tr>
+                      )}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            </>
+          );
+        })()}
+
+        {/* 2. STANDARD QUESTIONS EDITOR */}
           {isQuestionsPool && selectedGradeId && (
             <div className="space-y-5 animate-slide-up">
 

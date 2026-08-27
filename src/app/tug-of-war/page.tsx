@@ -72,7 +72,7 @@ function TugOfWarContent() {
   useEffect(() => {
     startTimeRef.current = Date.now();
     const matched = getQuestionsForGame(
-      world.subject || 'english',
+      world.subject || 'math',
       Number(world.grade),
       parseInt(levelId),
       world.topicId,
